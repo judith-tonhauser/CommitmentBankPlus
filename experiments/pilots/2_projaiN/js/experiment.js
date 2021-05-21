@@ -1367,6 +1367,7 @@ var items_content_mapping = {
 //"MC":["mary","josie","emma","olivia","sophia","mia","isabella","emily","grace","zoe","danny","frank","jackson","jayden","tony","josh","owen","julian","jon","charley"]
 };  
 
+//controls
 var mcitemnames = ["muffins","pizza","kids","ballet","garage","hat"];
 
 var mcitems = {
