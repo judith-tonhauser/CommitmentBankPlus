@@ -213,7 +213,7 @@ function make_slides(f) {
 	  var question = "";
 	  console.log(this.stim.block);	  
 	  if (this.stim.block == "ai") {
-	  		question = youSure + answer + "Did "+this.stim.name+" answer "+this.stim.name2+"'s question?";
+	  		question = "Did "+this.stim.name+" answer "+this.stim.name2+"'s question?";
 	  } else {
 	  		question = "Is "+this.stim.name+" certain that "+this.stim.question+"?";	  	
 	  	}
