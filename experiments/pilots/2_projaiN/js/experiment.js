@@ -279,7 +279,8 @@ function make_slides(f) {
           "subject_information" : exp.subj_data,
           "time_in_minutes" : (Date.now() - exp.startT)/60000
       };
-      setTimeout(function() {turk.submit(exp.data);}, 1000);
+      //setTimeout(function() {turk.submit(exp.data);}, 1000);
+      proliferate.submit(exp.data);
     }
   });
 
@@ -1667,12 +1668,12 @@ console.log(exp.stims_block2);
 
   //make sure turkers have accepted HIT (or you're not in mturk)
   $("#start_button").click(function() {
-    if (turk.previewMode) {
-      $("#mustaccept").show();
-    } else {
-      $("#start_button").click(function() {$("#mustaccept").show();});
+    //if (turk.previewMode) {
+     // $("#mustaccept").show();
+    //} else {
+    //  $("#start_button").click(function() {$("#mustaccept").show();});
       exp.go();
-    }
+    //}
   });
 
   exp.go(); //show first slide
