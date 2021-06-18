@@ -125,6 +125,12 @@ function make_slides(f) {
       var utterance = "";
       if (this.stim.block == "ai") {
 	  		utterance = "<table><tr><td><strong>"+this.stim.name + ":</strong> \"<i>" +this.stim.utterance+"</i>\"</td></tr><tr><td><strong>"+this.stim.name2 + ":</strong> \"<i>Are you sure?</i>\""+"</td></tr><tr><td><strong>"+this.stim.name + ": </strong> \"<i>Yes, I'm sure that "+this.stim.question+".</i>\""+"</td></tr></table>";
+        // controls: 
+        // Name: These muffins have blueberries in them.  
+        // Name2: Are you sure?
+        // Name: Yes, I am sure that these muffins have blueberries in them.
+
+
 	  } else {
 	  		utterance = "<strong>"+this.stim.name+": </strong>\"<i>"+this.stim.utterance+"</i>\"";	  	
 	  	}
@@ -139,7 +145,10 @@ function make_slides(f) {
 	  if (this.stim.block == "ai") {
 	  		question = "Did "+this.stim.name+" answer "+this.stim.name2+"'s question?";
 	  } else {
-	  		question = "Is "+this.stim.name+" certain that "+this.stim.question+"?";	  	
+	  		question = "Is "+this.stim.name+" certain that "+this.stim.question+"?";	 
+        //controls:
+        //Is NAME certain that these muffins have blueberries in them?
+
 	  	}
 	  $(".question").html(question);	  
     },
@@ -1374,28 +1383,37 @@ var mcitemnames = ["muffins","pizza","kids","ballet","garage","hat"];
 var mcitems = {
   "muffins": {
     "question":"these muffins have blueberries in them",
-    "MCq":"These muffins don't have blueberries in them.",
-    "MCa":"These muffins don't have blueberries in them."},
+    "MCq":"These muffins have blueberries in them.",
+    //"MCa":"These muffins don't have blueberries in them."
+    "MCc":"These muffins, which are really delicious, have blueberries in them.",
+},
   "pizza": {
     "question":"this pizza has mushrooms on it",
-    "MCq":"This pizza doesn't have mushrooms on it.",
-    "MCa":"This pizza doesn't have mushrooms on it."},
+    "MCq":"This pizza has mushrooms on it.",
+    //"MCa":"This pizza doesn't have mushrooms on it."
+    "MCc":"This pizza, which I just made from scratch, has mushrooms on it.",
+  },
   "kids": {
     "question":"Jack was playing outside with the kids",
-    "MCq":"Jack wasn't playing outside with the kids.",
-    "MCa":"Jack wasn't playing outside with the kids."},
+    "MCq":"Jack was playing outside with the kids.",
+    //"MCa":"Jack wasn't playing outside with the kids."
+    "MCc":"Jack, who is my long-time neighbor, was playing outside with the kids."},
 "ballet": {
     "question":"Ann dances ballet",
-    "MCq":"Ann doesn't dance ballet.",
-    "MCa":"Ann doesn't dance ballet."},
+    "MCq":"Ann dances ballet.",
+    //"MCa":"Ann doesn't dance ballet."
+     "MCc": "Ann, who is a local performer, dances ballet."},
 "garage": {
     "question":"John's kids were in the garage",
-    "MCq":"John's kids weren't in the garage.",
-    "MCa":"John's kids weren't in the garage."},
+    "MCq":"John's kids were in the garage.",
+    //"MCa":"John's kids weren't in the garage."
+    "MCc":"John's kids, who are very well-behaved, were in the garage."},
 "hat": {
     "question":"Samantha has a new hat",
-    "MCq":"Samantha doesn't have a new hat.",
-    "MCa":"Samantha doesn't have a new hat."}
+    "MCq":"Samantha has a new hat.",
+    //"MCa":"Samantha doesn't have a new hat."
+    "MCc":"Samantha, who is really into fashion, has a new hat.",
+    }
 };
 
 // get trigger contents

@@ -1371,31 +1371,40 @@ var items_content_mapping = {
 //controls
 var mcitemnames = ["muffins","pizza","kids","ballet","garage","hat"];
 
- var mcitems = {
+var mcitems = {
   "muffins": {
     "question":"these muffins have blueberries in them",
-    "MCq":"Perhaps these muffins have blueberries in them.",
-    "MCa":"These muffins don't have blueberries in them."},
+    "MCq":"These muffins have blueberries in them.",
+    //"MCa":"These muffins don't have blueberries in them."
+    "MCc":"These muffins, which are really delicious, have blueberries in them.",
+},
   "pizza": {
     "question":"this pizza has mushrooms on it",
-    "MCq":"Perhaps this pizza has mushrooms on it.",
-    "MCa":"This pizza doesn't have mushrooms on it."},
+    "MCq":"This pizza has mushrooms on it.",
+    //"MCa":"This pizza doesn't have mushrooms on it."
+    "MCc":"This pizza, which I just made from scratch, has mushrooms on it.",
+  },
   "kids": {
     "question":"Jack was playing outside with the kids",
-    "MCq":"Perhaps Jack was playing outside with the kids.",
-    "MCa":"Jack wasn't playing outside with the kids."},
-  "ballet": {
+    "MCq":"Jack was playing outside with the kids.",
+    //"MCa":"Jack wasn't playing outside with the kids."
+    "MCc":"Jack, who is my long-time neighbor, was playing outside with the kids."},
+"ballet": {
     "question":"Ann dances ballet",
-    "MCq":"Perhaps Ann dances ballet.",
-    "MCa":"Ann doesn't dance ballet."},
-  "garage": {
+    "MCq":"Ann dances ballet.",
+    //"MCa":"Ann doesn't dance ballet."
+     "MCc": "Ann, who is a local performer, dances ballet."},
+"garage": {
     "question":"John's kids were in the garage",
-    "MCq":"Perhaps John's kids were in the garage.",
-    "MCa":"John's kids weren't in the garage."},
-  "hat": {
+    "MCq":"John's kids were in the garage.",
+    //"MCa":"John's kids weren't in the garage."
+    "MCc":"John's kids, who are very well-behaved, were in the garage."},
+"hat": {
     "question":"Samantha has a new hat",
-    "MCq":"Perhaps Samantha has a new hat.",
-    "MCa":"Samantha doesn't have a new hat."}
+    "MCq":"Samantha has a new hat.",
+    //"MCa":"Samantha doesn't have a new hat."
+    "MCc":"Samantha, who is really into fashion, has a new hat.",
+    }
 };
 
 // get trigger contents
