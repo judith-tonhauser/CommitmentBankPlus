@@ -507,10 +507,15 @@ function init() {
       "name":"Linda",
       "gender":"F"
     },
+    //{
+    //  "name":"Emily",
+    //  "gender":"F"
+    //},
     {
-      "name":"Emily",
+      "name":"Erin",
       "gender":"F"
     },
+
 //    {
 //      "name":"Susan",
 //      "gender":"F"
@@ -575,10 +580,16 @@ function init() {
       "name":"Michelle",
       "gender":"F"
     },
+    //{
+    //  "name":"Emily",
+    //  "gender":"F"
+    //},
     {
-      "name":"Emily",
+      "name":"Fran",
       "gender":"F"
     },
+
+
 //     {
 //       "name":"Amanda",
 //       "gender":"F"
