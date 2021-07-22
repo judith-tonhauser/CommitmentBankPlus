@@ -1,6 +1,5 @@
-# experiment investigating whether at-issueness predicts projection
-# for the contents of the complements of 20 predicates
-# preprocessing.R
+# questions: projection and at-issueness
+# preprocessing
 
 # set working directory to directory of script
 this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
@@ -193,4 +192,4 @@ d <- d %>%
 length(unique(d$workerid)) # 242 remaining Turkers (35 Turkers excluded)
 
 # write cleaned dataset to file
-write_csv(d, path="../data/cd.csv")
+write_csv(d, path="../data/data_preprocessed.csv")

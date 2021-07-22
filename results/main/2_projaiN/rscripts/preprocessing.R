@@ -188,6 +188,6 @@ d %>%
 #141 female, 128 male, 5 other, 0 undeclared
 
 # write cleaned dataset to file
-write.csv(d, file="../data/data_preprocessed.csv",row.names=F,quote=F,sep =",",)
-nrow(d)
+write.csv(d, file="../data/data_preprocessed.csv",row.names=F,quote=F)
+
 

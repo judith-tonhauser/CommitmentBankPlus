@@ -14,23 +14,26 @@ library(ggrepel)
 library(lmerTest)
 
 # read in the data
-polar = read.csv(file="../../1_projaiQ/data/data_preprocessed.csv") %>%
+polar = read_csv(file="../../1_projaiQ/data/data_preprocessed.csv") %>%
   select(workerid,content,short_trigger,question_type,response) %>%
   filter(short_trigger != "MC") %>%
   spread(question_type,response) %>%
   mutate(SubExperiment="polar")
+length(unique(polar$workerid)) #242
 
-neg = read.csv(file="../../2_projaiN/data/data_preprocessed.csv") %>%
+neg = read_csv(file="../../2_projaiN/data/data_preprocessed.csv") %>%
   select(workerid,content,short_trigger,question_type,response) %>%
   filter(short_trigger != "MC") %>%
   spread(question_type,response) %>%
   mutate(SubExperiment="neg")
+length(unique(neg$workerid)) #274 THERE ARE STILL PROBLEMS IN THE READ-IN FILE
 
-modal = read.csv(file="../../3_projaiM/data/data_preprocessed.csv") %>%
+modal = read_csv(file="../../3_projaiM/data/data_preprocessed.csv") %>%
   select(workerid,content,short_trigger,question_type,response) %>%
   filter(short_trigger != "MC") %>%
   spread(question_type,response) %>%
   mutate(SubExperiment="modal")
+length(unique(modal$workerid)) #281 THERE ARE STILL PROBLEMS IN THE READ-IN FILE
 
 nrow(polar)
 nrow(neg)
@@ -62,14 +65,14 @@ names(d)
 
 # correlations
 # projection
-cor(d$Projmean_P,d$Projmean_N) # .72
-cor(d$Projmean_P,d$Projmean_M) # .85
-cor(d$Projmean_N,d$Projmean_M) # .82
+cor(d$Projmean_P,d$Projmean_N) # .95
+cor(d$Projmean_P,d$Projmean_M) # .92
+cor(d$Projmean_N,d$Projmean_M) # .81
 
 # not-at-issueness
-cor(d$AImean_P,d$AImean_N) # .59
-cor(d$AImean_P,d$AImean_M) # .47
-cor(d$AImean_N,d$AImean_M) # .50
+cor(d$AImean_P,d$AImean_N) # .72
+cor(d$AImean_P,d$AImean_M) # .77
+cor(d$AImean_N,d$AImean_M) # .82
 
 
 # plot projection against projection ----

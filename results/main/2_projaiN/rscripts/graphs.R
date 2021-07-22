@@ -18,17 +18,9 @@ theme_set(theme_bw())
 source('../../helpers.R')
 
 # read in the preprocessed data
-d = read.csv("../data/data_preprocessed.csv")
+d = read_csv("../data/data_preprocessed.csv")
 nrow(d)
 length(unique(d$workerid)) #274
-
-tmp <- d %>%
-  filter(is.na(response))
-View(tmp)
-
-View(d)
-summary(d)
-
 
 # spread responses over separate columns for projectivity and at-issueness
 t = d %>%

@@ -14,9 +14,8 @@ library(lmerTest)
 source('../../helpers.R')
 
 # load data
-d = read.csv("../data/data_preprocessed.csv")
-length(unique(d$workerid))
-View(d)
+d = read_csv("../data/data_preprocessed.csv")
+length(unique(d$workerid)) #274
 
 # spread responses over separate columns for projectivity and at-issueness
 t = d %>%
@@ -29,10 +28,11 @@ summary(t)
 t_nomc = droplevels(subset(t, short_trigger != "MC"))
 
 # center the block and at-issueness variables
+str(t_nomc$ai)
 t_nomc = cbind(t_nomc,myCenter(t_nomc[,c("block_ai","ai")]))
 
 summary(t_nomc)
-View(t_nomc$cai)
+
 
 # main analysis of interest: predict projectivity from at-issueness, while controlling for block (random effects by subject, lexical content, and target expression)
 
