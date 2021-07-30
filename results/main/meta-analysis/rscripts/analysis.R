@@ -35,9 +35,17 @@ modal = read_csv(file="../../3_projaiM/data/data_preprocessed.csv") %>%
   mutate(SubExperiment="modal")
 length(unique(modal$workerid)) #281 THERE ARE STILL PROBLEMS IN THE READ-IN FILE
 
+cond = read_csv(file="../../4_projaiC/data/data_preprocessed.csv") %>%
+  select(workerid,content,short_trigger,question_type,response) %>%
+  filter(short_trigger != "MC") %>%
+  spread(question_type,response) %>%
+  mutate(SubExperiment="cond")
+length(unique(cond$workerid)) #273 ALSO HERE PROBLEMS READING IN THE FILE
+
 nrow(polar)
 nrow(neg)
 nrow(modal)
+nrow(cond)
 
 # aggregate
 
@@ -57,9 +65,17 @@ modal_a = modal %>%
   summarise(AImean_M = mean(ai), ci.low_AI_M=ci.low(ai), ci.high_AI_M=ci.high(ai),
             Projmean_M = mean(projective), ci.low_Proj_M=ci.low(projective), ci.high_Proj_M=ci.high(projective))
 
+cond_a = cond %>%
+  group_by(short_trigger) %>%
+  summarise(AImean_C = mean(ai), ci.low_AI_C=ci.low(ai), ci.high_AI_C=ci.high(ai),
+            Projmean_C = mean(projective), ci.low_Proj_C=ci.low(projective), ci.high_Proj_C=ci.high(projective))
+
+
 d = polar_a %>%
   inner_join(neg_a,by=("short_trigger")) %>%
-  inner_join(modal_a,by=("short_trigger"))
+  inner_join(modal_a,by=("short_trigger")) %>%
+  inner_join(cond_a,by=("short_trigger"))
+
 View(d)
 names(d)
 
@@ -68,11 +84,17 @@ names(d)
 cor(d$Projmean_P,d$Projmean_N) # .95
 cor(d$Projmean_P,d$Projmean_M) # .92
 cor(d$Projmean_N,d$Projmean_M) # .81
+cor(d$Projmean_P,d$Projmean_C) # .95
+cor(d$Projmean_N,d$Projmean_C) # .87
+cor(d$Projmean_M,d$Projmean_C) # .95
 
 # not-at-issueness
 cor(d$AImean_P,d$AImean_N) # .72
 cor(d$AImean_P,d$AImean_M) # .77
 cor(d$AImean_N,d$AImean_M) # .82
+cor(d$AImean_P,d$AImean_C) # .09
+cor(d$AImean_M,d$AImean_C) # .43
+cor(d$AImean_N,d$AImean_C) # .12
 
 
 # plot projection against projection ----
@@ -115,6 +137,45 @@ ggplot(d, aes(x=Projmean_N,y=Projmean_M)) +
   theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
 ggsave("../graphs/projection-negation-against-modal.pdf",width=6,height=6)
 
+ggplot(d, aes(x=Projmean_N,y=Projmean_C)) +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
+  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
+  geom_point() +
+  xlab("Mean certainty rating negation") +
+  ylab("Mean certainty rating conditional") +
+  xlim(0,1) +
+  ylim(0,1) +
+  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
+ggsave("../graphs/projection-negation-against-conditional.pdf",width=6,height=6)
+
+ggplot(d, aes(x=Projmean_M,y=Projmean_C)) +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
+  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
+  geom_point() +
+  xlab("Mean certainty rating modal") +
+  ylab("Mean certainty rating conditional") +
+  xlim(0,1) +
+  ylim(0,1) +
+  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
+ggsave("../graphs/projection-modal-against-conditional.pdf",width=6,height=6)
+
+ggplot(d, aes(x=Projmean_P,y=Projmean_C)) +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
+  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
+  geom_point() +
+  xlab("Mean certainty rating polar") +
+  ylab("Mean certainty rating conditional") +
+  xlim(0,1) +
+  ylim(0,1) +
+  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
+ggsave("../graphs/projection-polar-against-conditional.pdf",width=6,height=6)
+
 # plot ai against ai ----
 ggplot(d, aes(x=AImean_P,y=AImean_N)) +
   geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
@@ -154,6 +215,47 @@ ggplot(d, aes(x=AImean_N,y=AImean_M)) +
   ylim(0,1) +
   theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
 ggsave("../graphs/nai-negation-against-modal.pdf",width=6,height=6)
+
+ggplot(d, aes(x=AImean_N,y=AImean_C)) +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
+  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
+  geom_point() +
+  xlab("Mean not-at-issueness rating negation (sure that)") +
+  ylab("Mean not-at-issueness rating conditional (sure that)") +
+  xlim(0,1) +
+  ylim(0,1) +
+  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
+ggsave("../graphs/nai-negation-against-conditional.pdf",width=6,height=6)
+
+ggplot(d, aes(x=AImean_M,y=AImean_C)) +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
+  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
+  geom_point() +
+  xlab("Mean not-at-issueness rating modal (sure that)") +
+  ylab("Mean not-at-issueness rating conditional (sure that)") +
+  xlim(0,1) +
+  ylim(0,1) +
+  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
+ggsave("../graphs/nai-modal-against-conditional.pdf",width=6,height=6)
+
+ggplot(d, aes(x=AImean_P,y=AImean_C)) +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
+  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
+  geom_point() +
+  xlab("Mean not-at-issueness rating polar (sure that)") +
+  ylab("Mean not-at-issueness rating conditional (sure that)") +
+  xlim(0,1) +
+  ylim(0,1) +
+  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
+ggsave("../graphs/nai-polar-against-conditional.pdf",width=6,height=6)
+
+
 
 ######### HAVENT INTEGRATED ERROR BARS YET
 d = agr1 %>%
