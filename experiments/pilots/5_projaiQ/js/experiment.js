@@ -93,7 +93,7 @@ function make_slides(f) {
     	var inst1 = "";
 //    	console.log(block_order);
     	if (exp.stims_block1[0].block == "ai") {
-    		inst1 = inst1 + "First you'll answer questions about whether one person answered the other person's question."
+    		inst1 = inst1 + "First you'll answer questions about whether one person's response to another person sounds good."
     	} else {
     		inst1 = inst1 + "First you'll answer questions about what the people at the party are certain about."    		
     		}
@@ -132,7 +132,7 @@ function make_slides(f) {
 
 
 	  } else {
-	  		utterance = "<strong>"+this.stim.name+": </strong>\"<i>"+this.stim.utterance+".</i>\"";	  	
+	  		utterance = "<strong>"+this.stim.name+": </strong>\"<i>"+this.stim.utterance+"</i>\"";	  	
 	  	}
       //if (this.stim.block == "ai") {
 	  //		utterance = this.stim.name + " says to " + this.stim.name2 + ": \"<strong><i>"+this.stim.utterance+"</i></strong>\"<br><br>" + youSure + answer;
@@ -188,7 +188,7 @@ function make_slides(f) {
     $('.bar').css('width', ( (100*(exp.phase)/exp.nQs) + "%"));    	    	
     	var inst2 = "That was the first half! ";
     	if (exp.stims_block2[0].block == "ai") {
-    		inst2 = inst2 + "Now you'll answer questions about whether one person answered the other person's question."
+    		inst2 = inst2 + "Now you'll answer questions about whether one person's response to another person sounds good."
     	} else {
     		inst2 = inst2 + "Now you'll answer questions about what the people at the party are certain about."    		
     		}
@@ -216,7 +216,7 @@ function make_slides(f) {
       if (this.stim.block == "ai") {
 	  		utterance = "<table><tr><td><strong>"+this.stim.name + ":</strong> \"<i>" +this.stim.utterance+"</i>\"</td></tr><tr><td><strong>"+this.stim.name2 + ":</strong> \"<i>Yes, " + this.stim.question +".</i>\"";
 	  } else {
-	  		utterance = "<strong>"+this.stim.name+": </strong>\"<i>"+this.stim.utterance+".</i>\"";	  	
+	  		utterance = "<strong>"+this.stim.name+": </strong>\"<i>"+this.stim.utterance+"</i>\"";	  	
 	  	}      
 	  $(".sentence").html(utterance);
 	  var question = "";
@@ -1388,30 +1388,34 @@ var items_content_mapping = {
 //controls
 var mcitemnames = ["muffins","pizza","kids","ballet","garage","hat"];
 
+
+//var utterance = mcitems[j].MCq;
+//    var question = mcitems[j].question;  
+
 var mcitems = {
   "muffins": {
     "question":"these muffins have blueberries in them",
-    "MCq":"Do these muffins have blueberries in them?",
+    "MCq":"Do these  muffins, which are really delicious, have blueberries in them?",
     "MCa":"These muffins have blueberries in them."},
   "pizza": {
     "question":"this pizza has mushrooms on it",
-    "MCq":"Does this pizza have mushrooms on it?",
+    "MCq":"Does this pizza, which I just made from scratch, have mushrooms on it?",
     "MCa":"This pizza has mushrooms on it."},
   "kids": {
     "question":"Jack was playing outside with the kids",
-    "MCq":"Was Jack playing outside with the kids?",
+    "MCq":"Was Jack, who is my long-time neighbor, playing outside with the kids?",
     "MCa":"Jack was playing outside with the kids."},
 "ballet": {
     "question":"Ann dances ballet",
-    "MCq":"Does Ann dance ballet?",
+    "MCq":"Does Ann, who is a local performer, dance ballet?",
     "MCa":"Ann dances ballet."},
 "garage": {
     "question":"John's kids were in the garage",
-    "MCq":"Were John's kids in the garage?",
+    "MCq":"Were John's kids, who are very well-behaved, in the garage?",
     "MCa":"John's kids were in the garage."},
 "hat": {
     "question":"Samantha has a new hat",
-    "MCq":"Does Samantha have a new hat?",
+    "MCq":"Does Samantha, who is really into fashion, have a new hat?",
     "MCa":"Samantha has a new hat."}
 };
 
