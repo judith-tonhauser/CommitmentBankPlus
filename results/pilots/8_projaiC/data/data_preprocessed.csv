@@ -1,0 +1,521 @@
+workerid,proliferate.condition.x,block,content,question_type,response,rt,short_trigger,slide_number_in_experiment,trigger,trigger_class,error.x,proliferate.condition.y,age,american,comments,gender,language,error.y,trial
+1086,default,block1,hat,projective,0.64,5699,MC,5,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,1
+1086,default,block1,emily,projective,0.77,11796,know,6,know,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,2
+1086,default,block1,josh,projective,0.62,1989,suggest,7,suggest,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,3
+1086,default,block1,pizza,projective,0.49,1537,MC,8,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,4
+1086,default,block1,isabella,projective,0.52,2062,establish,9,establish,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,5
+1086,default,block1,zoe,projective,0.79,1208,inform,10,inform,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,6
+1086,default,block1,owen,projective,0.49,1395,confirm,11,confirm,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,7
+1086,default,block1,julian,projective,0.41,2603,acknowledge,12,acknowledge,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,8
+1086,default,block1,danny,projective,0.53,2039,pretend,13,pretend,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,9
+1086,default,block1,charley,projective,0.72,1799,confess,14,confess,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,10
+1086,default,block1,grace,projective,0.56,4943,demonstrate,15,demonstrate,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,11
+1086,default,block1,jayden,projective,0.38,3172,admit,16,admit,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,12
+1086,default,block1,kids,projective,0.65,3764,MC,17,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,13
+1086,default,block1,olivia,projective,0.55,1680,be_right,18,be_right,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,14
+1086,default,block1,muffins,projective,0.39,2798,MC,19,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,15
+1086,default,block1,garage,projective,0.72,2670,MC,20,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,16
+1086,default,block1,mia,projective,0.74,1395,discover,21,discover,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,17
+1086,default,block1,josie,projective,0.47,1762,say,22,say,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,18
+1086,default,block1,mary,projective,0.4,1979,hear,23,hear,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,19
+1086,default,block1,emma,projective,0.72,1988,announce,24,announce,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,20
+1086,default,block1,frank,projective,0.94,1501,prove,25,prove,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,21
+1086,default,block1,ballet,projective,0.64,2925,MC,26,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,22
+1086,default,block1,tony,projective,0.49,1289,see,27,see,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,23
+1086,default,block1,sophia,projective,0.69,2086,think,28,think,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,24
+1086,default,block1,jon,projective,0.54,1409,reveal,29,reveal,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,25
+1086,default,block1,jackson,projective,0.46,1905,be_annoyed,30,be_annoyed,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,26
+1086,default,block2,isabella,ai,0.41,34859,establish,32,establish,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,27
+1086,default,block2,emily,ai,0.52,2115,know,33,know,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,28
+1086,default,block2,danny,ai,0.39,7365,pretend,34,pretend,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,29
+1086,default,block2,grace,ai,0.54,2497,demonstrate,35,demonstrate,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,30
+1086,default,block2,jon,ai,0.28,3159,reveal,36,reveal,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,31
+1086,default,block2,jackson,ai,0.46,1687,be_annoyed,37,be_annoyed,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,32
+1086,default,block2,jayden,ai,0.63,3320,admit,38,admit,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,33
+1086,default,block2,garage,ai,0.09,1697,MC,39,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,34
+1086,default,block2,olivia,ai,0.24,2115,be_right,40,be_right,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,35
+1086,default,block2,muffins,ai,0.4,35990,MC,41,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,36
+1086,default,block2,emma,ai,0.67,1209,announce,42,announce,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,37
+1086,default,block2,josie,ai,0.59,3781,say,43,say,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,38
+1086,default,block2,josh,ai,0.41,1799,suggest,44,suggest,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,39
+1086,default,block2,frank,ai,0.21,2902,prove,45,prove,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,40
+1086,default,block2,tony,ai,0.6,998,see,46,see,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,41
+1086,default,block2,pizza,ai,0.33,3614,MC,47,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,42
+1086,default,block2,hat,ai,0.17,1702,MC,48,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,43
+1086,default,block2,owen,ai,0.38,6068,confirm,49,confirm,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,44
+1086,default,block2,zoe,ai,0.43,1972,inform,50,inform,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,45
+1086,default,block2,sophia,ai,0.58,2219,think,51,think,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,46
+1086,default,block2,julian,ai,0.61,817,acknowledge,52,acknowledge,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,47
+1086,default,block2,charley,ai,0.46,1546,confess,53,confess,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,48
+1086,default,block2,mia,ai,0.17,1117,discover,54,discover,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,49
+1086,default,block2,ballet,ai,0.15,7717,MC,55,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,50
+1086,default,block2,mary,ai,0.43,2775,hear,56,hear,C,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,51
+1086,default,block2,kids,ai,0.49,2378,MC,57,MC,MC,NA,default,31,Yes,Taylor 8.12.21 12:34pm,Female,English,NA,52
+1096,default,block1,julian,projective,0.35,10954,establish,5,establish,C,NA,default,22,Yes,NA,Female,English,NA,1
+1096,default,block1,josh,projective,0.65,9265,admit,6,admit,C,NA,default,22,Yes,NA,Female,English,NA,2
+1096,default,block1,danny,projective,0.14,15586,demonstrate,7,demonstrate,C,NA,default,22,Yes,NA,Female,English,NA,3
+1096,default,block1,emma,projective,0.16,10622,discover,8,discover,C,NA,default,22,Yes,NA,Female,English,NA,4
+1096,default,block1,charley,projective,0.59,6622,inform,9,inform,C,NA,default,22,Yes,NA,Female,English,NA,5
+1096,default,block1,mia,projective,0.51,12592,suggest,10,suggest,C,NA,default,22,Yes,NA,Female,English,NA,6
+1096,default,block1,josie,projective,0.89,13305,confess,11,confess,C,NA,default,22,Yes,NA,Female,English,NA,7
+1096,default,block1,jackson,projective,0.18,9696,prove,12,prove,C,NA,default,22,Yes,NA,Female,English,NA,8
+1096,default,block1,emily,projective,0.82,7092,see,13,see,C,NA,default,22,Yes,NA,Female,English,NA,9
+1096,default,block1,zoe,projective,0.23,15253,pretend,14,pretend,C,NA,default,22,Yes,NA,Female,English,NA,10
+1096,default,block1,jon,projective,0.82,8221,announce,15,announce,C,NA,default,22,Yes,NA,Female,English,NA,11
+1096,default,block1,garage,projective,0.98,12838,MC,16,MC,MC,NA,default,22,Yes,NA,Female,English,NA,12
+1096,default,block1,muffins,projective,1,8446,MC,17,MC,MC,NA,default,22,Yes,NA,Female,English,NA,13
+1096,default,block1,mary,projective,0.96,7363,acknowledge,18,acknowledge,C,NA,default,22,Yes,NA,Female,English,NA,14
+1096,default,block1,kids,projective,0.98,6646,MC,19,MC,MC,NA,default,22,Yes,NA,Female,English,NA,15
+1096,default,block1,pizza,projective,0.96,7180,MC,20,MC,MC,NA,default,22,Yes,NA,Female,English,NA,16
+1096,default,block1,hat,projective,0.93,5899,MC,21,MC,MC,NA,default,22,Yes,NA,Female,English,NA,17
+1096,default,block1,jayden,projective,0.68,14756,say,22,say,C,NA,default,22,Yes,NA,Female,English,NA,18
+1096,default,block1,tony,projective,0.23,7435,be_right,23,be_right,C,NA,default,22,Yes,NA,Female,English,NA,19
+1096,default,block1,ballet,projective,0.98,6303,MC,24,MC,MC,NA,default,22,Yes,NA,Female,English,NA,20
+1096,default,block1,olivia,projective,0.87,5904,reveal,25,reveal,C,NA,default,22,Yes,NA,Female,English,NA,21
+1096,default,block1,grace,projective,0.73,5762,confirm,26,confirm,C,NA,default,22,Yes,NA,Female,English,NA,22
+1096,default,block1,isabella,projective,0.45,9307,be_annoyed,27,be_annoyed,C,NA,default,22,Yes,NA,Female,English,NA,23
+1096,default,block1,sophia,projective,0.3,8608,think,28,think,C,NA,default,22,Yes,NA,Female,English,NA,24
+1096,default,block1,frank,projective,0.96,7083,know,29,know,C,NA,default,22,Yes,NA,Female,English,NA,25
+1096,default,block1,owen,projective,0.76,7544,hear,30,hear,C,NA,default,22,Yes,NA,Female,English,NA,26
+1096,default,block2,mary,ai,0.14,17282,acknowledge,32,acknowledge,C,NA,default,22,Yes,NA,Female,English,NA,27
+1096,default,block2,danny,ai,0.62,9643,demonstrate,33,demonstrate,C,NA,default,22,Yes,NA,Female,English,NA,28
+1096,default,block2,tony,ai,0.85,6052,be_right,34,be_right,C,NA,default,22,Yes,NA,Female,English,NA,29
+1096,default,block2,julian,ai,0.53,11244,establish,35,establish,C,NA,default,22,Yes,NA,Female,English,NA,30
+1096,default,block2,sophia,ai,0.77,7096,think,36,think,C,NA,default,22,Yes,NA,Female,English,NA,31
+1096,default,block2,emily,ai,0.09,5373,see,37,see,C,NA,default,22,Yes,NA,Female,English,NA,32
+1096,default,block2,garage,ai,0.02,4476,MC,38,MC,MC,NA,default,22,Yes,NA,Female,English,NA,33
+1096,default,block2,kids,ai,0.02,4922,MC,39,MC,MC,NA,default,22,Yes,NA,Female,English,NA,34
+1096,default,block2,ballet,ai,0.02,9189,MC,40,MC,MC,NA,default,22,Yes,NA,Female,English,NA,35
+1096,default,block2,jackson,ai,0.7,6131,prove,41,prove,C,NA,default,22,Yes,NA,Female,English,NA,36
+1096,default,block2,jon,ai,0.14,6796,announce,42,announce,C,NA,default,22,Yes,NA,Female,English,NA,37
+1096,default,block2,isabella,ai,0.3,8485,be_annoyed,43,be_annoyed,C,NA,default,22,Yes,NA,Female,English,NA,38
+1096,default,block2,frank,ai,0.08,6917,know,44,know,C,NA,default,22,Yes,NA,Female,English,NA,39
+1096,default,block2,josie,ai,0.0600000000000001,4586,confess,45,confess,C,NA,default,22,Yes,NA,Female,English,NA,40
+1096,default,block2,emma,ai,0.11,7844,discover,46,discover,C,NA,default,22,Yes,NA,Female,English,NA,41
+1096,default,block2,pizza,ai,0.01,3996,MC,47,MC,MC,NA,default,22,Yes,NA,Female,English,NA,42
+1096,default,block2,mia,ai,0.78,6563,suggest,48,suggest,C,NA,default,22,Yes,NA,Female,English,NA,43
+1096,default,block2,grace,ai,0.59,21817,confirm,49,confirm,C,NA,default,22,Yes,NA,Female,English,NA,44
+1096,default,block2,olivia,ai,0.22,5320,reveal,50,reveal,C,NA,default,22,Yes,NA,Female,English,NA,45
+1096,default,block2,owen,ai,0.23,4418,hear,51,hear,C,NA,default,22,Yes,NA,Female,English,NA,46
+1096,default,block2,hat,ai,0.01,3883,MC,52,MC,MC,NA,default,22,Yes,NA,Female,English,NA,47
+1096,default,block2,josh,ai,0.13,5155,admit,53,admit,C,NA,default,22,Yes,NA,Female,English,NA,48
+1096,default,block2,muffins,ai,0.01,3834,MC,54,MC,MC,NA,default,22,Yes,NA,Female,English,NA,49
+1096,default,block2,zoe,ai,0.95,8945,pretend,55,pretend,C,NA,default,22,Yes,NA,Female,English,NA,50
+1096,default,block2,charley,ai,0.24,8523,inform,56,inform,C,NA,default,22,Yes,NA,Female,English,NA,51
+1096,default,block2,jayden,ai,0.16,5540,say,57,say,C,NA,default,22,Yes,NA,Female,English,NA,52
+1088,default,block1,zoe,projective,0.5,22265,confirm,5,confirm,C,NA,default,27,Yes,NA,Male,English,NA,1
+1088,default,block1,owen,projective,0.49,16641,see,6,see,C,NA,default,27,Yes,NA,Male,English,NA,2
+1088,default,block1,jon,projective,0.64,12948,admit,7,admit,C,NA,default,27,Yes,NA,Male,English,NA,3
+1088,default,block1,isabella,projective,0.55,15374,know,8,know,C,NA,default,27,Yes,NA,Male,English,NA,4
+1088,default,block1,hat,projective,1,9552,MC,9,MC,MC,NA,default,27,Yes,NA,Male,English,NA,5
+1088,default,block1,danny,projective,0.49,10313,announce,10,announce,C,NA,default,27,Yes,NA,Male,English,NA,6
+1088,default,block1,jackson,projective,0.51,10845,prove,11,prove,C,NA,default,27,Yes,NA,Male,English,NA,7
+1088,default,block1,muffins,projective,1,8422,MC,12,MC,MC,NA,default,27,Yes,NA,Male,English,NA,8
+1088,default,block1,jayden,projective,0.5,8562,pretend,13,pretend,C,NA,default,27,Yes,NA,Male,English,NA,9
+1088,default,block1,kids,projective,1,7841,MC,14,MC,MC,NA,default,27,Yes,NA,Male,English,NA,10
+1088,default,block1,mia,projective,0.49,14789,discover,15,discover,C,NA,default,27,Yes,NA,Male,English,NA,11
+1088,default,block1,olivia,projective,0.64,11324,say,16,say,C,NA,default,27,Yes,NA,Male,English,NA,12
+1088,default,block1,charley,projective,0.48,12877,confess,17,confess,C,NA,default,27,Yes,NA,Male,English,NA,13
+1088,default,block1,emily,projective,0.57,6792,establish,18,establish,C,NA,default,27,Yes,NA,Male,English,NA,14
+1088,default,block1,tony,projective,0.62,6333,reveal,19,reveal,C,NA,default,27,Yes,NA,Male,English,NA,15
+1088,default,block1,sophia,projective,0.56,7616,inform,20,inform,C,NA,default,27,Yes,NA,Male,English,NA,16
+1088,default,block1,julian,projective,0.64,5646,hear,21,hear,C,NA,default,27,Yes,NA,Male,English,NA,17
+1088,default,block1,emma,projective,0.63,6238,suggest,22,suggest,C,NA,default,27,Yes,NA,Male,English,NA,18
+1088,default,block1,grace,projective,0.77,16207,acknowledge,23,acknowledge,C,NA,default,27,Yes,NA,Male,English,NA,19
+1088,default,block1,ballet,projective,1,5630,MC,24,MC,MC,NA,default,27,Yes,NA,Male,English,NA,20
+1088,default,block1,mary,projective,0.6,7052,be_right,25,be_right,C,NA,default,27,Yes,NA,Male,English,NA,21
+1088,default,block1,frank,projective,0.85,6989,demonstrate,26,demonstrate,C,NA,default,27,Yes,NA,Male,English,NA,22
+1088,default,block1,josie,projective,0.94,8897,be_annoyed,27,be_annoyed,C,NA,default,27,Yes,NA,Male,English,NA,23
+1088,default,block1,garage,projective,1,7348,MC,28,MC,MC,NA,default,27,Yes,NA,Male,English,NA,24
+1088,default,block1,josh,projective,0.54,8382,think,29,think,C,NA,default,27,Yes,NA,Male,English,NA,25
+1088,default,block1,pizza,projective,1,5580,MC,30,MC,MC,NA,default,27,Yes,NA,Male,English,NA,26
+1088,default,block2,jayden,ai,0.25,16459,pretend,32,pretend,C,NA,default,27,Yes,NA,Male,English,NA,27
+1088,default,block2,jon,ai,0.44,8726,admit,33,admit,C,NA,default,27,Yes,NA,Male,English,NA,28
+1088,default,block2,garage,ai,0,8077,MC,34,MC,MC,NA,default,27,Yes,NA,Male,English,NA,29
+1088,default,block2,isabella,ai,0.31,9998,know,35,know,C,NA,default,27,Yes,NA,Male,English,NA,30
+1088,default,block2,emma,ai,0.29,5133,suggest,36,suggest,C,NA,default,27,Yes,NA,Male,English,NA,31
+1088,default,block2,emily,ai,0.28,5154,establish,37,establish,C,NA,default,27,Yes,NA,Male,English,NA,32
+1088,default,block2,zoe,ai,0.33,3534,confirm,38,confirm,C,NA,default,27,Yes,NA,Male,English,NA,33
+1088,default,block2,julian,ai,0.28,5558,hear,39,hear,C,NA,default,27,Yes,NA,Male,English,NA,34
+1088,default,block2,frank,ai,0.31,5829,demonstrate,40,demonstrate,C,NA,default,27,Yes,NA,Male,English,NA,35
+1088,default,block2,jackson,ai,0.26,3659,prove,41,prove,C,NA,default,27,Yes,NA,Male,English,NA,36
+1088,default,block2,charley,ai,0.26,3874,confess,42,confess,C,NA,default,27,Yes,NA,Male,English,NA,37
+1088,default,block2,muffins,ai,0,5280,MC,43,MC,MC,NA,default,27,Yes,NA,Male,English,NA,38
+1088,default,block2,pizza,ai,0,4284,MC,44,MC,MC,NA,default,27,Yes,NA,Male,English,NA,39
+1088,default,block2,josh,ai,0.31,3214,think,45,think,C,NA,default,27,Yes,NA,Male,English,NA,40
+1088,default,block2,josie,ai,0.25,4743,be_annoyed,46,be_annoyed,C,NA,default,27,Yes,NA,Male,English,NA,41
+1088,default,block2,owen,ai,0.29,7374,see,47,see,C,NA,default,27,Yes,NA,Male,English,NA,42
+1088,default,block2,tony,ai,0.27,6523,reveal,48,reveal,C,NA,default,27,Yes,NA,Male,English,NA,43
+1088,default,block2,danny,ai,0.31,4594,announce,49,announce,C,NA,default,27,Yes,NA,Male,English,NA,44
+1088,default,block2,hat,ai,0,4985,MC,50,MC,MC,NA,default,27,Yes,NA,Male,English,NA,45
+1088,default,block2,ballet,ai,0,3820,MC,51,MC,MC,NA,default,27,Yes,NA,Male,English,NA,46
+1088,default,block2,mia,ai,0.32,4328,discover,52,discover,C,NA,default,27,Yes,NA,Male,English,NA,47
+1088,default,block2,sophia,ai,0.33,7606,inform,53,inform,C,NA,default,27,Yes,NA,Male,English,NA,48
+1088,default,block2,grace,ai,0.25,4470,acknowledge,54,acknowledge,C,NA,default,27,Yes,NA,Male,English,NA,49
+1088,default,block2,olivia,ai,0.28,4074,say,55,say,C,NA,default,27,Yes,NA,Male,English,NA,50
+1088,default,block2,mary,ai,0.32,3990,be_right,56,be_right,C,NA,default,27,Yes,NA,Male,English,NA,51
+1088,default,block2,kids,ai,0,5722,MC,57,MC,MC,NA,default,27,Yes,NA,Male,English,NA,52
+1093,default,block1,jackson,projective,0,13765,prove,5,prove,C,NA,default,30,Yes,NA,Female,English,NA,1
+1093,default,block1,emma,projective,0.97,12960,reveal,6,reveal,C,NA,default,30,Yes,NA,Female,English,NA,2
+1093,default,block1,mia,projective,0.02,22937,pretend,7,pretend,C,NA,default,30,Yes,NA,Female,English,NA,3
+1093,default,block1,jon,projective,0.49,25405,say,8,say,C,NA,default,30,Yes,NA,Female,English,NA,4
+1093,default,block1,isabella,projective,0.97,8208,confess,9,confess,C,NA,default,30,Yes,NA,Female,English,NA,5
+1093,default,block1,josie,projective,0,11511,suggest,10,suggest,C,NA,default,30,Yes,NA,Female,English,NA,6
+1093,default,block1,hat,projective,0.98,5602,MC,11,MC,MC,NA,default,30,Yes,NA,Female,English,NA,7
+1093,default,block1,ballet,projective,0.98,8013,MC,12,MC,MC,NA,default,30,Yes,NA,Female,English,NA,8
+1093,default,block1,jayden,projective,0.99,5494,discover,13,discover,C,NA,default,30,Yes,NA,Female,English,NA,9
+1093,default,block1,zoe,projective,0.99,7152,establish,14,establish,C,NA,default,30,Yes,NA,Female,English,NA,10
+1093,default,block1,frank,projective,0.03,6340,think,15,think,C,NA,default,30,Yes,NA,Female,English,NA,11
+1093,default,block1,mary,projective,0.98,9558,see,16,see,C,NA,default,30,Yes,NA,Female,English,NA,12
+1093,default,block1,grace,projective,0.97,6556,demonstrate,17,demonstrate,C,NA,default,30,Yes,NA,Female,English,NA,13
+1093,default,block1,julian,projective,0.98,6240,know,18,know,C,NA,default,30,Yes,NA,Female,English,NA,14
+1093,default,block1,sophia,projective,0.97,5954,inform,19,inform,C,NA,default,30,Yes,NA,Female,English,NA,15
+1093,default,block1,danny,projective,0.02,8879,hear,20,hear,C,NA,default,30,Yes,NA,Female,English,NA,16
+1093,default,block1,emily,projective,0.02,7144,be_right,21,be_right,C,NA,default,30,Yes,NA,Female,English,NA,17
+1093,default,block1,kids,projective,0.96,7154,MC,22,MC,MC,NA,default,30,Yes,NA,Female,English,NA,18
+1093,default,block1,olivia,projective,1,6244,admit,23,admit,C,NA,default,30,Yes,NA,Female,English,NA,19
+1093,default,block1,garage,projective,0.98,8682,MC,24,MC,MC,NA,default,30,Yes,NA,Female,English,NA,20
+1093,default,block1,tony,projective,0.97,9486,be_annoyed,25,be_annoyed,C,NA,default,30,Yes,NA,Female,English,NA,21
+1093,default,block1,owen,projective,0.02,5480,announce,26,announce,C,NA,default,30,Yes,NA,Female,English,NA,22
+1093,default,block1,muffins,projective,0.98,5134,MC,27,MC,MC,NA,default,30,Yes,NA,Female,English,NA,23
+1093,default,block1,pizza,projective,0.98,6225,MC,28,MC,MC,NA,default,30,Yes,NA,Female,English,NA,24
+1093,default,block1,josh,projective,0.98,5629,acknowledge,29,acknowledge,C,NA,default,30,Yes,NA,Female,English,NA,25
+1093,default,block1,charley,projective,0.02,9241,confirm,30,confirm,C,NA,default,30,Yes,NA,Female,English,NA,26
+1093,default,block2,owen,ai,0.03,21315,announce,32,announce,C,NA,default,30,Yes,NA,Female,English,NA,27
+1093,default,block2,pizza,ai,0.02,9324,MC,33,MC,MC,NA,default,30,Yes,NA,Female,English,NA,28
+1093,default,block2,josie,ai,0,16046,suggest,34,suggest,C,NA,default,30,Yes,NA,Female,English,NA,29
+1093,default,block2,isabella,ai,0.01,10641,confess,35,confess,C,NA,default,30,Yes,NA,Female,English,NA,30
+1093,default,block2,emma,ai,0.03,8921,reveal,36,reveal,C,NA,default,30,Yes,NA,Female,English,NA,31
+1093,default,block2,frank,ai,0.03,4440,think,37,think,C,NA,default,30,Yes,NA,Female,English,NA,32
+1093,default,block2,grace,ai,0.02,5882,demonstrate,38,demonstrate,C,NA,default,30,Yes,NA,Female,English,NA,33
+1093,default,block2,jayden,ai,0.03,4031,discover,39,discover,C,NA,default,30,Yes,NA,Female,English,NA,34
+1093,default,block2,zoe,ai,0.03,7340,establish,40,establish,C,NA,default,30,Yes,NA,Female,English,NA,35
+1093,default,block2,emily,ai,0.02,7397,be_right,41,be_right,C,NA,default,30,Yes,NA,Female,English,NA,36
+1093,default,block2,muffins,ai,0.02,6324,MC,42,MC,MC,NA,default,30,Yes,NA,Female,English,NA,37
+1093,default,block2,charley,ai,0.03,3350,confirm,43,confirm,C,NA,default,30,Yes,NA,Female,English,NA,38
+1093,default,block2,sophia,ai,0.02,4326,inform,44,inform,C,NA,default,30,Yes,NA,Female,English,NA,39
+1093,default,block2,tony,ai,0.04,14812,be_annoyed,45,be_annoyed,C,NA,default,30,Yes,NA,Female,English,NA,40
+1093,default,block2,mia,ai,0.96,7628,pretend,46,pretend,C,NA,default,30,Yes,NA,Female,English,NA,41
+1093,default,block2,josh,ai,0.02,4708,acknowledge,47,acknowledge,C,NA,default,30,Yes,NA,Female,English,NA,42
+1093,default,block2,jackson,ai,0.02,4145,prove,48,prove,C,NA,default,30,Yes,NA,Female,English,NA,43
+1093,default,block2,hat,ai,0.03,6660,MC,49,MC,MC,NA,default,30,Yes,NA,Female,English,NA,44
+1093,default,block2,jon,ai,0.02,4251,say,50,say,C,NA,default,30,Yes,NA,Female,English,NA,45
+1093,default,block2,julian,ai,0,4852,know,51,know,C,NA,default,30,Yes,NA,Female,English,NA,46
+1093,default,block2,mary,ai,0.02,3621,see,52,see,C,NA,default,30,Yes,NA,Female,English,NA,47
+1093,default,block2,ballet,ai,0.01,4116,MC,53,MC,MC,NA,default,30,Yes,NA,Female,English,NA,48
+1093,default,block2,garage,ai,0.02,6761,MC,54,MC,MC,NA,default,30,Yes,NA,Female,English,NA,49
+1093,default,block2,olivia,ai,0.02,3269,admit,55,admit,C,NA,default,30,Yes,NA,Female,English,NA,50
+1093,default,block2,kids,ai,0.01,5603,MC,56,MC,MC,NA,default,30,Yes,NA,Female,English,NA,51
+1093,default,block2,danny,ai,0.01,3243,hear,57,hear,C,NA,default,30,Yes,NA,Female,English,NA,52
+1095,default,block1,pizza,ai,0.86,18904,MC,5,MC,MC,NA,default,27,Yes,NA,Female,English,NA,1
+1095,default,block1,emma,ai,0.73,22649,inform,6,inform,C,NA,default,27,Yes,NA,Female,English,NA,2
+1095,default,block1,zoe,ai,0.81,16962,establish,7,establish,C,NA,default,27,Yes,NA,Female,English,NA,3
+1095,default,block1,tony,ai,0.81,20412,know,8,know,C,NA,default,27,Yes,NA,Female,English,NA,4
+1095,default,block1,kids,ai,0.39,20184,MC,9,MC,MC,NA,default,27,Yes,NA,Female,English,NA,5
+1095,default,block1,jackson,ai,0.68,6480,reveal,10,reveal,C,NA,default,27,Yes,NA,Female,English,NA,6
+1095,default,block1,ballet,ai,0.13,8740,MC,11,MC,MC,NA,default,27,Yes,NA,Female,English,NA,7
+1095,default,block1,owen,ai,0.78,8153,pretend,12,pretend,C,NA,default,27,Yes,NA,Female,English,NA,8
+1095,default,block1,mia,ai,0.73,9413,be_right,13,be_right,C,NA,default,27,Yes,NA,Female,English,NA,9
+1095,default,block1,josie,ai,0.75,7264,announce,14,announce,C,NA,default,27,Yes,NA,Female,English,NA,10
+1095,default,block1,julian,ai,0.74,14183,say,15,say,C,NA,default,27,Yes,NA,Female,English,NA,11
+1095,default,block1,mary,ai,0.76,8988,prove,16,prove,C,NA,default,27,Yes,NA,Female,English,NA,12
+1095,default,block1,sophia,ai,0.8,6211,suggest,17,suggest,C,NA,default,27,Yes,NA,Female,English,NA,13
+1095,default,block1,emily,ai,0.78,5037,think,18,think,C,NA,default,27,Yes,NA,Female,English,NA,14
+1095,default,block1,josh,ai,0.72,4521,hear,19,hear,C,NA,default,27,Yes,NA,Female,English,NA,15
+1095,default,block1,hat,ai,0.25,5579,MC,20,MC,MC,NA,default,27,Yes,NA,Female,English,NA,16
+1095,default,block1,garage,ai,0.25,9786,MC,21,MC,MC,NA,default,27,Yes,NA,Female,English,NA,17
+1095,default,block1,danny,ai,0.7,12535,see,22,see,C,NA,default,27,Yes,NA,Female,English,NA,18
+1095,default,block1,grace,ai,0.77,4260,discover,23,discover,C,NA,default,27,Yes,NA,Female,English,NA,19
+1095,default,block1,olivia,ai,0.76,3862,demonstrate,24,demonstrate,C,NA,default,27,Yes,NA,Female,English,NA,20
+1095,default,block1,muffins,ai,0.23,4247,MC,25,MC,MC,NA,default,27,Yes,NA,Female,English,NA,21
+1095,default,block1,jayden,ai,0.77,3373,confirm,26,confirm,C,NA,default,27,Yes,NA,Female,English,NA,22
+1095,default,block1,isabella,ai,0.78,15867,acknowledge,27,acknowledge,C,NA,default,27,Yes,NA,Female,English,NA,23
+1095,default,block1,jon,ai,0.76,5009,confess,28,confess,C,NA,default,27,Yes,NA,Female,English,NA,24
+1095,default,block1,charley,ai,0.77,5141,admit,29,admit,C,NA,default,27,Yes,NA,Female,English,NA,25
+1095,default,block1,frank,ai,0.8,4713,be_annoyed,30,be_annoyed,C,NA,default,27,Yes,NA,Female,English,NA,26
+1095,default,block2,mia,projective,0.02,14074,be_right,32,be_right,C,NA,default,27,Yes,NA,Female,English,NA,27
+1095,default,block2,kids,projective,0.96,5285,MC,33,MC,MC,NA,default,27,Yes,NA,Female,English,NA,28
+1095,default,block2,tony,projective,0.91,12726,know,34,know,C,NA,default,27,Yes,NA,Female,English,NA,29
+1095,default,block2,owen,projective,0.52,14090,pretend,35,pretend,C,NA,default,27,Yes,NA,Female,English,NA,30
+1095,default,block2,josh,projective,0.65,11350,hear,36,hear,C,NA,default,27,Yes,NA,Female,English,NA,31
+1095,default,block2,frank,projective,0.69,35247,be_annoyed,37,be_annoyed,C,NA,default,27,Yes,NA,Female,English,NA,32
+1095,default,block2,pizza,projective,0.98,6143,MC,38,MC,MC,NA,default,27,Yes,NA,Female,English,NA,33
+1095,default,block2,olivia,projective,0.51,6749,demonstrate,39,demonstrate,C,NA,default,27,Yes,NA,Female,English,NA,34
+1095,default,block2,muffins,projective,0.99,4755,MC,40,MC,MC,NA,default,27,Yes,NA,Female,English,NA,35
+1095,default,block2,ballet,projective,0.97,4493,MC,41,MC,MC,NA,default,27,Yes,NA,Female,English,NA,36
+1095,default,block2,isabella,projective,0.68,5326,acknowledge,42,acknowledge,C,NA,default,27,Yes,NA,Female,English,NA,37
+1095,default,block2,mary,projective,0.36,8192,prove,43,prove,C,NA,default,27,Yes,NA,Female,English,NA,38
+1095,default,block2,zoe,projective,0.26,7719,establish,44,establish,C,NA,default,27,Yes,NA,Female,English,NA,39
+1095,default,block2,hat,projective,0.98,6049,MC,45,MC,MC,NA,default,27,Yes,NA,Female,English,NA,40
+1095,default,block2,josie,projective,0.5,9161,announce,46,announce,C,NA,default,27,Yes,NA,Female,English,NA,41
+1095,default,block2,emma,projective,0.63,12110,inform,47,inform,C,NA,default,27,Yes,NA,Female,English,NA,42
+1095,default,block2,julian,projective,0.47,5585,say,48,say,C,NA,default,27,Yes,NA,Female,English,NA,43
+1095,default,block2,grace,projective,0.7,14695,discover,49,discover,C,NA,default,27,Yes,NA,Female,English,NA,44
+1095,default,block2,garage,projective,0.96,4771,MC,50,MC,MC,NA,default,27,Yes,NA,Female,English,NA,45
+1095,default,block2,jackson,projective,0.43,5709,reveal,51,reveal,C,NA,default,27,Yes,NA,Female,English,NA,46
+1095,default,block2,emily,projective,0.23,12628,think,52,think,C,NA,default,27,Yes,NA,Female,English,NA,47
+1095,default,block2,danny,projective,0.51,8001,see,53,see,C,NA,default,27,Yes,NA,Female,English,NA,48
+1095,default,block2,jayden,projective,0.34,4133,confirm,54,confirm,C,NA,default,27,Yes,NA,Female,English,NA,49
+1095,default,block2,jon,projective,0.38,11790,confess,55,confess,C,NA,default,27,Yes,NA,Female,English,NA,50
+1095,default,block2,sophia,projective,0.31,4757,suggest,56,suggest,C,NA,default,27,Yes,NA,Female,English,NA,51
+1095,default,block2,charley,projective,0.46,15262,admit,57,admit,C,NA,default,27,Yes,NA,Female,English,NA,52
+1094,default,block1,muffins,projective,1,8262,MC,5,MC,MC,NA,default,24,Yes,NA,Female,English,NA,1
+1094,default,block1,mia,projective,0.11,6322,suggest,6,suggest,C,NA,default,24,Yes,NA,Female,English,NA,2
+1094,default,block1,zoe,projective,0.57,5192,discover,7,discover,C,NA,default,24,Yes,NA,Female,English,NA,3
+1094,default,block1,julian,projective,0.08,4696,pretend,8,pretend,C,NA,default,24,Yes,NA,Female,English,NA,4
+1094,default,block1,ballet,projective,0.99,6209,MC,9,MC,MC,NA,default,24,Yes,NA,Female,English,NA,5
+1094,default,block1,tony,projective,0.48,11054,inform,10,inform,C,NA,default,24,Yes,NA,Female,English,NA,6
+1094,default,block1,sophia,projective,0.75,4584,confess,11,confess,C,NA,default,24,Yes,NA,Female,English,NA,7
+1094,default,block1,mary,projective,0.97,4364,admit,12,admit,C,NA,default,24,Yes,NA,Female,English,NA,8
+1094,default,block1,garage,projective,1,6821,MC,13,MC,MC,NA,default,24,Yes,NA,Female,English,NA,9
+1094,default,block1,pizza,projective,0.98,5096,MC,14,MC,MC,NA,default,24,Yes,NA,Female,English,NA,10
+1094,default,block1,josie,projective,0.85,6711,acknowledge,15,acknowledge,C,NA,default,24,Yes,NA,Female,English,NA,11
+1094,default,block1,emma,projective,0.51,7838,demonstrate,16,demonstrate,C,NA,default,24,Yes,NA,Female,English,NA,12
+1094,default,block1,isabella,projective,0.64,16757,be_annoyed,17,be_annoyed,C,NA,default,24,Yes,NA,Female,English,NA,13
+1094,default,block1,olivia,projective,0.73,6339,know,18,know,C,NA,default,24,Yes,NA,Female,English,NA,14
+1094,default,block1,hat,projective,0.98,4368,MC,19,MC,MC,NA,default,24,Yes,NA,Female,English,NA,15
+1094,default,block1,emily,projective,0.71,3919,reveal,20,reveal,C,NA,default,24,Yes,NA,Female,English,NA,16
+1094,default,block1,grace,projective,0.84,8403,see,21,see,C,NA,default,24,Yes,NA,Female,English,NA,17
+1094,default,block1,jayden,projective,0.2,6550,be_right,22,be_right,C,NA,default,24,Yes,NA,Female,English,NA,18
+1094,default,block1,owen,projective,0.27,6866,think,23,think,C,NA,default,24,Yes,NA,Female,English,NA,19
+1094,default,block1,kids,projective,0.97,4391,MC,24,MC,MC,NA,default,24,Yes,NA,Female,English,NA,20
+1094,default,block1,jackson,projective,0.77,5305,hear,25,hear,C,NA,default,24,Yes,NA,Female,English,NA,21
+1094,default,block1,frank,projective,0.69,5473,announce,26,announce,C,NA,default,24,Yes,NA,Female,English,NA,22
+1094,default,block1,danny,projective,0.8,6863,say,27,say,C,NA,default,24,Yes,NA,Female,English,NA,23
+1094,default,block1,charley,projective,0.15,4809,establish,28,establish,C,NA,default,24,Yes,NA,Female,English,NA,24
+1094,default,block1,josh,projective,0.66,7489,confirm,29,confirm,C,NA,default,24,Yes,NA,Female,English,NA,25
+1094,default,block1,jon,projective,0.12,3751,prove,30,prove,C,NA,default,24,Yes,NA,Female,English,NA,26
+1094,default,block2,grace,ai,0.28,12639,see,32,see,C,NA,default,24,Yes,NA,Female,English,NA,27
+1094,default,block2,mia,ai,0.24,5021,suggest,33,suggest,C,NA,default,24,Yes,NA,Female,English,NA,28
+1094,default,block2,olivia,ai,0.26,7187,know,34,know,C,NA,default,24,Yes,NA,Female,English,NA,29
+1094,default,block2,josh,ai,0.23,5449,confirm,35,confirm,C,NA,default,24,Yes,NA,Female,English,NA,30
+1094,default,block2,frank,ai,0.62,7278,announce,36,announce,C,NA,default,24,Yes,NA,Female,English,NA,31
+1094,default,block2,sophia,ai,0.37,11052,confess,37,confess,C,NA,default,24,Yes,NA,Female,English,NA,32
+1094,default,block2,jayden,ai,0.21,9713,be_right,38,be_right,C,NA,default,24,Yes,NA,Female,English,NA,33
+1094,default,block2,emma,ai,0.73,6026,demonstrate,39,demonstrate,C,NA,default,24,Yes,NA,Female,English,NA,34
+1094,default,block2,julian,ai,0.82,6851,pretend,40,pretend,C,NA,default,24,Yes,NA,Female,English,NA,35
+1094,default,block2,pizza,ai,0.48,7897,MC,41,MC,MC,NA,default,24,Yes,NA,Female,English,NA,36
+1094,default,block2,zoe,ai,0.24,4206,discover,42,discover,C,NA,default,24,Yes,NA,Female,English,NA,37
+1094,default,block2,charley,ai,0.16,3704,establish,43,establish,C,NA,default,24,Yes,NA,Female,English,NA,38
+1094,default,block2,mary,ai,0.15,3960,admit,44,admit,C,NA,default,24,Yes,NA,Female,English,NA,39
+1094,default,block2,jon,ai,0.17,5545,prove,45,prove,C,NA,default,24,Yes,NA,Female,English,NA,40
+1094,default,block2,muffins,ai,0.46,4087,MC,46,MC,MC,NA,default,24,Yes,NA,Female,English,NA,41
+1094,default,block2,isabella,ai,0.73,5734,be_annoyed,47,be_annoyed,C,NA,default,24,Yes,NA,Female,English,NA,42
+1094,default,block2,emily,ai,0.2,4520,reveal,48,reveal,C,NA,default,24,Yes,NA,Female,English,NA,43
+1094,default,block2,jackson,ai,0.09,5410,hear,49,hear,C,NA,default,24,Yes,NA,Female,English,NA,44
+1094,default,block2,danny,ai,0.41,6867,say,50,say,C,NA,default,24,Yes,NA,Female,English,NA,45
+1094,default,block2,garage,ai,0.66,5766,MC,51,MC,MC,NA,default,24,Yes,NA,Female,English,NA,46
+1094,default,block2,hat,ai,0.3,4032,MC,52,MC,MC,NA,default,24,Yes,NA,Female,English,NA,47
+1094,default,block2,kids,ai,0.23,2658,MC,53,MC,MC,NA,default,24,Yes,NA,Female,English,NA,48
+1094,default,block2,tony,ai,0.22,7416,inform,54,inform,C,NA,default,24,Yes,NA,Female,English,NA,49
+1094,default,block2,owen,ai,0.19,5121,think,55,think,C,NA,default,24,Yes,NA,Female,English,NA,50
+1094,default,block2,josie,ai,0.23,6727,acknowledge,56,acknowledge,C,NA,default,24,Yes,NA,Female,English,NA,51
+1094,default,block2,ballet,ai,0.36,3299,MC,57,MC,MC,NA,default,24,Yes,NA,Female,English,NA,52
+1089,default,block1,kids,projective,0.87,15592,MC,5,MC,MC,NA,default,19,Yes,NA,Female,English,NA,1
+1089,default,block1,josh,projective,0.81,34192,acknowledge,6,acknowledge,C,NA,default,19,Yes,NA,Female,English,NA,2
+1089,default,block1,jayden,projective,0.06,9790,pretend,7,pretend,C,NA,default,19,Yes,NA,Female,English,NA,3
+1089,default,block1,pizza,projective,0.99,8566,MC,8,MC,MC,NA,default,19,Yes,NA,Female,English,NA,4
+1089,default,block1,tony,projective,0.8,11335,prove,9,prove,C,NA,default,19,Yes,NA,Female,English,NA,5
+1089,default,block1,hat,projective,1,9340,MC,10,MC,MC,NA,default,19,Yes,NA,Female,English,NA,6
+1089,default,block1,julian,projective,0.83,18854,announce,11,announce,C,NA,default,19,Yes,NA,Female,English,NA,7
+1089,default,block1,frank,projective,0.85,9275,reveal,12,reveal,C,NA,default,19,Yes,NA,Female,English,NA,8
+1089,default,block1,zoe,projective,0.82,10220,suggest,13,suggest,C,NA,default,19,Yes,NA,Female,English,NA,9
+1089,default,block1,emma,projective,0.82,12500,say,14,say,C,NA,default,19,Yes,NA,Female,English,NA,10
+1089,default,block1,muffins,projective,0.98,5860,MC,15,MC,MC,NA,default,19,Yes,NA,Female,English,NA,11
+1089,default,block1,josie,projective,0.86,10664,hear,16,hear,C,NA,default,19,Yes,NA,Female,English,NA,12
+1089,default,block1,mia,projective,0.74,11877,demonstrate,17,demonstrate,C,NA,default,19,Yes,NA,Female,English,NA,13
+1089,default,block1,grace,projective,0.81,16602,inform,18,inform,C,NA,default,19,Yes,NA,Female,English,NA,14
+1089,default,block1,owen,projective,0.75,11663,be_annoyed,19,be_annoyed,C,NA,default,19,Yes,NA,Female,English,NA,15
+1089,default,block1,mary,projective,0.79,6937,admit,20,admit,C,NA,default,19,Yes,NA,Female,English,NA,16
+1089,default,block1,ballet,projective,0.96,6883,MC,21,MC,MC,NA,default,19,Yes,NA,Female,English,NA,17
+1089,default,block1,jon,projective,0.79,7072,confirm,22,confirm,C,NA,default,19,Yes,NA,Female,English,NA,18
+1089,default,block1,garage,projective,0.99,14749,MC,23,MC,MC,NA,default,19,Yes,NA,Female,English,NA,19
+1089,default,block1,jackson,projective,0.84,9743,know,24,know,C,NA,default,19,Yes,NA,Female,English,NA,20
+1089,default,block1,isabella,projective,0.84,12797,see,25,see,C,NA,default,19,Yes,NA,Female,English,NA,21
+1089,default,block1,olivia,projective,0.83,8299,discover,26,discover,C,NA,default,19,Yes,NA,Female,English,NA,22
+1089,default,block1,danny,projective,0.59,12032,be_right,27,be_right,C,NA,default,19,Yes,NA,Female,English,NA,23
+1089,default,block1,charley,projective,0.82,10156,confess,28,confess,C,NA,default,19,Yes,NA,Female,English,NA,24
+1089,default,block1,sophia,projective,0.55,12457,think,29,think,C,NA,default,19,Yes,NA,Female,English,NA,25
+1089,default,block1,emily,projective,0.81,5842,establish,30,establish,C,NA,default,19,Yes,NA,Female,English,NA,26
+1089,default,block2,emma,ai,0.88,25777,say,32,say,C,NA,default,19,Yes,NA,Female,English,NA,27
+1089,default,block2,hat,ai,0.07,12124,MC,33,MC,MC,NA,default,19,Yes,NA,Female,English,NA,28
+1089,default,block2,muffins,ai,0.13,8302,MC,34,MC,MC,NA,default,19,Yes,NA,Female,English,NA,29
+1089,default,block2,grace,ai,0.87,12649,inform,35,inform,C,NA,default,19,Yes,NA,Female,English,NA,30
+1089,default,block2,isabella,ai,0.85,10753,see,36,see,C,NA,default,19,Yes,NA,Female,English,NA,31
+1089,default,block2,danny,ai,0.76,10995,be_right,37,be_right,C,NA,default,19,Yes,NA,Female,English,NA,32
+1089,default,block2,frank,ai,0.79,7964,reveal,38,reveal,C,NA,default,19,Yes,NA,Female,English,NA,33
+1089,default,block2,kids,ai,0.36,10581,MC,39,MC,MC,NA,default,19,Yes,NA,Female,English,NA,34
+1089,default,block2,zoe,ai,0.8,8812,suggest,40,suggest,C,NA,default,19,Yes,NA,Female,English,NA,35
+1089,default,block2,ballet,ai,0.23,6362,MC,41,MC,MC,NA,default,19,Yes,NA,Female,English,NA,36
+1089,default,block2,owen,ai,0.46,10999,be_annoyed,42,be_annoyed,C,NA,default,19,Yes,NA,Female,English,NA,37
+1089,default,block2,jon,ai,0.33,7961,confirm,43,confirm,C,NA,default,19,Yes,NA,Female,English,NA,38
+1089,default,block2,charley,ai,0.73,7855,confess,44,confess,C,NA,default,19,Yes,NA,Female,English,NA,39
+1089,default,block2,olivia,ai,0.65,8626,discover,45,discover,C,NA,default,19,Yes,NA,Female,English,NA,40
+1089,default,block2,tony,ai,0.37,11783,prove,46,prove,C,NA,default,19,Yes,NA,Female,English,NA,41
+1089,default,block2,mary,ai,0.68,5175,admit,47,admit,C,NA,default,19,Yes,NA,Female,English,NA,42
+1089,default,block2,jackson,ai,0.66,4323,know,48,know,C,NA,default,19,Yes,NA,Female,English,NA,43
+1089,default,block2,sophia,ai,0.41,6223,think,49,think,C,NA,default,19,Yes,NA,Female,English,NA,44
+1089,default,block2,pizza,ai,0.42,4295,MC,50,MC,MC,NA,default,19,Yes,NA,Female,English,NA,45
+1089,default,block2,jayden,ai,0.23,8998,pretend,51,pretend,C,NA,default,19,Yes,NA,Female,English,NA,46
+1089,default,block2,emily,ai,0.75,8706,establish,52,establish,C,NA,default,19,Yes,NA,Female,English,NA,47
+1089,default,block2,josie,ai,0.73,9976,hear,53,hear,C,NA,default,19,Yes,NA,Female,English,NA,48
+1089,default,block2,mia,ai,0.71,10024,demonstrate,54,demonstrate,C,NA,default,19,Yes,NA,Female,English,NA,49
+1089,default,block2,garage,ai,0.35,3845,MC,55,MC,MC,NA,default,19,Yes,NA,Female,English,NA,50
+1089,default,block2,josh,ai,0.72,8872,acknowledge,56,acknowledge,C,NA,default,19,Yes,NA,Female,English,NA,51
+1089,default,block2,julian,ai,0.7,6664,announce,57,announce,C,NA,default,19,Yes,NA,Female,English,NA,52
+1090,default,block1,tony,ai,0.11,23733,be_right,5,be_right,C,NA,default,35,Yes,NA,Female,English,NA,1
+1090,default,block1,pizza,ai,0.01,16098,MC,6,MC,MC,NA,default,35,Yes,NA,Female,English,NA,2
+1090,default,block1,danny,ai,0.17,20912,be_annoyed,7,be_annoyed,C,NA,default,35,Yes,NA,Female,English,NA,3
+1090,default,block1,hat,ai,0.3,19415,MC,8,MC,MC,NA,default,35,Yes,NA,Female,English,NA,4
+1090,default,block1,josie,ai,0.13,16944,reveal,9,reveal,C,NA,default,35,Yes,NA,Female,English,NA,5
+1090,default,block1,muffins,ai,0.03,8351,MC,10,MC,MC,NA,default,35,Yes,NA,Female,English,NA,6
+1090,default,block1,kids,ai,0.41,12368,MC,11,MC,MC,NA,default,35,Yes,NA,Female,English,NA,7
+1090,default,block1,mia,ai,0.04,7990,discover,12,discover,C,NA,default,35,Yes,NA,Female,English,NA,8
+1090,default,block1,emma,ai,0.19,14120,demonstrate,13,demonstrate,C,NA,default,35,Yes,NA,Female,English,NA,9
+1090,default,block1,emily,ai,0.31,15187,admit,14,admit,C,NA,default,35,Yes,NA,Female,English,NA,10
+1090,default,block1,garage,ai,0.59,8686,MC,15,MC,MC,NA,default,35,Yes,NA,Female,English,NA,11
+1090,default,block1,julian,ai,0.07,6885,establish,16,establish,C,NA,default,35,Yes,NA,Female,English,NA,12
+1090,default,block1,grace,ai,0.19,7749,think,17,think,C,NA,default,35,Yes,NA,Female,English,NA,13
+1090,default,block1,isabella,ai,0.16,6898,know,18,know,C,NA,default,35,Yes,NA,Female,English,NA,14
+1090,default,block1,sophia,ai,0.22,7132,prove,19,prove,C,NA,default,35,Yes,NA,Female,English,NA,15
+1090,default,block1,mary,ai,0.04,9598,hear,20,hear,C,NA,default,35,Yes,NA,Female,English,NA,16
+1090,default,block1,charley,ai,0.03,7397,suggest,21,suggest,C,NA,default,35,Yes,NA,Female,English,NA,17
+1090,default,block1,zoe,ai,0.14,10594,confess,22,confess,C,NA,default,35,Yes,NA,Female,English,NA,18
+1090,default,block1,olivia,ai,0.21,14302,announce,23,announce,C,NA,default,35,Yes,NA,Female,English,NA,19
+1090,default,block1,ballet,ai,0.37,8653,MC,24,MC,MC,NA,default,35,Yes,NA,Female,English,NA,20
+1090,default,block1,frank,ai,0.35,14054,confirm,25,confirm,C,NA,default,35,Yes,NA,Female,English,NA,21
+1090,default,block1,jayden,ai,0.38,9292,acknowledge,26,acknowledge,C,NA,default,35,Yes,NA,Female,English,NA,22
+1090,default,block1,josh,ai,0.33,12193,pretend,27,pretend,C,NA,default,35,Yes,NA,Female,English,NA,23
+1090,default,block1,jackson,ai,0.22,9364,see,28,see,C,NA,default,35,Yes,NA,Female,English,NA,24
+1090,default,block1,jon,ai,0.27,9795,say,29,say,C,NA,default,35,Yes,NA,Female,English,NA,25
+1090,default,block1,owen,ai,0.22,10438,inform,30,inform,C,NA,default,35,Yes,NA,Female,English,NA,26
+1090,default,block2,kids,projective,0.99,12735,MC,32,MC,MC,NA,default,35,Yes,NA,Female,English,NA,27
+1090,default,block2,mia,projective,0.64,25944,discover,33,discover,C,NA,default,35,Yes,NA,Female,English,NA,28
+1090,default,block2,danny,projective,0.83,18598,be_annoyed,34,be_annoyed,C,NA,default,35,Yes,NA,Female,English,NA,29
+1090,default,block2,emma,projective,0.03,11095,demonstrate,35,demonstrate,C,NA,default,35,Yes,NA,Female,English,NA,30
+1090,default,block2,muffins,projective,0.98,6246,MC,36,MC,MC,NA,default,35,Yes,NA,Female,English,NA,31
+1090,default,block2,jackson,projective,0.98,7960,see,37,see,C,NA,default,35,Yes,NA,Female,English,NA,32
+1090,default,block2,jayden,projective,0.73,12090,acknowledge,38,acknowledge,C,NA,default,35,Yes,NA,Female,English,NA,33
+1090,default,block2,julian,projective,0.48,13873,establish,39,establish,C,NA,default,35,Yes,NA,Female,English,NA,34
+1090,default,block2,tony,projective,0.01,9270,be_right,40,be_right,C,NA,default,35,Yes,NA,Female,English,NA,35
+1090,default,block2,ballet,projective,0.99,5851,MC,41,MC,MC,NA,default,35,Yes,NA,Female,English,NA,36
+1090,default,block2,josie,projective,0.49,7980,reveal,42,reveal,C,NA,default,35,Yes,NA,Female,English,NA,37
+1090,default,block2,josh,projective,0.49,10998,pretend,43,pretend,C,NA,default,35,Yes,NA,Female,English,NA,38
+1090,default,block2,grace,projective,0.5,12283,think,44,think,C,NA,default,35,Yes,NA,Female,English,NA,39
+1090,default,block2,isabella,projective,0.78,9173,know,45,know,C,NA,default,35,Yes,NA,Female,English,NA,40
+1090,default,block2,mary,projective,0.98,6003,hear,46,hear,C,NA,default,35,Yes,NA,Female,English,NA,41
+1090,default,block2,hat,projective,0.97,4911,MC,47,MC,MC,NA,default,35,Yes,NA,Female,English,NA,42
+1090,default,block2,jon,projective,0.51,8496,say,48,say,C,NA,default,35,Yes,NA,Female,English,NA,43
+1090,default,block2,emily,projective,0.99,8339,admit,49,admit,C,NA,default,35,Yes,NA,Female,English,NA,44
+1090,default,block2,garage,projective,0.98,5070,MC,50,MC,MC,NA,default,35,Yes,NA,Female,English,NA,45
+1090,default,block2,pizza,projective,0.98,4823,MC,51,MC,MC,NA,default,35,Yes,NA,Female,English,NA,46
+1090,default,block2,olivia,projective,0.68,10068,announce,52,announce,C,NA,default,35,Yes,NA,Female,English,NA,47
+1090,default,block2,zoe,projective,0.69,8731,confess,53,confess,C,NA,default,35,Yes,NA,Female,English,NA,48
+1090,default,block2,frank,projective,0.76,8900,confirm,54,confirm,C,NA,default,35,Yes,NA,Female,English,NA,49
+1090,default,block2,charley,projective,0.56,6459,suggest,55,suggest,C,NA,default,35,Yes,NA,Female,English,NA,50
+1090,default,block2,sophia,projective,0.73,6999,prove,56,prove,C,NA,default,35,Yes,NA,Female,English,NA,51
+1090,default,block2,owen,projective,0.5,7683,inform,57,inform,C,NA,default,35,Yes,NA,Female,English,NA,52
+1091,default,block1,hat,projective,0.98,8405,MC,5,MC,MC,NA,default,25,Yes,NA,Other,English,NA,1
+1091,default,block1,olivia,projective,0.7,23028,think,6,think,C,NA,default,25,Yes,NA,Other,English,NA,2
+1091,default,block1,sophia,projective,0.98,7525,demonstrate,7,demonstrate,C,NA,default,25,Yes,NA,Other,English,NA,3
+1091,default,block1,josh,projective,0.97,8920,acknowledge,8,acknowledge,C,NA,default,25,Yes,NA,Other,English,NA,4
+1091,default,block1,owen,projective,0.98,8104,be_annoyed,9,be_annoyed,C,NA,default,25,Yes,NA,Other,English,NA,5
+1091,default,block1,jon,projective,0.96,8341,announce,10,announce,C,NA,default,25,Yes,NA,Other,English,NA,6
+1091,default,block1,isabella,projective,0.5,8341,suggest,11,suggest,C,NA,default,25,Yes,NA,Other,English,NA,7
+1091,default,block1,zoe,projective,0.97,5820,discover,12,discover,C,NA,default,25,Yes,NA,Other,English,NA,8
+1091,default,block1,mary,projective,0.99,8313,reveal,13,reveal,C,NA,default,25,Yes,NA,Other,English,NA,9
+1091,default,block1,ballet,projective,0.97,8176,MC,14,MC,MC,NA,default,25,Yes,NA,Other,English,NA,10
+1091,default,block1,muffins,projective,0.96,4716,MC,15,MC,MC,NA,default,25,Yes,NA,Other,English,NA,11
+1091,default,block1,grace,projective,0.5,7091,be_right,16,be_right,C,NA,default,25,Yes,NA,Other,English,NA,12
+1091,default,block1,frank,projective,0.51,6618,prove,17,prove,C,NA,default,25,Yes,NA,Other,English,NA,13
+1091,default,block1,pizza,projective,0.99,3888,MC,18,MC,MC,NA,default,25,Yes,NA,Other,English,NA,14
+1091,default,block1,tony,projective,0.72,6933,hear,19,hear,C,NA,default,25,Yes,NA,Other,English,NA,15
+1091,default,block1,kids,projective,0.99,4206,MC,20,MC,MC,NA,default,25,Yes,NA,Other,English,NA,16
+1091,default,block1,emily,projective,0.71,6140,say,21,say,C,NA,default,25,Yes,NA,Other,English,NA,17
+1091,default,block1,jayden,projective,0.79,6053,confirm,22,confirm,C,NA,default,25,Yes,NA,Other,English,NA,18
+1091,default,block1,jackson,projective,0.77,5052,confess,23,confess,C,NA,default,25,Yes,NA,Other,English,NA,19
+1091,default,block1,emma,projective,0.52,9583,inform,24,inform,C,NA,default,25,Yes,NA,Other,English,NA,20
+1091,default,block1,charley,projective,0.72,5124,admit,25,admit,C,NA,default,25,Yes,NA,Other,English,NA,21
+1091,default,block1,josie,projective,0.96,7589,know,26,know,C,NA,default,25,Yes,NA,Other,English,NA,22
+1091,default,block1,danny,projective,0.21,5897,pretend,27,pretend,C,NA,default,25,Yes,NA,Other,English,NA,23
+1091,default,block1,julian,projective,0.98,5845,see,28,see,C,NA,default,25,Yes,NA,Other,English,NA,24
+1091,default,block1,garage,projective,0.99,9881,MC,29,MC,MC,NA,default,25,Yes,NA,Other,English,NA,25
+1091,default,block1,mia,projective,0.76,4341,establish,30,establish,C,NA,default,25,Yes,NA,Other,English,NA,26
+1091,default,block2,olivia,ai,0.79,8910,think,32,think,C,NA,default,25,Yes,NA,Other,English,NA,27
+1091,default,block2,garage,ai,0.31,6318,MC,33,MC,MC,NA,default,25,Yes,NA,Other,English,NA,28
+1091,default,block2,charley,ai,0.73,14560,admit,34,admit,C,NA,default,25,Yes,NA,Other,English,NA,29
+1091,default,block2,isabella,ai,0.77,7489,suggest,35,suggest,C,NA,default,25,Yes,NA,Other,English,NA,30
+1091,default,block2,muffins,ai,0.72,6471,MC,36,MC,MC,NA,default,25,Yes,NA,Other,English,NA,31
+1091,default,block2,jon,ai,0.71,11560,announce,37,announce,C,NA,default,25,Yes,NA,Other,English,NA,32
+1091,default,block2,josie,ai,0.82,6911,know,38,know,C,NA,default,25,Yes,NA,Other,English,NA,33
+1091,default,block2,grace,ai,0.03,8858,be_right,39,be_right,C,NA,default,25,Yes,NA,Other,English,NA,34
+1091,default,block2,mia,ai,0.23,11085,establish,40,establish,C,NA,default,25,Yes,NA,Other,English,NA,35
+1091,default,block2,zoe,ai,0.71,34238,discover,41,discover,C,NA,default,25,Yes,NA,Other,English,NA,36
+1091,default,block2,pizza,ai,0.71,8449,MC,42,MC,MC,NA,default,25,Yes,NA,Other,English,NA,37
+1091,default,block2,kids,ai,0.6,9158,MC,43,MC,MC,NA,default,25,Yes,NA,Other,English,NA,38
+1091,default,block2,mary,ai,0.61,17059,reveal,44,reveal,C,NA,default,25,Yes,NA,Other,English,NA,39
+1091,default,block2,emily,ai,0.29,9791,say,45,say,C,NA,default,25,Yes,NA,Other,English,NA,40
+1091,default,block2,frank,ai,0.03,5680,prove,46,prove,C,NA,default,25,Yes,NA,Other,English,NA,41
+1091,default,block2,hat,ai,0.25,4346,MC,47,MC,MC,NA,default,25,Yes,NA,Other,English,NA,42
+1091,default,block2,jackson,ai,0.4,8219,confess,48,confess,C,NA,default,25,Yes,NA,Other,English,NA,43
+1091,default,block2,danny,ai,0.57,7599,pretend,49,pretend,C,NA,default,25,Yes,NA,Other,English,NA,44
+1091,default,block2,josh,ai,0.63,26625,acknowledge,50,acknowledge,C,NA,default,25,Yes,NA,Other,English,NA,45
+1091,default,block2,ballet,ai,0.27,6085,MC,51,MC,MC,NA,default,25,Yes,NA,Other,English,NA,46
+1091,default,block2,jayden,ai,0.17,6684,confirm,52,confirm,C,NA,default,25,Yes,NA,Other,English,NA,47
+1091,default,block2,owen,ai,0.77,8171,be_annoyed,53,be_annoyed,C,NA,default,25,Yes,NA,Other,English,NA,48
+1091,default,block2,tony,ai,0.31,9963,hear,54,hear,C,NA,default,25,Yes,NA,Other,English,NA,49
+1091,default,block2,julian,ai,0.52,11308,see,55,see,C,NA,default,25,Yes,NA,Other,English,NA,50
+1091,default,block2,emma,ai,0.26,9527,inform,56,inform,C,NA,default,25,Yes,NA,Other,English,NA,51
+1091,default,block2,sophia,ai,0.22,3810,demonstrate,57,demonstrate,C,NA,default,25,Yes,NA,Other,English,NA,52
+1092,default,block1,jon,ai,0.07,24141,hear,5,hear,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,1
+1092,default,block1,emma,ai,0.08,14400,confirm,6,confirm,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,2
+1092,default,block1,charley,ai,0.05,12690,confess,7,confess,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,3
+1092,default,block1,owen,ai,0.0600000000000001,8066,know,8,know,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,4
+1092,default,block1,grace,ai,0.08,11194,acknowledge,9,acknowledge,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,5
+1092,default,block1,jayden,ai,0.07,10497,think,10,think,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,6
+1092,default,block1,tony,ai,0.08,11081,see,11,see,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,7
+1092,default,block1,mary,ai,0.1,8044,be_right,12,be_right,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,8
+1092,default,block1,mia,ai,0.07,9337,prove,13,prove,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,9
+1092,default,block1,ballet,ai,0.02,9068,MC,14,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,10
+1092,default,block1,emily,ai,0.96,9889,be_annoyed,15,be_annoyed,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,11
+1092,default,block1,zoe,ai,0,6435,inform,16,inform,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,12
+1092,default,block1,garage,ai,0.03,5074,MC,17,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,13
+1092,default,block1,pizza,ai,0.03,5546,MC,18,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,14
+1092,default,block1,danny,ai,0.99,5040,demonstrate,19,demonstrate,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,15
+1092,default,block1,olivia,ai,0.95,5096,suggest,20,suggest,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,16
+1092,default,block1,josie,ai,0.97,6244,say,21,say,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,17
+1092,default,block1,frank,ai,0.03,5895,announce,22,announce,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,18
+1092,default,block1,muffins,ai,0.02,7178,MC,23,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,19
+1092,default,block1,julian,ai,0.03,6176,establish,24,establish,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,20
+1092,default,block1,kids,ai,0,5794,MC,25,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,21
+1092,default,block1,jackson,ai,0.99,4196,admit,26,admit,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,22
+1092,default,block1,hat,ai,0.02,4747,MC,27,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,23
+1092,default,block1,sophia,ai,0.99,3633,discover,28,discover,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,24
+1092,default,block1,isabella,ai,0.97,7189,reveal,29,reveal,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,25
+1092,default,block1,josh,ai,0.02,5355,pretend,30,pretend,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,26
+1092,default,block2,emily,projective,0.96,15580,be_annoyed,32,be_annoyed,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,27
+1092,default,block2,danny,projective,0.22,7493,demonstrate,33,demonstrate,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,28
+1092,default,block2,mary,projective,0.09,4624,be_right,34,be_right,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,29
+1092,default,block2,josh,projective,0.16,7312,pretend,35,pretend,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,30
+1092,default,block2,zoe,projective,0.92,9956,inform,36,inform,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,31
+1092,default,block2,grace,projective,0.9,4714,acknowledge,37,acknowledge,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,32
+1092,default,block2,julian,projective,0.14,4331,establish,38,establish,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,33
+1092,default,block2,frank,projective,0.84,4242,announce,39,announce,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,34
+1092,default,block2,ballet,projective,0.97,4443,MC,40,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,35
+1092,default,block2,jackson,projective,0.9,5727,admit,41,admit,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,36
+1092,default,block2,pizza,projective,0.97,3948,MC,42,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,37
+1092,default,block2,kids,projective,0.97,5298,MC,43,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,38
+1092,default,block2,garage,projective,0.97,6660,MC,44,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,39
+1092,default,block2,hat,projective,0.98,3904,MC,45,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,40
+1092,default,block2,olivia,projective,0.16,7808,suggest,46,suggest,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,41
+1092,default,block2,jayden,projective,0.88,6007,think,47,think,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,42
+1092,default,block2,josie,projective,0.72,8247,say,48,say,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,43
+1092,default,block2,owen,projective,0.97,3610,know,49,know,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,44
+1092,default,block2,emma,projective,0.93,4342,confirm,50,confirm,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,45
+1092,default,block2,muffins,projective,0.97,3713,MC,51,MC,MC,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,46
+1092,default,block2,mia,projective,0.21,7706,prove,52,prove,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,47
+1092,default,block2,tony,projective,0.94,3825,see,53,see,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,48
+1092,default,block2,sophia,projective,0.96,3240,discover,54,discover,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,49
+1092,default,block2,isabella,projective,0.99,4084,reveal,55,reveal,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,50
+1092,default,block2,jon,projective,0.95,3622,hear,56,hear,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,51
+1092,default,block2,charley,projective,0.92,6457,confess,57,confess,C,NA,default,44,Yes,The early statements were very hard to assess!  This was fun.,Female,English,NA,52

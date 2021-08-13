@@ -117,6 +117,11 @@ ai.means = d.MC.AI %>%
   ungroup() %>%
   mutate(YMin = Mean-CI.Low, YMax = Mean+CI.High)
 
+ai.means2 = d.MC.AI %>%
+  group_by(content) %>%
+  summarize(Mean = mean(response))
+ai.means2
+
 ggplot(ai.means, aes(x=workerid,y=Mean)) +
   geom_point() +
   geom_errorbar(aes(ymin=YMin, ymax=YMax))+

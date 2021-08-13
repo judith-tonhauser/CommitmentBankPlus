@@ -1,5 +1,5 @@
-# 9_projaiQ
-# question: projection and at-issueness (assent with adversative continuation)
+# 10_projaiN
+# negation: projection and at-issueness (assent with adversative continuation)
 # preprocessing
 
 # set working directory to directory of script
@@ -15,13 +15,20 @@ library(tidyverse)
 
 # read in the raw data
 d = read_csv("../data/experiment-trials.csv")
+View(d)
 
 # read in the subject information
 ds = read_csv("../data/experiment-subject_information.csv")
+View(ds)
+#drop comments because they create trouble (somebody included \n)
+ds <- ds %>%
+  select(-comments)
+summary(ds)
 
 # merge subject information into data
 d = d %>%
   left_join(ds, by=c("workerid"))
+View(d)
 
 # how many participants?
 length(unique(d$workerid)) #10
@@ -29,10 +36,12 @@ length(unique(d$workerid)) #10
 # look at Turkers' comments
 unique(ds$comments)
 
+
+
 # participant info
-table(d$age) #18-48
+table(d$age) #18-37
 length(which(is.na(d$age))) # 0 missing values
-median(d$age,na.rm=TRUE) #27
+median(d$age,na.rm=TRUE) #22.5
 
 d %>% 
   select(gender, workerid) %>% 
@@ -86,7 +95,7 @@ d.MC.Proj <- d.MC %>%
 nrow(d.MC.Proj) #60 (10 Turkers x 6 controls)
 
 # group projection mean (all Turkers, all clauses)
-round(mean(d.MC.Proj$response),2) #.09 (because speaker is not committed to content of questions)
+round(mean(d.MC.Proj$response),2) #.79 (because speaker is not committed to content of questions)
 
 # calculate each Turkers mean response to the projection of main clauses
 p.means = d.MC.Proj %>%
@@ -106,15 +115,9 @@ d.MC.AI <- d.MC %>%
   filter(question_type == "ai") %>%
   droplevels()
 nrow(d.MC.AI) #60
-View(d.MC.AI)
-
-ai.means2 = d.MC.AI %>%
-  group_by(content) %>%
-  summarize(Mean = mean(response))
-ai.means2
 
 # group not-at-issueness mean (all Turkers, all clauses)
-round(mean(d.MC.AI$response),2) #.27 (because main clause content is at-issue, coded as 0)
+round(mean(d.MC.AI$response),2) #.51 (because main clause content is at-issue, coded as 0)
 
 # calculate each Turkers mean response to the projection of main clauses
 ai.means = d.MC.AI %>%
@@ -132,8 +135,8 @@ ggplot(ai.means, aes(x=workerid,y=Mean)) +
 # look at Turkers whose response mean on projection and ainess of main clauses is more than 2
 # standard deviations away from the overall mean
 
-# get the Turkers who are more than 2 standard deviations above the mean on projection 
-p <- p.means[p.means$Mean > (mean(p.means$Mean) + 2*sd(p.means$Mean)),]
+# get the Turkers who are more than 2 standard deviations below the mean on projection 
+p <- p.means[p.means$Mean < (mean(p.means$Mean) - 2*sd(p.means$Mean)),]
 p
 
 # get the Turkers who are more than 2 standard deviations above the mean on ai 
@@ -145,13 +148,13 @@ ai
 outliers <- d.MC %>%
   filter(workerid %in% p$workerid | workerid %in% ai$workerid)
 outliers = droplevels(outliers)
-nrow(outliers) #0 (0 unique outlier Turkers x 12 = 6 main clauses x 2 questions)
+nrow(outliers) #24 (2 unique outlier Turkers x 12 = 6 main clauses x 2 questions)
 
 # exclude all outliers identified above
 d <- d %>%
   filter(!(workerid %in% p$workerid | workerid %in% ai$workerid)) %>%
   droplevels()
-length(unique(d$workerid)) # 10 remaining Turkers (0 Turkers excluded)
+length(unique(d$workerid)) # 8 remaining Turkers (2 Turkers excluded)
 
 # exclude turkers who always clicked on roughly the same point on the scale 
 # ie turkers whose variance in overall response distribution is more 
@@ -176,19 +179,25 @@ ggplot(lvw,aes(x=Participant,y=response)) +
 
 # exclude the Turkers identified above
 d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
-length(unique(d$workerid)) #10 Turkers remain
+length(unique(d$workerid)) #7 Turkers remain
 
 # age and gender of remaining participants
-table(d$age) #18-48
+table(d$age) #18-37
 length(which(is.na(d$age))) # 0 missing values
-median(d$age,na.rm=TRUE) #27
+median(d$age,na.rm=TRUE) #24.5
 
 d %>% 
   select(gender, workerid) %>% 
   unique() %>% 
   group_by(gender) %>% 
   summarize(count=n())
-# 9 female, 1 male
+# 7 female, 1 male
+
+# drop language column since it is causing trouble when reading
+d <- d %>%
+  select(-language)
 
 write.csv(d, file="../data/data_preprocessed.csv",row.names=F,quote=F)
+View(d)
+
 

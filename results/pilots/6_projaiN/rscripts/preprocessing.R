@@ -1,5 +1,5 @@
-# 9_projaiQ
-# question: projection and at-issueness (assent with adversative continuation)
+# 6_projaiN
+# negation: projection and at-issueness (assent with positive continuation)
 # preprocessing
 
 # set working directory to directory of script
@@ -30,16 +30,16 @@ length(unique(d$workerid)) #10
 unique(ds$comments)
 
 # participant info
-table(d$age) #18-48
+table(d$age) #19-36
 length(which(is.na(d$age))) # 0 missing values
-median(d$age,na.rm=TRUE) #27
+median(d$age,na.rm=TRUE) #22
 
 d %>% 
   select(gender, workerid) %>% 
   unique() %>% 
   group_by(gender) %>% 
   summarize(count=n())
-# 9 female, 1 male
+# 8 female, 2 male
 
 
 # change the response for ai condition so that what was 0/not-at-issue is now 1/not-at-issue
@@ -65,7 +65,7 @@ d <- d %>%
 length(unique(d$workerid)) # (data from 0 Turker excluded, 9 remaining Turkers)
 
 # exclude non-American English speakers
-length(unique(d$workerid))# 9
+length(unique(d$workerid))# 10
 length(which(is.na(d$american))) #0 (everybody responded)
 table(d$american) 
 
@@ -86,7 +86,7 @@ d.MC.Proj <- d.MC %>%
 nrow(d.MC.Proj) #60 (10 Turkers x 6 controls)
 
 # group projection mean (all Turkers, all clauses)
-round(mean(d.MC.Proj$response),2) #.09 (because speaker is not committed to content of questions)
+round(mean(d.MC.Proj$response),2) #.91 (main clause content projects)
 
 # calculate each Turkers mean response to the projection of main clauses
 p.means = d.MC.Proj %>%
@@ -106,15 +106,9 @@ d.MC.AI <- d.MC %>%
   filter(question_type == "ai") %>%
   droplevels()
 nrow(d.MC.AI) #60
-View(d.MC.AI)
-
-ai.means2 = d.MC.AI %>%
-  group_by(content) %>%
-  summarize(Mean = mean(response))
-ai.means2
 
 # group not-at-issueness mean (all Turkers, all clauses)
-round(mean(d.MC.AI$response),2) #.27 (because main clause content is at-issue, coded as 0)
+round(mean(d.MC.AI$response),2) #.38 (because main clause content is at-issue, coded as 0)
 
 # calculate each Turkers mean response to the projection of main clauses
 ai.means = d.MC.AI %>%
@@ -132,8 +126,8 @@ ggplot(ai.means, aes(x=workerid,y=Mean)) +
 # look at Turkers whose response mean on projection and ainess of main clauses is more than 2
 # standard deviations away from the overall mean
 
-# get the Turkers who are more than 2 standard deviations above the mean on projection 
-p <- p.means[p.means$Mean > (mean(p.means$Mean) + 2*sd(p.means$Mean)),]
+# get the Turkers who are more than 2 standard deviations below the mean on projection 
+p <- p.means[p.means$Mean < (mean(p.means$Mean) - 2*sd(p.means$Mean)),]
 p
 
 # get the Turkers who are more than 2 standard deviations above the mean on ai 
@@ -145,13 +139,13 @@ ai
 outliers <- d.MC %>%
   filter(workerid %in% p$workerid | workerid %in% ai$workerid)
 outliers = droplevels(outliers)
-nrow(outliers) #0 (0 unique outlier Turkers x 12 = 6 main clauses x 2 questions)
+nrow(outliers) #12 (1 unique outlier Turkers x 12 = 6 main clauses x 2 questions)
 
 # exclude all outliers identified above
 d <- d %>%
   filter(!(workerid %in% p$workerid | workerid %in% ai$workerid)) %>%
   droplevels()
-length(unique(d$workerid)) # 10 remaining Turkers (0 Turkers excluded)
+length(unique(d$workerid)) # 9 remaining Turkers (1 Turkers excluded)
 
 # exclude turkers who always clicked on roughly the same point on the scale 
 # ie turkers whose variance in overall response distribution is more 
@@ -176,19 +170,19 @@ ggplot(lvw,aes(x=Participant,y=response)) +
 
 # exclude the Turkers identified above
 d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
-length(unique(d$workerid)) #10 Turkers remain
+length(unique(d$workerid)) #9 Turkers remain
 
 # age and gender of remaining participants
-table(d$age) #18-48
+table(d$age) #19-36
 length(which(is.na(d$age))) # 0 missing values
-median(d$age,na.rm=TRUE) #27
+median(d$age,na.rm=TRUE) #24
 
 d %>% 
   select(gender, workerid) %>% 
   unique() %>% 
   group_by(gender) %>% 
   summarize(count=n())
-# 9 female, 1 male
+# 7 female, 2 male
 
 write.csv(d, file="../data/data_preprocessed.csv",row.names=F,quote=F)
 
