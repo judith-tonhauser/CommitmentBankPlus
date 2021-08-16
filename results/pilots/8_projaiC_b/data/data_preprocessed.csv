@@ -1,0 +1,417 @@
+workerid,proliferate.condition.x,block,content,question_type,response,rt,short_trigger,slide_number_in_experiment,trigger,trigger_class,error.x,proliferate.condition.y,age,american,comments,gender,language,error.y,trial
+1145,default,block1,josie,projective,0.16,170644,pretend,5,pretend,C,NA,default,23,Yes,NA,Female,English,NA,1
+1145,default,block1,mary,projective,0.78,19871,establish,6,establish,C,NA,default,23,Yes,NA,Female,English,NA,2
+1145,default,block1,danny,projective,0.63,6589,admit,7,admit,C,NA,default,23,Yes,NA,Female,English,NA,3
+1145,default,block1,pizza,projective,1,9685,MC,8,MC,MC,NA,default,23,Yes,NA,Female,English,NA,4
+1145,default,block1,julian,projective,0.9,9280,confess,9,confess,C,NA,default,23,Yes,NA,Female,English,NA,5
+1145,default,block1,charley,projective,0.41,11818,announce,10,announce,C,NA,default,23,Yes,NA,Female,English,NA,6
+1145,default,block1,muffins,projective,0.85,15067,MC,11,MC,MC,NA,default,23,Yes,NA,Female,English,NA,7
+1145,default,block1,isabella,projective,0.85,9732,acknowledge,12,acknowledge,C,NA,default,23,Yes,NA,Female,English,NA,8
+1145,default,block1,garage,projective,0.98,7268,MC,13,MC,MC,NA,default,23,Yes,NA,Female,English,NA,9
+1145,default,block1,sophia,projective,0.04,12037,be_right,14,be_right,C,NA,default,23,Yes,NA,Female,English,NA,10
+1145,default,block1,owen,projective,0.53,46477,say,15,say,C,NA,default,23,Yes,NA,Female,English,NA,11
+1145,default,block1,zoe,projective,0.35,16685,suggest,16,suggest,C,NA,default,23,Yes,NA,Female,English,NA,12
+1145,default,block1,jackson,projective,0.76,25409,hear,17,hear,C,NA,default,23,Yes,NA,Female,English,NA,13
+1145,default,block1,frank,projective,0.18,8426,prove,18,prove,C,NA,default,23,Yes,NA,Female,English,NA,14
+1145,default,block1,emma,projective,0.22,18384,inform,19,inform,C,NA,default,23,Yes,NA,Female,English,NA,15
+1145,default,block1,tony,projective,0.18,40094,think,20,think,C,NA,default,23,Yes,NA,Female,English,NA,16
+1145,default,block1,olivia,projective,0.89,15566,reveal,21,reveal,C,NA,default,23,Yes,NA,Female,English,NA,17
+1145,default,block1,kids,projective,1,7325,MC,22,MC,MC,NA,default,23,Yes,NA,Female,English,NA,18
+1145,default,block1,mia,projective,0.33,8069,demonstrate,23,demonstrate,C,NA,default,23,Yes,NA,Female,English,NA,19
+1145,default,block1,jon,projective,0.82,18551,discover,24,discover,C,NA,default,23,Yes,NA,Female,English,NA,20
+1145,default,block1,hat,projective,0.98,5077,MC,25,MC,MC,NA,default,23,Yes,NA,Female,English,NA,21
+1145,default,block1,emily,projective,0.95,6457,know,26,know,C,NA,default,23,Yes,NA,Female,English,NA,22
+1145,default,block1,grace,projective,0.8,4688,confirm,27,confirm,C,NA,default,23,Yes,NA,Female,English,NA,23
+1145,default,block1,jayden,projective,0.86,4537,see,28,see,C,NA,default,23,Yes,NA,Female,English,NA,24
+1145,default,block1,josh,projective,0.8,6746,be_annoyed,29,be_annoyed,C,NA,default,23,Yes,NA,Female,English,NA,25
+1145,default,block1,ballet,projective,0.9,6304,MC,30,MC,MC,NA,default,23,Yes,NA,Female,English,NA,26
+1145,default,block2,charley,ai,0.78,11336,announce,32,announce,C,NA,default,23,Yes,NA,Female,English,NA,27
+1145,default,block2,kids,ai,0.27,6177,MC,33,MC,MC,NA,default,23,Yes,NA,Female,English,NA,28
+1145,default,block2,grace,ai,0.77,6506,confirm,34,confirm,C,NA,default,23,Yes,NA,Female,English,NA,29
+1145,default,block2,jon,ai,0.79,6214,discover,35,discover,C,NA,default,23,Yes,NA,Female,English,NA,30
+1145,default,block2,tony,ai,0.76,9013,think,36,think,C,NA,default,23,Yes,NA,Female,English,NA,31
+1145,default,block2,muffins,ai,0.12,5511,MC,37,MC,MC,NA,default,23,Yes,NA,Female,English,NA,32
+1145,default,block2,hat,ai,0.21,5980,MC,38,MC,MC,NA,default,23,Yes,NA,Female,English,NA,33
+1145,default,block2,owen,ai,0.97,16128,say,39,say,C,NA,default,23,Yes,NA,Female,English,NA,34
+1145,default,block2,emma,ai,0.79,13587,inform,40,inform,C,NA,default,23,Yes,NA,Female,English,NA,35
+1145,default,block2,jackson,ai,0.9,3253,hear,41,hear,C,NA,default,23,Yes,NA,Female,English,NA,36
+1145,default,block2,pizza,ai,0.18,4177,MC,42,MC,MC,NA,default,23,Yes,NA,Female,English,NA,37
+1145,default,block2,josie,ai,0.93,2575,pretend,43,pretend,C,NA,default,23,Yes,NA,Female,English,NA,38
+1145,default,block2,sophia,ai,0.77,5152,be_right,44,be_right,C,NA,default,23,Yes,NA,Female,English,NA,39
+1145,default,block2,isabella,ai,0.79,16340,acknowledge,45,acknowledge,C,NA,default,23,Yes,NA,Female,English,NA,40
+1145,default,block2,garage,ai,0.11,3034,MC,46,MC,MC,NA,default,23,Yes,NA,Female,English,NA,41
+1145,default,block2,olivia,ai,0.91,6505,reveal,47,reveal,C,NA,default,23,Yes,NA,Female,English,NA,42
+1145,default,block2,danny,ai,0.81,6504,admit,48,admit,C,NA,default,23,Yes,NA,Female,English,NA,43
+1145,default,block2,josh,ai,0.81,4394,be_annoyed,49,be_annoyed,C,NA,default,23,Yes,NA,Female,English,NA,44
+1145,default,block2,zoe,ai,0.74,7059,suggest,50,suggest,C,NA,default,23,Yes,NA,Female,English,NA,45
+1145,default,block2,mary,ai,0.88,4678,establish,51,establish,C,NA,default,23,Yes,NA,Female,English,NA,46
+1145,default,block2,julian,ai,0.84,3345,confess,52,confess,C,NA,default,23,Yes,NA,Female,English,NA,47
+1145,default,block2,jayden,ai,0.86,2649,see,53,see,C,NA,default,23,Yes,NA,Female,English,NA,48
+1145,default,block2,ballet,ai,0.08,3051,MC,54,MC,MC,NA,default,23,Yes,NA,Female,English,NA,49
+1145,default,block2,mia,ai,0.83,4098,demonstrate,55,demonstrate,C,NA,default,23,Yes,NA,Female,English,NA,50
+1145,default,block2,frank,ai,0.83,4007,prove,56,prove,C,NA,default,23,Yes,NA,Female,English,NA,51
+1145,default,block2,emily,ai,0.85,4337,know,57,know,C,NA,default,23,Yes,NA,Female,English,NA,52
+1141,default,block1,owen,ai,0.19,15755,confess,5,confess,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,1
+1141,default,block1,olivia,ai,0.82,16133,admit,6,admit,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,2
+1141,default,block1,josie,ai,0.8,12471,reveal,7,reveal,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,3
+1141,default,block1,frank,ai,0.85,10790,demonstrate,8,demonstrate,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,4
+1141,default,block1,mia,ai,0.73,8095,pretend,9,pretend,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,5
+1141,default,block1,danny,ai,0.3,8360,prove,10,prove,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,6
+1141,default,block1,ballet,ai,0.11,8047,MC,11,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,7
+1141,default,block1,emily,ai,0.88,6498,hear,12,hear,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,8
+1141,default,block1,charley,ai,0.5,7298,see,13,see,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,9
+1141,default,block1,sophia,ai,0.65,4901,discover,14,discover,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,10
+1141,default,block1,muffins,ai,0.42,12271,MC,15,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,11
+1141,default,block1,jackson,ai,0.65,6168,establish,16,establish,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,12
+1141,default,block1,josh,ai,0.64,6013,be_annoyed,17,be_annoyed,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,13
+1141,default,block1,julian,ai,0.3,5731,inform,18,inform,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,14
+1141,default,block1,tony,ai,0.47,8544,confirm,19,confirm,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,15
+1141,default,block1,garage,ai,0.03,7915,MC,20,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,16
+1141,default,block1,grace,ai,0.77,6768,say,21,say,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,17
+1141,default,block1,pizza,ai,0.02,4527,MC,22,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,18
+1141,default,block1,isabella,ai,0.86,5627,suggest,23,suggest,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,19
+1141,default,block1,mary,ai,0.29,5831,announce,24,announce,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,20
+1141,default,block1,jayden,ai,0.71,4114,think,25,think,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,21
+1141,default,block1,jon,ai,0.69,3315,acknowledge,26,acknowledge,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,22
+1141,default,block1,kids,ai,0,5321,MC,27,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,23
+1141,default,block1,hat,ai,0.01,3751,MC,28,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,24
+1141,default,block1,zoe,ai,0.89,3544,know,29,know,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,25
+1141,default,block1,emma,ai,0.65,5265,be_right,30,be_right,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,26
+1141,default,block2,isabella,projective,0.06,15136,suggest,32,suggest,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,27
+1141,default,block2,danny,projective,0.95,7357,prove,33,prove,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,28
+1141,default,block2,mary,projective,0.97,3723,announce,34,announce,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,29
+1141,default,block2,jayden,projective,0.06,7155,think,35,think,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,30
+1141,default,block2,pizza,projective,0.95,5974,MC,36,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,31
+1141,default,block2,tony,projective,0.97,6079,confirm,37,confirm,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,32
+1141,default,block2,emily,projective,0.88,8839,hear,38,hear,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,33
+1141,default,block2,jon,projective,0.95,6089,acknowledge,39,acknowledge,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,34
+1141,default,block2,julian,projective,0.99,4591,inform,40,inform,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,35
+1141,default,block2,garage,projective,1,5814,MC,41,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,36
+1141,default,block2,jackson,projective,0.98,5616,establish,42,establish,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,37
+1141,default,block2,mia,projective,0.04,16626,pretend,43,pretend,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,38
+1141,default,block2,josie,projective,0.98,6146,reveal,44,reveal,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,39
+1141,default,block2,sophia,projective,0.98,3247,discover,45,discover,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,40
+1141,default,block2,charley,projective,0.08,5746,see,46,see,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,41
+1141,default,block2,emma,projective,0.07,5093,be_right,47,be_right,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,42
+1141,default,block2,grace,projective,0.04,4895,say,48,say,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,43
+1141,default,block2,owen,projective,0.95,7374,confess,49,confess,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,44
+1141,default,block2,frank,projective,0.12,4706,demonstrate,50,demonstrate,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,45
+1141,default,block2,olivia,projective,0.95,6458,admit,51,admit,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,46
+1141,default,block2,muffins,projective,0.97,5299,MC,52,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,47
+1141,default,block2,hat,projective,0.96,8191,MC,53,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,48
+1141,default,block2,josh,projective,0.95,7562,be_annoyed,54,be_annoyed,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,49
+1141,default,block2,kids,projective,0.98,4207,MC,55,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,50
+1141,default,block2,ballet,projective,0.99,2756,MC,56,MC,MC,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,51
+1141,default,block2,zoe,projective,0.99,4182,know,57,know,C,NA,default,41,Yes,This was an interesting experiment. Made me think about how I perceive things.,Male,English,NA,52
+1142,default,block1,mia,ai,0.21,22392,acknowledge,5,acknowledge,C,NA,default,21,Yes,NA,Female,english,NA,1
+1142,default,block1,grace,ai,0.94,13879,confirm,6,confirm,C,NA,default,21,Yes,NA,Female,english,NA,2
+1142,default,block1,frank,ai,0.96,9857,be_right,7,be_right,C,NA,default,21,Yes,NA,Female,english,NA,3
+1142,default,block1,julian,ai,0.98,7216,pretend,8,pretend,C,NA,default,21,Yes,NA,Female,english,NA,4
+1142,default,block1,hat,ai,0,7298,MC,9,MC,MC,NA,default,21,Yes,NA,Female,english,NA,5
+1142,default,block1,tony,ai,0,6994,see,10,see,C,NA,default,21,Yes,NA,Female,english,NA,6
+1142,default,block1,olivia,ai,1,6738,establish,11,establish,C,NA,default,21,Yes,NA,Female,english,NA,7
+1142,default,block1,owen,ai,0.93,28091,suggest,12,suggest,C,NA,default,21,Yes,NA,Female,english,NA,8
+1142,default,block1,danny,ai,0.02,10262,be_annoyed,13,be_annoyed,C,NA,default,21,Yes,NA,Female,english,NA,9
+1142,default,block1,jon,ai,0.03,5571,know,14,know,C,NA,default,21,Yes,NA,Female,english,NA,10
+1142,default,block1,sophia,ai,0.87,14104,say,15,say,C,NA,default,21,Yes,NA,Female,english,NA,11
+1142,default,block1,zoe,ai,0.95,12842,think,16,think,C,NA,default,21,Yes,NA,Female,english,NA,12
+1142,default,block1,emily,ai,0.99,14103,demonstrate,17,demonstrate,C,NA,default,21,Yes,NA,Female,english,NA,13
+1142,default,block1,kids,ai,0.04,13835,MC,18,MC,MC,NA,default,21,Yes,NA,Female,english,NA,14
+1142,default,block1,mary,ai,0.03,5622,discover,19,discover,C,NA,default,21,Yes,NA,Female,english,NA,15
+1142,default,block1,ballet,ai,0.01,5712,MC,20,MC,MC,NA,default,21,Yes,NA,Female,english,NA,16
+1142,default,block1,pizza,ai,0.03,4818,MC,21,MC,MC,NA,default,21,Yes,NA,Female,english,NA,17
+1142,default,block1,garage,ai,0.01,5844,MC,22,MC,MC,NA,default,21,Yes,NA,Female,english,NA,18
+1142,default,block1,jayden,ai,0.15,16162,announce,23,announce,C,NA,default,21,Yes,NA,Female,english,NA,19
+1142,default,block1,josie,ai,0.1,7811,confess,24,confess,C,NA,default,21,Yes,NA,Female,english,NA,20
+1142,default,block1,muffins,ai,0.03,31845,MC,25,MC,MC,NA,default,21,Yes,NA,Female,english,NA,21
+1142,default,block1,josh,ai,0.93,7865,prove,26,prove,C,NA,default,21,Yes,NA,Female,english,NA,22
+1142,default,block1,jackson,ai,0.02,5750,hear,27,hear,C,NA,default,21,Yes,NA,Female,english,NA,23
+1142,default,block1,charley,ai,0.23,7275,inform,28,inform,C,NA,default,21,Yes,NA,Female,english,NA,24
+1142,default,block1,isabella,ai,0.03,7422,reveal,29,reveal,C,NA,default,21,Yes,NA,Female,english,NA,25
+1142,default,block1,emma,ai,0.04,5135,admit,30,admit,C,NA,default,21,Yes,NA,Female,english,NA,26
+1142,default,block2,mary,projective,0.81,19299,discover,32,discover,C,NA,default,21,Yes,NA,Female,english,NA,27
+1142,default,block2,garage,projective,0.98,9201,MC,33,MC,MC,NA,default,21,Yes,NA,Female,english,NA,28
+1142,default,block2,tony,projective,0.96,7571,see,34,see,C,NA,default,21,Yes,NA,Female,english,NA,29
+1142,default,block2,emily,projective,0.01,7879,demonstrate,35,demonstrate,C,NA,default,21,Yes,NA,Female,english,NA,30
+1142,default,block2,danny,projective,0.91,37270,be_annoyed,36,be_annoyed,C,NA,default,21,Yes,NA,Female,english,NA,31
+1142,default,block2,isabella,projective,0.84,5463,reveal,37,reveal,C,NA,default,21,Yes,NA,Female,english,NA,32
+1142,default,block2,josh,projective,0.14,6653,prove,38,prove,C,NA,default,21,Yes,NA,Female,english,NA,33
+1142,default,block2,hat,projective,0.97,4741,MC,39,MC,MC,NA,default,21,Yes,NA,Female,english,NA,34
+1142,default,block2,jayden,projective,0.47,8484,announce,40,announce,C,NA,default,21,Yes,NA,Female,english,NA,35
+1142,default,block2,olivia,projective,0.19,5927,establish,41,establish,C,NA,default,21,Yes,NA,Female,english,NA,36
+1142,default,block2,jon,projective,0.95,8157,know,42,know,C,NA,default,21,Yes,NA,Female,english,NA,37
+1142,default,block2,sophia,projective,0.79,5963,say,43,say,C,NA,default,21,Yes,NA,Female,english,NA,38
+1142,default,block2,charley,projective,0.71,24499,inform,44,inform,C,NA,default,21,Yes,NA,Female,english,NA,39
+1142,default,block2,mia,projective,0.71,6984,acknowledge,45,acknowledge,C,NA,default,21,Yes,NA,Female,english,NA,40
+1142,default,block2,grace,projective,0.27,15795,confirm,46,confirm,C,NA,default,21,Yes,NA,Female,english,NA,41
+1142,default,block2,kids,projective,0.93,28560,MC,47,MC,MC,NA,default,21,Yes,NA,Female,english,NA,42
+1142,default,block2,owen,projective,0.17,6302,suggest,48,suggest,C,NA,default,21,Yes,NA,Female,english,NA,43
+1142,default,block2,zoe,projective,0.03,15052,think,49,think,C,NA,default,21,Yes,NA,Female,english,NA,44
+1142,default,block2,frank,projective,0.02,4844,be_right,50,be_right,C,NA,default,21,Yes,NA,Female,english,NA,45
+1142,default,block2,muffins,projective,0.96,4376,MC,51,MC,MC,NA,default,21,Yes,NA,Female,english,NA,46
+1142,default,block2,josie,projective,0.96,8119,confess,52,confess,C,NA,default,21,Yes,NA,Female,english,NA,47
+1142,default,block2,emma,projective,0.28,24190,admit,53,admit,C,NA,default,21,Yes,NA,Female,english,NA,48
+1142,default,block2,julian,projective,0.01,11283,pretend,54,pretend,C,NA,default,21,Yes,NA,Female,english,NA,49
+1142,default,block2,jackson,projective,0.35,4659,hear,55,hear,C,NA,default,21,Yes,NA,Female,english,NA,50
+1142,default,block2,pizza,projective,0.99,6363,MC,56,MC,MC,NA,default,21,Yes,NA,Female,english,NA,51
+1142,default,block2,ballet,projective,0.99,3820,MC,57,MC,MC,NA,default,21,Yes,NA,Female,english,NA,52
+1148,default,block1,ballet,projective,0.98,10845,MC,5,MC,MC,NA,default,19,Yes,NA,Female,English,NA,1
+1148,default,block1,danny,projective,0.58,13323,prove,6,prove,C,NA,default,19,Yes,NA,Female,English,NA,2
+1148,default,block1,jon,projective,0.91,9045,acknowledge,7,acknowledge,C,NA,default,19,Yes,NA,Female,English,NA,3
+1148,default,block1,tony,projective,0.99,7233,be_annoyed,8,be_annoyed,C,NA,default,19,Yes,NA,Female,English,NA,4
+1148,default,block1,pizza,projective,1,8959,MC,9,MC,MC,NA,default,19,Yes,NA,Female,English,NA,5
+1148,default,block1,sophia,projective,0.88,7908,confirm,10,confirm,C,NA,default,19,Yes,NA,Female,English,NA,6
+1148,default,block1,hat,projective,0.99,7069,MC,11,MC,MC,NA,default,19,Yes,NA,Female,English,NA,7
+1148,default,block1,emma,projective,0.1,9447,pretend,12,pretend,C,NA,default,19,Yes,NA,Female,English,NA,8
+1148,default,block1,julian,projective,0.33,10762,be_right,13,be_right,C,NA,default,19,Yes,NA,Female,English,NA,9
+1148,default,block1,mia,projective,0.7,11553,suggest,14,suggest,C,NA,default,19,Yes,NA,Female,English,NA,10
+1148,default,block1,josie,projective,0.71,7225,announce,15,announce,C,NA,default,19,Yes,NA,Female,English,NA,11
+1148,default,block1,charley,projective,0.89,7176,admit,16,admit,C,NA,default,19,Yes,NA,Female,English,NA,12
+1148,default,block1,muffins,projective,0.98,4836,MC,17,MC,MC,NA,default,19,Yes,NA,Female,English,NA,13
+1148,default,block1,kids,projective,1,5889,MC,18,MC,MC,NA,default,19,Yes,NA,Female,English,NA,14
+1148,default,block1,emily,projective,0.93,6902,hear,19,hear,C,NA,default,19,Yes,NA,Female,English,NA,15
+1148,default,block1,grace,projective,0.96,4494,say,20,say,C,NA,default,19,Yes,NA,Female,English,NA,16
+1148,default,block1,owen,projective,0.77,7292,confess,21,confess,C,NA,default,19,Yes,NA,Female,English,NA,17
+1148,default,block1,jackson,projective,0.97,7087,inform,22,inform,C,NA,default,19,Yes,NA,Female,English,NA,18
+1148,default,block1,josh,projective,0.88,7058,think,23,think,C,NA,default,19,Yes,NA,Female,English,NA,19
+1148,default,block1,olivia,projective,0.9,8521,establish,24,establish,C,NA,default,19,Yes,NA,Female,English,NA,20
+1148,default,block1,frank,projective,0.89,4894,demonstrate,25,demonstrate,C,NA,default,19,Yes,NA,Female,English,NA,21
+1148,default,block1,zoe,projective,0.87,3295,reveal,26,reveal,C,NA,default,19,Yes,NA,Female,English,NA,22
+1148,default,block1,mary,projective,0.93,3676,see,27,see,C,NA,default,19,Yes,NA,Female,English,NA,23
+1148,default,block1,garage,projective,0.98,5858,MC,28,MC,MC,NA,default,19,Yes,NA,Female,English,NA,24
+1148,default,block1,isabella,projective,0.95,5947,discover,29,discover,C,NA,default,19,Yes,NA,Female,English,NA,25
+1148,default,block1,jayden,projective,0.98,4017,know,30,know,C,NA,default,19,Yes,NA,Female,English,NA,26
+1148,default,block2,hat,ai,0.13,8423,MC,32,MC,MC,NA,default,19,Yes,NA,Female,English,NA,27
+1148,default,block2,julian,ai,0.67,10843,be_right,33,be_right,C,NA,default,19,Yes,NA,Female,English,NA,28
+1148,default,block2,mia,ai,0.69,11216,suggest,34,suggest,C,NA,default,19,Yes,NA,Female,English,NA,29
+1148,default,block2,isabella,ai,0.76,2711,discover,35,discover,C,NA,default,19,Yes,NA,Female,English,NA,30
+1148,default,block2,tony,ai,0.74,6036,be_annoyed,36,be_annoyed,C,NA,default,19,Yes,NA,Female,English,NA,31
+1148,default,block2,josie,ai,0.89,3228,announce,37,announce,C,NA,default,19,Yes,NA,Female,English,NA,32
+1148,default,block2,emma,ai,0.85,2282,pretend,38,pretend,C,NA,default,19,Yes,NA,Female,English,NA,33
+1148,default,block2,zoe,ai,0.88,2740,reveal,39,reveal,C,NA,default,19,Yes,NA,Female,English,NA,34
+1148,default,block2,mary,ai,0.81,3063,see,40,see,C,NA,default,19,Yes,NA,Female,English,NA,35
+1148,default,block2,josh,ai,0.86,3422,think,41,think,C,NA,default,19,Yes,NA,Female,English,NA,36
+1148,default,block2,frank,ai,0.84,2624,demonstrate,42,demonstrate,C,NA,default,19,Yes,NA,Female,English,NA,37
+1148,default,block2,sophia,ai,0.93,4730,confirm,43,confirm,C,NA,default,19,Yes,NA,Female,English,NA,38
+1148,default,block2,jayden,ai,0.9,2448,know,44,know,C,NA,default,19,Yes,NA,Female,English,NA,39
+1148,default,block2,ballet,ai,0.01,4106,MC,45,MC,MC,NA,default,19,Yes,NA,Female,English,NA,40
+1148,default,block2,muffins,ai,0.01,7752,MC,46,MC,MC,NA,default,19,Yes,NA,Female,English,NA,41
+1148,default,block2,pizza,ai,0.03,3042,MC,47,MC,MC,NA,default,19,Yes,NA,Female,English,NA,42
+1148,default,block2,jon,ai,0.75,3764,acknowledge,48,acknowledge,C,NA,default,19,Yes,NA,Female,English,NA,43
+1148,default,block2,kids,ai,0.03,4437,MC,49,MC,MC,NA,default,19,Yes,NA,Female,English,NA,44
+1148,default,block2,danny,ai,0.86,3208,prove,50,prove,C,NA,default,19,Yes,NA,Female,English,NA,45
+1148,default,block2,charley,ai,0.82,3794,admit,51,admit,C,NA,default,19,Yes,NA,Female,English,NA,46
+1148,default,block2,garage,ai,0.05,3852,MC,52,MC,MC,NA,default,19,Yes,NA,Female,English,NA,47
+1148,default,block2,jackson,ai,0.76,4935,inform,53,inform,C,NA,default,19,Yes,NA,Female,English,NA,48
+1148,default,block2,emily,ai,0.85,4349,hear,54,hear,C,NA,default,19,Yes,NA,Female,English,NA,49
+1148,default,block2,owen,ai,0.84,2848,confess,55,confess,C,NA,default,19,Yes,NA,Female,English,NA,50
+1148,default,block2,grace,ai,0.91,2388,say,56,say,C,NA,default,19,Yes,NA,Female,English,NA,51
+1148,default,block2,olivia,ai,0.83,2048,establish,57,establish,C,NA,default,19,Yes,NA,Female,English,NA,52
+1149,default,block1,zoe,ai,0.34,21935,inform,5,inform,C,NA,default,20,Yes,NA,Female,English,NA,1
+1149,default,block1,josh,ai,0.95,11960,announce,6,announce,C,NA,default,20,Yes,NA,Female,English,NA,2
+1149,default,block1,jon,ai,0.88,8579,know,7,know,C,NA,default,20,Yes,NA,Female,English,NA,3
+1149,default,block1,kids,ai,0.3,10781,MC,8,MC,MC,NA,default,20,Yes,NA,Female,English,NA,4
+1149,default,block1,frank,ai,0.79,8298,reveal,9,reveal,C,NA,default,20,Yes,NA,Female,English,NA,5
+1149,default,block1,jackson,ai,0.12,7282,establish,10,establish,C,NA,default,20,Yes,NA,Female,English,NA,6
+1149,default,block1,olivia,ai,0.97,11342,suggest,11,suggest,C,NA,default,20,Yes,NA,Female,English,NA,7
+1149,default,block1,mia,ai,0.96,5963,acknowledge,12,acknowledge,C,NA,default,20,Yes,NA,Female,English,NA,8
+1149,default,block1,grace,ai,0.47,11929,hear,13,hear,C,NA,default,20,Yes,NA,Female,English,NA,9
+1149,default,block1,charley,ai,0.35,9957,confess,14,confess,C,NA,default,20,Yes,NA,Female,English,NA,10
+1149,default,block1,danny,ai,0.9,8626,be_annoyed,15,be_annoyed,C,NA,default,20,Yes,NA,Female,English,NA,11
+1149,default,block1,josie,ai,0.74,6972,demonstrate,16,demonstrate,C,NA,default,20,Yes,NA,Female,English,NA,12
+1149,default,block1,muffins,ai,0.02,8877,MC,17,MC,MC,NA,default,20,Yes,NA,Female,English,NA,13
+1149,default,block1,mary,ai,0.66,12561,pretend,18,pretend,C,NA,default,20,Yes,NA,Female,English,NA,14
+1149,default,block1,emma,ai,0.04,6536,confirm,19,confirm,C,NA,default,20,Yes,NA,Female,English,NA,15
+1149,default,block1,owen,ai,0.7,5405,see,20,see,C,NA,default,20,Yes,NA,Female,English,NA,16
+1149,default,block1,ballet,ai,0.31,5763,MC,21,MC,MC,NA,default,20,Yes,NA,Female,English,NA,17
+1149,default,block1,garage,ai,0.19,5610,MC,22,MC,MC,NA,default,20,Yes,NA,Female,English,NA,18
+1149,default,block1,pizza,ai,0.44,11853,MC,23,MC,MC,NA,default,20,Yes,NA,Female,English,NA,19
+1149,default,block1,sophia,ai,0.28,4617,discover,24,discover,C,NA,default,20,Yes,NA,Female,English,NA,20
+1149,default,block1,isabella,ai,0.12,4751,prove,25,prove,C,NA,default,20,Yes,NA,Female,English,NA,21
+1149,default,block1,tony,ai,0.99,9325,be_right,26,be_right,C,NA,default,20,Yes,NA,Female,English,NA,22
+1149,default,block1,hat,ai,0.4,6936,MC,27,MC,MC,NA,default,20,Yes,NA,Female,English,NA,23
+1149,default,block1,jayden,ai,0.93,5053,think,28,think,C,NA,default,20,Yes,NA,Female,English,NA,24
+1149,default,block1,julian,ai,0.35,3918,say,29,say,C,NA,default,20,Yes,NA,Female,English,NA,25
+1149,default,block1,emily,ai,0.21,5227,admit,30,admit,C,NA,default,20,Yes,NA,Female,English,NA,26
+1149,default,block2,jayden,projective,0.13,13764,think,32,think,C,NA,default,20,Yes,NA,Female,English,NA,27
+1149,default,block2,owen,projective,0.92,11427,see,33,see,C,NA,default,20,Yes,NA,Female,English,NA,28
+1149,default,block2,emily,projective,0.94,5916,admit,34,admit,C,NA,default,20,Yes,NA,Female,English,NA,29
+1149,default,block2,charley,projective,0.82,8008,confess,35,confess,C,NA,default,20,Yes,NA,Female,English,NA,30
+1149,default,block2,garage,projective,0.99,8030,MC,36,MC,MC,NA,default,20,Yes,NA,Female,English,NA,31
+1149,default,block2,isabella,projective,0.07,5740,prove,37,prove,C,NA,default,20,Yes,NA,Female,English,NA,32
+1149,default,block2,jon,projective,0.33,10537,know,38,know,C,NA,default,20,Yes,NA,Female,English,NA,33
+1149,default,block2,olivia,projective,0.26,7121,suggest,39,suggest,C,NA,default,20,Yes,NA,Female,English,NA,34
+1149,default,block2,josh,projective,0.78,10046,announce,40,announce,C,NA,default,20,Yes,NA,Female,English,NA,35
+1149,default,block2,jackson,projective,0.66,4979,establish,41,establish,C,NA,default,20,Yes,NA,Female,English,NA,36
+1149,default,block2,danny,projective,1,10666,be_annoyed,42,be_annoyed,C,NA,default,20,Yes,NA,Female,English,NA,37
+1149,default,block2,hat,projective,0.99,6595,MC,43,MC,MC,NA,default,20,Yes,NA,Female,English,NA,38
+1149,default,block2,zoe,projective,0.71,8451,inform,44,inform,C,NA,default,20,Yes,NA,Female,English,NA,39
+1149,default,block2,pizza,projective,0.99,4753,MC,45,MC,MC,NA,default,20,Yes,NA,Female,English,NA,40
+1149,default,block2,emma,projective,0.08,7732,confirm,46,confirm,C,NA,default,20,Yes,NA,Female,English,NA,41
+1149,default,block2,josie,projective,0.46,6665,demonstrate,47,demonstrate,C,NA,default,20,Yes,NA,Female,English,NA,42
+1149,default,block2,mary,projective,0,7982,pretend,48,pretend,C,NA,default,20,Yes,NA,Female,English,NA,43
+1149,default,block2,grace,projective,0.99,6423,hear,49,hear,C,NA,default,20,Yes,NA,Female,English,NA,44
+1149,default,block2,muffins,projective,0.99,4349,MC,50,MC,MC,NA,default,20,Yes,NA,Female,English,NA,45
+1149,default,block2,julian,projective,0.68,6557,say,51,say,C,NA,default,20,Yes,NA,Female,English,NA,46
+1149,default,block2,frank,projective,1,6622,reveal,52,reveal,C,NA,default,20,Yes,NA,Female,English,NA,47
+1149,default,block2,tony,projective,0.17,9537,be_right,53,be_right,C,NA,default,20,Yes,NA,Female,English,NA,48
+1149,default,block2,kids,projective,1,4826,MC,54,MC,MC,NA,default,20,Yes,NA,Female,English,NA,49
+1149,default,block2,mia,projective,1,5250,acknowledge,55,acknowledge,C,NA,default,20,Yes,NA,Female,English,NA,50
+1149,default,block2,ballet,projective,0.99,4195,MC,56,MC,MC,NA,default,20,Yes,NA,Female,English,NA,51
+1149,default,block2,sophia,projective,0.99,6396,discover,57,discover,C,NA,default,20,Yes,NA,Female,English,NA,52
+1147,default,block1,isabella,ai,0.37,25670,confirm,5,confirm,C,NA,default,20,Yes,NA,Female,English,NA,1
+1147,default,block1,zoe,ai,0.38,8068,confess,6,confess,C,NA,default,20,Yes,NA,Female,English,NA,2
+1147,default,block1,jon,ai,0.0600000000000001,5372,see,7,see,C,NA,default,20,Yes,NA,Female,English,NA,3
+1147,default,block1,muffins,ai,0.0600000000000001,10776,MC,8,MC,MC,NA,default,20,Yes,NA,Female,English,NA,4
+1147,default,block1,emma,ai,0.33,9542,know,9,know,C,NA,default,20,Yes,NA,Female,English,NA,5
+1147,default,block1,josie,ai,0.25,6444,establish,10,establish,C,NA,default,20,Yes,NA,Female,English,NA,6
+1147,default,block1,tony,ai,0.58,5001,be_annoyed,11,be_annoyed,C,NA,default,20,Yes,NA,Female,English,NA,7
+1147,default,block1,owen,ai,0.65,6008,prove,12,prove,C,NA,default,20,Yes,NA,Female,English,NA,8
+1147,default,block1,danny,ai,0.15,205347,suggest,13,suggest,C,NA,default,20,Yes,NA,Female,English,NA,9
+1147,default,block1,mia,ai,0.77,7266,pretend,14,pretend,C,NA,default,20,Yes,NA,Female,English,NA,10
+1147,default,block1,sophia,ai,0.39,5325,announce,15,announce,C,NA,default,20,Yes,NA,Female,English,NA,11
+1147,default,block1,jayden,ai,0.35,4386,demonstrate,16,demonstrate,C,NA,default,20,Yes,NA,Female,English,NA,12
+1147,default,block1,hat,ai,0.22,6686,MC,17,MC,MC,NA,default,20,Yes,NA,Female,English,NA,13
+1147,default,block1,charley,ai,0.33,3825,say,18,say,C,NA,default,20,Yes,NA,Female,English,NA,14
+1147,default,block1,jackson,ai,0.37,21258,admit,19,admit,C,NA,default,20,Yes,NA,Female,English,NA,15
+1147,default,block1,mary,ai,0.1,4084,acknowledge,20,acknowledge,C,NA,default,20,Yes,NA,Female,English,NA,16
+1147,default,block1,josh,ai,0.28,6404,reveal,21,reveal,C,NA,default,20,Yes,NA,Female,English,NA,17
+1147,default,block1,pizza,ai,0.1,3930,MC,22,MC,MC,NA,default,20,Yes,NA,Female,English,NA,18
+1147,default,block1,frank,ai,0.28,2794,inform,23,inform,C,NA,default,20,Yes,NA,Female,English,NA,19
+1147,default,block1,olivia,ai,0.18,5334,discover,24,discover,C,NA,default,20,Yes,NA,Female,English,NA,20
+1147,default,block1,garage,ai,0.15,10070,MC,25,MC,MC,NA,default,20,Yes,NA,Female,English,NA,21
+1147,default,block1,emily,ai,0,6477,be_right,26,be_right,C,NA,default,20,Yes,NA,Female,English,NA,22
+1147,default,block1,ballet,ai,0.17,2979,MC,27,MC,MC,NA,default,20,Yes,NA,Female,English,NA,23
+1147,default,block1,julian,ai,0.08,3540,hear,28,hear,C,NA,default,20,Yes,NA,Female,English,NA,24
+1147,default,block1,kids,ai,0.25,24689,MC,29,MC,MC,NA,default,20,Yes,NA,Female,English,NA,25
+1147,default,block1,grace,ai,0.6,6180,think,30,think,C,NA,default,20,Yes,NA,Female,English,NA,26
+1147,default,block2,hat,projective,0.78,7158,MC,32,MC,MC,NA,default,20,Yes,NA,Female,English,NA,27
+1147,default,block2,sophia,projective,0.4,5698,announce,33,announce,C,NA,default,20,Yes,NA,Female,English,NA,28
+1147,default,block2,mary,projective,0.67,6878,acknowledge,34,acknowledge,C,NA,default,20,Yes,NA,Female,English,NA,29
+1147,default,block2,danny,projective,0.23,3548,suggest,35,suggest,C,NA,default,20,Yes,NA,Female,English,NA,30
+1147,default,block2,mia,projective,0.07,4782,pretend,36,pretend,C,NA,default,20,Yes,NA,Female,English,NA,31
+1147,default,block2,kids,projective,0.78,5264,MC,37,MC,MC,NA,default,20,Yes,NA,Female,English,NA,32
+1147,default,block2,garage,projective,0.69,3850,MC,38,MC,MC,NA,default,20,Yes,NA,Female,English,NA,33
+1147,default,block2,frank,projective,0.17,4208,inform,39,inform,C,NA,default,20,Yes,NA,Female,English,NA,34
+1147,default,block2,ballet,projective,0.77,7118,MC,40,MC,MC,NA,default,20,Yes,NA,Female,English,NA,35
+1147,default,block2,julian,projective,0.63,7026,hear,41,hear,C,NA,default,20,Yes,NA,Female,English,NA,36
+1147,default,block2,olivia,projective,0.71,3818,discover,42,discover,C,NA,default,20,Yes,NA,Female,English,NA,37
+1147,default,block2,emma,projective,0.72,4340,know,43,know,C,NA,default,20,Yes,NA,Female,English,NA,38
+1147,default,block2,isabella,projective,0.21,16743,confirm,44,confirm,C,NA,default,20,Yes,NA,Female,English,NA,39
+1147,default,block2,muffins,projective,0.8,7343,MC,45,MC,MC,NA,default,20,Yes,NA,Female,English,NA,40
+1147,default,block2,josh,projective,0.3,3733,reveal,46,reveal,C,NA,default,20,Yes,NA,Female,English,NA,41
+1147,default,block2,josie,projective,0.31,3362,establish,47,establish,C,NA,default,20,Yes,NA,Female,English,NA,42
+1147,default,block2,zoe,projective,0.48,8127,confess,48,confess,C,NA,default,20,Yes,NA,Female,English,NA,43
+1147,default,block2,tony,projective,0.33,6503,be_annoyed,49,be_annoyed,C,NA,default,20,Yes,NA,Female,English,NA,44
+1147,default,block2,owen,projective,0.18,521181,prove,50,prove,C,NA,default,20,Yes,NA,Female,English,NA,45
+1147,default,block2,jon,projective,0.66,6476,see,51,see,C,NA,default,20,Yes,NA,Female,English,NA,46
+1147,default,block2,jayden,projective,0.3,16102,demonstrate,52,demonstrate,C,NA,default,20,Yes,NA,Female,English,NA,47
+1147,default,block2,charley,projective,0.2,3198,say,53,say,C,NA,default,20,Yes,NA,Female,English,NA,48
+1147,default,block2,grace,projective,0.12,6048,think,54,think,C,NA,default,20,Yes,NA,Female,English,NA,49
+1147,default,block2,jackson,projective,0.48,64816,admit,55,admit,C,NA,default,20,Yes,NA,Female,English,NA,50
+1147,default,block2,pizza,projective,1,5170,MC,56,MC,MC,NA,default,20,Yes,NA,Female,English,NA,51
+1147,default,block2,emily,projective,0.09,5924,be_right,57,be_right,C,NA,default,20,Yes,NA,Female,English,NA,52
+1146,default,block1,grace,projective,0.09,19308,demonstrate,5,demonstrate,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,1
+1146,default,block1,julian,projective,0.06,14810,suggest,6,suggest,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,2
+1146,default,block1,josh,projective,0,15581,pretend,7,pretend,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,3
+1146,default,block1,hat,projective,0.99,7382,MC,8,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,4
+1146,default,block1,garage,projective,1,6957,MC,9,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,5
+1146,default,block1,josie,projective,0.98,12427,discover,10,discover,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,6
+1146,default,block1,olivia,projective,1,11872,confess,11,confess,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,7
+1146,default,block1,tony,projective,0.97,17132,confirm,12,confirm,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,8
+1146,default,block1,zoe,projective,0.98,7103,inform,13,inform,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,9
+1146,default,block1,isabella,projective,0.01,14868,think,14,think,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,10
+1146,default,block1,muffins,projective,0.99,5282,MC,15,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,11
+1146,default,block1,frank,projective,0.07,19857,say,16,say,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,12
+1146,default,block1,mia,projective,0.06,11882,be_right,17,be_right,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,13
+1146,default,block1,ballet,projective,0.99,5129,MC,18,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,14
+1146,default,block1,mary,projective,0.97,6571,acknowledge,19,acknowledge,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,15
+1146,default,block1,sophia,projective,0.62,22069,prove,20,prove,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,16
+1146,default,block1,danny,projective,0.9,11248,be_annoyed,21,be_annoyed,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,17
+1146,default,block1,kids,projective,1,5478,MC,22,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,18
+1146,default,block1,owen,projective,1,9277,hear,23,hear,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,19
+1146,default,block1,emily,projective,1,11183,reveal,24,reveal,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,20
+1146,default,block1,pizza,projective,1,14760,MC,25,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,21
+1146,default,block1,jackson,projective,0.89,8079,know,26,know,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,22
+1146,default,block1,jon,projective,0.4,18819,establish,27,establish,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,23
+1146,default,block1,emma,projective,0.3,7625,announce,28,announce,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,24
+1146,default,block1,jayden,projective,0.99,17185,admit,29,admit,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,25
+1146,default,block1,charley,projective,0.99,7149,see,30,see,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,26
+1146,default,block2,jackson,ai,0.63,13455,know,32,know,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,27
+1146,default,block2,josie,ai,0.35,18497,discover,33,discover,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,28
+1146,default,block2,jon,ai,0.61,12621,establish,34,establish,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,29
+1146,default,block2,emily,ai,0.38,17810,reveal,35,reveal,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,30
+1146,default,block2,kids,ai,0.48,8292,MC,36,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,31
+1146,default,block2,zoe,ai,0.45,6651,inform,37,inform,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,32
+1146,default,block2,josh,ai,0.9,13971,pretend,38,pretend,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,33
+1146,default,block2,isabella,ai,0.84,8629,think,39,think,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,34
+1146,default,block2,emma,ai,0.49,8830,announce,40,announce,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,35
+1146,default,block2,olivia,ai,0.45,7583,confess,41,confess,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,36
+1146,default,block2,charley,ai,0.44,6869,see,42,see,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,37
+1146,default,block2,ballet,ai,0.32,8570,MC,43,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,38
+1146,default,block2,sophia,ai,0.5,7111,prove,44,prove,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,39
+1146,default,block2,danny,ai,0.6,7748,be_annoyed,45,be_annoyed,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,40
+1146,default,block2,julian,ai,0.77,7060,suggest,46,suggest,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,41
+1146,default,block2,mia,ai,0.62,8866,be_right,47,be_right,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,42
+1146,default,block2,owen,ai,0.49,14123,hear,48,hear,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,43
+1146,default,block2,pizza,ai,0.44,11367,MC,49,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,44
+1146,default,block2,muffins,ai,0.48,4192,MC,50,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,45
+1146,default,block2,mary,ai,0.41,9120,acknowledge,51,acknowledge,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,46
+1146,default,block2,grace,ai,0.45,12736,demonstrate,52,demonstrate,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,47
+1146,default,block2,garage,ai,0.52,8265,MC,53,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,48
+1146,default,block2,hat,ai,0.4,6879,MC,54,MC,MC,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,49
+1146,default,block2,frank,ai,0.67,4900,say,55,say,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,50
+1146,default,block2,jayden,ai,0.53,12236,admit,56,admit,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,51
+1146,default,block2,tony,ai,0.51,3498,confirm,57,confirm,C,NA,default,21,Yes,It was difficult to rank how "good" the responses were because they all sounded very unnatural. I am a native english speaker and I have never heard people talk like that.,Male,English,NA,52
+1143,default,block1,julian,ai,0.8,29593,establish,5,establish,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,1
+1143,default,block1,mia,ai,0.67,12958,think,6,think,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,2
+1143,default,block1,isabella,ai,0.38,19038,confess,7,confess,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,3
+1143,default,block1,mary,ai,0.93,46968,pretend,8,pretend,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,4
+1143,default,block1,emily,ai,0.1,14836,discover,9,discover,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,5
+1143,default,block1,jackson,ai,0.09,12619,announce,10,announce,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,6
+1143,default,block1,zoe,ai,0.61,20556,inform,11,inform,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,7
+1143,default,block1,josie,ai,0.14,32780,suggest,12,suggest,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,8
+1143,default,block1,josh,ai,0.54,15683,be_annoyed,13,be_annoyed,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,9
+1143,default,block1,grace,ai,0.34,47438,say,14,say,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,10
+1143,default,block1,garage,ai,0.02,24992,MC,15,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,11
+1143,default,block1,charley,ai,0.13,13512,admit,16,admit,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,12
+1143,default,block1,olivia,ai,0.14,10112,acknowledge,17,acknowledge,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,13
+1143,default,block1,sophia,ai,0.04,13771,confirm,18,confirm,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,14
+1143,default,block1,jayden,ai,0.19,13868,reveal,19,reveal,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,15
+1143,default,block1,muffins,ai,0.1,15525,MC,20,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,16
+1143,default,block1,ballet,ai,0,6848,MC,21,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,17
+1143,default,block1,tony,ai,0.23,12762,demonstrate,22,demonstrate,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,18
+1143,default,block1,danny,ai,0.58,25590,know,23,know,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,19
+1143,default,block1,jon,ai,0.63,18400,prove,24,prove,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,20
+1143,default,block1,owen,ai,0.46,87918,see,25,see,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,21
+1143,default,block1,frank,ai,0.12,9531,hear,26,hear,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,22
+1143,default,block1,emma,ai,0.04,8758,be_right,27,be_right,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,23
+1143,default,block1,kids,ai,0.01,5991,MC,28,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,24
+1143,default,block1,hat,ai,0.0600000000000001,6737,MC,29,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,25
+1143,default,block1,pizza,ai,0.3,11655,MC,30,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,26
+1143,default,block2,grace,projective,0.66,23606,say,32,say,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,27
+1143,default,block2,zoe,projective,0.93,20247,inform,33,inform,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,28
+1143,default,block2,sophia,projective,0.37,16124,confirm,34,confirm,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,29
+1143,default,block2,jackson,projective,0.92,23977,announce,35,announce,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,30
+1143,default,block2,olivia,projective,0.98,17208,acknowledge,36,acknowledge,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,31
+1143,default,block2,josie,projective,0.81,26342,suggest,37,suggest,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,32
+1143,default,block2,pizza,projective,0.99,5951,MC,38,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,33
+1143,default,block2,kids,projective,0.99,4658,MC,39,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,34
+1143,default,block2,emma,projective,0.6,12936,be_right,40,be_right,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,35
+1143,default,block2,julian,projective,0.49,14091,establish,41,establish,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,36
+1143,default,block2,emily,projective,0.98,10265,discover,42,discover,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,37
+1143,default,block2,frank,projective,0.96,8107,hear,43,hear,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,38
+1143,default,block2,mary,projective,0.15,14870,pretend,44,pretend,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,39
+1143,default,block2,owen,projective,0.9,12964,see,45,see,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,40
+1143,default,block2,josh,projective,0.87,10414,be_annoyed,46,be_annoyed,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,41
+1143,default,block2,garage,projective,0.99,8048,MC,47,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,42
+1143,default,block2,jon,projective,0.31,20875,prove,48,prove,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,43
+1143,default,block2,muffins,projective,1,6348,MC,49,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,44
+1143,default,block2,mia,projective,0.24,10473,think,50,think,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,45
+1143,default,block2,ballet,projective,0.99,11275,MC,51,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,46
+1143,default,block2,jayden,projective,0.66,6182,reveal,52,reveal,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,47
+1143,default,block2,isabella,projective,0.62,8228,confess,53,confess,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,48
+1143,default,block2,hat,projective,0.98,4196,MC,54,MC,MC,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,49
+1143,default,block2,danny,projective,0.84,10870,know,55,know,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,50
+1143,default,block2,charley,projective,0.59,87112,admit,56,admit,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,51
+1143,default,block2,tony,projective,0.25,8190,demonstrate,57,demonstrate,C,NA,default,18,Yes,The structures of the sentences were strange, but that was probably the point.,Female,English,NA,52

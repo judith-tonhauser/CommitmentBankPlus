@@ -1,0 +1,417 @@
+workerid,proliferate.condition.x,block,content,question_type,response,rt,short_trigger,slide_number_in_experiment,trigger,trigger_class,error.x,proliferate.condition.y,age,american,comments,gender,error.y,trial
+1119,default,block1,kids,ai,0.17,27997,MC,5,MC,MC,NA,default,22,Yes,NONE,Female,NA,1
+1119,default,block1,hat,ai,0.11,10155,MC,6,MC,MC,NA,default,22,Yes,NONE,Female,NA,2
+1119,default,block1,jayden,ai,0.86,21428,see,7,see,C,NA,default,22,Yes,NONE,Female,NA,3
+1119,default,block1,frank,ai,0.23,30332,establish,8,establish,C,NA,default,22,Yes,NONE,Female,NA,4
+1119,default,block1,olivia,ai,0.15,10886,hear,9,hear,C,NA,default,22,Yes,NONE,Female,NA,5
+1119,default,block1,josh,ai,0.1,28266,know,10,know,C,NA,default,22,Yes,NONE,Female,NA,6
+1119,default,block1,isabella,ai,0.97,20625,suggest,11,suggest,C,NA,default,22,Yes,NONE,Female,NA,7
+1119,default,block1,tony,ai,0.96,21077,be_right,12,be_right,C,NA,default,22,Yes,NONE,Female,NA,8
+1119,default,block1,emily,ai,0.94,26048,prove,13,prove,C,NA,default,22,Yes,NONE,Female,NA,9
+1119,default,block1,owen,ai,0.09,12983,admit,14,admit,C,NA,default,22,Yes,NONE,Female,NA,10
+1119,default,block1,julian,ai,0.02,17828,reveal,15,reveal,C,NA,default,22,Yes,NONE,Female,NA,11
+1119,default,block1,mary,ai,0.95,17416,be_annoyed,16,be_annoyed,C,NA,default,22,Yes,NONE,Female,NA,12
+1119,default,block1,pizza,ai,0.16,20351,MC,17,MC,MC,NA,default,22,Yes,NONE,Female,NA,13
+1119,default,block1,garage,ai,0.09,10200,MC,18,MC,MC,NA,default,22,Yes,NONE,Female,NA,14
+1119,default,block1,sophia,ai,0.26,16399,announce,19,announce,C,NA,default,22,Yes,NONE,Female,NA,15
+1119,default,block1,mia,ai,0.24,15874,demonstrate,20,demonstrate,C,NA,default,22,Yes,NONE,Female,NA,16
+1119,default,block1,charley,ai,0.26,14371,think,21,think,C,NA,default,22,Yes,NONE,Female,NA,17
+1119,default,block1,emma,ai,0.11,14570,confirm,22,confirm,C,NA,default,22,Yes,NONE,Female,NA,18
+1119,default,block1,jon,ai,0.02,17541,say,23,say,C,NA,default,22,Yes,NONE,Female,NA,19
+1119,default,block1,grace,ai,0.09,8764,confess,24,confess,C,NA,default,22,Yes,NONE,Female,NA,20
+1119,default,block1,jackson,ai,0.83,17189,inform,25,inform,C,NA,default,22,Yes,NONE,Female,NA,21
+1119,default,block1,danny,ai,0.89,18267,pretend,26,pretend,C,NA,default,22,Yes,NONE,Female,NA,22
+1119,default,block1,ballet,ai,0.19,11019,MC,27,MC,MC,NA,default,22,Yes,NONE,Female,NA,23
+1119,default,block1,josie,ai,0.18,16141,acknowledge,28,acknowledge,C,NA,default,22,Yes,NONE,Female,NA,24
+1119,default,block1,muffins,ai,0.29,10717,MC,29,MC,MC,NA,default,22,Yes,NONE,Female,NA,25
+1119,default,block1,zoe,ai,0.19,12947,discover,30,discover,C,NA,default,22,Yes,NONE,Female,NA,26
+1119,default,block2,jayden,projective,0.02,19841,see,32,see,C,NA,default,22,Yes,NONE,Female,NA,27
+1119,default,block2,hat,projective,0.99,8947,MC,33,MC,MC,NA,default,22,Yes,NONE,Female,NA,28
+1119,default,block2,frank,projective,0.97,10028,establish,34,establish,C,NA,default,22,Yes,NONE,Female,NA,29
+1119,default,block2,tony,projective,0.17,33649,be_right,35,be_right,C,NA,default,22,Yes,NONE,Female,NA,30
+1119,default,block2,josie,projective,0.95,24897,acknowledge,36,acknowledge,C,NA,default,22,Yes,NONE,Female,NA,31
+1119,default,block2,jon,projective,0.96,16405,say,37,say,C,NA,default,22,Yes,NONE,Female,NA,32
+1119,default,block2,zoe,projective,0.02,20130,discover,38,discover,C,NA,default,22,Yes,NONE,Female,NA,33
+1119,default,block2,mia,projective,0.8,10137,demonstrate,39,demonstrate,C,NA,default,22,Yes,NONE,Female,NA,34
+1119,default,block2,pizza,projective,0.99,8424,MC,40,MC,MC,NA,default,22,Yes,NONE,Female,NA,35
+1119,default,block2,kids,projective,0.97,14982,MC,41,MC,MC,NA,default,22,Yes,NONE,Female,NA,36
+1119,default,block2,mary,projective,0.96,8494,be_annoyed,42,be_annoyed,C,NA,default,22,Yes,NONE,Female,NA,37
+1119,default,block2,danny,projective,0.04,17848,pretend,43,pretend,C,NA,default,22,Yes,NONE,Female,NA,38
+1119,default,block2,emily,projective,0.04,13695,prove,44,prove,C,NA,default,22,Yes,NONE,Female,NA,39
+1119,default,block2,julian,projective,0.03,8375,reveal,45,reveal,C,NA,default,22,Yes,NONE,Female,NA,40
+1119,default,block2,ballet,projective,0.97,7361,MC,46,MC,MC,NA,default,22,Yes,NONE,Female,NA,41
+1119,default,block2,olivia,projective,0.06,11281,hear,47,hear,C,NA,default,22,Yes,NONE,Female,NA,42
+1119,default,block2,owen,projective,0.04,21334,admit,48,admit,C,NA,default,22,Yes,NONE,Female,NA,43
+1119,default,block2,charley,projective,0.04,26987,think,49,think,C,NA,default,22,Yes,NONE,Female,NA,44
+1119,default,block2,grace,projective,0.04,9706,confess,50,confess,C,NA,default,22,Yes,NONE,Female,NA,45
+1119,default,block2,sophia,projective,0.48,13444,announce,51,announce,C,NA,default,22,Yes,NONE,Female,NA,46
+1119,default,block2,jackson,projective,0.97,15254,inform,52,inform,C,NA,default,22,Yes,NONE,Female,NA,47
+1119,default,block2,isabella,projective,0.03,14704,suggest,53,suggest,C,NA,default,22,Yes,NONE,Female,NA,48
+1119,default,block2,josh,projective,0.96,21153,know,54,know,C,NA,default,22,Yes,NONE,Female,NA,49
+1119,default,block2,muffins,projective,0.95,7048,MC,55,MC,MC,NA,default,22,Yes,NONE,Female,NA,50
+1119,default,block2,garage,projective,0.97,7552,MC,56,MC,MC,NA,default,22,Yes,NONE,Female,NA,51
+1119,default,block2,emma,projective,0.02,20411,confirm,57,confirm,C,NA,default,22,Yes,NONE,Female,NA,52
+1117,default,block1,frank,projective,0.07,13529,announce,5,announce,C,NA,default,22,Yes,NA,Female,NA,1
+1117,default,block1,tony,projective,0.25,10681,say,6,say,C,NA,default,22,Yes,NA,Female,NA,2
+1117,default,block1,isabella,projective,0.68,17464,prove,7,prove,C,NA,default,22,Yes,NA,Female,NA,3
+1117,default,block1,zoe,projective,0.74,4756,know,8,know,C,NA,default,22,Yes,NA,Female,NA,4
+1117,default,block1,hat,projective,0.95,6832,MC,9,MC,MC,NA,default,22,Yes,NA,Female,NA,5
+1117,default,block1,danny,projective,0.71,9534,be_right,10,be_right,C,NA,default,22,Yes,NA,Female,NA,6
+1117,default,block1,emily,projective,0.8,7117,confess,11,confess,C,NA,default,22,Yes,NA,Female,NA,7
+1117,default,block1,jackson,projective,0.32,6587,be_annoyed,12,be_annoyed,C,NA,default,22,Yes,NA,Female,NA,8
+1117,default,block1,kids,projective,0.97,7211,MC,13,MC,MC,NA,default,22,Yes,NA,Female,NA,9
+1117,default,block1,muffins,projective,0.99,5927,MC,14,MC,MC,NA,default,22,Yes,NA,Female,NA,10
+1117,default,block1,ballet,projective,0.98,4657,MC,15,MC,MC,NA,default,22,Yes,NA,Female,NA,11
+1117,default,block1,sophia,projective,0.58,8254,admit,16,admit,C,NA,default,22,Yes,NA,Female,NA,12
+1117,default,block1,olivia,projective,0.31,6354,think,17,think,C,NA,default,22,Yes,NA,Female,NA,13
+1117,default,block1,jayden,projective,0.36,5849,see,18,see,C,NA,default,22,Yes,NA,Female,NA,14
+1117,default,block1,mary,projective,0.34,4484,reveal,19,reveal,C,NA,default,22,Yes,NA,Female,NA,15
+1117,default,block1,jon,projective,0.34,4956,establish,20,establish,C,NA,default,22,Yes,NA,Female,NA,16
+1117,default,block1,charley,projective,0.23,5863,pretend,21,pretend,C,NA,default,22,Yes,NA,Female,NA,17
+1117,default,block1,grace,projective,0.65,7191,discover,22,discover,C,NA,default,22,Yes,NA,Female,NA,18
+1117,default,block1,josie,projective,0.89,8554,inform,23,inform,C,NA,default,22,Yes,NA,Female,NA,19
+1117,default,block1,josh,projective,0.79,8443,acknowledge,24,acknowledge,C,NA,default,22,Yes,NA,Female,NA,20
+1117,default,block1,pizza,projective,1,5920,MC,25,MC,MC,NA,default,22,Yes,NA,Female,NA,21
+1117,default,block1,julian,projective,0.52,5510,hear,26,hear,C,NA,default,22,Yes,NA,Female,NA,22
+1117,default,block1,emma,projective,0.32,6257,suggest,27,suggest,C,NA,default,22,Yes,NA,Female,NA,23
+1117,default,block1,garage,projective,1,10492,MC,28,MC,MC,NA,default,22,Yes,NA,Female,NA,24
+1117,default,block1,mia,projective,0.27,6903,demonstrate,29,demonstrate,C,NA,default,22,Yes,NA,Female,NA,25
+1117,default,block1,owen,projective,0.75,3412,confirm,30,confirm,C,NA,default,22,Yes,NA,Female,NA,26
+1117,default,block2,ballet,ai,0.43,17922,MC,32,MC,MC,NA,default,22,Yes,NA,Female,NA,27
+1117,default,block2,jon,ai,0.8,9590,establish,33,establish,C,NA,default,22,Yes,NA,Female,NA,28
+1117,default,block2,mia,ai,0.74,5844,demonstrate,34,demonstrate,C,NA,default,22,Yes,NA,Female,NA,29
+1117,default,block2,tony,ai,0.63,16161,say,35,say,C,NA,default,22,Yes,NA,Female,NA,30
+1117,default,block2,grace,ai,0.62,10168,discover,36,discover,C,NA,default,22,Yes,NA,Female,NA,31
+1117,default,block2,danny,ai,0.69,8327,be_right,37,be_right,C,NA,default,22,Yes,NA,Female,NA,32
+1117,default,block2,emily,ai,0.34,11178,confess,38,confess,C,NA,default,22,Yes,NA,Female,NA,33
+1117,default,block2,frank,ai,0.6,6738,announce,39,announce,C,NA,default,22,Yes,NA,Female,NA,34
+1117,default,block2,kids,ai,0.35,12919,MC,40,MC,MC,NA,default,22,Yes,NA,Female,NA,35
+1117,default,block2,owen,ai,0.34,7271,confirm,41,confirm,C,NA,default,22,Yes,NA,Female,NA,36
+1117,default,block2,emma,ai,0.38,7338,suggest,42,suggest,C,NA,default,22,Yes,NA,Female,NA,37
+1117,default,block2,zoe,ai,0.4,5437,know,43,know,C,NA,default,22,Yes,NA,Female,NA,38
+1117,default,block2,isabella,ai,0.45,9381,prove,44,prove,C,NA,default,22,Yes,NA,Female,NA,39
+1117,default,block2,garage,ai,0.48,9920,MC,45,MC,MC,NA,default,22,Yes,NA,Female,NA,40
+1117,default,block2,julian,ai,0.4,7732,hear,46,hear,C,NA,default,22,Yes,NA,Female,NA,41
+1117,default,block2,charley,ai,0.7,9738,pretend,47,pretend,C,NA,default,22,Yes,NA,Female,NA,42
+1117,default,block2,jackson,ai,0.4,10237,be_annoyed,48,be_annoyed,C,NA,default,22,Yes,NA,Female,NA,43
+1117,default,block2,sophia,ai,0.43,5813,admit,49,admit,C,NA,default,22,Yes,NA,Female,NA,44
+1117,default,block2,muffins,ai,0.37,7078,MC,50,MC,MC,NA,default,22,Yes,NA,Female,NA,45
+1117,default,block2,mary,ai,0.38,5916,reveal,51,reveal,C,NA,default,22,Yes,NA,Female,NA,46
+1117,default,block2,jayden,ai,0.34,3965,see,52,see,C,NA,default,22,Yes,NA,Female,NA,47
+1117,default,block2,josie,ai,0.39,4571,inform,53,inform,C,NA,default,22,Yes,NA,Female,NA,48
+1117,default,block2,pizza,ai,0.38,6164,MC,54,MC,MC,NA,default,22,Yes,NA,Female,NA,49
+1117,default,block2,olivia,ai,0.36,6231,think,55,think,C,NA,default,22,Yes,NA,Female,NA,50
+1117,default,block2,hat,ai,0.38,5474,MC,56,MC,MC,NA,default,22,Yes,NA,Female,NA,51
+1117,default,block2,josh,ai,0.64,5735,acknowledge,57,acknowledge,C,NA,default,22,Yes,NA,Female,NA,52
+1113,default,block1,zoe,projective,0.41,13170,prove,5,prove,C,NA,default,38,Yes,NA,Female,NA,1
+1113,default,block1,jackson,projective,0.22,10071,establish,6,establish,C,NA,default,38,Yes,NA,Female,NA,2
+1113,default,block1,garage,projective,1,5627,MC,7,MC,MC,NA,default,38,Yes,NA,Female,NA,3
+1113,default,block1,danny,projective,0.18,7650,confess,8,confess,C,NA,default,38,Yes,NA,Female,NA,4
+1113,default,block1,charley,projective,0.19,4451,think,9,think,C,NA,default,38,Yes,NA,Female,NA,5
+1113,default,block1,muffins,projective,1,3840,MC,10,MC,MC,NA,default,38,Yes,NA,Female,NA,6
+1113,default,block1,ballet,projective,0.99,5945,MC,11,MC,MC,NA,default,38,Yes,NA,Female,NA,7
+1113,default,block1,hat,projective,0.98,4543,MC,12,MC,MC,NA,default,38,Yes,NA,Female,NA,8
+1113,default,block1,josh,projective,0.07,4490,discover,13,discover,C,NA,default,38,Yes,NA,Female,NA,9
+1113,default,block1,jayden,projective,0.08,4305,confirm,14,confirm,C,NA,default,38,Yes,NA,Female,NA,10
+1113,default,block1,pizza,projective,0.97,4312,MC,15,MC,MC,NA,default,38,Yes,NA,Female,NA,11
+1113,default,block1,mia,projective,0.1,5016,know,16,know,C,NA,default,38,Yes,NA,Female,NA,12
+1113,default,block1,owen,projective,0.1,6030,announce,17,announce,C,NA,default,38,Yes,NA,Female,NA,13
+1113,default,block1,tony,projective,0.3,9136,reveal,18,reveal,C,NA,default,38,Yes,NA,Female,NA,14
+1113,default,block1,emma,projective,0.14,11024,pretend,19,pretend,C,NA,default,38,Yes,NA,Female,NA,15
+1113,default,block1,frank,projective,0.46,8043,be_right,20,be_right,C,NA,default,38,Yes,NA,Female,NA,16
+1113,default,block1,josie,projective,0.38,3941,say,21,say,C,NA,default,38,Yes,NA,Female,NA,17
+1113,default,block1,isabella,projective,0.57,5057,hear,22,hear,C,NA,default,38,Yes,NA,Female,NA,18
+1113,default,block1,kids,projective,0.98,4134,MC,23,MC,MC,NA,default,38,Yes,NA,Female,NA,19
+1113,default,block1,grace,projective,0.51,6604,see,24,see,C,NA,default,38,Yes,NA,Female,NA,20
+1113,default,block1,jon,projective,0.19,3724,be_annoyed,25,be_annoyed,C,NA,default,38,Yes,NA,Female,NA,21
+1113,default,block1,mary,projective,0.13,4026,acknowledge,26,acknowledge,C,NA,default,38,Yes,NA,Female,NA,22
+1113,default,block1,olivia,projective,0.09,2531,suggest,27,suggest,C,NA,default,38,Yes,NA,Female,NA,23
+1113,default,block1,emily,projective,0.04,4259,inform,28,inform,C,NA,default,38,Yes,NA,Female,NA,24
+1113,default,block1,sophia,projective,0.07,3327,admit,29,admit,C,NA,default,38,Yes,NA,Female,NA,25
+1113,default,block1,julian,projective,0.13,2843,demonstrate,30,demonstrate,C,NA,default,38,Yes,NA,Female,NA,26
+1113,default,block2,jackson,ai,0.92,11392,establish,32,establish,C,NA,default,38,Yes,NA,Female,NA,27
+1113,default,block2,hat,ai,0.92,5759,MC,33,MC,MC,NA,default,38,Yes,NA,Female,NA,28
+1113,default,block2,owen,ai,0.14,5962,announce,34,announce,C,NA,default,38,Yes,NA,Female,NA,29
+1113,default,block2,grace,ai,0.88,5783,see,35,see,C,NA,default,38,Yes,NA,Female,NA,30
+1113,default,block2,zoe,ai,0.48,7989,prove,36,prove,C,NA,default,38,Yes,NA,Female,NA,31
+1113,default,block2,danny,ai,0.71,5706,confess,37,confess,C,NA,default,38,Yes,NA,Female,NA,32
+1113,default,block2,emily,ai,0.74,4134,inform,38,inform,C,NA,default,38,Yes,NA,Female,NA,33
+1113,default,block2,kids,ai,0.09,6549,MC,39,MC,MC,NA,default,38,Yes,NA,Female,NA,34
+1113,default,block2,mia,ai,0.77,4025,know,40,know,C,NA,default,38,Yes,NA,Female,NA,35
+1113,default,block2,isabella,ai,0.75,3422,hear,41,hear,C,NA,default,38,Yes,NA,Female,NA,36
+1113,default,block2,emma,ai,0.79,3321,pretend,42,pretend,C,NA,default,38,Yes,NA,Female,NA,37
+1113,default,block2,tony,ai,0.83,3353,reveal,43,reveal,C,NA,default,38,Yes,NA,Female,NA,38
+1113,default,block2,mary,ai,0.86,3359,acknowledge,44,acknowledge,C,NA,default,38,Yes,NA,Female,NA,39
+1113,default,block2,jon,ai,0.91,5211,be_annoyed,45,be_annoyed,C,NA,default,38,Yes,NA,Female,NA,40
+1113,default,block2,garage,ai,0.88,4436,MC,46,MC,MC,NA,default,38,Yes,NA,Female,NA,41
+1113,default,block2,olivia,ai,0.87,4490,suggest,47,suggest,C,NA,default,38,Yes,NA,Female,NA,42
+1113,default,block2,ballet,ai,0.92,3651,MC,48,MC,MC,NA,default,38,Yes,NA,Female,NA,43
+1113,default,block2,muffins,ai,0.3,6094,MC,49,MC,MC,NA,default,38,Yes,NA,Female,NA,44
+1113,default,block2,julian,ai,0.82,3498,demonstrate,50,demonstrate,C,NA,default,38,Yes,NA,Female,NA,45
+1113,default,block2,jayden,ai,0.85,5876,confirm,51,confirm,C,NA,default,38,Yes,NA,Female,NA,46
+1113,default,block2,josh,ai,0.84,3646,discover,52,discover,C,NA,default,38,Yes,NA,Female,NA,47
+1113,default,block2,josie,ai,0.81,5048,say,53,say,C,NA,default,38,Yes,NA,Female,NA,48
+1113,default,block2,pizza,ai,0.3,5907,MC,54,MC,MC,NA,default,38,Yes,NA,Female,NA,49
+1113,default,block2,sophia,ai,0.71,3118,admit,55,admit,C,NA,default,38,Yes,NA,Female,NA,50
+1113,default,block2,charley,ai,0.78,6434,think,56,think,C,NA,default,38,Yes,NA,Female,NA,51
+1113,default,block2,frank,ai,0.85,3856,be_right,57,be_right,C,NA,default,38,Yes,NA,Female,NA,52
+1123,default,block1,jon,projective,0.77,13223,discover,5,discover,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,1
+1123,default,block1,kids,projective,1,8352,MC,6,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,2
+1123,default,block1,owen,projective,0.16,6418,think,7,think,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,3
+1123,default,block1,mia,projective,0.23,7626,hear,8,hear,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,4
+1123,default,block1,emma,projective,0.21,10694,suggest,9,suggest,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,5
+1123,default,block1,garage,projective,1,7170,MC,10,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,6
+1123,default,block1,isabella,projective,0.21,8004,confirm,11,confirm,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,7
+1123,default,block1,emily,projective,0.25,6580,pretend,12,pretend,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,8
+1123,default,block1,charley,projective,0.19,6064,establish,13,establish,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,9
+1123,default,block1,jackson,projective,0.21,2166,acknowledge,14,acknowledge,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,10
+1123,default,block1,hat,projective,1,3656,MC,15,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,11
+1123,default,block1,olivia,projective,0.2,6822,know,16,know,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,12
+1123,default,block1,mary,projective,0.24,3048,announce,17,announce,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,13
+1123,default,block1,josie,projective,0.2,4840,reveal,18,reveal,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,14
+1123,default,block1,sophia,projective,0.2,2593,be_annoyed,19,be_annoyed,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,15
+1123,default,block1,josh,projective,0.19,2969,be_right,20,be_right,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,16
+1123,default,block1,grace,projective,0.23,5895,inform,21,inform,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,17
+1123,default,block1,danny,projective,0.09,4699,say,22,say,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,18
+1123,default,block1,zoe,projective,0.16,3620,prove,23,prove,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,19
+1123,default,block1,jayden,projective,0.2,8098,see,24,see,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,20
+1123,default,block1,pizza,projective,0.97,3210,MC,25,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,21
+1123,default,block1,frank,projective,0.16,1718,demonstrate,26,demonstrate,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,22
+1123,default,block1,julian,projective,0.2,1314,admit,27,admit,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,23
+1123,default,block1,muffins,projective,1,4594,MC,28,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,24
+1123,default,block1,tony,projective,0.15,2908,confess,29,confess,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,25
+1123,default,block1,ballet,projective,1,6612,MC,30,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,26
+1123,default,block2,muffins,ai,0.53,15459,MC,32,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,27
+1123,default,block2,olivia,ai,0.84,16612,know,33,know,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,28
+1123,default,block2,garage,ai,0.17,6758,MC,34,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,29
+1123,default,block2,zoe,ai,0.17,1336,prove,35,prove,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,30
+1123,default,block2,charley,ai,0.81,976,establish,36,establish,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,31
+1123,default,block2,frank,ai,0.76,835,demonstrate,37,demonstrate,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,32
+1123,default,block2,jon,ai,0.81,818,discover,38,discover,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,33
+1123,default,block2,ballet,ai,0.11,1058,MC,39,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,34
+1123,default,block2,josie,ai,0.76,1014,reveal,40,reveal,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,35
+1123,default,block2,danny,ai,0.85,1546,say,41,say,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,36
+1123,default,block2,kids,ai,0.16,1384,MC,42,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,37
+1123,default,block2,isabella,ai,0.16,1106,confirm,43,confirm,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,38
+1123,default,block2,hat,ai,0.86,1098,MC,44,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,39
+1123,default,block2,jackson,ai,0.86,887,acknowledge,45,acknowledge,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,40
+1123,default,block2,mia,ai,0.85,874,hear,46,hear,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,41
+1123,default,block2,emma,ai,0.15,973,suggest,47,suggest,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,42
+1123,default,block2,mary,ai,0.16,1338,announce,48,announce,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,43
+1123,default,block2,sophia,ai,0.16,928,be_annoyed,49,be_annoyed,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,44
+1123,default,block2,jayden,ai,0.79,1058,see,50,see,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,45
+1123,default,block2,owen,ai,0.82,1570,think,51,think,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,46
+1123,default,block2,pizza,ai,0.15,898,MC,52,MC,MC,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,47
+1123,default,block2,emily,ai,0.13,703,pretend,53,pretend,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,48
+1123,default,block2,grace,ai,0.19,750,inform,54,inform,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,49
+1123,default,block2,julian,ai,0.22,720,admit,55,admit,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,50
+1123,default,block2,tony,ai,0.79,726,confess,56,confess,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,51
+1123,default,block2,josh,ai,0.76,1801,be_right,57,be_right,C,NA,default,26,Yes,The 'sound good' was extremely confusing. I did not understand the intent 'sound good' was supposed to have on how I was to answer the 2nd half. Poorly worded.,Male,NA,52
+1120,default,block1,owen,projective,0.88,26467,inform,5,inform,C,NA,default,24,Yes,NA,Female,NA,1
+1120,default,block1,mia,projective,0.38,16027,be_right,6,be_right,C,NA,default,24,Yes,NA,Female,NA,2
+1120,default,block1,grace,projective,0.3,10737,suggest,7,suggest,C,NA,default,24,Yes,NA,Female,NA,3
+1120,default,block1,olivia,projective,0.36,15020,say,8,say,C,NA,default,24,Yes,NA,Female,NA,4
+1120,default,block1,charley,projective,0.81,13111,demonstrate,9,demonstrate,C,NA,default,24,Yes,NA,Female,NA,5
+1120,default,block1,jon,projective,0.83,16332,admit,10,admit,C,NA,default,24,Yes,NA,Female,NA,6
+1120,default,block1,garage,projective,0.97,14183,MC,11,MC,MC,NA,default,24,Yes,NA,Female,NA,7
+1120,default,block1,hat,projective,0.97,7470,MC,12,MC,MC,NA,default,24,Yes,NA,Female,NA,8
+1120,default,block1,danny,projective,0.93,11549,confirm,13,confirm,C,NA,default,24,Yes,NA,Female,NA,9
+1120,default,block1,isabella,projective,0.88,7245,see,14,see,C,NA,default,24,Yes,NA,Female,NA,10
+1120,default,block1,emma,projective,0.84,13601,confess,15,confess,C,NA,default,24,Yes,NA,Female,NA,11
+1120,default,block1,kids,projective,0.99,7452,MC,16,MC,MC,NA,default,24,Yes,NA,Female,NA,12
+1120,default,block1,zoe,projective,0.79,8918,establish,17,establish,C,NA,default,24,Yes,NA,Female,NA,13
+1120,default,block1,julian,projective,0.32,10637,pretend,18,pretend,C,NA,default,24,Yes,NA,Female,NA,14
+1120,default,block1,josie,projective,0.26,6044,think,19,think,C,NA,default,24,Yes,NA,Female,NA,15
+1120,default,block1,emily,projective,0.92,5958,be_annoyed,20,be_annoyed,C,NA,default,24,Yes,NA,Female,NA,16
+1120,default,block1,frank,projective,0.84,5889,announce,21,announce,C,NA,default,24,Yes,NA,Female,NA,17
+1120,default,block1,ballet,projective,0.97,5429,MC,22,MC,MC,NA,default,24,Yes,NA,Female,NA,18
+1120,default,block1,sophia,projective,0.71,5386,know,23,know,C,NA,default,24,Yes,NA,Female,NA,19
+1120,default,block1,mary,projective,0.85,5353,discover,24,discover,C,NA,default,24,Yes,NA,Female,NA,20
+1120,default,block1,pizza,projective,0.98,3740,MC,25,MC,MC,NA,default,24,Yes,NA,Female,NA,21
+1120,default,block1,jackson,projective,0.89,4171,acknowledge,26,acknowledge,C,NA,default,24,Yes,NA,Female,NA,22
+1120,default,block1,tony,projective,0.62,9129,hear,27,hear,C,NA,default,24,Yes,NA,Female,NA,23
+1120,default,block1,jayden,projective,0.97,4902,reveal,28,reveal,C,NA,default,24,Yes,NA,Female,NA,24
+1120,default,block1,muffins,projective,0.99,6110,MC,29,MC,MC,NA,default,24,Yes,NA,Female,NA,25
+1120,default,block1,josh,projective,0.83,6234,prove,30,prove,C,NA,default,24,Yes,NA,Female,NA,26
+1120,default,block2,hat,ai,0.23,13636,MC,32,MC,MC,NA,default,24,Yes,NA,Female,NA,27
+1120,default,block2,isabella,ai,0.33,14061,see,33,see,C,NA,default,24,Yes,NA,Female,NA,28
+1120,default,block2,frank,ai,0.14,8820,announce,34,announce,C,NA,default,24,Yes,NA,Female,NA,29
+1120,default,block2,charley,ai,0.2,7297,demonstrate,35,demonstrate,C,NA,default,24,Yes,NA,Female,NA,30
+1120,default,block2,julian,ai,0.5,11442,pretend,36,pretend,C,NA,default,24,Yes,NA,Female,NA,31
+1120,default,block2,muffins,ai,0.14,6558,MC,37,MC,MC,NA,default,24,Yes,NA,Female,NA,32
+1120,default,block2,sophia,ai,0.16,4832,know,38,know,C,NA,default,24,Yes,NA,Female,NA,33
+1120,default,block2,pizza,ai,0.63,10842,MC,39,MC,MC,NA,default,24,Yes,NA,Female,NA,34
+1120,default,block2,zoe,ai,0.49,5216,establish,40,establish,C,NA,default,24,Yes,NA,Female,NA,35
+1120,default,block2,jon,ai,0.31,5948,admit,41,admit,C,NA,default,24,Yes,NA,Female,NA,36
+1120,default,block2,ballet,ai,0.51,7372,MC,42,MC,MC,NA,default,24,Yes,NA,Female,NA,37
+1120,default,block2,emma,ai,0.41,10395,confess,43,confess,C,NA,default,24,Yes,NA,Female,NA,38
+1120,default,block2,emily,ai,0.09,6154,be_annoyed,44,be_annoyed,C,NA,default,24,Yes,NA,Female,NA,39
+1120,default,block2,josie,ai,0.58,5461,think,45,think,C,NA,default,24,Yes,NA,Female,NA,40
+1120,default,block2,mary,ai,0.64,4405,discover,46,discover,C,NA,default,24,Yes,NA,Female,NA,41
+1120,default,block2,jackson,ai,0.5,10820,acknowledge,47,acknowledge,C,NA,default,24,Yes,NA,Female,NA,42
+1120,default,block2,grace,ai,0.51,5665,suggest,48,suggest,C,NA,default,24,Yes,NA,Female,NA,43
+1120,default,block2,garage,ai,0.36,5005,MC,49,MC,MC,NA,default,24,Yes,NA,Female,NA,44
+1120,default,block2,olivia,ai,0.54,5345,say,50,say,C,NA,default,24,Yes,NA,Female,NA,45
+1120,default,block2,owen,ai,0.22,5897,inform,51,inform,C,NA,default,24,Yes,NA,Female,NA,46
+1120,default,block2,kids,ai,0.9,7197,MC,52,MC,MC,NA,default,24,Yes,NA,Female,NA,47
+1120,default,block2,danny,ai,0.55,5312,confirm,53,confirm,C,NA,default,24,Yes,NA,Female,NA,48
+1120,default,block2,josh,ai,0.55,4237,prove,54,prove,C,NA,default,24,Yes,NA,Female,NA,49
+1120,default,block2,mia,ai,0.65,7602,be_right,55,be_right,C,NA,default,24,Yes,NA,Female,NA,50
+1120,default,block2,jayden,ai,0.39,4393,reveal,56,reveal,C,NA,default,24,Yes,NA,Female,NA,51
+1120,default,block2,tony,ai,0.4,4795,hear,57,hear,C,NA,default,24,Yes,NA,Female,NA,52
+1115,default,block1,isabella,ai,0.96,21273,establish,5,establish,C,NA,default,22,Yes,NA,Female,NA,1
+1115,default,block1,zoe,ai,0.97,10986,confirm,6,confirm,C,NA,default,22,Yes,NA,Female,NA,2
+1115,default,block1,josie,ai,0.96,6069,be_right,7,be_right,C,NA,default,22,Yes,NA,Female,NA,3
+1115,default,block1,charley,ai,0.95,11082,announce,8,announce,C,NA,default,22,Yes,NA,Female,NA,4
+1115,default,block1,tony,ai,0.95,8754,see,9,see,C,NA,default,22,Yes,NA,Female,NA,5
+1115,default,block1,owen,ai,0.99,10086,pretend,10,pretend,C,NA,default,22,Yes,NA,Female,NA,6
+1115,default,block1,jayden,ai,0.9,5052,admit,11,admit,C,NA,default,22,Yes,NA,Female,NA,7
+1115,default,block1,frank,ai,0.62,10522,know,12,know,C,NA,default,22,Yes,NA,Female,NA,8
+1115,default,block1,kids,ai,0.12,8980,MC,13,MC,MC,NA,default,22,Yes,NA,Female,NA,9
+1115,default,block1,ballet,ai,0.15,7225,MC,14,MC,MC,NA,default,22,Yes,NA,Female,NA,10
+1115,default,block1,mary,ai,0.57,11151,suggest,15,suggest,C,NA,default,22,Yes,NA,Female,NA,11
+1115,default,block1,josh,ai,0.95,5972,say,16,say,C,NA,default,22,Yes,NA,Female,NA,12
+1115,default,block1,garage,ai,0.1,5875,MC,17,MC,MC,NA,default,22,Yes,NA,Female,NA,13
+1115,default,block1,julian,ai,0.88,7624,reveal,18,reveal,C,NA,default,22,Yes,NA,Female,NA,14
+1115,default,block1,danny,ai,0.94,5956,demonstrate,19,demonstrate,C,NA,default,22,Yes,NA,Female,NA,15
+1115,default,block1,jon,ai,0.96,8919,acknowledge,20,acknowledge,C,NA,default,22,Yes,NA,Female,NA,16
+1115,default,block1,muffins,ai,0.34,9756,MC,21,MC,MC,NA,default,22,Yes,NA,Female,NA,17
+1115,default,block1,hat,ai,0.33,5326,MC,22,MC,MC,NA,default,22,Yes,NA,Female,NA,18
+1115,default,block1,pizza,ai,0.09,7557,MC,23,MC,MC,NA,default,22,Yes,NA,Female,NA,19
+1115,default,block1,jackson,ai,0.87,6503,be_annoyed,24,be_annoyed,C,NA,default,22,Yes,NA,Female,NA,20
+1115,default,block1,emma,ai,0.87,4866,think,25,think,C,NA,default,22,Yes,NA,Female,NA,21
+1115,default,block1,grace,ai,0.68,8541,discover,26,discover,C,NA,default,22,Yes,NA,Female,NA,22
+1115,default,block1,sophia,ai,0.63,17265,hear,27,hear,C,NA,default,22,Yes,NA,Female,NA,23
+1115,default,block1,emily,ai,0.91,48362,prove,28,prove,C,NA,default,22,Yes,NA,Female,NA,24
+1115,default,block1,mia,ai,0.64,8263,confess,29,confess,C,NA,default,22,Yes,NA,Female,NA,25
+1115,default,block1,olivia,ai,0.93,8107,inform,30,inform,C,NA,default,22,Yes,NA,Female,NA,26
+1115,default,block2,hat,projective,0.96,8654,MC,32,MC,MC,NA,default,22,Yes,NA,Female,NA,27
+1115,default,block2,emily,projective,0.6,11660,prove,33,prove,C,NA,default,22,Yes,NA,Female,NA,28
+1115,default,block2,jackson,projective,0.95,6226,be_annoyed,34,be_annoyed,C,NA,default,22,Yes,NA,Female,NA,29
+1115,default,block2,danny,projective,0.48,8082,demonstrate,35,demonstrate,C,NA,default,22,Yes,NA,Female,NA,30
+1115,default,block2,owen,projective,0.52,6565,pretend,36,pretend,C,NA,default,22,Yes,NA,Female,NA,31
+1115,default,block2,josh,projective,0.22,7099,say,37,say,C,NA,default,22,Yes,NA,Female,NA,32
+1115,default,block2,kids,projective,0.94,6329,MC,38,MC,MC,NA,default,22,Yes,NA,Female,NA,33
+1115,default,block2,ballet,projective,0.96,3219,MC,39,MC,MC,NA,default,22,Yes,NA,Female,NA,34
+1115,default,block2,josie,projective,0.03,13810,be_right,40,be_right,C,NA,default,22,Yes,NA,Female,NA,35
+1115,default,block2,pizza,projective,0.98,4211,MC,41,MC,MC,NA,default,22,Yes,NA,Female,NA,36
+1115,default,block2,tony,projective,0.85,8037,see,42,see,C,NA,default,22,Yes,NA,Female,NA,37
+1115,default,block2,sophia,projective,0.85,5957,hear,43,hear,C,NA,default,22,Yes,NA,Female,NA,38
+1115,default,block2,julian,projective,0.76,10250,reveal,44,reveal,C,NA,default,22,Yes,NA,Female,NA,39
+1115,default,block2,zoe,projective,0.84,6845,confirm,45,confirm,C,NA,default,22,Yes,NA,Female,NA,40
+1115,default,block2,olivia,projective,0.8,6282,inform,46,inform,C,NA,default,22,Yes,NA,Female,NA,41
+1115,default,block2,emma,projective,0.35,9500,think,47,think,C,NA,default,22,Yes,NA,Female,NA,42
+1115,default,block2,mia,projective,0.9,5053,confess,48,confess,C,NA,default,22,Yes,NA,Female,NA,43
+1115,default,block2,jon,projective,0.92,5422,acknowledge,49,acknowledge,C,NA,default,22,Yes,NA,Female,NA,44
+1115,default,block2,charley,projective,0.29,4046,announce,50,announce,C,NA,default,22,Yes,NA,Female,NA,45
+1115,default,block2,jayden,projective,0.93,4003,admit,51,admit,C,NA,default,22,Yes,NA,Female,NA,46
+1115,default,block2,muffins,projective,0.99,3218,MC,52,MC,MC,NA,default,22,Yes,NA,Female,NA,47
+1115,default,block2,grace,projective,0.78,4054,discover,53,discover,C,NA,default,22,Yes,NA,Female,NA,48
+1115,default,block2,frank,projective,0.74,6857,know,54,know,C,NA,default,22,Yes,NA,Female,NA,49
+1115,default,block2,mary,projective,0.34,4474,suggest,55,suggest,C,NA,default,22,Yes,NA,Female,NA,50
+1115,default,block2,garage,projective,0.95,4128,MC,56,MC,MC,NA,default,22,Yes,NA,Female,NA,51
+1115,default,block2,isabella,projective,0.34,4726,establish,57,establish,C,NA,default,22,Yes,NA,Female,NA,52
+1122,default,block1,zoe,ai,1,53752,say,5,say,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,1
+1122,default,block1,sophia,ai,1,22655,prove,6,prove,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,2
+1122,default,block1,julian,ai,1,51671,think,7,think,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,3
+1122,default,block1,grace,ai,1,21712,be_annoyed,8,be_annoyed,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,4
+1122,default,block1,danny,ai,1,13752,suggest,9,suggest,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,5
+1122,default,block1,jayden,ai,1,21928,establish,10,establish,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,6
+1122,default,block1,muffins,ai,0,16936,MC,11,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,7
+1122,default,block1,jackson,ai,1,21768,hear,12,hear,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,8
+1122,default,block1,isabella,ai,1,38031,pretend,13,pretend,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,9
+1122,default,block1,hat,ai,0,22912,MC,14,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,10
+1122,default,block1,garage,ai,0,18408,MC,15,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,11
+1122,default,block1,charley,ai,1,12503,be_right,16,be_right,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,12
+1122,default,block1,tony,ai,1,10471,admit,17,admit,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,13
+1122,default,block1,emily,ai,1,13832,inform,18,inform,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,14
+1122,default,block1,jon,ai,1,13592,demonstrate,19,demonstrate,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,15
+1122,default,block1,olivia,ai,1,10743,acknowledge,20,acknowledge,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,16
+1122,default,block1,owen,ai,1,9560,discover,21,discover,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,17
+1122,default,block1,mia,ai,1,17824,reveal,22,reveal,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,18
+1122,default,block1,josh,ai,1,17720,see,23,see,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,19
+1122,default,block1,mary,ai,1,13864,know,24,know,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,20
+1122,default,block1,josie,ai,1,10352,confess,25,confess,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,21
+1122,default,block1,frank,ai,1,8511,confirm,26,confirm,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,22
+1122,default,block1,pizza,ai,0,19200,MC,27,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,23
+1122,default,block1,kids,ai,0,16967,MC,28,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,24
+1122,default,block1,ballet,ai,0,11991,MC,29,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,25
+1122,default,block1,emma,ai,1,20176,announce,30,announce,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,26
+1122,default,block2,tony,projective,1,13535,admit,32,admit,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,27
+1122,default,block2,mia,projective,1,7088,reveal,33,reveal,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,28
+1122,default,block2,jon,projective,1,6017,demonstrate,34,demonstrate,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,29
+1122,default,block2,emma,projective,1,9200,announce,35,announce,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,30
+1122,default,block2,julian,projective,1,13304,think,36,think,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,31
+1122,default,block2,garage,projective,1,14016,MC,37,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,32
+1122,default,block2,pizza,projective,1,7072,MC,38,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,33
+1122,default,block2,danny,projective,0,46631,suggest,39,suggest,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,34
+1122,default,block2,josh,projective,1,19639,see,40,see,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,35
+1122,default,block2,jayden,projective,1,11671,establish,41,establish,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,36
+1122,default,block2,kids,projective,1,11057,MC,42,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,37
+1122,default,block2,olivia,projective,1,5767,acknowledge,43,acknowledge,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,38
+1122,default,block2,josie,projective,1,9336,confess,44,confess,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,39
+1122,default,block2,muffins,projective,1,6240,MC,45,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,40
+1122,default,block2,emily,projective,1,12832,inform,46,inform,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,41
+1122,default,block2,ballet,projective,1,6616,MC,47,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,42
+1122,default,block2,frank,projective,1,5200,confirm,48,confirm,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,43
+1122,default,block2,sophia,projective,1,5256,prove,49,prove,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,44
+1122,default,block2,grace,projective,1,10448,be_annoyed,50,be_annoyed,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,45
+1122,default,block2,isabella,projective,0,24376,pretend,51,pretend,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,46
+1122,default,block2,jackson,projective,0,10248,hear,52,hear,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,47
+1122,default,block2,charley,projective,0,7824,be_right,53,be_right,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,48
+1122,default,block2,mary,projective,0,10552,know,54,know,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,49
+1122,default,block2,hat,projective,1,7528,MC,55,MC,MC,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,50
+1122,default,block2,owen,projective,0,21224,discover,56,discover,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,51
+1122,default,block2,zoe,projective,0,20439,say,57,say,C,NA,default,42,Yes,About 3/4 of the way through the experiment, I got into a mental argument with myself about what was actually being said.,Male,NA,52
+1118,default,block1,josie,projective,0.03,19536,announce,5,announce,C,NA,default,18,Yes,NA,Female,NA,1
+1118,default,block1,danny,projective,0.02,64705,suggest,6,suggest,C,NA,default,18,Yes,NA,Female,NA,2
+1118,default,block1,zoe,projective,0.97,7867,acknowledge,7,acknowledge,C,NA,default,18,Yes,NA,Female,NA,3
+1118,default,block1,sophia,projective,0.98,23162,establish,8,establish,C,NA,default,18,Yes,NA,Female,NA,4
+1118,default,block1,muffins,projective,0.98,9253,MC,9,MC,MC,NA,default,18,Yes,NA,Female,NA,5
+1118,default,block1,olivia,projective,0.99,25573,be_annoyed,10,be_annoyed,C,NA,default,18,Yes,NA,Female,NA,6
+1118,default,block1,ballet,projective,0.99,4875,MC,11,MC,MC,NA,default,18,Yes,NA,Female,NA,7
+1118,default,block1,charley,projective,0.83,11477,know,12,know,C,NA,default,18,Yes,NA,Female,NA,8
+1118,default,block1,grace,projective,0.87,53616,reveal,13,reveal,C,NA,default,18,Yes,NA,Female,NA,9
+1118,default,block1,jayden,projective,0.79,7651,hear,14,hear,C,NA,default,18,Yes,NA,Female,NA,10
+1118,default,block1,frank,projective,0.24,5162,demonstrate,15,demonstrate,C,NA,default,18,Yes,NA,Female,NA,11
+1118,default,block1,hat,projective,0.99,6778,MC,16,MC,MC,NA,default,18,Yes,NA,Female,NA,12
+1118,default,block1,tony,projective,0.97,5796,inform,17,inform,C,NA,default,18,Yes,NA,Female,NA,13
+1118,default,block1,mary,projective,0.95,3440,prove,18,prove,C,NA,default,18,Yes,NA,Female,NA,14
+1118,default,block1,jon,projective,0.4,7506,see,19,see,C,NA,default,18,Yes,NA,Female,NA,15
+1118,default,block1,jackson,projective,0.67,6803,discover,20,discover,C,NA,default,18,Yes,NA,Female,NA,16
+1118,default,block1,emily,projective,0.01,7619,pretend,21,pretend,C,NA,default,18,Yes,NA,Female,NA,17
+1118,default,block1,owen,projective,0.88,8940,say,22,say,C,NA,default,18,Yes,NA,Female,NA,18
+1118,default,block1,isabella,projective,0.98,7114,admit,23,admit,C,NA,default,18,Yes,NA,Female,NA,19
+1118,default,block1,emma,projective,0.97,6978,confess,24,confess,C,NA,default,18,Yes,NA,Female,NA,20
+1118,default,block1,julian,projective,0.98,9843,be_right,25,be_right,C,NA,default,18,Yes,NA,Female,NA,21
+1118,default,block1,mia,projective,0.21,49373,think,26,think,C,NA,default,18,Yes,NA,Female,NA,22
+1118,default,block1,josh,projective,0.55,5993,confirm,27,confirm,C,NA,default,18,Yes,NA,Female,NA,23
+1118,default,block1,kids,projective,0.97,5314,MC,28,MC,MC,NA,default,18,Yes,NA,Female,NA,24
+1118,default,block1,garage,projective,0.99,4986,MC,29,MC,MC,NA,default,18,Yes,NA,Female,NA,25
+1118,default,block1,pizza,projective,1,3696,MC,30,MC,MC,NA,default,18,Yes,NA,Female,NA,26
+1118,default,block2,pizza,ai,1,12378,MC,32,MC,MC,NA,default,18,Yes,NA,Female,NA,27
+1118,default,block2,josie,ai,0.02,11813,announce,33,announce,C,NA,default,18,Yes,NA,Female,NA,28
+1118,default,block2,emma,ai,0.65,12364,confess,34,confess,C,NA,default,18,Yes,NA,Female,NA,29
+1118,default,block2,isabella,ai,0.69,2938,admit,35,admit,C,NA,default,18,Yes,NA,Female,NA,30
+1118,default,block2,danny,ai,0.68,2593,suggest,36,suggest,C,NA,default,18,Yes,NA,Female,NA,31
+1118,default,block2,muffins,ai,1,10196,MC,37,MC,MC,NA,default,18,Yes,NA,Female,NA,32
+1118,default,block2,jackson,ai,0.6,2419882,discover,38,discover,C,NA,default,18,Yes,NA,Female,NA,33
+1118,default,block2,emily,ai,0.64,5122,pretend,39,pretend,C,NA,default,18,Yes,NA,Female,NA,34
+1118,default,block2,olivia,ai,0.69,5715,be_annoyed,40,be_annoyed,C,NA,default,18,Yes,NA,Female,NA,35
+1118,default,block2,mia,ai,0.37,8549,think,41,think,C,NA,default,18,Yes,NA,Female,NA,36
+1118,default,block2,jon,ai,0.74,5041,see,42,see,C,NA,default,18,Yes,NA,Female,NA,37
+1118,default,block2,kids,ai,0.74,3514,MC,43,MC,MC,NA,default,18,Yes,NA,Female,NA,38
+1118,default,block2,frank,ai,0.74,2177,demonstrate,44,demonstrate,C,NA,default,18,Yes,NA,Female,NA,39
+1118,default,block2,garage,ai,0.73,19866,MC,45,MC,MC,NA,default,18,Yes,NA,Female,NA,40
+1118,default,block2,julian,ai,0.76,1769,be_right,46,be_right,C,NA,default,18,Yes,NA,Female,NA,41
+1118,default,block2,owen,ai,0.76,1800,say,47,say,C,NA,default,18,Yes,NA,Female,NA,42
+1118,default,block2,hat,ai,0.76,4603,MC,48,MC,MC,NA,default,18,Yes,NA,Female,NA,43
+1118,default,block2,zoe,ai,0.34,2578,acknowledge,49,acknowledge,C,NA,default,18,Yes,NA,Female,NA,44
+1118,default,block2,charley,ai,0.36,1176,know,50,know,C,NA,default,18,Yes,NA,Female,NA,45
+1118,default,block2,ballet,ai,0.35,1192,MC,51,MC,MC,NA,default,18,Yes,NA,Female,NA,46
+1118,default,block2,tony,ai,0.36,1584,inform,52,inform,C,NA,default,18,Yes,NA,Female,NA,47
+1118,default,block2,sophia,ai,0.34,1960,establish,53,establish,C,NA,default,18,Yes,NA,Female,NA,48
+1118,default,block2,josh,ai,0.31,1264,confirm,54,confirm,C,NA,default,18,Yes,NA,Female,NA,49
+1118,default,block2,grace,ai,0.2,1560,reveal,55,reveal,C,NA,default,18,Yes,NA,Female,NA,50
+1118,default,block2,jayden,ai,0.69,1561,hear,56,hear,C,NA,default,18,Yes,NA,Female,NA,51
+1118,default,block2,mary,ai,0.5,1169,prove,57,prove,C,NA,default,18,Yes,NA,Female,NA,52

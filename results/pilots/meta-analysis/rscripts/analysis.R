@@ -200,7 +200,7 @@ max(neg_6a$AImean_N6) - min(neg_6a$AImean_N6) #.53
 max(modal_7a$AImean_M7) - min(modal_7a$AImean_M7) #.42
 max(cond_8a$AImean_C8) - min(cond_8a$AImean_C8) #.25
 max(polar_9a$AImean_P9) - min(polar_9a$AImean_P9) #.
-max(neg_10a$AImean_N10) - min(neg_10a$AImean_N10) #.21
+max(neg_10a$AImean_N10) - min(neg_10a$AImean_N10) #.22
 max(modal_11a$AImean_M11) - min(modal_11a$AImean_M11) #
 max(cond_12a$AImean_C12) - min(cond_12a$AImean_C12) #.
 
