@@ -1,10 +1,10 @@
 README
 
-This GitHub repository contains the experiments designed to compare i) projection across different entailment-canceling operators, and ii) different diagnostics for not-at-issueness, and iii) Gradient Projection Principle (Tonhauser, Beaver, Degen 2018, Journal of Semantics) across different embeddings and with different diagnostics for not-at-issueness.
+This GitHub repository contains the experiments designed i) to compare projection across different entailment-canceling operators, and ii) to compare different diagnostics for not-at-issueness, and iii) to investigate the Gradient Projection Principle (Tonhauser, Beaver, Degen 2018, Journal of Semantics) across different embeddings and with different diagnostics for not-at-issueness.
 
-The 12 experiments  use the stimuli from Tonhauser & Degen (under re-review) and Degen & Tonhauser (accepted, Open Mind): 20 clause-embedding predicates, 20 complement clauses, 2 blocks in random order (projection, not-at-issueness).
+The 12 experiments used the stimuli from Tonhauser & Degen (under re-review) and Degen & Tonhauser (accepted, Open Mind): 20 clause-embedding predicates, 20 complement clauses, 2 blocks in random order (projection, not-at-issueness).
 
-The 12 experiments all use the certain that diagnostic for projection and they differ in which not-at-issueness diagnostic is used:
+The 12 experiments all use the "certain that" diagnostic for projectio; they differ in which not-at-issueness diagnostic was used:
 - Experiments 1-4: asking whether (Q), "are you sure" (N, M, C)
 - Experiments 5-8: assent with positive continuation (of complement clause)
 - Experiments 9-12: assent with negative continuation (of main clause)
@@ -26,7 +26,6 @@ not-at-issueness: assent diagnostic with positive continuation
 
 A: ...Cole discover that Julian dances salsa... [with different entailment-canceling operators)
 B: Yes, (that's true), he dances salsa.
-
 
 5_projaiQ
 6_projaiN
