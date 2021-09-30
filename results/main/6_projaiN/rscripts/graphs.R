@@ -78,7 +78,7 @@ ggplot(ai.means, aes(x=verb, y=Mean, fill=VeridicalityGroup)) +
                                                                  color=cols$Colors)) +
   theme(legend.position="top") +
   ylab("Mean not-at-issueness rating \n (assent)") +
-  xlab("Predicate (under polar question)") +
+  xlab("Predicate (under negation)") +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
 ggsave("../graphs/nai-by-predicate.pdf",height=4,width=7)
 
@@ -129,7 +129,7 @@ ggplot(proj.means, aes(x=verb, y=Mean, fill=VeridicalityGroup)) +
                                                                  color=cols$Colors)) +
   theme(legend.position="top") +
   ylab("Mean certainty rating") +
-  xlab("Predicate (under polar question)") +
+  xlab("Predicate (under negation)") +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
 ggsave("../graphs/projection-by-predicate.pdf",height=4,width=7)
 
@@ -140,7 +140,9 @@ tmp.ai = ai.means %>%
 tmp.proj = proj.means %>%
   rename(ProjMean="Mean",ProjYMin="YMin",ProjYMax="YMax") 
 toplot = tmp.ai %>%
-  left_join(tmp.proj, by=c("short_trigger"))
+  left_join(tmp.proj, by=c("short_trigger")) %>%
+  filter(short_trigger != "MC") %>%
+  droplevels()
 toplot
 
 # toplot already has VeridicalityGroup, just need to define colors
@@ -169,7 +171,7 @@ ggplot(toplot, aes(x=AIMean,y=ProjMean,fill=VeridicalityGroup)) +
   ylab("Mean certainty ratings") +
   xlim(0,1) +
   ylim(0,1) 
-ggsave("../graphs/proj-by-ai-polar-Q.pdf",width=4.2,height=3.5)
+ggsave("../graphs/proj-by-ai.pdf",width=4.2,height=3.5)
 
 # correlation between at-issueness and projectivity by predicate:
 toplot <- toplot %>% filter(short_trigger != "MC") %>% droplevels()

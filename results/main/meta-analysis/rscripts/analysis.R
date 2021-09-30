@@ -96,65 +96,30 @@ cond_12 = read.csv(file="../../12_projaiC/data/data_preprocessed.csv") %>%
 
 polar_1a = polar_1 %>%
   group_by(short_trigger) %>%
-  summarise(AImean_P1 = mean(ai), ci.low_AI_P=ci.low(ai), ci.high_AI_P=ci.high(ai),
-            Projmean_P1 = mean(projective), ci.low_Proj_P=ci.low(projective), ci.high_Proj_P=ci.high(projective))
-
-
-neg_2a = neg_2 %>%
-  group_by(short_trigger) %>%
-  summarise(AImean_N2 = mean(ai), ci.low_AI_N=ci.low(ai), ci.high_AI_N=ci.high(ai),
-            Projmean_N2 = mean(projective), ci.low_Proj_N=ci.low(projective), ci.high_Proj_N=ci.high(projective))
-
-modal_3a = modal_3 %>%
-  group_by(short_trigger) %>%
-  summarise(AImean_M3 = mean(ai), ci.low_AI_M=ci.low(ai), ci.high_AI_M=ci.high(ai),
-            Projmean_M3 = mean(projective), ci.low_Proj_M=ci.low(projective), ci.high_Proj_M=ci.high(projective))
-
-cond_4a = cond_4 %>%
-  group_by(short_trigger) %>%
-  summarise(AImean_C4 = mean(ai), ci.low_AI_M=ci.low(ai), ci.high_AI_M=ci.high(ai),
-            Projmean_C4 = mean(projective), ci.low_Proj_M=ci.low(projective), ci.high_Proj_M=ci.high(projective))
+  summarise(AImean_P1 = mean(ai), ci.low_AI=ci.low(ai), ci.high_AI=ci.high(ai),
+            Projmean_P1 = mean(projective), ci.low_Proj=ci.low(projective), ci.high_Proj=ci.high(projective)) %>%
+  mutate(YMin_AI_P1 = AImean_P1 - ci.low_AI, YMax_AI_P1 = AImean_P1 + ci.high_AI, 
+         YMin_Proj_P1 = Projmean_P1 - ci.low_Proj, YMax_Proj_P1 = Projmean_P1 + ci.high_Proj) %>%
+  select(-c(ci.low_AI,ci.high_AI,ci.low_Proj,ci.high_Proj))
+#View(polar_1a)
 
 polar_5a = polar_5 %>%
   group_by(short_trigger) %>%
-  summarise(AImean_P5 = mean(ai), ci.low_AI_P=ci.low(ai), ci.high_AI_P=ci.high(ai),
-            Projmean_P5 = mean(projective), ci.low_Proj_P=ci.low(projective), ci.high_Proj_P=ci.high(projective))
+  summarise(AImean_P5 = mean(ai), ci.low_AI=ci.low(ai), ci.high_AI=ci.high(ai),
+            Projmean_P5 = mean(projective), ci.low_Proj=ci.low(projective), ci.high_Proj=ci.high(projective)) %>%
+  mutate(YMin_AI_P5 = AImean_P5 - ci.low_AI, YMax_AI_P5 = AImean_P5 + ci.high_AI, 
+         YMin_Proj_P5 = Projmean_P5 - ci.low_Proj, YMax_Proj_P5 = Projmean_P5 + ci.high_Proj) %>%
+  select(-c(ci.low_AI,ci.high_AI,ci.low_Proj,ci.high_Proj))
 
 
 neg_6a = neg_6 %>%
   group_by(short_trigger) %>%
   summarise(AImean_N6 = mean(ai), ci.low_AI_N=ci.low(ai), ci.high_AI_N=ci.high(ai),
-            Projmean_N6 = mean(projective), ci.low_Proj_N=ci.low(projective), ci.high_Proj_N=ci.high(projective))
+            Projmean_N6 = mean(projective), ci.low_Proj_N=ci.low(projective), ci.high_Proj_N=ci.high(projective)) %>%
+  mutate(YMin_AI_N6 = AImean_N6 - ci.low_AI_N, YMax_AI_N6 = AImean_N6 + ci.high_AI_N, 
+         YMin_Proj_N6 = Projmean_N6 - ci.low_Proj_N, YMax_Proj_N6 = Projmean_N6 + ci.high_Proj_N) %>%
+  select(-c(ci.low_AI_N,ci.high_AI_N,ci.low_Proj_N,ci.high_Proj_N))
 
-modal_7a = modal_7 %>%
-  group_by(short_trigger) %>%
-  summarise(AImean_M7 = mean(ai), ci.low_AI_M=ci.low(ai), ci.high_AI_M=ci.high(ai),
-            Projmean_M7 = mean(projective), ci.low_Proj_M=ci.low(projective), ci.high_Proj_M=ci.high(projective))
-
-cond_8a = cond_8 %>%
-  group_by(short_trigger) %>%
-  summarise(AImean_C8 = mean(ai), ci.low_AI_M=ci.low(ai), ci.high_AI_M=ci.high(ai),
-            Projmean_C8 = mean(projective), ci.low_Proj_M=ci.low(projective), ci.high_Proj_M=ci.high(projective))
-
-polar_9a = polar_9 %>%
-  group_by(short_trigger) %>%
-  summarise(AImean_P9 = mean(ai), ci.low_AI_P=ci.low(ai), ci.high_AI_P=ci.high(ai),
-            Projmean_P9 = mean(projective), ci.low_Proj_P=ci.low(projective), ci.high_Proj_P=ci.high(projective))
-
-neg_10a = neg_10 %>%
-  group_by(short_trigger) %>%
-  summarise(AImean_N10 = mean(ai), ci.low_AI_N=ci.low(ai), ci.high_AI_N=ci.high(ai),
-            Projmean_N10 = mean(projective), ci.low_Proj_N=ci.low(projective), ci.high_Proj_N=ci.high(projective))
-
-modal_11a = modal_11 %>%
-  group_by(short_trigger) %>%
-  summarise(AImean_M11 = mean(ai), ci.low_AI_M=ci.low(ai), ci.high_AI_M=ci.high(ai),
-            Projmean_M11= mean(projective), ci.low_Proj_M=ci.low(projective), ci.high_Proj_M=ci.high(projective))
-
-cond_12a = cond_12 %>%
-  group_by(short_trigger) %>%
-  summarise(AImean_C12 = mean(ai), ci.low_AI_M=ci.low(ai), ci.high_AI_M=ci.high(ai),
-            Projmean_C12 = mean(projective), ci.low_Proj_M=ci.low(projective), ci.high_Proj_M=ci.high(projective))
 
 d = polar_1a %>%
 #  inner_join(neg_2a,by=("short_trigger")) %>%
@@ -162,20 +127,21 @@ d = polar_1a %>%
 #  inner_join(cond_4a,by=("short_trigger")) %>%
   inner_join(polar_5a,by=("short_trigger")) %>%
   inner_join(neg_6a,by=("short_trigger")) %>%
-  inner_join(modal_7a,by=("short_trigger")) %>%
-  inner_join(cond_8a,by=("short_trigger")) %>%
+#  inner_join(modal_7a,by=("short_trigger")) %>%
+#  inner_join(cond_8a,by=("short_trigger")) %>%
 #  inner_join(polar_9a,by=("short_trigger")) %>%
 #  inner_join(neg_10a,by=("short_trigger")) 
 #%>%
 #inner_join(modal_7a,by=("short_trigger")) %>%
 #inner_join(cond_8a,by=("short_trigger"))
 
-
-View(d)
-names(d)
-View(polar_9a)
-
-
+summary(d)  
+  
+# add VeridicalityGroup and colors for plotting
+# define colors for the predicates
+d$VeridicalityGroup = as.factor(
+  ifelse(d$short_trigger %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", "NF"))
+d$Colors =  ifelse(d$VeridicalityGroup == "F", "tomato1", "black")
 
 # how much variability?
 max(polar_1a$Projmean_P1) - min(polar_1a$Projmean_P1) #.74 !
@@ -215,8 +181,11 @@ cor(d$Projmean_P1,d$Projmean_C4) # .62
 cor(d$Projmean_N2,d$Projmean_C4) # .54
 cor(d$Projmean_M3,d$Projmean_C4) # .73
 
+# for Moscow talk:
+cor(d$Projmean_P1,d$Projmean_N6) #.95
+
 cor(d$Projmean_P5,d$Projmean_N6) # .93 !
-cor(d$Projmean_P1,d$Projmean_M7) # .93 !
+cor(d$Projmean_P5,d$Projmean_M7) # .93 !
 cor(d$Projmean_N6,d$Projmean_M7) # .81 !
 cor(d$Projmean_P5,d$Projmean_C8) # .94 !
 cor(d$Projmean_N6,d$Projmean_C8) # .87 !
@@ -249,6 +218,9 @@ cor(d$AImean_N2,d$AImean_M3) # .50
 cor(d$AImean_P1,d$AImean_C4) # .3
 cor(d$AImean_N2,d$AImean_C4) # .52
 cor(d$AImean_M3,d$AImean_C4) # .1
+
+# for Moscow talk:
+cor(d$AImean_P1,d$AImean_N6) #-.55
 
 cor(d$AImean_P5,d$AImean_N6) # -.45 !
 cor(d$AImean_P1,d$AImean_M7) # .54 !
@@ -292,88 +264,108 @@ cor(d$Projmean_M11,d$AImean_M11) # .
 cor(d$Projmean_C12,d$AImean_C12) # .
 
 # how much variability is there in the individual diagnostics?
-
-
+summary(d)
+d$Colors
 
 # plot projection against projection ----
-ggplot(d, aes(x=Projmean_P,y=Projmean_N)) +
+ggplot(d, aes(x=Projmean_P1,y=Projmean_P5,fill=VeridicalityGroup)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_Proj_P1,xmax=YMax_Proj_P1),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_Proj_P5,ymax=YMax_Proj_P5),alpha=.8,color="gray") +
   geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
-  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
-  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
-  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
-  geom_point() +
-  xlab("Mean certainty rating polar") +
-  ylab("Mean certainty rating negation") +
-  xlim(0,1) +
-  ylim(0,1) +
-  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
-ggsave("../graphs/projection-polar-against-negation.pdf",width=6,height=6)
+  geom_text_repel(aes(label=short_trigger,color=d$Colors),nudge_x=-.05,size=5,show.legend=F) +
+  scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean certainty rating (Exp 1, polar Q)") +
+  ylab("Mean certainty rating (Exp 2, polar Q)") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/projection-P1-against-P5.pdf",width=5,height=5)
 
-ggplot(d, aes(x=Projmean_P,y=Projmean_M)) +
+ggplot(d, aes(x=Projmean_P1,y=Projmean_N6,fill=VeridicalityGroup)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_Proj_P1,xmax=YMax_Proj_P1),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_Proj_N6,ymax=YMax_Proj_N6),alpha=.8,color="gray") +
   geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
-  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
-  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
-  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
-  geom_point() +
-  xlab("Mean certainty rating polar") +
-  ylab("Mean certainty rating modal") +
-  xlim(0,1) +
-  ylim(0,1) +
-  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
-ggsave("../graphs/projection-polar-against-modal.pdf",width=6,height=6)
+  geom_text_repel(aes(label=short_trigger,color=d$Colors),nudge_x=-.05,size=5,show.legend=F) +
+  scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean certainty rating (Exp 1, polar Q)") +
+  ylab("Mean certainty rating (Exp 3, negation)") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/projection-P1-against-N6.pdf",width=5,height=5)
 
-ggplot(d, aes(x=Projmean_N,y=Projmean_M)) +
+ggplot(d, aes(x=Projmean_P5,y=Projmean_N6,fill=VeridicalityGroup)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_Proj_P5,xmax=YMax_Proj_P5),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_Proj_N6,ymax=YMax_Proj_N6),alpha=.8,color="gray") +
   geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
-  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
-  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
-  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
-  geom_point() +
-  xlab("Mean certainty rating negation") +
-  ylab("Mean certainty rating modal") +
-  xlim(0,1) +
-  ylim(0,1) +
-  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
-ggsave("../graphs/projection-negation-against-modal.pdf",width=6,height=6)
+  geom_text_repel(aes(label=short_trigger,color=d$Colors),nudge_x=-.05,size=5,show.legend=F) +
+  scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean certainty rating (Exp 2, polar Q)") +
+  ylab("Mean certainty rating (Exp 3, negation)") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/projection-P5-against-N6.pdf",width=5,height=5)
 
 # plot ai against ai ----
-ggplot(d, aes(x=AImean_P,y=AImean_N)) +
+ggplot(d, aes(x=AImean_P1,y=AImean_P5,fill=VeridicalityGroup)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_AI_P1,xmax=YMax_AI_P1),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_AI_P5,ymax=YMax_AI_P5),alpha=.8,color="gray") +
   geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
-  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
-  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
-  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
-  geom_point() +
-  xlab("Mean not-at-issueness rating polar (asking whether)") +
-  ylab("Mean not-at-issueness rating negation (sure that)") +
-  xlim(0,1) +
-  ylim(0,1) +
-  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
-ggsave("../graphs/nai-polar-against-negation.pdf",width=6,height=6)
+  geom_text_repel(aes(label=short_trigger,color=d$Colors),nudge_x=-.05,size=5,show.legend=F) +
+  scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean not-at-issue rating (Exp 1: Q, \"asking whether\")") +
+  ylab("Mean not-at-issue rating (Exp 2: Q, \"yes, p\")") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/nai-P1-against-P5.pdf",width=5,height=5)
 
-ggplot(d, aes(x=AImean_P,y=AImean_M)) +
+ggplot(d, aes(x=AImean_P1,y=AImean_N6,fill=VeridicalityGroup)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_AI_P1,xmax=YMax_AI_P1),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_AI_N6,ymax=YMax_AI_N6),alpha=.8,color="gray") +
   geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
-  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
-  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
-  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
-  geom_point() +
-  xlab("Mean not-at-issueness rating polar (asking whether)") +
-  ylab("Mean not-at-issueness rating modal (sure that)") +
-  xlim(0,1) +
-  ylim(0,1) +
-  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
-ggsave("../graphs/nai-polar-against-modal.pdf",width=6,height=6)
+  geom_text_repel(aes(label=short_trigger,color=d$Colors),nudge_x=-.05,size=5,show.legend=F) +
+  scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean not-at-issue rating (Exp 1: Q, \"asking whether\")") +
+  ylab("Mean not-at-issue rating (Exp 3: Neg, assent)") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/nai-P1-against-N6.pdf",width=5,height=5)
 
-ggplot(d, aes(x=AImean_N,y=AImean_M)) +
+ggplot(d, aes(x=AImean_P5,y=AImean_N6,fill=VeridicalityGroup)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_AI_P5,xmax=YMax_AI_P5),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_AI_N6,ymax=YMax_AI_N6),alpha=.8,color="gray") +
   geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
-  geom_text_repel(aes(label=short_trigger),nudge_x=-.05,size=4,show.legend=F) +
-  #geom_errorbar(aes(ymin=YMin,ymax=YMax),alpha=.8,color="gray") +
-  #geom_errorbarh(aes(xmin=XMin,xmax=XMax),alpha=.8,color="gray") +
-  geom_point() +
-  xlab("Mean not-at-issueness rating negation (sure that)") +
-  ylab("Mean not-at-issueness rating modal (sure that)") +
-  xlim(0,1) +
-  ylim(0,1) +
-  theme(legend.position = "top",axis.title = element_text(size=14),legend.text = element_text(size=14),legend.title=element_text(size=14))
-ggsave("../graphs/nai-negation-against-modal.pdf",width=6,height=6)
+  geom_text_repel(aes(label=short_trigger,color=d$Colors),nudge_x=-.05,size=5,show.legend=F) +
+  scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean not-at-issue rating (Exp 2: Q, \"yes, p\")") +
+  ylab("Mean not-at-issue rating (Exp 3: Neg, assent)") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/nai-P5-against-N6.pdf",width=5,height=5)
+
+
 
 ######### HAVENT INTEGRATED ERROR BARS YET
 d = agr1 %>%
