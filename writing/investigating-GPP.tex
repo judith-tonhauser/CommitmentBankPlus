@@ -1,0 +1,339 @@
+\documentclass[11pt,fleqn]{article}
+\usepackage[margin=1in,top=1in,bottom=1in]{geometry}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+%\usepackage[dvips]{graphics}
+%\usepackage[table]{xcolor}
+%\usepackage{amssymb}
+\usepackage{float}
+%\usepackage{subfig}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+\usepackage[normalem]{ulem}
+
+\usepackage{multicol}
+\usepackage{txfonts}
+\usepackage{amsfonts}
+\usepackage{natbib}
+\usepackage{gb4e}
+\usepackage[all]{xy}
+\usepackage{rotating}
+\usepackage{tipa}
+\usepackage{multirow}
+\usepackage{authblk}
+\usepackage{url}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{adjustbox}
+\usepackage{array}
+
+
+\def\bad{{\leavevmode\llap{*}}}
+\def\marginal{{\leavevmode\llap{?}}}
+\def\verymarginal{{\leavevmode\llap{??}}}
+\def\swmarginal{{\leavevmode\llap{4}}}
+\def\infelic{{\leavevmode\llap{\#}}}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+%\definecolor{gray}{rgb}{0.36, 0.54, 0.66}
+
+\definecolor{Pink}{RGB}{240,0,120}
+\newcommand{\red}[1]{\textcolor{Pink}{#1}}
+\newcommand{\jd}[1]{\textbf{\textcolor{Pink}{[jd: #1]}}}
+
+\newcommand{\dashrule}[1][black]{%
+  \color{#1}\rule[\dimexpr.5ex-.2pt]{4pt}{.4pt}\xleaders\hbox{\rule{4pt}{0pt}\rule[\dimexpr.5ex-.2pt]{4pt}{.4pt}}\hfill\kern0pt%
+}
+
+\setlength{\parindent}{.3in}
+\setlength{\parskip}{0ex}
+
+\newcommand{\yi}{\'{\symbol{16}}}
+\newcommand{\nasi}{\~{\symbol{16}}}
+\newcommand{\hina}{h\nasi na}
+\newcommand{\ina}{\nasi na}
+
+\newcommand{\foc}{$_{\mbox{\small F}}$}
+
+\hyphenation{par-ti-ci-pa-tion}
+
+\setlength{\bibhang}{0.5in}
+\setlength{\bibsep}{0mm}
+\bibpunct[:]{(}{)}{,}{a}{}{,}
+
+\newcommand{\6}{\mbox{$[\hspace*{-.6mm}[$}} 
+\newcommand{\9}{\mbox{$]\hspace*{-.6mm}]$}}
+\newcommand{\sem}[2]{\6#1\9$^{#2}$}
+\renewcommand{\ni}{\~{\i}}
+
+\newcommand{\citepos}[1]{\citeauthor{#1}'s \citeyear{#1}}
+\newcommand{\citeposs}[1]{\citeauthor{#1}'s}
+\newcommand{\citetpos}[1]{\citeauthor{#1}'s (\citeyear{#1})}
+
+\newcolumntype{R}[2]{%
+    >{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
+    l%
+    <{\egroup}%
+}
+\newcommand*\rot{\multicolumn{1}{R{90}{0em}}}% no optional argument here, please!
+
+
+\title{Does at-issueness predict projection? Further investigations of the Gradient Projection Principle}
+
+%\thanks{For helpful comments on the research presented here, we thank David Beaver, Cleo Condoravdi, Kai von Fintel, Lauri Karttunen, Mandy Simons, Greg Scontras, the anonymous reviewers for {\em Semantics and Linguistic Theory} 2018, as well as the audiences at the MIT Linguistics colloquium, the 2018 Annual Meeting of XPRAG.de and at the University of T\"ubingen. We gratefully acknowledge financial support for this research from {\em National Science Foundation} grant BCS-1452674 (JT) and the Targeted Investment for Excellence Initiative at The Ohio State University (JT). IGOR Tuebingen, SALT TALK}}
+
+\author{Author(s)}
+
+%\author[$\circ$]{Judith Tonhauser}
+%\author[$\bullet$]{Judith Degen}
+%\affil[$\circ$]{The Ohio State University / University of Stuttgart}
+%\affil[$\bullet$]{Stanford University}
+%
+%\renewcommand\Authands{ and }
+
+\newcommand{\jt}[1]{\textbf{\color{blue}JT: #1}}
+
+\begin{document}
+
+%\tableofcontents
+%\newpage
+
+\maketitle
+
+\vspace*{-1cm}
+
+\begin{abstract}
+
+\citealt{tbd-variability} hypothesized that at-issueness is one factor that modulates the projection of content (see also \citealt{brst-salt10,brst-ar}). Specifically, according to their Gradient Projection Principle, if content $C$ is expressed by a constituent embedded under an entailment-canceling operator, then $C$ projects to the extent that it is not at-issue. Their work provided evidence for the GPP from xx contents that had been described as projective in the literature, at-issueness was measured in two different ways, only one consistently brought evidence in support (question, asking whether, are you sure? mixed results 2b). This paper provides further investigate the GPP by investigating a) more varied items, b) with more types of embedding, and c) other measures of at-issueness. These experiments provide additional support for the GPP, and they also show: comparison of projection across entailment-canceling operators, comparison of at-issueness diagnostics. Suggests that the diagnostics may not all measure the same (\citealt{snider2017}).
+
+\end{abstract}
+
+		
+\section{Introduction}\label{s1}
+
+\begin{exe}
+\ex\label{gpp} {\bf Gradient Projection Principle} \hfill (\citealt[400]{tbd-variability}) \\ If content $C$ is expressed by a constituent embedded under an entailment-canceling operator, then $C$ projects to the extent that it is not at-issue.
+\end{exe}
+
+
+\begin{exe}
+\ex\label{rqs} {\bf Main research question} \\
+Are not-at-issueness and projection positively correlated, as predicted by the Gradient Projection Principle?
+\end{exe}
+
+\begin{exe}
+\ex\label{rqs} {\bf Ancillary research questions}
+\begin{xlist}
+\ex Is the projection of contents embedded under different entailment-canceling operators positively correlated, as assumed in the semantics/pragmatics literature?
+
+\ex Is the at-issueness of contents embedded under different entailment-canceling operators positively correlated?
+
+\ex Is the at-issueness of contents positively correlated under different measures of at-issueness?
+\end{xlist}
+\end{exe}
+
+\section{Prior literature}\label{s2}
+
+\section{Experiments 1-3: Methods}\label{s3}
+
+\section{Experiments 1-3: Results}\label{s4}
+
+\subsection{Comparing projection}
+
+\subsection{Comparing at-isueness}
+
+\subsection{GPP}
+
+Further analyses:
+
+\begin{itemize}
+\item look at how many unique participants
+
+\item compare projection across experiments/embeddings
+
+compare projection across embeddings: research assumes that there are no differences, but there is some experimental evidence that there may be (Kathleen/Elizabeth, CommitmentBank), so it?s good to check (compare 4 experiments)
+
+\item negative correlation between Q/A and assent might be compound of a) embedding (negation) and b) assent, because we don?t see negative correlation, but no correlation, with other embeddings (modal, conditional)
+
+\item  compare variance for both projection and at-issueness, under the different embeddings and diagnostics: very little variance for assent diagnostic/negation embedding
+
+\item have a look at the predicates that are exceptional to the GPP in Exps1 and 2, how do they behave across the other experiments? Exp3: looks like they are also their own little group
+
+\item  when we compare negation, modal, conditional with assent diagnostic, we can see what effect embedding has
+
+\item next experiments: no embedding of the 20 predicates, with assent diagnostic, to compare to prior literature who didn?t use embedding with the assent diagnostic; do assent diagnostic without ?that?s true? anaphor to engage with Snider?s assumption that ?yes? is not really anaphoric in the assent diagnostic and hence also not in the Q/A diagnostic
+
+\end{itemize}
+
+\section{General discussion}\label{s4}
+
+\section{Conclusions}\label{s5}
+
+% end document here for word count
+%\end{document}
+
+\bibliographystyle{cslipubs-natbib}
+\bibliography{bibliography}
+
+\newpage
+
+\section*{Supplemental materials}
+
+\appendix
+
+\setcounter{page}{1}
+%\renewcommand{\thetable}{A\arabic{table}}
+
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+
+\section{20 complement clauses}\label{a-clauses}
+
+The following clauses realized the complements of the predicates in Exps.~1-3:
+
+\begin{enumerate}[leftmargin=3ex,itemsep=-2pt]
+
+\begin{multicols}{2}
+
+\item Mary is pregnant.
+\item Josie went on vacation to France.
+\item Emma studied on Saturday morning.
+\item Olivia sleeps until noon.
+\item Sophia got a tattoo.
+\item Mia drank 2 cocktails last night.
+\item Isabella ate a steak on Sunday.
+\item  Emily bought a car yesterday.
+\item  Grace visited her sister.
+\item Zoe calculated the tip.
+
+\columnbreak
+
+\item  Danny ate the last cupcake.
+\item  Frank got a cat.
+\item  Jackson ran 10 miles.
+\item  Jayden rented a car.
+\item  Tony had a drink last night.
+\item  Josh learned to ride a bike yesterday.
+\item  Owen shoveled snow last winter.
+\item  Julian dances salsa.
+\item  Jon walks to work.
+\item  Charley speaks Spanish.
+
+\end{multicols}
+
+\end{enumerate}
+
+\section{Control stimuli in Exps.~1-3}\label{a-control}
+
+\begin{exe}
+\exi{(1)}  Control stimuli in Exps.~1
+\begin{xlist}
+
+\ex   Is Zack coming to the meeting tomorrow?
+
+\ex Is Mary's aunt sick?
+
+\ex Did Todd play football in high school?
+
+\ex Is Vanessa good at math?
+
+\ex Did Madison have a baby?
+
+\ex Was Hendrick's car expensive?
+
+\end{xlist}
+\end{exe}
+
+\begin{exe}
+\exi{(2)} Control stimuli in Exps.~2
+\begin{xlist}
+\ex Entailing control stimuli
+\begin{xlist}
+\ex {\bf What is true:} Frederick managed to solve the problem. (Tested inference: Frederick solved the problem.)
+\ex {\bf What is true:} Zack bought himself a car this morning. (Tested inference: Zack owns a car.)
+\ex {\bf What is true:} Tara broke the window with a bat. (Tested inference: The window broke.)
+\ex {\bf What is true:} Vanessa happened to look into the mirror. (Tested inference: Vanessa looked into the mirror.)
+\end{xlist}
+\ex Non-entailing control stimuli
+\begin{xlist}
+\ex {\bf What is true:} Dana watched a movie last night. (Tested inference: Dana wears a wig.)
+\ex {\bf What is true:} Hendrick is renting an apartment. (Tested inference: The apartment has a balcony.)
+\ex {\bf What is true:} Madison was unsuccessful in closing the window. (Tested inference:  Madison closed the window.)
+\ex {\bf What is true:} Sebastian failed the exam. (Tested inference: Sebastian did really well on the exam.)
+\end{xlist}
+\end{xlist}
+\end{exe}
+
+\begin{exe}
+\exi{(3)} Control stimuli in Exps.~3
+\begin{xlist}
+\ex Contradictory control stimuli
+\begin{xlist}
+\ex Madison laughed loudly and she didn't laugh.
+
+\ex Dana has never smoked in her life and she stopped smoking recently.
+\ex Hendrick's car is completely red and his car is not red.
+
+\ex Sebastian lives in the USA and has never been to the USA.
+\end{xlist}
+
+\ex Non-contradictory control stimuli
+\begin{xlist}
+\ex Vanessa is really good at math, but I'm not.
+\ex Zack believes that I'm married, but I'm actually single.
+\ex Tara wants me to cook for her and I'm a terrific cook.
+\ex Frederick is both smarter and taller than I am.
+
+\end{xlist}
+\end{xlist}
+\end{exe}
+
+
+\section{Data exclusion}\label{a-excl}
+
+Table \ref{f-exclusion} presents how many participants' data were excluded from the analysis based on the exclusion criteria. The first column records the experiment, the second (`recruited') how many participants were recruited, and the final column (`remaining') how many participants' data entered the analysis. The `Exclusion criteria' columns show how many participants' data were excluded based on the four exclusion criteria: 
+
+\begin{itemize}[topsep = -1ex,itemsep=-2pt]
+
+\item `multiple': Due to an experimental glitch, some participants participated in Exps.~1b, 2b or 3b more than once. Of these participants, we only analyzed the data from the first time they participated.
+
+\item `language': Participants' data were excluded if they did not self-identify as native speakers of American English.
+
+\item `controls': Participants' data were excluded if their response mean on the 6 control items was more than 2 sd above the group mean (Exp.~1a), if they gave a wrong rating (`yes') to more than one of the six controls (Exp.~1b), if their response mean on the entailing or the non-entailing controls was more than 2 sd below or above, respectively, the group mean (Exp.~2a), if they gave more than one wrong rating to one of the eight controls, where a wrong rating is a `yes' to a non-entailing control and a `no' to an entailing one (Exp.~2b), if their response means on the contradictory or non-contradictory controls were more than 2 sd below or above, respectively, the group mean (Exp.~3a), and if they gave more than one wrong response to one of the eight control sentences, where a wrong response was a `yes' to a non-contradictory control or a `no' to a contradictory one (Exp.~3b).
+
+\item `variance': Participants' data were excluded if they always selected roughly the same point on the response scale, that is, if the variance of their response distribution was more than 2 sd below the group mean variance.
+
+\end{itemize}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l r | r r r r | r}
+&  & \multicolumn{4}{c|}{Exclusion criteria} &  \\ 
+&  recruited & multiple & language & controls & variance & remaining \\ 
+\hline
+Exp.~1q & xx & xx & xx & xx & xx & xx \\
+Exp.~1n & xx & xx & xx & xx & xx & xx \\
+Exp.~1m & xx & xx & xx & xx & xx & xx \\
+Exp.~1c & xx & xx & xx & xx & xx & xx \\
+Exp.~2q & xx & xx & xx & xx & xx & xx \\
+Exp.~2n & xx & xx & xx & xx & xx & xx \\
+Exp.~2m & xx & xx & xx & xx & xx & xx \\
+Exp.~2c & xx & xx & xx & xx & xx & xx \\
+Exp.~3q & xx & xx & xx & xx & xx & xx \\
+Exp.~3n & xx & xx & xx & xx & xx & xx \\
+Exp.~3m & xx & xx & xx & xx & xx & xx \\
+Exp.~3c & xx & xx & xx & xx & xx & xx \\
+\end{tabular}
+\caption{Data exclusion in Exps.~1, 2 and 3}\label{f-exclusion}
+\end{table} 
+
+
+\end{document}
+

@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: investigating-GPP.aux
+The style file: cslipubs-natbib.bst
+Database file #1: bibliography.bib
+Warning--I didn't find a database entry for "snider2017"
+You've used 3 entries,
+            2811 wiz_defined-function locations,
+            645 strings with 5306 characters,
+and the built_in function-call counts, 1650 in all, are:
+= -- 148
+> -- 111
+< -- 0
++ -- 36
+- -- 33
+* -- 155
+:= -- 311
+add.period$ -- 12
+call.type$ -- 3
+change.case$ -- 26
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 54
+empty$ -- 97
+format.name$ -- 36
+if$ -- 320
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 3
+newline$ -- 20
+num.names$ -- 12
+pop$ -- 17
+preamble$ -- 2
+purify$ -- 23
+quote$ -- 0
+skip$ -- 36
+stack$ -- 0
+substring$ -- 96
+swap$ -- 9
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 27
+warning$ -- 0
+while$ -- 12
+width$ -- 0
+write$ -- 43
+(There was 1 warning)
