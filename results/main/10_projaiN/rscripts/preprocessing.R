@@ -1,6 +1,6 @@
-# 6_projaiN
-# Exp 2n
-# projection and at-issueness (assent with positive continuation)
+# 10_projaiN
+# Exp 3n
+# projection and at-issueness (assent with adversative continuation)
 # preprocessing
 
 # set working directory to directory of script
@@ -22,17 +22,14 @@ nrow(d) #13000 / 250 = 52 trials (the experiment was done 250 times, as planned)
 head(d)
 summary(d)
 
-length(unique(d$workerid)) #249
-
-# participant 1877 took the experiment twice:
-# View(table(d$workerid))
+length(unique(d$workerid)) #250
 
 # read in the subject information
 ds = read_csv("../data/experiment-subject_information.csv")
-length(unique(ds$workerid)) #249
+length(unique(ds$workerid)) #250
 nrow(ds) #250
 head(ds)
-summary(ds) 
+summary(d) 
 
 # look at participants' comments
 unique(ds$comments)
@@ -41,30 +38,17 @@ unique(ds$comments)
 d = d %>%
   left_join(ds, by=c("workerid"))
 
-# remove data from participant 1877 since no information on which was first take
-d <- d %>%
-  filter(workerid != "1877") %>%
-  droplevels()
-length(unique(d$workerid)) #248
-
 # participant info
-table(d$age) #18-69
-
-str(d$age)
-# turn non-numeric age information into NA
-d$age <- as.numeric(as.character(d$age))
-table(d$age)
-
-length(which(is.na(d$age))) # 0 missing values
-mean(d$age,na.rm=TRUE) #33.2
+table(d$age) #18-70
+length(which(is.na(d$age))) #0 missing values
+mean(d$age,na.rm=TRUE) #24.6
 
 d %>% 
   select(gender, workerid) %>% 
   unique() %>% 
   group_by(gender) %>% 
   summarize(count=n())
-#127 female, 114 male, 6 other, 1 undeclared
-
+#114 female, 31 male, 5 other, 0 undeclared
 
 # change the response for ai condition so that what was 0/not-at-issue is now 1/not-at-issue
 # by subtracting the ai responses from 1
@@ -81,26 +65,25 @@ unique(d$trial) # trials from 1 to 52
 ## exclude participants' data ----
 
 ### exclude non-American English speakers
-length(unique(d$workerid)) #248
-length(which(is.na(d$language))) #no missing responses
+length(unique(d$workerid)) #250
+length(which(is.na(d$language))) #52 missing responses
 table(d$language) 
 
 # exclude anybody who didn't include English among languages spoken
-# nobody removed
-#d <- d %>%
-#  filter(language != "Korean") %>%
-#  droplevels()
-# length(unique(d$workerid)) #248 (data from 0 participant excluded)
+d <- d %>%
+  filter(language != "spanish" & language != "Spanish") %>%
+  droplevels()
+length(unique(d$workerid)) #246 (data from 4 participant excluded)
 
 # exclude non-American English speakers
-length(unique(d$workerid))# 248
+length(unique(d$workerid))# 246
 length(which(is.na(d$american))) #52
 table(d$american) 
 
 d <- d %>%
   filter(american == "Yes") %>%
   droplevels()
-length(unique(d$workerid)) #244 (data from 4 participants excluded)
+length(unique(d$workerid)) #245 (data from 1 participants excluded)
 
 # exclude participants based on main clause controls
 
@@ -109,17 +92,17 @@ names(d)
 d.MC <- d %>%
   filter(short_trigger == "MC") %>%
   droplevels()
-nrow(d.MC) #2928 / 244 participants = 12 (6 main clause controls in each of the two blocks)
+nrow(d.MC) #2940 / 245 participants = 12 (6 main clause controls in each of the two blocks)
 
 # projection of main clause data
 table(d$question_type)
 d.MC.Proj <- d.MC %>%
   filter(question_type == "projective") %>%
   droplevels()
-nrow(d.MC.Proj) #1464
+nrow(d.MC.Proj) #1470
 
 # group projection mean (all participants, all clauses)
-round(mean(d.MC.Proj$response),2) #.96
+round(mean(d.MC.Proj$response),2) #.94
 
 # calculate each participants mean response to the projection of main clauses
 p.means = d.MC.Proj %>%
@@ -138,10 +121,10 @@ ggplot(p.means, aes(x=workerid,y=Mean)) +
 d.MC.AI <- d.MC %>%
   filter(question_type == "ai") %>%
   droplevels()
-nrow(d.MC.AI) #1464
+nrow(d.MC.AI) #1470
 
 # group not-at-issueness mean (all participants, all clauses)
-round(mean(d.MC.AI$response),2) #.22
+round(mean(d.MC.AI$response),2) #.44
 
 # calculate each participants mean response to the projection of main clauses
 ai.means = d.MC.AI %>%
@@ -159,25 +142,25 @@ ggplot(ai.means, aes(x=workerid,y=Mean)) +
 # look at participants whose response mean on projection and ainess of main clauses is more than 2
 # standard deviations away from the overall mean
 
-# get the participants who are more than 2 standard deviations below the mean on projection 
-p <- p.means[p.means$Mean < (mean(p.means$Mean) - 2*sd(p.means$Mean)),]
-p #13 participants 
+# get the participants who are more than 2 standard deviations above the mean on projection 
+p <- p.means[p.means$Mean > (mean(p.means$Mean) + 2*sd(p.means$Mean)),]
+p #0 participants 
 
 # get the participants who are more than 2 standard deviations above the mean on ai 
 ai <- ai.means[ai.means$Mean > (mean(ai.means$Mean) + 2*sd(ai.means$Mean)),]
-ai #16 participants
+ai #10 participants
 
 # make data subset of just the outliers
 outliers <- d.MC %>%
   filter(workerid %in% p$workerid | workerid %in% ai$workerid)
 outliers = droplevels(outliers)
-nrow(outliers) #348 / 12 = 29 outlier participants
+nrow(outliers) #240 / 12 = 20 outlier participants
 
 # exclude all outlier participants identified above
 d <- d %>%
   filter(!(workerid %in% p$workerid | workerid %in% ai$workerid)) %>%
   droplevels()
-length(unique(d$workerid)) # 215 remaining participants (29 participants excluded)
+length(unique(d$workerid)) # 225 remaining participants (20 participants excluded)
 
 # variance
 
@@ -195,31 +178,32 @@ variances = d %>%
 
 lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
 summary(variances)
-lowvarworkers # 0 participants had lower mean variance
+lowvarworkers # 3 participants had lower mean variance
 
 lvw = d %>%
   filter(as.character(workerid) %in% lowvarworkers) %>%
   droplevels() %>%
   mutate(Participant = as.factor(as.character(workerid)))
 
-ggplot(lvw,aes(x=Participant,y=response)) +
+ggplot(lvw,aes(x=Participant,y=response,color=trigger_class)) +
   geom_jitter()
 
-# exclude 0 participant with really low variance 
-d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
-length(unique(d$workerid)) #215 participants remain
+# exclude 0 participants with really low variance 
+#d <- droplevels(subset(d, !(d$workerid == "1547")))
+#d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
+length(unique(d$workerid)) #225 participants remain
 
 # write cleaned data to file
 write_csv(d, file="../data/data_preprocessed.csv")
 
 # info on remaining participants
-table(d$age) #18-69
+table(d$age) #18-66
 length(which(is.na(d$age))) # 0 missing values
-mean(d$age,na.rm=TRUE) #23
+mean(d$age,na.rm=TRUE) #32.6
 
 d %>% 
   select(gender, workerid) %>% 
   unique() %>% 
   group_by(gender) %>% 
   summarize(count=n())
-#113 female, 95 male, 6 other, 1 undeclared
+#125 female, 93 male, 7 other, 0 undeclared

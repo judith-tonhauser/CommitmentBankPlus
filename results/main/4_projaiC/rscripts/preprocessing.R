@@ -1,25 +1,36 @@
-# conditional: projection and at-issueness
+# 4_projaiC
+# Exp 1c
+# projection and at-issueness (sure that)
 # preprocessing
 
 # set working directory to directory of script
 this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
 setwd(this.dir)
 
+# load required packages
+library(tidyverse)
+
+# load helpers
 source('../../helpers.R')
 
+# set theme
 theme_set(theme_bw())
-
-# load required packages for pre-processing data
-library(tidyverse)
 
 # read in the raw data
 d = read_csv("../data/experiment-trials.csv")
-
+nrow(d) #15600 / 300 = 52 trials
+head(d)
+summary(d)
 
 # read in the subject information
 ds = read_csv("../data/experiment-subject_information.csv")
+nrow(ds)
 
-#remove comments column (something in it creates a problem)
+# look at Turkers' comments
+summary(ds)
+unique(ds$comments)
+
+# remove comments column (something in it creates a problem)
 #ds <- ds %>% select(-comments)
 #names(ds)
 
@@ -30,21 +41,21 @@ d = d %>%
 # how many participants?
 length(unique(d$workerid)) #300
 
-# look at Turkers' comments
-summary(ds)
-unique(ds$comments)
-
 # participant info
-table(d$age) #18-79
-length(which(is.na(d$age))) # 0 missing values
-median(d$age,na.rm=TRUE) #32
+table(d$age) #18-58 
+
+# remove wacky ages from consideration
+d <-  d %>% mutate(age = replace(age, age>150, NA))
+
+length(which(is.na(d$age))) # 104 missing values
+mean(d$age,na.rm=TRUE) #25.9
 
 d %>% 
   select(gender, workerid) %>% 
   unique() %>% 
   group_by(gender) %>% 
   summarize(count=n())
-#158 female, 135 male, 6 other, 1 undeclared
+#249 female, 45 male, 6 other, 0 undeclared
 
 # change the response for ai condition so that what was 0/not-at-issue is now 1/not-at-issue
 # by subtracting the ai responses from 1
@@ -58,25 +69,26 @@ unique(d$trial) # trial numbers from 1 to 53 (27 missing because instruction)
 d[d$trial > 26,]$trial = d[d$trial > 26,]$trial - 1
 unique(d$trial) # trials from 1 to 52
 
+## exclude participants' data ----
+
 ### exclude non-English speakers and non-American English speakers
 # exclude non-English speakers
-length(which(is.na(ds$language))) #3 missing responses
-table(ds$language) 
-
+length(which(is.na(ds$language))) #0 missing responses
+table(d$language) 
 
 d <- d %>%
-  filter(language != "white" & language != "Bengali") %>%  droplevels()
-length(unique(d$workerid)) #295 (data from 5 participants excluded)
+  filter(language != "Language" & language != "Spanish" & language != "Jamaican Patois") %>%  droplevels()
+length(unique(d$workerid)) #297 (data from 3 participants excluded)
 
 # exclude non-American English speakers
-length(unique(d$workerid))# 295
-length(which(is.na(d$american))) #52 (1 participant didn't respond)
-table(d$american) #everybody else said yes
+length(unique(d$workerid))# 297
+length(which(is.na(d$american))) #0
+table(d$american) 
 
 # exclude participant who didn't say "yes"
 d <- d %>%
   filter(american == "Yes") %>%  droplevels()
-length(unique(d$workerid)) #294 participants (1 participant excluded)
+length(unique(d$workerid)) #294 participants (3 participant excluded)
 
 # exclude Turkers based on main clause controls
 
@@ -95,7 +107,7 @@ d.MC.Proj <- d.MC %>%
 nrow(d.MC.Proj) #1764
 
 # group projection mean (all Turkers, all clauses)
-round(mean(d.MC.Proj$response),2) #.95 (because speaker is committed to content of positive indicative sentences)
+round(mean(d.MC.Proj$response),2) #.94 (because speaker is committed to content of positive indicative sentences)
 
 # calculate each Turkers mean response to the projection of main clauses
 p.means = d.MC.Proj %>%
@@ -117,7 +129,7 @@ d.MC.AI <- d.MC %>%
 nrow(d.MC.AI) #1764
 
 # group not-at-issueness mean (all Turkers, all clauses)
-round(mean(d.MC.AI$response),2) #.06 (because main clause content is at-issue, coded as 0)
+round(mean(d.MC.AI$response),2) #.08 (because main clause content is at-issue, coded as 0)
 
 # calculate each Turkers mean response to the projection of main clauses
 ai.means = d.MC.AI %>%
@@ -137,61 +149,70 @@ ggplot(ai.means, aes(x=workerid,y=Mean)) +
 
 # get the Turkers who are more than 2 standard deviations below the mean on projection 
 p <- p.means[p.means$Mean < (mean(p.means$Mean) - 2*sd(p.means$Mean)),]
-p
+p #18
 
 # get the Turkers who are more than 2 standard deviations above the mean on ai 
 ai <- ai.means[ai.means$Mean > (mean(ai.means$Mean) + 2*sd(ai.means$Mean)),]
-ai
+ai #19
 
 # look at the main clauses that these "outlier" Turkers did
 # make data subset of just the outliers
 outliers <- d.MC %>%
   filter(workerid %in% p$workerid | workerid %in% ai$workerid)
 outliers = droplevels(outliers)
-nrow(outliers) #252 (21 Turkers x 12 = 6 main clauses x 2 questions)
+nrow(outliers) #312 = 26 participants
 
 # exclude all outliers identified above
 d <- d %>%
   filter(!(workerid %in% p$workerid | workerid %in% ai$workerid)) %>%
   droplevels()
-length(unique(d$workerid)) #273 remaining Turkers (21 Turkers excluded)
+length(unique(d$workerid)) #268 remaining Turkers (26 Turkers excluded)
 
-# exclude turkers who always clicked on roughly the same point on the scale 
-# ie turkers whose variance in overall response distribution is more 
+# variance
+
+# exclude participants who always clicked on roughly the same point on the scale 
+# ie participants whose variance in overall response distribution is more 
 # than 2 sd below mean by-participant variance
+table(d$trigger)
+table(d$question_type)
+
 variances = d %>%
-  filter(short_trigger != "MC") %>%
+  filter(trigger != "MC") %>%
   group_by(workerid) %>%
   summarize(Variance = var(response)) %>%
   mutate(TooSmall = Variance < mean(Variance) - 2*sd(Variance))
 
 lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
 summary(variances)
-lowvarworkers # 0 turkers consistently clicked on roughly the same point on the scale
+lowvarworkers # 2 participants had lower mean variance
 
-#lvw = d %>%
-#  filter(as.character(workerid) %in% lowvarworkers) %>%
-#  droplevels() %>%
-#  mutate(Participant = as.factor(as.character(workerid)))
+lvw = d %>%
+  filter(as.character(workerid) %in% lowvarworkers) %>%
+  droplevels() %>%
+  mutate(Participant = as.factor(as.character(workerid)))
 
-#ggplot(lvw,aes(x=Participant,y=response)) +
-#  geom_point()
+table(d$trigger_class)
 
-# exclude the Turkers identified above
+ggplot(lvw,aes(x=Participant,y=response,color=trigger_class)) +
+  geom_jitter()
+
+# exclude 2 participants with really low variance 
+d <- droplevels(subset(d, !(d$workerid == "1168")))
+d <- droplevels(subset(d, !(d$workerid == "1253")))
 #d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
-#length(unique(d$workerid)) 
+length(unique(d$workerid)) #266 participants remain
 
-# age and gender of remaining participants
-table(d$age) #18-79
-length(which(is.na(d$age))) # 0 missing values
-median(d$age,na.rm=TRUE) #32
+# write cleaned data to file
+write_csv(d, file="../data/data_preprocessed.csv")
+
+# info on remaining participants
+table(d$age) #18-58
+length(which(is.na(d$age))) # 52 missing values
+mean(d$age,na.rm=TRUE) #24.8
 
 d %>% 
   select(gender, workerid) %>% 
   unique() %>% 
   group_by(gender) %>% 
   summarize(count=n())
-#149 female, 117 male, 6 other, 1 undeclared
-
-write_csv(d, path="../data/data_preprocessed.csv",quote=F)
-
+#235 female, 25 male, 6 other, 0 undeclared

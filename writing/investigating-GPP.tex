@@ -138,7 +138,128 @@ Are not-at-issueness and projection positively correlated, as predicted by the G
 
 \section{Prior literature}\label{s2}
 
+\begin{exe}
+\ex\label{pred} 20 clause-embedding predicates 
+
+\begin{xlist}
+
+\ex canonically factive: {\em be annoyed, discover, know, reveal, see}
+
+\ex nonfactive:
+
+\begin{xlist}
+
+\ex nonveridical nonfactive: {\em pretend, suggest, say, think}
+
+\ex veridical nonfactive: {\em be right, demonstrate}
+
+\end{xlist}
+
+\ex optionally factive: {\em acknowledge, admit, announce, confess, confirm, establish, hear, inform, prove}
+
+\end{xlist}
+
+\end{exe}
+
 \section{Experiments 1-3: Methods}\label{s3}
+
+Exps.~1a and 1b were designed to investigate which of the CCs of the 20 clause-embedding predicates in \ref{pred} are presupposed.\footnote{\label{f-github}The experiments, data, and R code for generating the figures and analyses of the experiments reported in this paper are available at \url{https://github.com/judith-tonhauser/projective-probability}. All experiments were conducted with IRB approval. Exps.~1b, 2b, and 3b were preregistered: \url{https://osf.io/cxq47}.}
+
+The experiments employed the {\sc certain that} diagnostic for projection (see also, e.g.\ \citealt{tonhauser-salt26,djaerv-bacovcin-salt27,stevens-etal2017,lorson2018,tbd-variability,mahler-nels,mahler2020,demarneffe-etal-sub23}): on this diagnostic, participants are presented with an utterance in which the content to be investigated occurs in an entailment-canceling environment, like a polar question, as illustrated in \ref{stim} for the content of the appositive, that Martha's new car is a BMW.\footnote{For other diagnostics for projection see, e.g.\ \citealt{smith-hall11,xue-onea11}, and \citealt{brst-lang11}; see also the discussion in \citealt{tbd-variability}.} 
+
+\begin{exe}
+
+\ex\label{stim} Patrick asks: {\em Was Martha's new car, a BMW, expensive?} 
+
+\end{exe}
+To assess projection, participants are asked whether the speaker is certain of the content; for instance, in \ref{stim}, participants are asked whether Patrick is certain that Martha's new car is a BMW. If a participant takes the speaker to be certain of the content, we assume that the content projects, that is, the content is presupposed by the speaker; if a participant does not take the speaker to be certain of the content, we assume that the content does not project, that is, the content is not presupposed.
+
+Following \citealt{tbd-variability}, Exp.~1a implemented the certain that diagnostic with a gradient response scale: participants gave their responses on a slider marked `no' at one end and `yes' at the other. We assume that the closer to `yes' a participant's response is, the more the speaker is certain of the content, that is, the more projective the content is. In other words, we assume that gradient certainty ratings reflect gradience in the speaker's commitment to the truth of the content.\footnote{Strictly speaking,  gradient certainty ratings reflect gradience in the degree to which participants \emph{perceive} the speaker to be committed to the truth of the content. That is, as in any experiment, the quantity of interest, in this case speaker commitment, is only indirectly measured.} As discussed in \citealt{tbd-variability}, a second interpretation of gradient certainty ratings is that they reflect a participant's degree of belief in the speaker's (binary) commitment to the truth of the content. While we adopt the first interpretation in our discussion, we remain agnostic about the interpretation of gradient certainty ratings: either interpretation gives rise to the expectation,  on the definition of factive predicates in \ref{def}a, that certainty ratings for factive predicates are categorically higher than for optionally factive and nonfactive ones. 
+
+Exp.~1b was identical to Exp.~1a but employed a two-alternative forced choice task where participants categorically responded `yes' or `no'.
+
+\subsection{Participants}
+
+We recruited 250-300 participants for each of Exps.~1-3. Participants for Exp.~1q were recruited on Amazon's Mechanical Turk platform; the participants were required to have U.S.\ IP addresses and at least 99\% of previously approved HITs. Participants for the remaining experiments were recruited on Prolific; these participants were required to reside in the US, to be born in the US, to have English as their first language, and to have an approval rating of at least 99\%. Information on recruited participants (total number, ages, gender) and the payments they received can be found in Supplement \ref{a-participants}.
+
+\subsection{Materials}
+
+Exps.~1-3 investigated the projection and at-issueness of the CC of the 20 clause-embedding predicates in (\ref{pred}). The clausal complements of the 20 predicates were realized by 20 clauses (provided in Supplement \ref{a-clauses}), for a total of 400 predicate/clause combinations. These 400 predicate/clause combinations were combined with proper name subjects (a unique name per complement clause) to realize polar questions (in Exps. 1q, 2q, and 3q), negated declaratives (in Exps. 1n, 2n, and 3n), declaratives with the modal adverb {\em perhaps} (in Exps. 1m, 2m, and 3m), and the antecedents of conditionals (in Exps. 1c, 2c, and 3c). These sentences were presented as utterances by a named speaker. A sample set of target utterances is given in (\ref{sample-stims}): here, the named speaker is {\em Daniel}, the subject of the clause-embedding predicate is {\em Cole}, the predicate is {\em discover}, and the complement clause is {\em Julian dances salsa}.\footnote{The indirect object of {\em inform} was realized by the proper name {\em Sam}. The predicates differed in the tense in which they were realized. In polar interrogatives as well as in negated and modalized declaratives, eventive predicates, like {\em discover} and {\em hear}, were realized in the past tense and stative predicates, like {\em know} and {\em be annoyed}, were realized in the present tense.  In the antecedents of conditionals, all predicates were realized in the present tense. For the consequents of the conditional sentences see Supplement \ref{a-target}.}
+
+\begin{exe}
+\ex\label{sample-stims}
+\begin{xlist}
+\ex {\bf Daniel:} ``{\em Did Cole discover that Julian dances salsa?}"
+\ex {\bf Daniel:} ``{\em Cole didn't discover that Julian dances salsa.}"
+\ex {\bf Daniel:} ``{\em Perhaps Cole discovered that Julian dances salsa.}"
+\ex {\bf Daniel:} ``{\em If Cole discovered that Julian dances salsa, Logan will be joyful.}"
+\end{xlist}
+\end{exe}
+The proper names that realized the speakers, the subjects of the clause-embedding predicates, the subjects of the complement clauses, and the subjects of the consequents  were all unique.
+
+Projection and at-issueness of the contents of the clausal complements were measured in separate blocks. In the projection blocks across Exps.~1-3, projection was measured with the `certain that' diagnostic. The target stimuli consisted of the target utterances, as shown in Figure \ref{f-projection-trials}.
+
+
+\begin{figure}[h!]
+\centering
+
+\begin{subfigure}[t]{0.5\textwidth}
+        \centering
+\fbox{\includegraphics[width=7.55cm]{figures/exp1q-projection-trial}}
+\caption{Target trial in projection block of Exp.~1q.}\label{fig-exp1q-projection}
+\end{subfigure}%
+\begin{subfigure}[t]{0.5\textwidth}
+\centering
+\fbox{\includegraphics[width=7.9cm]{figures/exp1n-projection-trial}} 
+\caption{Target trial in projection block of Exp.~1n.}\label{fig-exp1n-projection}
+ \end{subfigure}
+\begin{subfigure}[t]{0.5\textwidth}
+        \centering
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/exp1m-projection-trial}}
+\caption{Target trial in projection block of Exp.~1m}\label{fig-exp1m-projection}
+ \end{subfigure}%
+\begin{subfigure}[t]{0.5\textwidth}
+\centering
+\fbox{\includegraphics[height=5.4cm,width=7.9cm]{figures/exp1c-projection-trial}} 
+\caption{Target trial in projection block of Exp.~1c}\label{fig-exp1c-projection}
+\end{subfigure}
+
+
+\caption{Target trials in projection blocks of Exps.~1.}\label{f-projection-trials}
+\end{figure}
+
+The at-issueness diagnostics differed between Exps.~1, 2, and 3: at-issueness was measured in Exp.~1q with the `asking whether' diagnostic, with the `sure that' diagnostic in Exps.~1n, 1m, and 1c, with the `yes' diagnostic in Exps.~2q and 3q, with the `assent with positive continuation' diagnostic in Exps.~2n, 2m, and 2c,  and with the `assent with adversative continuation' diagnostic in Exps.~3n, 3m, and 3c. 
+
+, as shown in Figure \ref{f-ai-trials}.
+
+
+To assess whether participants were attending to the task, each experiment also included six control stimuli, which were also utterances made by a named speaker. (The controls are provided in Supplement \ref{a-control}.) Each participant saw a random set of 26 stimuli: each set contained one target utterance for each of the 20 clause-embedding predicates (each with a unique complement clause) and the same 6 control stimuli. Each participant saw their set of 26 stimuli twice, once in the projection block and once in the at-issueness block. Block order and within-block trial order was randomized. 
+
+
+
+In the projection block, target stimuli consisted of a fact and a polar question that was ut- tered by a named speaker, as shown in Figure 1B. The polar questions were formed by real- izing the 20 clauses as the complements of the 20 clause-embedding predicates in Figure 1C. Participants were told to imagine that they are at a party and that, on walking into the kitchen, they overhear somebody ask somebody else a question. Projection was measured using the ?certain that? diagnostic (Djärv \& Bacovcin, 2017; Lorson, 2018; Mahler, 2020; Tonhauser et al., 2018): participants were asked to rate whether the speaker was certain of the CC, taking into consideration the fact. They gave their responses on a slider marked ?no? at one end (coded as 0) and ?yes? at the other (coded as 1). Greater speaker commitment to the CC should result in higher slider ratings.
+
+
+
+\subsection{Procedure}
+
+Participants were told to imagine that they are at a party and that, on walking into the kitchen, they overhear somebody ask a question. Participants were asked to rate whether the speaker was certain of the CC. They gave their responses on a slider marked `no' at one end (coded as 0) and `yes' at the other (coded as 1), as shown in Figure \ref{fig-trial-exp1}.
+
+
+\begin{figure}[h!]
+\begin{center}
+\fbox{\includegraphics[width=10cm]{Language-figures/color/Figure1}}
+\end{center}
+\caption{A sample trial in Experiment 1a}\label{fig-trial-exp1}
+\end{figure}
+
+%After completing the experiment (as well as the other five experiments we report on), participants filled out a short, optional survey about their age, their gender, their native language(s) and, if English is their native language, whether they are a speaker of American English (as opposed to, e.g.\ Australian or Indian English). To encourage them to respond truthfully, participants were told that they would be paid no matter what answers they gave in the survey.
+
+After completing the experiment, participants filled out a short optional demographic sur- vey. To encourage truthful responses, participants were told that they would be paid no matter what answers they gave in the survey.
+
+\subsection{Data exclusion} 
+
+We excluded data from participants who took any experiment more than once and who did not self-declare to be native speakers of American English. We also excluded data from participants based on their ratings on the main clause controls and other criteria given in Supplement \ref{a-participants}. In each experiment, the data from at least {\bf FIX} participants were analyzed. Information on the participants whose data entered into the analysis (total number, ages, gender) can be found in Supplement \ref{a-participants}.
 
 \section{Experiments 1-3: Results}\label{s4}
 
@@ -230,108 +351,108 @@ The following clauses realized the complements of the predicates in Exps.~1-3:
 
 \end{enumerate}
 
+\section{Consequents for target stimuli in Exps.~1c, 2c, and 3c}\label{a-target}
+
+10 positive valuence, 10 negative valuence {\bf which other considerations?}
+
+\begin{enumerate}[leftmargin=3ex,itemsep=-2pt]
+
+\item \ldots that Mary is pregnant, Esther will be mad.
+\item \ldots that Josie went on vacation to France, Arnold will be frustrated.
+\item \ldots that Emma studied on Saturday morning, Liam will be proud.
+\item \ldots that Olivia sleeps until noon, Elijah will be embarrassed.
+\item \ldots that Sophia got a tattoo, Ariel will be giddy.
+\item \ldots that Mia drank 2 cocktails last night, Mariela will be worried.
+\item \ldots that Isabella ate a steak on Sunday, Liz will be delighted.
+\item  \ldots that Emily bought a car yesterday, Kate will be excited.
+\item \ldots that  Grace visited her sister, Henry will be surprised.
+\item \ldots that Zoe calculated the tip, Alex will be astonished.
+\item  \ldots that Danny ate the last cupcake, Harper will be disgusted.
+\item  \ldots that Frank got a cat, Lucas will be grouchy.
+\item  \ldots that Jackson ran 10 miles, Kayla will be cheerful.
+\item  \ldots that Jayden rented a car, Brittany will be furious.
+\item  \ldots that Tony had a drink last night, Victoria will be ashamed.
+\item  \ldots that Josh learned to ride a bike yesterday, Mason will be envious.
+\item  \ldots that Owen shoveled snow last winter, Bianca will be jealous.
+\item  \ldots that Julian dances salsa, Logan will be joyful.
+\item  \ldots that Jon walks to work, Caleb will be suspicious.
+\item  \ldots that Charley speaks Spanish, Jay will be happy.
+
+\end{enumerate}
+
+
 \section{Control stimuli in Exps.~1-3}\label{a-control}
 
+The control stimuli in Exps.~1-3 were formed from the sentences in (1). In Exps.~1, we used the polar question variants of the sentences in (1) in Exp.~1q, and the (positive declarative) sentences in (1) in Exps.~1n, 1m, and 1c; in Exp.~1c, we added the non-restrictive relative clauses (NRRCs) provided in (1) to the respective subjects, so that the control stimuli have two clauses, like the target stimuli. 
+
+We used positive declarative control sentences in Exps.~1n, 1m, and 1c so that we could have clear expectations about participants' responses. Thus, we expected participants to give low responses in the `certain that' and `asking whether' diagnostic in Exp.~1q (indicating that the main clause content does not project and is at-issue), and we expected participants to give low responses in the `certain that' diagnostic and high responses in the `sure that' diagnostic in Exps.~1n, 1m, and 1c (indicating, again, that the main clause content does not project and is at-issue). 
+
 \begin{exe}
-\exi{(1)}  Control stimuli in Exps.~1
+\exi{(1)}  Sentences for control stimuli in Exps.~1
 \begin{xlist}
-
-\ex   Is Zack coming to the meeting tomorrow?
-
-\ex Is Mary's aunt sick?
-
-\ex Did Todd play football in high school?
-
-\ex Is Vanessa good at math?
-
-\ex Did Madison have a baby?
-
-\ex Was Hendrick's car expensive?
-
+\ex These muffins have blueberries in them.  (NRRC: , which are really delicious, )
+\ex This pizza has mushrooms on it. (NRRC: , which I just made from scratch, )
+\ex Jack was playing outside with the kids. (NRRC: , who is my long-time neighbor, )
+\ex Ann dances ballet. (NRRC: , who is a local performer, )
+\ex John's kids were in the garage. (NRRC: , who are very well-behaved, )
+\ex Samantha has a new hat. (NRRC: , who is really into fashion, )
 \end{xlist}
 \end{exe}
 
-\begin{exe}
-\exi{(2)} Control stimuli in Exps.~2
-\begin{xlist}
-\ex Entailing control stimuli
-\begin{xlist}
-\ex {\bf What is true:} Frederick managed to solve the problem. (Tested inference: Frederick solved the problem.)
-\ex {\bf What is true:} Zack bought himself a car this morning. (Tested inference: Zack owns a car.)
-\ex {\bf What is true:} Tara broke the window with a bat. (Tested inference: The window broke.)
-\ex {\bf What is true:} Vanessa happened to look into the mirror. (Tested inference: Vanessa looked into the mirror.)
-\end{xlist}
-\ex Non-entailing control stimuli
-\begin{xlist}
-\ex {\bf What is true:} Dana watched a movie last night. (Tested inference: Dana wears a wig.)
-\ex {\bf What is true:} Hendrick is renting an apartment. (Tested inference: The apartment has a balcony.)
-\ex {\bf What is true:} Madison was unsuccessful in closing the window. (Tested inference:  Madison closed the window.)
-\ex {\bf What is true:} Sebastian failed the exam. (Tested inference: Sebastian did really well on the exam.)
-\end{xlist}
-\end{xlist}
-\end{exe}
+In Exps.~2 and 3, the NRRCs were included in all control stimuli: the carrier sentences were the polar question variants of the sentences in (1) in Exps.~2q and 3q, and the sentences in (1) for the remaining experiments. The NRRCs were included in Exps.~2 and 3 to make the use of the assent diagnostics in the at-issueness blocks more natural: like the target stimuli, the control stimuli consist of two clauses, one of which the relevant speaker assents with.
 
-\begin{exe}
-\exi{(3)} Control stimuli in Exps.~3
-\begin{xlist}
-\ex Contradictory control stimuli
-\begin{xlist}
-\ex Madison laughed loudly and she didn't laugh.
+We had the same expectations as for the control stimuli in Exps.~1: low responses in the `certain that' and `asking whether' diagnostic in Exps.~2q and 3q (indicating that the main clause content does not project and is at-issue), and low responses in the `certain that' diagnostic and high responses in the `sure that' diagnostic in the remaining experiments (indicating, again, that the main clause content does not project and is at-issue). 
 
-\ex Dana has never smoked in her life and she stopped smoking recently.
-\ex Hendrick's car is completely red and his car is not red.
+{\bf Provide information on whether these expectations were met -- THEY WERE NOT ALWAYS}
 
-\ex Sebastian lives in the USA and has never been to the USA.
-\end{xlist}
+\newpage
 
-\ex Non-contradictory control stimuli
-\begin{xlist}
-\ex Vanessa is really good at math, but I'm not.
-\ex Zack believes that I'm married, but I'm actually single.
-\ex Tara wants me to cook for her and I'm a terrific cook.
-\ex Frederick is both smarter and taller than I am.
+\section{Data exclusion}\label{a-participants}
 
-\end{xlist}
-\end{xlist}
-\end{exe}
+{\bf Include information on payment}
 
+Gender: no data collected in Exp 1q
 
-\section{Data exclusion}\label{a-excl}
+Relevant manual inspection on `variance': Exp 1q, Exp 2q, Exp 3q (participants automatically identified, but not all excluded after manual inspection)
 
 Table \ref{f-exclusion} presents how many participants' data were excluded from the analysis based on the exclusion criteria. The first column records the experiment, the second (`recruited') how many participants were recruited, and the final column (`remaining') how many participants' data entered the analysis. The `Exclusion criteria' columns show how many participants' data were excluded based on the four exclusion criteria: 
 
+{\bf comment on why so many women}
+
 \begin{itemize}[topsep = -1ex,itemsep=-2pt]
 
-\item `multiple': Due to an experimental glitch, some participants participated in Exps.~1b, 2b or 3b more than once. Of these participants, we only analyzed the data from the first time they participated.
+\item `multiple': Due to an experimental glitch, some participants participated more than once. Since no information was available on which one was their first take, those participants' data was removed (which means that for each participant who took the experiment twice, at least two data sets were removed).
 
 \item `language': Participants' data were excluded if they did not self-identify as native speakers of American English.
 
 \item `controls': Participants' data were excluded if their response mean on the 6 control items was more than 2 sd above the group mean (Exp.~1a), if they gave a wrong rating (`yes') to more than one of the six controls (Exp.~1b), if their response mean on the entailing or the non-entailing controls was more than 2 sd below or above, respectively, the group mean (Exp.~2a), if they gave more than one wrong rating to one of the eight controls, where a wrong rating is a `yes' to a non-entailing control and a `no' to an entailing one (Exp.~2b), if their response means on the contradictory or non-contradictory controls were more than 2 sd below or above, respectively, the group mean (Exp.~3a), and if they gave more than one wrong response to one of the eight control sentences, where a wrong response was a `yes' to a non-contradictory control or a `no' to a contradictory one (Exp.~3b).
 
-\item `variance': Participants' data were excluded if they always selected roughly the same point on the response scale, that is, if the variance of their response distribution was more than 2 sd below the group mean variance.
+\item `variance': Participants' data were excluded if they always selected roughly the same point on the response scale for the non-control trials. We identified such participants by calculating the variance of the response distribution for each participant, and manually inspecting those whose variance was more than 2 sd below the group mean variance.
 
 \end{itemize}
 
+{\bf Exp 3n, 3m, 3c: need to look at not-at-issue ratings on controls to see how to exclude}
+
 \begin{table}[h!]
 \centering
-\begin{tabular}{l r | r r r r | r}
-&  & \multicolumn{4}{c|}{Exclusion criteria} &  \\ 
-&  recruited & multiple & language & controls & variance & remaining \\ 
+\begin{tabular}{l | r r r | r r r r | r r r }
+&  \multicolumn{3}{c|}{Recruited participants} & \multicolumn{4}{c|}{Exclusion criteria} & \multicolumn{3}{c}{Remaining participants}  \\ 
+Exp. & total & ages (mean) & f/m/o/u & mult & lang & cntr & var & total & ages (mean) & f/m/o/u  \\ 
 \hline
-Exp.~1q & xx & xx & xx & xx & xx & xx \\
-Exp.~1n & xx & xx & xx & xx & xx & xx \\
-Exp.~1m & xx & xx & xx & xx & xx & xx \\
-Exp.~1c & xx & xx & xx & xx & xx & xx \\
-Exp.~2q & xx & xx & xx & xx & xx & xx \\
-Exp.~2n & xx & xx & xx & xx & xx & xx \\
-Exp.~2m & xx & xx & xx & xx & xx & xx \\
-Exp.~2c & xx & xx & xx & xx & xx & xx \\
-Exp.~3q & xx & xx & xx & xx & xx & xx \\
-Exp.~3n & xx & xx & xx & xx & xx & xx \\
-Exp.~3m & xx & xx & xx & xx & xx & xx \\
-Exp.~3c & xx & xx & xx & xx & xx & xx \\
+1q & 300  & 19-74 (38.2)  & --  & 5  & 7  & 35  & 0  & 242   & 21-74 (39.2) &  -- \\
+1n & 300  & 18-74 (33.2)  &  150/145/5/0 & 0  & 8 & 17 & 1 & 274  & 18-74 (33.3) & 141/128/5/0 \\
+1m & 300  & 18-74 (32.7) & 150/141/7/2  &  0 & 0  & 19 & 0   & 281   & 18-74 (32.7) & 144/129/7/1 \\
+1c &  300 & 18-58 (25.9)  & 249/45/6/0 & 0 & 6  & 26 & 2  & 266  &  18-58 (24.8) & 235/25/6/0  \\
+2q & 250  &  18-58 (25.5) &  201/43/6/0  & 0 & 4  & 24  & 1 & 220  & 18-58 (24.8)  & 187/28/5/0  \\
+2n & 250  &  18-69 (33.2)  &  127/114/6/1 & 1  & 4  & 29 & 0& 215  &  18-69 (33.1) & 113/95/6/1    \\
+2m & 251  & 18-74 (31.7)  & 132/113/6/0  & 0  & 4  & 27 &  0 & 220  & 18-70 (31.9) & 116/98/6/0 \\
+2c &  250 &  18-56 (24.5)  & 212/30/8/0  & 0  & 0  & 26 & 0  & 224  & 18-56 (24.4) & 195/24/5/0 \\
+3q & 250  &  18-66 (32.4) &  140/102/7/1 &  0 & 4  & 20  & 0  &  225 & 18-66 (32.6) & 125/93//7/0  \\
+3n & 250  &  18-70 (24.6) & 114/31/5/0  & 0  & 5  &  &   &   &  &  \\
+3m & 250  & 18-63 (25.5)  & 205/40/5/0 &  0 & 3  &  &   &   &  &  \\
+3c & 250  & 18-59  (27.5) & 182/64/4/0  & 0  & 3   &  &   &   &  &  \\
 \end{tabular}
-\caption{Data exclusion in Exps.~1, 2 and 3}\label{f-exclusion}
+\caption{Recruited participants, excluded data, and remaining participants in Exps.~1, 2 and 3}\label{f-exclusion}
 \end{table} 
 
 

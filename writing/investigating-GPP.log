@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 JAN 2022 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  31 JAN 2022 12:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1248,65 +1248,165 @@ Package natbib Warning: Citation `snider2017' on page 1 undefined on input line
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 154.
+LaTeX Font Info:    Try loading font information for OT1+txtt on input line 166
+.
 
+(/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ot1txtt.fd
+File: ot1txtt.fd 2000/12/15 v3.1
+)
+
+LaTeX Warning: Reference `def' on page 2 undefined on input line 177.
+
+[2]
+
+./investigating-GPP.tex:208: LaTeX Error: File `figures/exp1q-projection-trial'
+ not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.208 ...=7.55cm]{figures/exp1q-projection-trial}}
+                                                  
+? 
+
+./investigating-GPP.tex:213: LaTeX Error: File `figures/exp1n-projection-trial'
+ not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213 ...h=7.9cm]{figures/exp1n-projection-trial}}
+                                                  
+? 
+
+./investigating-GPP.tex:218: LaTeX Error: File `figures/exp1m-projection-trial'
+ not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.218 ...h=7.6cm]{figures/exp1m-projection-trial}}
+                                                  
+? 
+
+./investigating-GPP.tex:223: LaTeX Error: File `figures/exp1c-projection-trial'
+ not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.223 ...h=7.9cm]{figures/exp1c-projection-trial}}
+                                                  
+? 
+
+LaTeX Warning: Reference `f-ai-trials' on page 3 undefined on input line 233.
+
+Missing character: There is no ä in font txr!
+[3]
+
+./investigating-GPP.tex:251: LaTeX Error: File `Language-figures/color/Figure1'
+ not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.251 ...th=10cm]{Language-figures/color/Figure1}}
+                                                  
+? 
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 275.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 154.
-
-(./investigating-GPP.bbl) [2]pdfTeX warning (ext4): destination with the same i
-dentifier (name{page.1}) has been already used, duplicate ignored
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 275.
+ [4]
+(./investigating-GPP.bbl [5]) [6]pdfTeX warning (ext4): destination with the sa
+me identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.279 \ex M
-           adison laughed loudly and she didn't laugh. [1]
+l.387 
+       [1]pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.408 \newpage
+               [2]
+Overfull \hbox (7.4496pt too wide) in paragraph at lines 438--455
+ [][] 
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Package natbib Warning: There were undefined citations.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.338 \end{document}
-                     [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
- [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
+l.459 \end{document}
+                     [3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.459 \end{document}
+                     [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
  (./investigating-GPP.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 338.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 338.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
 Package rerunfilecheck Info: File `investigating-GPP.out' has not changed.
-(rerunfilecheck)             Checksum: 497D25DAD3A6AFA12A790A5915D3B6DD;680.
+(rerunfilecheck)             Checksum: A559F7EAC99CAD8DA7789150E39E647C;1015.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 338.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
  ) 
 Here is how much of TeX's memory you used:
- 24279 strings out of 493014
- 415207 string characters out of 6133351
- 537992 words of memory out of 5000000
- 27223 multiletter control sequences out of 15000+600000
- 44831 words of font info for 118 fonts, out of 8000000 for 9000
+ 24448 strings out of 493014
+ 417697 string characters out of 6133351
+ 539452 words of memory out of 5000000
+ 27322 multiletter control sequences out of 15000+600000
+ 54758 words of font info for 139 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 55i,9n,77p,3249b,592s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on investigating-GPP.pdf (5 pages, 58489 bytes).
+ 55i,10n,77p,3249b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/txfonts/rtxsc.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2016/texmf-dist
+/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
+times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr
+i8a.pfb>
+Output written on investigating-GPP.pdf (10 pages, 89872 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 74 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 315 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,5 @@
 # 5_projaiQ
+# Exp 2q
 # projection and at-issueness (assent with positive continuation)
 # preprocessing
 
@@ -6,11 +7,14 @@
 this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
 setwd(this.dir)
 
-source('../../helpers.R')
-theme_set(theme_bw())
+# load required packages
+library(tidyverse)
 
-# load required packages for pre-processing data
-require(tidyverse)
+# load helpers
+source('../../helpers.R')
+
+# set theme
+theme_set(theme_bw())
 
 # read in the raw data
 d = read_csv("../data/experiment-trials.csv")
@@ -37,7 +41,7 @@ d = d %>%
 # participant info
 table(d$age) #18-58
 length(which(is.na(d$age))) # 0 missing values
-median(d$age,na.rm=TRUE) #23
+mean(d$age,na.rm=TRUE) #25.5
 
 d %>% 
   select(gender, workerid) %>% 
@@ -57,6 +61,8 @@ d$trial = d$slide_number_in_experiment - 4
 unique(d$trial) # trial numbers from 1 to 53 (27 missing because instruction)
 d[d$trial > 26,]$trial = d[d$trial > 26,]$trial - 1
 unique(d$trial) # trials from 1 to 52
+
+## exclude participants' data ----
 
 ### exclude non-American English speakers
 length(unique(d$workerid)) #250
@@ -156,5 +162,48 @@ d <- d %>%
   droplevels()
 length(unique(d$workerid)) # 221 remaining participants (24 participants excluded)
 
-# write cleaned dataset to file
-write_csv(d, path="../data/data_preprocessed.csv")
+# variance
+
+# exclude participants who always clicked on roughly the same point on the scale 
+# ie participants whose variance in overall response distribution is more 
+# than 2 sd below mean by-participant variance
+table(d$trigger)
+table(d$question_type)
+
+variances = d %>%
+  filter(trigger != "MC") %>%
+  group_by(workerid) %>%
+  summarize(Variance = var(response)) %>%
+  mutate(TooSmall = Variance < mean(Variance) - 2*sd(Variance))
+
+lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
+summary(variances)
+lowvarworkers # 3 participants had lower mean variance
+
+lvw = d %>%
+  filter(as.character(workerid) %in% lowvarworkers) %>%
+  droplevels() %>%
+  mutate(Participant = as.factor(as.character(workerid)))
+
+ggplot(lvw,aes(x=Participant,y=response)) +
+  geom_jitter()
+
+# exclude 1 participant with really low variance (#1547)
+d <- droplevels(subset(d, !(d$workerid == "1547")))
+#d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
+length(unique(d$workerid)) #220 participants remain
+
+# write cleaned data to file
+write_csv(d, file="../data/data_preprocessed.csv")
+
+# info on remaining participants
+table(d$age) #18-58
+length(which(is.na(d$age))) # 0 missing values
+median(d$age,na.rm=TRUE) #23
+
+d %>% 
+  select(gender, workerid) %>% 
+  unique() %>% 
+  group_by(gender) %>% 
+  summarize(count=n())
+#187 female, 28 male, 5 other, 0 undeclared

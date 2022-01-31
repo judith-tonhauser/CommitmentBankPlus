@@ -1,23 +1,32 @@
-# modal: projection and at-issueness
+# 3_projaiM
+# Exp 1m
+# projection and at-issueness (sure that)
 # preprocessing
 
 # set working directory to directory of script
 this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
 setwd(this.dir)
 
+# load required packages
+library(tidyverse)
+
+# load helpers
 source('../../helpers.R')
 
+# set theme
 theme_set(theme_bw())
-
-# load required packages for pre-processing data
-library(tidyverse)
 
 # read in the raw data
 d = read_csv("../data/experiment-trials.csv")
-
+nrow(d) #15600 / 300 = 52 trials
+head(d)
+summary(d)
 
 # read in the subject information
 ds = read_csv("../data/experiment-subject_information.csv")
+nrow(ds) #300
+head(ds)
+summary(ds)
 
 # merge subject information into data
 d = d %>%
@@ -32,7 +41,7 @@ unique(ds$comments)
 # participant info
 table(d$age) #18-74
 length(which(is.na(d$age))) # 0 missing values
-median(d$age,na.rm=TRUE) #30
+mean(d$age,na.rm=TRUE) #32.7
 
 d %>% 
   select(gender, workerid) %>% 
@@ -52,6 +61,8 @@ d$trial = d$slide_number_in_experiment - 4
 unique(d$trial) # trial numbers from 1 to 53 (27 missing because instruction)
 d[d$trial > 26,]$trial = d[d$trial > 26,]$trial - 1
 unique(d$trial) # trials from 1 to 52
+
+## exclude participants' data ----
 
 ### exclude non-English speakers and non-American English speakers
 # exclude non-English speakers
@@ -147,35 +158,46 @@ d <- d %>%
   droplevels()
 length(unique(d$workerid)) #281 remaining Turkers (19 Turkers excluded)
 
-# exclude turkers who always clicked on roughly the same point on the scale 
-# ie turkers whose variance in overall response distribution is more 
+# variance
+
+# exclude participants who always clicked on roughly the same point on the scale 
+# ie participants whose variance in overall response distribution is more 
 # than 2 sd below mean by-participant variance
+table(d$trigger)
+table(d$question_type)
+
 variances = d %>%
-  filter(short_trigger != "MC") %>%
+  filter(trigger != "MC") %>%
   group_by(workerid) %>%
   summarize(Variance = var(response)) %>%
   mutate(TooSmall = Variance < mean(Variance) - 2*sd(Variance))
 
 lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
 summary(variances)
-lowvarworkers # 0 turkers consistently clicked on roughly the same point on the scale
+lowvarworkers # 0 participants had lower mean variance
 
 lvw = d %>%
   filter(as.character(workerid) %in% lowvarworkers) %>%
   droplevels() %>%
   mutate(Participant = as.factor(as.character(workerid)))
 
-ggplot(lvw,aes(x=Participant,y=response)) +
-  geom_point()
+table(d$trigger_class)
 
-# exclude the Turkers identified above
+ggplot(lvw,aes(x=Participant,y=response,color=trigger_class)) +
+  geom_jitter()
+
+# exclude 0 participant with really low variance 
+#d <- droplevels(subset(d, !(d$workerid == "249")))
 #d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
-#length(unique(d$workerid)) #9 Turkers remain
+length(unique(d$workerid)) #281 participants remain
 
-# age and gender of remaining participants
+# write cleaned data to file
+write_csv(d, file="../data/data_preprocessed.csv")
+
+# info on remaining participants
 table(d$age) #18-74
-length(which(is.na(d$age))) #1 missing value
-median(d$age,na.rm=TRUE) #29
+length(which(is.na(d$age))) # 0 missing values
+mean(d$age,na.rm=TRUE) #32.7
 
 d %>% 
   select(gender, workerid) %>% 
@@ -183,6 +205,3 @@ d %>%
   group_by(gender) %>% 
   summarize(count=n())
 #144 female, 129 male, 7 other, 1 undeclared
-
-write.csv(d, file="../data/data_preprocessed.csv",row.names=F,quote=F)
-
