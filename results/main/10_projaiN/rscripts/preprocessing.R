@@ -142,13 +142,13 @@ ggplot(ai.means, aes(x=workerid,y=Mean)) +
 # look at participants whose response mean on projection and ainess of main clauses is more than 2
 # standard deviations away from the overall mean
 
-# get the participants who are more than 2 standard deviations above the mean on projection 
-p <- p.means[p.means$Mean > (mean(p.means$Mean) + 2*sd(p.means$Mean)),]
-p #0 participants 
+# get the participants who are more than 2 standard deviations below the mean on projection 
+p <- p.means[p.means$Mean < (mean(p.means$Mean) - 2*sd(p.means$Mean)),]
+p #13 participants 
 
 # get the participants who are more than 2 standard deviations above the mean on ai 
 ai <- ai.means[ai.means$Mean > (mean(ai.means$Mean) + 2*sd(ai.means$Mean)),]
-ai #10 participants
+ai #0 participants
 
 # make data subset of just the outliers
 outliers <- d.MC %>%
