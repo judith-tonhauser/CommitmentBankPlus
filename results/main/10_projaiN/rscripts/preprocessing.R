@@ -16,6 +16,11 @@ source('../../helpers.R')
 # set theme
 theme_set(theme_bw())
 
+# how long did the experiment take?
+time = read_csv("../data/experiment-merged.csv")
+mean(time$time_in_minutes) #11.3 minutes
+median(time$time_in_minutes) #9.3 minutes
+
 # read in the raw data
 d = read_csv("../data/experiment-trials.csv")
 nrow(d) #13000 / 250 = 52 trials (the experiment was done 250 times, as planned)
@@ -154,13 +159,13 @@ ai #0 participants
 outliers <- d.MC %>%
   filter(workerid %in% p$workerid | workerid %in% ai$workerid)
 outliers = droplevels(outliers)
-nrow(outliers) #240 / 12 = 20 outlier participants
+nrow(outliers) #156 / 12 = 13 outlier participants
 
 # exclude all outlier participants identified above
 d <- d %>%
   filter(!(workerid %in% p$workerid | workerid %in% ai$workerid)) %>%
   droplevels()
-length(unique(d$workerid)) # 225 remaining participants (20 participants excluded)
+length(unique(d$workerid)) # 232 remaining participants (13 participants excluded)
 
 # variance
 
@@ -178,7 +183,7 @@ variances = d %>%
 
 lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
 summary(variances)
-lowvarworkers # 3 participants had lower mean variance
+lowvarworkers # 4 participants had lower mean variance
 
 lvw = d %>%
   filter(as.character(workerid) %in% lowvarworkers) %>%
@@ -188,22 +193,22 @@ lvw = d %>%
 ggplot(lvw,aes(x=Participant,y=response,color=trigger_class)) +
   geom_jitter()
 
-# exclude 0 participants with really low variance 
+# exclude 4 participants with really low variance 
 #d <- droplevels(subset(d, !(d$workerid == "1547")))
-#d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
-length(unique(d$workerid)) #225 participants remain
+d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
+length(unique(d$workerid)) #228 participants remain
 
 # write cleaned data to file
 write_csv(d, file="../data/data_preprocessed.csv")
 
 # info on remaining participants
-table(d$age) #18-66
+table(d$age) #18-70
 length(which(is.na(d$age))) # 0 missing values
-mean(d$age,na.rm=TRUE) #32.6
+mean(d$age,na.rm=TRUE) #24.3
 
 d %>% 
   select(gender, workerid) %>% 
   unique() %>% 
   group_by(gender) %>% 
   summarize(count=n())
-#125 female, 93 male, 7 other, 0 undeclared
+#198 female, 25 male, 5 other, 0 undeclared

@@ -16,6 +16,11 @@ source('../../helpers.R')
 # set theme
 theme_set(theme_bw())
 
+# how long did the experiment take?
+time = read_csv("../data/experiment-merged.csv")
+mean(time$time_in_minutes) #9.5 minutes
+median(time$time_in_minutes) #8.4 minutes
+
 # read in the raw data
 d = read_csv("../data/experiment-trials.csv")
 nrow(d) #13000 / 250 = 52 trials (the experiment was done 250 times, as planned)
@@ -180,12 +185,17 @@ lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
 summary(variances)
 lowvarworkers # 3 participants had lower mean variance
 
+#View(variances)
+
+ggplot(variances,aes(x=workerid,y=Variance)) +
+  geom_point()
+
 lvw = d %>%
   filter(as.character(workerid) %in% lowvarworkers) %>%
   droplevels() %>%
   mutate(Participant = as.factor(as.character(workerid)))
 
-ggplot(lvw,aes(x=Participant,y=response)) +
+ggplot(lvw,aes(x=Participant,y=response,color=trigger_class)) +
   geom_jitter()
 
 # exclude 1 participant with really low variance (#1547)

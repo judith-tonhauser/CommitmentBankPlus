@@ -139,11 +139,11 @@ ggplot(ai.means, aes(x=workerid,y=Mean)) +
 
 # get the Turkers who are more than 2 standard deviations below the mean on projection 
 p <- p.means[p.means$Mean < (mean(p.means$Mean) - 2*sd(p.means$Mean)),]
-p
+p #14 participants
 
 # get the Turkers who are more than 2 standard deviations above the mean on ai 
 ai <- ai.means[ai.means$Mean > (mean(ai.means$Mean) + 2*sd(ai.means$Mean)),]
-ai
+ai #12 participants
 
 # look at the main clauses that these "outlier" Turkers did
 # make data subset of just the outliers

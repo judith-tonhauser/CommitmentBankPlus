@@ -4,45 +4,46 @@ The top-level auxiliary file: investigating-GPP.aux
 The style file: cslipubs-natbib.bst
 Database file #1: bibliography.bib
 Warning--I didn't find a database entry for "snider2017"
-You've used 13 entries,
+Warning--I didn't find a database entry for "snider-paper"
+You've used 18 entries,
             2811 wiz_defined-function locations,
-            701 strings with 6715 characters,
-and the built_in function-call counts, 6413 in all, are:
-= -- 618
-> -- 332
-< -- 9
-+ -- 115
-- -- 96
-* -- 528
-:= -- 1181
-add.period$ -- 52
-call.type$ -- 13
-change.case$ -- 97
-chr.to.int$ -- 13
-cite$ -- 13
-duplicate$ -- 247
-empty$ -- 415
-format.name$ -- 115
-if$ -- 1285
+            729 strings with 7455 characters,
+and the built_in function-call counts, 8645 in all, are:
+= -- 831
+> -- 440
+< -- 13
++ -- 152
+- -- 126
+* -- 710
+:= -- 1592
+add.period$ -- 72
+call.type$ -- 18
+change.case$ -- 134
+chr.to.int$ -- 18
+cite$ -- 18
+duplicate$ -- 340
+empty$ -- 570
+format.name$ -- 156
+if$ -- 1728
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 12
-newline$ -- 70
-num.names$ -- 52
-pop$ -- 61
+missing$ -- 17
+newline$ -- 95
+num.names$ -- 72
+pop$ -- 90
 preamble$ -- 2
-purify$ -- 84
+purify$ -- 114
 quote$ -- 0
-skip$ -- 188
+skip$ -- 254
 stack$ -- 0
-substring$ -- 418
-swap$ -- 51
+substring$ -- 544
+swap$ -- 67
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 117
+type$ -- 162
 warning$ -- 0
-while$ -- 53
+while$ -- 71
 width$ -- 0
-write$ -- 172
-(There was 1 warning)
+write$ -- 235
+(There were 2 warnings)

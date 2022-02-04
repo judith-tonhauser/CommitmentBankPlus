@@ -16,6 +16,11 @@ source('../../helpers.R')
 # set theme
 theme_set(theme_bw())
 
+# how long did the experiment take?
+time = read_csv("../data/experiment-merged.csv")
+mean(time$time_in_minutes) #9.8 minutes
+median(time$time_in_minutes) #8.6 minutes
+
 # read in the raw data
 d = read_csv("../data/experiment-trials.csv")
 nrow(d) #13000 / 250 = 52 trials (the experiment was done 250 times, as planned)

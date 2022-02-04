@@ -16,6 +16,11 @@ source('../../helpers.R')
 # set theme
 theme_set(theme_bw())
 
+# how long did the experiment take?
+time = read_csv("../data/experiment-merged.csv")
+mean(time$time_in_minutes) #10.9 minutes
+median(time$time_in_minutes) #9.3 minutes
+
 # read in the raw data
 d = read_csv("../data/experiment-trials.csv")
 nrow(d) #13000 / 250 = 52 trials (the experiment was done 250 times, as planned)
@@ -144,25 +149,25 @@ ggplot(ai.means, aes(x=workerid,y=Mean)) +
 # look at participants whose response mean on projection and ainess of main clauses is more than 2
 # standard deviations away from the overall mean
 
-# get the participants who are more than 2 standard deviations above the mean on projection 
-p <- p.means[p.means$Mean > (mean(p.means$Mean) + 2*sd(p.means$Mean)),]
-p #0 participants 
+# get the participants who are more than 2 standard deviations below the mean on projection 
+p <- p.means[p.means$Mean < (mean(p.means$Mean) - 2*sd(p.means$Mean)),]
+p #17 participants 
 
 # get the participants who are more than 2 standard deviations above the mean on ai 
 ai <- ai.means[ai.means$Mean > (mean(ai.means$Mean) + 2*sd(ai.means$Mean)),]
-ai #10 participants
+ai #0 participants
 
 # make data subset of just the outliers
 outliers <- d.MC %>%
   filter(workerid %in% p$workerid | workerid %in% ai$workerid)
 outliers = droplevels(outliers)
-nrow(outliers) #240 / 12 = 20 outlier participants
+nrow(outliers) #204 / 12 = 17 outlier participants
 
 # exclude all outlier participants identified above
 d <- d %>%
   filter(!(workerid %in% p$workerid | workerid %in% ai$workerid)) %>%
   droplevels()
-length(unique(d$workerid)) # 225 remaining participants (20 participants excluded)
+length(unique(d$workerid)) # 230 remaining participants (20 participants excluded)
 
 # variance
 
@@ -180,7 +185,7 @@ variances = d %>%
 
 lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
 summary(variances)
-lowvarworkers # 3 participants had lower mean variance
+lowvarworkers # 0 participants had lower mean variance
 
 lvw = d %>%
   filter(as.character(workerid) %in% lowvarworkers) %>%
@@ -193,19 +198,19 @@ ggplot(lvw,aes(x=Participant,y=response,color=trigger_class)) +
 # exclude 0 participants with really low variance 
 #d <- droplevels(subset(d, !(d$workerid == "1547")))
 #d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
-length(unique(d$workerid)) #225 participants remain
+length(unique(d$workerid)) #230 participants remain
 
 # write cleaned data to file
 write_csv(d, file="../data/data_preprocessed.csv")
 
 # info on remaining participants
-table(d$age) #18-66
+table(d$age) #18-59
 length(which(is.na(d$age))) # 0 missing values
-mean(d$age,na.rm=TRUE) #32.6
+mean(d$age,na.rm=TRUE) #26.7
 
 d %>% 
   select(gender, workerid) %>% 
   unique() %>% 
   group_by(gender) %>% 
   summarize(count=n())
-#125 female, 93 male, 7 other, 0 undeclared
+#177 female, 49 male, 4 other, 0 undeclared

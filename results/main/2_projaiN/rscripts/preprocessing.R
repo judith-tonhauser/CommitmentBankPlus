@@ -16,6 +16,11 @@ source('../../helpers.R')
 # set theme
 theme_set(theme_bw())
 
+# how long did the experiment take?
+time = read_csv("../data/experiment-merged.csv")
+mean(time$time_in_minutes) #9.8 minutes
+median(time$time_in_minutes) #8.5 minutes
+
 # read in the raw data
 d = read_csv("../data/experiment-trials.csv")
 nrow(d) #15600 / 300 = 52 trials
@@ -140,11 +145,11 @@ ggplot(ai.means, aes(x=workerid,y=Mean)) +
 
 # get the Turkers who are more than 2 standard deviations below the mean on projection 
 p <- p.means[p.means$Mean < (mean(p.means$Mean) - 2*sd(p.means$Mean)),]
-p
+p #11 participants
 
 # get the Turkers who are more than 2 standard deviations above the mean on ai 
 ai <- ai.means[ai.means$Mean > (mean(ai.means$Mean) + 2*sd(ai.means$Mean)),]
-ai
+ai #11 participants
 
 # look at the main clauses that these "outlier" Turkers did
 # make data subset of just the outliers

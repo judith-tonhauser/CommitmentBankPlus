@@ -87,9 +87,7 @@ ggplot(d, aes(x=age)) +
 
 nrow(d) #14768 / 52 = 284 
 
-# no gender information available
-
-# change the response for ai condition so that what was 0/not-at-issue is now 1/not-at-issue
+# no gender information a# change the response for ai condition so that what was 0/not-at-issue is now 1/not-at-issue
 # by subtracting the ai responses from 1
 table(d$question_type,d$response)
 d[d$question_type == "ai",]$response = 1 - d[d$question_type == "ai",]$response
@@ -216,6 +214,11 @@ variances = d %>%
   summarize(Variance = var(response)) %>%
   mutate(TooSmall = Variance < mean(Variance) - 2*sd(Variance))
 
+View(variances)
+
+ggplot(variances,aes(x=workerid,y=Variance)) +
+  geom_point()
+
 lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
 summary(variances)
 lowvarworkers # 3 participants had lower mean variance
@@ -225,8 +228,10 @@ lvw = d %>%
   droplevels() %>%
   mutate(Participant = as.factor(as.character(workerid)))
 
-ggplot(lvw,aes(x=Participant,y=response)) +
+ggplot(lvw,aes(x=Participant,y=response,color=trigger_class)) +
   geom_jitter()
+
+# manual inspection shows that these three participants used the whole scale, so no reason to exclude them
 
 # exclude 0 participant with really low variance 
 #d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
