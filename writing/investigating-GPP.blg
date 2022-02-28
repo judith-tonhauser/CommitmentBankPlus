@@ -3,47 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: investigating-GPP.aux
 The style file: cslipubs-natbib.bst
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "snider2017"
-Warning--I didn't find a database entry for "snider-paper"
-You've used 18 entries,
+You've used 28 entries,
             2811 wiz_defined-function locations,
-            729 strings with 7455 characters,
-and the built_in function-call counts, 8645 in all, are:
-= -- 831
-> -- 440
-< -- 13
-+ -- 152
-- -- 126
-* -- 710
-:= -- 1592
-add.period$ -- 72
-call.type$ -- 18
-change.case$ -- 134
-chr.to.int$ -- 18
-cite$ -- 18
-duplicate$ -- 340
-empty$ -- 570
-format.name$ -- 156
-if$ -- 1728
-int.to.chr$ -- 1
+            777 strings with 8482 characters,
+and the built_in function-call counts, 12648 in all, are:
+= -- 1226
+> -- 574
+< -- 24
++ -- 202
+- -- 163
+* -- 985
+:= -- 2354
+add.period$ -- 113
+call.type$ -- 28
+change.case$ -- 195
+chr.to.int$ -- 27
+cite$ -- 28
+duplicate$ -- 525
+empty$ -- 883
+format.name$ -- 203
+if$ -- 2534
+int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 17
-newline$ -- 95
-num.names$ -- 72
-pop$ -- 90
+missing$ -- 26
+newline$ -- 145
+num.names$ -- 114
+pop$ -- 135
 preamble$ -- 2
-purify$ -- 114
+purify$ -- 166
 quote$ -- 0
-skip$ -- 254
+skip$ -- 389
 stack$ -- 0
-substring$ -- 544
-swap$ -- 67
-text.length$ -- 2
+substring$ -- 788
+swap$ -- 87
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 162
+type$ -- 249
 warning$ -- 0
-while$ -- 71
+while$ -- 110
 width$ -- 0
-write$ -- 235
-(There were 2 warnings)
+write$ -- 366
