@@ -3,44 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: investigating-GPP.aux
 The style file: cslipubs-natbib.bst
 Database file #1: bibliography.bib
-You've used 28 entries,
+Warning--I didn't find a database entry for "potts2007-compass"
+Warning--I didn't find a database entry for "amaral-etal2007"
+Warning--I didn't find a database entry for "gutzmann"
+You've used 29 entries,
             2811 wiz_defined-function locations,
-            777 strings with 8482 characters,
-and the built_in function-call counts, 12648 in all, are:
-= -- 1226
-> -- 574
-< -- 24
-+ -- 202
-- -- 163
-* -- 985
-:= -- 2354
-add.period$ -- 113
-call.type$ -- 28
-change.case$ -- 195
-chr.to.int$ -- 27
-cite$ -- 28
-duplicate$ -- 525
-empty$ -- 883
-format.name$ -- 203
-if$ -- 2534
+            786 strings with 8632 characters,
+and the built_in function-call counts, 13104 in all, are:
+= -- 1271
+> -- 596
+< -- 25
++ -- 209
+- -- 169
+* -- 1024
+:= -- 2438
+add.period$ -- 117
+call.type$ -- 29
+change.case$ -- 202
+chr.to.int$ -- 28
+cite$ -- 29
+duplicate$ -- 543
+empty$ -- 913
+format.name$ -- 212
+if$ -- 2625
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 26
-newline$ -- 145
-num.names$ -- 114
-pop$ -- 135
+missing$ -- 27
+newline$ -- 150
+num.names$ -- 118
+pop$ -- 139
 preamble$ -- 2
-purify$ -- 166
+purify$ -- 172
 quote$ -- 0
-skip$ -- 389
+skip$ -- 403
 stack$ -- 0
-substring$ -- 788
-swap$ -- 87
+substring$ -- 814
+swap$ -- 91
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 249
+type$ -- 258
 warning$ -- 0
-while$ -- 110
+while$ -- 114
 width$ -- 0
-write$ -- 366
+write$ -- 379
+(There were 3 warnings)

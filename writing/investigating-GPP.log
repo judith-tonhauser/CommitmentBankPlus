@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 FEB 2022 09:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 MAR 2022 09:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1098,6 +1098,9 @@ LaTeX Warning: Label `sub@fig-exp3q-ai' multiply defined.
 LaTeX Warning: Label `f-ai-trialsq' multiply defined.
 
 
+LaTeX Warning: Label `s4' multiply defined.
+
+
 LaTeX Warning: Label `fig-exp1q-ai' multiply defined.
 
 
@@ -1117,9 +1120,6 @@ LaTeX Warning: Label `sub@fig-exp3q-ai' multiply defined.
 
 
 LaTeX Warning: Label `f-ai-trialsq' multiply defined.
-
-
-LaTeX Warning: Label `s4' multiply defined.
 
 )
 \openout1 = `investigating-GPP.aux'.
@@ -1282,122 +1282,141 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 100.
 File: utxsyc.fd 2000/12/15 v3.1
 )
 Package xypdf Info: Line width: 0.61319pt on input line 100.
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 143.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 125.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 143.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 125.
  [1
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for OT1+txtt on input line 262
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (23.26794pt too wide) in paragraph at lines 230--231
+\OT1/txr/m/n/10.95 CIs, conversationally-triggered pre-sup-po-si-tions) vs. con
+-ver-sa-tional im-pli-ca-tures (not back-grounded!!)
+ []
+
+[2] [3]
+
+Package natbib Warning: Citation `potts2007-compass' on page 4 undefined on inp
+ut line 260.
+
+[4] [5]
+
+Package natbib Warning: Citation `amaral-etal2007' on page 6 undefined on input
+ line 338.
+
+
+Package natbib Warning: Citation `gutzmann' on page 6 undefined on input line 3
+40.
+
+[6] [7]
+LaTeX Font Info:    Try loading font information for OT1+txtt on input line 441
 .
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ot1txtt.fd
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
-) [3]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[4] [5] <figures/2q-proj.png, id=274, 501.875pt x 363.3575pt>
+)
+[8] [9] [10] <figures/2q-proj.png, id=307, 501.875pt x 363.3575pt>
 File: figures/2q-proj.png Graphic file (type png)
 
 <use figures/2q-proj.png>
-Package pdftex.def Info: figures/2q-proj.png used on input line 398.
+Package pdftex.def Info: figures/2q-proj.png used on input line 577.
 (pdftex.def)             Requested size: 216.2462pt x 125.19212pt.
 
-<figures/1n-proj.png, id=276, 575.14874pt x 345.29pt>
+<figures/1n-proj.png, id=309, 575.14874pt x 345.29pt>
 File: figures/1n-proj.png Graphic file (type png)
 
 <use figures/1n-proj.png>
-Package pdftex.def Info: figures/1n-proj.png used on input line 403.
+Package pdftex.def Info: figures/1n-proj.png used on input line 582.
 (pdftex.def)             Requested size: 216.24191pt x 125.18944pt.
- <figures/1m-proj.png, id=277, 501.875pt x 345.29pt>
+ <figures/1m-proj.png, id=310, 501.875pt x 345.29pt>
 File: figures/1m-proj.png Graphic file (type png)
 
 <use figures/1m-proj.png>
-Package pdftex.def Info: figures/1m-proj.png used on input line 408.
+Package pdftex.def Info: figures/1m-proj.png used on input line 587.
 (pdftex.def)             Requested size: 216.2462pt x 125.18944pt.
 
-<figures/1c-proj.png, id=278, 616.3025pt x 359.3425pt>
+<figures/1c-proj.png, id=311, 616.3025pt x 359.3425pt>
 File: figures/1c-proj.png Graphic file (type png)
 
 <use figures/1c-proj.png>
-Package pdftex.def Info: figures/1c-proj.png used on input line 413.
+Package pdftex.def Info: figures/1c-proj.png used on input line 592.
 (pdftex.def)             Requested size: 216.23573pt x 125.19054pt.
 
 
-LaTeX Warning: Reference `fig-ai-trials-q' on page 6 undefined on input line 42
-1.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/1q-ai.png, id=280, 609.27625pt x 332.24126pt>
+
+LaTeX Warning: Reference `fig-ai-trials-q' on page 11 undefined on input line 6
+00.
+
+<figures/1q-ai.png, id=313, 609.27625pt x 332.24126pt>
 File: figures/1q-ai.png Graphic file (type png)
  <use figures/1q-ai.png>
-Package pdftex.def Info: figures/1q-ai.png used on input line 435.
+Package pdftex.def Info: figures/1q-ai.png used on input line 614.
 (pdftex.def)             Requested size: 216.24344pt x 153.64395pt.
 
-<figures/2q-ai.png, id=281, 501.875pt x 397.485pt>
+<figures/2q-ai.png, id=314, 501.875pt x 397.485pt>
 File: figures/2q-ai.png Graphic file (type png)
  <use figures/2q-ai.png>
-Package pdftex.def Info: figures/2q-ai.png used on input line 440.
+Package pdftex.def Info: figures/2q-ai.png used on input line 619.
 (pdftex.def)             Requested size: 216.2462pt x 153.6478pt.
 
-<figures/3q-ai.png, id=282, 501.875pt x 381.425pt>
+<figures/3q-ai.png, id=315, 501.875pt x 381.425pt>
 File: figures/3q-ai.png Graphic file (type png)
  <use figures/3q-ai.png>
-Package pdftex.def Info: figures/3q-ai.png used on input line 445.
+Package pdftex.def Info: figures/3q-ai.png used on input line 624.
 (pdftex.def)             Requested size: 216.2462pt x 153.644pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/2n-ai.png, id=283, 503.8825pt x 391.4625pt>
+<figures/2n-ai.png, id=316, 503.8825pt x 391.4625pt>
 File: figures/2n-ai.png Graphic file (type png)
  <use figures/2n-ai.png>
-Package pdftex.def Info: figures/2n-ai.png used on input line 457.
+Package pdftex.def Info: figures/2n-ai.png used on input line 636.
 (pdftex.def)             Requested size: 216.24237pt x 153.64339pt.
 
-<figures/2m-ai.png, id=284, 522.95375pt x 391.4625pt>
+<figures/2m-ai.png, id=317, 522.95375pt x 391.4625pt>
 File: figures/2m-ai.png Graphic file (type png)
  <use figures/2m-ai.png>
-Package pdftex.def Info: figures/2m-ai.png used on input line 462.
+Package pdftex.def Info: figures/2m-ai.png used on input line 641.
 (pdftex.def)             Requested size: 216.23975pt x 153.64339pt.
 
-<figures/2c-ai.png, id=285, 630.355pt x 391.4625pt>
+<figures/2c-ai.png, id=318, 630.355pt x 391.4625pt>
 File: figures/2c-ai.png Graphic file (type png)
  <use figures/2c-ai.png>
-Package pdftex.def Info: figures/2c-ai.png used on input line 467.
+Package pdftex.def Info: figures/2c-ai.png used on input line 646.
 (pdftex.def)             Requested size: 256.07147pt x 153.64339pt.
 
-Overfull \hbox (27.99396pt too wide) in paragraph at lines 467--468
+Overfull \hbox (27.99396pt too wide) in paragraph at lines 646--647
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/3n-ai.png, id=286, 479.7925pt x 391.4625pt>
+<figures/3n-ai.png, id=319, 479.7925pt x 391.4625pt>
 File: figures/3n-ai.png Graphic file (type png)
  <use figures/3n-ai.png>
-Package pdftex.def Info: figures/3n-ai.png used on input line 480.
+Package pdftex.def Info: figures/3n-ai.png used on input line 659.
 (pdftex.def)             Requested size: 216.24138pt x 153.64339pt.
 
-<figures/3m-ai.png, id=287, 508.90125pt x 391.4625pt>
+<figures/3m-ai.png, id=320, 508.90125pt x 391.4625pt>
 File: figures/3m-ai.png Graphic file (type png)
  <use figures/3m-ai.png>
-Package pdftex.def Info: figures/3m-ai.png used on input line 485.
+Package pdftex.def Info: figures/3m-ai.png used on input line 664.
 (pdftex.def)             Requested size: 216.23746pt x 153.64339pt.
 
-<figures/3c-ai.png, id=288, 716.6775pt x 384.43625pt>
+<figures/3c-ai.png, id=321, 716.6775pt x 384.43625pt>
 File: figures/3c-ai.png Graphic file (type png)
  <use figures/3c-ai.png>
-Package pdftex.def Info: figures/3c-ai.png used on input line 490.
+Package pdftex.def Info: figures/3c-ai.png used on input line 669.
 (pdftex.def)             Requested size: 256.07904pt x 153.64857pt.
 
-Overfull \hbox (28.00153pt too wide) in paragraph at lines 490--491
+Overfull \hbox (28.00153pt too wide) in paragraph at lines 669--670
  [][] 
  []
 
@@ -1405,20 +1424,20 @@ Overfull \hbox (28.00153pt too wide) in paragraph at lines 490--491
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Missing character: There is no ä in font txr!
-[6 <./figures/2q-proj.png> <./figures/1n-proj.png> <./figures/1m-proj.png> <./f
-igures/1c-proj.png>]
+[11]
 
-LaTeX Warning: Reference `fig-trial-exp1' on page 7 undefined on input line 500
-.
+LaTeX Warning: Reference `fig-trial-exp1' on page 12 undefined on input line 67
+9.
 
-[7 <./figures/1q-ai.png> <./figures/2q-ai.png> <./figures/3q-ai.png>] [8 <./fig
-ures/2n-ai.png> <./figures/2m-ai.png> <./figures/2c-ai.png>]
-(./investigating-GPP.bbl [9 <./figures/3n-ai.png> <./figures/3m-ai.png> <./figu
-res/3c-ai.png>] [10]) [11]pdfTeX warning (ext4): destination with the same iden
-tifier (name{page.1}) has been already used, duplicate ignored
+[12 <./figures/2q-proj.png> <./figures/1n-proj.png> <./figures/1m-proj.png> <./
+figures/1c-proj.png>] [13 <./figures/1q-ai.png> <./figures/2q-ai.png> <./figure
+s/3q-ai.png>] (./investigating-GPP.bbl [14 <./figures/2n-ai.png> <./figures/2m-
+ai.png> <./figures/2c-ai.png>] [15 <./figures/3n-ai.png> <./figures/3m-ai.png> 
+<./figures/3c-ai.png>]) [16]pdfTeX warning (ext4): destination with the same id
+entifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.618 \item  \ldots
+l.797 \item  \ldots
                     that Charley speaks Spanish, Jay will be happy. [1]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1427,33 +1446,36 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.673 \newpage
+l.852 \newpage
                [2]pdfTeX warning (ext4): destination with the same identifier (
 name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.707 
+l.886 
        [3]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: There were undefined citations.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.745 \end{document}
+l.924 \end{document}
                      [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 745.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 924.
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.745 \end{document}
+l.924 \end{document}
                      [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 745.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 924.
  (./investigating-GPP.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 745.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 745.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 924.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 924.
 Package rerunfilecheck Info: File `investigating-GPP.out' has not changed.
 (rerunfilecheck)             Checksum: F6671B1B0FF527D207E6FFBD3A7D98B6;1384.
 
@@ -1463,16 +1485,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 745.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 924.
  ) 
 Here is how much of TeX's memory you used:
- 24598 strings out of 493014
- 420462 string characters out of 6133351
- 541110 words of memory out of 5000000
- 27435 multiletter control sequences out of 15000+600000
+ 24614 strings out of 493014
+ 420725 string characters out of 6133351
+ 543168 words of memory out of 5000000
+ 27444 multiletter control sequences out of 15000+600000
  53980 words of font info for 138 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 55i,11n,77p,3249b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,77p,3249b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1497,10 +1519,10 @@ ype1/public/txfonts/txsyc.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
 ublic/txfonts/txtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/time
 s/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on investigating-GPP.pdf (16 pages, 328420 bytes).
+Output written on investigating-GPP.pdf (21 pages, 347708 bytes).
 PDF statistics:
- 484 PDF objects out of 1000 (max. 8388607)
- 426 compressed objects within 5 object streams
- 154 named destinations out of 1000 (max. 500000)
+ 520 PDF objects out of 1000 (max. 8388607)
+ 457 compressed objects within 5 object streams
+ 161 named destinations out of 1000 (max. 500000)
  238 words of extra memory for PDF output out of 10000 (max. 10000000)
 
