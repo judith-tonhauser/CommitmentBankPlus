@@ -1,5 +1,9 @@
 # Latex files
-# .pdf .aux .toc .bbl . blg .synctex.gz
+# .pdf 
+.aux .toc .bbl . blg .synctex.gz .xdv .out .log .fls .fdb_latexmk
+
+# Apple file system
+.DS_Store
 
 # Other files */node_modules/
 *.RData
