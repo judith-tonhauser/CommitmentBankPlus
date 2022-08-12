@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1660300667 "notes.xdv" "notes.pdf" "notes" 1660300667
-  "notes.xdv" 1660300667 195024 422320101087931942d7151636e552fb "xelatex"
+["xdvipdfmx"] 1660302929 "notes.xdv" "notes.pdf" "notes" 1660302930
+  "notes.xdv" 1660302929 195964 604aedaaabb45414421a9178312af2fa "xelatex"
   (generated)
   "notes.pdf"
-["xelatex"] 1660300666 "notes.tex" "notes.xdv" "notes" 1660300667
+["xelatex"] 1660302928 "notes.tex" "notes.xdv" "notes" 1660302930
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -194,13 +194,13 @@
   "figures/q1-correl.pdf" 1659529799 6672 8b422387e076fdd93375903c4e487d28 ""
   "figures/q2-correl.pdf" 1659529799 6628 a5fa63d7360b83e1a0e95c7fc39cba38 ""
   "figures/q3-correl.pdf" 1659529799 6833 49d26a3115d72438d27ce729082f2b4b ""
-  "notes.aux" 1660300667 8396 992545b8be1117a4ddfd5c9ac52af72b "xelatex"
-  "notes.out" 1660300667 2284 2e1d53424a692eb7faefa89e8b5185d9 "xelatex"
-  "notes.tex" 1660300503 22613 d09e4e2f816067022d25be5236a68b55 ""
-  "notes.toc" 1660300667 2666 a9f82ee3d7e56db710ce5242a057c626 "xelatex"
+  "notes.aux" 1660302929 8396 981baed80b904c028fa9f39cba50631c "xelatex"
+  "notes.out" 1660302929 2284 45eaaf48063dc1c6455806ccdb7b2c2e "xelatex"
+  "notes.tex" 1660302926 22623 ee066627ae7112d3d6a2514b09e1a8db ""
+  "notes.toc" 1660302929 2666 2d497bf197fd05ce3c718999558e36ea "xelatex"
   (generated)
-  "notes.aux"
-  "notes.out"
   "notes.log"
-  "notes.xdv"
   "notes.toc"
+  "notes.xdv"
+  "notes.out"
+  "notes.aux"
