@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.1.21)  3 AUG 2022 14:25
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.1.21)  12 AUG 2022 12:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1007,6 +1007,16 @@ Package polyglossia Info: Option: English, variant=american.
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
+
+
+LaTeX Warning: Label `fig:m1-corr' multiply defined.
+
+
+LaTeX Warning: Label `fig:m1-corr' multiply defined.
+
+
+LaTeX Warning: Label `fig:m1-corr' multiply defined.
+
 )
 \openout1 = `notes.aux'.
 
@@ -1269,7 +1279,23 @@ File: figures/m2-correl.pdf Graphic file (type pdf)
  [10]
 File: figures/m3-correl.pdf Graphic file (type pdf)
 <use figures/m3-correl.pdf>
- [11]
+File: figures/c1-correl.pdf Graphic file (type pdf)
+<use figures/c1-correl.pdf>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: figures/c2-correl.pdf Graphic file (type pdf)
+<use figures/c2-correl.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: figures/c3-correl.pdf Graphic file (type pdf)
+<use figures/c3-correl.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11]
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1304,9 +1330,9 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
- [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 507.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 507.
+ [12] [13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 553.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 553.
  (./notes.aux
 Package polyglossia Info: Option: English, variant=american.
 Package polyglossia Info: Option: English, variant=american.
@@ -1314,18 +1340,22 @@ LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 507.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 507.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 553.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 553.
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 74A0854703F43FA662C7B32DBF582E11;1784.
+(rerunfilecheck)             Checksum: 2E1D53424A692EB7FAEFA89E8B5185D9;2284.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 28622 strings out of 479418
- 548623 string characters out of 5884585
- 840123 words of memory out of 5000000
- 45622 multiletter control sequences out of 15000+600000
+ 28641 strings out of 479418
+ 549072 string characters out of 5884585
+ 840714 words of memory out of 5000000
+ 45638 multiletter control sequences out of 15000+600000
  540382 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  66i,11n,119p,854b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on notes.xdv (12 pages, 176580 bytes).
+Output written on notes.xdv (13 pages, 195024 bytes).

@@ -15,4 +15,8 @@
 \contentsline {subsection}{\numberline {3.1}1m---Modal embedding (perhaps), are you sure?, assent + assertion of complement + Q-A judgment}{9}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}2m---Modal embedding (perhaps) yes, that's true+complement diagnostic (+ acceptability rating)}{10}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}3m---Modal embedding (perhaps), yes, that's true + negation of main clause (+ acceptability rating)}{11}{subsection.3.3}%
-\contentsline {section}{\numberline {4}To do}{12}{section.4}%
+\contentsline {section}{\numberline {4}Experiments with Condstionals}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}1c---Conditional embedding, are you sure?, assent + assertion of complement + Q-A judgment}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}2c---Conditional embedding yes, that's true+complement diagnostic (+ acceptability rating)}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}3c---Conditional embedding, yes, that's true + negation of main clause (+ acceptability rating)}{11}{subsection.4.3}%
+\contentsline {section}{\numberline {5}To do}{12}{section.5}%
