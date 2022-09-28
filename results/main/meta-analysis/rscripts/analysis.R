@@ -274,37 +274,6 @@ cor(d$Projmean_exp3n,d$Projmean_exp3c) # .84
 
 cor(d$Projmean_exp3m,d$Projmean_exp3c) # .94
 
-
-# for Moscow talk:
-cor(d$Projmean_P1,d$Projmean_N6) #.95
-
-cor(d$Projmean_P5,d$Projmean_N6) # .93 !
-cor(d$Projmean_P5,d$Projmean_M7) # .93 !
-cor(d$Projmean_N6,d$Projmean_M7) # .81 !
-cor(d$Projmean_P5,d$Projmean_C8) # .94 !
-cor(d$Projmean_N6,d$Projmean_C8) # .87 !
-cor(d$Projmean_M7,d$Projmean_C8) # .94 !
-
-cor(d$Projmean_P9,d$Projmean_N10) # .83
-cor(d$Projmean_P9,d$Projmean_M11) # .
-cor(d$Projmean_N10,d$Projmean_M11) # .
-cor(d$Projmean_P9,d$Projmean_C12) # .
-cor(d$Projmean_N10,d$Projmean_C12) # .
-cor(d$Projmean_M11,d$Projmean_C12) # .
-
-# projection correlations for the same embeddings across the experiments
-cor(d$Projmean_P1,d$Projmean_P5) # .991 !
-cor(d$Projmean_P5,d$Projmean_P9) # .96
-
-cor(d$Projmean_N2,d$Projmean_N6) # .91
-cor(d$Projmean_N6,d$Projmean_N10) # .88
-
-cor(d$Projmean_M3,d$Projmean_M7) # .72
-cor(d$Projmean_M7,d$Projmean_M11) # .
-
-cor(d$Projmean_C4,d$Projmean_C8) # .78
-cor(d$Projmean_C8,d$Projmean_C12) # .
-
 # not-at-issueness correlations across embeddings ("same" not-at-issueness diagnostics)
 cor(d$AImean_P1,d$AImean_N2) # .59
 cor(d$AImean_P1,d$AImean_M3) # .47
@@ -363,13 +332,63 @@ d$Colors
 
 
 # plot projection against projection ----
+options(ggrepel.max.overlaps = Inf)
+
+ggplot(d, aes(x=Projmean_exp1q,y=Projmean_exp1n)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_Proj_exp1q,xmax=YMax_Proj_exp1q),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_Proj_exp1n,ymax=YMax_Proj_exp1n),alpha=.8,color="gray") +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=2,size=5,show.legend=F) +
+  #scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean certainty rating Exp 1q") +
+  ylab("Mean certainty rating Exp 1n") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/projection-exp1q-against-exp1n.pdf",width=5,height=5)
+
+ggplot(d, aes(x=Projmean_exp1q,y=Projmean_exp1m)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_Proj_exp1q,xmax=YMax_Proj_exp1q),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_Proj_exp1m,ymax=YMax_Proj_exp1m),alpha=.8,color="gray") +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=2,size=5,show.legend=F) +
+  #scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean certainty rating Exp 1q") +
+  ylab("Mean certainty rating Exp 1m") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/projection-exp1q-against-exp1m.pdf",width=5,height=5)
+
+ggplot(d, aes(x=Projmean_exp1q,y=Projmean_exp1c)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_Proj_exp1q,xmax=YMax_Proj_exp1q),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_Proj_exp1c,ymax=YMax_Proj_exp1c),alpha=.8,color="gray") +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=2,size=5,show.legend=F) +
+  #scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean certainty rating Exp 1q") +
+  ylab("Mean certainty rating Exp 1c") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/projection-exp1q-against-exp1c.pdf",width=5,height=5)
+
 ggplot(d, aes(x=Projmean_exp1n,y=Projmean_exp1m)) +
   geom_point(shape=21) +
-  #scale_fill_manual(values=c("tomato1","black")) +
+  scale_fill_manual(values=c("tomato1","black")) +
   geom_errorbarh(aes(xmin=YMin_Proj_exp1n,xmax=YMax_Proj_exp1n),alpha=.8,color="gray") +
   geom_errorbar(aes(ymin=YMin_Proj_exp1m,ymax=YMax_Proj_exp1m),alpha=.8,color="gray") +
   geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
-  geom_text_repel(aes(label=short_trigger,color=d$Colors),nudge_x=1,size=5,show.legend=F) +
+  geom_text_repel(aes(label=short_trigger),nudge_x=2,size=5,show.legend=F) +
   #scale_colour_manual(values=c("black", "tomato1")) +
   xlab("Mean certainty rating Exp 1n") +
   ylab("Mean certainty rating Exp 1m") +
@@ -378,6 +397,39 @@ ggplot(d, aes(x=Projmean_exp1n,y=Projmean_exp1m)) +
   coord_fixed(ratio = 1) +
   theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
 ggsave("../graphs/projection-exp1n-against-exp1m.pdf",width=5,height=5)
+
+ggplot(d, aes(x=Projmean_exp1n,y=Projmean_exp1c)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_Proj_exp1n,xmax=YMax_Proj_exp1n),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_Proj_exp1c,ymax=YMax_Proj_exp1c),alpha=.8,color="gray") +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=2,size=5,show.legend=F) +
+  #scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean certainty rating Exp 1n") +
+  ylab("Mean certainty rating Exp 1c") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/projection-exp1n-against-exp1c.pdf",width=5,height=5)
+
+ggplot(d, aes(x=Projmean_exp1m,y=Projmean_exp1c)) +
+  geom_point(shape=21) +
+  scale_fill_manual(values=c("tomato1","black")) +
+  geom_errorbarh(aes(xmin=YMin_Proj_exp1m,xmax=YMax_Proj_exp1m),alpha=.8,color="gray") +
+  geom_errorbar(aes(ymin=YMin_Proj_exp1c,ymax=YMax_Proj_exp1c),alpha=.8,color="gray") +
+  geom_abline(intercept=0,slope=1, color="gray", linetype="dashed") +
+  geom_text_repel(aes(label=short_trigger),nudge_x=2,size=5,show.legend=F) +
+  #scale_colour_manual(values=c("black", "tomato1")) +
+  xlab("Mean certainty rating Exp 1m") +
+  ylab("Mean certainty rating Exp 1c") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  scale_x_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels= c("0",".2",".4",".6",".8","1")) +
+  coord_fixed(ratio = 1) +
+  theme(legend.position = "none", axis.title.x = element_text(color="black", size=14), axis.title.y = element_text(color="black", size=14))
+ggsave("../graphs/projection-exp1m-against-exp1c.pdf",width=5,height=5)
+
 
 ggplot(d, aes(x=Projmean_exp2n,y=Projmean_exp2m)) +
   geom_point(shape=21) +
