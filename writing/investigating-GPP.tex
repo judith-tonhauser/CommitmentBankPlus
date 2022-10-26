@@ -442,77 +442,88 @@ Snider assumes that the two QUD diagnostics (addressing QUD, establishing QUD) a
 
 \subsection{Next steps}
 
+projection of contents embedded under different entailment-canceling operators is positively correlated, as assumed in the semantics/pragmatics literature (e.g., REFERENCES). Prior experimental literature: \citealt{smith-hall11,smith-hall-cls,demarneffe-etal-sub23}. 
+
+\newpage
 
 \section{Experiments 1-3: Methods}\label{s2}
 
-hallo
+Exps.~1-3 were designed to investigate whether not-at-issueness and projection are positively correlated, as predicted by the Gradient Projection Principle, to compare the projection of contents from different entailment-canceling environments, and to compare different measures of at-issueness.\footnote{\label{f-github}The experiments, data, and R code for generating the figures and analyses of the experiments reported in this paper are available at \url{https://github.com/judith-tonhauser/projective-probability}. All experiments were conducted with IRB approval. Exps.~1b, 2b, and 3b were preregistered: \url{https://osf.io/cxq47}.} To be able to compare across the experiments, the experiments investigated the same contents and each of the experiments consisted of two blocks: a projection block, in which the projection of the contents was measured, and an at-issueness block, in which the at-issueness of the contents was measured. The at-issueness blocks of Exps.~1-3 implemented different measures of at-issueness, which allows for a comparison of at-issueness measures. To compare projection from different entailment-canceling environments, each of Exps.~1-3 consisted of four experiments (for a total of 12 experiments) where the contents were realized by expressions in a polar question, in the scope of sentential negation, in the scope of the epistemic possibility modal {\em perhaps}, or in the antecedent of a conditional. For an overview of the 12 experiments see Table \ref{t:overview}: the name of each of the 12 experiments identifies whether belongs to the set of Exps.~1, 2, or 3 (which differ in at-issueness measure) and whether the embedding-environment is a polar question (`q'), negation (`n'), the epistemic possibility modal (`m'), or the antecedent of a conditional (`c').
 
-Exps.~1-3 were designed to investigate whether not-at-issueness and projection are positively correlated, as predicted by the Gradient Projection Principle, as well as to compare various measures of at-issueness.\footnote{\label{f-github}The experiments, data, and R code for generating the figures and analyses of the experiments reported in this paper are available at \url{https://github.com/judith-tonhauser/projective-probability}. All experiments were conducted with IRB approval. Exps.~1b, 2b, and 3b were preregistered: \url{https://osf.io/cxq47}.}
-
-To measure projection, Exps.~1-3 employed the `certain that' diagnostic for projection, which is suitable to measure projection for both polar questions and declarative sentences (see also, e.g.\ \citealt{tonhauser-salt26,djaerv-bacovcin-salt27,stevens-etal2017,lorson2018,tbd-variability,mahler-nels,mahler2020,demarneffe-etal-sub23}).\footnote{For other diagnostics for projection see, e.g.\ \citealt{smith-hall11,xue-onea11}, and \citealt{brst-lang11}; see also the discussion in \citealt{tbd-variability}.}  On this diagnostic, participants are presented with an utterance, like one of the utterances in (\ref{proj-stim}), in which the content to be diagnosed for projection (here, that Julian dances salsa) occurs embedded under an entailment-canceling operator:
+Projection was measured across all 12 experiments with the `certain that' diagnostic, which has been used to measure projection with both polar interrogative and declarative sentences (see, e.g., \citealt{tonhauser-salt26,djaerv-bacovcin-salt27,stevens-etal2017,lorson2018,tbd-variability,mahler-nels,mahler2020,demarneffe-etal-sub23}).\footnote{For other diagnostics for projection see, e.g.\ \citealt{smith-hall11,xue-onea11}, and \citealt{brst-lang11}; see also the discussion in \citealt{tbd-variability}.}  On this diagnostic, participants are presented with an utterance, like one of Daniel's utterances in (\ref{proj-stim}), in which the content to be diagnosed for projection (here, that Julian dances salsa) occurs in one of the four entailment-canceling environments:
 
 \begin{exe}
-
 \ex\label{proj-stim} `certain that' diagnostic for projection
 \begin{xlist}
-\ex Daniel: Did Cole discover that Julian dances salsa?
-\ex Daniel: Cole didn't discover that Julian dances salsa.
-\ex Daniel: Perhaps Cole discovered that Julian dances salsa.
-\ex Daniel: If Cole discovered that Julian dances salsa, Logan will be joyful.
+\ex Daniel: Did Cole discover that Julian dances salsa? \hfill [Exps.~1q, 2q, 3q]
+\ex Daniel: Cole didn't discover that Julian dances salsa. \hfill [Exps.~1n, 2n, 3n]
+\ex Daniel: Perhaps Cole discovered that Julian dances salsa. \hfill [Exps.~1m, 2m, 3m]
+\ex Daniel: If Cole discovered that Julian dances salsa, Logan will be joyful. \hfill [Exps.~1c, 2c, 3c]
 \end{xlist}
+Question to participants: Is Daniel certain that Julian dances salsa?
 \end{exe}
-To assess projection, participants are asked whether the speaker is certain of the content; for instance, in \ref{proj-stim}, participants are asked whether Daniel is certain that Julian dances salsa. If a participant takes the speaker to be certain of the content, we assume that the content projects; if a participant does not take the speaker to be certain of the content, we assume that the content does not project. Following \citealt{tbd-variability}, the `certain that' diagnostic was implemented in Exps.~1-3 with a gradient response scale: participants gave their responses on a slider marked `no' at one end and `yes' at the other. We assume that the closer to `yes' a participant's response is, the more the speaker is certain of the content, that is, the more projective the content is. In other words, we assume that gradient certainty ratings reflect gradience in the speaker's commitment to the truth of the content.\footnote{Strictly speaking,  gradient certainty ratings reflect gradience in the degree to which participants \emph{perceive} the speaker to be committed to the truth of the content. That is, as in any experiment, the quantity of interest, in this case speaker commitment, is only indirectly measured.} As discussed in \citealt{tbd-variability}, a second interpretation of gradient certainty ratings is that they reflect a participant's degree of belief in the speaker's (binary) commitment to the truth of the content. While we adopt the first interpretation in our discussion, we remain agnostic about the interpretation of gradient certainty ratings. 
+To measure projection, participants are asked whether the speaker is certain of the relevant content. In \ref{proj-stim}, for instance, participants are asked whether Daniel is certain that Julian dances salsa. If a participant takes the speaker to be certain of the content, we assume that the content projects out of the entailment-canceling environment; if a participant does not take the speaker to be certain of the content, we assume that the content does not project. 
 
-At-issueness was measured with different diagnostics across Exps.~1-3. For polar questions (Exps.~1q, 2q, 3q), at-issueness was assessed with the three measures in (\ref{ai-question}):
-
+At-issueness was measured with different diagnostics across Exps.~1-3. In Exps.~1, at-issueness was measured with the `asking whether' diagnostic in Exp.~1q and with the `sure that' diagnostic in Exps.~1n, 1m, and 1c.
 
 \begin{exe}
-\ex\label{ai-question} At-issueness diagnostics for polar questions
+\ex\label{ai-exps1} At-issueness measures in Exps.~1
 \begin{xlist}
-\ex `asking whether $c$' 
-\\ {\bf Christopher:} Did Cole discover that Julian dances salsa?
-\\ Is Christopher asking whether Julian dances salsa?
+\ex `asking whether' \\ Christopher: Did Cole discover that Julian dances salsa? \hfill [Exp.~1q]
+\\ Question to participants: Is Christopher asking whether Julian dances salsa?
 
+\ex `sure that' \\ Christopher: Cole didn't discover that Julian dances salsa.  \hfill [Exp.~1n]
+\\ \hspace*{2cm} Perhaps Cole discovered that Julian dances salsa.  \hfill [Exp.~1m]
+\\ \hspace*{2cm} If Cole discovered that Julian dances salsa, Logan will be joyful.  \hfill [Exp.~1c]
+\\ Sandy: Are you sure?
+\\ Christopher: Yes, I'm sure that Julian dances salsa.
+\\ Question to participants: Did Christopher answer Sandy's question?
+
+\end{xlist}
+\end{exe}
+
+In Exps.~2, at-issueness was measured with an assent diagnostic, specifically, with the version of the assent diagnostic in which the assent is followed with the content to be diagnosed. Participants are presented with a dialogue in which the first speaker's utterance gives rise to the content to be diagnosed (here, that Julian dances salsa). The second speaker responds in the affirmative (for polar interrogatives, as shown in (\ref{ai-exps2}a)) or assents (for declaratives, as shown in (\ref{ai-exps2}b). The affirmation/assent is followed by the content to be diagnosed, here that Julian dances salsa. 
+
+\begin{exe}
+\ex\label{ai-exps2} At-issueness measures in Exps.~2
+\begin{xlist}
 \ex {\em yes}, $c$
-\\ {\bf Christopher:} Did Cole discover that Julian dances salsa?
-\\ {\bf Sandy:} Yes, Julian dances salsa.
-\\ Does Sandy's response to Christoper sound good?
-
-\ex {\em yes, but} $\neg c'$
-\\ {\bf Christopher:} Did Cole discover that Julian dances salsa?
-\\ {\bf Sandy:} Yes, but Cole didn't discover it. 
-\\ Does Sandy's response to Christoper sound good?
-
-\end{xlist}
-\end{exe}
-
-For declaratives, at-issueness was assessed with the three measures in (\ref{ai-decl}):
-
-\begin{exe}
-\ex\label{ai-decl} At-issueness diagnostics for declaratives 
-
-\begin{xlist}
-
-\ex `sure that $c$'
-\\ {\bf Christopher:} Cole didn't discover that Julian dances salsa.
-\\ \hspace*{2cm} Perhaps Cole discovered that Julian dances salsa.
-\\ {\bf Sandy:} Are you sure?
-\\ {\bf Christopher:} Yes, I'm sure that Julian dances salsa.
-\\ Did Christopher answer Sandy's question?
+\\ Christopher: Did Cole discover that Julian dances salsa? \hfill [Exp.~2q]
+\\ Sandy: Yes, Julian dances salsa.
+\\ Question to participants: Does Sandy's response to Christoper sound good?
 
 \ex {\em yes, that's true}, $c$
-\\ {\bf Christopher:} Cole didn't discover that Julian dances salsa.
-\\ {\bf Sandy:} Yes, that's true, Julian dances salsa.
-\\ Does Sandy's response to Christopher sound good?
-
-\ex {\em yes, that's true, but} $\neg c'$
-\\ {\bf Christopher:} Cole didn't discover that Julian dances salsa.
-\\ {\bf Sandy:} Yes, that's true, but Cole discovered it. 
-\\ Does Sandy's response to Christopher sound good?
+\\ Christopher: Cole didn't discover that Julian dances salsa.  \hfill [Exp.~2n]
+\\ \hspace*{2cm} Perhaps Cole discovered that Julian dances salsa.  \hfill [Exp.~2m]
+\\ \hspace*{2cm} If Cole discovered that Julian dances salsa, Logan will be joyful.  \hfill [Exp.~2c]
+\\ Sandy: Yes, that's true, Julian dances salsa.
+\\ Question to participants: Does Sandy's response to Christopher sound good?
 
 \end{xlist}
-
 \end{exe}
+Participants are asked whether the second speaker's response is acceptable in response to the first speaker's utterance. If a participant judges the response to be acceptable, the relevant content is taken to be at-issue. If a participant judges the response to be unacceptable, the relevant content is taken to be not at-issue.
+
+In Exps.~3, at-issueness was measured with another assent diagnostic, specifically, with the version of the assent diagnostic in which the assent is followed with the denial of another, salient content. As in the other assent diagnostic, participants are presented with a dialogue in which the first speaker's utterance gives rise to the content to be diagnosed (here, that Julian dances salsa). The second speaker responds in the affirmative (for polar interrogatives, as shown in (\ref{ai-exps3}a)) or assents (for declaratives, as shown in (\ref{ai-exps3}b). The affirmation/assent is followed by the denial of another salient content, here, that Cole (didn't) discover it.
+
+\begin{exe}
+\ex\label{ai-exps3} At-issueness measures in Exps.~3
+\begin{xlist}
+\ex {\em yes}, $c$
+\\ Christopher: Did Cole discover that Julian dances salsa? \hfill [Exp.~3q]
+\\ Sandy: Yes, but Cole didn't discover it. {\bf or that?}
+\\ Question to participants: Does Sandy's response to Christoper sound good?
+
+\ex {\em yes, that's true}, $c$
+\\ Christopher: Cole didn't discover that Julian dances salsa.  \hfill [Exp.~3n]
+\\ \hspace*{2cm} Perhaps Cole discovered that Julian dances salsa.  \hfill [Exp.~3m]
+\\ \hspace*{2cm} If Cole discovered that Julian dances salsa, Logan will be joyful.  \hfill [Exp.~3c]
+\\ Sandy: Yes, that's true, but Cole discovered / didn't discover it. {\bf or that?}
+\\ Question to participants: Does Sandy's response to Christopher sound good?
+
+\end{xlist}
+\end{exe}
+As with the other assent diagnostic, participants are asked whether the second speaker's response is acceptable in response to the first speaker's utterance. If a participant judges the response to be acceptable, the relevant content is taken to be at-issue. If a participant judges the response to be unacceptable, the relevant content is taken to be not at-issue.
+
 
 \begin{table}[h!]
 \centering
@@ -536,25 +547,8 @@ For declaratives, at-issueness was assessed with the three measures in (\ref{ai-
 3c & conditional & certain that $c$& {\em yes, that's true}, but $\neg c'$ \\ 
 \hline
 \end{tabular}
-\caption{Overview of the entailment-canceling embeddings, projection measures, and at-issueness measures in Exps.~1-3, where $c$ is the content under investigation (in the target trials: the content of the clausal complement) and $c'$ is a different, salient content (in the target trials: the main clause content).}\label{t-overview}
+\caption{Overview of Exps.~1-3, which differ in the entailment-canceling embedding (q = polar question, n = negation, m = epistemic possibility modal, c = antecedent of conditional) and measures for not-at-issueness. $c$ is the content under investigation (in the target trials: the content of the clausal complement) and $c'$ is a different, salient content (in the target trials: the main clause content).}\label{t:overview}
 \end{table}
-
-{\bf Comparisons for at-issueness:}
-
-\begin{itemize}
-
-\item Across Exps 1q, 2q, 3q (same assumption about at-issue content partitioning context set; reveals effect of embedding)
-
-\item Across Exps n, m, c (same measure of at-issueness in Exps 1, 2, 3; reveals effect of embedding)
-
-\item 2q -- 2n, 2m, 2c (yes...$c$; i.e., anaphor with $c$)
-
-\item 3q -- 3n, 3m, 3c (yes...but $\neg c$, i.e., anaphor with $c$)
-
-
-\end{itemize}
-
-\footnote{Exps.~1-3 also allow us to address the question of whether the projection of contents embedded under different entailment-canceling operators is positively correlated, as assumed in the semantics/pragmatics literature (e.g., REFERENCES). Prior experimental literature: \citealt{smith-hall11,smith-hall-cls,demarneffe-etal-sub23}. As shown in Supplement \ref{a-projection}, this is the case.}
 
 \subsection{Participants}
 
@@ -562,21 +556,17 @@ We recruited 250-300 participants for each of Exps.~1-3. Participants for Exp.~1
 
 \subsection{Materials and procedure}
 
-Exps.~1-3 investigated the projection and at-issueness of the CC of the 20 clause-embedding predicates in (\ref{pred}). The clausal complements of the 20 predicates were realized by 20 clauses (provided in Supplement \ref{a-clauses}), for a total of 400 predicate/clause combinations. These 400 predicate/clause combinations were combined with proper name subjects (a unique name per complement clause) to realize polar questions (in Exps. 1q, 2q, and 3q), negated declaratives (in Exps. 1n, 2n, and 3n), declaratives with the modal adverb {\em perhaps} (in Exps. 1m, 2m, and 3m), and the antecedents of conditionals (in Exps. 1c, 2c, and 3c). These sentences were presented as utterances by a named speaker. A sample set of target utterances is given in (\ref{sample-stims}): here, the named speaker is {\em Daniel}, the subject of the clause-embedding predicate is {\em Cole}, the predicate is {\em discover}, and the complement clause is {\em Julian dances salsa}.\footnote{The indirect object of {\em inform} was realized by the proper name {\em Sam}. The predicates differed in the tense in which they were realized. In polar interrogatives as well as in negated and modalized declaratives, eventive predicates, like {\em discover} and {\em hear}, were realized in the past tense and stative predicates, like {\em know} and {\em be annoyed}, were realized in the present tense.  In the antecedents of conditionals, all predicates were realized in the present tense. For the consequents of the conditional sentences see Supplement \ref{a-target}.}
+The projection and at-issueness of the contents of 20 clauses (such as {\em Julian dances salsa}) were measured in separate blocks in Exps.~1-3. For the full set of clauses, see Appendix \ref{a-clauses}. 
 
-\begin{exe}
-\ex\label{sample-stims}
-\begin{xlist}
-\ex {\bf Daniel:} ``{\em Did Cole discover that Julian dances salsa?}"
-\ex {\bf Daniel:} ``{\em Cole didn't discover that Julian dances salsa.}"
-\ex {\bf Daniel:} ``{\em Perhaps Cole discovered that Julian dances salsa.}"
-\ex {\bf Daniel:} ``{\em If Cole discovered that Julian dances salsa, Logan will be joyful.}"
-\end{xlist}
-\end{exe}
-The proper names that realized the speakers, the subjects of the clause-embedding predicates, the subjects of the complement clauses, and the subjects of the consequents  were all unique.
+In the projection blocks of Exps.~1-3, target stimuli consisted of a polar question sentence, a negated sentence, a sentence with {\em perhaps}, or a conditional sentence that was uttered by a named speaker, as shown in Fig.~\ref{fig:projection-trials}. Each sentence was formed by realizing the 20 clauses as the complements of the 20 clause-embedding predicates in Fig.~\ref{fig:predicates}.\footnote{The proper names that realized the speakers, the subjects of the clause-embedding predicates, the subjects of the complement clauses, and the subjects of the consequents  were all unique. The indirect object of {\em inform} was realized by the proper name {\em Sam}. The predicates differed in the tense in which they were realized. In polar interrogatives as well as in negated and modalized declaratives, eventive predicates, like {\em discover} and {\em hear}, were realized in the past tense and stative predicates, like {\em know} and {\em be annoyed}, were realized in the present tense.  In the antecedents of conditionals, all predicates were realized in the present tense. For the consequents of the conditional sentences see Supplement \ref{a-target}.} Participants were told to imagine that they are at a party and that, on walking into the kitchen, they overhear somebody ask somebody else a question. Projection was measured using the `certain that' diagnostic \cite{djaerv-bacovcin-salt27,tbd-variability, lorson2018, mahler2020}: participants were asked to rate whether the speaker was certain of the CC, taking into consideration the fact. They gave their responses on a slider marked `no' at one end (coded as 0) and `yes' at the other (coded as 1). Greater speaker commitment to the CC should result in higher slider ratings.
 
-Projection and at-issueness of the contents of the clausal complements were measured in separate blocks. In the projection blocks across Exps.~1-3, projection was measured with the `certain that' diagnostic. The target stimuli consisted of the target utterances, as shown in Figure \ref{f-projection-trials}.
+%Following \citealt{tbd-variability}, the `certain that' diagnostic was implemented in Exps.~1-3 with a gradient response scale: participants gave their responses on a slider marked `no' at one end and `yes' at the other. We assume that the closer to `yes' a participant's response is, the more the speaker is certain of the content, that is, the more projective the content is. In other words, we assume that gradient certainty ratings reflect gradience in the speaker's commitment to the truth of the content.\footnote{Strictly speaking,  gradient certainty ratings reflect gradience in the degree to which participants \emph{perceive} the speaker to be committed to the truth of the content. That is, as in any experiment, the quantity of interest, in this case speaker commitment, is only indirectly measured.} As discussed in \citealt{tbd-variability}, a second interpretation of gradient certainty ratings is that they reflect a participant's degree of belief in the speaker's (binary) commitment to the truth of the content. While we adopt the first interpretation in our discussion, we remain agnostic about the interpretation of gradient certainty ratings. 
 
+\begin{figure}[h!]
+\centering
+\fbox{\begin{minipage}{15cm}{\em acknowledge, admit, announce, be annoyed, be right, confess, confirm, demonstrate, discover, establish, hear, inform, know, pretend, prove, reveal, say, see, suggest, think. }\end{minipage}}
+\caption{20 clause-embedding predicates in Exps.~1-3.}\label{fig:predicates}
+\end{figure}
 
 \begin{figure}[h!]
 \centering
@@ -601,10 +591,12 @@ Projection and at-issueness of the contents of the clausal complements were meas
 \fbox{\includegraphics[height=4.4cm,width=7.6cm]{figures/1c-proj}} 
 \caption{Exps.~1c, 2c, and 3c}\label{fig-exp1c-projection}
 \end{subfigure}
-
-
-\caption{Target trials in projection blocks of Exps.~1, 2, and 3 for the complement {\em Julian dances salsa}.}\label{f-projection-trials}
+\caption{Target trials in projection blocks of Exps.~1, 2, and 3 for the complement {\em Julian dances salsa}.}\label{fig:projection-trials}
 \end{figure}
+
+In the at-issueness blocks of Exps.~1, target 
+
+In the projection blocks of Exps.~1-3, target stimuli consisted of a polar question sentence, a negated sentence, a sentence with {\em perhaps}, or a conditional sentence that was uttered by a named speaker, as shown in Fig.~\ref{fig:projection-trials}. Each sentence was formed by realizing the 20 clauses as the complements of the 20 clause-embedding predicates in Fig.~\ref{fig:predicates}.\footnote{The proper names that realized the speakers, the subjects of the clause-embedding predicates, the subjects of the complement clauses, and the subjects of the consequents  were all unique. The indirect object of {\em inform} was realized by the proper name {\em Sam}. The predicates differed in the tense in which they were realized. In polar interrogatives as well as in negated and modalized declaratives, eventive predicates, like {\em discover} and {\em hear}, were realized in the past tense and stative predicates, like {\em know} and {\em be annoyed}, were realized in the present tense.  In the antecedents of conditionals, all predicates were realized in the present tense. For the consequents of the conditional sentences see Supplement \ref{a-target}.} Participants were told to imagine that they are at a party and that, on walking into the kitchen, they overhear somebody ask somebody else a question. Projection was measured using the `certain that' diagnostic \cite{djaerv-bacovcin-salt27,tbd-variability, lorson2018, mahler2020}: participants were asked to rate whether the speaker was certain of the CC, taking into consideration the fact. They gave their responses on a slider marked `no' at one end (coded as 0) and `yes' at the other (coded as 1). Greater speaker commitment to the CC should result in higher slider ratings.
 
 The at-issueness diagnostics differed between Exps.~1, 2, and 3: at-issueness was measured in Exp.~1q, 2q, and 3q, with variants of the question-based diagnostic of at-issueness, namely the `asking whether' diagnostic in Exp.~1q, and the `yes, $p$' diagnostic in Exps.~2q and 3q, as shown in Figure \ref{fig-ai-trials-q}.
 
@@ -621,78 +613,96 @@ To assess whether participants were attending to the task, each experiment also 
 \begin{subfigure}[t]{0.5\textwidth}
         \centering
 \fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/1q-ai}}
-\caption{Exp.~1q.}\label{fig-exp1q-ai}
-\end{subfigure}
+\caption{Exp.~1q.}
+\end{subfigure}%
 \begin{subfigure}[t]{0.5\textwidth}
 \centering
-\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/2q-ai}} 
-\caption{Exp.~2q.}\label{fig-exp2q-ai}
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/1n-ai}} 
+\caption{Exp.~1n.}
+ \end{subfigure}
+\begin{subfigure}[t]{0.5\textwidth}
+        \centering
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/1m-ai}}
+\caption{Exp.~1m}
  \end{subfigure}%
+ \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/1c-ai}}
+\caption{Exp.~1c}
+ \end{subfigure}
+
+\caption{Target trials in at-issueness blocks of Exps.~1 for the complement {\em Julian dances salsa}.}\label{fig:ai-exps1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+
+\begin{subfigure}[t]{0.5\textwidth}
+        \centering
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/2q-ai}}
+\caption{Exp.~2q.}
+\end{subfigure}%
+\begin{subfigure}[t]{0.5\textwidth}
+\centering
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/2n-ai}} 
+\caption{Exp.~2n.}
+ \end{subfigure}
+\begin{subfigure}[t]{0.5\textwidth}
+        \centering
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/2m-ai}}
+\caption{Exp.~2m}
+ \end{subfigure}%
+ \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/2c-ai}}
+\caption{Exp.~2c}
+ \end{subfigure}
+
+\caption{Target trials in at-issueness blocks of Exps.~2 for the complement {\em Julian dances salsa}.}\label{fig:ai-exps3}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+
 \begin{subfigure}[t]{0.5\textwidth}
         \centering
 \fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/3q-ai}}
-\caption{Exp.~3q}\label{fig-exp3q-ai}
- \end{subfigure}
-
-\caption{Target trials in at-issueness blocks of Exps.~1q, 2q, and 3q for the complement {\em Julian dances salsa}.}\label{f-ai-trialsq}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-
-\begin{subfigure}[t]{0.5\textwidth}
-        \centering
-\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/2n-ai}}
-\caption{Exp.~2n.}\label{fig-exp1q-ai}
+\caption{Exp.~3q.}
 \end{subfigure}%
 \begin{subfigure}[t]{0.5\textwidth}
 \centering
-\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/2m-ai}} 
-\caption{Exp.~2m.}\label{fig-exp2q-ai}
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/3n-ai}} 
+\caption{Exp.~3n.}
  \end{subfigure}
 \begin{subfigure}[t]{0.5\textwidth}
         \centering
-\fbox{\includegraphics[height=5.4cm,width=9cm]{figures/2c-ai}}
-\caption{Exp.~2c}\label{fig-exp3q-ai}
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/3m-ai}}
+\caption{Exp.~3m}
+ \end{subfigure}%
+ \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/3c-ai}}
+\caption{Exp.~3c}
  \end{subfigure}
 
-\caption{Target trials in at-issueness blocks of Exps.~2n, 2m, and 2c for the complement {\em Julian dances salsa}.}\label{f-ai-trialsq}
+\caption{Target trials in at-issueness blocks of Exps.~3 for the complement {\em Julian dances salsa}.}\label{fig:ai-exps3}
 \end{figure}
 
 
-\begin{figure}[h!]
-\centering
+====
 
-\begin{subfigure}[t]{0.5\textwidth}
-        \centering
-\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/3n-ai}}
-\caption{Exp.~3n.}\label{fig-exp1q-ai}
-\end{subfigure}%
-\begin{subfigure}[t]{0.5\textwidth}
-\centering
-\fbox{\includegraphics[height=5.4cm,width=7.6cm]{figures/3m-ai}} 
-\caption{Exp.~3m.}\label{fig-exp2q-ai}
- \end{subfigure}
-\begin{subfigure}[t]{0.5\textwidth}
-        \centering
-\fbox{\includegraphics[height=5.4cm,width=9cm]{figures/3c-ai}}
-\caption{Exp.~3c}\label{fig-exp3q-ai}
- \end{subfigure}
-
-\caption{Target trials in at-issueness blocks of Exps.~3n, 3m, and 3c for the complement {\em Julian dances salsa}.}\label{f-ai-trialsq}
-\end{figure}
+The projection block also included 6 control trials, which functioned as attention checks. The content of these stimuli was expected not to project: For example, in Fig.~\ref{fig-exp1-projection-control}, the speaker is not committed to the main clause content, that Samantha has a new hat. The same 6 main clauses were also used to form 6 filler trials in the prior block; a sample stimulus is given in Fig.~\ref{fig-exp1-prior-filler}. These filler stimuli were not used to assess participants' attention. For the full set of stimuli see Supplement \ref{a-stim}.
 
 
-In the projection block, target stimuli consisted of a fact and a polar question that was ut- tered by a named speaker, as shown in Figure 1B. The polar questions were formed by real- izing the 20 clauses as the complements of the 20 clause-embedding predicates in Figure 1C. Participants were told to imagine that they are at a party and that, on walking into the kitchen, they overhear somebody ask somebody else a question. Projection was measured using the ?certain that? diagnostic (Dj\"arv \& Bacovcin, 2017; Lorson, 2018; Mahler, 2020; Tonhauser et al., 2018): participants were asked to rate whether the speaker was certain of the CC, taking into consideration the fact. They gave their responses on a slider marked ?no? at one end (coded as 0) and ?yes? at the other (coded as 1). Greater speaker commitment to the CC should result in higher slider ratings.
+Each participant's stimulus set was semi-randomly generated by first randomly pairing up the 20 predicates and clauses. Half of the stimuli were then randomly assigned the respective clause's higher-probability fact, and half its lower-probability fact. Participants completed a total of 52 trials: 20 target trials in each block, 6 control trials in the projection block, and 6 filler trials in the prior block. Each participant completed the same 6 filler and control trials. Block order and within-block trial order were randomized.
 
-Participants were told to imagine that they are at a party and that, on walking into the kitchen, they overhear somebody ask a question. Participants were asked to rate whether the speaker was certain of the CC. They gave their responses on a slider marked `no' at one end (coded as 0) and `yes' at the other (coded as 1), as shown in Figure \ref{fig-trial-exp1}.
-
-
-After completing the experiment, participants filled out a short, optional survey about their age, their gender, their native language(s) and, if English is their native language, whether they are a speaker of American English (as opposed to, e.g.\ Australian or Indian English). To encourage truthful responses, participants were told that they would be paid no matter what answers they gave in the survey.
+After completing the experiment, participants filled out a short optional demographic survey. To encourage truthful responses, participants were told that they would be paid no matter what answers they gave in the survey.
 
 \subsection{Data exclusion} 
 
 We excluded data from participants who took any experiment more than once and who did not self-declare to be native speakers of American English. We also excluded data from participants based on their ratings on the main clause controls and other criteria given in Supplement \ref{a-participants}. In each experiment, the data from between 215-281 remaining participants were analyzed. Information on the participants whose data entered into the analysis (total number, ages, gender) can be found in Supplement \ref{a-participants}.
+
+\newpage
 
 \section{Projection}
 
@@ -960,22 +970,22 @@ The responses to the control stimuli with NRRCs that used either one of the asse
 %\caption{Mean ratings on at-issueness diagnostics for main clause contents in %Exps.~1-3, for self-declared American English participants}\label{t-ai-controls}
 %\end{table}
 
-\section{Data exclusion}\label{a-participants}
+\section{Participant information and data exclusion criteria}\label{a-participants}
 
-This supplement provides information on the recruited participants, the criteria by which participants' data were excluded, the remaining participants (that is, the participants whose data entered into the analysis), and the payment for each of Exps.~1-3. Table \ref{f-exclusion} provides information on the recruited and remaining participants, including the total number, the range of the participants' ages, the mean ages of the participants, and their self-reported gender (`f' = female, `m' = male, `o' = other, `u' = undeclared). No gender data was collected in Exp.~1q. Participants' data were excluded based on the following criteria:
+This supplement provides information on the participants of the 12 experiments and the criteria by which participants' data were excluded. The columns of Table \ref{t:exclusion} show, for each of the 12 experiments (Exp.~1q, \ldots, Exp.~3c) how many participants were recruited, their age range and mean age, and their self-reported gender (`f' = female, `m' = male, `o' = other, `u' = undeclared). No gender data was collected in Exp.~1q. Participants' data were excluded based on the following criteria:
 
 \begin{itemize}[itemsep=-2pt]
 
-\item `multiple': Due to an experimental glitch, some participants participated more than once. Since no information was available on which one was their first take, those participants' data was removed (which means that for each participant who took the experiment twice, at least two data sets were removed).
+\item `multiple': Due to an experimental glitch, some participants participated more than once in Exp.~1q. Since no information was available on which one was their first take, those participants' data was removed. 
 
 \item `language': Participants' data were excluded if they did not self-identify as native speakers of American English.
 
-\item `controls': Participants' data were excluded if their mean rating on the 6 main clause control items in the projection block was more than 2 sd above the group mean (in Exps.~1q, 2q, and 3q) or more than 2 sd below the group mean (in the remaining experiments). Participants' data were also excluded if their mean rating on the 6 main clause control items in the at-issueness block was more than 2 sd above the group mean (across Exps.~1-3).
+\item `controls': Participants' data were excluded if their mean rating on the 6 main clause control items in the projection block was more than 2 sd above the group mean (in Exps.~1q, 2q, and 3q) or more than 2 sd below the group mean (in the remaining experiments). Participants' data were also excluded if their mean rating on the 6 main clause control items in the at-issueness block was more than 2 sd above the group mean (across all experiments).
  
-\item `variance': Participants' data were excluded if they always selected roughly the same point on the response scale for the target stimuli. We identified such participants by identifying participants whose mean variance on the target stimuli was more than 2sd below the group mean variance on the target stimuli, and manually inspecting their response patterns. %Exps 1q, 2q, 3q: participants with low variance not excluded after manual inspection
+\item `variance': Participants' data were excluded if they always selected roughly the same point on the response scale for the target stimuli, that is, if their mean variance on the target stimuli was more than 2 sd below the group mean variance. {\bf and manually inspecting their response patterns. Exps 1q, 2q, 3q: participants with low variance not excluded after manual inspection NEED TO CONSIDER THIS AGAIN}
 \end{itemize}
 
-Participants took around 9-11 minutes to complete the various experiments. Participants were paid more in Exps.~1c, 2c, and 3c than the remaining experiments because the target stimuli in those experiments were longer (as they consisted of conditionals). More women than men were recruited in many of the experiments because they were run at a time when Prolific apparently went viral on TikTok, resulting in a large number of young women registering for the service (around July 24, 2021; see \url{https://blog.prolific.co/we-recently-went-viral-on-tiktok-heres-what-we-learned/}, \\ last accessed February 4, 2022).  
+The remaining columns of Table \ref{t:exclusion} provide information on the remaining participants, that is, the participants' data that entered into the analysis. Participants took around 9-11 minutes to complete the various experiments. Participants were paid more in Exps.~1c, 2c, and 3c than the remaining experiments because the target stimuli in those experiments were longer (as they consisted of conditionals). More women than men were recruited in many of the experiments because the experiments were run at a time when Prolific went viral on TikTok, resulting in a large number of young women registering for the service (around July 24, 2021; see \url{https://blog.prolific.co/we-recently-went-viral-on-tiktok-heres-what-we-learned/}, \\ last accessed February 4, 2022).  
 
 \begin{sidewaystable}[h!]
 \centering
@@ -996,7 +1006,7 @@ Exp. & total & ages (mean) & f/m/o/u & multiple & language & controls & variance
 3m & 250  & 18-63 (25.5)  & 205/40/5/0 &  0 & 3  & 14 &  0 & 233  &  18-63 (24.8) & 197/31/5/0 &\$1.70 \\
 3c & 250  & 18-59  (27.5) & 182/64/4/0  & 0  & 3  & 17 & 0 & 230  &  18-59 (26.7)  & 177/49/4/0  & \$2.15\\
 \end{tabular}
-\caption{Recruited participants, excluded data, and remaining participants in Exps.~1, 2 and 3}\label{f-exclusion}
+\caption{Recruited participants, excluded data, and remaining participants in Exps.~1, 2 and 3}\label{t:exclusion}
 \end{sidewaystable} 
 
 \section{Comparing projection with different entailment-canceling environments}\label{a-projection}
