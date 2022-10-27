@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 OCT 2022 12:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 OCT 2022 12:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1077,10 +1077,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 LaTeX Warning: Label `rqs' multiply defined.
 
 
-LaTeX Warning: Label `fig:ai-exps1' multiply defined.
-
-
-LaTeX Warning: Label `fig:ai-exps1' multiply defined.
+LaTeX Warning: Label `rqs' multiply defined.
 
 )
 \openout1 = `investigating-GPP.aux'.
@@ -1259,185 +1256,172 @@ File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/txsy/m/n' tried instead on input line 130.
- [3]
-Overfull \hbox (23.26794pt too wide) in paragraph at lines 237--238
+ [3] [4]
+[5]
+Overfull \hbox (23.26794pt too wide) in paragraph at lines 301--302
 \OT1/txr/m/n/10.95 CIs, conversationally-triggered pre-sup-po-si-tions) vs. con
 -ver-sa-tional im-pli-ca-tures (not back-grounded!!)
  []
 
-[4]
+[6]
 
-Package natbib Warning: Citation `potts2007-compass' on page 5 undefined on inp
-ut line 267.
+Package natbib Warning: Citation `potts2007-compass' on page 7 undefined on inp
+ut line 331.
 
-[5] [6]
+[7] [8]
 
-Package natbib Warning: Citation `amaral-etal2007' on page 7 undefined on input
- line 345.
+Package natbib Warning: Citation `amaral-etal2007' on page 9 undefined on input
+ line 409.
 
 
-Package natbib Warning: Citation `gutzmann' on page 7 undefined on input line 3
-47.
+Package natbib Warning: Citation `gutzmann' on page 9 undefined on input line 4
+11.
 
-[7] [8] [9] [10]
-LaTeX Font Info:    Try loading font information for OT1+txtt on input line 451
+[9] [10] [11]
+LaTeX Font Info:    Try loading font information for OT1+txtt on input line 515
 .
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ot1txtt.fd
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
-) [11] [12]
-[13] <figures/2q-proj.png, id=338, 501.875pt x 363.3575pt>
+) [12]
+
+LaTeX Warning: Reference `a-target' on page 13 undefined on input line 639.
+
+[13] <figures/2q-proj.png, id=366, 501.875pt x 363.3575pt>
 File: figures/2q-proj.png Graphic file (type png)
 
 <use figures/2q-proj.png>
-Package pdftex.def Info: figures/2q-proj.png used on input line 576.
+Package pdftex.def Info: figures/2q-proj.png used on input line 654.
 (pdftex.def)             Requested size: 216.2462pt x 125.19212pt.
 
-<figures/1n-proj.png, id=340, 575.14874pt x 345.29pt>
+<figures/1n-proj.png, id=368, 575.14874pt x 345.29pt>
 File: figures/1n-proj.png Graphic file (type png)
 
 <use figures/1n-proj.png>
-Package pdftex.def Info: figures/1n-proj.png used on input line 581.
+Package pdftex.def Info: figures/1n-proj.png used on input line 659.
 (pdftex.def)             Requested size: 216.24191pt x 125.18944pt.
- <figures/1m-proj.png, id=341, 501.875pt x 345.29pt>
+ <figures/1m-proj.png, id=369, 501.875pt x 345.29pt>
 File: figures/1m-proj.png Graphic file (type png)
 
 <use figures/1m-proj.png>
-Package pdftex.def Info: figures/1m-proj.png used on input line 586.
+Package pdftex.def Info: figures/1m-proj.png used on input line 664.
 (pdftex.def)             Requested size: 216.2462pt x 125.18944pt.
 
-<figures/1c-proj.png, id=342, 616.3025pt x 359.3425pt>
+<figures/1c-proj.png, id=370, 616.3025pt x 359.3425pt>
 File: figures/1c-proj.png Graphic file (type png)
 
 <use figures/1c-proj.png>
-Package pdftex.def Info: figures/1c-proj.png used on input line 591.
+Package pdftex.def Info: figures/1c-proj.png used on input line 669.
 (pdftex.def)             Requested size: 216.23573pt x 125.19054pt.
- [14 <./figures/2q-proj.png> <./figures/1n-proj.png> <./figures/1m-proj.png> <.
-/figures/1c-proj.png>]
 
-LaTeX Warning: Reference `fig-ai-trials-q' on page 15 undefined on input line 6
-01.
-
-<figures/1q-ai.png, id=365, 609.27625pt x 332.24126pt>
+<figures/1q-ai.png, id=375, 609.27625pt x 332.24126pt>
 File: figures/1q-ai.png Graphic file (type png)
  <use figures/1q-ai.png>
-Package pdftex.def Info: figures/1q-ai.png used on input line 615.
+Package pdftex.def Info: figures/1q-ai.png used on input line 682.
 (pdftex.def)             Requested size: 216.24344pt x 153.64395pt.
 
-<figures/1n-ai.png, id=366, 557.08125pt x 408.52625pt>
+<figures/1n-ai.png, id=376, 557.08125pt x 408.52625pt>
 File: figures/1n-ai.png Graphic file (type png)
  <use figures/1n-ai.png>
-Package pdftex.def Info: figures/1n-ai.png used on input line 620.
+Package pdftex.def Info: figures/1n-ai.png used on input line 687.
 (pdftex.def)             Requested size: 216.24077pt x 153.64578pt.
 
-<figures/1m-ai.png, id=367, 501.875pt x 406.51875pt>
+<figures/1m-ai.png, id=377, 501.875pt x 406.51875pt>
 File: figures/1m-ai.png Graphic file (type png)
  <use figures/1m-ai.png>
-Package pdftex.def Info: figures/1m-ai.png used on input line 625.
+Package pdftex.def Info: figures/1m-ai.png used on input line 692.
 (pdftex.def)             Requested size: 216.2462pt x 153.64133pt.
 
-<figures/1c-ai.png, id=368, 611.28375pt x 406.51875pt>
+<figures/1c-ai.png, id=378, 611.28375pt x 406.51875pt>
 File: figures/1c-ai.png Graphic file (type png)
  <use figures/1c-ai.png>
-Package pdftex.def Info: figures/1c-ai.png used on input line 630.
+Package pdftex.def Info: figures/1c-ai.png used on input line 697.
 (pdftex.def)             Requested size: 216.23773pt x 153.64133pt.
 
-<figures/2q-ai.png, id=369, 501.875pt x 397.485pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/2q-ai.png, id=379, 501.875pt x 397.485pt>
 File: figures/2q-ai.png Graphic file (type png)
  <use figures/2q-ai.png>
-Package pdftex.def Info: figures/2q-ai.png used on input line 642.
+Package pdftex.def Info: figures/2q-ai.png used on input line 709.
 (pdftex.def)             Requested size: 216.2462pt x 153.6478pt.
 
-<figures/2n-ai.png, id=370, 503.8825pt x 391.4625pt>
+<figures/2n-ai.png, id=380, 503.8825pt x 391.4625pt>
 File: figures/2n-ai.png Graphic file (type png)
  <use figures/2n-ai.png>
-Package pdftex.def Info: figures/2n-ai.png used on input line 647.
+Package pdftex.def Info: figures/2n-ai.png used on input line 714.
 (pdftex.def)             Requested size: 216.24237pt x 153.64339pt.
 
-<figures/2m-ai.png, id=371, 522.95375pt x 391.4625pt>
+<figures/2m-ai.png, id=381, 522.95375pt x 391.4625pt>
 File: figures/2m-ai.png Graphic file (type png)
  <use figures/2m-ai.png>
-Package pdftex.def Info: figures/2m-ai.png used on input line 652.
+Package pdftex.def Info: figures/2m-ai.png used on input line 719.
 (pdftex.def)             Requested size: 216.23975pt x 153.64339pt.
 
-<figures/2c-ai.png, id=372, 630.355pt x 391.4625pt>
+<figures/2c-ai.png, id=382, 630.355pt x 391.4625pt>
 File: figures/2c-ai.png Graphic file (type png)
  <use figures/2c-ai.png>
-Package pdftex.def Info: figures/2c-ai.png used on input line 657.
+Package pdftex.def Info: figures/2c-ai.png used on input line 724.
 (pdftex.def)             Requested size: 216.24155pt x 153.64339pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/3q-ai.png, id=373, 501.875pt x 381.425pt>
+<figures/3q-ai.png, id=383, 501.875pt x 381.425pt>
 File: figures/3q-ai.png Graphic file (type png)
  <use figures/3q-ai.png>
-Package pdftex.def Info: figures/3q-ai.png used on input line 669.
+Package pdftex.def Info: figures/3q-ai.png used on input line 736.
 (pdftex.def)             Requested size: 216.2462pt x 153.644pt.
 
-<figures/3n-ai.png, id=374, 479.7925pt x 391.4625pt>
+<figures/3n-ai.png, id=384, 479.7925pt x 391.4625pt>
 File: figures/3n-ai.png Graphic file (type png)
  <use figures/3n-ai.png>
-Package pdftex.def Info: figures/3n-ai.png used on input line 674.
+Package pdftex.def Info: figures/3n-ai.png used on input line 741.
 (pdftex.def)             Requested size: 216.24138pt x 153.64339pt.
 
-<figures/3m-ai.png, id=375, 508.90125pt x 391.4625pt>
+<figures/3m-ai.png, id=385, 508.90125pt x 391.4625pt>
 File: figures/3m-ai.png Graphic file (type png)
  <use figures/3m-ai.png>
-Package pdftex.def Info: figures/3m-ai.png used on input line 679.
+Package pdftex.def Info: figures/3m-ai.png used on input line 746.
 (pdftex.def)             Requested size: 216.23746pt x 153.64339pt.
 
-<figures/3c-ai.png, id=376, 716.6775pt x 384.43625pt>
+<figures/3c-ai.png, id=386, 716.6775pt x 384.43625pt>
 File: figures/3c-ai.png Graphic file (type png)
  <use figures/3c-ai.png>
-Package pdftex.def Info: figures/3c-ai.png used on input line 684.
+Package pdftex.def Info: figures/3c-ai.png used on input line 751.
 (pdftex.def)             Requested size: 216.24063pt x 153.64857pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `fig-exp1-projection-control' on page 15 undefined on 
-input line 694.
-
-
-LaTeX Warning: Reference `fig-exp1-prior-filler' on page 15 undefined on input 
-line 694.
-
-
-LaTeX Warning: Reference `a-stim' on page 15 undefined on input line 694.
-
-[15 <./figures/1q-ai.png> <./figures/1n-ai.png> <./figures/1m-ai.png> <./figure
-s/1c-ai.png>] [16 <./figures/2q-ai.png> <./figures/2n-ai.png> <./figures/2m-ai.
-png> <./figures/2c-ai.png>] [17 <./figures/3q-ai.png> <./figures/3n-ai.png> <./
-figures/3m-ai.png> <./figures/3c-ai.png>] [18] (./investigating-GPP.bbl
-[19]) [20]pdfTeX warning (ext4): destination with the same identifier (name{pag
-e.1}) has been already used, duplicate ignored
+[14 <./figures/2q-proj.png> <./figures/1n-proj.png> <./figures/1m-proj.png> <./
+figures/1c-proj.png>] [15 <./figures/1q-ai.png> <./figures/1n-ai.png> <./figure
+s/1m-ai.png> <./figures/1c-ai.png>] [16 <./figures/2q-ai.png> <./figures/2n-ai.
+png> <./figures/2m-ai.png> <./figures/2c-ai.png>] [17 <./figures/3q-ai.png> <./
+figures/3n-ai.png> <./figures/3m-ai.png> <./figures/3c-ai.png>]
+(./investigating-GPP.bbl [18]) [19]pdfTeX warning (ext4): destination with the 
+same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.844 \item  \ldots
-                    that Charley speaks Spanish, Jay will be happy. [1]pdfTeX w
-arning (ext4): destination with the same identifier (name{page.2}) has been alr
-eady used, duplicate ignored
+l.905 \item  \ldots
+                    that Jon walks to work, Caleb will be suspicious. [1]pdfTeX
+ warning (ext4): destination with the same identifier (name{page.2}) has been a
+lready used, duplicate ignored
 <to be read again> 
                    \relax 
-l.848 \newpage
-               [2]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
+l.944 
+       [2]pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.910 \newpage
+l.970 \newpage
                [3]pdfTeX warning (ext4): destination with the same identifier (
 name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.943 
-       [4]
-Overfull \hbox (13.44478pt too wide) in paragraph at lines 988--989
+l.1042 
+        [4]
+Overfull \hbox (13.44478pt too wide) in paragraph at lines 1048--1049
 \OT1/txr/m/n/10.95 see []$\OT1/txtt/m/n/10.95 https : / / blog . prolific . co 
 / we-[]recently-[]went-[]viral-[]on-[]tiktok-[]heres-[]what-[]we-[]learned/$[]\
 OT1/txr/m/n/10.95 , 
@@ -1453,50 +1437,56 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1014 \end{document}
+l.1072 \end{document}
                       [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1014.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1072.
 pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1014 \end{document}
+l.1072 \end{document}
                       [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1014.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1072.
  (./investigating-GPP.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1014.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1014.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1072.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1072.
 
-Package rerunfilecheck Info: File `investigating-GPP.out' has not changed.
-(rerunfilecheck)             Checksum: D0CC494948CB9E3DFA84A4AA1F39A7C8;1166.
 
+
+Package rerunfilecheck Warning: File `investigating-GPP.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `investigating-GPP.out':
+(rerunfilecheck)             Before: FDD97C680B761E19404E8A517C1B5A81;1229
+(rerunfilecheck)             After:  6428B2F42090CCB0B0E1E58CDFEE69A2;1123.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1014.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1072.
  ) 
 Here is how much of TeX's memory you used:
- 24629 strings out of 493014
- 420978 string characters out of 6133351
- 542807 words of memory out of 5000000
- 27449 multiletter control sequences out of 15000+600000
- 53980 words of font info for 138 fonts, out of 8000000 for 9000
+ 24635 strings out of 493014
+ 421013 string characters out of 6133351
+ 542106 words of memory out of 5000000
+ 27450 multiletter control sequences out of 15000+600000
+ 55919 words of font info for 141 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  55i,11n,77p,3249b,612s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
 st, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
-, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 , replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix.E} has been referenced but does not exist,
+ replaced by a fixed one
 
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/20
@@ -1507,10 +1497,10 @@ ype1/public/txfonts/txsyc.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
 ublic/txfonts/txtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/time
 s/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on investigating-GPP.pdf (26 pages, 419168 bytes).
+Output written on investigating-GPP.pdf (25 pages, 420981 bytes).
 PDF statistics:
- 578 PDF objects out of 1000 (max. 8388607)
- 503 compressed objects within 6 object streams
- 165 named destinations out of 1000 (max. 500000)
- 237 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 595 PDF objects out of 1000 (max. 8388607)
+ 521 compressed objects within 6 object streams
+ 168 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 
