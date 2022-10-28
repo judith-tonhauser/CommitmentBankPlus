@@ -214,7 +214,7 @@ variances = d %>%
   summarize(Variance = var(response)) %>%
   mutate(TooSmall = Variance < mean(Variance) - 2*sd(Variance))
 
-View(variances)
+#View(variances)
 
 ggplot(variances,aes(x=workerid,y=Variance)) +
   geom_point()
@@ -228,8 +228,8 @@ lvw = d %>%
   droplevels() %>%
   mutate(Participant = as.factor(as.character(workerid)))
 
-ggplot(lvw,aes(x=Participant,y=response,color=trigger_class)) +
-  geom_jitter()
+ggplot(lvw[lvw$trigger != "MC",],aes(x=Participant,y=response,color=trigger_class)) +
+  geom_point()
 
 # manual inspection shows that these three participants used the whole scale, so no reason to exclude them
 
@@ -246,3 +246,4 @@ length(which(is.na(d$age))) # 0 missing values
 mean(d$age,na.rm=TRUE) #39.2
 
 # no gender information available
+

@@ -211,3 +211,4 @@ d %>%
   group_by(gender) %>% 
   summarize(count=n())
 #141 female, 128 male, 5 other, 0 undeclared
+
