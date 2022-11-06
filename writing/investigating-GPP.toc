@@ -1,18 +1,18 @@
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}At-issueness diagnostics}{4}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Formal analyses of at-issueness}{5}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Diagnosing at-issueness}{11}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}Next steps}{11}{subsection.1.4}
-\contentsline {section}{\numberline {2}Experiments 1-3: Methods}{12}{section.2}
-\contentsline {subsection}{\numberline {2.1}Participants}{13}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Materials and procedure}{13}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Data exclusion}{15}{subsection.2.3}
-\contentsline {section}{\numberline {3}Projection}{17}{section.3}
-\contentsline {section}{\numberline {4}At-issueness}{17}{section.4}
-\contentsline {section}{\numberline {5}GPP}{18}{section.5}
-\contentsline {section}{\numberline {6}General discussion}{18}{section.6}
-\contentsline {section}{\numberline {7}Conclusions}{18}{section.7}
-\contentsline {section}{\numberline {A}20 clauses}{1}{appendix.A}
-\contentsline {section}{\numberline {B}Consequents for conditional target stimuli in Exps.\nobreakspace {}1c, 2c, and 3c}{1}{appendix.B}
-\contentsline {section}{\numberline {C}Control stimuli in Exps.\nobreakspace {}1-3}{2}{appendix.C}
-\contentsline {section}{\numberline {D}Participant information and data exclusion criteria}{4}{appendix.D}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}At-issueness diagnostics}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Formal analyses of at-issueness}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Diagnosing at-issueness}{11}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Next steps}{11}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Experiments 1-3: Methods}{12}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Participants}{13}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Materials and procedure}{13}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Data exclusion}{15}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Projection}{17}{section.3}%
+\contentsline {section}{\numberline {4}At-issueness}{17}{section.4}%
+\contentsline {section}{\numberline {5}GPP}{18}{section.5}%
+\contentsline {section}{\numberline {6}General discussion}{18}{section.6}%
+\contentsline {section}{\numberline {7}Conclusions}{18}{section.7}%
+\contentsline {section}{\numberline {A}20 clauses}{1}{appendix.A}%
+\contentsline {section}{\numberline {B}Consequents for conditional target stimuli in Exps.\nobreakspace {}1c, 2c, and 3c}{1}{appendix.B}%
+\contentsline {section}{\numberline {C}Control stimuli in Exps.\nobreakspace {}1-3}{2}{appendix.C}%
+\contentsline {section}{\numberline {D}Participant information and data exclusion criteria}{4}{appendix.D}%
