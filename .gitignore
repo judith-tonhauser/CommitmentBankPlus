@@ -1,6 +1,6 @@
 # Latex files
 # .pdf 
-.aux .toc .bbl . blg .synctex.gz .xdv .out .log .fls .fdb_latexmk
+*.aux *.toc *.bbl *.blg *.synctex.gz *.xdv *.out *.log *.fls *.fdb_latexmk *.log
 
 # Apple file system
 .DS_Store
@@ -25,4 +25,4 @@
 *.gitattributes
 
 # RData
-.RData .rdb .rdx 
+*.RData *.rdb *.rdx 
