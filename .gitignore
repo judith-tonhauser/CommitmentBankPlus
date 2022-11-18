@@ -23,6 +23,7 @@
 *.hits
 *mturk/
 *.gitattributes
+*concordance.tex
 
 # RData
 *.RData *.rdb *.rdx 
