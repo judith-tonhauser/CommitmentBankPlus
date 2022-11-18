@@ -211,6 +211,7 @@ length(data_all[,1])/length(levels(data_all$content))/
 \section{Data Overview and Statistical Summaries}
 \subsection{Distribution of projectivity ratings by operator:}
 <<project-by-op-distr, echo = FALSE>>=
+library(ggplot2)
 data_all %>% 
   # mutate(verb = fct_reorder(cond, as.numeric(dataf$response), .fun = 'mean')) %>%
   ggplot(aes(x = projective, group = op)) +
@@ -275,6 +276,22 @@ proj_means_op %>% mutate(op = fct_reorder(op, Mean,
   labs(title = "Mean projectivity by operator")+
   theme_bw() +
   scale_color_brewer(palette = "PRGn")
+
+
+proj_means_op %>% mutate(op = fct_reorder(op, Mean, 
+                                         .fun = mean)) %>% 
+  ggplot(aes(x = op, y=Mean, color = op, group = verb)) +
+  # coord_cartesian(ylim = c(0,1)) +
+  geom_point(aes(shape = op), size = 4) + 
+  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1) +
+  facet_wrap(vars(verb)) +
+  geom_line() + 
+  labs(title = "Mean projectivity by operator")+
+  theme_bw() +
+  scale_color_brewer(palette = "PRGn")
+
+
 @
 \noindent The following generalizations emerge:
 \begin{itemize}
@@ -289,8 +306,6 @@ proj_means_op %>% mutate(op = fct_reorder(op, Mean,
 \newpage
 \subsection{Means and confidence intervals for projectivity rating by verb:}
 <<summary-v, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=7>>=
-# load helper functions
-source('../../../results/main/helpers.R')
 
 proj_means_v = data_all %>% group_by(verb) %>%
   summarize(Mean = mean(projective), CILow = ci.low(projective), 
@@ -347,10 +362,62 @@ proj_means %>% mutate(verb = fct_reorder(verb, Mean,
 \end{itemize}
 
 
-% \section{Exploring a couple of models}
-% \subsection{Linear, frequentist}
-% Let's try a linear model first, and check error distributions.
-% 
+\section{Analysis}
+
+We are interested in how the response (projectivity ratings) depends on the verb and embedding operator.
+
+
+<<>>=
+# main analysis 4: predict projection from not-at-issueness, predicate, and their interaction ----
+
+t = data_all %>% 
+  mutate(verb = fct_relevel(verb, "suggest"))
+
+m.dummy = lm(projective ~ ai*short_trigger, data=t)
+summary(m.dummy)
+
+# reference level set to "prove"
+
+# model with short_trigger slope did not converge
+m.4 = lmer(projective ~ cai*short_trigger + (1+cai|content) + (1+cai|workerid), 
+           data = t, REML=F,control = lmerControl(optimizer ='optimx', optCtrl=list(method='L-BFGS-B')))
+saveRDS(m.4, "../models/m.4.rds")
+m.4 <- readRDS("../models/m.4.rds")
+summary(m.4)
+texreg(m.4,single.row = TRUE, leading.zero = FALSE, booktabs = TRUE)
+
+@
+
+
+<<>>=
+formula <- response ~ op * verb
+# formula <- response ~ op * verb + (1 | workerid) + (1 | item)
+# formula <- response ~ op * verb + (1 + op + verb | workerid) + (1 + op + verb | item)
+@
+
+Trying a beta-regression. Our response variable has observations from a sliding scale between $(0,1)$. For beta regression, we rescale it to $[0,1]$, using method used in Degen \& Tonhauser (2022), from Smithson \& Verkuilen (2006).
+
+<<>>=
+data_all$response = (data_all$projective*(nrow(data_all)-1) + .5)/nrow(data_all)
+@
+
+
+<<>>=
+# library(rstan)
+# options(mc.cores=parallel::detectCores())
+# rstan_options(auto_write=TRUE)
+# library(brms)
+# 
+# model1 <- brm(formula = bf(response ~ op * verb ,
+#                            phi ~ op * verb,
+#                            family = Beta()),
+#               family = Beta(),
+#               data = data_all,
+#               iter=10000, warmup=2000,chains=6)
+
+
+@
+
 
 
 \end{document}

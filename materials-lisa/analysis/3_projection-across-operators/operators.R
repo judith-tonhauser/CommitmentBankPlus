@@ -41,9 +41,10 @@ df_list <- list(data_1q=data_1q, data_1m=data_1m, data_1n=data_1n, data_1c=data_
                   data_2q=data_2q, data_2m=data_2m, data_2n=data_2n, data_2c=data_2c,
                   data_3q=data_3q, data_3m=data_3m, data_3n=data_3n, data_3c=data_3c)
 
-# spread responses over separate columns for projectivity and at-issueness
+
 # require(tidyverse)
 
+# spread responses over separate columns for projectivity and at-issueness
 df_list <- lapply(df_list, function(df) {
   df = df %>%
     mutate(block_ai = ifelse(question_type == "ai", 
@@ -68,6 +69,7 @@ df_list <- lapply(df_list, function(df) {
 
 # library(stringr)
 
+# add labels for operator, and experiment block
 df_list = map2(df_list, names(df_list), function(df, name) {
   # print(df$content[1])
   operator <- str_sub(name, -1, -1)

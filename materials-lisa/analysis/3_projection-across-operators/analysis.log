@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.1.21)  6 NOV 2022 15:10
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.1.21)  16 NOV 2022 11:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -975,24 +975,48 @@ Package xcolor Warning: Incompatible color definition on input line 352.
 File: figures/figuressummary-combined-1.pdf Graphic file (type pdf)
 <use figures/figuressummary-combined-1.pdf>
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 377.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 377.
+
+Package xcolor Warning: Incompatible color definition on input line 376.
+
+
+Package xcolor Warning: Incompatible color definition on input line 387.
+
+
+Package xcolor Warning: Incompatible color definition on input line 396.
+
+
+Package xcolor Warning: Incompatible color definition on input line 402.
+
+
+Package xcolor Warning: Incompatible color definition on input line 404.
+
+
+Package xcolor Warning: Incompatible color definition on input line 406.
+
+
+Package xcolor Warning: Incompatible color definition on input line 408.
+
+
+Package xcolor Warning: Incompatible color definition on input line 415.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 420.
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 420.
  (./analysis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 377.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 377.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 420.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 420.
 Package rerunfilecheck Info: File `analysis.out' has not changed.
-(rerunfilecheck)             Checksum: A6A5D550A0996F7E732C365904334867;802.
+(rerunfilecheck)             Checksum: 0A642E3E8E2379C5CCC247842EE45849;845.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 377.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 420.
  ) 
 Here is how much of TeX's memory you used:
  17085 strings out of 479418
  299643 string characters out of 5884585
- 605328 words of memory out of 5000000
+ 605387 words of memory out of 5000000
  34304 multiletter control sequences out of 15000+600000
  544728 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

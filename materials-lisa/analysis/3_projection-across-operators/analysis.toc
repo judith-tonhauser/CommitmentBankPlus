@@ -5,3 +5,4 @@
 \contentsline {subsection}{\numberline {2.3}Means and confidence intervals for projectivity rating by operator}{6}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Means and confidence intervals for projectivity rating by verb:}{7}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Means and confidence intervals for projectivity rating by verb and operator:}{7}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Analysis}{8}{section.3}%

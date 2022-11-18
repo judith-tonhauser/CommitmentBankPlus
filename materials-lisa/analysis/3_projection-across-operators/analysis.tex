@@ -368,10 +368,53 @@ acknowledge       admit    announce  be_annoyed    be_right     confess
 \end{itemize}
 
 
-% \section{Exploring a couple of models}
-% \subsection{Linear, frequentist}
-% Let's try a linear model first, and check error distributions.
-% 
+\section{Analysis}
+
+We are interested in how the response (projectivity ratings) depends on the verb and embedding operator.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{formula} \hlkwb{<-} \hlstd{response} \hlopt{~} \hlstd{op} \hlopt{*} \hlstd{verb} \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{workerid)} \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{item)}
+\hlstd{> }\hlcom{# formula <- response ~ op * verb + (1 + op + verb | workerid) + (1 + op + verb | item)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Trying a beta-regression. Our response variable has observations from a sliding scale between $(0,1)$. For beta regression, we rescale it to $[0,1]$, using method used in Degen \& Tonhauser (2022), from Smithson \& Verkuilen (2006).
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{data_all}\hlopt{$}\hlstd{response} \hlkwb{=} \hlstd{(data_all}\hlopt{$}\hlstd{projective}\hlopt{*}\hlstd{(}\hlkwd{nrow}\hlstd{(data_all)}\hlopt{-}\hlnum{1}\hlstd{)} \hlopt{+} \hlnum{.5}\hlstd{)}\hlopt{/}\hlkwd{nrow}\hlstd{(data_all)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{library}\hlstd{(brms)}
+\end{alltt}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{Loading required package: Rcpp}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{Loading 'brms' package (version 2.16.3). Useful instructions\\can be found by typing help('brms'). A more detailed introduction\\to the package is available through vignette('brms\_overview').}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\\Attaching package: 'brms'}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{The following object is masked from 'package:stats':
+
+ \ \ \ ar}}\begin{alltt}
+\hlstd{> }\hlstd{model1} \hlkwb{<-} \hlkwd{brm}\hlstd{(}\hlkwc{formula} \hlstd{= response} \hlopt{~} \hlstd{op} \hlopt{*} \hlstd{verb} \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{workerid)} \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{item),} \hlkwc{family} \hlstd{= )}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error: Data must be specified using the 'data' argument.}}\end{kframe}
+\end{knitrout}
+
 
 
 \end{document}
