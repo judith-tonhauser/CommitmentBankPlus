@@ -1,6 +1,16 @@
 # Latex files
 # .pdf 
-*.aux *.toc *.bbl *.blg *.synctex.gz *.xdv *.out *.log *.fls *.fdb_latexmk *.log
+*.aux 
+*.toc 
+*.bbl 
+*.blg 
+*.synctex.gz 
+*.xdv 
+*.out 
+*.log 
+*.fls 
+*.fdb_latexmk 
+*.log
 
 # Apple file system
 .DS_Store
@@ -26,4 +36,6 @@
 *concordance.tex
 
 # RData
-*.RData *.rdb *.rdx 
+*.RData 
+*.rdb 
+*.rdx 
