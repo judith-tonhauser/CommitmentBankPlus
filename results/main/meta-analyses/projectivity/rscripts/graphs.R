@@ -24,12 +24,11 @@ proj_means_op = data %>% group_by(op) %>%
 
 proj_means_op %>% mutate(op = fct_reorder(op, Mean, 
                                           .fun = mean)) %>% 
-  ggplot(aes(x = op, y=Mean, color = op)) +
+  ggplot(aes(x = op, y=Mean)) +
   # coord_cartesian(ylim = c(0,1)) +
-  geom_point(aes(shape = op), size = 4) + 
-  scale_shape_manual(values = c("M", "N", "Q", "C")) +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1) +
-  geom_line() + 
+  geom_point(aes(shape = op), size = 1, color = "lightblue") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "lightblue") +
+  geom_line(color = "lightblue") + 
   labs(title = "Mean projectivity by operator")+
   theme_bw() +
   scale_color_brewer(palette = "PRGn")
@@ -87,12 +86,11 @@ proj_means %>% mutate(op = fct_reorder(op, Mean,
   mutate(verb = fct_reorder(verb, Mean, 
                             .fun = mean)) %>% 
   ggplot(aes(x = op, y=Mean, group = verb)) +
-  # coord_cartesian(ylim = c(0,1)) +
+  coord_cartesian(ylim = c(0,1)) +
   facet_wrap(vars(verb)) +
-  geom_point(size = 1) + 
-  scale_shape_manual(values = c("M", "N", "Q", "C")) +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1) +
-  geom_line() + 
+  geom_point(size = 1, color = "lightblue") + 
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "lightblue") +
+  geom_line(color = "lightblue") + 
   labs(title = "Mean projectivity by operator, for each verb")+
   theme_bw()
 
@@ -102,7 +100,7 @@ proj_means %>% mutate(verb = fct_reorder(verb, Mean,
                                        .fun = mean)) %>% 
   
   ggplot(aes(x = verb, y=Mean, color = op, group = op)) +
-  # coord_cartesian(ylim = c(0,1)) +
+  coord_cartesian(ylim = c(0,1)) +
   facet_grid(rows = vars(op)) +
   geom_point(aes(shape = op), size = 4) + 
   scale_shape_manual(values = c("M", "N", "Q", "C")) +

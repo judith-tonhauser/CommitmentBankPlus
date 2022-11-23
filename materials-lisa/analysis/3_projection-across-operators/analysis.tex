@@ -91,27 +91,26 @@
 \section{Introducing the dataset}
 
 
-
-
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{> }\hlkwd{str}\hlstd{(data_all)}
+\hlstd{> }\hlkwd{str}\hlstd{(data)}
 \end{alltt}
 \begin{verbatim}
 'data.frame':	57160 obs. of  9 variables:
- $ workerid     : Factor w/ 2682 levels "1","3","4","5",..: 1 1 1 1 1 1 1 1 1 1 ...
- $ content      : Factor w/ 20 levels "charley","danny",..: 1 2 3 4 5 6 7 8 9 10 ...
+ $ workerid     : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ content      : chr  "charley" "danny" "emily" "emma" ...
  $ short_trigger: chr  "acknowledge" "hear" "reveal" "discover" ...
  $ ai_block     : chr  "block1" "block1" "block1" "block1" ...
  $ ai           : num  0.98 0.99 0.99 0.99 0.98 0.98 1 0.99 0.99 0.99 ...
  $ projective   : num  0.3 0.98 0.01 0.99 0.98 0.99 0.01 0.01 0.27 0.01 ...
- $ verb         : Factor w/ 20 levels "acknowledge",..: 1 11 16 9 18 13 17 7 14 8 ...
- $ op           : Factor w/ 4 levels "q","n","m","c": 1 1 1 1 1 1 1 1 1 1 ...
- $ exp_block    : Factor w/ 3 levels "1","2","3": 1 1 1 1 1 1 1 1 1 1 ...
+ $ verb         : chr  "acknowledge" "hear" "reveal" "discover" ...
+ $ op           : chr  "q" "q" "q" "q" ...
+ $ exp_block    : int  1 1 1 1 1 1 1 1 1 1 ...
 \end{verbatim}
 \begin{alltt}
-\hlstd{> }\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{workerid))}
+\hlstd{> }\hlstd{data}\hlopt{$}\hlstd{workerid} \hlkwb{<-} \hlkwd{as.factor}\hlstd{(data}\hlopt{$}\hlstd{workerid)}
+\hlstd{> }\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{workerid))}
 \end{alltt}
 \begin{verbatim}
 [1] 2682
@@ -135,7 +134,8 @@ We are interested in how highly participants rate speaker commitment to the trut
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{> }\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{verb)}
+\hlstd{> }\hlstd{data}\hlopt{$}\hlstd{verb} \hlkwb{<-} \hlkwd{as.factor}\hlstd{(data}\hlopt{$}\hlstd{verb)}
+\hlstd{> }\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{verb)}
 \end{alltt}
 \begin{verbatim}
  [1] "acknowledge" "admit"       "announce"    "be_annoyed"  "be_right"   
@@ -144,19 +144,20 @@ We are interested in how highly participants rate speaker commitment to the trut
 [16] "reveal"      "say"         "see"         "suggest"     "think"      
 \end{verbatim}
 \begin{alltt}
-\hlstd{> }\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{verb))}
+\hlstd{> }\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{verb))}
 \end{alltt}
 \begin{verbatim}
 [1] 20
 \end{verbatim}
 \begin{alltt}
-\hlstd{> }\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{op)}
+\hlstd{> }\hlstd{data}\hlopt{$}\hlstd{op} \hlkwb{<-} \hlkwd{as.factor}\hlstd{(data}\hlopt{$}\hlstd{op)}
+\hlstd{> }\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{op)}
 \end{alltt}
 \begin{verbatim}
-[1] "q" "n" "m" "c"
+[1] "c" "m" "n" "q"
 \end{verbatim}
 \begin{alltt}
-\hlstd{> }\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{op))}
+\hlstd{> }\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{op))}
 \end{alltt}
 \begin{verbatim}
 [1] 4
@@ -168,7 +169,7 @@ We are interested in how highly participants rate speaker commitment to the trut
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{> }\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{verb))}\hlopt{*}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{op))}
+\hlstd{> }\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{verb))}\hlopt{*}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{op))}
 \end{alltt}
 \begin{verbatim}
 [1] 80
@@ -181,7 +182,8 @@ conditions.\\
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{> }\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{content)}
+\hlstd{> }\hlstd{data}\hlopt{$}\hlstd{content} \hlkwb{<-} \hlkwd{as.factor}\hlstd{(data}\hlopt{$}\hlstd{content)}
+\hlstd{> }\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{content)}
 \end{alltt}
 \begin{verbatim}
  [1] "charley"  "danny"    "emily"    "emma"     "frank"    "grace"   
@@ -190,7 +192,7 @@ conditions.\\
 [19] "tony"     "zoe"     
 \end{verbatim}
 \begin{alltt}
-\hlstd{> }\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{content))}
+\hlstd{> }\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{content))}
 \end{alltt}
 \begin{verbatim}
 [1] 20
@@ -203,20 +205,20 @@ conditions.\\
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{> }\hlcom{# n observations}
-\hlstd{> }\hlkwd{length}\hlstd{(data_all[,}\hlnum{1}\hlstd{])}
+\hlstd{> }\hlkwd{length}\hlstd{(data[,}\hlnum{1}\hlstd{])}
 \end{alltt}
 \begin{verbatim}
 [1] 57160
 \end{verbatim}
 \begin{alltt}
 \hlstd{> }\hlcom{# observations by item}
-\hlstd{> }\hlkwd{length}\hlstd{(data_all[,}\hlnum{1}\hlstd{])}\hlopt{/}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{content))}
+\hlstd{> }\hlkwd{length}\hlstd{(data[,}\hlnum{1}\hlstd{])}\hlopt{/}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{content))}
 \end{alltt}
 \begin{verbatim}
 [1] 2858
 \end{verbatim}
 \begin{alltt}
-\hlstd{> }\hlkwd{table}\hlstd{(data_all}\hlopt{$}\hlstd{content)}
+\hlstd{> }\hlkwd{table}\hlstd{(data}\hlopt{$}\hlstd{content)}
 \end{alltt}
 \begin{verbatim}
 
@@ -229,13 +231,13 @@ conditions.\\
 \end{verbatim}
 \begin{alltt}
 \hlstd{> }\hlcom{# observations by verb}
-\hlstd{> }\hlkwd{length}\hlstd{(data_all[,}\hlnum{1}\hlstd{])}\hlopt{/}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{verb))}
+\hlstd{> }\hlkwd{length}\hlstd{(data[,}\hlnum{1}\hlstd{])}\hlopt{/}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{verb))}
 \end{alltt}
 \begin{verbatim}
 [1] 2858
 \end{verbatim}
 \begin{alltt}
-\hlstd{> }\hlkwd{table}\hlstd{(data_all}\hlopt{$}\hlstd{verb)}
+\hlstd{> }\hlkwd{table}\hlstd{(data}\hlopt{$}\hlstd{verb)}
 \end{alltt}
 \begin{verbatim}
 
@@ -250,23 +252,23 @@ acknowledge       admit    announce  be_annoyed    be_right     confess
 \end{verbatim}
 \begin{alltt}
 \hlstd{> }\hlcom{# observations by operator}
-\hlstd{> }\hlkwd{length}\hlstd{(data_all[,}\hlnum{1}\hlstd{])}\hlopt{/}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{op))}
+\hlstd{> }\hlkwd{length}\hlstd{(data[,}\hlnum{1}\hlstd{])}\hlopt{/}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{op))}
 \end{alltt}
 \begin{verbatim}
 [1] 14290
 \end{verbatim}
 \begin{alltt}
-\hlstd{> }\hlkwd{table}\hlstd{(data_all}\hlopt{$}\hlstd{op)}
+\hlstd{> }\hlkwd{table}\hlstd{(data}\hlopt{$}\hlstd{op)}
 \end{alltt}
 \begin{verbatim}
 
-    q     n     m     c 
-13740 14340 14680 14400 
+    c     m     n     q 
+14400 14680 14340 13740 
 \end{verbatim}
 \begin{alltt}
 \hlstd{> }\hlcom{# observations by item and condition}
-\hlstd{> }\hlkwd{length}\hlstd{(data_all[,}\hlnum{1}\hlstd{])}\hlopt{/}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{content))}\hlopt{/}
-\hlstd{+ }  \hlstd{(}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{verb))}\hlopt{*}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data_all}\hlopt{$}\hlstd{op)))}
+\hlstd{> }\hlkwd{length}\hlstd{(data[,}\hlnum{1}\hlstd{])}\hlopt{/}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{content))}\hlopt{/}
+\hlstd{+ }  \hlstd{(}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{verb))}\hlopt{*}\hlkwd{length}\hlstd{(}\hlkwd{levels}\hlstd{(data}\hlopt{$}\hlstd{op)))}
 \end{alltt}
 \begin{verbatim}
 [1] 35.725
@@ -307,7 +309,7 @@ acknowledge       admit    announce  be_annoyed    be_right     confess
 
 \begin{itemize}
   \item Some of these also show a higher mass around the middle of the scale
-  \item but it looks the beta-distribution could be a useful approximation
+  \item but it looks the beta-distribution could be useful
 \end{itemize}
 
 
@@ -322,6 +324,7 @@ acknowledge       admit    announce  be_annoyed    be_right     confess
 
 
 \end{knitrout}
+
 \noindent The following generalizations emerge:
 \begin{itemize}
   \item Conditionals have the highest projectivity ratings
@@ -334,15 +337,24 @@ acknowledge       admit    announce  be_annoyed    be_right     confess
 
 \newpage
 \subsection{Means and confidence intervals for projectivity rating by verb:}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=\linewidth]{figures/figuressummary-v-1} 
-
-}
-
-
-\end{knitrout}
+This will be replaced by violin-plot.
+% <<summary-v, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=7>>=
+% 
+% proj_means_v = data %>% group_by(verb) %>%
+%   summarize(Mean = mean(projective), CILow = ci.low(projective),
+%             CIHigh = ci.high(projective)) %>%
+%   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh,
+%          verb = fct_reorder(as.factor(verb),Mean)) %>% ungroup()
+% 
+% proj_means_v %>% mutate(verb = fct_reorder(verb, Mean,
+%                                          .fun = mean)) %>%
+%   ggplot(aes(x=verb, y=Mean)) +
+%   coord_cartesian(ylim=c(0,1)) +
+%   geom_point(color = "lightblue") +
+%   geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "lightblue") +
+%   labs(title = "Mean projectivity by predicate")+
+%   theme_bw()
+% @
 \begin{itemize}
   \item We see gradual differences in projectivity between verbs
 \end{itemize}
@@ -360,61 +372,88 @@ acknowledge       admit    announce  be_annoyed    be_right     confess
 
 \begin{itemize}
   \item We see interactions between verb and operator
-  \item However, we do not see any group of verbs that could be characterized as \lq semi-factive\rq\ in the sense of Karttunen. Specifically, \emph{discover} does not follow the predicted pattern: It is not more projective under negation, but most projective in conditionals and questions.
-  
-  \item Two verbs show highest projectivity under negation: the anti-veridical \emph{pretend}, and the non-veridical \emph{think}. These are verb with relatively low overall projectivity. 
-  
-  \item What else\dots?
+
+  \item Two verbs show highest projectivity under negation: the anti-veridical \emph{pretend}, and the non-veridical \emph{think}. These are verb with relatively low overall projectivity.
+
+  \item More projective verbs (\emph{\lq announce\rq} and above) have $\texttt{C} > \texttt{M}$
+
+  \item Highly projective verbs (\emph{\lq hear \rq} and above) have  $\texttt{N} > \texttt{M}$
+
+  \item We do not see any group of verbs that could be characterized as \lq semi-factive\rq\ in the sense of Karttunen.
+  \begin{itemize}
+    \item Specifically, \emph{discover} does not follow the predicted pattern: It is not more projective under negation, but most projective in conditionals and questions.
+    \item For Karttunnen's \lq factives\rq, no difference between operators is expected.
+    \item Kajsa Djärv about this distinction: cognitive predicates are semi-factive, and emotives are factive. The pattern suggested by karrtunen is also not found here
+  \end{itemize}
+
+  \item For more generalizations, let's look at the same information plotted differently: By-operator projectivity for each verb
 \end{itemize}
 
 
-\section{Analysis}
-
-We are interested in how the response (projectivity ratings) depends on the verb and embedding operator.
-
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{formula} \hlkwb{<-} \hlstd{response} \hlopt{~} \hlstd{op} \hlopt{*} \hlstd{verb} \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{workerid)} \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{item)}
-\hlstd{> }\hlcom{# formula <- response ~ op * verb + (1 + op + verb | workerid) + (1 + op + verb | item)}
-\end{alltt}
-\end{kframe}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\linewidth]{figures/figuresverb-profiles-1} 
+
+}
+
+
 \end{knitrout}
+Some more generalizations: We find different \lq profiles\rq for different verbs, of how embedding operators affect projectivity based on the verb. Groups of verbs show similar profiles:
 
-Trying a beta-regression. Our response variable has observations from a sliding scale between $(0,1)$. For beta regression, we rescale it to $[0,1]$, using method used in Degen \& Tonhauser (2022), from Smithson \& Verkuilen (2006).
+\begin{itemize}
+  \item \emph{pretend, think}: \textbf{anti-veridical profile}\\
+    \texttt{N} $>$ \texttt{M, Q, C}, overall low projectivity
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{data_all}\hlopt{$}\hlstd{response} \hlkwb{=} \hlstd{(data_all}\hlopt{$}\hlstd{projective}\hlopt{*}\hlstd{(}\hlkwd{nrow}\hlstd{(data_all)}\hlopt{-}\hlnum{1}\hlstd{)} \hlopt{+} \hlnum{.5}\hlstd{)}\hlopt{/}\hlkwd{nrow}\hlstd{(data_all)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+  \item \emph{acknowledge, hear, inform, see, discover, know, be annoyed}: \textbf{\lq factive\rq profile}\\
+    \texttt{Q} $>$ \texttt{N, C} \textcolor{gray}{$>_?$} \texttt{M}, overall high projectivity (it may be possible to find further subgroups here)
 
+  \item \emph{prove, confirm, establish, demonstrate, (announce), confess, admit, reveal}: \textbf{veridical profile}\\
+    \texttt{M, C} $>$ \texttt{Q} $>$ \texttt{N}, overall med-lo to med-hi projectivity
+  
+  \item \emph{be right, suggest}: \textbf{reportative profile}\\
+    \texttt{M, N, C} $>$ \texttt{Q}
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{library}\hlstd{(brms)}
-\end{alltt}
+\end{itemize}
 
+Maybe these can have better names, not trying to suggest that verbs can neatly divided in factive v non-factive, but potentially this class / profile is what prompted intuitions in previous literature, and naming in this tradition could make sense, but can be changed depending on our rhetoric, of course.
 
-{\ttfamily\noindent\itshape\color{messagecolor}{Loading required package: Rcpp}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{Loading 'brms' package (version 2.16.3). Useful instructions\\can be found by typing help('brms'). A more detailed introduction\\to the package is available through vignette('brms\_overview').}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\\Attaching package: 'brms'}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{The following object is masked from 'package:stats':
-
- \ \ \ ar}}\begin{alltt}
-\hlstd{> }\hlstd{model1} \hlkwb{<-} \hlkwd{brm}\hlstd{(}\hlkwc{formula} \hlstd{= response} \hlopt{~} \hlstd{op} \hlopt{*} \hlstd{verb} \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{workerid)} \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{item),} \hlkwc{family} \hlstd{= )}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{Error: Data must be specified using the 'data' argument.}}\end{kframe}
-\end{knitrout}
-
+% \section{Analysis}
+% 
+% We are interested in how the response (projectivity ratings) depends on the verb and embedding operator, and whether the above generalizations can be supported statistically.
+% 
+% 
+% 
+% <<>>=
+% formula <- response ~ op * verb
+% # formula <- response ~ op * verb + (1 | workerid) + (1 | item)
+% # formula <- response ~ op * verb + (1 + op + verb | workerid) + (1 + op + verb | item)
+% @
+% 
+% Trying a beta-regression. Our response variable has observations from a sliding scale between $(0,1)$. For beta regression, we rescale it to $[0,1]$, using method used in Degen \& Tonhauser (2022), from Smithson \& Verkuilen (2006).
+% 
+% <<>>=
+% data$response = (data$projective*(nrow(data)-1) + .5)/nrow(data)
+% @
+% 
+% 
+% <<>>=
+% # library(rstan)
+% # options(mc.cores=parallel::detectCores())
+% # rstan_options(auto_write=TRUE)
+% # library(brms)
+% # 
+% # model1 <- brm(formula = bf(response ~ op * verb ,
+% #                            phi ~ op * verb,
+% #                            family = Beta()),
+% #               family = Beta(),
+% #               data = data,
+% #               iter=10000, warmup=2000,chains=6)
+% 
+% 
+% @
+% 
+% 
 
 
 \end{document}

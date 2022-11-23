@@ -59,98 +59,20 @@ options(tidy=TRUE, linewidth = 100)
 \section{Introducing the dataset}
 <<load-data, echo=FALSE, results='hide'>>=
 # set working directory to directory of script
-this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
-setwd(this.dir)
-#setwd("/Users/lisahofmann/Dropbox/Mein Mac (MBP-von-Lisa)/Documents/Academic/Research Projects/projective content/experiments-github/materials-lisa/analysis/3_projection-across-operators")
+# this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
+# setwd(this.dir)
+setwd("/Users/lisahofmann/Dropbox/Mein Mac (MBP-von-Lisa)/Documents/Academic/Research Projects/projective content/experiments-github/materials-lisa/analysis/3_projection-across-operators")
 
-# load data from exps into list
-df_list <- list(data_1q = read.csv("../../../results/main/1_projaiQ/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_1n = read.csv("../../../results/main/2_projaiN/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_1m = read.csv("../../../results/main/3_projaiM/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_1c = read.csv("../../../results/main/4_projaiC/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_2q = read.csv("../../../results/main/5_projaiQ/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_2n = read.csv("../../../results/main/6_projaiN/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_2m = read.csv("../../../results/main/7_projaiM/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_2c = read.csv("../../../results/main/8_projaiC/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_3q = read.csv("../../../results/main/9_projaiQ/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_3n = read.csv("../../../results/main/10_projaiN/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_3m = read.csv("../../../results/main/11_projaiM/data/data_preprocessed.csv", 
-                    header=TRUE, sep=","),
-                data_3c = read.csv("../../../results/main/12_projaiC/data/data_preprocessed.csv", 
+# load data
+data <- read.csv("../../../results/main/meta-analyses/projectivity/data/data_combined.csv", 
                     header=TRUE, sep=",")
-                )
 
-@
-
-<<clean-data, echo=FALSE, results='hide', warning=FALSE, message=FALSE>>=
-require(tidyverse)
-library(stringr)
-library(rlist)
-
-# spread responses over separate columns for projectivity and at-issueness
-# add label for which position at block appeared in
-df_list <- lapply(df_list, function(df) {
-  df = df %>%
-    mutate(ai_block = ifelse(question_type == "ai", 
-                             ifelse(block == "block1", "block1", "block2"), 
-                             ifelse(block == "block1", "block2", "block1"))) %>%
-    select(workerid,content,short_trigger,question_type,response,ai_block) %>%
-    spread(question_type,response)
-  df
-})
-
-# change cd verb names to match veridicality names
-df_list <- lapply(df_list, function(df) {
-  df = df %>%
-    mutate(verb=recode(short_trigger, control = "MC", annoyed = "be_annoyed", 
-                       be_right_that = "be_right", inform_Sam = "inform"))
-  df
-})
-
-# add labels for operator, and experiment block
-df_list = map2(df_list, names(df_list), function(df, name) {
-  operator <- str_sub(name, -1, -1)
-  exp_block <- str_sub(name, -2, -2)
-  df$op <- rep(operator, length(df[,1]))
-  df$exp_block <- rep(exp_block, length(df[,1]))
-  return(df)
-})
-
-# recode relevant vectors as factors
-df_list <- lapply(df_list, function(df) {
-  df$content <- as.factor(df$content)
-  df$verb <- as.factor(df$verb)
-  df$workerid <- as.factor(df$workerid)
-  df$op <- as.factor(df$op)
-  df$exp_block <- as.factor(df$exp_block)
-  df
-})
-
-# remove data from MC controls
-df_list <- lapply(df_list, function(df) {
-  df = filter(df, verb != "MC")
-  df$verb = droplevels(df$verb)
-  df$content = droplevels(df$content)
-  df
-})
-
-# combine data from all experiments
-data_all <- list.rbind(df_list)
 @
 
 <<data-overview>>=
-str(data_all)
-length(levels(data_all$workerid))
+str(data)
+data$workerid <- as.factor(data$workerid)
+length(levels(data$workerid))
 @
 
 
@@ -167,63 +89,64 @@ We are interested in how highly participants rate speaker commitment to the trut
 
 \noindent The levels for our fixed effects factors are the following:
 <<fixed-efcts-lvls>>=
-levels(data_all$verb)
-length(levels(data_all$verb))
-levels(data_all$op)
-length(levels(data_all$op))
+data$verb <- as.factor(data$verb)
+levels(data$verb)
+length(levels(data$verb))
+data$op <- as.factor(data$op)
+levels(data$op)
+length(levels(data$op))
 @
 
 \noindent We are interested in the effect on \texttt{projective} of \texttt{verb} and \texttt{op}, as well as their interaction, corresponding to a $20 \times 4$ factorial design, yielding
 <<ncond>>=
-length(levels(data_all$verb))*length(levels(data_all$op))
+length(levels(data$verb))*length(levels(data$op))
 @
 conditions.\\
 
 \noindent We have $20$ items, corresponding to the content of the complement clause.
 <<nitems>>=
-levels(data_all$content)
-length(levels(data_all$content))
+data$content <- as.factor(data$content)
+levels(data$content)
+length(levels(data$content))
 @
 
 \noindent We have roughly $36$ observations by item and condition. This is an approximate number, because the \texttt{op} manipulation is a between-studies manipulation, and the number of participants differs by experiment:
 <<nobs>>=
 # n observations
-length(data_all[,1])
+length(data[,1])
 
 # observations by item
-length(data_all[,1])/length(levels(data_all$content))
-table(data_all$content)
+length(data[,1])/length(levels(data$content))
+table(data$content)
 
 # observations by verb
-length(data_all[,1])/length(levels(data_all$verb))
-table(data_all$verb)
+length(data[,1])/length(levels(data$verb))
+table(data$verb)
 
 # observations by operator
-length(data_all[,1])/length(levels(data_all$op))
-table(data_all$op)
+length(data[,1])/length(levels(data$op))
+table(data$op)
 
 # observations by item and condition
-length(data_all[,1])/length(levels(data_all$content))/
-  (length(levels(data_all$verb))*length(levels(data_all$op)))
+length(data[,1])/length(levels(data$content))/
+  (length(levels(data$verb))*length(levels(data$op)))
 
 @
 
 \newpage
 \section{Data Overview and Statistical Summaries}
 \subsection{Distribution of projectivity ratings by operator:}
-<<project-by-op-distr, echo = FALSE>>=
-library(ggplot2)
-data_all %>% 
-  # mutate(verb = fct_reorder(cond, as.numeric(dataf$response), .fun = 'mean')) %>%
+<<project-by-op-distr, echo = FALSE, message=FALSE>>=
+require(ggplot2)
+require(dplyr)
+data %>% 
   ggplot(aes(x = projective, group = op)) +
   facet_grid(rows = vars(op)) +
   geom_histogram(binwidth = .01, fill = "lightblue") +
-  # coord_flip() +
   xlab("") +
   ylab("") +
   labs(title = "")+
   theme_bw()
-  # scale_fill_brewer(palette = "Blues")
 @
 
 \begin{itemize}
@@ -235,8 +158,7 @@ data_all %>%
 \newpage
 \subsection{Distribution of projectivity ratings by verb:}
 <<project-by-v-distr, echo = FALSE>>=
-data_all %>% 
-  # mutate(verb = fct_reorder(cond, as.numeric(dataf$response), .fun = 'mean')) %>%
+data %>% 
   ggplot(aes(x = projective, group = verb)) +
   facet_wrap(vars(verb)) +
   geom_histogram(binwidth = .01, fill = "lightblue") +
@@ -245,12 +167,11 @@ data_all %>%
   ylab("") +
   labs(title = "")+
   theme_bw()
-  # scale_fill_brewer(palette = "Blues")
 @
 
 \begin{itemize}
   \item Some of these also show a higher mass around the middle of the scale
-  \item but it looks the beta-distribution could be a useful approximation
+  \item but it looks the beta-distribution could be useful
 \end{itemize}
 
 
@@ -259,41 +180,26 @@ data_all %>%
 <<summary-op, echo = FALSE, message=FALSE, cache=TRUE, out.width=".6\\textwidth">>=
 # load helper functions
 source('../../../results/main/helpers.R')
+require(forcats)
 
-proj_means_op = data_all %>% group_by(op) %>%
-  summarize(Mean = mean(projective), CILow = ci.low(projective), 
+proj_means_op = data %>% group_by(op) %>%
+  summarize(Mean = mean(projective), CILow = ci.low(projective),
             CIHigh = ci.high(projective)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh,
          op = fct_reorder(as.factor(op),Mean)) %>% ungroup()
 
-proj_means_op %>% mutate(op = fct_reorder(op, Mean, 
-                                         .fun = mean)) %>% 
-  ggplot(aes(x = op, y=Mean, color = op)) +
+proj_means_op %>% mutate(op = fct_reorder(op, Mean,
+                                          .fun = mean)) %>%
+  ggplot(aes(x = op, y=Mean)) +
   # coord_cartesian(ylim = c(0,1)) +
-  geom_point(aes(shape = op), size = 4) + 
-  scale_shape_manual(values = c("M", "N", "Q", "C")) +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1) +
-  geom_line() + 
+  geom_point(size = 1, color = "lightblue") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "lightblue") +
+  geom_line(color = "lightblue") +
   labs(title = "Mean projectivity by operator")+
   theme_bw() +
   scale_color_brewer(palette = "PRGn")
-
-
-proj_means_op %>% mutate(op = fct_reorder(op, Mean, 
-                                         .fun = mean)) %>% 
-  ggplot(aes(x = op, y=Mean, color = op, group = verb)) +
-  # coord_cartesian(ylim = c(0,1)) +
-  geom_point(aes(shape = op), size = 4) + 
-  scale_shape_manual(values = c("M", "N", "Q", "C")) +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1) +
-  facet_wrap(vars(verb)) +
-  geom_line() + 
-  labs(title = "Mean projectivity by operator")+
-  theme_bw() +
-  scale_color_brewer(palette = "PRGn")
-
-
 @
+
 \noindent The following generalizations emerge:
 \begin{itemize}
   \item Conditionals have the highest projectivity ratings
@@ -306,47 +212,46 @@ proj_means_op %>% mutate(op = fct_reorder(op, Mean,
 
 \newpage
 \subsection{Means and confidence intervals for projectivity rating by verb:}
-<<summary-v, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=7>>=
-
-proj_means_v = data_all %>% group_by(verb) %>%
-  summarize(Mean = mean(projective), CILow = ci.low(projective), 
-            CIHigh = ci.high(projective)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
-         verb = fct_reorder(as.factor(verb),Mean)) %>% ungroup()
-
-proj_means_v %>% mutate(verb = fct_reorder(verb, Mean, 
-                                         .fun = mean)) %>% 
-  ggplot(aes(x=verb, y=Mean)) +
-  coord_cartesian(ylim=c(0,1)) +
-  geom_point(color = "blue") +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "blue") +
-  geom_line() + 
-  labs(title = "Mean projectivity by predicate")+
-  theme_bw()
-@
+This will be replaced by violin-plot.
+% <<summary-v, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=7>>=
+% 
+% proj_means_v = data %>% group_by(verb) %>%
+%   summarize(Mean = mean(projective), CILow = ci.low(projective),
+%             CIHigh = ci.high(projective)) %>%
+%   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh,
+%          verb = fct_reorder(as.factor(verb),Mean)) %>% ungroup()
+% 
+% proj_means_v %>% mutate(verb = fct_reorder(verb, Mean,
+%                                          .fun = mean)) %>%
+%   ggplot(aes(x=verb, y=Mean)) +
+%   coord_cartesian(ylim=c(0,1)) +
+%   geom_point(color = "lightblue") +
+%   geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "lightblue") +
+%   labs(title = "Mean projectivity by predicate")+
+%   theme_bw()
+% @
 \begin{itemize}
   \item We see gradual differences in projectivity between verbs
 \end{itemize}
 
 \subsection{Means and confidence intervals for projectivity rating by verb and operator:}
 <<summary-combined, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=7>>=
-proj_means = data_all %>% group_by(verb, op) %>%
-  summarize(Mean = mean(projective), CILow = ci.low(projective), 
+
+proj_means = data %>% group_by(verb, op) %>%
+  summarize(Mean = mean(projective), CILow = ci.low(projective),
             CIHigh = ci.high(projective)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh,
          verb = fct_reorder(as.factor(verb),Mean)) %>% ungroup()
 
-# kable(proj_means, "latex", longtable = TRUE)
-
-proj_means %>% mutate(verb = fct_reorder(verb, Mean, 
-                                         .fun = mean)) %>% 
-  mutate(op = fct_reorder(op, Mean, .fun = mean)) %>% 
+proj_means %>% mutate(verb = fct_reorder(verb, Mean,
+                                         .fun = mean)) %>%
+  mutate(op = fct_reorder(op, Mean, .fun = mean)) %>%
   ggplot(aes(x=verb, y=Mean, group = op, color = op)) +
   coord_cartesian(ylim=c(0,1)) +
-  geom_point(aes(shape = op), size = 4) + 
+  geom_point(aes(shape = op), size = 4) +
   scale_shape_manual(values = c("M", "N", "Q", "C")) +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1) +
-  geom_line() + 
+  geom_line() +
   labs(title = "Mean projectivity for predicate by operator")+
   theme_bw() +
   scale_color_brewer(palette = "PRGn")
@@ -355,90 +260,95 @@ proj_means %>% mutate(verb = fct_reorder(verb, Mean,
 
 \begin{itemize}
   \item We see interactions between verb and operator
-  \item However, we do not see any group of verbs that could be characterized as \lq semi-factive\rq\ in the sense of Karttunen. Specifically, \emph{discover} does not follow the predicted pattern: It is not more projective under negation, but most projective in conditionals and questions.
-  
-  \item Two verbs show highest projectivity under negation: the anti-veridical \emph{pretend}, and the non-veridical \emph{think}. These are verb with relatively low overall projectivity. 
-  
-  \item What else\dots?
+
+  \item Two verbs show highest projectivity under negation: the anti-veridical \emph{pretend}, and the non-veridical \emph{think}. These are verb with relatively low overall projectivity.
+
+  \item More projective verbs (\emph{\lq announce\rq} and above) have $\texttt{C} > \texttt{M}$
+
+  \item Highly projective verbs (\emph{\lq hear \rq} and above) have  $\texttt{N} > \texttt{M}$
+
+  \item We do not see any group of verbs that could be characterized as \lq semi-factive\rq\ in the sense of Karttunen.
+  \begin{itemize}
+    \item Specifically, \emph{discover} does not follow the predicted pattern: It is not more projective under negation, but most projective in conditionals and questions.
+    \item For Karttunnen's \lq factives\rq, no difference between operators is expected.
+    \item Kajsa Djärv about this distinction: cognitive predicates are semi-factive, and emotives are factive. The pattern suggested by karrtunen is also not found here
+  \end{itemize}
+
+  \item For more generalizations, let's look at the same information plotted differently: By-operator projectivity for each verb
 \end{itemize}
 
 
-\section{Analysis}
-
-We are interested in how the response (projectivity ratings) depends on the verb and embedding operator.
-
-
-<<>>=
-# main analysis 4: predict projection from not-at-issueness, predicate, and their interaction ----
-
-t = data_all %>% 
-  mutate(verb = fct_relevel(verb, "suggest"))
-
-m.dummy = lm(projective ~ ai*short_trigger, data=t)
-summary(m.dummy)
-
-# reference level set to "prove"
-
-# model with short_trigger slope did not converge
-m.4 = lmer(projective ~ cai*short_trigger + (1+cai|content) + (1+cai|workerid), 
-           data = t, REML=F,control = lmerControl(optimizer ='optimx', optCtrl=list(method='L-BFGS-B')))
-saveRDS(m.4, "../models/m.4.rds")
-m.4 <- readRDS("../models/m.4.rds")
-summary(m.4)
-texreg(m.4,single.row = TRUE, leading.zero = FALSE, booktabs = TRUE)
-
-@
-
-
-<<>>=
-formula <- response ~ op * verb
-# formula <- response ~ op * verb + (1 | workerid) + (1 | item)
-# formula <- response ~ op * verb + (1 + op + verb | workerid) + (1 + op + verb | item)
-@
-
-Trying a beta-regression. Our response variable has observations from a sliding scale between $(0,1)$. For beta regression, we rescale it to $[0,1]$, using method used in Degen \& Tonhauser (2022), from Smithson \& Verkuilen (2006).
-
-<<>>=
-data_all$response = (data_all$projective*(nrow(data_all)-1) + .5)/nrow(data_all)
-@
-
-
-<<>>=
-# library(rstan)
-# options(mc.cores=parallel::detectCores())
-# rstan_options(auto_write=TRUE)
-# library(brms)
-# 
-# model1 <- brm(formula = bf(response ~ op * verb ,
-#                            phi ~ op * verb,
-#                            family = Beta()),
-#               family = Beta(),
-#               data = data_all,
-#               iter=10000, warmup=2000,chains=6)
+<<verb-profiles, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=11>>=
+proj_means %>% mutate(op = fct_reorder(op, Mean,
+                                          .fun = mean)) %>%
+  mutate(verb = fct_reorder(verb, Mean,
+                            .fun = mean)) %>%
+  ggplot(aes(x = op, y=Mean, group = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  facet_wrap(vars(verb)) +
+  geom_point(size = 1, color = "lightblue") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "lightblue") +
+  geom_line(color = "lightblue") +
+  labs(title = "Mean projectivity by operator, for each verb")+
+  theme_bw()
 
 
 @
+Some more generalizations: We find different \lq profiles\rq for different verbs, of how embedding operators affect projectivity based on the verb. Groups of verbs show similar profiles:
 
+\begin{itemize}
+  \item \emph{pretend, think}: \textbf{anti-veridical profile}\\
+    \texttt{N} $>$ \texttt{M, Q, C}, overall low projectivity
 
-<<>>=
-t = data_all %>% 
-  mutate(verb = fct_relevel(verb, "suggest")) %>%
-  mutate(op = fct_relevel(op, "q"))
+  \item \emph{acknowledge, hear, inform, see, discover, know, be annoyed}: \textbf{\lq factive\rq\ profile}\\
+    \texttt{Q} $>$ \texttt{N, C} \textcolor{gray}{$>_?$} \texttt{M}, overall high projectivity (it may be possible to find further subgroups here)
 
-#m.dummy = lm(projective ~ ai*short_trigger, data=t)
-#summary(m.dummy)
+  \item \emph{prove, confirm, establish, demonstrate, (announce), confess, admit, reveal}: \textbf{veridical profile}\\
+    \texttt{M, C} $>$ \texttt{Q} $>$ \texttt{N}, overall med-lo to med-hi projectivity
+  
+  \item \emph{be right, suggest}: \textbf{reportative profile}\\
+    \texttt{M, N, C} $>$ \texttt{Q}
 
-# reference level set to "prove"
+\end{itemize}
 
-# model with short_trigger slope did not converge
-m.4 = lmer(projective ~ cai*short_trigger + (1+cai|content) + (1+cai|workerid), 
-           data = t, REML=F,control = lmerControl(optimizer ='optimx', optCtrl=list(method='L-BFGS-B')))
-saveRDS(m.4, "../models/m.4.rds")
-m.4 <- readRDS("../models/m.4.rds")
-summary(m.4)
-texreg(m.4,single.row = TRUE, leading.zero = FALSE, booktabs = TRUE)
-@
+Maybe these can have better names, not trying to suggest that verbs can neatly divided in factive v non-factive, but potentially this class / profile is what prompted intuitions in previous literature, and naming in this tradition could make sense, but can be changed depending on our rhetoric, of course.
 
+% \section{Analysis}
+% 
+% We are interested in how the response (projectivity ratings) depends on the verb and embedding operator, and whether the above generalizations can be supported statistically.
+% 
+% 
+% 
+% <<>>=
+% formula <- response ~ op * verb
+% # formula <- response ~ op * verb + (1 | workerid) + (1 | item)
+% # formula <- response ~ op * verb + (1 + op + verb | workerid) + (1 + op + verb | item)
+% @
+% 
+% Trying a beta-regression. Our response variable has observations from a sliding scale between $(0,1)$. For beta regression, we rescale it to $[0,1]$, using method used in Degen \& Tonhauser (2022), from Smithson \& Verkuilen (2006).
+% 
+% <<>>=
+% data$response = (data$projective*(nrow(data)-1) + .5)/nrow(data)
+% @
+% 
+% 
+% <<>>=
+% # library(rstan)
+% # options(mc.cores=parallel::detectCores())
+% # rstan_options(auto_write=TRUE)
+% # library(brms)
+% # 
+% # model1 <- brm(formula = bf(response ~ op * verb ,
+% #                            phi ~ op * verb,
+% #                            family = Beta()),
+% #               family = Beta(),
+% #               data = data,
+% #               iter=10000, warmup=2000,chains=6)
+% 
+% 
+% @
+% 
+% 
 
 
 \end{document}
