@@ -59,8 +59,9 @@ options(tidy=TRUE, linewidth = 100)
 \section{Introducing the dataset}
 <<load-data, echo=FALSE, results='hide'>>=
 # set working directory to directory of script
-# this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
-setwd("/Users/lisahofmann/Dropbox/Mein Mac (MBP-von-Lisa)/Documents/Academic/Research Projects/projective content/experiments-github/materials-lisa/analysis/3_projection-across-operators")
+this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
+setwd(this.dir)
+#setwd("/Users/lisahofmann/Dropbox/Mein Mac (MBP-von-Lisa)/Documents/Academic/Research Projects/projective content/experiments-github/materials-lisa/analysis/3_projection-across-operators")
 
 # load data from exps into list
 df_list <- list(data_1q = read.csv("../../../results/main/1_projaiQ/data/data_preprocessed.csv", 
@@ -416,6 +417,26 @@ data_all$response = (data_all$projective*(nrow(data_all)-1) + .5)/nrow(data_all)
 #               iter=10000, warmup=2000,chains=6)
 
 
+@
+
+
+<<>>=
+t = data_all %>% 
+  mutate(verb = fct_relevel(verb, "suggest")) %>%
+  mutate(op = fct_relevel(op, "q"))
+
+#m.dummy = lm(projective ~ ai*short_trigger, data=t)
+#summary(m.dummy)
+
+# reference level set to "prove"
+
+# model with short_trigger slope did not converge
+m.4 = lmer(projective ~ cai*short_trigger + (1+cai|content) + (1+cai|workerid), 
+           data = t, REML=F,control = lmerControl(optimizer ='optimx', optCtrl=list(method='L-BFGS-B')))
+saveRDS(m.4, "../models/m.4.rds")
+m.4 <- readRDS("../models/m.4.rds")
+summary(m.4)
+texreg(m.4,single.row = TRUE, leading.zero = FALSE, booktabs = TRUE)
 @
 
 
