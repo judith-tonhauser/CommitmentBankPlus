@@ -42,15 +42,13 @@ data$content <- as.factor(data$content)
 library(lme4)
 library(lmertest)
 
-glmm1 <- lmer(projective ~ op * verb + (op | workerid) + 
-                 (op | content), data=data)
+# glmm1 <- lmer(projective ~ op * verb + (op | workerid) + 
+#                  (op | content), data=data)
 
+# save.image("linear-models.RData")
+load("linear-models.RData")
 print(summary(glmm1), cor=F, dig=3)
 
-glmm2 <- lmer(projective ~ op * verb + (verb | workerid) + 
-                (verb | content), data=data)
-
-print(summary(glmm2), cor=F, dig=3)
 
 
 

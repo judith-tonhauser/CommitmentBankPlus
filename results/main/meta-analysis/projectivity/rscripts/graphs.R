@@ -9,7 +9,7 @@ setwd(this.dir)
 data <- read.csv("../data/data_combined.csv", header = TRUE, sep = ",")
 
 # load helper functions
-source('../../helpers.R')
+source('../../../helpers.R')
 
 # libraries for manipulating dataframes, and plotting
 library(tidyverse)
@@ -81,3 +81,33 @@ proj_means %>% mutate(verb = fct_reorder(verb, Mean,
 ggsave("../graphs/proj-by-both.pdf",height=6.5,width=14)
 
 
+
+proj_means %>% mutate(op = fct_reorder(op, Mean, 
+                                          .fun = mean)) %>% 
+  ggplot(aes(x = op, y=Mean, color = op, group = verb)) +
+  # coord_cartesian(ylim = c(0,1)) +
+  facet_wrap(vars(verb)) +
+  geom_point(aes(shape = op), size = 4) + 
+  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1) +
+  geom_line() + 
+  labs(title = "Mean projectivity by operator, for each verb")+
+  theme_bw() +
+  scale_color_brewer(palette = "PRGn")
+
+ggsave("../graphs/proj-by-op-for-verb.pdf",height=8,width=10)
+
+proj_means %>% mutate(verb = fct_reorder(verb, Mean, 
+                                       .fun = mean)) %>% 
+  ggplot(aes(x = verb, y=Mean, color = op, group = op)) +
+  # coord_cartesian(ylim = c(0,1)) +
+  facet_grid(rows = vars(op)) +
+  geom_point(aes(shape = op), size = 4) + 
+  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1) +
+  geom_line() + 
+  labs(title = "Mean projectivity by operator, for each verb")+
+  theme_bw() +
+  scale_color_brewer(palette = "PRGn")
+
+ggsave("../graphs/proj-by-verb-for-op.pdf",height=9,width=14)
