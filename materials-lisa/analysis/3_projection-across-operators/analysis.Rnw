@@ -271,7 +271,7 @@ proj_means %>% mutate(verb = fct_reorder(verb, Mean,
   \begin{itemize}
     \item Specifically, \emph{discover} does not follow the predicted pattern: It is not more projective under negation, but most projective in conditionals and questions.
     \item For Karttunnen's \lq factives\rq, no difference between operators is expected.
-    \item Kajsa Djärv about this distinction: cognitive predicates are semi-factive, and emotives are factive. The pattern suggested by karrtunen is also not found here
+    \item Kajsa Djärv about this distinction: cognitive predicates are semi-factive, and emotives are factive. The pattern suggested by karrtunen is also not found here (if anything, it might be the other way round)
   \end{itemize}
 
   \item For more generalizations, let's look at the same information plotted differently: By-operator projectivity for each verb
@@ -294,7 +294,7 @@ proj_means %>% mutate(op = fct_reorder(op, Mean,
 
 
 @
-Some more generalizations: We find different \lq profiles\rq for different verbs, of how embedding operators affect projectivity based on the verb. Groups of verbs show similar profiles:
+Some more generalizations: We find different \lq profiles\rq\ for different verbs, of how embedding operators affect projectivity based on the verb. Groups of verbs show similar profiles:
 
 \begin{itemize}
   \item \emph{pretend, think}: \textbf{anti-veridical profile}\\
@@ -313,25 +313,150 @@ Some more generalizations: We find different \lq profiles\rq for different verbs
 
 Maybe these can have better names, not trying to suggest that verbs can neatly divided in factive v non-factive, but potentially this class / profile is what prompted intuitions in previous literature, and naming in this tradition could make sense, but can be changed depending on our rhetoric, of course.
 
-% \section{Analysis}
+\section{Analysis}
+
+We are interested in how the response (projectivity ratings) depends on the verb and embedding operator, and whether the above generalizations can be supported statistically.\\
+
+% \subsection{Frequentist modeling}
+Exploring a couple of models
+
+\subsection{Linear frequentist with \texttt{suggest/m} as baseline}
+
+<<freq-linear-suggest-m, message=FALSE, warning=FALSE>>=
+
+# our independent variables
+## inference-triggering predicate, coded as "verb"
+data$verb <- as.factor(data$verb)
+levels(data$verb)
+# contrasts(data$verb)
+### dummy coding with "suggest" as baseline
+data$verb <- relevel(data$verb, ref = "suggest")
+# contrasts(data$verb)
+
+## embedding operator, coded as "op"
+data$op <- as.factor(data$op)
+levels(data$op)
+# contrasts(data$op)
+### dummy coding with "m" as baseline
+data$op <- relevel(data$op, ref = "m")
+# contrasts(data$op)
+
+# coding random effects as factors
+data$workerid <- as.factor(data$workerid)
+data$content <- as.factor(data$content)
+
+library(lme4)
+library(lmerTest)
+
+# glmm1 <- lmer(projective ~ verb * op + (1 | workerid) +
+#                  (1 | content), data=data)
+
+# save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+print(summary(glmm1), cor=F, dig=3)
+@
+
+\subsection{Linear frequentist with \texttt{annoyed/q} as baseline}
+<<freq-linear-annoyed-q, message=FALSE>>=
+
+# dummy coding for "verb" with "suggest" as baseline
+data$verb <- relevel(data$verb, ref = "be_annoyed")
+
+### dummy coding for "op" with "q" as baseline
+data$op <- relevel(data$op, ref = "q")
+
+glmm2a <- lmer(projective ~ verb * op + (1 | workerid) +
+                 (1 | content), data=data)
+
+# save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+print(summary(glmm2a), cor=F, dig=3)
+
+@
+
+\subsection{Linear frequentist with \texttt{prove/n} as baseline}
+<<freq-linear-annoyed-q, message=FALSE>>=
+
+# dummy coding for "verb" with "prove" as baseline
+data$verb <- relevel(data$verb, ref = "prove")
+
+### dummy coding for "op" with "n" as baseline
+data$op <- relevel(data$op, ref = "n")
+
+# glmm3 <- lmer(projective ~ verb * op + (1 | workerid) +
+#                  (1 | content), data=data)
+# 
+# save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+print(summary(glmm3), cor=F, dig=3)
+
+@
+
+\subsection{Linear frequentist with \texttt{know/m} as baseline}
+<<freq-linear-annoyed-q, message=FALSE>>=
+
+# dummy coding for "verb" with "prove" as baseline
+data$verb <- relevel(data$verb, ref = "know")
+
+### dummy coding for "op" with "n" as baseline
+data$op <- relevel(data$op, ref = "m")
+
+# glmm4 <- lmer(projective ~ verb * op + (1 | workerid) +
+#                  (1 | content), data=data)
+# 
+# save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+print(summary(glmm4), cor=F, dig=3)
+
+@
+
+% \subsection{Bayesian beta-regression with \texttt{suggest/m} as baseline}
 % 
-% We are interested in how the response (projectivity ratings) depends on the verb and embedding operator, and whether the above generalizations can be supported statistically.
+% Our response variable has observations from a sliding scale between $(0,1)$. For beta regression, we rescale it to $[0,1]$, using method used in Degen \& Tonhauser (2022), from Smithson \& Verkuilen (2006).
+% 
+% <<transform-for-beta>>=
+% data$response = (data$projective*(nrow(data)-1) + .5)/nrow(data)
+% @
+% 
+% <<betareg>>=
+% library(rstan)
+% options(mc.cores=parallel::detectCores())
+% rstan_options(auto_write=TRUE)
+% library(brms)
 % 
 % 
 % 
+% # bbmm1 <- brm(formula = bf(response ~ op * verb, # beta model mean parameter (mu)
+% #                             phi ~ op * verb, # beta model precision parameter (phi)
+% #                             family = Beta()),
+% #                family = Beta(),
+% #                data = data,
+% #                iter=10000, warmup=2000,chains=6)
+% 
+% @
+
+
+% \subsubsection{Linear frequentist with difference coding}
+% Make sure I understand how difference coding works
+% This should help
+% https://stats.oarc.ucla.edu/r/library/r-library-contrast-coding-systems-for-categorical-variables/#backward
+
+% https://rdrr.io/github/tsostarics/contrastable/src/R/forward_difference_code.R
+
 % <<>>=
+% # frequentist fixed effects only, input error: no matrix
+% # bm1 <- betareg(
+% #   response ~ verb * op | # beta model mean parameter (mu)
+% #     response ~ verb * op, # beta model precision parameter
+% #   data = data,
+% #   link = "logit"
+% # )
 % formula <- response ~ op * verb
 % # formula <- response ~ op * verb + (1 | workerid) + (1 | item)
 % # formula <- response ~ op * verb + (1 + op + verb | workerid) + (1 + op + verb | item)
 % @
 % 
-% Trying a beta-regression. Our response variable has observations from a sliding scale between $(0,1)$. For beta regression, we rescale it to $[0,1]$, using method used in Degen \& Tonhauser (2022), from Smithson \& Verkuilen (2006).
-% 
-% <<>>=
-% data$response = (data$projective*(nrow(data)-1) + .5)/nrow(data)
-% @
-% 
-% 
+% Trying a beta-regression. 
 % <<>>=
 % # library(rstan)
 % # options(mc.cores=parallel::detectCores())

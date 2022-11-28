@@ -1,0 +1,124 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt, a4paper]{scrartcl}
+
+%% Page Layout
+\usepackage[margin=1in]{geometry}
+
+\usepackage{euler} % math font package needs to be loaded before others
+\usepackage{xunicode,xltxtra, polyglossia}
+\setdefaultlanguage[variant=american]{english}
+
+%% fonts, symbols, text
+	%%% fonts
+	\usepackage{fontspec} %(include if mathspec is not loaded)
+	\defaultfontfeatures{Mapping=tex-text, Ligatures=TeX}
+	%%% text decoration
+	\usepackage[normalem]{ulem} % sout
+	%%% semantics symbols
+	\usepackage{stmaryrd}
+	\usepackage{amsmath,amssymb}
+	\newcommand{\transl}{\rightsquigarrow \ensuremath}
+	%%% other symbols
+	\usepackage{pifont}% http://ctan.org/pkg/pifont
+	\newcommand{\cmark}{\ding{51}}%
+	\newcommand{\xmark}{\ding{55}}%
+
+%% layout
+%%% page layout
+\usepackage{multicol}
+
+
+%% bibliography
+\usepackage[round]{natbib}
+\newcommand{\posscite}[1]{\citeauthor{#1}'s (\citeyear{#1})}
+
+%% figures, examples, diagrams
+%%% examples
+\usepackage{linguex}
+\renewcommand{\firstrefdash}{}
+%%% tables 
+\usepackage{booktabs}
+%%% figures
+\usepackage{graphics}
+
+
+%% decoration and features
+%%% colors
+\usepackage[dvipsnames]{xcolor}
+
+%% bibliography
+\renewcommand*{\refname}{\normalsize\textbf{References}\\ \vspace{-.5\baselineskip}}
+
+%% fonts
+\setmainfont[Scale=MatchLowercase,Mapping=tex-text,SmallCapsFont={TeX Gyre Termes}, SmallCapsFeatures={Letters=SmallCaps}]{Times New Roman}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Times New Roman}
+
+\usepackage{setspace}
+\begin{document}
+
+\bibliographystyle{plainnat}
+% \enablehyphenation
+% \vspace{-2em}
+% \maketitle
+\textcolor{white}{.} \vspace{-2.9\baselineskip} \\
+\begin{center}
+	\textbf{\large%\thetitle
+		A diverse family (of sentences)\\ Projectivity differs across embedding operators---but not like you think}
+\end{center}
+% \vspace{-.6\baselineskip}
+Attitude verbs can often be associated with an inference that their complement clause is true, even when embedded under an entailment cancelling operator (in which case the inference to the truth of the complement is said to \emph{project}, see karttunen, kiparski kiparski, on factive verbs). This is illustrated for \emph{\lq discover\rq} in \ref{ex:family}:
+
+\ex. \label{ex:family} Projection across various entailment-cancelling operators:
+	\a. Polar Questions:\\
+		\emph{\lq Did Cole discover that Julian dances Salsa?\rq}
+	\b. Negation:\\
+		\emph{\lq Cole didn't discover that Julian dances Salsa.\rq}
+	\b. Modals:\\
+		\emph{\lq Perhaps Cole discovered that Julian dances Salsa.\rq}
+	\b. Conditionals:\\
+		\emph{\lq If Cole discovered that Julian dances Salsa, Logan will be joyful.\rq}
+	\z.
+\z.
+
+Tonhauser (ETC, REFERENCES) showed that whether or not this inference projects is not a categorial property of lexical triggers (references); but a gradient property, which is also affected by various contextual factors (references). In light of this gradience, and the complex interaction of projection with various contextual factors, we may also expect the semantically quite hetergeneous entailment-cancelling operators in \ref{ex:family} to affect projection in differential ways.
+
+Our work presents experimental data from a study addressing the questions: \textbf{(i)} Is the projection of content affected by differences in entailment-canceling environments? \textbf{(ii)} Are these effects the same or different for different verbs? In an experimental task designed to assess speaker commitment to the complement clause, and therefore projection, we find that the 
+differences in entailment-cancelling operator differentially affect projection, and that there are differences between triggers in their interaction with embedding operators. 
+
+Karttunen: \emph{\lq discover\rq} is a semi-factive verb: generalizations 
+\begin{itemize}
+	\item more projective under negation than questions
+	\item factive + semi-factive: two classes of projective verbs with divergent projection behavior under different embedding operators
+	\item Karttunen's classification of factive/semi-factive verbs is often assumed
+	\item Kajsa Djärv: cognitive vs emotive predicates
+	\item experimental work by (see email)
+\end{itemize}
+
+\noindent To investigate differences in projection behavior across various entailment-cancelling operators as in \ref{ex:family}, and between various types of attitude verbs, we used a 
+
+speaker commitment about the embedded clause. E.g. one of the sentences in \ref{ex:family} would be presented as asserted by a named speaker (on screen as \textbf{Daniel:} \emph{\lq Did Cole\dots?\rq}). Participants were then asked to provide a judgment in response to a prompt like: \emph{Is Daniel certain that Julian dances Salsa?}), by moving a slider on a scale from \lq no\rq\ (coded as \texttt{0}), to \lq yes\rq\ (coded as \texttt{1}). 
+
+This work presents experimental data about inferences about the truth of clauses that are embedded by attudes and various entailment-cancelling operators, .
+\begin{itemize}
+	\item speaker commitment about clauses embedded by attitude verb
+	\item manipulating choice of attitude verbs, and embedding operators
+\end{itemize}
+
+\begin{itemize}
+	\item projective content, presupposition projection, 
+\end{itemize}
+
+
+\vspace{-1.2\baselineskip}
+\paragraph{Method.} \hspace{-0.95em}, 
+	dssdf
+% paragraph i_contextual_i (end)
+
+
+
+\pagebreak
+\bibliography{../discourse-negativity}
+
+\end{document}

@@ -18,7 +18,6 @@ data$projective <- numeric(data$projective)
 data$verb <- as.factor(data$verb)
 levels(data$verb)
 contrasts(data$verb)
-
 ### dummy coding with "suggest" as baseline
 data$verb <- relevel(data$verb, ref = "suggest")
 contrasts(data$verb)
@@ -30,7 +29,9 @@ contrasts(data$verb)
 data$op <- as.factor(data$op)
 levels(data$op)
 contrasts(data$op)
-### dummy coding with "c" (conditionals) as baseline
+### dummy coding with "m" (conditionals) as baseline
+data$op <- relevel(data$op, ref = "m")
+contrasts(data$op)
 
 # coding random effects as factors
 data$workerid <- as.factor(data$workerid)
@@ -42,13 +43,15 @@ data$content <- as.factor(data$content)
 library(lme4)
 library(lmertest)
 
-# glmm1 <- lmer(projective ~ op * verb + (op | workerid) + 
+# glmm1 <- lmer(projective ~ verb * op + (op | workerid) +
 #                  (op | content), data=data)
 
 # save.image("linear-models.RData")
 load("linear-models.RData")
 print(summary(glmm1), cor=F, dig=3)
 
+# glmm2 <- lmer(projective ~ verb * op + (op | workerid) +
+#                 (op | content), data=data)
 
-
-
+# save.image("linear-models.RData")
+print(summary(glmm2), cor=F, dig=3)
