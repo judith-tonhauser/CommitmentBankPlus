@@ -365,35 +365,34 @@ data$verb <- relevel(data$verb, ref = "be_annoyed")
 ### dummy coding for "op" with "q" as baseline
 data$op <- relevel(data$op, ref = "q")
 
-glmm2a <- lmer(projective ~ verb * op + (1 | workerid) +
-                 (1 | content), data=data)
+# glmm2a <- lmer(projective ~ verb * op + (1 | workerid) +
+#                  (1 | content), data=data)
 
 # save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
-load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+# load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
 print(summary(glmm2a), cor=F, dig=3)
 
 @
-
-\subsection{Linear frequentist with \texttt{prove/n} as baseline}
-<<freq-linear-annoyed-q, message=FALSE>>=
-
-# dummy coding for "verb" with "prove" as baseline
-data$verb <- relevel(data$verb, ref = "prove")
-
-### dummy coding for "op" with "n" as baseline
-data$op <- relevel(data$op, ref = "n")
-
-# glmm3 <- lmer(projective ~ verb * op + (1 | workerid) +
-#                  (1 | content), data=data)
-# 
-# save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
-load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
-print(summary(glmm3), cor=F, dig=3)
-
-@
+% 
+% \subsection{Linear frequentist with \texttt{prove/n} as baseline}
+% % <<freq-linear-prove-n, message=FALSE>>=
+% # dummy coding for "verb" with "prove" as baseline
+% data$verb <- relevel(data$verb, ref = "prove")
+% 
+% ### dummy coding for "op" with "n" as baseline
+% data$op <- relevel(data$op, ref = "n")
+% 
+% # glmm3 <- lmer(projective ~ verb * op + (1 | workerid) +
+% #                  (1 | content), data=data)
+% #
+% # save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+% # load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+% print(summary(glmm3), cor=F, dig=3)
+% 
+% @
 
 \subsection{Linear frequentist with \texttt{know/m} as baseline}
-<<freq-linear-annoyed-q, message=FALSE>>=
+<<freq-linear-know-m, message=FALSE>>=
 
 # dummy coding for "verb" with "prove" as baseline
 data$verb <- relevel(data$verb, ref = "know")
@@ -403,9 +402,9 @@ data$op <- relevel(data$op, ref = "m")
 
 # glmm4 <- lmer(projective ~ verb * op + (1 | workerid) +
 #                  (1 | content), data=data)
-# 
+#
 # save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
-load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+# load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
 print(summary(glmm4), cor=F, dig=3)
 
 @

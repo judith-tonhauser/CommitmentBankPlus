@@ -591,11 +591,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 \hlstd{> }\hlcom{### dummy coding for "op" with "q" as baseline}
 \hlstd{> }\hlstd{data}\hlopt{$}\hlstd{op} \hlkwb{<-} \hlkwd{relevel}\hlstd{(data}\hlopt{$}\hlstd{op,} \hlkwc{ref} \hlstd{=} \hlstr{"q"}\hlstd{)}
 \hlstd{> }
-\hlstd{> }\hlstd{glmm2a} \hlkwb{<-} \hlkwd{lmer}\hlstd{(projective} \hlopt{~} \hlstd{verb} \hlopt{*} \hlstd{op} \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{workerid)} \hlopt{+}
-\hlstd{+ }                 \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{content),} \hlkwc{data}\hlstd{=data)}
+\hlstd{> }\hlcom{# glmm2a <- lmer(projective ~ verb * op + (1 | workerid) +}
+\hlstd{> }\hlcom{#                  (1 | content), data=data)}
 \hlstd{> }
 \hlstd{> }\hlcom{# save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")}
-\hlstd{> }\hlkwd{load}\hlstd{(}\hlstr{"../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData"}\hlstd{)}
+\hlstd{> }\hlcom{# load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")}
 \hlstd{> }\hlkwd{print}\hlstd{(}\hlkwd{summary}\hlstd{(glmm2a),} \hlkwc{cor}\hlstd{=F,} \hlkwc{dig}\hlstd{=}\hlnum{3}\hlstd{)}
 \end{alltt}
 \begin{verbatim}
@@ -699,6 +699,147 @@ verbreveal:opn      -6.66e-02   1.93e-02  5.44e+04   -3.45  0.00056 ***
 verbsay:opn          1.82e-01   1.93e-02  5.44e+04    9.41  < 2e-16 ***
 verbsee:opn         -1.11e-01   1.93e-02  5.44e+04   -5.75  9.2e-09 ***
 verbthink:opn        1.74e-01   1.93e-02  5.44e+04    9.01  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+% 
+% \subsection{Linear frequentist with \texttt{prove/n} as baseline}
+% % <<freq-linear-prove-n, message=FALSE>>=
+% # dummy coding for "verb" with "prove" as baseline
+% data$verb <- relevel(data$verb, ref = "prove")
+% 
+% ### dummy coding for "op" with "n" as baseline
+% data$op <- relevel(data$op, ref = "n")
+% 
+% # glmm3 <- lmer(projective ~ verb * op + (1 | workerid) +
+% #                  (1 | content), data=data)
+% #
+% # save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+% # load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+% print(summary(glmm3), cor=F, dig=3)
+% 
+% @
+
+\subsection{Linear frequentist with \texttt{know/m} as baseline}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlcom{# dummy coding for "verb" with "prove" as baseline}
+\hlstd{> }\hlstd{data}\hlopt{$}\hlstd{verb} \hlkwb{<-} \hlkwd{relevel}\hlstd{(data}\hlopt{$}\hlstd{verb,} \hlkwc{ref} \hlstd{=} \hlstr{"know"}\hlstd{)}
+\hlstd{> }
+\hlstd{> }\hlcom{### dummy coding for "op" with "n" as baseline}
+\hlstd{> }\hlstd{data}\hlopt{$}\hlstd{op} \hlkwb{<-} \hlkwd{relevel}\hlstd{(data}\hlopt{$}\hlstd{op,} \hlkwc{ref} \hlstd{=} \hlstr{"m"}\hlstd{)}
+\hlstd{> }
+\hlstd{> }\hlcom{# glmm4 <- lmer(projective ~ verb * op + (1 | workerid) +}
+\hlstd{> }\hlcom{#                  (1 | content), data=data)}
+\hlstd{> }\hlcom{#}
+\hlstd{> }\hlcom{# save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")}
+\hlstd{> }\hlcom{# load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")}
+\hlstd{> }\hlkwd{print}\hlstd{(}\hlkwd{summary}\hlstd{(glmm4),} \hlkwc{cor}\hlstd{=F,} \hlkwc{dig}\hlstd{=}\hlnum{3}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: projective ~ verb * op + (1 | workerid) + (1 | content)
+   Data: data
+
+REML criterion at convergence: 12825.3
+
+Scaled residuals: 
+   Min     1Q Median     3Q    Max 
+-4.034 -0.653  0.039  0.659  4.254 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ workerid (Intercept) 0.026816 0.1638  
+ content  (Intercept) 0.000269 0.0164  
+ Residual             0.065256 0.2555  
+Number of obs: 57160, groups:  workerid, 2682; content, 20
+
+Fixed effects:
+                     Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)          6.49e-01   1.18e-02  1.62e+03   55.04  < 2e-16 ***
+verbprove           -2.17e-01   1.33e-02  5.44e+04  -16.24  < 2e-16 ***
+verbbe_annoyed       6.19e-02   1.33e-02  5.44e+04    4.64  3.5e-06 ***
+verbsuggest         -3.78e-01   1.33e-02  5.44e+04  -28.32  < 2e-16 ***
+verbacknowledge     -4.85e-02   1.33e-02  5.44e+04   -3.64  0.00028 ***
+verbadmit           -9.73e-02   1.33e-02  5.44e+04   -7.29  3.1e-13 ***
+verbannounce        -1.36e-01   1.33e-02  5.44e+04  -10.16  < 2e-16 ***
+verbbe_right        -3.44e-01   1.33e-02  5.44e+04  -25.78  < 2e-16 ***
+verbconfess         -1.23e-01   1.33e-02  5.44e+04   -9.19  < 2e-16 ***
+verbconfirm         -2.06e-01   1.33e-02  5.44e+04  -15.42  < 2e-16 ***
+verbdemonstrate     -1.90e-01   1.33e-02  5.44e+04  -14.28  < 2e-16 ***
+verbdiscover        -2.43e-02   1.33e-02  5.44e+04   -1.82  0.06803 .  
+verbestablish       -2.04e-01   1.33e-02  5.44e+04  -15.33  < 2e-16 ***
+verbhear            -1.38e-01   1.33e-02  5.44e+04  -10.38  < 2e-16 ***
+verbinform          -6.14e-02   1.33e-02  5.44e+04   -4.60  4.2e-06 ***
+verbpretend         -4.62e-01   1.33e-02  5.44e+04  -34.67  < 2e-16 ***
+verbreveal          -6.71e-02   1.33e-02  5.44e+04   -5.03  4.8e-07 ***
+verbsay             -3.35e-01   1.33e-02  5.44e+04  -25.11  < 2e-16 ***
+verbsee             -6.14e-02   1.33e-02  5.44e+04   -4.61  4.1e-06 ***
+verbthink           -4.34e-01   1.33e-02  5.44e+04  -32.52  < 2e-16 ***
+opn                  1.43e-01   1.56e-02  2.63e+04    9.20  < 2e-16 ***
+opq                  2.25e-01   1.57e-02  2.68e+04   14.32  < 2e-16 ***
+opc                  1.42e-01   1.59e-02  2.08e+04    8.93  < 2e-16 ***
+verbprove:opn       -3.45e-01   1.90e-02  5.44e+04  -18.19  < 2e-16 ***
+verbbe_annoyed:opn   1.30e-02   1.90e-02  5.44e+04    0.69  0.49308    
+verbsuggest:opn     -1.64e-01   1.90e-02  5.44e+04   -8.62  < 2e-16 ***
+verbacknowledge:opn -9.71e-02   1.90e-02  5.44e+04   -5.12  3.1e-07 ***
+verbadmit:opn       -1.68e-01   1.90e-02  5.44e+04   -8.86  < 2e-16 ***
+verbannounce:opn    -1.50e-01   1.90e-02  5.44e+04   -7.92  2.4e-15 ***
+verbbe_right:opn    -2.45e-01   1.90e-02  5.44e+04  -12.93  < 2e-16 ***
+verbconfess:opn     -1.71e-01   1.90e-02  5.44e+04   -9.00  < 2e-16 ***
+verbconfirm:opn     -3.53e-01   1.90e-02  5.44e+04  -18.62  < 2e-16 ***
+verbdemonstrate:opn -2.65e-01   1.90e-02  5.44e+04  -13.99  < 2e-16 ***
+verbdiscover:opn    -8.72e-02   1.90e-02  5.44e+04   -4.60  4.3e-06 ***
+verbestablish:opn   -2.75e-01   1.90e-02  5.44e+04  -14.49  < 2e-16 ***
+verbhear:opn         1.76e-02   1.90e-02  5.44e+04    0.93  0.35260    
+verbinform:opn      -1.14e-03   1.90e-02  5.44e+04   -0.06  0.95186    
+verbpretend:opn      3.24e-02   1.90e-02  5.44e+04    1.71  0.08742 .  
+verbreveal:opn      -1.64e-01   1.90e-02  5.44e+04   -8.63  < 2e-16 ***
+verbsay:opn         -1.32e-01   1.90e-02  5.44e+04   -6.97  3.3e-12 ***
+verbsee:opn         -4.64e-02   1.90e-02  5.44e+04   -2.45  0.01445 *  
+verbthink:opn       -1.55e-03   1.90e-02  5.44e+04   -0.08  0.93470    
+verbprove:opq       -3.79e-01   1.92e-02  5.44e+04  -19.75  < 2e-16 ***
+verbbe_annoyed:opq  -4.40e-02   1.92e-02  5.44e+04   -2.29  0.02193 *  
+verbsuggest:opq     -2.94e-01   1.92e-02  5.44e+04  -15.34  < 2e-16 ***
+verbacknowledge:opq -8.67e-02   1.92e-02  5.44e+04   -4.52  6.2e-06 ***
+verbadmit:opq       -1.81e-01   1.92e-02  5.44e+04   -9.44  < 2e-16 ***
+verbannounce:opq    -2.06e-01   1.92e-02  5.44e+04  -10.71  < 2e-16 ***
+verbbe_right:opq    -3.80e-01   1.92e-02  5.44e+04  -19.80  < 2e-16 ***
+verbconfess:opq     -1.88e-01   1.92e-02  5.44e+04   -9.82  < 2e-16 ***
+verbconfirm:opq     -3.79e-01   1.92e-02  5.44e+04  -19.76  < 2e-16 ***
+verbdemonstrate:opq -2.47e-01   1.92e-02  5.44e+04  -12.88  < 2e-16 ***
+verbdiscover:opq    -6.80e-02   1.92e-02  5.44e+04   -3.54  0.00040 ***
+verbestablish:opq   -3.26e-01   1.92e-02  5.44e+04  -16.98  < 2e-16 ***
+verbhear:opq         3.63e-02   1.92e-02  5.44e+04    1.89  0.05859 .  
+verbinform:opq       6.51e-04   1.92e-02  5.44e+04    0.03  0.97292    
+verbpretend:opq     -2.44e-01   1.92e-02  5.44e+04  -12.73  < 2e-16 ***
+verbreveal:opq      -1.54e-01   1.92e-02  5.44e+04   -8.03  9.6e-16 ***
+verbsay:opq         -3.71e-01   1.92e-02  5.44e+04  -19.33  < 2e-16 ***
+verbsee:opq          7.46e-03   1.92e-02  5.44e+04    0.39  0.69729    
+verbthink:opq       -2.32e-01   1.92e-02  5.44e+04  -12.11  < 2e-16 ***
+verbprove:opc       -2.01e-01   1.90e-02  5.44e+04  -10.63  < 2e-16 ***
+verbbe_annoyed:opc  -1.01e-01   1.90e-02  5.44e+04   -5.34  9.1e-08 ***
+verbsuggest:opc     -1.18e-01   1.90e-02  5.44e+04   -6.25  4.1e-10 ***
+verbacknowledge:opc -1.68e-02   1.90e-02  5.44e+04   -0.88  0.37636    
+verbadmit:opc       -2.00e-03   1.90e-02  5.44e+04   -0.11  0.91585    
+verbannounce:opc    -1.42e-02   1.90e-02  5.44e+04   -0.75  0.45443    
+verbbe_right:opc    -2.17e-01   1.90e-02  5.44e+04  -11.45  < 2e-16 ***
+verbconfess:opc      2.61e-02   1.90e-02  5.44e+04    1.38  0.16773    
+verbconfirm:opc     -1.71e-01   1.90e-02  5.44e+04   -9.03  < 2e-16 ***
+verbdemonstrate:opc -9.42e-02   1.90e-02  5.44e+04   -4.97  6.7e-07 ***
+verbdiscover:opc     2.55e-02   1.90e-02  5.44e+04    1.35  0.17843    
+verbestablish:opc   -1.32e-01   1.90e-02  5.44e+04   -6.97  3.1e-12 ***
+verbhear:opc         1.05e-01   1.90e-02  5.44e+04    5.54  3.0e-08 ***
+verbinform:opc       1.25e-02   1.90e-02  5.44e+04    0.66  0.51096    
+verbpretend:opc     -1.72e-01   1.90e-02  5.44e+04   -9.08  < 2e-16 ***
+verbreveal:opc       1.23e-02   1.90e-02  5.44e+04    0.65  0.51800    
+verbsay:opc         -4.79e-02   1.90e-02  5.44e+04   -2.53  0.01144 *  
+verbsee:opc          5.68e-02   1.90e-02  5.44e+04    3.00  0.00271 ** 
+verbthink:opc       -1.14e-01   1.90e-02  5.44e+04   -5.99  2.1e-09 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 \end{verbatim}

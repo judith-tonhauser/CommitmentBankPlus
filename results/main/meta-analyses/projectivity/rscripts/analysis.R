@@ -55,3 +55,5 @@ print(summary(glmm1), cor=F, dig=3)
 
 # save.image("linear-models.RData")
 print(summary(glmm2), cor=F, dig=3)
+
+print(summary(glmm1), cor=F, dig=3)
