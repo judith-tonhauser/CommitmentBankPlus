@@ -7,16 +7,16 @@
 \usepackage{xunicode,xltxtra}
 \usepackage{fontspec}
 
-\usepackage[a4paper, margin = 1 in, left = .5 in, right = .5 in]{geometry}
-
-\usepackage{setspace}
-\usepackage[dvipsnames]{xcolor}
-
 % fonts
 	\defaultfontfeatures{Mapping=tex-text, Ligatures=TeX}
 	\setromanfont[Mapping=tex-text, Numbers={Proportional}]{Linux Biolinum}
 	\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Optima}
 	\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+\usepackage[a4paper, margin = 1 in, left = .5 in, right = .5 in]{geometry}
+
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -31,6 +31,7 @@
 \date{\today}
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 \setkeys{Gin}{width=1.0\textwidth}
 <<setup, include=FALSE, echo=FALSE>>=
 library(knitr)
@@ -61,7 +62,7 @@ options(tidy=TRUE, linewidth = 100)
 # set working directory to directory of script
 # this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
 # setwd(this.dir)
-setwd("/Users/lisahofmann/Dropbox/Mein Mac (MBP-von-Lisa)/Documents/Academic/Research Projects/projective content/experiments-github/materials-lisa/analysis/3_projection-across-operators")
+setwd("/Users/lisa/Documents/research/GPP-exps/materials-lisa/analysis/3_projection-across-operators")
 
 # load data
 data <- read.csv("../../../results/main/meta-analyses/projectivity/data/data_combined.csv", 
@@ -178,9 +179,14 @@ data %>%
 \newpage
 \subsection{Means and confidence intervals for projectivity rating by operator}
 <<summary-op, echo = FALSE, message=FALSE, cache=TRUE, out.width=".6\\textwidth">>=
+# packages for data manipulation and plots
+require(ggplot2)
+require(dplyr)
+require(forcats)
+
 # load helper functions
 source('../../../results/main/helpers.R')
-require(forcats)
+
 
 proj_means_op = data %>% group_by(op) %>%
   summarize(Mean = mean(projective), CILow = ci.low(projective),
@@ -230,6 +236,7 @@ This will be replaced by violin-plot.
 %   labs(title = "Mean projectivity by predicate")+
 %   theme_bw()
 % @
+
 \begin{itemize}
   \item We see gradual differences in projectivity between verbs
 \end{itemize}
@@ -373,6 +380,7 @@ data$op <- relevel(data$op, ref = "q")
 print(summary(glmm2a), cor=F, dig=3)
 
 @
+<<<<<<< HEAD
 % 
 % \subsection{Linear frequentist with \texttt{prove/n} as baseline}
 % % <<freq-linear-prove-n, message=FALSE>>=
@@ -390,6 +398,26 @@ print(summary(glmm2a), cor=F, dig=3)
 % print(summary(glmm3), cor=F, dig=3)
 % 
 % @
+=======
+
+\subsection{Linear frequentist with \texttt{prove/n} as baseline}
+<<freq-linear-prove-n, message=FALSE>>=
+
+# dummy coding for "verb" with "prove" as baseline
+data$verb <- relevel(data$verb, ref = "prove")
+
+### dummy coding for "op" with "n" as baseline
+data$op <- relevel(data$op, ref = "n")
+
+# glmm3 <- lmer(projective ~ verb * op + (1 | workerid) +
+#                  (1 | content), data=data)
+# 
+# save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+print(summary(glmm3), cor=F, dig=3)
+
+@
+>>>>>>> 55a96bc (abstract and analysis updates)
 
 \subsection{Linear frequentist with \texttt{know/m} as baseline}
 <<freq-linear-know-m, message=FALSE>>=
@@ -408,6 +436,25 @@ data$op <- relevel(data$op, ref = "m")
 print(summary(glmm4), cor=F, dig=3)
 
 @
+
+\subsection{Linear frequentist with \texttt{annoyed/n} as baseline}
+<<freq-linear-annoyed-n, message=FALSE>>=
+
+# dummy coding for "verb" with "suggest" as baseline
+data$verb <- relevel(data$verb, ref = "be_annoyed")
+
+### dummy coding for "op" with "n" as baseline
+data$op <- relevel(data$op, ref = "n")
+
+# glmm6 <- lmer(projective ~ op * verb + (1 | workerid) +
+#                  (1 | content), data=data)
+
+# save.image("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+# load("../../../results/main/meta-analyses/projectivity/rscripts/linear-models.RData")
+print(summary(glmm6), cor=F, dig=3)
+
+@
+
 
 % \subsection{Bayesian beta-regression with \texttt{suggest/m} as baseline}
 % 

@@ -1,0 +1,255 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+%% document settings
+\documentclass[10pt]{article}
+\usepackage{euler}
+\usepackage{xunicode,xltxtra}
+\usepackage{fontspec}
+
+% fonts
+	\defaultfontfeatures{Mapping=tex-text, Ligatures=TeX}
+	\setromanfont[Mapping=tex-text, Numbers={Proportional}]{Linux Biolinum}
+	\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Optima}
+	\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+
+\usepackage[a4paper, margin = 1 in, left = .5 in, right = .5 in]{geometry}
+
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+% \usepackage{mathtools}
+\usepackage{linguex}
+\usepackage{booktabs}
+
+\usepackage[colorlinks=true,citecolor=MidnightBlue,urlcolor=MidnightBlue,linkcolor=MidnightBlue]{hyperref}
+
+
+\title{Effects on projectivity ratings by Embedding Operator and Trigger --- \newline Data Analysis}
+\author{Hofmann, deMarneffe, Tonhauser}
+\date{\today}
+
+
+
+\begin{document}
+\setkeys{Gin}{width=1.0\textwidth}
+
+<<setup, include=FALSE, echo=FALSE>>=
+library(knitr)
+hook_output = knit_hooks$get('output')
+knit_hooks$set(output = function(x, options) {
+  # this hook is used only when the linewidth option is not NULL
+  if (!is.null(n <- options$linewidth)) {
+    x = xfun::split_lines(x)
+    # any lines wider than n should be wrapped
+    if (any(nchar(x) > n)) x = strwrap(x, width = n)
+    x = paste(x, collapse = '\n')
+  }
+  hook_output(x, options)
+})
+
+knitr::opts_chunk$set(echo=TRUE, prompt=TRUE, comment=NA, tidy.opts=list(width.cutoff=50), 
+                      fig.path='figures/', fig.align = "center", out.width="\\linewidth")
+options(tidy=TRUE, linewidth = 100)
+@
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+\section{Introducing the dataset}
+<<load-data, echo=FALSE, results='hide'>>=
+# set working directory to directory of script
+# this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
+# setwd(this.dir)
+setwd("/Users/lisa/Documents/research/GPP-experiments/materials-lisa/analysis/3_projection-across-operators")
+
+# load data
+df <- read.csv("../../../results/main/meta-analyses/projectivity/data/data_combined.csv", 
+                    header=TRUE, sep=",")
+
+@
+
+<<data-overview>>=
+str(df)
+df$workerid <- as.factor(df$workerid)
+length(levels(df$workerid))
+@
+
+
+\noindent The dataset consists of $57160$ observations from $2682$ participants (recruited on the online platforms Prolific and Amazon Mechanical Turk), across 12 experiments.
+
+We are interested in how highly participants rate speaker commitment to the truth of an embedded complement clause, coded as \texttt{projective} on a real-numbered sliding scale between $0-1$.\\
+
+\noindent The complement clause was embedded under an attitude verb, which in turn was embedded under an entailment-cancelling operator. Our fixed effects factors manipulate the following:
+
+\begin{enumerate}
+  \item The choice of attitude verb (coded as \texttt{verb})
+  \item The entailment-cancelling operator (coded as \texttt{op})
+\end{enumerate}
+
+
+\noindent The levels for our fixed effects factors are the following:
+<<fixed-efcts-lvls>>=
+df$verb <- as.factor(df$verb)
+levels(df$verb)
+length(levels(df$verb))
+df$op <- as.factor(df$op)
+levels(df$op)
+length(levels(df$op))
+@
+
+\noindent We are interested in the effect on \texttt{projective} of \texttt{verb} and \texttt{op}, as well as their interaction, corresponding to a $20 \times 4$ factorial design, yielding
+<<ncond>>=
+length(levels(df$verb))*length(levels(df$op))
+@
+conditions.\\
+
+\noindent We have $20$ items, corresponding to the content of the complement clause.
+<<nitems>>=
+df$content <- as.factor(df$content)
+levels(df$content)
+length(levels(df$content))
+@
+
+\noindent We have roughly $36$ observations by item and condition. This is an approximate number, because the \texttt{op} manipulation is a between-studies manipulation, and the number of participants differs by experiment:
+<<nobs>>=
+# n observations
+length(df[,1])
+
+# observations by item
+length(df[,1])/length(levels(df$content))
+table(df$content)
+
+# observations by verb
+length(df[,1])/length(levels(df$verb))
+table(df$verb)
+
+# observations by operator
+length(df[,1])/length(levels(df$op))
+table(df$op)
+
+# observations by item and condition
+length(df[,1])/length(levels(df$content))/
+  (length(levels(df$verb))*length(levels(df$op)))
+
+@
+
+\newpage
+\section{Statistical Summaries and Graphs}
+\subsection{Projectivity rating by operator}
+
+Distribution of projectivity ratings by operator with means and $95\%$ bootstrapped confidence intervals.
+
+<<summary-op, echo = FALSE, message=FALSE, cache=TRUE, out.width=".6\\textwidth">>=
+# packages for data manipulation and plots
+require(ggplot2)
+require(dplyr)
+require(forcats)
+
+# load helper functions
+source('../../../results/main/helpers.R')
+
+pmeans_op = df %>% group_by(op) %>%
+  summarize(Mean = mean(projective), CILow = ci.low(projective),
+            CIHigh = ci.high(projective)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh,
+         op = fct_reorder(as.factor(op),Mean)) %>% ungroup()
+
+pmeans_op %>% mutate(op = fct_reorder(op, Mean,
+                                          .fun = mean)) %>%
+  ggplot(aes(x = op, y=Mean)) +
+  geom_violin(data=data.frame(op=df$op, Mean=df$projective),scale="width",color="gray80") +
+  geom_point(size = 1, color = "lightblue") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "lightblue") +
+  geom_line(color = "lightblue") +
+  # labs(title = "Projectivity by operator")+
+  theme_bw()
+
+@
+
+\noindent The following generalizations emerge:
+\begin{itemize}
+  \item Conditionals have the highest projectivity ratings
+  \item Projectivity ratings for questions are higher than those for modals and negation, but lower than those for conditionals
+  \item Modals and negation have the lowest projectivity ratings
+  \item The ratings for negation look a little higher than for modals, but error bars overlap
+\end{itemize}
+
+\noindent Although these differences appear to be significant, they are quite small.\\
+
+\newpage
+\subsection{Distributions of projectivity rating by verb with means and 95\% bootstrapped confidence interval:}
+
+<<summary-verb, echo = FALSE, message=FALSE, cache=TRUE, fig.width=8, fig.height=6>>=
+
+pmeans_verb = df %>% group_by(verb) %>%
+  summarize(Mean = mean(projective), CILow = ci.low(projective), 
+            CIHigh = ci.high(projective)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
+         verb = fct_reorder(as.factor(verb),Mean))
+
+# plot of projectivity means, 95% CIs and participants' ratings 
+pmeans_verb %>% 
+  ggplot(aes(x=fct_reorder(verb, Mean), y=Mean)) +
+  geom_violin(data=data.frame(verb=df$verb, Mean=df$projective),scale="width",color="gray80") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.3,color="black") +
+  geom_point(size=0.5,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1)) +
+  xlab("") + ylab("")
+
+@
+
+\begin{itemize}
+  \item We see gradual differences in projectivity between verbs
+\end{itemize}
+
+
+\subsection{Distributions, means, and CIs for projectivity ratings by verb and operator:}
+<<summary-combined-1>>=
+pmeans = df %>% group_by(verb, op) %>%
+  summarize(Mean = mean(projective), CILow = ci.low(projective),
+            CIHigh = ci.high(projective)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh,
+         verb = fct_reorder(as.factor(verb),Mean)) %>% ungroup()
+
+ggplot(pmeans, aes(x=verb, y=Mean)) +
+  geom_violin(data=data.frame(verb=df$verb, Mean=df$projective),scale="width",color="gray80") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width = 0.5, color="black") +
+  geom_point(size=0.5,color="black") +
+  facet_wrap(~op, labeller = labeller(op = c("m" = "Modal", "n" = "Negation", "q" = "Question", "c" = "Conditional"))) +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1)) +
+  ylab("Mean certainty rating") +
+  xlab("Predicate")
+@
+ 
+
+\subsection{Means and confidence intervals for projectivity rating by verb and operator:}
+<<summary-combined-2, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=7>>=
+
+pmeans %>% mutate(verb = fct_reorder(verb, Mean,
+                                         .fun = mean)) %>%
+  mutate(op = fct_reorder(op, Mean, .fun = mean)) %>%
+  ggplot(aes(x=verb, y=Mean, group = op, color = op)) +
+  coord_cartesian(ylim=c(0,1)) +
+  geom_point(aes(shape = op), size = 3) + 
+  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1) +
+  geom_line() +
+  scale_y_continuous(limits = c(0,1)) +
+  ylab("") +
+  xlab("") +
+  guides(shape = "none") +
+  scale_colour_discrete(labels = c("Modal", "Negation", "Question", "Conditional")) +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) +
+  labs(title = "", color = "Operator")
+
+@
+
+\end{document}
