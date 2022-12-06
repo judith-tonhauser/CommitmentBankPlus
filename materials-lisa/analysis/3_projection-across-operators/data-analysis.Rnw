@@ -145,7 +145,7 @@ length(df[,1])/length(levels(df$content))/
 
 Distribution of projectivity ratings by operator with means and $95\%$ bootstrapped confidence intervals.
 
-<<summary-op, echo = FALSE, message=FALSE, cache=TRUE, out.width=".6\\textwidth">>=
+<<summary-op, echo = FALSE, message=FALSE, cache=TRUE, out.width=".5\\textwidth">>=
 # packages for data manipulation and plots
 require(ggplot2)
 require(dplyr)
@@ -166,9 +166,8 @@ pmeans_op %>% mutate(op = fct_reorder(op, Mean,
   geom_violin(data=data.frame(op=df$op, Mean=df$projective),scale="width",color="gray80") +
   geom_point(size = 1, color = "lightblue") +
   geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "lightblue") +
-  geom_line(color = "lightblue") +
-  # labs(title = "Projectivity by operator")+
-  theme_bw()
+  geom_line(color = "lightblue")
+  # labs(title = "Projectivity by operator")
 
 @
 
@@ -185,7 +184,7 @@ pmeans_op %>% mutate(op = fct_reorder(op, Mean,
 \newpage
 \subsection{Distributions of projectivity rating by verb with means and 95\% bootstrapped confidence interval:}
 
-<<summary-verb, echo = FALSE, message=FALSE, cache=TRUE, fig.width=8, fig.height=6>>=
+<<summary-verb, echo = FALSE, message=FALSE, cache=TRUE, fig.width=8, fig.height=4.5>>=
 
 pmeans_verb = df %>% group_by(verb) %>%
   summarize(Mean = mean(projective), CILow = ci.low(projective), 
@@ -209,47 +208,163 @@ pmeans_verb %>%
   \item We see gradual differences in projectivity between verbs
 \end{itemize}
 
-
-\subsection{Distributions, means, and CIs for projectivity ratings by verb and operator:}
-<<summary-combined-1>>=
+\newpage
+\subsection{Distributions, means, and CIs for projectivity ratings by verb, for each operator:}
+<<summary-combined-1, echo = FALSE, message=FALSE, cache=TRUE, fig.width=8, fig.height=6>>=
 pmeans = df %>% group_by(verb, op) %>%
   summarize(Mean = mean(projective), CILow = ci.low(projective),
             CIHigh = ci.high(projective)) %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh,
          verb = fct_reorder(as.factor(verb),Mean)) %>% ungroup()
 
-ggplot(pmeans, aes(x=verb, y=Mean)) +
-  geom_violin(data=data.frame(verb=df$verb, Mean=df$projective),scale="width",color="gray80") +
+pmeans %>%
+  ggplot(aes(x=fct_reorder(verb, Mean), y=Mean)) +
+  geom_violin(data=data.frame(verb=df$verb, Mean=df$projective, op=df$op),scale="width",color="gray80") +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width = 0.5, color="black") +
   geom_point(size=0.5,color="black") +
   facet_wrap(~op, labeller = labeller(op = c("m" = "Modal", "n" = "Negation", "q" = "Question", "c" = "Conditional"))) +
   scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1)) +
-  ylab("Mean certainty rating") +
-  xlab("Predicate")
+  ylab("") +
+  xlab("")
 @
  
-
+\newpage
 \subsection{Means and confidence intervals for projectivity rating by verb and operator:}
-<<summary-combined-2, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=7>>=
+<<summary-combined-2, echo = FALSE, message=FALSE, cache=TRUE, fig.width=9, fig.height=4.7>>=
 
-pmeans %>% mutate(verb = fct_reorder(verb, Mean,
-                                         .fun = mean)) %>%
-  mutate(op = fct_reorder(op, Mean, .fun = mean)) %>%
-  ggplot(aes(x=verb, y=Mean, group = op, color = op)) +
+pmeans %>% 
+  ggplot(aes(x=fct_reorder(verb, Mean), y=Mean, group = op, color = op)) +
   coord_cartesian(ylim=c(0,1)) +
   geom_point(aes(shape = op), size = 3) + 
-  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  scale_shape_manual(values = c("C", "M", "N", "Q")) +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1) +
   geom_line() +
   scale_y_continuous(limits = c(0,1)) +
   ylab("") +
   xlab("") +
-  guides(shape = "none") +
-  scale_colour_discrete(labels = c("Modal", "Negation", "Question", "Conditional")) +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) +
-  labs(title = "", color = "Operator")
+  # guides(shape = "none") +
+  # scale_colour_discrete(labels = c("Modal", "Negation", "Question", "Conditional")) +
+  theme_bw() +
+  theme(legend.position = "none") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1))
 
 @
+\begin{itemize}
+  \item We see interactions between verb and operator
+
+  \item Two verbs show highest projectivity under negation: the anti-veridical \emph{pretend}, and the non-veridical \emph{think}. These are verb with relatively low overall projectivity.
+
+  \item More projective verbs (\emph{\lq announce\rq} and above) have $\texttt{C} > \texttt{M}$
+
+  \item Highly projective verbs (\emph{\lq hear \rq} and above) have  $\texttt{N} > \texttt{M}$
+
+  \item We do not see any group of verbs that could be characterized as \lq semi-factive\rq\ in the sense of Karttunen.
+  \begin{itemize}
+    \item Specifically, \emph{discover} does not follow the predicted pattern: It is not more projective under negation, but most projective in conditionals and questions.
+    \item For Karttunnen's \lq factives\rq, no difference between operators is expected.
+    \item Kajsa Djärv about this distinction: cognitive predicates are semi-factive, and emotives are factive. The pattern suggested by karrtunen is also not found here (if anything, it might be the other way round)
+  \end{itemize}
+
+  \item For more generalizations, let's look at the same information plotted differently: By-operator projectivity for each verb
+\end{itemize}
+
+
+\newpage
+\subsection{Projectivity ratings by operator, for each verb (Verb profiles)}
+Version 1: With distributions of projectivity ratings as violin-plot
+<<verb-profiles-1, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=11>>=
+pmeans %>%
+  ggplot(aes(x = fct_reorder(op, Mean), y = Mean)) +
+  coord_cartesian(ylim = c(0,1)) +
+  facet_wrap(vars(fct_reorder(verb, Mean))) +
+  geom_point(size = 1, color = "lightblue") +
+  geom_violin(data=data.frame(verb=df$verb, Mean=df$projective, op=df$op),scale="width",color="gray80") +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1, color = "lightblue") +
+  geom_line(color = "lightblue") +
+  xlab("") + ylab("") +
+  labs(title = "Mean projectivity by operator, for each verb")
+@
+Some more generalizations: We find different \lq profiles\rq\ for different verbs, of how embedding operators affect projectivity based on the verb. Groups of verbs show similar profiles:
+
+\newpage
+\noindent Version 2: With lines to show profiles
+<<verb-profiles-2, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=11>>=
+pmeans %>%
+  ggplot(aes(x = fct_reorder(op, Mean), y = Mean, group = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  facet_wrap(vars(fct_reorder(verb, Mean))) +
+  geom_point(size = 1, color = "lightblue") +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1, color = "lightblue") +
+  geom_line(color = "lightblue") +
+  xlab("") + ylab("") +
+  theme_bw() +
+  labs(title = "Mean projectivity by operator, for each verb")
+@
+
+\begin{itemize}
+  \item \emph{pretend, think}: \textbf{anti-veridical profile}\\
+    \texttt{N} $>$ \texttt{M, Q, C}, overall low projectivity
+
+  \item \emph{acknowledge, hear, inform, see, discover, know, be annoyed}: \textbf{\lq factive\rq\ profile}\\
+    \texttt{Q} $>$ \texttt{N, C} \textcolor{gray}{$>_?$} \texttt{M}, overall high projectivity (it may be possible to find further subgroups here)
+
+  \item \emph{prove, confirm, establish, demonstrate, (announce), confess, admit, reveal}: \textbf{veridical profile}\\
+    \texttt{M, C} $>$ \texttt{Q} $>$ \texttt{N}, overall med-lo to med-hi projectivity
+  
+  \item \emph{be right, suggest}: \textbf{reportative profile}\\
+    \texttt{M, N, C} $>$ \texttt{Q}
+
+\end{itemize}
+
+Maybe these can have better names, not trying to suggest that verbs can neatly divided in factive v non-factive, but potentially this class / profile is what prompted intuitions in previous literature, and naming in this tradition could make sense, but can be changed depending on our rhetoric, of course.
+
+
+\newpage
+
+<<verb-profiles-3, echo = FALSE, message=FALSE, cache=TRUE, fig.width=14, fig.height=11>>=
+vgroups <- data.frame(verb = levels(pmeans$verb), profile = 
+                       c("0+0",  # acknowledge
+                         "00+",   # admit 
+                         "00+",  # announce
+                         "-+-",  # be annoyed
+                         "+-+",    # be right
+                         "00+",   # confess
+                         "+-+",   # confirm
+                         "+0+",   # demonstrate
+                         "0+0",  # discover
+                         "+-+",   # establish
+                         "-+0",  # hear
+                         "-+-",  # inform
+                         "-+-",  # know
+                         "-00",    # pretend
+                         "+-+",   # prove
+                         "0++",   # reveal
+                         "0-+",    # say
+                         "-+-",  # see
+                         "0-+",   # suggest
+                         "-00"     # think
+                         ))
+
+
+lookup_group <- function(verb_name){
+  return(as.character(filter(vgroups, verb == verb_name)[2]))
+}
+
+pmeans = pmeans %>% rowwise() %>% mutate(groups = lookup_group(verb))
+
+
+pmeans %>%
+  ggplot(aes(x = fct_reorder(op, Mean), y = Mean, group = verb, color = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  facet_wrap(~groups) +
+  geom_point(size = 1, color = "lightblue") +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
+  geom_line() +
+  xlab("") + ylab("") +
+  theme_bw() +
+  labs(title = "Mean projectivity by operator, for each verb")
+@
+
 
 \end{document}
