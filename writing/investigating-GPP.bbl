@@ -1,5 +1,5 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{} \newcommand{\noop}[1]{}
-\begin{thebibliography}{29}
+\begin{thebibliography}{31}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[AnderBois et~al.(2015)AnderBois, Brasoveanu, and
@@ -35,6 +35,19 @@ Degen, Judith and Judith Tonhauser. in print.
 Dj\"arv, Kajsa and {Hezekiah Akiva} Bacovcin. 2017.
 \newblock Prosodic effects on factive presupposition projection.
 \newblock {\em Semantics and Linguistic Theory\/} 27:116--133.
+
+\bibitem[Dj\"arv et~al.(2018)Dj\"arv, Heycock, and Rohde]{djaerv-etal2018}
+Dj\"arv, Kaysa, Caroline Heycock, and Hannah Rohde. 2018.
+\newblock Assertion and factivity: {T}owards explaining restrictions on
+  embedded {V}2 in {S}candinavian.
+\newblock In B.~L and M.~Sheehan, eds., {\em Order and structure in syntax {I}:
+  {W}word order and syntactic structure\/}, pages 3--28. Berlin: Language
+  Science Press.
+
+\bibitem[Karttunen(1971)]{karttunen71b}
+Karttunen, Lauri. 1971.
+\newblock Some observations on factivity.
+\newblock {\em Papers in Linguistics\/} 4:55--69.
 
 \bibitem[Koev(2013)]{koev2013}
 Koev, Todor. 2013.
