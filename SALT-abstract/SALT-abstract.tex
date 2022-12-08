@@ -56,6 +56,9 @@
 \setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Times New Roman}
 
 \usepackage{setspace}
+
+\parindent=2ex
+
 \begin{document}
 
 \bibliographystyle{plainnat}
@@ -126,17 +129,15 @@ We present experimental evidence that i) the projection of the content of the cl
 % paragraph method (end)
 
 \noindent
-{\bf Results.} Fig.~\ref{fig:figure1} plots the mean projection ratings for the 20 attitude predicates by embedding operator; the predicates are ordered by their mean projection across all operators (\emph{be annoyed} has the highest overall projection mean). We observe by-operator variation in projection means as well as differences across the predicates in by-operator variation: For instance, whereas the CC of \emph{be annoyed} projects more from under questions and negation than from under conditionals and modals, the CC of \emph{know} projects more from under questions than from under conditionals and negation, and the CC of \emph{discover} projects more from under questions and conditionals than from under negation and modals. These results are not aligned with the distinction between factive and semi-factive predicates proposed in \citealt{karttunen_observations_1971} or assumed in \citealt{djarv_cognitive_2018}: Contrary to assumption, the CC of the purportedly factive predicate \emph{be annoyed} does not project invariably from all four operators, and the CC of the purportedly semi-factive predicate \emph{discover} does not project more from under negation than the other three operators. For {\em know}, we observe a third pattern -- one that is not aligned with a classification as a factive nor as a semi-factive predicate. 
-
-==== THIS IS AS FAR AS I've COME ====
+{\bf Results.} Fig.~\ref{fig:figure1} plots the mean projection ratings for the 20 attitude predicates by embedding operator; the predicates are ordered by their mean projection across all operators (\emph{be annoyed} has the highest overall projection mean). We observe by-operator variation in projection means as well as differences across the predicates in by-operator variation: For instance, whereas the CC of \emph{be annoyed} projects more from under negation (and questions) than from under conditionals and modals, the CC of \emph{know} projects less from under negation than under questions, but more from under negation than from under modals, and the CC of \emph{discover} projects less from negation than from under conditionals and questions, and more from under negation than modals. These results (which are confirmed by linear mixed effects models, see Table \ref{t:models}) are not aligned with the distinction between factive and semi-factive predicates proposed in \citealt{karttunen_observations_1971} or assumed in \citealt{djarv_cognitive_2018}: Contrary to assumption, the CC of the purportedly factive predicate \emph{be annoyed} does not project invariably from all four operators, and the CC of the purportedly semi-factive predicate \emph{discover} does not project more from under negation than the other three operators. For {\em know}, we observe a third pattern -- one that is not aligned with a classification as a factive nor as a semi-factive predicate. 
 
 	% \vspace{-.3\baselineskip}
 	% \textbf{version w baseline know/m}
 	% \noindent The data was analyzed using a mixed effects linear regression (using \texttt{lme4, lmertest} in \texttt{R}; \citealp{bates_fitting_2015,kuznetsova_lmertest_2016,r_core_team_r_2014}), with \texttt{know} and \texttt{modal} as reference levels, and random intercepts for participants and items. We found highly significant main effects of \texttt{operator} (\texttt{conditional}: $+0.142$, \texttt{negation}: $+0.143$, ; \texttt{question}: $+0.225$, where $p < 2e^{-16}$ in all three cases), as well as many interactions of \texttt{operator} and  \texttt{verb} across the board (where $p < 0.001$ in $38$ cases, $p < 0.01$ in one, and $p < 0.05$ in three out of $57$ possible interactions).\\
 
-	\noindent The data was analyzed using a mixed effects linear regression (using \texttt{lme4, lmertest} in \texttt{R}; \citealp{bates_fitting_2015,kuznetsova_lmertest_2016,r_core_team_r_2014}), with \texttt{be\_annoyed} and \texttt{negation} as reference levels, and random intercepts for participants and items.
+%	\noindent The data was analyzed using a mixed effects linear regression (using \texttt{lme4, lmertest} in \texttt{R}; \citealp{bates_fitting_2015,kuznetsova_lmertest_2016,r_core_team_r_2014}), with \texttt{be\_annoyed} and \texttt{negation} as reference levels, and random intercepts for participants and items.
 	% The mean for this baseline (intercept) is $0.867$.
-	We found highly significant main effects of \texttt{operator}: For our baseline \texttt{be\_annoyed}, both \texttt{conditional} and \texttt{modal} are clearly less projective than negation, thereby supporting the claim that the embedding context does matter. We also found many interactions of \texttt{operator} and \texttt{verb} across the board, suggesting that the effect of embedding context diffes by verb. Notably, \emph{\lq discover\rq} is more projective in polar questions and conditional antecedents than under negation, patterning opposite to Karttunen's claims about semi-factives. For the emotive predicate \emph{\lq be annoyed\rq} no significant effect is found for \texttt{question} (vs \texttt{negation}), as would be expected based on Karttunen, but we do find unexpected differences between \texttt{negation} $>$ \texttt{conditional, modal}. \emph{know} shows effects that would be incompatible with a characterization as either factive or semi-factive: $\texttt{question} > \texttt{conditional, negation} > \texttt{modal}$. If \emph{\lq know\rq} is a factive predicate, no difference would be expected. If it is semi-factive, we would, again, expect higher projectivity under negation than in questions and conditionals.
+%	We found highly significant main effects of \texttt{operator}: For our baseline \texttt{be\_annoyed}, both \texttt{conditional} and \texttt{modal} are clearly less projective than negation, thereby supporting the claim that the embedding context does matter. We also found many interactions of \texttt{operator} and \texttt{verb} across the board, suggesting that the effect of embedding context diffes by verb. Notably, \emph{\lq discover\rq} is more projective in polar questions and conditional antecedents than under negation, patterning opposite to Karttunen's claims about semi-factives. For the emotive predicate \emph{\lq be annoyed\rq} no significant effect is found for \texttt{question} (vs \texttt{negation}), as would be expected based on Karttunen, but we do find unexpected differences between \texttt{negation} $>$ \texttt{conditional, modal}. \emph{know} shows effects that would be incompatible with a characterization as either factive or semi-factive: $\texttt{question} > \texttt{conditional, negation} > \texttt{modal}$. If \emph{\lq know\rq} is a factive predicate, no difference would be expected. If it is semi-factive, we would, again, expect higher projectivity under negation than in questions and conditionals.
 	
 
 
@@ -164,6 +165,31 @@ add discussion about verb classes here
 		\caption{\small Mean certainty ratings by predicate and operator with 95\% bootstrapped confidence intervals. Embedding operator coded by letter and color:  \texttt{N} (blue): negation, \texttt{M} (green): modals, \texttt{C} (red): conditional antecedents, \texttt{Q} (purple): polar questions.}
 		\label{fig:figure1}
 	\end{figure}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llrrrr}
+Model & Estimate & Std. Error & t value & Pr(>|t|)\\
+\midrule
+\#1 & Intercept: \emph{be annoyed}/negation & 0.87 & 0.01  & 75.8 & *** \\
+& operator: conditional & -0.12 & 0.02  & -7.38 & *** \\
+& operator: modal & -0.16 & 0.02  & -10.04 & *** \\
+& operator: question & 0.02 & 0.01  & 1.74 & n.s. \\
+\midrule
+\#2 & Intercept: \emph{know}/negation & 0.79 & 0.01 &  69.24 & *** \\
+&		operator: conditional & -0.001 & 0.02  & -0.08 & n.s. \\
+&		operator: modal  & -0.14 & 0.02  & -9.2 & *** \\
+&		operator: question & 0.08 & 0.01  & 5.72 & *** \\
+\midrule
+\#3 & Intercept: \emph{discover}/negation & 0.68 & 0.01  & 59.48 & *** \\
+& operator: conditional & 0.11 & 0.02  & 7.11 & *** \\
+&		operator: modal & -0.06 & 0.02  & -3.6 & *** \\
+&		operator: question & 0.1 & 0.01  & 7.07 & *** \\
+
+\bottomrule
+\end{tabular}
+\caption{\small Relevant parts of three linear mixed effects models that predict certainty ratings from a fixed effect of operator, predicate, and their interaction, with random effects for participant and CC. Models were fit with \texttt{lme4, lmertest} in \texttt{R}; \citealp{bates_fitting_2015,kuznetsova_lmertest_2016,r_core_team_r_2014}.}\label{t:models}
+\end{table}
 
 \newpage
 
