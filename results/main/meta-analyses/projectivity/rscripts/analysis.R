@@ -11,26 +11,23 @@ data <- read.csv("../data/data_combined.csv", header = TRUE, sep = ",")
 
 # variables and contrasts for data analysis: ----
 ## our dependent variable: projective (sliding-scale ratings of speaker certainty that complement clause is true)
-data$projective <- numeric(data$projective)
+data$projective <- as.numeric(data$projective)
 
 # our independent variables
 ## inference-triggering predicate, coded as "verb"
 data$verb <- as.factor(data$verb)
 levels(data$verb)
 contrasts(data$verb)
-### dummy coding with "suggest" as baseline
-data$verb <- relevel(data$verb, ref = "suggest")
+### dummy coding with "be annoyed" as baseline
+data$verb <- relevel(data$verb, ref = "be_annoyed")
 contrasts(data$verb)
-
-#### this was our choice for a baseline, because this is the verb with the 
-#### smallest differences between by-operator projectivity (ostensibly, based on graph)
 
 ## embedding operator, coded as "op"
 data$op <- as.factor(data$op)
 levels(data$op)
 contrasts(data$op)
-### dummy coding with "m" (conditionals) as baseline
-data$op <- relevel(data$op, ref = "m")
+### dummy coding with "n" (negation) as baseline
+data$op <- relevel(data$op, ref = "n")
 contrasts(data$op)
 
 # coding random effects as factors
@@ -41,19 +38,31 @@ data$content <- as.factor(data$content)
 # exploring a couple of models (linear)
 ## library for linear mixed models
 library(lme4)
-library(lmertest)
+library(lmerTest)
+library(knitr)
 
-# glmm1 <- lmer(projective ~ verb * op + (op | workerid) +
-#                  (op | content), data=data)
+# glmm1 <- lmer(projective ~ op * verb + (1 | workerid) +
+#                  (1 | content), data=data)
 
 # save.image("linear-models.RData")
 load("linear-models.RData")
-print(summary(glmm1), cor=F, dig=3)
 
-# glmm2 <- lmer(projective ~ verb * op + (op | workerid) +
-#                 (op | content), data=data)
+summary1 <- summary(glmm1)
+print(summary1, cor=F, dig=3)
+kable(summary1$coefficients, format = "latex", booktabs = TRUE)
+
+
+### dummy coding with "discover" as baseline
+data$verb <- relevel(data$verb, ref = "discover")
+contrasts(data$verb)
+
+# glmm2 <- lmer(projective ~ op * verb + (1 | workerid) +
+#                  (1 | content), data=data)
 
 # save.image("linear-models.RData")
-print(summary(glmm2), cor=F, dig=3)
+load("linear-models.RData")
 
-print(summary(glmm1), cor=F, dig=3)
+summary2 <- summary(glmm2)
+print(summary2, cor=F, dig=3)
+kable(summary2$coefficients, format = "latex", booktabs = TRUE)
+
