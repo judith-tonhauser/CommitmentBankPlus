@@ -80,15 +80,21 @@ proj_means = data %>% group_by(verb, op) %>%
 proj_means <- mutate(proj_means, verb = fct_reorder(verb, Mean, .fun = mean))
 proj_means <- mutate(proj_means, op = fct_reorder(op, Mean, .fun = mean))
 
+# Color blind friendly palette with black (http://www.cookbook-r.com/Graphs/Colors_(ggplot2)):
+cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
 proj_means %>% 
   ggplot(aes(x=fct_reorder(verb, Mean), y=Mean, group = op, color = op)) +
   coord_cartesian(ylim=c(0,1)) +
   geom_point(aes(shape = op), size = 3) + 
   scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  scale_colour_manual(values=cbbPalette) +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1) +
   geom_line() +
-  scale_y_continuous(limits = c(0,1)) +
-  ylab("") +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1), 
+                     labels = c("0","0.2","0.4","0.6","0.8","1"), 
+                     name = "Mean certainty rating") +
+  # ylab("") +
   xlab("") +
   theme_bw() +
   theme(legend.position = "none") +
@@ -97,7 +103,7 @@ proj_means %>%
 ggsave("../graphs/proj-by-both.pdf",height=4.7,width=9)
 
 
-
+# other plots ----
 proj_means %>% mutate(op = fct_reorder(op, Mean, 
                                           .fun = mean)) %>% 
   mutate(verb = fct_reorder(verb, Mean, 
@@ -174,6 +180,7 @@ ggplot(pmeans, aes(x=verb, y=Mean)) +
 ggsave(f="../graphs/projectivity-verb-participant.pdf",height=6,width=8)
 
 
+
 # VERB PROFILES ---- 
 
 proj_means %>%
@@ -233,64 +240,111 @@ proj_means %>%
   theme_bw()
 ggsave(f="../graphs/profiles-grouped.pdf",height=6,width=8)
 
-# group 1 
+# individual profiles ----
+
+# Color blind friendly palette with black (http://www.cookbook-r.com/Graphs/Colors_(ggplot2)):
+cbbPalette2 <- c("#0072B2", "#D55E00", "#CC79A7", "#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442")
+
+library("directlabels")
+
+# group 1 ----
 proj_means %>% filter(groups == "1") %>%
   ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
   coord_cartesian(ylim = c(0,1)) +
-  geom_point(size = 1) +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1), 
+                     labels = c("0","0.2","0.4","0.6","0.8","1"), 
+                     name = "Mean certainty rating") +
+  geom_point(aes(shape = op), size = 2.4) + 
+  directlabels::geom_dl(aes(label = verb), position = position_nudge(x = -.1),
+                        method = list(cex=0.7, "first.bumpup")) +
+  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  scale_colour_manual(values=cbbPalette2) +
   geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
   geom_line() +
   xlab("") + ylab("") +
-  theme_bw()
-ggsave(f="../graphs/profile1.pdf",height=3.7,width=4.5)
+  theme_bw() +
+  theme(legend.position = "none")
+ggsave(f="../graphs/profile1.pdf",height=4,width=4)
 # N > M, Q, C
 
-# group 2 
+# group 2 ----
 proj_means %>% filter(groups == "2") %>%
   ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
   coord_cartesian(ylim = c(0,1)) +
-  geom_point(size = 1) +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1), 
+                     labels = c("0","0.2","0.4","0.6","0.8","1"), 
+                     name = "Mean certainty rating") +
+  geom_point(aes(shape = op), size = 2.5) + 
+  directlabels::geom_dl(aes(label = verb), position = position_nudge(x = .075),
+                        method = list(cex=0.54, "last.bumpup")) +
+  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  scale_colour_manual(values=cbbPalette2) +
   geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
   geom_line() +
   xlab("") + ylab("") +
-  theme_bw()
-ggsave(f="../graphs/profile2.pdf",height=3.7,width=4.5)
+  theme_bw() +
+  theme(legend.position = "none")
+ggsave(f="../graphs/profile2.pdf",height=4,width=4)
 # C > N, M, Q
 
-# group 3 
+# group 3 ----
 proj_means %>% filter(groups == "3") %>%
   ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
   coord_cartesian(ylim = c(0,1)) +
-  geom_point(size = 1) +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1), 
+                     labels = c("0","0.2","0.4","0.6","0.8","1"), 
+                     name = "Mean certainty rating") +
+  geom_point(aes(shape = op), size = 3) + 
+  directlabels::geom_dl(aes(label = verb), position = position_nudge(x = -.1),
+                        method = list(cex=0.7, "first.bumpup")) +
+  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  scale_colour_manual(values=cbbPalette2) +
   geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
   geom_line() +
   xlab("") + ylab("") +
-  theme_bw()
-ggsave(f="../graphs/profile3.pdf",height=3.7,width=4.5)
+  theme_bw() +
+  theme(legend.position = "none")
+ggsave(f="../graphs/profile3.pdf",height=4,width=4)
 # Q, C > N, M
 
-# group 4
+# group 4 ----
 proj_means %>% filter(groups == "4") %>%
   ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
   coord_cartesian(ylim = c(0,1)) +
-  geom_point(size = 1) +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1), 
+                     labels = c("0","0.2","0.4","0.6","0.8","1"), 
+                     name = "Mean certainty rating") +
+  geom_point(aes(shape = op), size = 3) + 
+  directlabels::geom_dl(aes(label = verb), position = position_nudge(x = .1),
+                        method = list(cex=0.6, "last.bumpup")) +
+  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  scale_colour_manual(values=cbbPalette2) +
   geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
   geom_line() +
   xlab("") + ylab("") +
-  theme_bw()
-ggsave(f="../graphs/profile4.pdf",height=3.7,width=4.5)
+  theme_bw() +
+  theme(legend.position = "none")
+ggsave(f="../graphs/profile4.pdf",height=4,width=4)
 # C, M > N
 
-# group 5
+# group 5 ----
 proj_means %>% filter(groups == "5") %>%
   ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
   coord_cartesian(ylim = c(0,1)) +
-  geom_point(size = 1) +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1), 
+                     labels = c("0","0.2","0.4","0.6","0.8","1"), 
+                     name = "Mean certainty rating") +
+  geom_point(aes(shape = op), size = 3) + 
+  directlabels::geom_dl(aes(label = verb), position = position_nudge(x = -.08),
+                        method = list(cex=0.63, "first.bumpup")) +
+  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  scale_colour_manual(values=cbbPalette2) +
   geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
   geom_line() +
   xlab("") + ylab("") +
-  theme_bw()
-ggsave(f="../graphs/profile5.pdf",height=3.7,width=4.5)
+  theme_bw() +
+  theme(legend.position = "none")
+ggsave(f="../graphs/profile5.pdf",height=4,width=4)
 # Q > N, C > M
 
 # group 6
