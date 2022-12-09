@@ -66,3 +66,18 @@ summary2 <- summary(glmm2)
 print(summary2, cor=F, dig=3)
 kable(summary2$coefficients, format = "latex", booktabs = TRUE)
 
+
+### dummy coding with "know" as baseline
+data$verb <- relevel(data$verb, ref = "know")
+contrasts(data$verb)
+
+# glmm3 <- lmer(projective ~ op * verb + (1 | workerid) +
+#                  (1 | content), data=data)
+
+# save.image("linear-models.RData")
+load("linear-models.RData")
+
+summary3 <- summary(glmm3)
+print(summary3, cor=F, dig=3)
+kable(summary3$coefficients, format = "latex", booktabs = TRUE)
+

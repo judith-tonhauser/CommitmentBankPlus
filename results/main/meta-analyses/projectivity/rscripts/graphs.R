@@ -12,7 +12,8 @@ data <- read.csv("../data/data_combined.csv", header = TRUE, sep = ",")
 source('../../../helpers.R')
 
 # libraries for manipulating dataframes, and plotting
-library(tidyverse)
+library(dplyr)
+library(forcats)
 library(ggplot2)
 
 # projectivity by operator -----
@@ -79,21 +80,21 @@ proj_means = data %>% group_by(verb, op) %>%
 proj_means <- mutate(proj_means, verb = fct_reorder(verb, Mean, .fun = mean))
 proj_means <- mutate(proj_means, op = fct_reorder(op, Mean, .fun = mean))
 
-ggplot(proj_means, aes(x=verb, y=Mean, group = op, color = op)) +
+proj_means %>% 
+  ggplot(aes(x=fct_reorder(verb, Mean), y=Mean, group = op, color = op)) +
   coord_cartesian(ylim=c(0,1)) +
   geom_point(aes(shape = op), size = 3) + 
   scale_shape_manual(values = c("M", "N", "Q", "C")) +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1) +
   geom_line() +
   scale_y_continuous(limits = c(0,1)) +
-  ylab("Mean certainty rating") +
-  xlab("Predicate") +
-  guides(shape = "none") +
-  scale_colour_discrete(labels = c("Modal", "Negation", "Question", "Conditional")) +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) +
-  labs(title = "Mean certainty for predicate by operator", color = "Operator")
+  ylab("") +
+  xlab("") +
+  theme_bw() +
+  theme(legend.position = "none") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1))
 
-ggsave("../graphs/proj-by-both.pdf",height=8,width=14)
+ggsave("../graphs/proj-by-both.pdf",height=4.7,width=9)
 
 
 
@@ -171,4 +172,148 @@ ggplot(pmeans, aes(x=verb, y=Mean)) +
   ylab("Mean certainty rating") +
   xlab("Predicate")
 ggsave(f="../graphs/projectivity-verb-participant.pdf",height=6,width=8)
+
+
+# VERB PROFILES ---- 
+
+proj_means %>%
+  ggplot(aes(x = fct_reorder(op, Mean), y = Mean, group = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  facet_wrap(vars(fct_reorder(verb, Mean))) +
+  geom_point(size = 1, color = "lightblue") +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1, color = "lightblue") +
+  geom_line(color = "lightblue") +
+  xlab("") + ylab("") +
+  theme_bw()
+ggsave(f="../graphs/profiles.pdf",height=6,width=8)
+
+
+levels(proj_means$verb)
+vgroups <- data.frame(verb = levels(proj_means$verb), profile = 
+                        c("1",
+                              # pretend
+                          "7",
+                                  # be right
+                          "7",
+                                  # suggest
+                          "1",   
+                                    # think
+                          "say",    # say
+                          "4",   # prove
+                          "4",   # confirm
+                          "4",   # establish
+                          "demonstrate",   # demonstrate
+                          "2",  # announce
+                          "2",   # confess
+                          "2",   # admit 
+                          "2",   # reveal
+                          "3",  # acknowledge
+                          "6",  # hear
+                          "5",  # inform
+                          "6",  # see
+                          "3",  # discover
+                          "5",  # know
+                          "5"  # be annoyed
+                        ))
+
+lookup_group <- function(verb_name){
+  return(as.character(filter(vgroups, verb == verb_name)[2]))
+}
+proj_means = proj_means %>% rowwise() %>% mutate(groups = lookup_group(verb))
+
+# all groups overview
+proj_means %>%
+  ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  facet_wrap(~groups) +
+  geom_point(size = 1, color = "lightblue") +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
+  geom_line() +
+  xlab("") + ylab("") +
+  theme_bw()
+ggsave(f="../graphs/profiles-grouped.pdf",height=6,width=8)
+
+# group 1 
+proj_means %>% filter(groups == "1") %>%
+  ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  geom_point(size = 1) +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
+  geom_line() +
+  xlab("") + ylab("") +
+  theme_bw()
+ggsave(f="../graphs/profile1.pdf",height=3.7,width=4.5)
+# N > M, Q, C
+
+# group 2 
+proj_means %>% filter(groups == "2") %>%
+  ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  geom_point(size = 1) +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
+  geom_line() +
+  xlab("") + ylab("") +
+  theme_bw()
+ggsave(f="../graphs/profile2.pdf",height=3.7,width=4.5)
+# C > N, M, Q
+
+# group 3 
+proj_means %>% filter(groups == "3") %>%
+  ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  geom_point(size = 1) +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
+  geom_line() +
+  xlab("") + ylab("") +
+  theme_bw()
+ggsave(f="../graphs/profile3.pdf",height=3.7,width=4.5)
+# Q, C > N, M
+
+# group 4
+proj_means %>% filter(groups == "4") %>%
+  ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  geom_point(size = 1) +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
+  geom_line() +
+  xlab("") + ylab("") +
+  theme_bw()
+ggsave(f="../graphs/profile4.pdf",height=3.7,width=4.5)
+# C, M > N
+
+# group 5
+proj_means %>% filter(groups == "5") %>%
+  ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  geom_point(size = 1) +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
+  geom_line() +
+  xlab("") + ylab("") +
+  theme_bw()
+ggsave(f="../graphs/profile5.pdf",height=3.7,width=4.5)
+# Q > N, C > M
+
+# group 6
+proj_means %>% filter(groups == "6") %>%
+  ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  geom_point(size = 1) +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
+  geom_line() +
+  xlab("") + ylab("") +
+  theme_bw()
+ggsave(f="../graphs/profile6.pdf",height=3.7,width=4.5)
+# Q, C > N > M 
+
+# group 7
+proj_means %>% filter(groups == "7") %>%
+  ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
+  coord_cartesian(ylim = c(0,1)) +
+  geom_point(size = 1) +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
+  geom_line() +
+  xlab("") + ylab("") +
+  theme_bw()
+ggsave(f="../graphs/profile7.pdf",height=3.7,width=4.5)
+# C > Q
 
