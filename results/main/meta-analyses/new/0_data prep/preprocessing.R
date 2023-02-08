@@ -89,5 +89,5 @@ df_list <- lapply(df_list, function(df) {
 data_all <- list.rbind(df_list)
 
 # save combined data frame into csv file
-write.csv(data_all, "../data/data_combined.csv", row.names=FALSE)
+write.csv(data_all, "../data_combined.csv", row.names=FALSE)
 
