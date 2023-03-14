@@ -6,10 +6,10 @@ this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
 setwd(this.dir)
 
 # load data
-data <- read.csv("../data/data_combined.csv", header = TRUE, sep = ",")
+data <- read.csv("../../data_combined.csv", header = TRUE, sep = ",")
 
 # load helper functions
-source('../../../helpers.R')
+source('../../../../helpers.R')
 
 # libraries for manipulating dataframes, and plotting
 library(dplyr)
@@ -255,8 +255,10 @@ proj_means %>% filter(groups == "1") %>%
                      labels = c("0","0.2","0.4","0.6","0.8","1"), 
                      name = "Mean certainty rating") +
   geom_point(aes(shape = op), size = 2.4) + 
-  directlabels::geom_dl(aes(label = verb), position = position_nudge(x = -.1),
-                        method = list(cex=0.7, "first.bumpup")) +
+  # directlabels::geom_dl(aes(label = verb), position = position_nudge(x = -.1),
+  #                       method = list(cex=0.7, "first.bumpup")) +
+  directlabels::geom_dl(aes(label = verb), position = position_nudge(x = .1),
+                        method = list(cex=1.3, rot = 50,  "last.bumpup")) +
   scale_shape_manual(values = c("M", "N", "Q", "C")) +
   scale_colour_manual(values=cbbPalette2) +
   geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
@@ -265,6 +267,8 @@ proj_means %>% filter(groups == "1") %>%
   theme_bw() +
   theme(legend.position = "none")
 ggsave(f="../graphs/profile1.pdf",height=4,width=4)
+
+
 # N > M, Q, C
 
 # group 2 ----
