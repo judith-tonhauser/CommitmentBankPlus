@@ -6,7 +6,7 @@ this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
 setwd(this.dir)
 
 # load data
-data <- read.csv("../data/data_combined.csv", header = TRUE, sep = ",")
+data <- read.csv("../../data_combined.csv", header = TRUE, sep = ",")
 
 
 # variables and contrasts for data analysis: ----
@@ -14,26 +14,28 @@ data <- read.csv("../data/data_combined.csv", header = TRUE, sep = ",")
 data$projective <- as.numeric(data$projective)
 
 # our independent variables
-## inference-triggering predicate, coded as "verb"
-data$verb <- as.factor(data$verb)
-levels(data$verb)
-contrasts(data$verb)
+## inference-triggering predicate, coded as "pred"
+data$pred <- as.factor(data$verb)
+levels(data$pred)
+contrasts(data$pred)
 ### dummy coding with "be annoyed" as baseline
-data$verb <- relevel(data$verb, ref = "be_annoyed")
-contrasts(data$verb)
+data$pred <- relevel(data$pred, ref = "be_annoyed")
+contrasts(data$pred)
 
 ## embedding operator, coded as "op"
 data$op <- as.factor(data$op)
 levels(data$op)
 contrasts(data$op)
-### dummy coding with "n" (negation) as baseline
-data$op <- relevel(data$op, ref = "n")
+### op dummy coding with "n" (negation) as baseline
+data$op <- relevel(data$op, ref = "q")
 contrasts(data$op)
+
 
 # coding random effects as factors
 data$workerid <- as.factor(data$workerid)
-data$content <- as.factor(data$content)
-
+# data$content <- as.factor(data$content) 
+## content should not be a random effect, since contents are uniquely paired w
+## preds, which are independent variable
 
 # exploring a couple of models (linear)
 ## library for linear mixed models
@@ -41,7 +43,16 @@ library(lme4)
 library(lmerTest)
 library(knitr)
 
-# glmm1 <- lmer(projective ~ op * verb + (1 | workerid) +
+# linear model w op as predictor only
+glmm0 <- lmer(projective ~ op + (1 + op | workerid))
+
+
+### op dummy coding with "n" (negation) as baseline
+data$op <- relevel(data$op, ref = "n")
+contrasts(data$op)
+
+
+# glmm1 <- lmer(projective ~ op * pred + (1 | workerid) +
 #                  (1 | content), data=data)
 
 # save.image("linear-models.RData")
@@ -53,10 +64,10 @@ kable(summary1$coefficients, format = "latex", booktabs = TRUE)
 
 
 ### dummy coding with "discover" as baseline
-data$verb <- relevel(data$verb, ref = "discover")
-contrasts(data$verb)
+data$pred <- relevel(data$pred, ref = "discover")
+contrasts(data$pred)
 
-# glmm2 <- lmer(projective ~ op * verb + (1 | workerid) +
+# glmm2 <- lmer(projective ~ op * pred + (1 | workerid) +
 #                  (1 | content), data=data)
 
 # save.image("linear-models.RData")
@@ -68,10 +79,10 @@ kable(summary2$coefficients, format = "latex", booktabs = TRUE)
 
 
 ### dummy coding with "know" as baseline
-data$verb <- relevel(data$verb, ref = "know")
-contrasts(data$verb)
+data$pred <- relevel(data$pred, ref = "know")
+contrasts(data$pred)
 
-# glmm3 <- lmer(projective ~ op * verb + (1 | workerid) +
+# glmm3 <- lmer(projective ~ op * pred + (1 | workerid) +
 #                  (1 | content), data=data)
 
 # save.image("linear-models.RData")
