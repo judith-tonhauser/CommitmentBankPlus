@@ -27,8 +27,8 @@ data$op <- as.factor(data$op)
 levels(data$op)
 contrasts(data$op)
 ### op dummy coding with "n" (negation) as baseline
-data$op <- relevel(data$op, ref = "q")
-contrasts(data$op)
+# data$op <- relevel(data$op, ref = "q")
+# contrasts(data$op)
 
 
 # coding random effects as factors
@@ -44,23 +44,22 @@ library(lmerTest)
 library(knitr)
 
 # linear model w op as predictor only
-glmm0 <- lmer(projective ~ op + (1 + op | workerid))
-
+# glmm0 <- lmer(projective ~ op + (1 | workerid), data = data)
+summary0 <- summary(glmm0)
+print(summary0, cor=F, dig=3)
 
 ### op dummy coding with "n" (negation) as baseline
 data$op <- relevel(data$op, ref = "n")
 contrasts(data$op)
 
 
-# glmm1 <- lmer(projective ~ op * pred + (1 | workerid) +
-#                  (1 | content), data=data)
-
+# glmm1 <- lmer(projective ~ op * pred + (1 | workerid), data=data)
 # save.image("linear-models.RData")
 load("linear-models.RData")
 
 summary1 <- summary(glmm1)
 print(summary1, cor=F, dig=3)
-kable(summary1$coefficients, format = "latex", booktabs = TRUE)
+kable(summary1$coefficients, format = "latex", booktabs = TRUE, dig=2)
 
 
 ### dummy coding with "discover" as baseline
