@@ -27,15 +27,16 @@ data$op <- as.factor(data$op)
 levels(data$op)
 contrasts(data$op)
 ### op dummy coding with "n" (negation) as baseline
-# data$op <- relevel(data$op, ref = "q")
-# contrasts(data$op)
+data$op <- relevel(data$op, ref = "q")
+contrasts(data$op)
 
 
 # coding random effects as factors
 data$workerid <- as.factor(data$workerid)
-# data$content <- as.factor(data$content) 
+data$item <- as.factor(paste(data$content, data$pred))
 ## content should not be a random effect, since contents are uniquely paired w
 ## preds, which are independent variable
+## nmo
 
 # exploring a couple of models (linear)
 ## library for linear mixed models
@@ -43,10 +44,11 @@ library(lme4)
 library(lmerTest)
 library(knitr)
 
-# linear model w op as predictor only
-# glmm0 <- lmer(projective ~ op + (1 | workerid), data = data)
+# linear model w op as predictor only; q baseline
+glmm0 <- lmer(projective ~ op + (1 | workerid) + (1 | item), data = data)
 summary0 <- summary(glmm0)
 print(summary0, cor=F, dig=3)
+kable(summary0$coefficients, format = "latex", booktabs = TRUE, dig=2)
 
 ### op dummy coding with "n" (negation) as baseline
 data$op <- relevel(data$op, ref = "n")
