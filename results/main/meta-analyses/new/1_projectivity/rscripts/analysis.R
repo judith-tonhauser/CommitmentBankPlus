@@ -62,32 +62,29 @@ print(summary1, cor=F, dig=3)
 kable(summary1$coefficients, format = "latex", booktabs = TRUE, dig=2)
 
 
-### dummy coding with "discover" as baseline
-data$pred <- relevel(data$pred, ref = "discover")
+### dummy coding with "know" as baseline
+data$pred <- relevel(data$pred, ref = "know")
 contrasts(data$pred)
 
-# glmm2 <- lmer(projective ~ op * pred + (1 | workerid) +
-#                  (1 | content), data=data)
-
+# glmm2 <- lmer(projective ~ op * pred + (1 | workerid), data=data)
 # save.image("linear-models.RData")
 load("linear-models.RData")
 
 summary2 <- summary(glmm2)
 print(summary2, cor=F, dig=3)
-kable(summary2$coefficients, format = "latex", booktabs = TRUE)
+kable(summary2$coefficients, format = "latex", booktabs = TRUE, dig = 2)
 
 
-### dummy coding with "know" as baseline
-data$pred <- relevel(data$pred, ref = "know")
+
+### dummy coding with "discover" as baseline
+data$pred <- relevel(data$pred, ref = "discover")
 contrasts(data$pred)
 
-# glmm3 <- lmer(projective ~ op * pred + (1 | workerid) +
-#                  (1 | content), data=data)
-
+# glmm3 <- lmer(projective ~ op * pred + (1 | workerid), data=data)
 # save.image("linear-models.RData")
 load("linear-models.RData")
 
 summary3 <- summary(glmm3)
 print(summary3, cor=F, dig=3)
-kable(summary3$coefficients, format = "latex", booktabs = TRUE)
+kable(summary3$coefficients, format = "latex", booktabs = TRUE, dig = 2)
 

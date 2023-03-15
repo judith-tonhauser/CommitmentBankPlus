@@ -64,7 +64,7 @@
 \begin{document}
 
 \bibliographystyle{plainnat}
-% \enablehyphenation
+\enablehyphenation
 % \vspace{-2em}
 % \maketitle
 
@@ -79,12 +79,14 @@
 	We present experimental data that the projection of the content of attitude complements \textbf{(i)} varies between entailment-canceling operators, and \textbf{(ii)} that this by-operator variation differs between attitude predicates.
 	%
 	The observed variability is not captured by existing theoretical accounts of projection
-	(e.g., \citealt{heim_projection_1983,van_der_sandt_presupposition_1992,abrusan_predicting_2011,schlenker_triggering_2021}), and suggests that an analysis must consider interactions between predicates and operators, which cannot be fully determined by lexical classes. Instead, our results reveal a more nuanced picture of lexical semantic and pragmatic properties, which raises important questions for future research on projection.
+	(e.g., \citealt{heim_projection_1983,van_der_sandt_presupposition_1992,abrusan_predicting_2011,schlenker_triggering_2021}).
+	%
+	Our results suggest that an analysis must consider interactions between predicates and operators, which cannot be fully determined by lexical classes, instead revealing a more nuanced picture of lexical semantic and pragmatic properties. This raises important questions for future research on projection.
 	%
 
 % 2
 \noindent {\bf Projection across entailment-cancelling operators.}
-	Language users may infer that a speaker who utters an attitude ascription, as in \ref{ex:family}, is committed to the content of the complement (CC, here: \emph{Julian dances Salsa.}),
+	Language users may infer that a speaker who utters an attitude ascription, as in \ref{ex:family}, is committed to the content of the complement (CC, here: \emph{Julian dances salsa,})
 	even when it occurs under an entailment-canceling operator, like negation \ref{ex:neg}, polar questions \ref{ex:q}, modals \ref{ex:mod}, or conditionals \ref{ex:cond}, in which case we say that it \emph{projects}.
 
 	\vspace{-.5\baselineskip}
@@ -106,17 +108,18 @@
 	
 
 	\vspace{-.5\baselineskip}
-	\noindent  Current research only rarely examines projectivity differences across these operators, with conflicting findings.
+	\noindent  Current research rarely examines projection variability across these operators, with conflicting findings.
 	%
-	\citet{karttunen_observations_1971} proposed a distinction between English factive predicates (e.g., \emph{be annoyed, regret}), where the CC projects across all four operators, and semi-factives (e.g., \emph{discover, realize, see, notice}) where it only projects across negation.
+	\citet{karttunen_observations_1971} proposed a distinction between English factive predicates (e.g., \emph{be annoyed, regret}), where the CC projects across all four operators, and semi-factives (e.g., \emph{discover, realize, see, notice}) where it always projects across negation, but not always for the other operators.
 	%
-	Comparing different types of contents, \citet{smith_relationship_2014} found that the projective content of epithets and the CC of \emph{know} is more projective under negation than conditionals,
-	whereas that of non-restrictive relative clauses and \emph{win} shows the opposite pattern.
+	Comparing different types of contents, \citet{smith_relationship_2014} found that the projective content of epithets and the CC of \emph{know} was more projective under negation than conditionals,
+	whereas that of non-restrictive relative clauses and \emph{win} showed the opposite pattern.
 	%
-	\posscite{sieker_projective_2022} investigation of German purported factive and semi-factive predicates replicated \posscite{smith_relationship_2014} result for the German \emph{wissen} (`know'), but as part of an overall pattern of higher projectivity across negation than other operators. They found no interaction with predicate type, or evidence for the (semi-)factive distinction.
+	\posscite{sieker_projective_2022} study on German attitude predicates replicated \posscite{smith_relationship_2014} result for German \emph{wissen} (`know'), but as part of an overall pattern of higher projectivity across negation than other operators. They found no interaction with predicate type, or evidence for the (semi-)factive distinction.
 	
-	These studies all suggest comparatively high projectivity across negation, but the results diverge about interactions between operators and different types of contents. To investigate if this is due to variation between English and German, task-differences, or different contents being tested, we conducted a series of experiments designed to investigate projection across the four entailment-canceling operators in \ref{ex:family}, using the same projection measure as \citet{sieker_projective_2022} (the `certain that' diagnostic; see e.g., \citealp{tonhauser_how_2018,djarv_prosodic_2017,mahler_social_2020}) and applied it to the CC of 20 English clause-embedding predicates, including factive predicates (\emph{be annoyed, know, reveal}) and semi-factives (\emph{discover, see}),
-	as well as 15 non-factive predicates, due to recent findings that their complements are also projective, albeit to varying degrees (\citealt{degen_are_2022}).
+	These studies yield divergent results regarding whether they find interactions between operators and various projective contents, therefore raising the question if this is due to cross-linguistic variation, task differences, or different contents being tested. To address this, we conducted a series of experiments designed to assess projection across the four entailment-canceling operators in \ref{ex:family}. We used the same projection measure as \citet{sieker_projective_2022} (the `certain that' diagnostic; see e.g., \citealp{tonhauser_how_2018,djarv_prosodic_2017,mahler_social_2020}) and applied it to the CC of 20 English clause-embedding predicates, including purported factive (\emph{be annoyed, know, reveal}) and semi-factive predicates (\emph{discover, see}),
+	and 15 non-factive predicates, given recent findings that their complements are also projective, albeit to varying degrees (\citealt{degen_are_2022}).
+
 
 \noindent 
 {\bf Method.}
@@ -127,19 +130,40 @@
 
 \noindent
 {\bf Results and Analysis.} 
-	\textbf{Figure~\ref{fig:figure1}} shows mean projection ratings for the 20 attitude predicates by operator; predicates are ordered by their mean rating across all operators (\emph{be annoyed} has the highest overall mean).
 	%
-	Our analysis reveals two key findings: \textbf{(i)} differences in projectivity across operators, and \textbf{(ii)} differences in by-operator variability between predicates.
+	Our first key finding is that there is projection variability by operator: Across predicates, projection ratings were higher under question-embeddings than under negation and modals, but lower than in conditional antecedents. These differences, though small, are significant and supported by linear mixed effects model \textbf{\# 1} in \textbf{Table\ \ref{t:models}}. 
 	%
-	The first finding is supported by significant main effects of \texttt{operator} in the linear mixed effects models shown in \textbf{Table\ \ref{t:models}}.
-	The second finding is supported by the three models having at least $34$ significant interaction terms (out of $57$ possible interactions of \texttt{operator} and \texttt{predicate}).
+	Second, there is by-predicate variation in the effect of operator on projection. This is illustrated in \textbf{Figure~\ref{fig:figure1}}, which shows mean projection ratings for the 20 attitude predicates by operator; predicates are ordered by their mean rating across all operators (\emph{be annoyed} has the highest overall mean).
+	%
+	For instance, whereas the CC of \emph{be annoyed} projects more from under negation (and questions) than conditionals and modals, the CC of \emph{know} projects less from under negation than questions, but more from under negation than modals, and the CC of \emph{discover} projects less from negation than conditionals and questions, and more from under negation than modals. This finding is further supported by models \textbf{\# 2--4} in \textbf{Table\ \ref{t:models}} each having at least $34$ significant interaction terms (out of $57$ possible interactions of \texttt{operator} and \texttt{predicate}).
+	%
+	% The models in \textbf{Table\ \ref{t:models}} also illustrate some specific differences across predicates in by-operator variation (using different reference levels for \texttt{predicate}): For instance, the CC of \emph{be annoyed} projects more from under negation (and questions) than conditionals and modals, while the CC of \emph{discover} projects less from negation than conditionals and questions, and more from under negation than modals.
+	%
+	%
+	Contrary to what would be expected based on \posscite{karttunen_observations_1971}
+	distinction between factive and semi-factive predicates,
+	% the CC of assumed semi-factives \emph{discover, see} does not have higher projection-ratings under negation than other operators. \textbf{Figure~\ref{fig:figure1}} clearly shows that mean certainty ratings are lower for negation than conditionals and questions.
+	%
+	the CC of (factive) \emph{be annoyed} does not project invariably from all four operators, and the CC \emph{discover,}  which is considered semi-factive, does not project more from under negation than the other three operators. The pattern we observed for {\em know} does not fit into either category.
+	%
+	%
+	Our findings, that by-operator projection variability differs by content, are in line with \citet{smith_relationship_2014}, but contrary to their findings that the CC of \emph{know} projects more from negation than conditionals, we found no significant difference here (Model \textbf{\# 4} in \textbf{Table\ \ref{t:models}}).\\
 
-	The models in \textbf{Table\ \ref{t:models}} also illustrate some specific differences across predicates in by-operator variation (suing different reference levels for \texttt{predicate}): For instance, the CC of \emph{be annoyed} projects more from under negation (and questions) than conditionals and modals, while the CC of \emph{discover} projects less from negation than conditionals and questions, and more from under negation than modals.
 	%
-	Additionally, we did not replicate the result from \citet{smith_relationship_2014,sieker_projective_2022}, that the CC of \emph{know} projects more from negation than conditionals. Instead, we found that it projects less from under negation than questions, but more from under negation than modals, while the difference between negation and conditionals is not significant here.
-	%
-	With many interaction effects of \texttt{operator} and \texttt{predicate} throughout, our results also differ from \citet{sieker_projective_2022}, who did not find such interactions for the German attitudes they investigated.
+	\noindent{\bf LH:} Alternatively, we might only talk about the missed predictions for the semi-factives here? \\
 
+	\noindent Instead, we found that it projects less from under negation than questions, but more from under negation than modals, while the difference between negation and conditionals is not significant here.\\
+	%
+	%
+
+	Like in \posscite{sieker_projective_2022} study of German attitude predicates, we find a presence of a main effect of by-operator projection variation, but the particular effect we find is different: While Sieker and Solstad found highest projection ratings with negation compared to the other operators, we find overall highest projectivity across conditionals, then questions, then modals and negation.
+	%
+	With many interaction effects of \texttt{operator} and \texttt{predicate} throughout, our results also differ from , who did not find such interactions for the German attitudes they investigated.
+	%
+	Since our study used the same projection diagnostic, and a similar set of contents as \cite{sieker_projective_2022}, the different results indicate potential cross-linguistic variation in projection variability. This suggests 
+	extending the questions addressed in cross-linguistic investigations of projective variability (\citealt{tonhauser_projection_2020,xue_correlation_2011,tonhauser_how_2018}) to interactions with various entailment-cancelling operators.
+
+	
 	% \vspace{-.3\baselineskip}
 	% \textbf{version w baseline know/m}
 	% \noindent The data was analyzed using a mixed effects linear regression (using \texttt{lme4, lmertest} in \texttt{R}; \citealp{bates_fitting_2015,kuznetsova_lmertest_2016,r_core_team_r_2014}), with \texttt{know} and \texttt{modal} as reference levels, and random intercepts for participants and items. We found highly significant main effects of \texttt{operator} (\texttt{conditional}: $+0.142$, \texttt{negation}: $+0.143$, ; \texttt{question}: $+0.225$, where $p < 2e^{-16}$ in all three cases), as well as many interactions of \texttt{operator} and  \texttt{verb} across the board (where $p < 0.001$ in $38$ cases, $p < 0.01$ in one, and $p < 0.05$ in three out of $57$ possible interactions).\\
@@ -154,14 +178,22 @@
 	
 % paragraph results (end)
 
-\noindent {\bf Discussion:  Empirical implications and lexical properties.}
+{\bf Discussion.}
+	Our results---that projection is modulated by entailment-canceling operators and that there is by-predicate variation in the effect of operator on projection---are not captured by contemporary projection analyses, for several reasons.
+	%
+	The first reason is that contemporary analyses do not lead us to expect interactions with different types of entailment-cancelling operators. In \citealt{heim_projection_1983}, for instance, the CC of (semi-)factive predicates projects to the global context, except when that would produce an inconsistency, in which case the CC is accommodated to the local context of the operator. While it is conceivable for the meaning of the operator to systematically interact with the possibility of local accommodation, no such interaction has been spelled out.
+	%
+	The second reason is that many contemporary analyses do not make predictions for the projection of the CC of many of the 20 predicates, as they are limited to (semi-)factive predicates (e.g., \citealt{heim_projection_1983,van_der_sandt_presupposition_1992}, whose CCs are analyzed as presuppositions) and or entailed CCs that project unless at-issue with respect to the Question Under Discussion (e.g., \citealt{abrusan_predicting_2011,simons_best_2017}). A possible exception is the analysis of \citealt{schlenker_triggering_2021}, which predicts the potential for projection for CCs that are contextually entailed. In the full talk, we discuss how this analysis might be able to capture the gradient projection observed in our experiment.
+	%
+	The third reason is that contemporary projection analyses do not make sufficiently fine-grained distinctions between different clause-embedding predicates (but only between whether the CC is a presupposition or entailed). Consequently, they do not make predictions about the by-predicate variation in the effect of operator on projection.
+
+
+
+% \noindent {\bf Discussion:  Empirical implications and lexical properties.}
 	%
 	% {\bf THIS IS OLD, FROM ABOVE: So far, there has been no experimental investigation of by-operator variation comparing factive and semi-factive predicates. However, \citet{djarv_cognitive_2018} and \citet{tonhauser_how_2018} observed by-predicate variation in polar questions. \citet{djarv_cognitive_2018}, assessing acceptability of affirming the main clause while denying the CC, found higher ratings for \emph{be happy} and \emph{appreciate} (assumed to be factive) and \emph{be aware} than \emph{realize} (assumed to be semi-factive). Here, it is also not obvious how exactly this task relates to projection. \citet{tonhauser_how_2018} measured projection of the CC of a broad range of attitude predicates more directly, collecting ratings about speaker certainty about the CC. The observed differences did not match the expectations from Karttunen's classification (e.g., the CC of semi-factive \emph{realize} was as projective as that of factive \emph{be annoyed} and more than that of semi-factive \emph{discover}).}
 	%
-	Since our study used the same projection diagnostic, and a similar set of contents as \cite{sieker_projective_2022}, the different results indicate potential cross-linguistic variation in projection variability, suggesting a set of questions for future research. 
-	%
-	However, in line with their study, our findings contradict \posscite{karttunen_observations_1971} distinction between factive and semi-factive predicates: The CC of (factive) \emph{be annoyed} does not project invariably from all four operators, and the CC \emph{discover,}  which is considered semi-factive, does not project more from under negation than the other three operators. The pattern we observed for {\em know} does not fit into either category,
-	thus questioning the defined difference between factive and semi-factive predicates (see also \citealp{beaver_have_2010}).
+	Our results further question the proposed difference between factive and semi-factive predicates (see also \citealp{beaver_have_2010}).
 	Future research appealing to these categories must clarify their definition. Additionally, claims about projection variability must be relativized to the entailment-canceling operator.
 	% Although our data replicate the result from \citet{tonhauser_how_2018} that, in polar questions, the CC of \emph{discover} is less projective than that of \emph{know}, the same does not hold in conditionals.
 	%
@@ -191,21 +223,6 @@
 
 
 \noindent
-{\bf Theoretical Implications.}
-	Our results---that projection is modulated by entailment-canceling operators and that there is by-predicate variation in the effect of operator on projection---are not captured by contemporary projection analyses, for several reasons.
-	%
-	The first reason is that contemporary analyses do not lead us to expect interactions with different types of entailment-cancelling operators. In \citealt{heim_projection_1983}, for instance, the CC of (semi-)factive predicates projects to the global context, except when that would produce an inconsistency, in which case the CC is accommodated to the local context of the operator. While it is conceivable for the meaning of the operator to systematically interact with the possibility of local accommodation, no such interaction has been spelled out.
-	%
-	The second reason is that many contemporary analyses do not make predictions for the projection of the CC of many of the 20 predicates, as they are limited to (semi-)factive predicates (e.g., \citealt{heim_projection_1983,van_der_sandt_presupposition_1992}, whose CCs are analyzed as presuppositions) and or entailed CCs that project unless at-issue with respect to the Question Under Discussion (e.g., \citealt{abrusan_predicting_2011,simons_best_2017}). A possible exception is the analysis of \citealt{schlenker_triggering_2021}, which predicts the potential for projection for CCs that are contextually entailed. In the full talk, we discuss how this analysis might be able to capture the gradient projection observed in our experiment.
-	%
-	The third reason is that contemporary projection analyses do not make sufficiently fine-grained distinctions between different clause-embedding predicates (but only between whether the CC is a presupposition or entailed). Consequently, they do not make predictions about the by-predicate variation in the effect of operator on projection.
-
-
-% \noindent
-% {\bf Conclusion.}
-% 	The picture that emerges is complex and requires a nuanced view of lexical effects on projection. It raises the question of how lexical differences between predicates could explain why the CC projects more from under certain operators and less from others. Much previous work on this question has based its generalizations on impressionistic judgments, empirically establishing different projection-profiles associated with verbs therefore provides a basis for future research on lexical effects on projection.
-
-
 
 
 \newpage
@@ -241,17 +258,22 @@
 			\begin{tabular}{llrrrr}
 				Model & & Estimate & Std. Error & t-value\\
 				\midrule
-				\#1 & Intercept: \emph{\bf be annoyed}/negation & 0.87 & 0.01 & 79.86 & ***\\
+				\#1 & Intercept: \emph{question} & 0.52 & 0.01 & 87.31 & ***\\
+				& operator: conditional & 0.04 & 0.01 & 5.07 & ***\\
+				& operator: modal & -0.04 & 0.01 & -4.55 & ***\\
+				& operator: negation & -0.03 & 0.01 & -4.30 & ***\\
+				\midrule
+				\#2 & Intercept: \emph{\bf be annoyed}/negation & 0.87 & 0.01 & 79.86 & ***\\
 				& operator: conditional & -0.12 & 0.02  & -7.36 & ***\\
 				& operator: modal & -0.16 & 0.02  & -10.01 & ***\\
 				& operator: question & 0.02 & 0.01 & 1.72 & n.s.\\
 				\midrule
-				\#2 & Intercept: \emph{\bf discover}/negation & 0.68 & 0.01 & 62.70 & ***\\
+				\#3 & Intercept: \emph{\bf discover}/negation & 0.68 & 0.01 & 62.70 & ***\\
 				& operator: conditional & 0.11 & 0.02 & 7.11 & ***\\
 				& operator: modal & -0.06 & 0.02 & -3.63 & ***\\
 				& operator: question & 0.10 & 0.01 & 7.08 & ***\\
 				\midrule
-				\#3 & Intercept: \emph{\bf know}/negation & 0.79 & 0.01 & 72.97 & ***\\
+				\#4 & Intercept: \emph{\bf know}/negation & 0.79 & 0.01 & 72.97 & ***\\
 				& operator: conditional & 0.00 & 0.02 & -0.06 & n.s.\\
 				& operator: modal & -0.14 & 0.02 & -9.18 & ***\\
 				& operator: question & 0.08 & 0.01 & 5.67 & ***\\
@@ -259,7 +281,8 @@
 			\end{tabular}
 		}
 		&
-		\parbox{\linewidth}{\caption{\small Excerpt of the output from three linear mixed effects models; with fixed effects of operator, predicate, and their interaction; random effect: participant intercepts. Models were fit with \texttt{lme4, lmertest} in \texttt{R}. All three models also had at least $34$ highly significant interaction terms of \texttt{operator} and \texttt{predicate} with $p < 0.001$ (Not shown here).}\label{t:models}}
+		\parbox{\linewidth}{\caption{\small Excerpt of the output from three linear mixed effects models; \textbf{\#1} has fixed effects of operator; random effect: participant intercepts, \textbf{\#2-4} have fixed effect: operator, predicate, and their interaction; random effect: participant intercepts.
+		Models were fit with \texttt{lme4, lmertest} in \texttt{R}. All three models also had at least $34$ highly significant interaction terms of \texttt{operator} and \texttt{predicate} with $p < 0.001$ (Not shown here).}\label{t:models}}
 
 	\end{tabular}
 \end{table}
