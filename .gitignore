@@ -13,9 +13,9 @@
 *.log
 
 # Apple file system
-.DS_Store
+*.DS_Store
 
-# Other files */node_modules/
+# Other files
 *.RData
 *.config
 *.input

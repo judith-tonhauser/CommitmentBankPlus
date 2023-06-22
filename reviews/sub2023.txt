@@ -1,0 +1,51 @@
+SUBMISSION: 158
+TITLE: Projection variability of attitude complements across different operators
+
+
+----------------------- REVIEW 1 ---------------------
+SUBMISSION: 158
+TITLE: Projection variability of attitude complements across different operators
+AUTHORS: Lisa Hofmann, Marie-Catherine de Marneffe and Judith Tonhauser
+
+----------- Overall evaluation -----------
+SCORE: 2 (accept)
+----- TEXT:
+This is a very interesting project. 
+
+I will note that I’m skeptical of the stimulus used. No one, I take it, thinks that you need to be certain of what you say or of the presuppositions of what you say; at most you need to believe them, or perhaps know them. So I doubt that this is a very good test of *projection* per se.
+
+A cleaner paradigm might be to test for felicity in a context where the negation of the CC has been asserted, as in the experimental paradigm of Mandelkern et al. 2020. 
+
+The other question is what we could make of all this theoretically. This is related to the worry about the stimulus. Different predicates might bear different relations to *certainty* while being equally projective. So some caution is needed in drawing conclusions about projectivity from judgments about certainty.
+
+
+
+----------------------- REVIEW 2 ---------------------
+SUBMISSION: 158
+TITLE: Projection variability of attitude complements across different operators
+AUTHORS: Lisa Hofmann, Marie-Catherine de Marneffe and Judith Tonhauser
+
+----------- Overall evaluation -----------
+SCORE: 2 (accept)
+----- TEXT:
+Impressive empirical work on the projection behaviour of the complements of 20 predicates under 4 operators entailment-canceling operators. It replicates the results by Degen & Tonhauser (2022) with questions (with a larger number of speakers) and, in addition, extends it to 3 other operators (negation, modals and conditionals). The data shows that different operators have a different effect, and that there's also variation in how predicates interact with operators. 
+It is claimed that current approaches cannot capture this type of data. Although the abstract does not present an alternative analysis, it is mentioned that an extension of Schlenker (2021) may be able to capture the observed patterns.
+
+
+
+----------------------- REVIEW 3 ---------------------
+SUBMISSION: 158
+TITLE: Projection variability of attitude complements across different operators
+AUTHORS: Lisa Hofmann, Marie-Catherine de Marneffe and Judith Tonhauser
+
+----------- Overall evaluation -----------
+SCORE: 2 (accept)
+----- TEXT:
+This abstract describes an experimental study investigating the projection of the content of attitude complements, showing variation in projection among entailment-canceling operators, and variation among attitude predicates. 
+
+The experiments seem to be well designed, and the results have important implications for theories (namely that existing theories don’t predict the kind of fine-grained distinctions that are observed in the experiments). I look forward to hearing more about the project at the conference.
+
+“Each participant saw all 20 attitude predicates (each paired with a unique content from a set of 20 contents) under one operator.”
+How much variation was there in the content that was paired with the different attitude predicates? Could the choice of this content have influenced people’s judgments about the speaker’s certainty? 
+
+Were participants excluded from participating in more than one of the four experiments?

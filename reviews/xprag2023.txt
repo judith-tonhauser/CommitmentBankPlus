@@ -1,0 +1,30 @@
+REVIEW 1 (7.1/10)
+› Notation Grid
+
+    Does the submission respect the requested constraints in terms of length (1100 words after the 100-word summary), number of Tables/Figures (2), and Anonymity etc? :  10 - Yes
+    How clear is the submission? :  9 - 
+    How novel is this work? :  7 - 
+    Does the experimental method properly address the proposal's question? :  7 - 
+    How relevant is this proposal for an Experimental Pragmatics conference? :  9 - 
+    Do you think this would make for a good talk? :  3 - 
+
+› Comment for contributor
+
+    Investigating variation in projection across embedding constructions, in addition to that across expressions, makes.a useful empirical contribution and poses new questions for the analysis of presuppositions and projection. What I'm missing here is a more extensive theoretical grounding of what these data mean for architectures of projection. First, taking the 'certain that' task results and their (fairly minute, in many cases) levels of variation at face value, i.e. ,equating the empirical measure with a theoretical notion, is far from the only option. One can equally well assume a uniform underlying notion that gets modulated by various factors in different ways in this particular task and measure. I'd like to see more systematic copmarisons with other tasks to get a more comprehensive perspective in that regard. In a related vein,the alluded to potential cross-linguistic variation in the relationship between operators and specific projecting expressions should be framed in more specific theoretical terms as well.
+
+REVIEW 2 (8.3/10)
+› Notation Grid
+
+    Does the submission respect the requested constraints in terms of length (1100 words after the 100-word summary), number of Tables/Figures (2), and Anonymity etc? :  10 - Yes
+    How clear is the submission? :  9 - 
+    How novel is this work? :  6 - 
+    Does the experimental method properly address the proposal's question? :  9 - 
+    How relevant is this proposal for an Experimental Pragmatics conference? :  10 - Very relevant
+    Do you think this would make for a good talk? :  7 - 
+
+› Comment for contributor
+
+    This work provides useful and rich data regarding how the compelements of various attitude predicates project under 4 different environments (negation, modals, polar questions, antecedent of a conditionals). In line with previous work (esp. Degen), it finds a lot of variation across predicates, which goes against a categorical distinction between factive and non-factive predicates. The results also suggest that the effects of the four different environments are not uniform across predicates.
+    While I find the findings potentially interesting, the complete lack of any specific hypothesis about the observed variation makes the abstract a bit unerwhelming. As mentioned in the abstract, a potential explanation in terms of local accommodation would require that local accommodation is more or less available in different embedding contexts, in a way that varies across predicates. While I agree with the abstract that no current theory would predict the specific variation that is observed, I think it is nevertheless expected that there will be *some* variation of the sort found in the abstract. If the pressure to "locally accommodate" comes from the interaction of fine-grained semantic and pragmatic processes, one would expect a significant amount of variation across predicates and embedding contexts (as would in general be the case for any disambiguation proces: the decision to intepret a given sentence with or without local accommodation is a specific type of disambiguation). The abstract itself suggests that  fine-grained analyses are required but does not sketch any.   So while the findings are new (though not strikingly different from Degen and Tonhauser 2022), it is not clear to me that they are incredibly challenging for current theories: even if they are not predicted by current theories, they do not really seem to me to falsify them.  
+    Regarding the fact that  there were  "at least 34 highly significant interaction terms (out of 57 possible interactions of operator and predicate)": the abstract does not mention any correction for multiple comparisons, which, given that so many potential effets were tested, is in my view a bit problematic. I wonder whether there isn't a risk of overinterpreting the observed variation. 
+    The issue of projection under modals in the theoretical literature seems to me to be more complex than suggested in the abstract.  Esp. with a possibility moda (perhaps), projection might be quite weak, as it is under indefinites. Thus the following is quite felicitous "Maybe France is a monarchy, and maybe the king of France is bald", suggesting that the presupposition of "Maybe the king of France is bald" is "Maybe there is a king of France" (see relevant literature on "modal subordination"). 
