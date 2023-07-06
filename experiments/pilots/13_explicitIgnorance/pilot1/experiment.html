@@ -9,11 +9,502 @@
     <script src="jspsych/plugin-html-button-response.js"></script>
     <script src="jspsych/plugin-html-keyboard-response.js"></script>
     <script src="jspsych/plugin-html-slider-response-JT.js"></script>
-    <script src="helpers.js"></script>
+    <!-- <script src="helpers.js"></script> -->
     <link  href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
   </head>
   <body></body>
   <script>
+
+// helper functions
+
+
+// this function shuffles an array
+function shuffle(array) {
+   for (var i = array.length - 1; i > 0; i--) { 
+  
+       // Generate random number 
+       var j = Math.floor(Math.random() * (i + 1));
+                  
+       var temp = array[i];
+       array[i] = array[j];
+       array[j] = temp;
+   }
+      
+   return array;
+}
+
+// var speaker = ["James", "John", "Robert", "Michael", "William", "David", "Richard", "Joseph", "Thomas", "Charles"]
+var speaker = ["William", "Joseph", "Thomas", "Charles"]
+
+// var listener = ["Mary", "Patricia", "Jennifer", "Linda", "Elizabeth", "Barbara", "Susan", "Jessica", "Sarah", "Margaret"]
+var listener = ["Barbara", "Sarah", "Margaret"]
+
+var story = speaker + ' says to ' + listener + ': "It\'s a beautiful day, isn\'t it?"' + '<br><br><br><br> Who is ' + speaker + ' talking to? Write the name into the box.';
+
+var names = [
+    {
+      "name":"James",
+      "gender":"M"
+    },
+//    {
+//      "name":"John",
+//      "gender":"M"
+//    },
+    {
+      "name":"Robert",
+      "gender":"M"
+    },
+//     {
+//       "name":"Michael",
+//       "gender":"M"
+//     },
+    {
+      "name":"William",
+      "gender":"M"
+    },
+    {
+      "name":"David",
+      "gender":"M"
+    },
+//    {
+//      "name":"Richard",
+//      "gender":"M"
+//    },
+    {
+      "name":"Joseph",
+      "gender":"M"
+    },
+    {
+      "name":"Charles",
+      "gender":"M"
+    },
+    {
+      "name":"Thomas",
+      "gender":"M"
+    },
+    {
+      "name":"Christopher",
+      "gender":"M"
+    },
+    {
+      "name":"Daniel",
+      "gender":"M"
+    },
+    {
+      "name":"Matthew",
+      "gender":"M"
+    },
+//    {
+//      "name":"Donald",
+//      "gender":"M"
+//    },
+    {
+      "name":"Anthony",
+      "gender":"M"
+    },
+    {
+      "name":"Paul",
+      "gender":"M"
+    },
+//    {
+//      "name":"Mark",
+//      "gender":"M"
+//    },
+    {
+      "name":"George",
+      "gender":"M"
+    },
+    {
+      "name":"Steven",
+      "gender":"M"
+    },
+    {
+      "name":"Kenneth",
+      "gender":"M"
+    },
+//    {
+//      "name":"Andrew",
+//      "gender":"M"
+//    },
+    {
+      "name":"Edward",
+      "gender":"M"
+    },
+//     {
+//       "name":"Joshua",
+//       "gender":"M"
+//     },
+    {
+      "name":"Brian",
+      "gender":"M"
+    },
+    {
+      "name":"Kevin",
+      "gender":"M"
+    },
+    {
+      "name":"Ronald",
+      "gender":"M"
+    },
+    {
+      "name":"Timothy",
+      "gender":"M"
+    },
+    {
+      "name":"Jason",
+      "gender":"M"
+    },
+    {
+      "name":"Jeffrey",
+      "gender":"M"
+    },
+    {
+      "name":"Gary",
+      "gender":"M"
+    },
+    {
+      "name":"Ryan",
+      "gender":"M"
+    },
+    {
+      "name":"Nicholas",
+      "gender":"M"
+    },
+    {
+      "name":"Eric",
+      "gender":"M"
+    },
+    {
+      "name":"Jacob",
+      "gender":"M"
+    },
+    {
+      "name":"Jonathan",
+      "gender":"M"
+    },
+    {
+      "name":"Larry",
+      "gender":"M"
+    },
+//    {
+//      "name":"Frank",
+//      "gender":"M"
+//    },
+    {
+      "name":"Scott",
+      "gender":"M"
+    },
+    {
+      "name":"Justin",
+      "gender":"M"
+    },
+    {
+      "name":"Brandon",
+      "gender":"M"
+    },
+    {
+      "name":"Raymond",
+      "gender":"M"
+    },
+    {
+      "name":"Gregory",
+      "gender":"M"
+    },
+    {
+      "name":"Samuel",
+      "gender":"M"
+    },
+    {
+      "name":"Benjamin",
+      "gender":"M"
+    },
+    {
+      "name":"Patrick",
+      "gender":"M"
+    },
+//    {
+//      "name":"Jack",
+//      "gender":"M"
+//    },
+    {
+      "name":"Dennis",
+      "gender":"M"
+    },
+    {
+      "name":"Jerry",
+      "gender":"M"
+    },
+    {
+      "name":"Alexander",
+      "gender":"M"
+    },
+    {
+      "name":"Tyler",
+      "gender":"M"
+    },
+//    {
+//      "name":"Mary",
+//      "gender":"F"
+//    },
+    {
+      "name":"Jennifer",
+      "gender":"F"
+    },
+    {
+      "name":"Elizabeth",
+      "gender":"F"
+    },
+    {
+      "name":"Linda",
+      "gender":"F"
+    },
+    //{
+    //  "name":"Emily",
+    //  "gender":"F"
+    //},
+    {
+      "name":"Erin",
+      "gender":"F"
+    },
+//    {
+//      "name":"Susan",
+//      "gender":"F"
+//    },
+    {
+      "name":"Margaret",
+      "gender":"F"
+    },
+    {
+      "name":"Jessica",
+      "gender":"F"
+    },
+    {
+      "name":"Dorothy",
+      "gender":"F"
+    },
+//     {
+//       "name":"Sarah",
+//       "gender":"F"
+//     },
+    {
+      "name":"Karen",
+      "gender":"F"
+    },
+    {
+      "name":"Nancy",
+      "gender":"F"
+    },
+//     {
+//       "name":"Betty",
+//       "gender":"F"
+//     },
+    {
+      "name":"Lisa",
+      "gender":"F"
+    },
+    {
+      "name":"Sandra",
+      "gender":"F"
+    },
+//     {
+//       "name":"Helen",
+//       "gender":"F"
+//     },
+    {
+      "name":"Ashley",
+      "gender":"F"
+    },
+    {
+      "name":"Donna",
+      "gender":"F"
+    },
+    {
+      "name":"Kimberly",
+      "gender":"F"
+    },
+    {
+      "name":"Carol",
+      "gender":"F"
+    },
+    {
+      "name":"Michelle",
+      "gender":"F"
+    },
+        //{
+    //  "name":"Emily",
+    //  "gender":"F"
+    //},
+    {
+      "name":"Fran",
+      "gender":"F"
+    },
+//     {
+//       "name":"Amanda",
+//       "gender":"F"
+//     },
+    {
+      "name":"Melissa",
+      "gender":"F"
+    },
+    {
+      "name":"Deborah",
+      "gender":"F"
+    },
+    {
+      "name":"Laura",
+      "gender":"F"
+    },
+    {
+      "name":"Stephanie",
+      "gender":"F"
+    },
+    {
+      "name":"Rebecca",
+      "gender":"F"
+    },
+    {
+      "name":"Sharon",
+      "gender":"F"
+    },
+    {
+      "name":"Cynthia",
+      "gender":"F"
+    },
+    {
+      "name":"Kathleen",
+      "gender":"F"
+    },
+    {
+      "name":"Ruth",
+      "gender":"F"
+    },
+//    {
+//      "name":"Anna",
+//      "gender":"F"
+//    },
+    {
+      "name":"Shirley",
+      "gender":"F"
+    },
+    {
+      "name":"Amy",
+      "gender":"F"
+    },
+    {
+      "name":"Angela",
+      "gender":"F"
+    },
+    {
+      "name":"Virginia",
+      "gender":"F"
+    },
+    {
+      "name":"Brenda",
+      "gender":"F"
+    },
+ //    {
+//       "name":"Catherine",
+//       "gender":"F"
+//     },
+    {
+      "name":"Nicole",
+      "gender":"F"
+    },
+    {
+      "name":"Christina",
+      "gender":"F"
+    },
+//     {
+//       "name":"Janet",
+//       "gender":"F"
+//     },
+//     {
+//       "name":"Samantha",
+//       "gender":"F"
+//     },
+    {
+      "name":"Carolyn",
+      "gender":"F"
+    },
+    {
+      "name":"Rachel",
+      "gender":"F"
+    },
+    {
+      "name":"Heather",
+      "gender":"F"
+    },
+    {
+      "name":"Diane",
+      "gender":"F"
+    },
+//     {
+//       "name":"Joyce",
+//       "gender":"F"
+//     },
+    {
+      "name":"Julie",
+      "gender":"F"
+//     },
+//     {
+//       "name":"Emma",
+//       "gender":"F"
+    }
+  ]
+  
+//12 names for the 6 main clause contents
+  
+var mcnames = [
+    {
+      "name":"Finn",
+      "gender":"M"
+    },
+    {
+      "name":"Marlo",
+      "gender":"M"
+    },
+    {
+      "name":"Pax",
+      "gender":"M"
+    },
+    {
+      "name":"Ike",
+      "gender":"M"
+    },
+    {
+      "name":"Dalton",
+      "gender":"M"
+    },
+    {
+      "name":"Arlen",
+      "gender":"M"
+    },
+    {
+      "name":"Leia",
+      "gender":"F"
+    },
+    {
+      "name":"Cici",
+      "gender":"F"
+    },
+    {
+      "name":"Saskia",
+      "gender":"F"
+    },
+    {
+      "name":"Autumn",
+      "gender":"F"
+    },
+    {
+      "name":"Adelina",
+      "gender":"F"
+    },
+    {
+      "name":"Dinah",
+      "gender":"F"
+    }    
+    ]
+
 
 // send the data to store script
 function saveData(data){
@@ -26,15 +517,28 @@ function saveData(data){
 
 // initialise jspsych 
 var jsPsych = initJsPsych({
+  on_finish: function(){
+    // jsPsych.data.get().localSave('csv', 'data.csv')
+    saveData(jsPsych.data.get().csv());
+  },
   show_progress_bar: true,
-  auto_update_progress_bar: false,
-  on_finish: function () {
-    console.log('The experiment is over.')}
-})
+  auto_update_progress_bar: false
+});
+
+// var jsPsych = initJsPsych({
+//   on_finish: function(){
+//      // var data = jsPsych.data.get().csv();
+//      jsPsych.data.get().localSave('csv', 'data.csv')
+//       // jsPsych.data.displayData();
+//       // saveData(jsPsych.data.get().csv());
+//       },
+//   show_progress_bar: true,
+//   auto_update_progress_bar: false
+// })
 
 /* for the progress bar: create a global count variable that increases by 1 after each trial, and use that to set the progress bar value at the end of each trial */
 var count = 0;
-var n_trials = 30; //20 target trials, 4 control trials, 6 other target trials
+var n_trials = 38; //20 target trials, 10 target/control trials, 2 instructions, 1 finish
 
 /* define the control stimuli */
 
@@ -985,14 +1489,14 @@ for (var j=0; j<control_items.length; j++) {
 //  exp.stims_block2.push(jQuery.extend(true, {}, stim)); 
   } 
 
-console.log(items)  
+// console.log(items)  
   
 
 // this function takes an item as an argument and builds the stimulus to be displayed
 // whether the pronoun or the proper name are used in the main clause and the CC
 // depend on the type of item
 function buildStimulus(item) {
-   return "<b>" + item.name + ":</b><em> " + item.context +". " + item.question +"</em>";
+   return "<b>" + item.name + ":</b><em> \"" + item.context + ". " + item.question + "\"</em>";
 }
 
 // initialize array of stimuli with stimulus keys and empty values
@@ -1028,7 +1532,7 @@ for (let i = 0; i < items.length; i++) {
 // instruction and consent screen
 var consent_screen = {
   type: jsPsychHtmlButtonResponse,
-  stimulus: "<h3>Instructions</h3><p style='text-align:left'>In this experiment, you will read what different people say and rate how natural that sounds. Here's an example from Leah:<br><br><b>Leah:</b> <i>\"I have no idea if Mitchell got a poodle. Did Mitchell want to get a poodle?\"</i><br> <br> Leah first made a statement and then asked a question. We ask you to rate whether the question sounds natural in the context of the statement.<br><br> You will give your answer on a sliding scale from \"no, unnatural\" to \"yes, natural\".<br> We start off with four practice examples. Then you will rate 30 examples.<br><br><b> Payment:</b> You will be paid $1.35 to participate in this experiment, which will take about 5 minutes to complete.<br> <p style='text-align:left' font size=\"1\">By clicking on the button below you agree to participate in this experiment, which is conducted by researchers at the University of Stuttgart. You may withdraw from this experiment at any time without penalty or loss of benefits, including loss or reduction of payment. If you do withdraw from the study before the end, please write to Judith Tonhauser (judith.tonhauser@ling.uni-stuttgart.de) for information on how to collect payment. The data collected will be anonymous and confidential. If you have any questions, you may contact the requester through Prolific's platform, or directly at judith.tonhauser@ling.uni-stuttgart.de.</p>",
+  stimulus: "<h3>Instructions</h3><p style='text-align:left'>In this experiment, you will read what different people say and rate how natural that sounds. Here's an example from Leah:<br><br><b>Leah:</b> <i>\"I have no idea if Mitchell got a poodle. Did Frank suggest that Mitchell wanted to get a poodle?\"</i><br> <br> Leah first made a statement and then asked a question. We ask you to rate how natural the question sounds in the context of the statement. You will give your answer on a sliding scale from \"totally unnatural\" to \"totally natural\".<br><br> We start off with four practice examples. Then you will rate 30 examples.<br><br><b> Payment:</b> You will be paid $1.35 to participate in this experiment, which will take about 5 minutes to complete.<br> <p style='text-align:left' font size=\"1\"> <b> Consent:</b> By clicking on the button below you agree to participate in this experiment, which is conducted by researchers at the University of Stuttgart. You may withdraw from this experiment at any time without penalty. The data collected will be anonymous and confidential. If you have any questions, you may contact the requester through Prolific's platform, or directly at judith.tonhauser@ling.uni-stuttgart.de.</p>",
   choices: ["Yes, I consent to participate"],
   on_finish: function(data) {
               count++;
@@ -1043,8 +1547,8 @@ var consent_screen = {
 var practice1 = {
   type: jsPsychHtmlSliderResponse,
   prompt:  
-    "<p>Does Katia's question sound natural in this context?</p>",
-  labels: ["no, unnatural", "yes, natural"],
+    "<p>How natural does Katia's question sound in this context?</p>",
+  labels: ["totally unnatural", "totally natural"],
   slider_width: "400",
   require_movement: true,
   stimulus: "<b>First practice example</b><br><br><b> Katia: </b> <i>\"I have no idea where Natalie is from. Is Natalie from the USA?\"</i>",
@@ -1053,48 +1557,93 @@ var practice1 = {
     var progress = count/n_trials;
     jsPsych.setProgressBar(progress);
     // score the keyboard response as correct or incorrect.
-    if (data.response > 50){
+    if (data.response > 60){
       data.correct = true
       // return "<p style='text-align:left'><b>Correct!</b></p>";
     } else {
       data.correct = false; 
     }
+    // console.log("Response to practice1 was:"+data.response) 
+    // the next line stores whether the last trial was correct or not in "last_trial_correct"
+    // console.log(jsPsych.data.get())
+    // console.log(jsPsych.data.get().last(1))
+    // console.log(jsPsych.data.get().last(1).values())
+    // console.log(jsPsych.data.get().last(1).values()[0])
+    // var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("i'm here")
+    // this line stores in last_trial_correct whether the first practice trial was correct
+    // console.log(jsPsych.data.get().trials.length-1)
+    // console.log(jsPsych.data.get().trials[1].correct) 
+    // var first_practice_correct = jsPsych.data.get().trials[1].correct
+    // console.log("first practice"+first_practice_correct)
+  },
+    data: {
+    task: 'practice'
+    }
     // console.log(data.response)
     // console.log(data.correct)
-  }
 }
 
 // feedback, in case the response was incorrect
-var feedback1 = {
+var feedback1IC = {
   type: jsPsychHtmlButtonResponse,
-  stimulus: "<p style='text-align:left'><b> Incorrect response </b><br><br><b> Katia: </b> <i>\"I have no idea where Natalie is from. Is Natalie from the USA?\"</i> <br><br> Katia's question sounds natural because Katia said that she doesn't know where Natalie is from, and then asked whether Natalie is from the USA. Please repeat the first practice example.</p>",
-  choices: ['Return to the first practice example.']
+  stimulus: "<p style='text-align:left'><b> Incorrect response! </b><br><br><b> Katia: </b> <i>\"I have no idea where Natalie is from. Is Natalie from the USA?\"</i> <br><br> Katia's question sounds very natural in this context because it is natural for Katia to ask whether Natalie is from the USA if Katia doesn't know where Natalie is from. Please repeat the first practice example.</p>",
+  choices: ['Return to the first practice example']
+}
+
+// feedback, in case the response was correct
+var feedback1C = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Good response! </b><br><br><b> Katia: </b> <i>\"I have no idea where Natalie is from. Is Natalie from the USA?\"</i> <br><br> Katia's question sounds very natural in this context because it is natural for Katia to ask whether Natalie is from the USA if Katia doesn't know where Natalie is from.</p>",
+  choices: ['Continue to the second practice example']
 }
 
 // conditional: in case response was incorrect, repeat practice1
-var practice1_conditional = {
-  timeline: [feedback1],
+var practice1_conditionalIC = {
+  timeline: [feedback1IC],
   conditional_function: function(){
     // feedback is dynamic, depending on accuracy of last response
     var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
-    // console.log("i'm here")
-    // console.log(last_trial_correct)
-    if (last_trial_correct){
-      // repeat_practice1 = false;
+    console.log("i'm in the incorrect conditional")
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "incorrect"
       return false
-    } else {
-      // repeat_practice1 = true;
+    } else { // else: if last trial was incorrect, don't carry out "incorrect" feedback
       return true; 
     }
   }
 }
 
-var practice1_loop = {
-    timeline: [practice1, practice1_conditional],
-    loop_function: function(data){
+// conditional: in case response was correct, don't repeat practice1
+var practice1_conditionalC = {
+  timeline: [feedback1C],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
     var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
-      if (last_trial_correct){
-      // console.log("Response was:"+last_trial_correct)  
+    console.log("i'm in the correct conditional")
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "correct"
+      return true
+    } else { // else: if last trial was incorrect, don't carry out "correct" feedback
+      return false;  
+    }
+  }
+}
+
+// a loop is always carried out at least once, a conditional not necessarily
+var practice1_loop = {
+    timeline: [practice1, practice1_conditionalIC, practice1_conditionalC],
+    loop_function: function(data){
+    // var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("Response was:"+last_trial_correct) 
+    // console.log("i'm inside the loop now")
+    // console.log(jsPsych.data.get())
+    // console.log(jsPsych.data.get().last(2))
+    // console.log(jsPsych.data.get().last(2).values()[0].correct)
+    // here we have to go back 2 trials, to get at the last response to the practice trial
+    var last_trial_correct = jsPsych.data.get().last(2).values()[0].correct;
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "incorrect"
       return false; // don't repeat the loop if the response was correct
     } else {
       return true; // repeat if the response was incorrect
@@ -1108,37 +1657,47 @@ var practice1_loop = {
 var practice2 = {
   type: jsPsychHtmlSliderResponse,
   prompt:  
-    "<p>Does Xenia's question sound natural in this context?</p>",
-  labels: ["no, unnatural", "yes, natural"],
+    "<p>How natural does Xenia's question sound in this context?</p>",
+  labels: ["totally unnatural", "totally natural"],
   slider_width: "400",
   require_movement: true,
-  stimulus: "<p style='text-align:left'><b> Here's the second practice example.</b><br><br><b>Xenia: </b><i>\"I don't have any sisters. Have you met my sister yet?\"</i></p>",
+  stimulus: "<p style='text-align:left'><b>Here's the second practice example.</b><br><br><b>Xenia: </b><i>\"I don't have any sisters. Have you met my sister yet?\"</i></p>",
   on_finish: function(data){
     count++;
     var progress = count/n_trials;
     jsPsych.setProgressBar(progress);
     // score the keyboard response as correct or incorrect.
-    if (data.response < 50){
+    if (data.response < 40){
       data.correct = true
       // return "<p style='text-align:left'><b>Correct!</b></p>"
     } else {
       data.correct = false; 
     }
+  },
+    data: {
+    task: 'practice'
+    }
     // console.log(data.response)
     // console.log(data.correct)
-  }
 }
 
 // feedback, in case the response was incorrect
-var feedback2 = {
+var feedback2IC = {
   type: jsPsychHtmlButtonResponse,
-  stimulus: "<p style='text-align:left'><b> Incorrect response </b><br><br><b>Xenia: </b><i>\"I don't have any sisters. Have you met my sister yet?\"</i> <br><br> Xenia's question does not sound natural in this context. She stated that she doesn't have any sisters, but her question implies that she has a sister.  Please repeat the second practice example.</p>",
-  choices: ['Return to the second practice example.']
+  stimulus: "<p style='text-align:left'><b> Incorrect response </b><br><br><b>Xenia: </b><i>\"I don't have any sisters. Have you met my sister yet?\"</i> <br><br> Xenia's question does not sound very natural in this context. Her question implies that she has a sister, but she stated that she doesn't have any sisters.  Please repeat the second practice example.</p>",
+  choices: ['Return to the second practice example']
+}
+
+// feedback, in case the response was correct
+var feedback2C = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Good response! </b><br><br><b>Xenia: </b><i>\"I don't have any sisters. Have you met my sister yet?\"</i> <br><br> Xenia's question does not sound very natural in this context. Her question implies that she has a sister, but she stated that she doesn't have any sisters.</p>",
+  choices: ['Continue to the third practice example']
 }
 
 // conditional: in case response was incorrect, repeat practice2
-var practice2_conditional = {
-  timeline: [feedback2],
+var practice2_conditionalIC = {
+  timeline: [feedback2IC],
   conditional_function: function(){
     // feedback is dynamic, depending on accuracy of last response
     var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
@@ -1154,12 +1713,36 @@ var practice2_conditional = {
   }
 }
 
-var practice2_loop = {
-    timeline: [practice2, practice2_conditional],
-    loop_function: function(data){
+// conditional: in case response was correct, don't repeat practice2
+var practice2_conditionalC = {
+  timeline: [feedback2C],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
     var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
-      if (last_trial_correct){
-      // console.log("Response was:"+last_trial_correct)  
+    console.log("i'm in the correct conditional")
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "correct"
+      return true
+    } else { // else: if last trial was incorrect, don't carry out "correct" feedback
+      return false;  
+    }
+  }
+}
+
+// a loop is always carried out at least once, a conditional not necessarily
+var practice2_loop = {
+    timeline: [practice2, practice2_conditionalIC, practice2_conditionalC],
+    loop_function: function(data){
+    // var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("Response was:"+last_trial_correct) 
+    // console.log("i'm inside the loop now")
+    // console.log(jsPsych.data.get())
+    // console.log(jsPsych.data.get().last(2))
+    // console.log(jsPsych.data.get().last(2).values()[0].correct)
+    // here we have to go back 2 trials, to get at the last response to the practice trial
+    var last_trial_correct = jsPsych.data.get().last(2).values()[0].correct;
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "incorrect"
       return false; // don't repeat the loop if the response was correct
     } else {
       return true; // repeat if the response was incorrect
@@ -1173,37 +1756,47 @@ var practice2_loop = {
 var practice3 = {
   type: jsPsychHtmlSliderResponse,
   prompt:  
-    "<p>Does Kerstin's question sound natural in this context?</p>",
-  labels: ["no, unnatural", "yes, natural"],
+    "<p>How natural does Kerstin's question sound in this context?</p>",
+  labels: ["totally unnatural", "totally natural"],
   slider_width: "400",
   require_movement: true,
-  stimulus: "<p style='text-align:left'><b> Here's the third practice example.</b><br><br><b>Kerstin: </b> <i>\"I really like biking. Do you think Fritz will go biking with me?\"</i></p>",
+  stimulus: "<p style='text-align:left'><b>Here's the third practice example.</b><br><br><b>Kerstin: </b> <i>\"I am going on vacation to Ireland. Does Fritz realize that Joe is going with me?\"</i></p>",
   on_finish: function(data){
     count++;
     var progress = count/n_trials;
     jsPsych.setProgressBar(progress);
     // score the keyboard response as correct or incorrect.
-    if (data.response > 50){
+    if (data.response > 60){
       data.correct = true
       // return "<p style='text-align:left'><b>Correct!</b></p>"
     } else {
       data.correct = false; 
     }
+  },
+    data: {
+    task: 'practice'
+    }
     // console.log(data.response)
     // console.log(data.correct)
-  }
 }
 
 // feedback, in case the response was incorrect
-var feedback3 = {
+var feedback3IC = {
   type: jsPsychHtmlButtonResponse,
-  stimulus: "<p style='text-align:left'><b> Incorrect response </b><br><br><b>Kerstin: </b> <i>\"I really like biking. Do you think Fritz will go biking with me?\"</i> <br><br> Kerstin's question sounds natural because she said that she likes biking, and then asked whether the person she's talking to thinks that Fritz will go biking with her. Please repeat the third practice example.</p>",
-  choices: ['Return to the third practice example.']
+  stimulus: "<p style='text-align:left'><b> Incorrect response </b><br><br><b>Kerstin: </b> <i>\"I am going on vacation to Ireland. Does Fritz realize that Joe is going with me?\"</i> <br><br> Kerstin's question sounds very natural in this context: She is asking the person she is talking to whether Fritz realizes that Joe is going with her on vacation to Ireland. Please repeat the third practice example.</p>",
+  choices: ['Return to the third practice example']
+}
+
+// feedback, in case the response was correct
+var feedback3C = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Good response! </b><br><br><b>Kerstin: </b> <i>\"I am going on vacation to Ireland. Does Fritz realize that Joe is going with me?\"</i> <br><br> Kerstin's question sounds very natural in this context.</p>",
+  choices: ['Continue to the fourth practice example']
 }
 
 // conditional: in case response was incorrect, repeat practice3
-var practice3_conditional = {
-  timeline: [feedback3],
+var practice3_conditionalIC = {
+  timeline: [feedback3IC],
   conditional_function: function(){
     // feedback is dynamic, depending on accuracy of last response
     var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
@@ -1219,12 +1812,36 @@ var practice3_conditional = {
   }
 }
 
-var practice3_loop = {
-    timeline: [practice3, practice3_conditional],
-    loop_function: function(data){
+// conditional: in case response was correct, don't repeat practice3
+var practice3_conditionalC = {
+  timeline: [feedback3C],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
     var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
-      if (last_trial_correct){
-      // console.log("Response was:"+last_trial_correct)  
+    console.log("i'm in the correct conditional")
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "correct"
+      return true
+    } else { // else: if last trial was incorrect, don't carry out "correct" feedback
+      return false;  
+    }
+  }
+}
+
+// a loop is always carried out at least once, a conditional not necessarily
+var practice3_loop = {
+    timeline: [practice3, practice3_conditionalIC, practice3_conditionalC],
+    loop_function: function(data){
+    // var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("Response was:"+last_trial_correct) 
+    // console.log("i'm inside the loop now")
+    // console.log(jsPsych.data.get())
+    // console.log(jsPsych.data.get().last(2))
+    // console.log(jsPsych.data.get().last(2).values()[0].correct)
+    // here we have to go back 2 trials, to get at the last response to the practice trial
+    var last_trial_correct = jsPsych.data.get().last(2).values()[0].correct;
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "incorrect"
       return false; // don't repeat the loop if the response was correct
     } else {
       return true; // repeat if the response was incorrect
@@ -1238,37 +1855,47 @@ var practice3_loop = {
 var practice4 = {
   type: jsPsychHtmlSliderResponse,
   prompt:  
-    "<p>Does Mirko's question sound natural in this context?</p>",
-  labels: ["no, unnatural", "yes, natural"],
+    "<p>How natural does Mirko's question sound in this context?</p>",
+  labels: ["totally unnatural", "totally natural"],
   slider_width: "400",
   require_movement: true,
-  stimulus: "<p style='text-align:left'><b> Here's the fourth practice example.</b><br><br><b>Mirko: </b><i>\"I have no idea if Anna has any dogs. Did Anna feed both of her dogs?\"</i></p>",
+  stimulus: "<p style='text-align:left'><b> Here's the last practice example.</b><br><br><b>Mirko: </b><i>\"I have no idea if Anna has any dogs. Is Samuel glad that Anna fed her dogs?\"</i></p>",
   on_finish: function(data){
     count++;
     var progress = count/n_trials;
     jsPsych.setProgressBar(progress);
     // score the keyboard response as correct or incorrect.
-    if (data.response < 50){
+    if (data.response < 40){
       data.correct = true
       // return "<p style='text-align:left'><b>Correct!</b></p>"
     } else {
       data.correct = false; 
     }
+  },
+    data: {
+    task: 'practice'
+    }
     // console.log(data.response)
     // console.log(data.correct)
-  }
 }
 
 // feedback, in case the response was incorrect
-var feedback4 = {
+var feedback4IC = {
   type: jsPsychHtmlButtonResponse,
-  stimulus: "<p style='text-align:left'><b> Incorrect response </b><br><br><b>Mirko: </b><i>\"I have no idea if Anna has any dogs. Did Anna feed both of her dogs?\"</i> <br><br> Mirko's question does not sound natural in this context. Mirko stated that he doesn't know whether Anna has any dogs, but his question implies that he thinks that she has two dogs. Please repeat the fourth practice example.</p>",
-  choices: ['Return to the fourth practice example.']
+  stimulus: "<p style='text-align:left'><b> Incorrect response </b><br><br><b>Mirko: </b><i>\"I have no idea if Anna has any dogs. Is Samuel glad that Anna fed her dogs?\"</i> <br><br> Mirko's question does not sound very natural in this context. Mirko's question implies that Anna has dogs, but he stated that he doesn't know whether Anna has any dogs. Please repeat the fourth practice example.</p>",
+  choices: ['Return to the fourth practice example']
+}
+
+// feedback, in case the response was correct
+var feedback4C = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Good response! </b><br><br><b>Mirko: </b><i>\"I have no idea if Anna has any dogs. Is Samuel glad that Anna fed her dogs?\"</i> <br><br> Mirko's question does not sound very natural in this context. Mirko's question implies that he thinks that Anna has dogs, but he stated that he doesn't know whether Anna has any dogs.</p>",
+  choices: ['Continue']
 }
 
 // conditional: in case response was incorrect, repeat practice4
-var practice4_conditional = {
-  timeline: [feedback4],
+var practice4_conditionalIC = {
+  timeline: [feedback4IC],
   conditional_function: function(){
     // feedback is dynamic, depending on accuracy of last response
     var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
@@ -1284,12 +1911,36 @@ var practice4_conditional = {
   }
 }
 
-var practice4_loop = {
-    timeline: [practice4, practice4_conditional],
-    loop_function: function(data){
+// conditional: in case response was correct, don't repeat practice4
+var practice4_conditionalC = {
+  timeline: [feedback4C],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
     var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
-      if (last_trial_correct){
-      // console.log("Response was:"+last_trial_correct)  
+    console.log("i'm in the correct conditional")
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "correct"
+      return true
+    } else { // else: if last trial was incorrect, don't carry out "correct" feedback
+      return false;  
+    }
+  }
+}
+
+// a loop is always carried out at least once, a conditional not necessarily
+var practice4_loop = {
+    timeline: [practice4, practice4_conditionalIC, practice4_conditionalC],
+    loop_function: function(data){
+    // var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("Response was:"+last_trial_correct) 
+    // console.log("i'm inside the loop now")
+    // console.log(jsPsych.data.get())
+    // console.log(jsPsych.data.get().last(2))
+    // console.log(jsPsych.data.get().last(2).values()[0].correct)
+    // here we have to go back 2 trials, to get at the last response to the practice trial
+    var last_trial_correct = jsPsych.data.get().last(2).values()[0].correct;
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "incorrect"
       return false; // don't repeat the loop if the response was correct
     } else {
       return true; // repeat if the response was incorrect
@@ -1313,8 +1964,8 @@ var instructions2 = {
 var judgment_trial = {
   type: jsPsychHtmlSliderResponse,
   prompt:  
-    "<p>Does the question sound natural in this context?</p>",
-  labels: ["no, unnatural", "yes, natural"],
+    "<p>How natural does the question sound in this context?</p>",
+  labels: ["totally unnatural", "totally natural"],
   slider_width: "400",
   require_movement: true,
   stimulus: jsPsych.timelineVariable("stimulus")
@@ -1329,7 +1980,10 @@ var all_judgment_trials = {
          count++;
          var progress = count/n_trials;
          jsPsych.setProgressBar(progress);
-      }
+      },
+    data: {
+    task: 'target'
+    }
 };
 
 // demographic information
@@ -1386,33 +2040,26 @@ var demographics = {
          count++;
          var progress = count/n_trials;
          jsPsych.setProgressBar(progress);
-      }
+      },
+    data: {
+    task: 'demographics'
+    }
 }
 
 // final screen
 var final_screen = {
-  type: jsPsychHtmlKeyboardResponse,
-  stimulus: `<p>You've finished the last task. Thanks for participating!</p>
-    <p><a href="https://app.prolific.co/submissions/complete?cc=XXXXXXX">Click here to return to Prolific and complete the study</a>.</p>`,
-  choices: "NO_KEYS",
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `<p>You're done! Thanks for participating! <br>
+  The completion code is <b>C1HNU5GM</b>.</p>`,
+  choices: ['Done!'],
   on_finish: function(data) {
          count++;
+         // console.log(count);
          var progress = count/n_trials;
          jsPsych.setProgressBar(progress);
       }
 }
 
-// var final_screen = {
-//   type: jsPsychHtmlButtonResponse,
-//   stimulus: "<h3>Thank you for participating!</h3>\
-//   <p style='text-align:left'>Completion code: <b>XXXXXXX </b></p>",
-//   choices: ["Click to finish the experiment"],
-//   on_finish: function(data) {
-//          count++;
-//          var progress = count/n_trials;
-//          jsPsych.setProgressBar(progress);
-//       }
-// };
 
 var full_timeline = [
   consent_screen,
@@ -1423,10 +2070,11 @@ var full_timeline = [
   instructions2,
   all_judgment_trials,
   demographics,
-  final_screen,
+  final_screen
 ];
 
 jsPsych.run(full_timeline);
+
 
   </script>
 </html>
