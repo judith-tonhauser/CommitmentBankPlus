@@ -538,14 +538,16 @@ var jsPsych = initJsPsych({
 
 /* for the progress bar: create a global count variable that increases by 1 after each trial, and use that to set the progress bar value at the end of each trial */
 var count = 0;
-var n_trials = 38; //20 target trials, 10 target/control trials, 2 instructions, 1 finish
+// 20 target trials, 10 target/control trials
+// 1 demographics, 2 instructions, 1 finish, 4 practice, 4 feedback
+var n_trials = 38; 
 
 /* define the control stimuli */
 
 /* define the ingredients for the target stimuli */
 
 // 20 clause-embedding predicates
-var expressions = [ 
+var expressions = shuffle([ 
    {
      "trigger":"annoyed",
      "trigger_class":"C"
@@ -626,7 +628,7 @@ var expressions = [
      "trigger":"prove",
      "trigger_class":"C"
    }
- ]
+ ])
 
 // 20 contents
 var contents = {
@@ -1489,7 +1491,7 @@ for (var j=0; j<control_items.length; j++) {
 //  exp.stims_block2.push(jQuery.extend(true, {}, stim)); 
   } 
 
-// console.log(items)  
+console.log(items)  
   
 
 // this function takes an item as an argument and builds the stimulus to be displayed
