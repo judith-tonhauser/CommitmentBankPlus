@@ -474,4 +474,58 @@ d %>%
 
 write_tsv(d, file="../data/cd.tsv")
 
+# how many data points per predicate/CC/context combination?
+names(d)
+
+tmp = d %>%
+  filter(cc != "noCC") %>%
+  group_by(expression,cc,context) %>% 
+  tally
+tmp
+nrow(tmp) # 1185 (if everything had been chosen, should be 1200 = 3 contexts x 400 predicate/cc combinations)
+min(tmp$n) #1
+mean(tmp$n) #6.2
+max(tmp$n) #23
+#view(tmp)
+
+# how many data points per predicate/context combination?
+tmp = d %>%
+  filter(cc != "noCC") %>%
+  group_by(expression,context) %>% 
+  tally
+tmp
+nrow(tmp) # 60 combinations (3 contexts x 20 predicates)
+sd(tmp$n)
+min(tmp$n) #59
+mean(tmp$n) #123
+median(tmp$n) #80
+max(tmp$n) #234
+
+# how many data points for each predicate in the explicit ignorance context?
+tmp = d %>%
+  filter(context == "explicitIgnorance") %>%
+  filter(cc != "noCC") %>%
+  group_by(expression,context) %>% 
+  tally
+tmp
+nrow(tmp) # 20 combinations (1 contexts x 20 predicates)
+sd(tmp$n) #8.7
+min(tmp$n) #200
+mean(tmp$n) #222
+median(tmp$n) #224.5
+max(tmp$n) #234
+
+# how many data points for each predicate in the two neutral contexts?
+tmp = d %>%
+  filter(context != "explicitIgnorance") %>%
+  filter(cc != "noCC") %>%
+  group_by(expression,context) %>% 
+  tally
+tmp
+nrow(tmp) # 40 combinations (2 contexts x 20 predicates)
+sd(tmp$n) #8
+min(tmp$n) #59
+mean(tmp$n) #74
+median(tmp$n) #75
+max(tmp$n) #87
 

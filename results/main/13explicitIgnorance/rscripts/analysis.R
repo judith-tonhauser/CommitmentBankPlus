@@ -20,7 +20,7 @@ table(d$context)
 
 length(unique(d$participantID)) #370 participants
 
-# predict acceptability rating in comparison to least acceptable (continue)
+# predict acceptability rating in comparison to least acceptable (continue) ----
 
 # target data: explicit ignorance context
 t = d %>%
@@ -35,13 +35,42 @@ t = t %>%
 # create item as combination of predicate and complement clause
 # cd$item = as.factor(paste(cd$verb,cd$content))
 
-# 
+# model
 str(t$expression)
 t$expression <- as.factor(t$expression)
 t$expression <- relevel(t$expression, ref = "continue")
 names(t)
 m = lmer(response ~ expression + (1|participantID), data = t, REML=F)
 summary(m)
+
+# predict acceptability rating from predicate and context ----
+
+# target data: predicates
+t = d %>%
+  filter(expression != "practice" & expression != "controlGood1" & expression != "controlGood2" & expression != "controlGood3" & expression != "controlGood4") %>%
+  filter(expression != "also" & expression != "too" & expression != "again" & expression != "cleft" &
+           expression != "stop" & expression != "continue") %>%
+  mutate(expression = recode(expression, "controlGood1" = "controls", "controlGood2" = "controls")) %>%
+  mutate(context2 = recode(context, "factL" = "neutral", "factH" = "neutral"))
+
+# set reference levels
+# create item as combination of predicate and complement clause
+# cd$item = as.factor(paste(cd$verb,cd$content))
+
+# reference level for expression is "see" as there is smallest difference 
+str(t$expression)
+t$expression <- as.factor(t$expression)
+t$expression <- relevel(t$expression, ref = "see")
+
+# reference level for context is "explicitIgnorance"
+t$context2 <- as.factor(t$context2)
+t$context2 <- relevel(t$context2, ref = "explicitIgnorance")
+
+# model
+m = lmer(response ~ expression * context2 + (1|participantID), data = t, REML=F)
+summary(m)
+
+#######
 
 # main analysis of interest
 
