@@ -215,7 +215,35 @@ ggplot(nat.means, aes(x=context, y=Mean, fill = context)) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
 ggsave("../graphs/naturalness-by-context-and-predicate.pdf",height=7,width=7)
 
+# order the predicate by Language paper certainty means
+# https://github.com/judith-tonhauser/projective-probability/tree/master/results/5-projectivity-no-fact
+tmp <- read_csv("https://raw.githubusercontent.com/judith-tonhauser/projective-probability/master/results/5-projectivity-no-fact/data/cd.csv")
+summary(tmp)
 
+# target data
+tmp <- tmp %>%
+  filter(verb != "MC") %>%
+  group_by(verb) %>%
+  summarize(MeanCertain = mean(response)) %>% 
+  mutate(expression = fct_reorder(as.factor(verb),MeanCertain))
+tmp
+
+nat.means$expression = factor(nat.means$expression, levels=tmp$expression[order(tmp$expression)], ordered=TRUE)
+levels(nat.means$expression)
+
+ggplot(nat.means, aes(x=context, y=Mean, fill = context)) +
+  geom_bar(stat="identity", color = "black", position=position_dodge(.9)) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black", position=position_dodge(.9)) +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_fill_manual(values=c('gray40',"#56B4E9",'#E69F00'), name = "Context") + 
+  guides(fill=FALSE) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) +
+  theme(legend.position="top") +
+  facet_wrap(. ~ expression) +
+  ylab("Mean naturalness rating") +
+  xlab("Context") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
+ggsave("../graphs/ORDER-by-LANGUAGE-naturalness-by-context-and-predicate.pdf",height=7,width=7)
 
 # plot of mean naturalness ratings against mean certainty ratings
 

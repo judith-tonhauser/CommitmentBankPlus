@@ -374,7 +374,7 @@ Thus, on this way of displaying the data, too, factive predicates do not show a 
 
 \end{itemize}
 
-\subsection{The effect of the prior probability of the context on naturalness ratings}
+\subsection{The effect of the prior probability of the CC on naturalness ratings}
 
 Fig.~\ref{fig:acc-by-context} plots the mean acceptability ratings by expression and context (distinguishing explicit ignorance from factL and factH), with the expressions sorted on the mean acceptability rating in the explicit ignorance context, as in Fig.~\ref{fig:acc-by-expression}.
 
@@ -413,7 +413,17 @@ It is when the speaker has a belief relative to which the CC has a low probabili
 
 \end{itemize}
 
-%Here, I will plot, for each of the 20 predicates (target stimuli), the mean naturalness rating in the two contexts (explicit ignorance, neutral). 
+\newpage
+
+Here the predicates are ordered by the mean certainty rating (Language paper, Exp.1a).
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.8\textwidth]{../../results/main/13explicitIgnorance/graphs/ORDER-by-LANGUAGE-naturalness-by-context-and-predicate}
+\caption{Mean naturalness ratings by expression and context. Error bars indicate 95\% bootstrapped confidence intervals.}\label{fig:acc-by-context}
+\end{figure}
+
+
 %
 %Expectations:
 %    - Mandelkern et al 2020: presupposition triggers (factives) have lower naturalness ratings in explicit ignorance context than neutral context than non-factives, for which no difference is expected.
@@ -443,7 +453,20 @@ It is when the speaker has a belief relative to which the CC has a low probabili
 %
 %Comparison of models A and B with AIC to identify whether the factivity-based model A or the predicate-based model B capture more variance in the data (see de Marneffe, Simons & Tonhauser 2019 SuB, Degen & Tonhauser 2022).
 %
-%Third analysis: Do the naturalness ratings in explicit ignorance contexts and the ?certain that? ratings get at the same underlying theoretical construct (namely speaker commitment)?
+
+\subsection{Measuring speaker belief in the CC}
+
+Do the naturalness ratings in explicit ignorance contexts and the inference ratings get at the same underlying theoretical construct, namely speaker belief in the CC?
+
+Spearman rank correlation: -.62
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.7\textwidth]{../../results/main/13explicitIgnorance/graphs/mean-acceptability-against-mean-certainty}
+\caption{Mean naturalness ratings by mean certainty ratings. Error bars indicate 95\% bootstrapped confidence intervals.}\label{fig:acc-by-certain}
+\end{figure}
+
 %
 %    - Plot the mean naturalness ratings of the CCs of the 20 clause-embedding predicates against their mean certainty ratings.
 %    - Calculate Spearman rank correlation.
