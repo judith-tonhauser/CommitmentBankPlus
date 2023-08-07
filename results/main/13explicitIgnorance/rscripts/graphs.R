@@ -28,7 +28,7 @@ table(d$context)
 
 length(unique(d$participantID)) #370 participants
 
-# plot of mean naturalness ratings in explicit ignorance context ----
+# Fig 1: plot of mean naturalness ratings in explicit ignorance context ----
 
 # target data: explicit ignorance context
 # merge the two controls into one, but exclude them
@@ -85,7 +85,7 @@ ggplot(nat.meansEIC, aes(x=expression, y=Mean)) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = text.color)) 
 ggsave("../graphs/explicit-ignorance-naturalness-by-predicate.pdf",height=3,width=7)
 
-# plot of mean naturalness ratings in by context ----
+# Fig 2: plot of mean naturalness ratings in by context ----
 # for 20 clause-embedding predicates only
 
 # calculate mean naturalness rating by predicate and context
@@ -112,6 +112,7 @@ t = d %>%
   filter(expression != "also" & expression != "too" & expression != "again" & expression != "cleft" &
            expression != "stop" & expression != "continue") %>%
   mutate(context = as.factor(context))
+levels(t$context)
 
 # order the predicate by Language paper certainty means
 # https://github.com/judith-tonhauser/projective-probability/tree/master/results/5-projectivity-no-fact
@@ -145,6 +146,12 @@ t$expression = factor(t$expression, levels=tmp$expression[order(tmp$expression)]
 levels(nat.means$expression)
 levels(t$expression)
 
+# order the contexts: EI, low, high
+levels(nat.means$context)
+nat.means$context = factor(nat.means$context, levels = c("explicitIgnorance", "factL", "factH"))
+levels(t$context)
+t$context = factor(t$context, levels = c("explicitIgnorance", "factL", "factH"))
+
 fill.color <- ifelse(levels(nat.means$expression) %in% factives, '#D55E00', "gray80")
 fill.color
 
@@ -159,7 +166,7 @@ ggplot(nat.means, aes(x=context, y=Mean)) +
   geom_point(aes(fill = context), shape=21,stroke=.5,size=2, color="black") +
   scale_fill_manual(values=c('gray80',"#56B4E9",'#E69F00'), 
                     name = "Context", 
-                    labels=c('explicit ignorance', 'low prior probability', 'high prior probability')) +
+                    labels=c('explicit ignorance', 'low prior probability','high prior probability')) +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
   scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels = c("0",".2",".4",".6",".8","1")) +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
