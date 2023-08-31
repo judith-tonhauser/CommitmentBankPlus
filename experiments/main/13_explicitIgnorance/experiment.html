@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Experiment</title>
+    <script src="shared/js/jquery-1.11.1.min.js "></script>
+    <script src="jspsych/jspsych.js"></script>
+    <!-- <script src="jspsych/plugin-survey-text.js"></script> -->
+    <script src="jspsych/plugin-survey.js"></script>
+    <script src="jspsych/plugin-html-button-response.js"></script>
+    <script src="jspsych/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/plugin-html-slider-response-JT.js"></script>
+    <!-- <script src="helpers.js"></script> -->
+    <link  href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body></body>
+  <script>
+
+// helper functions
+
+
+// this function shuffles an array
+function shuffle(array) {
+   for (var i = array.length - 1; i > 0; i--) { 
+  
+       // Generate random number 
+       var j = Math.floor(Math.random() * (i + 1));
+                  
+       var temp = array[i];
+       array[i] = array[j];
+       array[j] = temp;
+   }
+      
+   return array;
+}
+
+// var speaker = ["James", "John", "Robert", "Michael", "William", "David", "Richard", "Joseph", "Thomas", "Charles"]
+var speaker = ["William", "Joseph", "Thomas", "Charles"]
+
+// var listener = ["Mary", "Patricia", "Jennifer", "Linda", "Elizabeth", "Barbara", "Susan", "Jessica", "Sarah", "Margaret"]
+var listener = ["Barbara", "Sarah", "Margaret"]
+
+var story = speaker + ' says to ' + listener + ': "It\'s a beautiful day, isn\'t it?"' + '<br><br><br><br> Who is ' + speaker + ' talking to? Write the name into the box.';
+
+var names = [
+    {
+      "name":"James",
+      "gender":"M"
+    },
+//    {
+//      "name":"John",
+//      "gender":"M"
+//    },
+    {
+      "name":"Robert",
+      "gender":"M"
+    },
+//     {
+//       "name":"Michael",
+//       "gender":"M"
+//     },
+    {
+      "name":"William",
+      "gender":"M"
+    },
+    {
+      "name":"David",
+      "gender":"M"
+    },
+//    {
+//      "name":"Richard",
+//      "gender":"M"
+//    },
+    {
+      "name":"Joseph",
+      "gender":"M"
+    },
+    {
+      "name":"Charles",
+      "gender":"M"
+    },
+    {
+      "name":"Thomas",
+      "gender":"M"
+    },
+    {
+      "name":"Christopher",
+      "gender":"M"
+    },
+    {
+      "name":"Daniel",
+      "gender":"M"
+    },
+    {
+      "name":"Matthew",
+      "gender":"M"
+    },
+//    {
+//      "name":"Donald",
+//      "gender":"M"
+//    },
+    {
+      "name":"Anthony",
+      "gender":"M"
+    },
+    {
+      "name":"Paul",
+      "gender":"M"
+    },
+//    {
+//      "name":"Mark",
+//      "gender":"M"
+//    },
+    {
+      "name":"George",
+      "gender":"M"
+    },
+    {
+      "name":"Steven",
+      "gender":"M"
+    },
+    {
+      "name":"Kenneth",
+      "gender":"M"
+    },
+//    {
+//      "name":"Andrew",
+//      "gender":"M"
+//    },
+    {
+      "name":"Edward",
+      "gender":"M"
+    },
+//     {
+//       "name":"Joshua",
+//       "gender":"M"
+//     },
+    {
+      "name":"Brian",
+      "gender":"M"
+    },
+    {
+      "name":"Kevin",
+      "gender":"M"
+    },
+    {
+      "name":"Ronald",
+      "gender":"M"
+    },
+    {
+      "name":"Timothy",
+      "gender":"M"
+    },
+    {
+      "name":"Jason",
+      "gender":"M"
+    },
+    {
+      "name":"Jeffrey",
+      "gender":"M"
+    },
+    {
+      "name":"Gary",
+      "gender":"M"
+    },
+    {
+      "name":"Ryan",
+      "gender":"M"
+    },
+    {
+      "name":"Nicholas",
+      "gender":"M"
+    },
+    {
+      "name":"Eric",
+      "gender":"M"
+    },
+    {
+      "name":"Jacob",
+      "gender":"M"
+    },
+    {
+      "name":"Jonathan",
+      "gender":"M"
+    },
+    {
+      "name":"Larry",
+      "gender":"M"
+    },
+//    {
+//      "name":"Frank",
+//      "gender":"M"
+//    },
+    {
+      "name":"Scott",
+      "gender":"M"
+    },
+    {
+      "name":"Justin",
+      "gender":"M"
+    },
+    {
+      "name":"Brandon",
+      "gender":"M"
+    },
+    {
+      "name":"Raymond",
+      "gender":"M"
+    },
+    {
+      "name":"Gregory",
+      "gender":"M"
+    },
+    {
+      "name":"Samuel",
+      "gender":"M"
+    },
+    {
+      "name":"Benjamin",
+      "gender":"M"
+    },
+    {
+      "name":"Patrick",
+      "gender":"M"
+    },
+//    {
+//      "name":"Jack",
+//      "gender":"M"
+//    },
+    {
+      "name":"Dennis",
+      "gender":"M"
+    },
+    {
+      "name":"Jerry",
+      "gender":"M"
+    },
+    {
+      "name":"Alexander",
+      "gender":"M"
+    },
+    {
+      "name":"Tyler",
+      "gender":"M"
+    },
+//    {
+//      "name":"Mary",
+//      "gender":"F"
+//    },
+    {
+      "name":"Jennifer",
+      "gender":"F"
+    },
+    {
+      "name":"Elizabeth",
+      "gender":"F"
+    },
+    {
+      "name":"Linda",
+      "gender":"F"
+    },
+    //{
+    //  "name":"Emily",
+    //  "gender":"F"
+    //},
+    {
+      "name":"Erin",
+      "gender":"F"
+    },
+//    {
+//      "name":"Susan",
+//      "gender":"F"
+//    },
+    {
+      "name":"Margaret",
+      "gender":"F"
+    },
+    {
+      "name":"Jessica",
+      "gender":"F"
+    },
+    {
+      "name":"Dorothy",
+      "gender":"F"
+    },
+//     {
+//       "name":"Sarah",
+//       "gender":"F"
+//     },
+    {
+      "name":"Karen",
+      "gender":"F"
+    },
+    {
+      "name":"Nancy",
+      "gender":"F"
+    },
+//     {
+//       "name":"Betty",
+//       "gender":"F"
+//     },
+    {
+      "name":"Lisa",
+      "gender":"F"
+    },
+    {
+      "name":"Sandra",
+      "gender":"F"
+    },
+//     {
+//       "name":"Helen",
+//       "gender":"F"
+//     },
+    {
+      "name":"Ashley",
+      "gender":"F"
+    },
+    {
+      "name":"Donna",
+      "gender":"F"
+    },
+    {
+      "name":"Kimberly",
+      "gender":"F"
+    },
+    {
+      "name":"Carol",
+      "gender":"F"
+    },
+    {
+      "name":"Michelle",
+      "gender":"F"
+    },
+        //{
+    //  "name":"Emily",
+    //  "gender":"F"
+    //},
+    {
+      "name":"Fran",
+      "gender":"F"
+    },
+//     {
+//       "name":"Amanda",
+//       "gender":"F"
+//     },
+    {
+      "name":"Melissa",
+      "gender":"F"
+    },
+    {
+      "name":"Deborah",
+      "gender":"F"
+    },
+    {
+      "name":"Laura",
+      "gender":"F"
+    },
+    {
+      "name":"Stephanie",
+      "gender":"F"
+    },
+    {
+      "name":"Rebecca",
+      "gender":"F"
+    },
+    {
+      "name":"Sharon",
+      "gender":"F"
+    },
+    {
+      "name":"Cynthia",
+      "gender":"F"
+    },
+    {
+      "name":"Kathleen",
+      "gender":"F"
+    },
+    {
+      "name":"Ruth",
+      "gender":"F"
+    },
+//    {
+//      "name":"Anna",
+//      "gender":"F"
+//    },
+    {
+      "name":"Shirley",
+      "gender":"F"
+    },
+    {
+      "name":"Amy",
+      "gender":"F"
+    },
+    {
+      "name":"Angela",
+      "gender":"F"
+    },
+    {
+      "name":"Virginia",
+      "gender":"F"
+    },
+    {
+      "name":"Brenda",
+      "gender":"F"
+    },
+ //    {
+//       "name":"Catherine",
+//       "gender":"F"
+//     },
+    {
+      "name":"Nicole",
+      "gender":"F"
+    },
+    {
+      "name":"Christina",
+      "gender":"F"
+    },
+//     {
+//       "name":"Janet",
+//       "gender":"F"
+//     },
+//     {
+//       "name":"Samantha",
+//       "gender":"F"
+//     },
+    {
+      "name":"Carolyn",
+      "gender":"F"
+    },
+    {
+      "name":"Rachel",
+      "gender":"F"
+    },
+    {
+      "name":"Heather",
+      "gender":"F"
+    },
+    {
+      "name":"Diane",
+      "gender":"F"
+    },
+//     {
+//       "name":"Joyce",
+//       "gender":"F"
+//     },
+    {
+      "name":"Julie",
+      "gender":"F"
+//     },
+//     {
+//       "name":"Emma",
+//       "gender":"F"
+    }
+  ]
+  
+//12 names for the 6 main clause contents
+  
+var mcnames = [
+    {
+      "name":"Finn",
+      "gender":"M"
+    },
+    {
+      "name":"Marlo",
+      "gender":"M"
+    },
+    {
+      "name":"Pax",
+      "gender":"M"
+    },
+    {
+      "name":"Ike",
+      "gender":"M"
+    },
+    {
+      "name":"Dalton",
+      "gender":"M"
+    },
+    {
+      "name":"Arlen",
+      "gender":"M"
+    },
+    {
+      "name":"Leia",
+      "gender":"F"
+    },
+    {
+      "name":"Cici",
+      "gender":"F"
+    },
+    {
+      "name":"Saskia",
+      "gender":"F"
+    },
+    {
+      "name":"Autumn",
+      "gender":"F"
+    },
+    {
+      "name":"Adelina",
+      "gender":"F"
+    },
+    {
+      "name":"Dinah",
+      "gender":"F"
+    }    
+    ]
+
+
+// send the data to store script
+function saveData(data){
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/store');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(data);
+      // xhr.send(JSON.stringify({filedata: data}));
+    }
+
+// initialise jspsych 
+var jsPsych = initJsPsych({
+  on_finish: function(){
+    // jsPsych.data.get().localSave('csv', 'data.csv')
+    saveData(jsPsych.data.get().csv());
+  },
+  show_progress_bar: true,
+  auto_update_progress_bar: false
+});
+
+// var jsPsych = initJsPsych({
+//   on_finish: function(){
+//      // var data = jsPsych.data.get().csv();
+//      jsPsych.data.get().localSave('csv', 'data.csv')
+//       // jsPsych.data.displayData();
+//       // saveData(jsPsych.data.get().csv());
+//       },
+//   show_progress_bar: true,
+//   auto_update_progress_bar: false
+// })
+
+/* for the progress bar: create a global count variable that increases by 1 after each trial, and use that to set the progress bar value at the end of each trial */
+var count = 0;
+// 20 target trials, 10 target/control trials
+// 1 demographics, 2 instructions, 1 finish, 4 practice, 4 feedback
+var n_trials = 38; 
+
+/* define the control stimuli */
+
+/* define the ingredients for the target stimuli */
+
+// 20 clause-embedding predicates
+var expressions = shuffle([ 
+   {
+     "trigger":"annoyed",
+     "trigger_class":"C"
+   }, 
+   {
+     "trigger":"discover",
+     "trigger_class":"C"
+   }, 
+   {
+     "trigger":"know",
+     "trigger_class":"C"
+   }, 
+   {
+     "trigger":"reveal",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"see",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"pretend",
+     "trigger_class":"C"
+   }, 
+   {
+     "trigger":"suggest",
+     "trigger_class":"C"
+   }, 
+   {
+     "trigger":"say",
+     "trigger_class":"C"
+   }, 
+   {
+     "trigger":"think",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"right",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"demonstrate",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"acknowledge",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"admit",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"announce",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"confess",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"confirm",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"establish",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"hear",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"inform",
+     "trigger_class":"C"
+   },
+   {
+     "trigger":"prove",
+     "trigger_class":"C"
+   }
+ ])
+
+// 20 contents
+var contents = {
+ "1": {
+  "gender":"f",
+  "content":"Mary is pregnant",
+  "annoyed":"Is Patrick annoyed that Mary is pregnant?",
+  "know":"Does Patrick know that Mary is pregnant?",
+  "discover":"Did Patrick discover that Mary is pregnant?",
+  "reveal":"Did Patrick reveal that Mary is pregnant?",
+  "see" :"Did Patrick see that Mary is pregnant?",
+  "establish":"Did Patrick establish that Mary is pregnant?",
+  "pretend":"Did Patrick pretend that Mary is pregnant?",
+  "think":"Does Patrick think that Mary is pregnant?",
+  "suggest":"Did Patrick suggest that Mary is pregnant?",
+  "prove":"Did Patrick prove that Mary is pregnant?",
+  "demonstrate":"Did Patrick demonstrate that Mary is pregnant?",
+  "say":"Did Patrick say that Mary is pregnant?",
+  "hear":"Did Patrick hear that Mary is pregnant?",
+  "confess":"Did Patrick confess that Mary is pregnant?",
+  "inform":"Did Patrick inform Sam that Mary is pregnant?",
+  "announce":"Did Patrick announce that Mary is pregnant?",
+  "acknowledge":"Did Patrick acknowledge that Mary is pregnant?",
+  "admit":"Did Patrick admit that Mary is pregnant?",
+  "confirm":"Did Patrick confirm that Mary is pregnant?",
+  "right":"Is Patrick right that Mary is pregnant?"
+  },
+  "2": {
+  "gender":"f",
+  "content":"Josie went on vacation to France",
+  "annoyed":"Is Scott annoyed that Josie went on vacation to France?",
+  "know":"Does Scott know that Josie went on vacation to France?",
+  "discover":"Did Scott discover that Josie went on vacation to France?",
+  "reveal":"Did Scott reveal that Josie went on vacation to France?",
+  "see" :"Did Scott see that Josie went on vacation to France?",
+  "establish":"Did Scott establish that Josie went on vacation to France?",
+  "pretend":"Did Scott pretend that Josie went on vacation to France?",
+  "think":"Does Scott think that Josie went on vacation to France?",
+  "suggest":"Did Scott suggest that Josie went on vacation to France?",
+  "prove":"Did Scott prove that Josie went on vacation to France?",
+  "demonstrate":"Did Scott demonstrate that Josie went on vacation to France?",
+  "say":"Did Scott say that Josie went on vacation to France?",
+  "hear":"Did Scott hear that Josie went on vacation to France?",
+  "confess":"Did Scott confess that Josie went on vacation to France?",
+  "inform":"Did Scott inform Sam that Josie went on vacation to France?",
+  "announce":"Did Scott announce that Josie went on vacation to France?",
+  "acknowledge":"Did Scott acknowledge that Josie went on vacation to France?",
+  "admit":"Did Scott admit that Josie went on vacation to France?",
+  "confirm":"Did Scott confirm that Josie went on vacation to France?",
+  "right":"Is Scott right that Josie went on vacation to France?"
+  },
+  "3": {
+  "gender":"f",
+  "content":"Emma studied on Saturday morning",
+  "annoyed":"Is Justin annoyed that Emma studied on Saturday morning?",
+  "know":"Does Justin know that Emma studied on Saturday morning?",
+  "discover":"Did Justin discover that Emma studied on Saturday morning?",
+  "reveal":"Did Justin reveal that Emma studied on Saturday morning?",
+  "see" :"Did Justin see that Emma studied on Saturday morning?",
+  "establish":"Did Justin establish that Emma studied on Saturday morning?",
+  "pretend":"Did Justin pretend that Emma studied on Saturday morning?",
+  "think":"Does Justin think that Emma studied on Saturday morning?",
+  "suggest":"Did Justin suggest that Emma studied on Saturday morning?",
+  "prove":"Did Justin prove that Emma studied on Saturday morning?",
+  "demonstrate":"Did Justin demonstrate that Emma studied on Saturday morning?",
+  "say":"Did Justin say that Emma studied on Saturday morning?",
+  "hear":"Did Justin hear that Emma studied on Saturday morning?",
+  "confess":"Did Justin confess that Emma studied on Saturday morning?",
+  "inform":"Did Justin inform Sam that Emma studied on Saturday morning?",
+  "announce":"Did Justin announce that Emma studied on Saturday morning?",
+  "acknowledge":"Did Justin acknowledge that Emma studied on Saturday morning?",
+  "admit":"Did Justin admit that Emma studied on Saturday morning?",
+  "confirm":"Did Justin confirm that Emma studied on Saturday morning?",
+  "right":"Is Justin right that Emma studied on Saturday morning?"
+  },
+  "4": {
+  "gender":"f",
+  "content":"Olivia sleeps until noon",
+  "annoyed":"Is Jerry annoyed that Olivia sleeps until noon?",
+  "know":"Does Jerry know that Olivia sleeps until noon?",
+  "discover":"Did Jerry discover that Olivia sleeps until noon?",
+  "reveal":"Did Jerry reveal that Olivia sleeps until noon?",
+  "see" :"Did Jerry see that Olivia sleeps until noon?",
+  "establish":"Did Jerry establish that Olivia sleeps until noon?",
+  "pretend":"Did Jerry pretend that Olivia sleeps until noon?",
+  "think":"Does Jerry think that Olivia sleeps until noon?",
+  "suggest":"Did Jerry suggest that Olivia sleeps until noon?",
+  "prove":"Did Jerry prove that Olivia sleeps until noon?",
+  "demonstrate":"Did Jerry demonstrate that Olivia sleeps until noon?",
+  "say":"Did Jerry say that Olivia sleeps until noon?",
+  "hear":"Did Jerry hear that Olivia sleeps until noon?",
+  "confess":"Did Jerry confess that Olivia sleeps until noon?",
+  "inform":"Did Jerry inform Sam that Olivia sleeps until noon?",
+  "announce":"Did Jerry announce that Olivia sleeps until noon?",
+  "acknowledge":"Did Jerry acknowledge that Olivia sleeps until noon?",
+  "admit":"Did Jerry admit that Olivia sleeps until noon?",
+  "confirm":"Did Jerry confirm that Olivia sleeps until noon?",
+  "right":"Is Jerry right that Olivia sleeps until noon?"
+  },
+  "5": {
+  "gender":"f",
+  "content":"Sophia got a tattoo",
+  "annoyed":"Is Ben annoyed that Sophia got a tattoo?",
+  "know":"Does Ben know that Sophia got a tattoo?",
+  "discover":"Did Ben discover that Sophia got a tattoo?",
+  "reveal":"Did Ben reveal that Sophia got a tattoo?",
+  "see" :"Did Ben see that Sophia got a tattoo?",
+  "establish":"Did Ben establish that Sophia got a tattoo?",
+  "pretend":"Did Ben pretend that Sophia got a tattoo?",
+  "think":"Does Ben think that Sophia got a tattoo?",
+  "suggest":"Did Ben suggest that Sophia got a tattoo?",
+  "prove":"Did Ben prove that Sophia got a tattoo?",
+  "demonstrate":"Did Ben demonstrate that Sophia got a tattoo?",
+  "say":"Did Ben say that Sophia got a tattoo?",
+  "hear":"Did Ben hear that Sophia got a tattoo?",
+  "confess":"Did Ben confess that Sophia got a tattoo?",
+  "inform":"Did Ben inform Sam that Sophia got a tattoo?",
+  "announce":"Did Ben announce that Sophia got a tattoo?",
+  "acknowledge":"Did Ben acknowledge that Sophia got a tattoo?",
+  "admit":"Did Ben admit that Sophia got a tattoo?",
+  "confirm":"Did Ben confirm that Sophia got a tattoo?",
+  "right":"Is Ben right that Sophia got a tattoo?"
+  },
+  "6": {
+  "gender":"f",
+  "content":"Mia drank 2 cocktails last night",
+  "annoyed":"Is Ray annoyed that Mia drank 2 cocktails last night?",
+  "know":"Does Ray know that Mia drank 2 cocktails last night?",
+  "discover":"Did Ray discover that Mia drank 2 cocktails last night?",
+  "reveal":"Did Ray reveal that Mia drank 2 cocktails last night?",
+  "see" :"Did Ray see that Mia drank 2 cocktails last night?",
+  "establish":"Did Ray establish that Mia drank 2 cocktails last night?",
+  "pretend":"Did Ray pretend that Mia drank 2 cocktails last night?",
+  "think":"Does Ray think that Mia drank 2 cocktails last night?",
+  "suggest":"Did Ray suggest that Mia drank 2 cocktails last night?",
+  "prove":"Did Ray prove that Mia drank 2 cocktails last night?",
+  "demonstrate":"Did Ray demonstrate that Mia drank 2 cocktails last night?",
+  "say":"Did Ray say that Mia drank 2 cocktails last night?",
+  "hear":"Did Ray hear that Mia drank 2 cocktails last night?",
+  "confess":"Did Ray confess that Mia drank 2 cocktails last night?",
+  "inform":"Did Ray inform Sam that Mia drank 2 cocktails last night?",
+  "announce":"Did Ray announce that Mia drank 2 cocktails last night?",
+  "acknowledge":"Did Ray acknowledge that Mia drank 2 cocktails last night?",
+  "admit":"Did Ray admit that Mia drank 2 cocktails last night?",
+  "confirm":"Did Ray confirm that Mia drank 2 cocktails last night?",
+  "right":"Is Ray right that Mia drank 2 cocktails last night?"
+  },
+  "7": {
+  "gender":"f",
+  "content":"Isabella ate a steak on Sunday",
+  "annoyed":"Is Kevin annoyed that Isabella ate a steak on Sunday?",
+  "know":"Does Kevin know that Isabella ate a steak on Sunday?",
+  "discover":"Did Kevin discover that Isabella ate a steak on Sunday?",
+  "reveal":"Did Kevin reveal that Isabella ate a steak on Sunday?",
+  "see" :"Did Kevin see that Isabella ate a steak on Sunday?",
+  "establish":"Did Kevin establish that Isabella ate a steak on Sunday?",
+  "pretend":"Did Kevin pretend that Isabella ate a steak on Sunday?",
+  "think":"Does Kevin think that Isabella ate a steak on Sunday?",
+  "suggest":"Did Kevin suggest that Isabella ate a steak on Sunday?",
+  "prove":"Did Kevin prove that Isabella ate a steak on Sunday?",
+  "demonstrate":"Did Kevin demonstrate that Isabella ate a steak on Sunday?",
+  "say":"Did Kevin say that Isabella ate a steak on Sunday?",
+  "hear":"Did Kevin hear that Isabella ate a steak on Sunday?",
+  "confess":"Did Kevin confess that Isabella ate a steak on Sunday?",
+  "inform":"Did Kevin inform Sam that Isabella ate a steak on Sunday?",
+  "announce":"Did Kevin announce that Isabella ate a steak on Sunday?",
+  "acknowledge":"Did Kevin acknowledge that Isabella ate a steak on Sunday?",
+  "admit":"Did Kevin admit that Isabella ate a steak on Sunday?",
+  "confirm":"Did Kevin confirm that Isabella ate a steak on Sunday?",
+  "right":"Is Kevin right that Isabella ate a steak on Sunday?"
+  },
+  "8": {
+  "gender":"f",
+  "content":"Emily bought a car yesterday",
+  "annoyed":"Is Brian annoyed that Emily bought a car yesterday?",
+  "know":"Does Brian know that Emily bought a car yesterday?",
+  "discover":"Did Brian discover that Emily bought a car yesterday?",
+  "reveal":"Did Brian reveal that Emily bought a car yesterday?",
+  "see" :"Did Brian see that Emily bought a car yesterday?",
+  "establish":"Did Brian establish that Emily bought a car yesterday?",
+  "pretend":"Did Brian pretend that Emily bought a car yesterday?",
+  "think":"Does Brian think that Emily bought a car yesterday?",
+  "suggest":"Did Brian suggest that Emily bought a car yesterday?",
+  "prove":"Did Brian prove that Emily bought a car yesterday?",
+  "demonstrate":"Did Brian demonstrate that Emily bought a car yesterday?",
+  "say":"Did Brian say that Emily bought a car yesterday?",
+  "hear":"Did Brian hear that Emily bought a car yesterday?",
+  "confess":"Did Brian confess that Emily bought a car yesterday?",
+  "inform":"Did Brian inform Sam that Emily bought a car yesterday?",
+  "announce":"Did Brian announce that Emily bought a car yesterday?",
+  "acknowledge":"Did Brian acknowledge that Emily bought a car yesterday?",
+  "admit":"Did Brian admit that Emily bought a car yesterday?",
+  "confirm":"Did Brian confirm that Emily bought a car yesterday?",
+  "right":"Is Brian right that Emily bought a car yesterday?"
+  },
+  "9": {
+  "gender":"f",
+  "content":"Grace visited her sister",
+  "annoyed":"Is Andrew annoyed that Grace visited her sister?",
+  "know":"Does Andrew know that Grace visited her sister?",
+  "discover":"Did Andrew discover that Grace visited her sister?",
+  "reveal":"Did Andrew reveal that Grace visited her sister?",
+  "see" :"Did Andrew see that Grace visited her sister?",
+  "establish":"Did Andrew establish that Grace visited her sister?",
+  "pretend":"Did Andrew pretend that Grace visited her sister?",
+  "think":"Does Andrew think that Grace visited her sister?",
+  "suggest":"Did Andrew suggest that Grace visited her sister?",
+  "prove":"Did Andrew prove that Grace visited her sister?",
+  "demonstrate":"Did Andrew demonstrate that Grace visited her sister?",
+  "say":"Did Andrew say that Grace visited her sister?",
+  "hear":"Did Andrew hear that Grace visited her sister?",
+  "confess":"Did Andrew confess that Grace visited her sister?",
+  "inform":"Did Andrew inform Sam that Grace visited her sister?",
+  "announce":"Did Andrew announce that Grace visited her sister?",
+  "acknowledge":"Did Andrew acknowledge that Grace visited her sister?",
+  "admit":"Did Andrew admit that Grace visited her sister?",
+  "confirm":"Did Andrew confirm that Grace visited her sister?",
+  "right":"Is Andrew right that Grace visited her sister?"
+  },
+  "10": {
+  "gender":"f",
+  "content":"Zoe calculated the tip",
+  "annoyed":"Is Tim annoyed that Zoe calculated the tip?",
+  "know":"Does Tim know that Zoe calculated the tip?",
+  "discover":"Did Tim discover that Zoe calculated the tip?",
+  "reveal":"Did Tim reveal that Zoe calculated the tip?",
+  "see" :"Did Tim see that Zoe calculated the tip?",
+  "establish":"Did Tim establish that Zoe calculated the tip?",
+  "pretend":"Did Tim pretend that Zoe calculated the tip?",
+  "think":"Does Tim think that Zoe calculated the tip?",
+  "suggest":"Did Tim suggest that Zoe calculated the tip?",
+  "prove":"Did Tim prove that Zoe calculated the tip?",
+  "demonstrate":"Did Tim demonstrate that Zoe calculated the tip?",
+  "say":"Did Tim say that Zoe calculated the tip?",
+  "hear":"Did Tim hear that Zoe calculated the tip?",
+  "confess":"Did Tim confess that Zoe calculated the tip?",
+  "inform":"Did Tim inform Sam that Zoe calculated the tip?",
+  "announce":"Did Tim announce that Zoe calculated the tip?",
+  "acknowledge":"Did Tim acknowledge that Zoe calculated the tip?",
+  "admit":"Did Tim admit that Zoe calculated the tip?",
+  "confirm":"Did Tim confirm that Zoe calculated the tip?",
+  "right":"Is Tim right that Zoe calculated the tip?"
+  },
+  "11": {
+  "gender":"m",
+  "content":"Danny ate the last cupcake",
+  "annoyed":"Is Amanda annoyed that Danny ate the last cupcake?",
+  "know":"Does Amanda know that Danny ate the last cupcake?",
+  "discover":"Did Amanda discover that Danny ate the last cupcake?",
+  "reveal":"Did Amanda reveal that Danny ate the last cupcake?",
+  "see" :"Did Amanda see that Danny ate the last cupcake?",
+  "establish":"Did Amanda establish that Danny ate the last cupcake?",
+  "pretend":"Did Amanda pretend that Danny ate the last cupcake?",
+  "think":"Does Amanda think that Danny ate the last cupcake?",
+  "suggest":"Did Amanda suggest that Danny ate the last cupcake?",
+  "prove":"Did Amanda prove that Danny ate the last cupcake?",
+  "demonstrate":"Did Amanda demonstrate that Danny ate the last cupcake?",
+  "say":"Did Amanda say that Danny ate the last cupcake?",
+  "hear":"Did Amanda hear that Danny ate the last cupcake?",
+  "confess":"Did Amanda confess that Danny ate the last cupcake?",
+  "inform":"Did Amanda inform Sam that Danny ate the last cupcake?",
+  "announce":"Did Amanda announce that Danny ate the last cupcake?",
+  "acknowledge":"Did Amanda acknowledge that Danny ate the last cupcake?",
+  "admit":"Did Amanda admit that Danny ate the last cupcake?",
+  "confirm":"Did Amanda confirm that Danny ate the last cupcake?",
+  "right":"Is Amanda right that Danny ate the last cupcake?"
+  },
+  "12": {
+  "gender":"m",
+  "content":"Frank got a cat",
+  "annoyed":"Is Melissa annoyed that Frank got a cat?",
+  "know":"Does Melissa know that Frank got a cat?",
+  "discover":"Did Melissa discover that Frank got a cat?",
+  "reveal":"Did Melissa reveal that Frank got a cat?",
+  "see" :"Did Melissa see that Frank got a cat?",
+  "establish":"Did Melissa establish that Frank got a cat?",
+  "pretend":"Did Melissa pretend that Frank got a cat?",
+  "think":"Does Melissa think that Frank got a cat?",
+  "suggest":"Did Melissa suggest that Frank got a cat?",
+  "prove":"Did Melissa prove that Frank got a cat?",
+  "demonstrate":"Did Melissa demonstrate that Frank got a cat?",
+  "say":"Did Melissa say that Frank got a cat?",
+  "hear":"Did Melissa hear that Frank got a cat?",
+  "confess":"Did Melissa confess that Frank got a cat?",
+  "inform":"Did Melissa inform Sam that Frank got a cat?",
+  "announce":"Did Melissa announce that Frank got a cat?",
+  "acknowledge":"Did Melissa acknowledge that Frank got a cat?",
+  "admit":"Did Melissa admit that Frank got a cat?",
+  "confirm":"Did Melissa confirm that Frank got a cat?",
+  "right":"Is Melissa right that Frank got a cat?"
+  },
+  "13": {
+  "gender":"m",
+  "content":"Jackson ran 10 miles",
+  "annoyed":"Is Laura annoyed that Jackson ran 10 miles?",
+  "know":"Does Laura know that Jackson ran 10 miles?",
+  "discover":"Did Laura discover that Jackson ran 10 miles?",
+  "reveal":"Did Laura reveal that Jackson ran 10 miles?",
+  "see" :"Did Laura see that Jackson ran 10 miles?",
+  "establish":"Did Laura establish that Jackson ran 10 miles?",
+  "pretend":"Did Laura pretend that Jackson ran 10 miles?",
+  "think":"Does Laura think that Jackson ran 10 miles?",
+  "suggest":"Did Laura suggest that Jackson ran 10 miles?",
+  "prove":"Did Laura prove that Jackson ran 10 miles?",
+  "demonstrate":"Did Laura demonstrate that Jackson ran 10 miles?",
+  "say":"Did Laura say that Jackson ran 10 miles?",
+  "hear":"Did Laura hear that Jackson ran 10 miles?",
+  "confess":"Did Laura confess that Jackson ran 10 miles?",
+  "inform":"Did Laura inform Sam that Jackson ran 10 miles?",
+  "announce":"Did Laura announce that Jackson ran 10 miles?",
+  "acknowledge":"Did Laura acknowledge that Jackson ran 10 miles?",
+  "admit":"Did Laura admit that Jackson ran 10 miles?",
+  "confirm":"Did Laura confirm that Jackson ran 10 miles?",
+  "right":"Is Laura right that Jackson ran 10 miles?"
+  },
+  "14": {
+  "gender":"m",
+  "content":"Jayden rented a car",
+  "annoyed":"Is Stephanie annoyed that Jayden rented a car?",
+  "know":"Does Stephanie know that Jayden rented a car?",
+  "discover":"Did Stephanie discover that Jayden rented a car?",
+  "reveal":"Did Stephanie reveal that Jayden rented a car?",
+  "see" :"Did Stephanie see that Jayden rented a car?",
+  "establish":"Did Stephanie establish that Jayden rented a car?",
+  "pretend":"Did Stephanie pretend that Jayden rented a car?",
+  "think":"Does Stephanie think that Jayden rented a car?",
+  "suggest":"Did Stephanie suggest that Jayden rented a car?",
+  "prove":"Did Stephanie prove that Jayden rented a car?",
+  "demonstrate":"Did Stephanie demonstrate that Jayden rented a car?",
+  "say":"Did Stephanie say that Jayden rented a car?",
+  "hear":"Did Stephanie hear that Jayden rented a car?",
+  "confess":"Did Stephanie confess that Jayden rented a car?",
+  "inform":"Did Stephanie inform Sam that Jayden rented a car?",
+  "announce":"Did Stephanie announce that Jayden rented a car?",
+  "acknowledge":"Did Stephanie acknowledge that Jayden rented a car?",
+  "admit":"Did Stephanie admit that Jayden rented a car?",
+  "confirm":"Did Stephanie confirm that Jayden rented a car?",
+  "right":"Is Stephanie right that Jayden rented a car?"
+  },
+  "15": {
+  "gender":"m",
+  "content":"Tony had a drink last night",
+  "annoyed":"Is Rebecca annoyed that Tony had a drink last night?",
+  "know":"Does Rebecca know that Tony had a drink last night?",
+  "discover":"Did Rebecca discover that Tony had a drink last night?",
+  "reveal":"Did Rebecca reveal that Tony had a drink last night?",
+  "see" :"Did Rebecca see that Tony had a drink last night?",
+  "establish":"Did Rebecca establish that Tony had a drink last night?",
+  "pretend":"Did Rebecca pretend that Tony had a drink last night?",
+  "think":"Does Rebecca think that Tony had a drink last night?",
+  "suggest":"Did Rebecca suggest that Tony had a drink last night?",
+  "prove":"Did Rebecca prove that Tony had a drink last night?",
+  "demonstrate":"Did Rebecca demonstrate that Tony had a drink last night?",
+  "say":"Did Rebecca say that Tony had a drink last night?",
+  "hear":"Did Rebecca hear that Tony had a drink last night?",
+  "confess":"Did Rebecca confess that Tony had a drink last night?",
+  "inform":"Did Rebecca inform Sam that Tony had a drink last night?",
+  "announce":"Did Rebecca announce that Tony had a drink last night?",
+  "acknowledge":"Did Rebecca acknowledge that Tony had a drink last night?",
+  "admit":"Did Rebecca admit that Tony had a drink last night?",
+  "confirm":"Did Rebecca confirm that Tony had a drink last night?",
+  "right":"Is Rebecca right that Tony had a drink last night?"
+  },
+  "16": {
+  "gender":"m",
+  "content":"Josh learned to ride a bike yesterday",
+  "annoyed":"Is Sharon annoyed that Josh learned to ride a bike yesterday?",
+  "know":"Does Sharon know that Josh learned to ride a bike yesterday?",
+  "discover":"Did Sharon discover that Josh learned to ride a bike yesterday?",
+  "reveal":"Did Sharon reveal that Josh learned to ride a bike yesterday?",
+  "see" :"Did Sharon see that Josh learned to ride a bike yesterday?",
+  "establish":"Did Sharon establish that Josh learned to ride a bike yesterday?",
+  "pretend":"Did Sharon pretend that Josh learned to ride a bike yesterday?",
+  "think":"Does Sharon think that Josh learned to ride a bike yesterday?",
+  "suggest":"Did Sharon suggest that Josh learned to ride a bike yesterday?",
+  "prove":"Did Sharon prove that Josh learned to ride a bike yesterday?",
+  "demonstrate":"Did Sharon demonstrate that Josh learned to ride a bike yesterday?",
+  "say":"Did Sharon say that Josh learned to ride a bike yesterday?",
+  "hear":"Did Sharon hear that Josh learned to ride a bike yesterday?",
+  "confess":"Did Sharon confess that Josh learned to ride a bike yesterday?",
+  "inform":"Did Sharon inform Sam that Josh learned to ride a bike yesterday?",
+  "announce":"Did Sharon announce that Josh learned to ride a bike yesterday?",
+  "acknowledge":"Did Sharon acknowledge that Josh learned to ride a bike yesterday?",
+  "admit":"Did Sharon admit that Josh learned to ride a bike yesterday?",
+  "confirm":"Did Sharon confirm that Josh learned to ride a bike yesterday?",
+  "right":"Is Sharon right that Josh learned to ride a bike yesterday?"
+  },
+  "17": {
+  "gender":"m",
+  "content":"Owen shoveled snow last winter",
+  "annoyed":"Is Cynthia annoyed that Owen shoveled snow last winter?",
+  "know":"Does Cynthia know that Owen shoveled snow last winter?",
+  "discover":"Did Cynthia discover that Owen shoveled snow last winter?",
+  "reveal":"Did Cynthia reveal that Owen shoveled snow last winter?",
+  "see" :"Did Cynthia see that Owen shoveled snow last winter?",
+  "establish":"Did Cynthia establish that Owen shoveled snow last winter?",
+  "pretend":"Did Cynthia pretend that Owen shoveled snow last winter?",
+  "think":"Does Cynthia think that Owen shoveled snow last winter?",
+  "suggest":"Did Cynthia suggest that Owen shoveled snow last winter?",
+  "prove":"Did Cynthia prove that Owen shoveled snow last winter?",
+  "demonstrate":"Did Cynthia demonstrate that Owen shoveled snow last winter?",
+  "say":"Did Cynthia say that Owen shoveled snow last winter?",
+  "hear":"Did Cynthia hear that Owen shoveled snow last winter?",
+  "confess":"Did Cynthia confess that Owen shoveled snow last winter?",
+  "inform":"Did Cynthia inform Sam that Owen shoveled snow last winter?",
+  "announce":"Did Cynthia announce that Owen shoveled snow last winter?",
+  "acknowledge":"Did Cynthia acknowledge that Owen shoveled snow last winter?",
+  "admit":"Did Cynthia admit that Owen shoveled snow last winter?",
+  "confirm":"Did Cynthia confirm that Owen shoveled snow last winter?",
+  "right":"Is Cynthia right that Owen shoveled snow last winter?"
+  },
+  "18": {
+  "gender":"m",
+  "content":"Julian dances salsa",
+  "annoyed":"Is Kathleen annoyed that Julian dances salsa?",
+  "know":"Does Kathleen know that Julian dances salsa?",
+  "discover":"Did Kathleen discover that Julian dances salsa?",
+  "reveal":"Did Kathleen reveal that Julian dances salsa?",
+  "see" :"Did Kathleen see that Julian dances salsa?",
+  "establish":"Did Kathleen establish that Julian dances salsa?",
+  "pretend":"Did Kathleen pretend that Julian dances salsa?",
+  "think":"Does Kathleen think that Julian dances salsa?",
+  "suggest":"Did Kathleen suggest that Julian dances salsa?",
+  "prove":"Did Kathleen prove that Julian dances salsa?",
+  "demonstrate":"Did Kathleen demonstrate that Julian dances salsa?",
+  "say":"Did Kathleen say that Julian dances salsa?",
+  "hear":"Did Kathleen hear that Julian dances salsa?",
+  "confess":"Did Kathleen confess that Julian dances salsa?",
+  "inform":"Did Kathleen inform Sam that Julian dances salsa?",
+  "announce":"Did Kathleen announce that Julian dances salsa?",
+  "acknowledge":"Did Kathleen acknowledge that Julian dances salsa?",
+  "admit":"Did Kathleen admit that Julian dances salsa?",
+  "confirm":"Did Kathleen confirm that Julian dances salsa?",
+  "right":"Is Kathleen right that Julian dances salsa?"
+  },
+  "19": {
+  "gender":"m",
+  "content":"Jon walks to work",
+  "annoyed":"Is Ruth annoyed that Jon walks to work?",
+  "know":"Does Ruth know that Jon walks to work?",
+  "discover":"Did Ruth discover that Jon walks to work?",
+  "reveal":"Did Ruth reveal that Jon walks to work?",
+  "see" :"Did Ruth see that Jon walks to work?",
+  "establish":"Did Ruth establish that Jon walks to work?",
+  "pretend":"Did Ruth pretend that Jon walks to work?",
+  "think":"Does Ruth think that Jon walks to work?",
+  "suggest":"Did Ruth suggest that Jon walks to work?",
+  "prove":"Did Ruth prove that Jon walks to work?",
+  "demonstrate":"Did Ruth demonstrate that Jon walks to work?",
+  "say":"Did Ruth say that Jon walks to work?",
+  "hear":"Did Ruth hear that Jon walks to work?",
+  "confess":"Did Ruth confess that Jon walks to work?",
+  "inform":"Did Ruth inform Sam that Jon walks to work?",
+  "announce":"Did Ruth announce that Jon walks to work?",
+  "acknowledge":"Did Ruth acknowledge that Jon walks to work?",
+  "admit":"Did Ruth admit that Jon walks to work?",
+  "confirm":"Did Ruth confirm that Jon walks to work?",
+  "right":"Is Ruth right that Jon walks to work?"
+  },
+  "20": {
+  "gender":"m",
+  "content":"Charley speaks Spanish",
+  "annoyed":"Is Anna annoyed that Charley speaks Spanish?",
+  "know":"Does Anna know that Charley speaks Spanish?",
+  "discover":"Did Anna discover that Charley speaks Spanish?",
+  "reveal":"Did Anna reveal that Charley speaks Spanish?",
+  "see" :"Did Anna see that Charley speaks Spanish?",
+  "establish":"Did Anna establish that Charley speaks Spanish?",
+  "pretend":"Did Anna pretend that Charley speaks Spanish?",
+  "think":"Does Anna think that Charley speaks Spanish?",
+  "suggest":"Did Anna suggest that Charley speaks Spanish?",
+  "prove":"Did Anna prove that Charley speaks Spanish?",
+  "demonstrate":"Did Anna demonstrate that Charley speaks Spanish?",
+  "say":"Did Anna say that Charley speaks Spanish?",
+  "hear":"Did Anna hear that Charley speaks Spanish?",
+  "confess":"Did Anna confess that Charley speaks Spanish?",
+  "inform":"Did Anna inform Sam that Charley speaks Spanish?",
+  "announce":"Did Anna announce that Charley speaks Spanish?",
+  "acknowledge":"Did Anna acknowledge that Charley speaks Spanish?",
+  "admit":"Did Anna admit that Charley speaks Spanish?",
+  "confirm":"Did Anna confirm that Charley speaks Spanish?",
+  "right":"Is Anna right that Charley speaks Spanish?"
+  }
+};
+
+// three types of context sentences per content: explicit ignorance (target) and factH/factL (fillers)
+var facts = {
+ "1": {
+  "explI": "I don't know if Mary is pregnant",
+  "factH":"Mary is taking a prenatal yoga class",
+  "factL":"Mary is a middle school student"
+  },
+  "2": {
+  "explI": "I don't know if Josie went on vacation to France",
+  "factH":"Josie loves France",
+  "factL":"Josie doesn't have a passport"
+  },
+  "3": {
+  "explI": "I don't know if Emma studied on Saturday morning",
+  "factH":"Emma is in law school",
+  "factL":"Emma is in first grade"
+  },
+  "4": {
+  "explI": "I don't know if Olivia sleeps until noon",
+  "factH":"Olivia works the third shift",
+  "factL":"Olivia has two small children"
+  },
+  "5": {
+  "explI": "I don't know if Sophia got a tattoo",
+  "factH":"Sophia is a hipster",
+  "factL":"Sophia is a high end fashion model"
+  },
+  "6": {
+  "explI": "I don't know if Mia drank 2 cocktails last night",
+  "factH":"Mia is a college student",
+  "factL":"Mia is a nun"
+  },
+  "7": {
+  "explI": "I don't know if Isabella ate a steak on Sunday",
+  "factH":"Isabella is from Argentina",
+  "factL":"Isabella is a vegetarian"
+  },
+  "8": {
+  "explI": "I don't know if Emily bought a car yesterday",
+  "factH":"Emily has been saving for a year",
+  "factL":"Emily never has any money"
+  },
+  "9": {
+  "explI": "I don't know if Grace visited her sister",
+  "factH":"Grace loves her sister",
+  "factL":"Grace hates her sister"
+  },
+  "10": {
+  "explI": "I don't know if Zoe calculated the tip",
+  "factH":"Zoe is a math major",
+  "factL":"Zoe is 5 years old"
+  },
+  "11": {
+  "explI": "I don't know if Danny ate the last cupcake",
+  "factH":"Danny loves cake",
+  "factL":"Danny is a diabetic"
+  },
+  "12": {
+  "explI": "I don't know if Frank got a cat",
+  "factH":"Frank has always wanted a pet",
+  "factL":"Frank is allergic to cats"
+  },
+  "13": {
+  "explI": "I don't know if Jackson ran 10 miles",
+  "factH":"Jackson is training for a marathon",
+  "factL":"Jackson is obese"
+  },
+  "14": {
+  "explI": "I don't know if Jayden rented a car",
+  "factH":"Jayden's car is in the shop",
+  "factL":"Jayden doesn't have a driver's license"
+  },
+  "15": {
+  "explI": "I don't know if Tony had a drink last night",
+  "factH":"Tony really likes to party with his friends",
+  "factL":"Tony has been sober for 20 years"
+  },
+  "16": {
+  "explI": "I don't know if Josh learned to ride a bike yesterday",
+  "factH":"Josh is a 5-year old boy",
+  "factL":"Josh is a 75-year old man"
+  },
+  "17": {
+  "explI": "I don't know if Owen shoveled snow last winter",
+  "factH":"Owen lives in Chicago",
+  "factL":"Owen lives in New Orleans"
+  },
+  "18": {
+  "explI": "I don't know if Julian dances salsa",
+  "factH":"Julian is Cuban",
+  "factL":"Julian is German"
+  },
+  "19": {
+  "explI": "I don't know if Jon walks to work",
+  "factH":"Jon lives 2 blocks away from work",
+  "factL":"Jon lives 10 miles away from work"
+  },
+  "20": {
+  "explI": "I don't know if Charley speaks Spanish",
+  "factH":"Charley lives in Mexico",
+  "factL":"Charley lives in Korea"
+  }
+};
+  
+// for each predicate, identify the contents that are (still) available (all at the start)
+var expression_content_mapping = {
+"annoyed":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"know":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"discover":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"reveal":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"see":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"establish":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"pretend":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],  
+"think":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"suggest":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"prove":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"demonstrate":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"say":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],  "hear":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"confess":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],  "inform":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"announce":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],   "acknowledge":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"admit":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],  "confirm":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],
+"right":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
+};  
+
+// for each content, identify the three possible contexts
+var content_fact_mapping = {
+"1":["explI","factH","factL"],
+"2":["explI","factH","factL"],
+"3":["explI","factH","factL"],
+"4":["explI","factH","factL"],
+"5":["explI","factH","factL"],
+"6":["explI","factH","factL"],
+"7":["explI","factH","factL"],
+"8":["explI","factH","factL"],
+"9":["explI","factH","factL"],
+"10":["explI","factH","factL"],
+"11":["explI","factH","factL"],
+"12":["explI","factH","factL"],
+"13":["explI","factH","factL"],
+"14":["explI","factH","factL"],
+"15":["explI","factH","factL"],
+"16":["explI","factH","factL"],
+"17":["explI","factH","factL"],
+"18":["explI","factH","factL"],
+"19":["explI","factH","factL"],
+"20":["explI","factH","factL"]
+}; 
+ 
+
+// for each predicate, get a content, and remove it from the array of contents for the other predicates
+  function getContent(trigger) {
+      expression_content_mapping[trigger] = shuffle(expression_content_mapping[trigger]);
+      var content = expression_content_mapping[trigger].shift();//items_content_mapping[trigger][0];
+      for (var j in expression_content_mapping) {
+      var index = expression_content_mapping[j].indexOf(content);  
+      if (index != -1)
+      {             
+        expression_content_mapping[j].splice(index,1);     
+      }
+      }
+      return content;
+    }
+    
+// for each content, get a fact
+  function getFact(content) {
+      content_fact_mapping[content] = shuffle(content_fact_mapping[content]);
+      var factType = content_fact_mapping[content].shift();//items_content_mapping[trigger][0];
+      return factType;
+    }
+
+// assign contents to predicates
+  var trigger_contents = {
+    "annoyed": getContent("annoyed"),       
+    "know": getContent("know"),
+    "discover": getContent("discover"),       
+    "reveal": getContent("reveal"),
+    "see": getContent("see"),
+    "establish": getContent("establish"),
+    "pretend": getContent("pretend"),   
+    "think": getContent("think"),   
+    "suggest": getContent("suggest"),
+    "prove": getContent("prove"),
+    "demonstrate": getContent("demonstrate"),
+    "say": getContent("say"),
+    "hear": getContent("hear"),
+    "confess": getContent("confess"),   
+    "inform": getContent("inform"),
+    "announce": getContent("announce"),
+    "acknowledge": getContent("acknowledge"),
+    "admit": getContent("admit"),
+    "confirm": getContent("confirm"),
+    "right": getContent("right")
+    };
+    
+// assign contexts to contents
+var content_facts = {
+    "1": getFact("1"),
+    "2": getFact("2"),
+    "3": getFact("3"),
+    "4": getFact("4"),
+    "5": getFact("5"),
+    "6": getFact("6"),
+    "7": getFact("7"),
+    "8": getFact("8"),
+    "9": getFact("9"),
+    "10": getFact("10"),
+    "11": getFact("11"),
+    "12": getFact("12"),
+    "13": getFact("13"),
+    "14": getFact("14"),
+    "15": getFact("15"),
+    "16": getFact("16"),
+    "17": getFact("17"),
+    "18": getFact("18"),
+    "19": getFact("19"),
+    "20": getFact("20")
+    };
+
+// make the target stimuli
+function makeStim(i, factType) {
+    // get a predicate (= expression)
+    var expression = expressions[i];
+    //get a name to be speaker
+    var name_data = shuffle(names)[i];
+    var name = name_data.name;
+    var gender = name_data.gender;
+    // get content
+    var trigger_cont = trigger_contents[expression.trigger];
+    var trigger = expression.trigger;
+    var short_trigger = trigger;
+    // given a predicate and a content, what is the question to be asked?
+    var question = contents[trigger_cont][short_trigger];
+    // this is the CC
+    var CC = contents[trigger_cont].content; 
+    // this is the context sentence
+    var context = facts[trigger_cont][factType];
+    var factType = factType;
+    // console.log(fact)
+//   console.log(contents[trigger_cont]);
+//    console.log(question) 
+    //get another name to be subject
+    // var name_data2 = contents[trigger_cont].gender == "m" ? female_subject_names[i] : male_subject_names[i];
+    // var name2 = name_data2.name;
+    // var gender2 = name_data2.gender;
+    return {
+    "item_id": "target",
+    "name": name,
+    // "name2": name2,
+    "gender": gender, 
+    // "gender2": gender2,  
+    "trigger": expression.trigger,
+    "short_trigger": short_trigger,   
+    "trigger_class": expression.trigger_class,
+    "fact": context,
+    "fact_type": factType,
+      "content": trigger_cont,
+      "context": context,
+      "question": question
+    }
+  }   
+
+/* create the control stimuli */ 
+
+control_items = [
+  {
+    "item_id" : "controlGood1",
+    "short_trigger" : "control",
+    "utterance" : "Does Samantha have a new hat?",
+    "content" : "Samantha has a new hat",
+    "fact" : "I don't know if Samantha has a new hat"
+  },
+  {
+    "item_id" : "controlGood2",
+    "short_trigger" : "control",
+    "utterance" : "Does this pizza have mushrooms on it?",
+    "content" : "this pizza has mushrooms on it",
+    "fact" : "I don't know if this pizza has mushrooms on it"
+  },
+  {
+    "item_id" : "controlGood3",
+    "short_trigger" : "control",
+    "utterance" : "Was Hendrick's car expensive?",
+    "content" : "Hendrick",
+    "fact" : "Hendrick was looking to buy a car"
+  },
+  {
+    "item_id" : "controlGood4",
+    "short_trigger" : "control",
+    "utterance" : "Is Mary's aunt sick?",
+    "content" : "this pizza has mushrooms on it",
+    "fact" : "Mary visited her aunt yesterday"
+  },
+  {
+    "item_id" : "controlAlso",
+    "short_trigger" : "control",
+    "utterance" : "Does Svenja also play soccer?",
+    "content" : "Svenja plays soccer",
+    "fact" : "I don't know if Svenja plays any sport"
+  },
+  {
+    "item_id" : "controlCleft",
+    "short_trigger" : "control",
+    "utterance" : "Was it Jack who was playing outside with the kids?",
+    "content" : "Jack",
+    "fact" : "I don't know if anyone was playing outside with the kids"
+  },
+  {
+    "item_id" : "controlToo",
+    "short_trigger" : "control",
+    "utterance" : "Does Ann play the flute, too?",
+    "content" : "Ann",
+    "fact" : "I don't know if Ann plays any instrument"
+  },
+  {
+    "item_id" : "controlStop",
+    "short_trigger" : "control",
+    "utterance" : "Has Stephen recently stopped vaping?",
+    "content" : "Stephen",
+    "fact" : "I don't know if Stephen was ever in the habit of vaping"
+  },
+  {
+    "item_id" : "controlAgain",
+    "short_trigger" : "control",
+    "utterance" : "Is William interested in history again?",
+    "content" : "William",
+    "fact" : "I don't know if William was ever interested in history"
+  },
+  {
+    "item_id" : "controlContinue",
+    "short_trigger" : "control",
+    "utterance" : "Has John recently continued reading \"Dune\"?",
+    "content" : "Herbert",
+    "fact" : "I don't know if John was ever reading \"Dune\""
+  }
+];
+
+function makeControlStim(i) {
+    //get item
+    var item = control_items[i];
+  //get a name to be speaker
+    var name_data = mcnames[i];
+    var name = name_data.name;
+    var gender = name_data.gender;
+    return {
+    "item_id": item.short_trigger,
+    "name": name,
+    "gender": gender, 
+    "trigger": item.item_id,
+    "content": item.item_id,
+    "fact": item.fact,
+    "fact_type": "NA",
+    "context": item.fact,
+    "question": item.utterance
+    }
+  }
+
+// make items and push them to array of items
+var items = [];
+
+  for (var i=0; i<expressions.length; i++) {
+//   make 12 target stimuli with explicit ignorance context, and 4 with factL, 4 with factH
+    var stim = i < 12 ? makeStim(i,"explI") : 
+      i < 16 ? makeStim(i, "factL") : makeStim(i, "factH");
+//  var stim = i < items.length/2 ? makeStim(i,"factL") : makeStim(i, "factH");
+
+//    exp.stims_block1.push(makeStim(i));
+  items.push(jQuery.extend(true, {}, stim));
+//  exp.stims_block2.push(jQuery.extend(true, {}, stim)); 
+  }  
+
+for (var j=0; j<control_items.length; j++) {
+    var stim = makeControlStim(j);
+//    exp.stims_block1.push(makeStim(i));
+  items.push(jQuery.extend(true, {}, stim));
+//  exp.stims_block2.push(jQuery.extend(true, {}, stim)); 
+  } 
+
+console.log(items)  
+  
+
+// this function takes an item as an argument and builds the stimulus to be displayed
+// whether the pronoun or the proper name are used in the main clause and the CC
+// depend on the type of item
+function buildStimulus(item) {
+   return "<b>" + item.name + ":</b><em> \"" + item.context + ". " + item.question + "\"</em>";
+}
+
+// initialize array of stimuli with stimulus keys and empty values
+// the length is the length of the items array
+var stimuli = Array.from(Array(items.length).keys())
+// console.log(stimuli)
+
+function createKey(index) {
+  var name = "stimulus:";
+  return name;
+}
+var stimuli = stimuli.map(createKey);
+
+// console.log(stimuli)
+
+stimuli = stimuli.map(() => ({ }));
+
+// console.log(stimuli)
+
+// loop through the items to turn them into stimuli that can be displayed
+for (let i = 0; i < items.length; i++) {
+   stimuli[i].stimulus = buildStimulus(items[i]);
+} 
+
+// console.log(stimuli)
+
+
+/* add the control stimuli to the stimuli */
+// stimuli = stimuli.concat(control_stimuli);
+
+/* Now that we have a list of stimuli, we define the experiment trials and screens */
+
+// instruction and consent screen
+var consent_screen = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<h3>Instructions</h3><p style='text-align:left'>In this experiment, you will read what different people say and rate how natural that sounds. Here's an example from Leah:<br><br><b>Leah:</b> <i>\"I have no idea if Mitchell got a poodle. Did Frank suggest that Mitchell wanted to get a poodle?\"</i><br> <br> Leah first made a statement and then asked a question. We ask you to rate how natural the question sounds in the context of the statement. You will give your answer on a sliding scale from \"totally unnatural\" to \"totally natural\".<br><br> We start off with four practice examples. Then you will rate 30 examples.<br><br><b> Payment:</b> You will be paid $1.35 to participate in this experiment, which will take about 5 minutes to complete.<br> <p style='text-align:left' font size=\"1\"> <b> Consent:</b> By clicking on the button below you agree to participate in this experiment, which is conducted by researchers at the University of Stuttgart. You may withdraw from this experiment at any time without penalty. The data collected will be anonymous and confidential. If you have any questions, you may contact the requester through Prolific's platform, or directly at judith.tonhauser@ling.uni-stuttgart.de.</p>",
+  choices: ["Yes, I consent to participate"],
+  on_finish: function(data) {
+              count++;
+              var progress = count/n_trials;
+              jsPsych.setProgressBar(progress);
+            }
+};
+
+/* practice trial 1, with loop in case of incorrect response */
+
+// create practice 1 trial
+var practice1 = {
+  type: jsPsychHtmlSliderResponse,
+  prompt:  
+    "<p>How natural does Katia's question sound in this context?</p>",
+  labels: ["totally unnatural", "totally natural"],
+  slider_width: "400",
+  require_movement: true,
+  stimulus: "<b>First practice example</b><br><br><b> Katia: </b> <i>\"I have no idea where Natalie is from. Is Natalie from the USA?\"</i>",
+  on_finish: function(data){
+    count++;
+    var progress = count/n_trials;
+    jsPsych.setProgressBar(progress);
+    // score the keyboard response as correct or incorrect.
+    if (data.response > 60){
+      data.correct = true
+      // return "<p style='text-align:left'><b>Correct!</b></p>";
+    } else {
+      data.correct = false; 
+    }
+    // console.log("Response to practice1 was:"+data.response) 
+    // the next line stores whether the last trial was correct or not in "last_trial_correct"
+    // console.log(jsPsych.data.get())
+    // console.log(jsPsych.data.get().last(1))
+    // console.log(jsPsych.data.get().last(1).values())
+    // console.log(jsPsych.data.get().last(1).values()[0])
+    // var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("i'm here")
+    // this line stores in last_trial_correct whether the first practice trial was correct
+    // console.log(jsPsych.data.get().trials.length-1)
+    // console.log(jsPsych.data.get().trials[1].correct) 
+    // var first_practice_correct = jsPsych.data.get().trials[1].correct
+    // console.log("first practice"+first_practice_correct)
+  },
+    data: {
+    task: 'practice'
+    }
+    // console.log(data.response)
+    // console.log(data.correct)
+}
+
+// feedback, in case the response was incorrect
+var feedback1IC = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Incorrect response! </b><br><br><b> Katia: </b> <i>\"I have no idea where Natalie is from. Is Natalie from the USA?\"</i> <br><br> Katia's question sounds very natural in this context because it is natural for Katia to ask whether Natalie is from the USA if Katia doesn't know where Natalie is from. Please repeat the first practice example.</p>",
+  choices: ['Return to the first practice example']
+}
+
+// feedback, in case the response was correct
+var feedback1C = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Good response! </b><br><br><b> Katia: </b> <i>\"I have no idea where Natalie is from. Is Natalie from the USA?\"</i> <br><br> Katia's question sounds very natural in this context because it is natural for Katia to ask whether Natalie is from the USA if Katia doesn't know where Natalie is from.</p>",
+  choices: ['Continue to the second practice example']
+}
+
+// conditional: in case response was incorrect, repeat practice1
+var practice1_conditionalIC = {
+  timeline: [feedback1IC],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
+    var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    console.log("i'm in the incorrect conditional")
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "incorrect"
+      return false
+    } else { // else: if last trial was incorrect, don't carry out "incorrect" feedback
+      return true; 
+    }
+  }
+}
+
+// conditional: in case response was correct, don't repeat practice1
+var practice1_conditionalC = {
+  timeline: [feedback1C],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
+    var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    console.log("i'm in the correct conditional")
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "correct"
+      return true
+    } else { // else: if last trial was incorrect, don't carry out "correct" feedback
+      return false;  
+    }
+  }
+}
+
+// a loop is always carried out at least once, a conditional not necessarily
+var practice1_loop = {
+    timeline: [practice1, practice1_conditionalIC, practice1_conditionalC],
+    loop_function: function(data){
+    // var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("Response was:"+last_trial_correct) 
+    // console.log("i'm inside the loop now")
+    // console.log(jsPsych.data.get())
+    // console.log(jsPsych.data.get().last(2))
+    // console.log(jsPsych.data.get().last(2).values()[0].correct)
+    // here we have to go back 2 trials, to get at the last response to the practice trial
+    var last_trial_correct = jsPsych.data.get().last(2).values()[0].correct;
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "incorrect"
+      return false; // don't repeat the loop if the response was correct
+    } else {
+      return true; // repeat if the response was incorrect
+    }
+    }
+}
+
+/* practice trial 2, with loop in case of incorrect response */
+
+// create practice 2 trial
+var practice2 = {
+  type: jsPsychHtmlSliderResponse,
+  prompt:  
+    "<p>How natural does Xenia's question sound in this context?</p>",
+  labels: ["totally unnatural", "totally natural"],
+  slider_width: "400",
+  require_movement: true,
+  stimulus: "<p style='text-align:left'><b>Here's the second practice example.</b><br><br><b>Xenia: </b><i>\"I don't have any sisters. Have you met my sister yet?\"</i></p>",
+  on_finish: function(data){
+    count++;
+    var progress = count/n_trials;
+    jsPsych.setProgressBar(progress);
+    // score the keyboard response as correct or incorrect.
+    if (data.response < 40){
+      data.correct = true
+      // return "<p style='text-align:left'><b>Correct!</b></p>"
+    } else {
+      data.correct = false; 
+    }
+  },
+    data: {
+    task: 'practice'
+    }
+    // console.log(data.response)
+    // console.log(data.correct)
+}
+
+// feedback, in case the response was incorrect
+var feedback2IC = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Incorrect response </b><br><br><b>Xenia: </b><i>\"I don't have any sisters. Have you met my sister yet?\"</i> <br><br> Xenia's question does not sound very natural in this context. Her question implies that she has a sister, but she stated that she doesn't have any sisters.  Please repeat the second practice example.</p>",
+  choices: ['Return to the second practice example']
+}
+
+// feedback, in case the response was correct
+var feedback2C = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Good response! </b><br><br><b>Xenia: </b><i>\"I don't have any sisters. Have you met my sister yet?\"</i> <br><br> Xenia's question does not sound very natural in this context. Her question implies that she has a sister, but she stated that she doesn't have any sisters.</p>",
+  choices: ['Continue to the third practice example']
+}
+
+// conditional: in case response was incorrect, repeat practice2
+var practice2_conditionalIC = {
+  timeline: [feedback2IC],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
+    var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("i'm here")
+    // console.log(last_trial_correct)
+    if (last_trial_correct){
+      // repeat_practice1 = false;
+      return false
+    } else {
+      // repeat_practice1 = true;
+      return true; 
+    }
+  }
+}
+
+// conditional: in case response was correct, don't repeat practice2
+var practice2_conditionalC = {
+  timeline: [feedback2C],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
+    var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    console.log("i'm in the correct conditional")
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "correct"
+      return true
+    } else { // else: if last trial was incorrect, don't carry out "correct" feedback
+      return false;  
+    }
+  }
+}
+
+// a loop is always carried out at least once, a conditional not necessarily
+var practice2_loop = {
+    timeline: [practice2, practice2_conditionalIC, practice2_conditionalC],
+    loop_function: function(data){
+    // var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("Response was:"+last_trial_correct) 
+    // console.log("i'm inside the loop now")
+    // console.log(jsPsych.data.get())
+    // console.log(jsPsych.data.get().last(2))
+    // console.log(jsPsych.data.get().last(2).values()[0].correct)
+    // here we have to go back 2 trials, to get at the last response to the practice trial
+    var last_trial_correct = jsPsych.data.get().last(2).values()[0].correct;
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "incorrect"
+      return false; // don't repeat the loop if the response was correct
+    } else {
+      return true; // repeat if the response was incorrect
+    }
+    }
+}
+
+/* practice trial 3, with loop in case of incorrect response */
+
+// create practice 3 trial
+var practice3 = {
+  type: jsPsychHtmlSliderResponse,
+  prompt:  
+    "<p>How natural does Kerstin's question sound in this context?</p>",
+  labels: ["totally unnatural", "totally natural"],
+  slider_width: "400",
+  require_movement: true,
+  stimulus: "<p style='text-align:left'><b>Here's the third practice example.</b><br><br><b>Kerstin: </b> <i>\"I am going on vacation to Ireland. Does Fritz realize that Joe is going with me?\"</i></p>",
+  on_finish: function(data){
+    count++;
+    var progress = count/n_trials;
+    jsPsych.setProgressBar(progress);
+    // score the keyboard response as correct or incorrect.
+    if (data.response > 60){
+      data.correct = true
+      // return "<p style='text-align:left'><b>Correct!</b></p>"
+    } else {
+      data.correct = false; 
+    }
+  },
+    data: {
+    task: 'practice'
+    }
+    // console.log(data.response)
+    // console.log(data.correct)
+}
+
+// feedback, in case the response was incorrect
+var feedback3IC = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Incorrect response </b><br><br><b>Kerstin: </b> <i>\"I am going on vacation to Ireland. Does Fritz realize that Joe is going with me?\"</i> <br><br> Kerstin's question sounds very natural in this context: She is asking the person she is talking to whether Fritz realizes that Joe is going with her on vacation to Ireland. Please repeat the third practice example.</p>",
+  choices: ['Return to the third practice example']
+}
+
+// feedback, in case the response was correct
+var feedback3C = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Good response! </b><br><br><b>Kerstin: </b> <i>\"I am going on vacation to Ireland. Does Fritz realize that Joe is going with me?\"</i> <br><br> Kerstin's question sounds very natural in this context.</p>",
+  choices: ['Continue to the fourth practice example']
+}
+
+// conditional: in case response was incorrect, repeat practice3
+var practice3_conditionalIC = {
+  timeline: [feedback3IC],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
+    var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("i'm here")
+    // console.log(last_trial_correct)
+    if (last_trial_correct){
+      // repeat_practice1 = false;
+      return false
+    } else {
+      // repeat_practice1 = true;
+      return true; 
+    }
+  }
+}
+
+// conditional: in case response was correct, don't repeat practice3
+var practice3_conditionalC = {
+  timeline: [feedback3C],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
+    var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    console.log("i'm in the correct conditional")
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "correct"
+      return true
+    } else { // else: if last trial was incorrect, don't carry out "correct" feedback
+      return false;  
+    }
+  }
+}
+
+// a loop is always carried out at least once, a conditional not necessarily
+var practice3_loop = {
+    timeline: [practice3, practice3_conditionalIC, practice3_conditionalC],
+    loop_function: function(data){
+    // var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("Response was:"+last_trial_correct) 
+    // console.log("i'm inside the loop now")
+    // console.log(jsPsych.data.get())
+    // console.log(jsPsych.data.get().last(2))
+    // console.log(jsPsych.data.get().last(2).values()[0].correct)
+    // here we have to go back 2 trials, to get at the last response to the practice trial
+    var last_trial_correct = jsPsych.data.get().last(2).values()[0].correct;
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "incorrect"
+      return false; // don't repeat the loop if the response was correct
+    } else {
+      return true; // repeat if the response was incorrect
+    }
+    }
+}
+
+/* practice trial 4, with loop in case of incorrect response */
+
+// create practice 4 trial
+var practice4 = {
+  type: jsPsychHtmlSliderResponse,
+  prompt:  
+    "<p>How natural does Mirko's question sound in this context?</p>",
+  labels: ["totally unnatural", "totally natural"],
+  slider_width: "400",
+  require_movement: true,
+  stimulus: "<p style='text-align:left'><b> Here's the last practice example.</b><br><br><b>Mirko: </b><i>\"I have no idea if Anna has any dogs. Is Samuel glad that Anna fed her dogs?\"</i></p>",
+  on_finish: function(data){
+    count++;
+    var progress = count/n_trials;
+    jsPsych.setProgressBar(progress);
+    // score the keyboard response as correct or incorrect.
+    if (data.response < 40){
+      data.correct = true
+      // return "<p style='text-align:left'><b>Correct!</b></p>"
+    } else {
+      data.correct = false; 
+    }
+  },
+    data: {
+    task: 'practice'
+    }
+    // console.log(data.response)
+    // console.log(data.correct)
+}
+
+// feedback, in case the response was incorrect
+var feedback4IC = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Incorrect response </b><br><br><b>Mirko: </b><i>\"I have no idea if Anna has any dogs. Is Samuel glad that Anna fed her dogs?\"</i> <br><br> Mirko's question does not sound very natural in this context. Mirko's question implies that Anna has dogs, but he stated that he doesn't know whether Anna has any dogs. Please repeat the fourth practice example.</p>",
+  choices: ['Return to the fourth practice example']
+}
+
+// feedback, in case the response was correct
+var feedback4C = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b> Good response! </b><br><br><b>Mirko: </b><i>\"I have no idea if Anna has any dogs. Is Samuel glad that Anna fed her dogs?\"</i> <br><br> Mirko's question does not sound very natural in this context. Mirko's question implies that he thinks that Anna has dogs, but he stated that he doesn't know whether Anna has any dogs.</p>",
+  choices: ['Continue']
+}
+
+// conditional: in case response was incorrect, repeat practice4
+var practice4_conditionalIC = {
+  timeline: [feedback4IC],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
+    var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("i'm here")
+    // console.log(last_trial_correct)
+    if (last_trial_correct){
+      // repeat_practice1 = false;
+      return false
+    } else {
+      // repeat_practice1 = true;
+      return true; 
+    }
+  }
+}
+
+// conditional: in case response was correct, don't repeat practice4
+var practice4_conditionalC = {
+  timeline: [feedback4C],
+  conditional_function: function(){
+    // feedback is dynamic, depending on accuracy of last response
+    var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    console.log("i'm in the correct conditional")
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "correct"
+      return true
+    } else { // else: if last trial was incorrect, don't carry out "correct" feedback
+      return false;  
+    }
+  }
+}
+
+// a loop is always carried out at least once, a conditional not necessarily
+var practice4_loop = {
+    timeline: [practice4, practice4_conditionalIC, practice4_conditionalC],
+    loop_function: function(data){
+    // var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+    // console.log("Response was:"+last_trial_correct) 
+    // console.log("i'm inside the loop now")
+    // console.log(jsPsych.data.get())
+    // console.log(jsPsych.data.get().last(2))
+    // console.log(jsPsych.data.get().last(2).values()[0].correct)
+    // here we have to go back 2 trials, to get at the last response to the practice trial
+    var last_trial_correct = jsPsych.data.get().last(2).values()[0].correct;
+    console.log(last_trial_correct)
+    if (last_trial_correct){ // if true, so the last trial was correct, carry out feedback "incorrect"
+      return false; // don't repeat the loop if the response was correct
+    } else {
+      return true; // repeat if the response was incorrect
+    }
+    }
+}
+
+// repeat instructions
+var instructions2 = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p style='text-align:left'><b>Great, you're ready to go!</b><br>To make sure you are paying attention, we have included some examples for which we know the right answer. If you read the examples carefully, you will definitely get those right.<br></p>",
+  choices: ['Continue'],
+  on_finish: function(data){
+    count++;
+    var progress = count/n_trials;
+    jsPsych.setProgressBar(progress)
+  }
+}
+
+// definition of a judgment trial
+var judgment_trial = {
+  type: jsPsychHtmlSliderResponse,
+  prompt:  
+    "<p>How natural does the question sound in this context?</p>",
+  labels: ["totally unnatural", "totally natural"],
+  slider_width: "400",
+  require_movement: true,
+  stimulus: jsPsych.timelineVariable("stimulus")
+};
+
+// create all judgment trials 
+var all_judgment_trials = {
+  timeline: [judgment_trial],
+  timeline_variables: stimuli,
+  randomize_order: true,
+  on_finish: function(data) {
+         count++;
+         var progress = count/n_trials;
+         jsPsych.setProgressBar(progress);
+      },
+    data: {
+    task: 'target'
+    }
+};
+
+// demographic information
+var demographics = {
+  type: jsPsychSurvey,
+  pages: [
+    [
+      {
+        type: 'html',
+        prompt: 'Please answer these demographic questions truthfully. You will be paid no matter what you respond here.',
+      },
+      {
+        type: 'text',
+        prompt: "How old are you?", 
+        name: 'age', 
+        textbox_columns: 3, 
+        required: false
+      }, 
+      {
+        type: 'multi-choice',
+        prompt: "What is your gender?", 
+        name: 'gender', 
+        columns: 4,
+        options: ['female', 'male', 'non-binary', 'prefer not to say'], 
+        required: false,
+      },
+      {
+        type: 'multi-choice',
+        prompt: "Are you a native speaker of English?",
+        name: 'language',
+        columns: 2, 
+        options: ['yes', 'no'], 
+        required: false,
+      },
+      {
+        type: 'multi-choice',
+        prompt: "Are you a speaker of American English (as opposed to, e.g., Indian English)?",
+        name: 'amE', 
+        columns: 2,
+        options: ['yes', 'no'], 
+        required: false,
+      },
+      {
+        type: 'text',
+        prompt: "We are interested in any other comments you might have about this study. Please type them in the box:", 
+        name: 'comments', 
+        textbox_columns: 20, 
+        textbox_rows: 5,
+        required: false
+      }
+    ]
+  ],
+  on_finish: function(data) {
+         count++;
+         var progress = count/n_trials;
+         jsPsych.setProgressBar(progress);
+      },
+    data: {
+    task: 'demographics'
+    }
+}
+
+// final screen
+var final_screen = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `<p>You're done! Thanks for participating! <br>
+  The completion code is <b>C1HNU5GM</b>.</p>`,
+  choices: ['Done!'],
+  on_finish: function(data) {
+         count++;
+         // console.log(count);
+         var progress = count/n_trials;
+         jsPsych.setProgressBar(progress);
+      }
+}
+
+
+var full_timeline = [
+  consent_screen,
+  practice1_loop,
+  practice2_loop,
+  practice3_loop,
+  practice4_loop,
+  instructions2,
+  all_judgment_trials,
+  demographics,
+  final_screen
+];
+
+jsPsych.run(full_timeline);
+
+
+  </script>
+</html>

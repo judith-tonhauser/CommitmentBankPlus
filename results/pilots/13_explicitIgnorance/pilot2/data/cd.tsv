@@ -1,0 +1,91 @@
+response	task	participantID	age	gender	language	amE	comments	expression	cc	context	trial
+0.84	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	confirm	Emma studied on Saturday morning	factH	1
+0.09	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	too	noCC	explicitIgnorance	2
+0.9	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	say	Mary is pregnant	explicitIgnorance	3
+0.18	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	stop	noCC	explicitIgnorance	4
+0.67	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	demonstrate	Emily bought a car yesterday	factH	5
+0.1	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	cleft	noCC	explicitIgnorance	6
+0.77	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	suggest	Jayden rented a car	factL	7
+0.44	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	discover	Grace visited her sister	factH	8
+0.62	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	announce	Jon walks to work	explicitIgnorance	9
+0.31	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	be annoyed	Sophia got a tattoo	explicitIgnorance	10
+0.43	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	acknowledge	Olivia sleeps until noon	factL	11
+0.51	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	controlGood3	noCC	other	12
+0.78	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	controlGood1	noCC	explicitIgnorance	13
+0.1	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	also	noCC	explicitIgnorance	14
+0.4	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	see	Isabella ate a steak on Sunday	explicitIgnorance	15
+0.62	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	prove	Charley speaks Spanish	explicitIgnorance	16
+0.63	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	inform	Owen shoveled snow last winter	explicitIgnorance	17
+0.28	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	establish	Frank got a cat	explicitIgnorance	18
+0.22	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	again	noCC	explicitIgnorance	19
+0.79	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	think	Josh learned to ride a bike yesterday	explicitIgnorance	20
+0.78	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	hear	Zoe calculated the tip	explicitIgnorance	21
+0.21	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	know	Josie went on vacation to France	explicitIgnorance	22
+0.7	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	be right	Jackson ran 10 miles	explicitIgnorance	23
+0.4	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	controlGood2	noCC	explicitIgnorance	24
+0.86	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	confess	Tony had a drink last night	factL	25
+0.4	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	admit	Julian dances salsa	factH	26
+0.84	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	controlGood4	noCC	other	27
+0.3	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	continue	noCC	explicitIgnorance	28
+0.91	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	pretend	Mia drank 2 cocktails last night	explicitIgnorance	29
+0.41	target	3	36	female	notSpeakerOfEnglish	AmE	"""":""""""""}	reveal	Danny ate the last cupcake	factL	30
+0	target	1	41	female	English	AmE	"""":""""""""}	again	noCC	explicitIgnorance	1
+1	target	1	41	female	English	AmE	"""":""""""""}	think	Josh learned to ride a bike yesterday	explicitIgnorance	2
+0	target	1	41	female	English	AmE	"""":""""""""}	too	noCC	explicitIgnorance	3
+1	target	1	41	female	English	AmE	"""":""""""""}	controlGood2	noCC	explicitIgnorance	4
+0.67	target	1	41	female	English	AmE	"""":""""""""}	admit	Isabella ate a steak on Sunday	factL	5
+0.84	target	1	41	female	English	AmE	"""":""""""""}	confess	Grace visited her sister	explicitIgnorance	6
+1	target	1	41	female	English	AmE	"""":""""""""}	know	Zoe calculated the tip	factH	7
+1	target	1	41	female	English	AmE	"""":""""""""}	establish	Charley speaks Spanish	explicitIgnorance	8
+0.69	target	1	41	female	English	AmE	"""":""""""""}	reveal	Mary is pregnant	explicitIgnorance	9
+1	target	1	41	female	English	AmE	"""":""""""""}	prove	Jon walks to work	explicitIgnorance	10
+1	target	1	41	female	English	AmE	"""":""""""""}	say	Frank got a cat	explicitIgnorance	11
+0.81	target	1	41	female	English	AmE	"""":""""""""}	pretend	Jayden rented a car	explicitIgnorance	12
+0.29	target	1	41	female	English	AmE	"""":""""""""}	acknowledge	Julian dances salsa	factH	13
+1	target	1	41	female	English	AmE	"""":""""""""}	suggest	Emily bought a car yesterday	factL	14
+0.19	target	1	41	female	English	AmE	"""":""""""""}	announce	Owen shoveled snow last winter	explicitIgnorance	15
+0	target	1	41	female	English	AmE	"""":""""""""}	cleft	noCC	explicitIgnorance	16
+0	target	1	41	female	English	AmE	"""":""""""""}	see	Sophia got a tattoo	explicitIgnorance	17
+1	target	1	41	female	English	AmE	"""":""""""""}	controlGood4	noCC	other	18
+0	target	1	41	female	English	AmE	"""":""""""""}	demonstrate	Tony had a drink last night	factL	19
+1	target	1	41	female	English	AmE	"""":""""""""}	controlGood3	noCC	other	20
+0.83	target	1	41	female	English	AmE	"""":""""""""}	be right	Mia drank 2 cocktails last night	explicitIgnorance	21
+1	target	1	41	female	English	AmE	"""":""""""""}	inform	Olivia sleeps until noon	factH	22
+0	target	1	41	female	English	AmE	"""":""""""""}	also	noCC	explicitIgnorance	23
+0	target	1	41	female	English	AmE	"""":""""""""}	be annoyed	Josie went on vacation to France	explicitIgnorance	24
+0.82	target	1	41	female	English	AmE	"""":""""""""}	confirm	Danny ate the last cupcake	factL	25
+0	target	1	41	female	English	AmE	"""":""""""""}	stop	noCC	explicitIgnorance	26
+1	target	1	41	female	English	AmE	"""":""""""""}	controlGood1	noCC	explicitIgnorance	27
+0.71	target	1	41	female	English	AmE	"""":""""""""}	hear	Jackson ran 10 miles	explicitIgnorance	28
+0	target	1	41	female	English	AmE	"""":""""""""}	continue	noCC	explicitIgnorance	29
+0.72	target	1	41	female	English	AmE	"""":""""""""}	discover	Emma studied on Saturday morning	factH	30
+0.1	target	2	30	male	English	AmE	"""":""""""""}	confirm	Julian dances salsa	explicitIgnorance	1
+0.08	target	2	30	male	English	AmE	"""":""""""""}	continue	noCC	explicitIgnorance	2
+0.06	target	2	30	male	English	AmE	"""":""""""""}	stop	noCC	explicitIgnorance	3
+0.7	target	2	30	male	English	AmE	"""":""""""""}	acknowledge	Mia drank 2 cocktails last night	factL	4
+0.69	target	2	30	male	English	AmE	"""":""""""""}	controlGood2	noCC	explicitIgnorance	5
+0.67	target	2	30	male	English	AmE	"""":""""""""}	announce	Isabella ate a steak on Sunday	factH	6
+0.1	target	2	30	male	English	AmE	"""":""""""""}	be annoyed	Owen shoveled snow last winter	explicitIgnorance	7
+0.76	target	2	30	male	English	AmE	"""":""""""""}	say	Grace visited her sister	explicitIgnorance	8
+0.85	target	2	30	male	English	AmE	"""":""""""""}	hear	Jayden rented a car	explicitIgnorance	9
+0.84	target	2	30	male	English	AmE	"""":""""""""}	demonstrate	Zoe calculated the tip	factL	10
+0.86	target	2	30	male	English	AmE	"""":""""""""}	cleft	noCC	explicitIgnorance	11
+0.43	target	2	30	male	English	AmE	"""":""""""""}	admit	Olivia sleeps until noon	explicitIgnorance	12
+0.29	target	2	30	male	English	AmE	"""":""""""""}	establish	Josh learned to ride a bike yesterday	factL	13
+0.58	target	2	30	male	English	AmE	"""":""""""""}	suggest	Jackson ran 10 miles	explicitIgnorance	14
+0.05	target	2	30	male	English	AmE	"""":""""""""}	again	noCC	explicitIgnorance	15
+0.73	target	2	30	male	English	AmE	"""":""""""""}	discover	Sophia got a tattoo	explicitIgnorance	16
+0.84	target	2	30	male	English	AmE	"""":""""""""}	be right	Emma studied on Saturday morning	factH	17
+0.03	target	2	30	male	English	AmE	"""":""""""""}	too	noCC	explicitIgnorance	18
+0.76	target	2	30	male	English	AmE	"""":""""""""}	see	Frank got a cat	explicitIgnorance	19
+0.72	target	2	30	male	English	AmE	"""":""""""""}	controlGood3	noCC	other	20
+0.76	target	2	30	male	English	AmE	"""":""""""""}	controlGood4	noCC	other	21
+0.66	target	2	30	male	English	AmE	"""":""""""""}	pretend	Josie went on vacation to France	explicitIgnorance	22
+0.88	target	2	30	male	English	AmE	"""":""""""""}	prove	Danny ate the last cupcake	factH	23
+0.13	target	2	30	male	English	AmE	"""":""""""""}	inform	Tony had a drink last night	explicitIgnorance	24
+0.85	target	2	30	male	English	AmE	"""":""""""""}	controlGood1	noCC	explicitIgnorance	25
+0.8	target	2	30	male	English	AmE	"""":""""""""}	know	Jon walks to work	explicitIgnorance	26
+0.87	target	2	30	male	English	AmE	"""":""""""""}	think	Emily bought a car yesterday	explicitIgnorance	27
+0.01	target	2	30	male	English	AmE	"""":""""""""}	confess	Mary is pregnant	factL	28
+0.83	target	2	30	male	English	AmE	"""":""""""""}	reveal	Charley speaks Spanish	factH	29
+0.84	target	2	30	male	English	AmE	"""":""""""""}	also	noCC	explicitIgnorance	30
