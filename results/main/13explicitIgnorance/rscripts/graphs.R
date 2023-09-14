@@ -6,7 +6,7 @@ this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
 setwd(this.dir)
 
 # load required packages
-require(tidyverse)
+library(tidyverse)
 library(ggrepel)
 library(dichromat)
 library(forcats)
@@ -27,7 +27,6 @@ names(d)
 table(d$context)
 
 length(unique(d$participantID)) #370 participants
-
 
 # Fig 1: plot of mean naturalness ratings in explicit ignorance context ----
 
@@ -83,9 +82,9 @@ ggplot(nat.meansEIC, aes(x=expression, y=Mean)) +
   theme(legend.position="top") +
   ylab("Mean naturalness rating \n in explicit ignorance context") +
   xlab("Expression") +  
-  theme_dark() +
+  #theme_dark() +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = text.color)) 
-ggsave("../graphs/explicit-ignorance-naturalness-by-predicate.pdf",height=3,width=7)
+ggsave("../graphs/explicit-ignorance-naturalness-by-predicate.pdf",height=4,width=7)
 
 # Fig 2: plot of mean naturalness ratings in by context ----
 # for 20 clause-embedding predicates only
@@ -414,4 +413,63 @@ ggplot(nat.means, aes(x=expression, y=Mean, group = context2, fill = context2)) 
   xlab("Expression") +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
 ggsave("../graphs/naturalness-by-context2-and-predicate.pdf",height=4,width=7)
+
+# version of Fig 1 for Nicole conference talk ----
+
+# target data: explicit ignorance context
+# merge the two controls into one, but exclude them
+table(d$expression)
+t = d %>%
+  filter(context == "explicitIgnorance") %>%
+  mutate(expression = recode(expression, "controlGood1" = "controls", "controlGood2" = "controls")) %>%
+  filter(expression != "controls")
+
+# calculate mean naturalness rating by expression, including the fillers, in explicit ignorance context
+nat.meansEIC = t %>%
+  group_by(expression) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, expression = fct_reorder(as.factor(expression),Mean))
+nat.meansEIC
+levels(nat.meansEIC$expression)
+
+# color code the expressions
+factives <- c("know", "discover", "be annoyed", "reveal", "see")
+hard.triggers <- c("too", "also","cleft","again")
+soft.triggers <- c("stop", "continue")
+
+nat.meansEIC$ps = ifelse(nat.meansEIC$expression %in% soft.triggers, "softTrigger", 
+                         ifelse(nat.meansEIC$expression %in% hard.triggers, "hardTrigger",
+                                ifelse(nat.meansEIC$expression %in% factives, "factive", "other")))
+
+t$ps = ifelse(t$expression %in% soft.triggers, "softTrigger", 
+              ifelse(t$expression %in% hard.triggers, "hardTrigger",
+                     ifelse(t$expression %in% factives, "factive", "other")))
+
+
+table(nat.meansEIC$ps, nat.meansEIC$expression)
+
+text.color <- ifelse(nat.meansEIC$expression[order(nat.meansEIC$Mean)] %in% factives, '#D55E00',
+                     ifelse(nat.meansEIC$expression[order(nat.meansEIC$Mean)] %in% hard.triggers, "black",
+                            ifelse(nat.meansEIC$expression[order(nat.meansEIC$Mean)] %in% soft.triggers, "black",
+                                   "gray80")))
+text.color
+
+t$expression = factor(t$expression, levels = nat.meansEIC$expression[order(nat.meansEIC$Mean)], ordered = TRUE)
+
+# plot of naturalness means, with participants' individual responses
+ggplot(nat.meansEIC, aes(x=expression, y=Mean)) +
+  geom_violin(data=t[t$context == "explicitIgnorance",],aes(x=expression, y=response),
+              scale="width",color="gray80", fill = "gray80") +
+  geom_point(aes(group = ps, fill = ps), shape=21,stroke=.5,size=3, color="black") +
+  scale_fill_manual(values=c('#D55E00','black','gray80','black')) + 
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels = c("0",".2",".4",".6",".8","1")) +
+  guides(fill=FALSE) +
+  theme(legend.position="top") +
+  ylab("Mean naturalness rating \n in explicit ignorance context") +
+  xlab("Expression") +  
+  #theme_dark() +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = text.color)) 
+ggsave("../graphs/nicole.pdf",height=4,width=7)
+
   
