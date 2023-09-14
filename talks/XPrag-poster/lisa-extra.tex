@@ -1,0 +1,92 @@
+
+%% extra 
+
+% colors
+
+	\usepackage{xcolor}
+
+	\definecolor{maintheme}{HTML}{233DFF}
+	\definecolor{highlight}{HTML}{FF5CA8}
+	\definecolor{lowlight}{HTML}{5A6DFD}
+	\definecolor{sechighlight}{HTML}{e69f00}
+	\definecolor{bg}{HTML}{FFFCF7}
+
+	% \setbeamercolor{alerted text}{fg=orange}
+	\setbeamercolor{background canvas}{bg=white}
+	% \setbeamercolor{block body alerted}{bg=normal text.bg!90!black}
+	\setbeamercolor{block body}{bg=normal text.bg!90!black}
+	% \setbeamercolor{block body example}{bg=normal text.bg!90!black}
+	% \setbeamercolor{block title alerted}{use={normal text,alerted text},fg=alerted text.fg!75!normal text.fg,bg=normal text.bg!75!black}
+	% \setbeamercolor{block title}{bg=blue}
+	% \setbeamercolor{block title example}{use={normal text,example text},fg=example text.fg!75!normal text.fg,bg=normal text.bg!75!black}
+	% \setbeamercolor{fine separation line}{}
+	% \setbeamercolor{frametitle}{fg=brown}
+	% \setbeamercolor{item projected}{fg=black}
+	\setbeamercolor{normal text}{fg=black}
+	\setbeamercolor{caption name}{fg=black}
+	% \setbeamercolor{separation line}{}
+	\setbeamercolor{structure}{fg=maintheme}
+	\setbeamercolor{title}{fg=maintheme, bg=lowlight}
+	% \setbeamercolor{titlelike}{fg=maintheme}
+
+% boxes
+	\usepackage{tcolorbox}
+	\tcbuselibrary{skins}
+
+	\newtcbox{\predhighlight}[1][highlight]{on line,
+	arc=3pt,colback=#1!10!white,colframe=#1!50!black,
+	before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+	boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
+
+	\newtcbox{\cchighlight}[1][lowlight]{on line,
+	arc=3pt,colback=#1!10!white,colframe=#1!50!black,
+	before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+	boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
+
+	\newtcbox{\ophighlight}[1][sechighlight]{on line,
+	arc=3pt,colback=#1!10!white,colframe=#1!50!black,
+	before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+	boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
+
+	\newtcolorbox{normalbox}[1]{colback=white,colframe=maintheme,fonttitle=\bfseries\Raleway\large,
+	title={#1}}
+
+	% \tcbset{colback=red!5!white,fonttitle=\bfseries}
+	% \newtcolorbox{upshotbox}[1]{enhanced, squeezed title={#1}, frame style={left color=highlight, right color=lowlight!75!black}, leftrule=3mm, fonttitle=\bfseries\Raleway\Large, colback=highlight!5!white
+	% }
+
+	\newtcolorbox{upshotbox}[1]{
+		adjusted title=center,halign title=center,
+		title={#1},
+		colframe=highlight,
+		% frame style={left color=highlight, right color=lowlight!75!black},
+		leftrule=3mm,
+		fonttitle=\bfseries\Raleway\Large,
+		colback=highlight!5!white
+	}
+
+	\newtcolorbox{modelbox}[1]{
+		colback=lowlight!5!white,
+		colframe=lowlight,
+		text width=.95\linewidth,
+		title={#1},
+		fonttitle=\bfseries\footnotesize,
+		coltitle=lowlight,
+		detach title, before upper={\tcbtitle\par},
+	}
+
+% beamer elements
+	% \useinnertheme{rounded}
+	\setbeamertemplate{item}{\scriptsize$\blacktriangleright$}
+
+% misc formatting
+	\usepackage{linguex}
+	\usepackage{booktabs}
+	\usepackage[round]{natbib}
+
+% symbols 
+	\usepackage{pifont}% http://ctan.org/pkg/pifont
+	\newcommand{\cmark}{\ding{51}}%
+	\newcommand{\xmark}{\ding{55}}%
+
+
