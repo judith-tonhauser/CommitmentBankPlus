@@ -3,8 +3,6 @@
 
 % colors
 
-	\usepackage{xcolor}
-
 	\definecolor{maintheme}{HTML}{233DFF}
 	\definecolor{highlight}{HTML}{FF5CA8}
 	\definecolor{lowlight}{HTML}{5A6DFD}
@@ -75,6 +73,16 @@
 		detach title, before upper={\tcbtitle\par},
 	}
 
+	\newtcolorbox{theorybox}[1]{
+		colback=lowlight!5!white,
+		colframe=lowlight,
+		text width=.85\linewidth,
+		title={#1},
+		fonttitle=\bfseries\small,
+		coltitle=lowlight,
+		detach title, before upper={\tcbtitle\par},
+	}
+
 % beamer elements
 	% \useinnertheme{rounded}
 	\setbeamertemplate{item}{\scriptsize$\blacktriangleright$}
@@ -83,6 +91,11 @@
 	\usepackage{linguex}
 	\usepackage{booktabs}
 	\usepackage[round]{natbib}
+	\usepackage{multirow}
+
+% drawing
+
+\usepackage{tikz}
 
 % symbols 
 	\usepackage{pifont}% http://ctan.org/pkg/pifont

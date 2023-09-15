@@ -1,10 +1,11 @@
-\documentclass[final]{beamer}
+\documentclass[final, table]{beamer}
 %% Possible paper sizes: a0, a0b, a1, a2, a3, a4.
 %% Possible orientations: portrait, landscape
 %% Font sizes can be changed using the scale option.
 \usepackage[size=a0,orientation=portrait]{beamerposter}
 
 \usepackage{euler}
+% \usepackage[table]{xcolor}
 \usetheme{gemini}
 % \usecolortheme{seagull}
 
@@ -218,11 +219,12 @@
 		\separatorcolumn
 		
 		\begin{column}{1.25\colwidth}
-			\begin{normalbox}{Main effect of embedding operator \& By-predicate variation in the effect of operator}
+			\begin{normalbox}{\phantom.\hfill Effects of operator \& predicate on projection}
 				% \vspace{-\baselineskip}
 				\hspace{-.2cm}\begin{tabular}{p{.70\linewidth} p{.3\linewidth}}
-					\textcolor{highlight}{\large \Raleway By-operator variation aggregating across predicates (Figure 3)}
-					\begin{itemize}
+					\textcolor{highlight}{\large \Raleway \bfseries \underline{By-operator variation aggregating across predicates} (Figure 3)}
+					\vspace{-.15\baselineskip}
+					\begin{itemize} \small
 						\item Conditional > Question > Negation, Modal
 							\vspace{\mboxpreadjust}
 							\begin{modelbox}{Model \#1: Linear mixed effect regression}
@@ -231,20 +233,23 @@
 								random intercepts: participants, items; \newline
 								MLEs: question (intercept) $0.51$, conditional $+0.05$, modal $-0.04$, negation $-0.03$; with all $p < 0.001$
 							\end{modelbox}
+							\vspace{\mboxpreadjust}
 
 						\item But small differences, as in Sieker \& Solstad’s (2022) study
 						\item Sieker \& Solstad’s results for German: Negation > Question, Conditional, Modal
 
 					\end{itemize}
 
-				\textcolor{highlight}{\large \Raleway Effect of operator differs by predicate (Figure 4), e.g.}
-				\begin{itemize}
+				\vspace{-.1\baselineskip}
+				\textcolor{highlight}{\large \Raleway \bfseries\underline{Effect of operator differs by predicate} (Figure 4), e.g.}
+				\vspace{-.15\baselineskip}
+				\begin{itemize}\small
 					\item CC of \predhighlight{be annoyed}: Negation, Conditional > Question, Modal
 						\vspace{\mboxpreadjust}
 						\begin{modelbox}{Model \#2: Linear mixed effect regression}
 							\footnotesize
-							response: \textbf{certainty ratings}; fixed effects: \ophighlight{operator}, \predhighlight{predicate}, and interaction (base level: \textbf{be annoyed} / negation); random intercepts: participant; \newline
-							MLEs: negation (intercept) $0.87$, conditional $-0.12$, modal $-0.16$; with $p < 0.001$; question $+0.02$ (n.s.)
+							response: \textbf{certainty ratings}; fixed effects: \ophighlight{operator}, \predhighlight{predicate}, and interaction (base lvl: \textbf{be annoyed} / negation); random intercepts: participant; 
+							MLEs: negation (intercept) $0.87$, conditional $-0.12$, modal $-0.16$; ($p < 0.001$); question $+0.02$ (n.s.)
 						\end{modelbox}
 
 					\item CC of \predhighlight{know}: Question > Negation, Conditional > Modal
@@ -267,21 +272,28 @@
 
 					&
 
-					\vspace{-1.25\baselineskip}
-					\begin{figure}[h]
-						% \hspace{-1cm}
-						\centering
-						\includegraphics[width=.9\linewidth]{projective-op.pdf}
-						\vspace{-\baselineskip}
-						\caption{Mean certainty ratings by operator}
-						\label{fig:figure2}
-					\end{figure}
+					\vspace{-1.5\baselineskip}
+						\begin{figure}[h]
+							\resizebox{.85\linewidth}{!}{
+							\centering
+							\begin{tikzpicture}
+							    \node at (0,0) {\includegraphics[width=.9\linewidth]{projective-op.pdf}};
+							    % \draw[red,ultra thick,rounded corners] (7.5,5.3) rectangle (9.4,6.2);
+							    \draw[red, ultra thick] (-3.37,2.3) -- (-3.37,1) -- node[below] {***} (-.66,1) -- (-.66,1.5);
+							    \draw[red, ultra thick] (-.66,1.5) -- (-.66,.2) -- node[below] {***} (2.07,.2) -- (2.07,.7);
+							    \draw[red, ultra thick] (2.07,.8) -- (2.07,.12) -- node[below] {\footnotesize n.s.} (4.78,.12) -- (4.78,.62);
+							\end{tikzpicture}}
+							\vspace{-1.4\baselineskip}
+							\caption{Mean certainty ratings by operator}
+							\label{fig:figure2}
+						\end{figure}
+					
 				\end{tabular}
-				\vspace{-\baselineskip}
+				\vspace{-1.6\baselineskip}
 				\begin{figure}[h]
 					\centering
 					\includegraphics[width=\linewidth]{projective-pred-op.pdf}
-					\vspace{-2\baselineskip}
+					\vspace{-2.2\baselineskip}
 					\caption{Mean certainty ratings by predicate, grouped by operator}
 					\label{fig:figure3}
 				\end{figure}
@@ -289,19 +301,21 @@
 			\end{normalbox}
 			
 			\vspace{\vboxsep}	
-			\begin{normalbox}{Discussion --- By predicate variation in the effect of operator}
+			\begin{normalbox}{\phantom.\hfill Discussion --- By-predicate variation in the effect of operator}
 				\begin{itemize}
 					\item Concurs with \citet{smith_relationship_2014}, who found content/operator interactions for English projective contents
-					\item Differs from \citet{sieker_projective_2022}, who found no predicate/operator interaction for CCs of German clause-embedding predicates
+					\item Differs from \citet{sieker_projective_2022}: found no predicate/operator interaction for CCs of German clause-embedding predicates
 				\end{itemize}
 				
 				\textbf{No evidence for factive vs. semi-factive distinction (\citealt{karttunen_observations_1971})}
+				\vspace{\mboxpreadjust}
 				\begin{itemize}
 					\item CC of purported factive \textit{be annoyed} does not invariably project across operators
 					\item CC of purported semi-factives (\textit{discover, see}) do not project more across negation than other operators
 				\end{itemize}
 
 				\textbf{Provides support (from negation, modals, conditionals) for Degen \& Tonhauser’s (2022) result:}
+				\vspace{\mboxpreadjust}
 				\begin{itemize}
 					\item Projection does not categorically differentiate between (semi-)factive/-factive predicates 
 				\end{itemize}
@@ -309,22 +323,68 @@
 			\end{normalbox}
 
 			\vspace{\vboxsep}
-			\begin{normalbox}{Do existing theories of projection predict our results?}
-				\textbf{Dynamic accounts of projection: Lexical factivity \& dynamic operators} \hfill (\citealt{heim_projection_1983,van_der_sandt_presupposition_1992})
+			\begin{normalbox}{\phantom.\hfill Existing theories of projection do not predict our results}
+				\centering
+				\begin{theorybox}{Dynamic accounts of projection: Lexical triggering + dynamic semantics \hfill (\citealt{heim_projection_1983,van_der_sandt_presupposition_1992})}
+					\small Distinguish factive and non-factive predicates:
+					\vspace{-.3\baselineskip}
+					\begin{itemize}
+						\item \underline{factive} predicates (\textit{be annoyed, regret, \dots}): CC conventionally required to be contextually entailed in common ground
+						\item \underline{non-factive} predicates (\textit{believe, say, …}): no such requirement
+					\end{itemize}
+					\vspace{-.2\baselineskip}
+					Factive content projects globally, unless not admitted by common ground
+				\end{theorybox}
 
-				Distinguish factive and non-factive predicates:
-				\begin{itemize}
-					\item factive predicates (\textit{be annoyed, regret, \dots}): CC conventionally required to be contextually entailed in common ground
+				\begin{theorybox}{Lexical entailments + discourse-based triggering \hfill (\citealt{abrusan_predicting_2011,simons_best_2017})}
+					\small Distinguish veridical predicates (CC is entailed) from non-veridical ones:
+					\vspace{-.3\baselineskip}
+					\begin{itemize}
+						\item \underline{veridical} predicates (\textit{be right, demonstrate, \dots}): entailed CC projects if not at-issue
+						\item \underline{non-veridical} predicates (\textit{believe, say, \dots}): no predictions / CC projects if required by discourse coherence
+					\end{itemize}
 
-					\item non-factive predicates (\textit{believe, say, …}): no such requirement
+				\end{theorybox}
 
-				\end{itemize}
-				
-				Factive content projects globally, unless not admitted by common ground
+				\begin{theorybox}{Contextual entailments + triggering based on cognitive inertness \hfill (\citealt{schlenker_triggering_2021})}
+					\small Potential of projection for contents that are contextually entailed (given a context $C$ and the utterance $U$), including inferences from:
+					\vspace{-.3\baselineskip}
+					\begin{itemize}
+						\item Lexically veridical predicates
+						\item \lq Distributed veridicality\rq\ contexts (\citealt{roberts_i_2019}) \hfill (\textit{Cole \{was not wrong, can’t believe\} that Julian dances salsa.})
+						\item Other sources of contextual inference \hfill ((Cole is honest + knowledgeable.) \textit{Cole said that Julian dances salsa.})
+					\end{itemize}
+					\vspace{-.2\baselineskip}
+					Contextually entailed CC projects if it is an epistemic precondition of $U$ in $C$ (it is typically/likely already known).
 
-				\textbf{Entailments \& discourse structure} \hfill (\citealt{abrusan_predicting_2011,simons_best_2017})
+				\end{theorybox}
 
-				\textbf{Contextual entailments \& Epistemic preconditions} \hfill (\citealt{schlenker_triggering_2021})
+
+				\resizebox{\linewidth}{!}{
+						\begin{tabular}{l c c c}
+							\textbf{Our data} 
+								& \multicolumn{3}{c}{\textbf{Predictions}}\\ \toprule
+							%
+								& \parbox{.3\linewidth}{\centering Lexical triggering + \par dynamic semantics}
+									& \parbox{.3\linewidth}{\centering Lexical entailments +\par discourse-based triggering}
+										& \parbox{.3\linewidth}{\centering Contextual entailments +\par triggering based on cognitive inertness} \\ \midrule
+							%
+							\parbox{.3\linewidth}{\raggedright\textbf{Superadditive predicate/operator interaction}\\[2.5\baselineskip]}
+								& \parbox{.29\linewidth}{\centering \cellcolor{red!25} Meaning of entailment-canceling operators (invariably) encodes interaction with conventional content of embedded factives}
+									& \parbox{.29\linewidth}{\centering \cellcolor{red!25} No systematic predictions for how veridicality or at-issueness interact with the meaning of entailment-canceling operators}
+										& \parbox{.29\linewidth}{\centering\cellcolor{green!25} May be extended to our data by making explicit how combinations of operator + predicate are associated with contextual inferences}\\
+							%
+							\parbox{.3\linewidth}{\raggedright\textbf{Projection variability for all predicates}\par {\small Projection for some non-factive (/non-veridical) predicates as high as for some factive (/veridical) ones (see also D\&T'22)}\\[.5\baselineskip]}
+								& \parbox{.29\linewidth}{\centering \cellcolor{red!25} No predictions for non-factive predicates}
+									& \parbox{.29\linewidth}{\centering \cellcolor{red!25} No systematic predictions for non-veridical predicates}
+										& \parbox{.29\linewidth}{\centering \cellcolor{green!25} Makes predictions about CCs of all clause-embedding predicates} \\
+							%
+							\parbox{.3\linewidth}{\raggedright\textbf{Out-of-the-blue contexts}\par {\small Projection variability in the out-of-the-blue contexts used in experiment (see also D\&T'22)}\\[1.7\baselineskip]}
+								& \parbox{.29\linewidth}{\centering \cellcolor{red!25} Consistent projection of factive CCs}
+									& \parbox{.3\linewidth}{\centering \cellcolor{green!25} Veridical predicates: analyses may be extended by assuming that the CCs of veridical predicates differ in at-issueness in out-of-the-blue contexts}
+										& \parbox{.29\linewidth}{\centering \cellcolor{red!25} “Out-of-the-blue” contexts do not warrant assumption of contextual \underline{entailment}: No projection expected} \\
+						\end{tabular}
+				}
 
 			\end{normalbox}
 
@@ -335,61 +395,64 @@
 					
 					\item Add to that the effect of various \ophighlight{entailment-cancelling operators}
 					
-					\item An analysis of projection should be able to address \ophighlight{operator} / \predhighlight{predicate} interaction effects. None of the extant projection analyses capture our data.
+					\item An analysis of projection needs to be able to address \ophighlight{operator} / \predhighlight{predicate} interaction effects.
 
 				\end{itemize}
 			\end{upshotbox}
 
 			\vspace{\vboxsep}
-			\begin{normalbox}{References}
+			\begin{normalbox}{\phantom.\hfill References}
 				\tiny
 				
-				\textbf{Márta Abrusán}. Predicting the presuppositions of soft triggers. \textit{Linguistics and philosophy}, 34:491–535, 2011. \quad \textbullet \quad
+				\textbf{Márta Abrusán}. Predicting the presuppositions of soft triggers. \textit{Linguistics and philosophy}, 34:491–535, 2011.\quad\textbullet\quad
 				%
-				\textbf{Gennaro Chierchia and Sally McConnell-Ginet.} \textit{Meaning and grammar: An introduction to semantics.} 1990. \quad \textbullet \quad
+				\textbf{Gennaro Chierchia and Sally McConnell-Ginet.} \textit{Meaning and grammar: An introduction to semantics.} 1990.\quad\textbullet\quad
 				%
-				\textbf{Elizabeth Coppock and Lucas Champollion.} \textit{Invitation to formal semantics.} online publication, in progress, 2020. \quad \textbullet \quad
+				\textbf{Elizabeth Coppock and Lucas Champollion.} \textit{Invitation to formal semantics.} online publication, in progress, 2020.\quad\textbullet\quad
 				%
-				\textbf{Marie de Marneffe, Mandy Simons, and Judith Tonhauser.} The CommitmentBank: Investigating projection in naturally occurring discourse. \textit{Sinn und Bedeutung}, 23:107–124, 2019. \quad \textbullet \quad
+				\textbf{Marie de Marneffe, Mandy Simons, and Judith Tonhauser.} The CommitmentBank: Investigating projection in naturally occurring discourse. \textit{Sinn und Bedeutung}, 23:107–124, 2019.\quad\textbullet\quad
 				%
-				\textbf{Marie-Catherine de Marneffe, Christopher D. Manning, and Christopher Potts.} Did It Happen? The Pragmatic Complexity of Veridicality Assessment. \textit{Computational Linguistics}, 38(2):301–333, February 2012. \quad \textbullet \quad
+				\textbf{Marie-Catherine de Marneffe, Christopher D. Manning, and Christopher Potts.} Did It Happen? The Pragmatic Complexity of Veridicality Assessment. \textit{Computational Linguistics}, 38(2):301–333, February 2012.\quad\textbullet\quad
 				%
-				\textbf{Judith Degen and Judith Tonhauser.} Prior beliefs modulate projection. \textit{Open Mind}, 5:59–70, 2021. \quad \textbullet \quad
+				\textbf{Judith Degen and Judith Tonhauser.} Prior beliefs modulate projection. \textit{Open Mind}, 5:59–70, 2021.\quad\textbullet\quad
 				%
-				\textbf{Judith Degen and Judith Tonhauser.} Are there factive predicates? An empirical investigation. \textit{Language}, 98(3):552–591, 2022. \quad \textbullet \quad
+				\textbf{Judith Degen and Judith Tonhauser.} Are there factive predicates? An empirical investigation. \textit{Language}, 98(3):552–591, 2022.\quad\textbullet\quad
 				%
-				\textbf{Kajsa Djärv and Hezekiah Akiva Bacovcin.} Prosodic effects on factive presupposition projection. \textit{Semantics and Linguistic Theory}, 27:116–133, 2017. \quad \textbullet \quad
+				\textbf{Kajsa Djärv and Hezekiah Akiva Bacovcin.} Prosodic effects on factive presupposition projection. \textit{Semantics and Linguistic Theory}, 27:116–133, 2017.\quad\textbullet\quad
 				%
-				\textbf{Gottlob Frege.} Über Sinn und Bedeutung. \textit{Zeitschrift für Philosophie und philosophische Kritik}, pages 25–50, 1892. \quad \textbullet \quad
+				\textbf{Tom Roberts.} I can’t believe it’s not lexical: Deriving distributed veridicality. Semantics and Linguistic Theory, \textit{Semantics and Linguistic Theory}, 29:665–685, 2019.\quad\textbullet\quad
 				%
-				\textbf{Irene Heim.} On the projection problem for presuppositions. \textit{Formal semantics–the essential readings}, pages 249–260, 1983. \quad \textbullet \quad
+				\textbf{Gottlob Frege.} Über Sinn und Bedeutung. \textit{Zeitschrift für Philosophie und philosophische Kritik}, pages 25–50, 1892.\quad\textbullet\quad
 				%
-				\textbf{Lauri Karttunen.} Some observations on factivity. \textit{Research on Language \& Social Interaction}, 4(1):55–69, 1971. \quad \textbullet \quad
+				\textbf{Irene Heim.} On the projection problem for presuppositions. \textit{Formal semantics–the essential readings}, pages 249–260, 1983.\quad\textbullet\quad
 				%
-				\textbf{Lauri Karttunen and Stanley Peters.} Conventional implicature. In Choon-Kyu Oh and David A. Dinneen, editors, \textit{Presuppositions, Syntax and Semantics} Vol.11, pages 1–56. New York: Academic Press, 1979. \quad \textbullet \quad
+				\textbf{Lauri Karttunen.} Some observations on factivity. \textit{Research on Language \& Social Interaction}, 4(1):55–69, 1971.\quad\textbullet\quad
 				%
-				\textbf{Paul Kiparsky and Carol Kiparsky.} Fact. In Manfred Bierwisch and Karl Erich Heidolph, editors, \textit{Progress in Linguistics}, pages 143–173. The Hague: Mouton, 1970. \quad \textbullet \quad
+				\textbf{Lauri Karttunen and Stanley Peters.} Conventional implicature. In Choon-Kyu Oh and David A. Dinneen, editors, \textit{Presuppositions, Syntax and Semantics} Vol.11, pages 1–56. New York: Academic Press, 1979.\quad\textbullet\quad
 				%
-				\textbf{Taylor Mahler.} The social component of projection behavior of clausal complements. \textit{Linguistic Society of America}, 5:777–791, 2020. \quad \textbullet \quad
+				\textbf{Paul Kiparsky and Carol Kiparsky.} Fact. In Manfred Bierwisch and Karl Erich Heidolph, editors, \textit{Progress in Linguistics}, pages 143–173. The Hague: Mouton, 1970.\quad\textbullet\quad
 				%
-				\textbf{Philippe Schlenker.} Triggering presuppositions. \textit{Glossa: a journal of general linguistics}, 6(1), 2021. \quad \textbullet \quad
+				\textbf{Taylor Mahler.} The social component of projection behavior of clausal complements. \textit{Linguistic Society of America}, 5:777–791, 2020.\quad\textbullet\quad
 				%
-				\textbf{Judith Sieker and Torgrim Solstad.} Projective variability of (semi) factive verbs in family of sentence contexts: A rating study. \textit{In Proceedings of the 23rd Amsterdam Colloquium}, 2022. \quad \textbullet \quad
+				\textbf{Philippe Schlenker.} Triggering presuppositions. \textit{Glossa: a journal of general linguistics}, 6(1), 2021.\quad\textbullet\quad
 				%
-				\textbf{Mandy Simons, David Beaver, Craige Roberts, and Judith Tonhauser.} The best question: Explaining the projection behavior of factives. \textit{Discourse processes}, 54(3):187–206, 2017. \quad \textbullet \quad
+				\textbf{Judith Sieker and Torgrim Solstad.} Projective variability of (semi) factive verbs in family of sentence contexts: A rating study. \textit{In Proceedings of the 23rd Amsterdam Colloquium}, 2022.\quad\textbullet\quad
 				%
-				\textbf{E. Allyn Smith and Kathleen Currie Hall.} The relationship between projection and embedding environment. \textit{In Proceedings of the 48th Meeting of the Chicago Linguistics Society}. 2014. \quad \textbullet \quad
+				\textbf{Mandy Simons, David Beaver, Craige Roberts, and Judith Tonhauser.} The best question: Explaining the projection behavior of factives. \textit{Discourse processes}, 54(3):187–206, 2017.\quad\textbullet\quad
 				%
-				\textbf{Peter F. Strawson.} On referring. \textit{Mind}, 59(235):320–344, 1950. \quad \textbullet \quad
+				\textbf{E. Allyn Smith and Kathleen Currie Hall.} The relationship between projection and embedding environment. \textit{In Proceedings of the 48th Meeting of the Chicago Linguistics Society}. 2014.\quad\textbullet\quad
 				%
-				\textbf{Judith Tonhauser.} Prosodic cues to presupposition projection. In \textit{Semantics and Linguistic Theory}, volume 26, pages 934–960, 2016. \quad \textbullet \quad
+				\textbf{Peter F. Strawson.} On referring. \textit{Mind}, 59(235):320–344, 1950.\quad\textbullet\quad
 				%
-				\textbf{Judith Tonhauser, David I. Beaver, and Judith Degen.} How projective is projective content? Gradience in projectivity and at-issueness. \textit{Journal of Semantics}, 35(3):495–542, 2018. \quad \textbullet \quad
+				\textbf{Judith Tonhauser.} Prosodic cues to presupposition projection. In \textit{Semantics and Linguistic Theory}, volume 26, pages 934–960, 2016.\quad\textbullet\quad
+				%
+				\textbf{Judith Tonhauser, David I. Beaver, and Judith Degen.} How projective is projective content? Gradience in projectivity and at-issueness. \textit{Journal of Semantics}, 35(3):495–542, 2018.\quad\textbullet\quad
 				%
 				\textbf{Rob A. van der Sandt.} Presupposition projection as anaphora resolution. \textit{Journal of semantics}, 9(4):333–377, 1992.
 
 			\end{normalbox}
 
+			\vspace{20\baselineskip}
 			\begin{normalbox}{References (not visible later)}
 				\bibliographystyle{plainnat}
 				\bibliography{projection}
