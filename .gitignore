@@ -11,6 +11,8 @@
 *.fls 
 *.fdb_latexmk 
 *.log
+*.nav
+*.snm
 
 # Apple file system
 *.DS_Store
