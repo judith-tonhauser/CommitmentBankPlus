@@ -178,7 +178,7 @@ ggplot(nat.means, aes(x=context, y=Mean)) +
   facet_wrap2(. ~ expression, nrow = 2, strip = strip) +
   theme(strip.background = element_rect(fill="white")) +
   theme(strip.text = element_text(color = "black")) 
-ggsave("../graphs/ORDER-by-LANGUAGE-naturalness-by-context-and-predicate.pdf",height=4,width=9)
+ggsave("../graphs/naturalness-by-context-and-predicate.pdf",height=4,width=9)
 
 # plot of mean naturalness ratings against mean certainty ratings
 
