@@ -154,6 +154,7 @@ require(forcats)
 # load helper functions
 source('../../../results/main/helpers.R')
 
+
 pmeans_op = df %>% group_by(op) %>%
   summarize(Mean = mean(projective), CILow = ci.low(projective),
             CIHigh = ci.high(projective)) %>%

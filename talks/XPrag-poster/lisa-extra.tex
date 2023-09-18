@@ -1,13 +1,14 @@
 
+%!TEX root = xprag-poster.tex
+
 %% extra 
 
 % colors
 
-	\definecolor{maintheme}{HTML}{233DFF}
-	\definecolor{highlight}{HTML}{FF5CA8}
-	\definecolor{lowlight}{HTML}{5A6DFD}
-	\definecolor{sechighlight}{HTML}{e69f00}
-	\definecolor{bg}{HTML}{FFFCF7}
+	\definecolor{maintheme}{cmyk}{.71, .51, 0, 0}
+	\definecolor{highlight}{cmyk}{.05, .8, .05, 0}
+	\definecolor{lowlight}{cmyk}{.64, .5, 0, .09}
+	\definecolor{sechighlight}{cmyk}{0, .31, 100, .10}
 
 	% \setbeamercolor{alerted text}{fg=orange}
 	\setbeamercolor{background canvas}{bg=white}
@@ -27,21 +28,23 @@
 	\setbeamercolor{title}{fg=maintheme, bg=lowlight}
 	% \setbeamercolor{titlelike}{fg=maintheme}
 
+	\definecolor{modal}{cmyk}{0, .31, 100, .0}
+	\definecolor{cond}{cmyk}{.8, 0, .3, .3}
+	\definecolor{neg}{cmyk}{.63, .23, 0, .0}
+	\definecolor{question}{cmyk}{1, .36, 0, .30}
+
+	\definecolor{red}{cmyk}{0,1,.5,0}
+
 % boxes
 	\usepackage{tcolorbox}
 	\tcbuselibrary{skins}
 
-	\newtcbox{\predhighlight}[1][highlight]{on line,
+	\newtcbox{\predhighlight}[1][lowlight]{on line,
 	arc=3pt,colback=#1!10!white,colframe=#1!50!black,
 	before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
 	boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
 
-	\newtcbox{\cchighlight}[1][lowlight]{on line,
-	arc=3pt,colback=#1!10!white,colframe=#1!50!black,
-	before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
-	boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
-
-	\newtcbox{\ophighlight}[1][sechighlight]{on line,
+	\newtcbox{\ophighlight}[1][highlight]{on line,
 	arc=3pt,colback=#1!10!white,colframe=#1!50!black,
 	before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
 	boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
@@ -54,34 +57,109 @@
 	% }
 
 	\newtcolorbox{upshotbox}[1]{
+		colframe=highlight,
+		colback=highlight!5!white,
+		% colframe=maintheme,
+		% colback=white,
+		% coltitle=maintheme,
 		adjusted title=center,halign title=center,
 		title={#1},
-		colframe=highlight,
 		% frame style={left color=highlight, right color=lowlight!75!black},
 		leftrule=3mm,
 		fonttitle=\bfseries\Raleway\Large,
-		colback=highlight!5!white
+		%
+		% detach title, before upper={\centering\tcbtitle\par}
 	}
 
 	\newtcolorbox{modelbox}[1]{
-		colback=lowlight!5!white,
-		colframe=lowlight,
+		% colback=lowlight!5!white,
+		% colframe=lowlight,
+		% coltitle=lowlight,
+		colback=white,
+		colframe=maintheme,
+		coltitle=maintheme,
 		text width=.95\linewidth,
 		title={#1},
 		fonttitle=\bfseries\footnotesize,
-		coltitle=lowlight,
 		detach title, before upper={\tcbtitle\par},
 	}
 
 	\newtcolorbox{theorybox}[1]{
-		colback=lowlight!5!white,
-		colframe=lowlight,
+		% colback=lowlight!5!white,
+		% coltitle=lowlight,
+		% colframe=lowlight,
+		colback=white,
+		colframe=maintheme,
+		coltitle=maintheme,
 		text width=.85\linewidth,
 		title={#1},
 		fonttitle=\bfseries\small,
-		coltitle=lowlight,
 		detach title, before upper={\tcbtitle\par},
 	}
+
+	\newtcolorbox{questionbox}[1]{
+		colback=question!5!white,
+		colframe=question,
+		coltitle=question,
+		% text width=.78\linewidth,
+		title={#1},
+		fonttitle=\bfseries,
+		detach title, before upper={\tcbtitle},
+	}
+
+	\newtcolorbox{negbox}[1]{
+		colback=neg!5!white,
+		colframe=neg,
+		coltitle=neg,
+		% text width=.78\linewidth,
+		title={#1},
+		fonttitle=\bfseries,
+		detach title, before upper={\tcbtitle},
+	}
+
+	\newtcolorbox{modalbox}[1]{
+		colback=modal!5!white,
+		colframe=modal,
+		coltitle=modal,
+		% text width=.78\linewidth,
+		title={#1},
+		fonttitle=\bfseries,
+		detach title, before upper={\tcbtitle},
+	}
+
+	\newtcolorbox{condbox}[1]{
+		colback=cond!5!white,
+		colframe=cond,
+		coltitle=cond,
+		% text width=.78\linewidth,
+		title={#1},
+		fonttitle=\bfseries,
+		detach title, before upper={\tcbtitle},
+	}
+
+	\newtcbox{\qhl}[1][lowlight]{on line,
+	arc=3pt,colback=question!5!white,colframe=question,
+	coltitle=question,
+	before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+	boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
+
+	\newtcbox{\nhl}[1][lowlight]{on line,
+	arc=3pt,colback=neg!5!white,colframe=neg,
+	coltitle=neg,
+	before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+	boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
+
+	\newtcbox{\mhl}[1][lowlight]{on line,
+	arc=3pt,colback=modal!5!white,colframe=modal,
+	coltitle=modal,
+	before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+	boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
+
+	\newtcbox{\chl}[1][lowlight]{on line,
+	arc=3pt,colback=cond!5!white,colframe=cond,
+	coltitle=cond,
+	before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+	boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
 
 % beamer elements
 	% \useinnertheme{rounded}
@@ -92,6 +170,7 @@
 	\usepackage{booktabs}
 	\usepackage[round]{natbib}
 	\usepackage{multirow}
+	\usepackage{rotating}
 
 % drawing
 

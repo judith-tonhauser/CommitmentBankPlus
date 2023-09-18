@@ -117,8 +117,8 @@
       mutate(op = fct_reorder(op, projective, .fun = mean)) %>% ungroup()
   
     # plot ----
-    pomeans %>% 
-      ggplot(aes(x=fct_reorder(verb, projective), y=projective, group = op, color = op)) +
+    pmeans %>% 
+      ggplot(aes(x=fct_reorder(verb, Mean), y=Mean, group = op, color = op)) +
       geom_point(aes(shape = op), size = 4) + 
       geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1) +
       geom_line() +
@@ -159,7 +159,7 @@
       theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
     ggsave(f="../graphs/projectivity-pred-op-participant.pdf",height=6,width=8)
     
-  ## 4c projectivity means with distributions for paricipant means ----
+  ## 4c projectivity means with distributions for participant means ----
     # plot
     ggplot(pomeans, aes(x=fct_reorder(verb, projective), y=projective)) +
       data %>% mutate(verb = fct_reorder(verb, projective, .fun = mean)) %>%

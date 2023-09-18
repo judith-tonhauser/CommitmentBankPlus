@@ -1,4 +1,4 @@
-\documentclass[final, table]{beamer}
+\documentclass[final, table, cmyk]{beamer}
 %% Possible paper sizes: a0, a0b, a1, a2, a3, a4.
 %% Possible orientations: portrait, landscape
 %% Font sizes can be changed using the scale option.
@@ -48,7 +48,7 @@
 
 \author{Lisa Hofmann\inst{1} \and Marie-Catherine de Marneffe\inst{2} \and Judith Tonhauser\inst{1}}
 
-\institute[shortinst]{\inst{1} University of Stuttgart \samelineand \inst{2} UC Lovain}
+\institute[shortinst]{\inst{1} University of Stuttgart \samelineand \inst{2} UC Louvain}
 
 \date{\today}
 
@@ -68,23 +68,23 @@
 						
 					\item[\color{highlight}{$\blacktriangleright$}] By-operator effects differ by predicate (\textbf{\ophighlight{operator}/\predhighlight{predicate} interaction})
 					
-					\item[\color{highlight}{$\blacktriangleright$}] Current theories of \cchighlight{projective content} do not predict our results
+					\item[\color{highlight}{$\blacktriangleright$}] Current theories of projective content do not predict our results
 				\end{itemize}
 				
 			\end{upshotbox}
 			\vspace{\vboxsep}
 			\begin{normalbox}{Projection of clausal complements}
-				Do you infer that Rachel is committed to the truth of the \textit{content of the complement} (CC), that \cchighlight{Julian dances salsa}?
+				Do you infer that Rachel is committed to the truth of the \textit{content of the complement} (CC), that \underline{\em Julian dances salsa}?
 				
 				\vspace{-.3\baselineskip}
-				\ex. \a. Rachel: \emph{\lq Does Cole \predhighlight{know} that \cchighlight{Julian dances salsa}?\rq}\\
+				\ex. \a. Rachel: \emph{\lq Does Cole \predhighlight{know} that \underline{Julian dances salsa}?\rq}\\
 					\cmark\ \  Yes, CC projects out of the question
-					\b. Rachel: \emph{\lq Does Cole \predhighlight{think} that \cchighlight{Julian dances salsa}?\rq}\\
+					\b. Rachel: \emph{\lq Does Cole \predhighlight{think} that \underline{Julian dances salsa}?\rq}\\
 					\xmark\ \ No, CC does not project
 					\z.
 				\z.
 				
-				\vspace{-.5\baselineskip}
+				\vspace{-.7\baselineskip}
 				\resizebox{\linewidth}{!}{
 					\begin{minipage}{1.7\linewidth}
 						\citet{frege_uber_1892,strawson_referring_1950,kiparsky_fact_1970,karttunen_observations_1971,karttunen_conventional_1979}, and many more
@@ -97,16 +97,22 @@
 			\begin{normalbox}{Entailment-cancelling operators}
 				\textbf{Family-of-sentences test:}\newline No mention of differences in projection between different \ophighlight{operators}
 				
-				\vspace{-.5\baselineskip}
-				\ex. \a. Polar question:\\
-					\textit{\ophighlight{Does} Cole \predhighlight{know} that \cchighlight{Julian dances salsa}?}
-					\b. Negation:\\
-					\textit{Cole \ophighlight{doesn't} \predhighlight{know} that \cchighlight{Julian dances salsa}.}
-					\b. Epistemic modal:\\
-					\textit{\ophighlight{Perhaps} Cole \predhighlight{knows} that \cchighlight{Julian dances salsa}.}
-					\b. Conditional antecedents:\\
-					\textit{\ophighlight{If} Cole \predhighlight{knows} that \cchighlight{Julian dances salsa}, Logan will be joyful.}
-					\z.
+				% \vspace{-.5\baselineskip}
+				\ex. \phantom.\vspace{-2.8\baselineskip}\newline
+					\begin{questionbox}{i. Polar question:}
+						\hfill \textit{\ophighlight{Does} Cole know that Julian dances salsa?}
+					\end{questionbox}
+					\vspace{-.8\baselineskip}
+					\begin{negbox}{ii. Negation:} \hfill \textit{Cole \ophighlight{doesn't} know that Julian dances salsa.}
+					\end{negbox}
+					\vspace{-.8\baselineskip}
+					\begin{modalbox}{iii. Epistemic modal:}
+						\hfill \textit{\ophighlight{Perhaps} Cole knows that Julian dances salsa.}
+					\end{modalbox}
+					\vspace{-.8\baselineskip}
+					\begin{condbox}{iv. Conditional antecedents:}\newline
+						\phantom.\hfill\textit{\ophighlight{If} Cole knows that Julian dances salsa, Logan will be joyful.}
+					\end{condbox}
 				\z.
 
 				\vspace{-.5\baselineskip}
@@ -118,43 +124,98 @@
 				}
 
 			\end{normalbox}
-			
+
 			\vspace{\vboxsep}
 			\begin{normalbox}{Hints at by-operator variation}
-				\textbf{Factive vs. semi-factive predicates} (\citealt{karttunen_observations_1971})
-				\vspace{-.2\baselineskip}
-				\begin{itemize}
-					\item Factives (\textit{be annoyed, regret, \dots}): CC projects across all four operators
-					\item Semi-factives (\textit{discover, realize, see, notice, \dots}):\newline CC projects across negation, but not always for the other operators
-				\end{itemize}
+				% \hspace{-.02\linewidth}
+					\begin{minipage}{1.08\linewidth}
+						\begin{itemize}
+							\item \citet{karttunen_observations_1971} proposes \textbf{factive vs semi-factive} distinction
+							\item Smith \& Hall (\citeyear{smith_relationship_2014}): Experiment with \textbf{English projective contents}
+							\begin{itemize}
+								\item Effect of operator differs by projective content
+							\end{itemize}
+							\item Sieker \& Solstad (\citeyear{sieker_projective_2022}): Exp. with \textbf{German clause-embedding predicates}
+							\begin{itemize}
+								\item No by-predicate variation, no evidence for factive/semi-factive distinction
+							\end{itemize}
+						\end{itemize}
+					\end{minipage}
+				
+				% \smallskip
+				
+				\begin{center}
+					\scalebox{.85}{
+					\begin{tabular}{l l c c c c}
+					 	&& \nhl{\textcolor{neg}{\bf Neg}}  & \chl{\textcolor{cond}{\bf Cond}} &  \qhl{\textcolor{question}{\bf PQ}} & \mhl{\textcolor{modal}{\bf Mod}}  \\ \toprule
 
-				\textbf{Experiment with English projective contents} (\citealt{smith_relationship_2014})
-				\vspace{-.2\baselineskip}
-				\begin{itemize}
-					\item Projective content of epithets (e.g. \textit{idiot}) and the CC of \textit{know}:\\ more projective under negation than conditionals
-					\item Opposite pattern for appositive relative clauses and \textit{win}
-				\end{itemize}
+					 	&factives \\
+					 	& \small (\textit{be annoyed, regret, \dots}) & 
+					 		\multirow{-2}{*}{\cmark}	&
+					 		\multirow{-2}{*}{\cmark}	&
+					 		\multirow{-2}{*}{\cmark}	&
+					 		\multirow{-2}{*}{\cmark}	\\
 
-				\textbf{Experiment with German clause-embedding predicates}\\ (\citealt{sieker_projective_2022})
-				\vspace{-.2\baselineskip}
-				\begin{itemize}
-					\item Higher projection ratings w/ negation than other three operators
-					\item No by-predicate variation, no evidence for factive/semi-factive distinction
-				\end{itemize}
+					 	 & semi-factives\\
+					 	\multirow{-4}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-\baselineskip}\phantom.\newline \citet{karttunen_observations_1971}}} &
+					 	\small (\textit{discover, realize, see, notice, \dots}) & 
+					 		\multirow{-2}{*}{\cmark}	&
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-\baselineskip}\phantom.\newline not\\ always}}	&
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-\baselineskip}\phantom.\newline not\\ always}}	&
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-\baselineskip}\phantom.\newline not\\ always}}	\\ \midrule
+
+						& epithets (e.g. \textit{idiot}),
+							&&& \cellcolor{gray!20} & \cellcolor{gray!20} \\
+						& CC of \textit{know}&
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline {\footnotesize\bf more}\\ projection}} &
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline {\footnotesize\bf less}\\ projection}} &
+					 		\cellcolor{gray!20}
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline N/A}} &
+					 		\cellcolor{gray!20}
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline N/A}} \\
+
+					 	& Appositive RCs,
+							&&& \cellcolor{gray!20} & \cellcolor{gray!20} \\
+						
+						\multirow{-4}{*}{\parbox{3cm}{\footnotesize\centering \vspace{-\baselineskip}\phantom.\newline Smith \& Hall (\citeyear{smith_relationship_2014})}} &
+
+						prep. content of \textit{win} &
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline {\footnotesize\bf less}\\ projection}} &
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline {\footnotesize\bf more}\\ projection}} &
+					 		\cellcolor{gray!20}
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline N/A}} &
+					 		\cellcolor{gray!20}
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline N/A}} \\ \midrule
+
+					 	&CCs of German \lq factives\rq
+							&&&&\\
+
+						\multirow{-2}{*}{\parbox{3cm}{\footnotesize\centering \vspace{-\baselineskip}\phantom.\newline Sieker \& Solstad (\citeyear{sieker_projective_2022})}} &
+
+						\& \lq semi-factives\rq&
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline {\footnotesize\bf more}\\ projection}} &
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline {\footnotesize\bf less}\\ projection}} &
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline {\footnotesize\bf less}\\ projection}} &
+					 		\multirow{-2}{*}{\parbox{2.5cm}{\footnotesize\centering \vspace{-.5\baselineskip}\phantom.\newline {\footnotesize\bf less}\\ projection}} \\ \bottomrule
+					\end{tabular}}
+				\end{center}
+				
+				
+				% \vspace{-\baselineskip}
 
 				\begin{figure}[h]
 					\vspace{-.2\baselineskip}
 					\centering
 					\includegraphics[width=.7\linewidth]{sieker-solstad.png}
 					\vspace{-.4\baselineskip}
-					\caption{\citealt{sieker_projective_2022}, p. 286: Projection-ratings by embedding operator, for purported factive and semi-factive predicates}
+					\caption{Sieker \& Solstad \citeyear{sieker_projective_2022}, p. 286: Projection-ratings by embedding operator, for purported factive and semi-factive predicates}
 					% \label{fig:figure1}
 				\end{figure}
 				\vspace{-.8\baselineskip}
 			\end{normalbox}
 
 			\vspace{\vboxsep}
-			\begin{normalbox}{Certain-that task for projection inferences}
+			\begin{normalbox}{\lq Certain-that\rq\ task for projection inferences}
 
 				\begin{figure}[h]
 					\centering
@@ -179,6 +240,7 @@
 				\begin{figure}[h]
 					\centering
 					\includegraphics[width=.95\linewidth]{degen-tonhauser.png}
+					\vspace{-.8\baselineskip}
 					\caption{\citealt{degen_are_2022}, p. 562: Mean certainty ratings by predicate}
 					\label{fig:task}
 				\end{figure}
@@ -187,13 +249,13 @@
 
 			\vspace{\vboxsep}
 			\begin{normalbox}{Materials}
-				To assess the effect of \ophighlight{operator} and \predhighlight{predicate} on \cchighlight{\textbf{projection}}:
+				To assess the effect of \ophighlight{operator} and \predhighlight{predicate} on \textbf{projection}:
 				\vspace{.2\baselineskip}
 
 					\textbf{4 experiments} (roughly $750$ participants each)
 					\vspace{-.3\baselineskip}
 					\begin{itemize}
-						\item One per \ophighlight{operator}: polar questions, negation, modal \textit{perhaps}, conditional
+						\item One per operator: \textcolor{question}{\bf polar questions}, \textcolor{neg}{\bf negation}, \textcolor{modal}{\bf modal \textit{perhaps}}, \textcolor{cond}{\bf conditional}
 					\end{itemize}
 
 					\vspace{-.2\baselineskip}
@@ -225,11 +287,11 @@
 					\textcolor{highlight}{\large \Raleway \bfseries \underline{By-operator variation aggregating across predicates} (Figure 3)}
 					\vspace{-.15\baselineskip}
 					\begin{itemize} \small
-						\item Conditional > Question > Negation, Modal
+						\item {\bf \textcolor{cond}{\bf Conditional} > \textcolor{question}{\bf Question} > \textcolor{neg}{\bf Negation}, \textcolor{modal}{\bf Modal}}
 							\vspace{\mboxpreadjust}
 							\begin{modelbox}{Model \#1: Linear mixed effect regression}
 								\footnotesize
-								response: \textbf{certainty ratings}; fixed effect: \ophighlight{\textbf{operator}} (base level: Question);
+								response: \textbf{certainty ratings}; fixed effect: \ophighlight{operator} (base level: Question);
 								random intercepts: participants, items; \newline
 								MLEs: question (intercept) $0.51$, conditional $+0.05$, modal $-0.04$, negation $-0.03$; with all $p < 0.001$
 							\end{modelbox}
@@ -244,7 +306,7 @@
 				\textcolor{highlight}{\large \Raleway \bfseries\underline{Effect of operator differs by predicate} (Figure 4), e.g.}
 				\vspace{-.15\baselineskip}
 				\begin{itemize}\small
-					\item CC of \predhighlight{be annoyed}: Negation, Conditional > Question, Modal
+					\item CC of \predhighlight{be annoyed}: {\bf \textcolor{neg}{\bf Negation}, \textcolor{cond}{\bf Conditional} > \textcolor{question}{\bf Question}, \textcolor{modal}{\bf Modal}}
 						\vspace{\mboxpreadjust}
 						\begin{modelbox}{Model \#2: Linear mixed effect regression}
 							\footnotesize
@@ -252,7 +314,7 @@
 							MLEs: negation (intercept) $0.87$, conditional $-0.12$, modal $-0.16$; ($p < 0.001$); question $+0.02$ (n.s.)
 						\end{modelbox}
 
-					\item CC of \predhighlight{know}: Question > Negation, Conditional > Modal
+					\item CC of \predhighlight{know}: {\bf \textcolor{question}{\bf Question} > \textcolor{neg}{\bf Negation}, \textcolor{cond}{\bf Conditional} > \textcolor{modal}{\bf Modal}}
 						\vspace{\mboxpreadjust}
 						\begin{modelbox}{Model \#3: Linear mixed effect regression}
 							\footnotesize
@@ -260,7 +322,7 @@
 							MLEs: negation (intercept) $0.79$, modal $-0.14$, question $+0.08$; with $p < 0.001$; , conditional $+/- 0$, (n.s.)
 						\end{modelbox}
 
-					\item CC of \predhighlight{discover}: Modal > Negation > Conditional, Question
+					\item CC of \predhighlight{discover}: {\bf \textcolor{modal}{\bf Modal} > \textcolor{neg}{\bf Negation} > \textcolor{cond}{\bf Conditional}, \textcolor{question}{\bf Question}}
 						\vspace{\mboxpreadjust}
 						\begin{modelbox}{Model \#4: Linear mixed effect regression}
 							\footnotesize
@@ -279,9 +341,9 @@
 							\begin{tikzpicture}
 							    \node at (0,0) {\includegraphics[width=.9\linewidth]{projective-op.pdf}};
 							    % \draw[red,ultra thick,rounded corners] (7.5,5.3) rectangle (9.4,6.2);
-							    \draw[red, ultra thick] (-3.37,2.3) -- (-3.37,1) -- node[below] {***} (-.66,1) -- (-.66,1.5);
-							    \draw[red, ultra thick] (-.66,1.5) -- (-.66,.2) -- node[below] {***} (2.07,.2) -- (2.07,.7);
-							    \draw[red, ultra thick] (2.07,.8) -- (2.07,.12) -- node[below] {\footnotesize n.s.} (4.78,.12) -- (4.78,.62);
+							    \draw[highlight, ultra thick] (-3.37,2.3) -- (-3.37,1) -- node[below] {***} (-.66,1) -- (-.66,1.5);
+							    \draw[highlight, ultra thick] (-.66,1.5) -- (-.66,.2) -- node[below] {***} (2.07,.2) -- (2.07,.7);
+							    \draw[highlight, ultra thick] (2.07,.8) -- (2.07,.12) -- node[below] {\footnotesize n.s.} (4.78,.12) -- (4.78,.62);
 							\end{tikzpicture}}
 							\vspace{-1.4\baselineskip}
 							\caption{Mean certainty ratings by operator}
@@ -289,12 +351,13 @@
 						\end{figure}
 					
 				\end{tabular}
-				\vspace{-1.6\baselineskip}
+				\vspace{-1.24\baselineskip}
 				\begin{figure}[h]
 					\centering
 					\includegraphics[width=\linewidth]{projective-pred-op.pdf}
-					\vspace{-2.2\baselineskip}
-					\caption{Mean certainty ratings by predicate, grouped by operator}
+					\vspace{-1.7\baselineskip}
+					\caption{Mean certainty ratings by predicate with 95\% bootstrapped confidence intervals, grouped by operator. Entailment-cancelling operator coded by letter and color:  \textcolor{neg}{\texttt{N}: negation}, \textcolor{modal}{\texttt{M}: modals}, \textcolor{cond}{\texttt{C}: conditional antecedents}, \textcolor{question}{\texttt{Q}: polar questions}.
+					}
 					\label{fig:figure3}
 				\end{figure}
 				\vspace{-.8\baselineskip}
@@ -303,8 +366,8 @@
 			\vspace{\vboxsep}
 			\begin{normalbox}{\phantom.\hfill Discussion --- By-predicate variation in the effect of operator}
 				\begin{itemize}
-					\item Concurs with \citet{smith_relationship_2014}, who found content/operator interactions for English projective contents
-					\item Differs from \citet{sieker_projective_2022}: found no predicate/operator interaction for CCs of German clause-embedding predicates
+					\item Concurs with Smith \& Hall (\citeyear{smith_relationship_2014}), who found content/operator interactions for English projective contents
+					\item Differs from Sieker \& Solstad (\citeyear{sieker_projective_2022}): found no predicate/operator interaction for CCs of German clause-embedding predicates
 				\end{itemize}
 				
 				\textbf{No evidence for factive vs. semi-factive distinction (\citealt{karttunen_observations_1971})}
@@ -359,30 +422,30 @@
 
 				\end{theorybox}
 
-
+				\smallskip
 				\resizebox{\linewidth}{!}{
 						\begin{tabular}{l c c c}
-							\textbf{Our data} 
 								& \multicolumn{3}{c}{\textbf{Predictions}}\\ \toprule
 							%
+							\textbf{Our data} 
 								& \parbox{.3\linewidth}{\centering Lexical triggering + \par dynamic semantics}
 									& \parbox{.3\linewidth}{\centering Lexical entailments +\par discourse-based triggering}
 										& \parbox{.3\linewidth}{\centering Contextual entailments +\par triggering based on cognitive inertness} \\ \midrule
 							%
 							\parbox{.3\linewidth}{\raggedright\textbf{Superadditive predicate/operator interaction}\\[2.5\baselineskip]}
-								& \parbox{.29\linewidth}{\centering \cellcolor{red!25} Meaning of entailment-canceling operators (invariably) encodes interaction with conventional content of embedded factives}
-									& \parbox{.29\linewidth}{\centering \cellcolor{red!25} No systematic predictions for how veridicality or at-issueness interact with the meaning of entailment-canceling operators}
-										& \parbox{.29\linewidth}{\centering\cellcolor{green!25} May be extended to our data by making explicit how combinations of operator + predicate are associated with contextual inferences}\\
+								& \parbox{.29\linewidth}{\centering \cellcolor{red!15} Meaning of entailment-canceling operators (invariably) encodes interaction with conventional content of embedded factives}
+									& \parbox{.29\linewidth}{\centering \cellcolor{red!15} No systematic predictions for how veridicality or at-issueness interact with the meaning of entailment-canceling operators}
+										& \parbox{.29\linewidth}{\centering\cellcolor{green!15} May be extended to our data by making explicit how combinations of operator + predicate are associated with contextual inferences}\\
 							%
 							\parbox{.3\linewidth}{\raggedright\textbf{Projection variability for all predicates}\par {\small Projection for some non-factive (/non-veridical) predicates as high as for some factive (/veridical) ones (see also D\&T'22)}\\[.5\baselineskip]}
-								& \parbox{.29\linewidth}{\centering \cellcolor{red!25} No predictions for non-factive predicates}
-									& \parbox{.29\linewidth}{\centering \cellcolor{red!25} No systematic predictions for non-veridical predicates}
-										& \parbox{.29\linewidth}{\centering \cellcolor{green!25} Makes predictions about CCs of all clause-embedding predicates} \\
+								& \parbox{.29\linewidth}{\centering \cellcolor{red!15} No predictions for non-factive predicates}
+									& \parbox{.29\linewidth}{\centering \cellcolor{red!15} No systematic predictions for non-veridical predicates}
+										& \parbox{.29\linewidth}{\centering \cellcolor{green!15} Makes predictions about CCs of all clause-embedding predicates} \\
 							%
 							\parbox{.3\linewidth}{\raggedright\textbf{Out-of-the-blue contexts}\par {\small Projection variability in the out-of-the-blue contexts used in experiment (see also D\&T'22)}\\[1.7\baselineskip]}
-								& \parbox{.29\linewidth}{\centering \cellcolor{red!25} Consistent projection of factive CCs}
-									& \parbox{.3\linewidth}{\centering \cellcolor{green!25} Veridical predicates: analyses may be extended by assuming that the CCs of veridical predicates differ in at-issueness in out-of-the-blue contexts}
-										& \parbox{.29\linewidth}{\centering \cellcolor{red!25} “Out-of-the-blue” contexts do not warrant assumption of contextual \underline{entailment}: No projection expected} \\
+								& \parbox{.29\linewidth}{\centering \cellcolor{red!15} Consistent projection of factive CCs}
+									& \parbox{.3\linewidth}{\centering \cellcolor{green!15} Veridical predicates: analyses may be extended by assuming that the CCs of veridical predicates differ in at-issueness in out-of-the-blue contexts}
+										& \parbox{.29\linewidth}{\centering \cellcolor{red!15} “Out-of-the-blue” contexts do not warrant assumption of contextual \underline{entailment}: No projection expected} \\
 						\end{tabular}
 				}
 
