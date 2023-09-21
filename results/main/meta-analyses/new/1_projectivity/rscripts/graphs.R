@@ -63,20 +63,20 @@
   
   # means and confidence intervals for projectivity rating by predicate ----
   pmeans = data %>% group_by(verb) %>%
-    summarize(projective = mean(projective), CILow = ci.low(projective), 
+    summarize(Mean = mean(projective), CILow = ci.low(projective), 
               CIHigh = ci.high(projective)) %>%
-    mutate(YMin = projective - CILow, YMax = projective + CIHigh, 
-           verb = fct_reorder(as.factor(verb), projective)) %>% ungroup()
+    mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
+           verb = fct_reorder(as.factor(verb), Mean), projective = Mean) %>% ungroup()
   
   ## 3a projectivity by predicate w distribution of participants' means ----
     # get the mean of participants' projectivity ratings by verb
     subjmeans = data %>%
       group_by(verb,workerid) %>%
-      summarize(projective = mean(projective))
+      summarize(Mean = mean(projective))
     subjmeans$verb <- factor(subjmeans$verb, levels = unique(levels(pmeans$verb)))
   
     # plot 
-    ggplot(pmeans, aes(x=verb, y=projective)) +
+    ggplot(pmeans, aes(x=verb, y=Mean)) +
       geom_violin(data=subjmeans,scale="width",color="gray80") +
       geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.3,color="black") +
       geom_point(size=0.5,color="black") +
@@ -109,15 +109,15 @@
   ## 4a means compare between operators ----
     # projectivity by verb and operator
     pomeans = data %>% group_by(verb, op) %>%
-      summarize(projective = mean(projective), CILow = ci.low(projective), 
+      summarize(Mean = mean(projective), CILow = ci.low(projective), 
                 CIHigh = ci.high(projective)) %>%
-      mutate(YMin = projective - CILow, YMax = projective + CIHigh, 
-             verb = fct_reorder(as.factor(verb),projective)) %>%
-      mutate(verb = fct_reorder(verb, projective, .fun = mean)) %>%
-      mutate(op = fct_reorder(op, projective, .fun = mean)) %>% ungroup()
+      mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
+             verb = fct_reorder(as.factor(verb),Mean)) %>%
+      mutate(verb = fct_reorder(verb, Mean, .fun = mean)) %>%
+      mutate(op = fct_reorder(op, Mean, .fun = mean)) %>% ungroup()
   
     # plot ----
-    pmeans %>% 
+    pomeans %>% 
       ggplot(aes(x=fct_reorder(verb, Mean), y=Mean, group = op, color = op)) +
       geom_point(aes(shape = op), size = 4) + 
       geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1) +

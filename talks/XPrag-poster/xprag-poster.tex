@@ -287,7 +287,7 @@
 					\textcolor{highlight}{\large \Raleway \bfseries \underline{By-operator variation aggregating across predicates} (Figure 3)}
 					\vspace{-.15\baselineskip}
 					\begin{itemize} \small
-						\item {\bf \textcolor{cond}{\bf Conditional} > \textcolor{question}{\bf Question} > \textcolor{neg}{\bf Negation}, \textcolor{modal}{\bf Modal}}
+						\item \chl{\textcolor{cond}{\bf Conditional}} > \qhl{\textcolor{question}{\bf Question}} > \nhl{\textcolor{neg}{\bf Negation}}, \mhl{\textcolor{modal}{\bf Modal}}
 							\vspace{\mboxpreadjust}
 							\begin{modelbox}{Model \#1: Linear mixed effect regression}
 								\footnotesize
@@ -306,7 +306,7 @@
 				\textcolor{highlight}{\large \Raleway \bfseries\underline{Effect of operator differs by predicate} (Figure 4), e.g.}
 				\vspace{-.15\baselineskip}
 				\begin{itemize}\small
-					\item CC of \predhighlight{be annoyed}: {\bf \textcolor{neg}{\bf Negation}, \textcolor{cond}{\bf Conditional} > \textcolor{question}{\bf Question}, \textcolor{modal}{\bf Modal}}
+					\item CC of \predhighlight{be annoyed}: \qhl{\textcolor{question}{\bf Question}}, \nhl{\textcolor{neg}{\bf Negation}} > \chl{\textcolor{cond}{\bf Conditional}}, \mhl{\textcolor{modal}{\bf Modal}}
 						\vspace{\mboxpreadjust}
 						\begin{modelbox}{Model \#2: Linear mixed effect regression}
 							\footnotesize
@@ -314,7 +314,7 @@
 							MLEs: negation (intercept) $0.87$, conditional $-0.12$, modal $-0.16$; ($p < 0.001$); question $+0.02$ (n.s.)
 						\end{modelbox}
 
-					\item CC of \predhighlight{know}: {\bf \textcolor{question}{\bf Question} > \textcolor{neg}{\bf Negation}, \textcolor{cond}{\bf Conditional} > \textcolor{modal}{\bf Modal}}
+					\item CC of \predhighlight{know}: \qhl{\textcolor{question}{\bf Question}} > \nhl{\textcolor{neg}{\bf Negation}}, \chl{\textcolor{cond}{\bf Conditional}} > \mhl{\textcolor{modal}{\bf Modal}}
 						\vspace{\mboxpreadjust}
 						\begin{modelbox}{Model \#3: Linear mixed effect regression}
 							\footnotesize
@@ -322,12 +322,12 @@
 							MLEs: negation (intercept) $0.79$, modal $-0.14$, question $+0.08$; with $p < 0.001$; , conditional $+/- 0$, (n.s.)
 						\end{modelbox}
 
-					\item CC of \predhighlight{discover}: {\bf \textcolor{modal}{\bf Modal} > \textcolor{neg}{\bf Negation} > \textcolor{cond}{\bf Conditional}, \textcolor{question}{\bf Question}}
+					\item CC of \predhighlight{discover}: \chl{\textcolor{cond}{\bf Conditional}}, \qhl{\textcolor{question}{\bf Question}} > \nhl{\textcolor{neg}{\bf Negation}} > \mhl{\textcolor{modal}{\bf Modal}}
 						\vspace{\mboxpreadjust}
 						\begin{modelbox}{Model \#4: Linear mixed effect regression}
 							\footnotesize
 							response: \textbf{certainty ratings}; fixed effects: \ophighlight{operator}, \predhighlight{predicate}, and interaction (base level: \textbf{discover} / negation); random intercepts: participant; \newline
-							MLEs: negation (intercept) $0.68$, conditional $+0.11$, modal $-0.06$, question $+0.10$; with $p < 0.001$
+							MLEs: negation (intercept) $0.68$, conditional $+0.11$, question $+0.10$, modal $-0.06$; with $p < 0.001$
 						\end{modelbox}
 
 				\end{itemize}
