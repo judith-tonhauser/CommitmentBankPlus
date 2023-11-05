@@ -31,7 +31,6 @@ length(unique(d$participantID)) #370 participants
 # Fig 1: plot of mean naturalness ratings in explicit ignorance context ----
 
 # target data: explicit ignorance context
-# merge the two controls into one, but exclude them
 table(d$expression)
 t = d %>%
   filter(context == "explicitIgnorance") %>%
@@ -48,24 +47,28 @@ levels(nat.meansEIC$expression)
 
 # color code the expressions
 factives <- c("know", "discover", "be annoyed", "reveal", "see")
-hard.triggers <- c("too", "also","cleft","again")
-soft.triggers <- c("stop", "continue")
+fillers <- c("too", "also","cleft","again","stop", "continue")
+#hard.triggers <- c("too", "also","cleft","again")
+#soft.triggers <- c("stop", "continue")
 
-nat.meansEIC$ps = ifelse(nat.meansEIC$expression %in% soft.triggers, "softTrigger", 
-               ifelse(nat.meansEIC$expression %in% hard.triggers, "hardTrigger",
-                      ifelse(nat.meansEIC$expression %in% factives, "factive", "other")))
+# nat.meansEIC$ps = ifelse(nat.meansEIC$expression %in% soft.triggers, "softTrigger", 
+#                ifelse(nat.meansEIC$expression %in% hard.triggers, "hardTrigger",
+#                       ifelse(nat.meansEIC$expression %in% factives, "factive", "other")))
+# 
+# t$ps = ifelse(t$expression %in% soft.triggers, "softTrigger", 
+#               ifelse(t$expression %in% hard.triggers, "hardTrigger",
+#                      ifelse(t$expression %in% factives, "factive", "other")))
 
-t$ps = ifelse(t$expression %in% soft.triggers, "softTrigger", 
-              ifelse(t$expression %in% hard.triggers, "hardTrigger",
-                     ifelse(t$expression %in% factives, "factive", "other")))
+nat.meansEIC$ps = ifelse(nat.meansEIC$expression %in% fillers, "filler",
+                                ifelse(nat.meansEIC$expression %in% factives, "factive", "other"))
 
+t$ps = ifelse(t$expression %in% fillers, "filler",
+                     ifelse(t$expression %in% factives, "factive", "other"))
 
 table(nat.meansEIC$ps, nat.meansEIC$expression)
 
 text.color <- ifelse(nat.meansEIC$expression[order(nat.meansEIC$Mean)] %in% factives, '#D55E00',
-                     ifelse(nat.meansEIC$expression[order(nat.meansEIC$Mean)] %in% hard.triggers, "black",
-                            ifelse(nat.meansEIC$expression[order(nat.meansEIC$Mean)] %in% soft.triggers, "#009E73",
-                            "gray80")))
+                     ifelse(nat.meansEIC$expression[order(nat.meansEIC$Mean)] %in% fillers, "black", "#009E73"))
 text.color
 
 t$expression = factor(t$expression, levels = nat.meansEIC$expression[order(nat.meansEIC$Mean)], ordered = TRUE)
@@ -75,11 +78,11 @@ ggplot(nat.meansEIC, aes(x=expression, y=Mean)) +
   geom_violin(data=t[t$context == "explicitIgnorance",],aes(x=expression, y=response),
                scale="width",color="gray80", fill = "gray80") +
   geom_point(aes(group = ps, fill = ps), shape=21,stroke=.5,size=3, color="black") +
-  scale_fill_manual(values=c('#D55E00','black','gray80','#009E73')) + 
+  scale_fill_manual(values=c('#D55E00','black','#009E73')) + 
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
   scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels = c("0",".2",".4",".6",".8","1")) +
   guides(fill=FALSE) +
-  theme(legend.position="top") +
+  theme(legend.position="top", panel.grid.major.x = element_blank()) +
   ylab("Mean naturalness rating \n in explicit ignorance context") +
   xlab("Expression") +  
   #theme_dark() +
@@ -115,32 +118,14 @@ t = d %>%
   mutate(context = as.factor(context))
 levels(t$context)
 
-# order the predicate by Language paper certainty means
-# https://github.com/judith-tonhauser/projective-probability/tree/master/results/5-projectivity-no-fact
-# tmp <- read_csv("https://raw.githubusercontent.com/judith-tonhauser/projective-probability/master/results/5-projectivity-no-fact/data/cd.csv")
-# summary(tmp)
-# 
-# # target data
-# tmp2 <- tmp %>%
-#   filter(verb != "MC") %>%
-#   group_by(verb) %>%
-#   summarize(MeanCertain = mean(response)) %>% 
-#   mutate(expression = fct_reorder(as.factor(verb),MeanCertain))
-# tmp2
-# 
-# # order predicates by mean projection in Language paper Exp 1
-# nat.means$expression = factor(nat.means$expression, levels=tmp2$expression[order(tmp2$expression)], ordered=TRUE)
-# t$expression = factor(t$expression, levels=tmp2$expression[order(tmp2$expression)], ordered=TRUE)
-
 # order predicates by mean naturalness rating in EIC
-tmp <- d %>%
+tmp <- t %>%
   filter(context == "explicitIgnorance") %>%
-  filter(expression != "practice" & expression != "controlGood1" & expression != "controlGood2" & expression != "controlGood3" & expression != "controlGood4") %>%
-  filter(expression != "also" & expression != "too" & expression != "again" & expression != "cleft" &
-           expression != "stop" & expression != "continue") %>%
   group_by(expression) %>%
   summarize(Mean = mean(response)) %>%
   mutate(expression = fct_reorder(as.factor(expression),Mean))
+tmp
+levels(tmp$expression)
   
 nat.means$expression = factor(nat.means$expression, levels=tmp$expression[order(tmp$expression)], ordered=TRUE)
 t$expression = factor(t$expression, levels=tmp$expression[order(tmp$expression)], ordered=TRUE)
@@ -153,7 +138,7 @@ nat.means$context = factor(nat.means$context, levels = c("explicitIgnorance", "f
 levels(t$context)
 t$context = factor(t$context, levels = c("explicitIgnorance", "factL", "factH"))
 
-fill.color <- ifelse(levels(nat.means$expression) %in% factives, '#D55E00', "gray80")
+fill.color <- ifelse(levels(nat.means$expression) %in% factives, '#D55E00', "#009E73")
 fill.color
 
 # to color the facets differently
@@ -165,9 +150,9 @@ strip <- strip_themed(background_x = elem_list_rect(fill = fill.color))
 ggplot(nat.means, aes(x=context, y=Mean)) +
   geom_violin(data=t, aes(x=context, y=response, fill = context), scale="width", linewidth = 0) +
   geom_point(aes(fill = context), shape=21,stroke=.5,size=2, color="black") +
-  scale_fill_manual(values=c('gray80',"#56B4E9",'#E69F00'), 
+  scale_fill_manual(values=c('gray80',"#56B4E9",'#F0E442'), 
                     name = "Context", 
-                    labels=c('explicit ignorance', 'low prior probability','high prior probability')) +
+                    labels=c('explicit ignorance', 'lower prior probability','higher prior probability')) +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
   scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels = c("0",".2",".4",".6",".8","1")) +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +

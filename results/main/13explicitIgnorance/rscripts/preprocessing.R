@@ -477,6 +477,7 @@ write_tsv(d, file="../data/cd.tsv")
 # how many data points per predicate/CC/context combination?
 names(d)
 
+# exclude the fillers and the controls
 tmp = d %>%
   filter(cc != "noCC") %>%
   group_by(expression,cc,context) %>% 
@@ -515,17 +516,31 @@ mean(tmp$n) #222
 median(tmp$n) #224.5
 max(tmp$n) #234
 
+table(d$context)
 # how many data points for each predicate in the two neutral contexts?
 tmp = d %>%
-  filter(context != "explicitIgnorance") %>%
+  filter(context == "factL") %>%
   filter(cc != "noCC") %>%
   group_by(expression,context) %>% 
   tally
 tmp
-nrow(tmp) # 40 combinations (2 contexts x 20 predicates)
-sd(tmp$n) #8
+nrow(tmp) # 20 (1 context x 20 predicates)
+sd(tmp$n) #8.25
 min(tmp$n) #59
 mean(tmp$n) #74
 median(tmp$n) #75
 max(tmp$n) #87
+
+tmp = d %>%
+  filter(context == "factH") %>%
+  filter(cc != "noCC") %>%
+  group_by(expression,context) %>% 
+  tally
+tmp
+nrow(tmp) # 20 (1 context x 20 predicates)
+sd(tmp$n) #8
+min(tmp$n) #61
+mean(tmp$n) #74
+median(tmp$n) #75
+max(tmp$n) #86
 
