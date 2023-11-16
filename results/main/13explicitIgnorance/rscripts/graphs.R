@@ -28,7 +28,71 @@ table(d$context)
 
 length(unique(d$participantID)) #370 participants
 
-# Fig 1: plot of mean naturalness ratings in explicit ignorance context ----
+# Fig 1: plot of mean certainty ratings from Exp 1a of Degen & Tonhauser 2022 -----
+# import data from repo
+cd <- read_csv("https://raw.githubusercontent.com/judith-tonhauser/projective-probability/master/results/5-projectivity-no-fact/data/cd.csv")
+summary(cd)
+
+# mean projectivity by predicate, including the main clause controls
+means = cd %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, verb = fct_reorder(as.factor(verb),Mean))
+means
+
+# define colors for the predicates
+cols = data.frame(V=levels(means$verb))
+
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be annoyed"), "F", 
+         ifelse(cols$V %in% c("MC"),"MC","NF")))
+
+levels(cols$V)
+cols$V <- factor(cols$V, levels = cols[order(as.character(means$verb)),]$V, ordered = TRUE)
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "#D55E00",
+                      ifelse(cols$VeridicalityGroup == "NF", "#009E73",'black'))
+
+
+cols$V <- factor(cols$V, levels = cols[order(as.character(means$verb)),]$V, ordered = TRUE)
+levels(cols$V)
+
+means$VeridicalityGroup = factor(x=
+                                   ifelse(means$verb %in% c("know", "discover", "reveal", "see", "be annoyed"), "F", 
+                                          ifelse(means$verb  %in% c("MC"),"MC","NF")),levels=rev(c("F","NF","MC")))
+
+subjmeans = cd %>%
+  group_by(verb,workerid) %>%
+  summarize(Mean = mean(response)) 
+subjmeans$verb <- factor(subjmeans$verb, levels = unique(levels(means$verb)))
+subjmeans$VeridicalityGroup = factor(x=
+                                   ifelse(subjmeans$verb %in% c("know", "discover", "reveal", "see", "be annoyed"), "F", 
+                                          ifelse(subjmeans$verb  %in% c("MC"),"MC","NF")),levels=rev(c("F","NF","MC")))
+
+levels(subjmeans$verb)
+view(subjmeans)
+
+# version of Figure 2 Language paper
+# plot of means, 95% CIs and participants' ratings 
+ggplot(means, aes(x=verb, y=Mean, fill=VeridicalityGroup)) +
+  geom_violin(data=subjmeans,scale="width",linewidth = 0, alpha = .3) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax, fill=VeridicalityGroup, shape=VeridicalityGroup),width=0.1,color="black") +
+  geom_point(aes(fill=VeridicalityGroup, shape=VeridicalityGroup),stroke=.5,size=2.5,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_alpha(range = c(.3,1)) +
+  scale_shape_manual(values=rev(c(23, 24, 25, 22, 21)),labels=rev(c("factive","nonfactive","main clause\ncontrols")),name="Predicate type") +
+  scale_fill_manual(values=rev(c("#D55E00","#009E73","black")),labels=rev(c("factive","nonfactive","main clause\ncontrols")),name="Predicate type") +
+  # guides(fill=FALSE, shape=F) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  theme(legend.position="bottom") +
+  theme(panel.grid.major.x = element_blank()) +
+  ylab("Mean certainty rating") +
+  xlab("Predicate") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
+ggsave("../graphs/mean-certainty-by-predicateType.pdf",height=4.5,width=7)
+
+# Fig 2: plot of mean naturalness ratings in explicit ignorance context ----
 
 # target data: explicit ignorance context
 table(d$expression)
@@ -48,16 +112,6 @@ levels(nat.meansEIC$expression)
 # color code the expressions
 factives <- c("know", "discover", "be annoyed", "reveal", "see")
 fillers <- c("too", "also","cleft","again","stop", "continue")
-#hard.triggers <- c("too", "also","cleft","again")
-#soft.triggers <- c("stop", "continue")
-
-# nat.meansEIC$ps = ifelse(nat.meansEIC$expression %in% soft.triggers, "softTrigger", 
-#                ifelse(nat.meansEIC$expression %in% hard.triggers, "hardTrigger",
-#                       ifelse(nat.meansEIC$expression %in% factives, "factive", "other")))
-# 
-# t$ps = ifelse(t$expression %in% soft.triggers, "softTrigger", 
-#               ifelse(t$expression %in% hard.triggers, "hardTrigger",
-#                      ifelse(t$expression %in% factives, "factive", "other")))
 
 nat.meansEIC$ps = ifelse(nat.meansEIC$expression %in% fillers, "filler",
                                 ifelse(nat.meansEIC$expression %in% factives, "factive", "other"))
@@ -89,7 +143,7 @@ ggplot(nat.meansEIC, aes(x=expression, y=Mean)) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = text.color)) 
 ggsave("../graphs/explicit-ignorance-naturalness-by-predicate.pdf",height=4,width=7)
 
-# Fig 2: plot of mean naturalness ratings in by context ----
+# Fig 3: plot of mean naturalness ratings in by context ----
 # for 20 clause-embedding predicates only
 
 # calculate mean naturalness rating by predicate and context
