@@ -70,7 +70,7 @@ subjmeans$VeridicalityGroup = factor(x=
                                           ifelse(subjmeans$verb  %in% c("MC"),"MC","NF")),levels=rev(c("F","NF","MC")))
 
 levels(subjmeans$verb)
-view(subjmeans)
+#view(subjmeans)
 
 # version of Figure 2 Language paper
 # plot of means, 95% CIs and participants' ratings 
@@ -218,6 +218,74 @@ ggplot(nat.means, aes(x=context, y=Mean)) +
   theme(strip.background = element_rect(fill="white")) +
   theme(strip.text = element_text(color = "black")) 
 ggsave("../graphs/naturalness-by-context-and-predicate.pdf",height=4,width=9)
+
+# Fig 4: plot of mean certainty ratings for "Julian dances salsa" from Exp 1a of Degen & Tonhauser 2022 -----
+# import data from repo
+cd <- read_csv("https://raw.githubusercontent.com/judith-tonhauser/projective-probability/master/results/5-projectivity-no-fact/data/cd.csv")
+summary(cd)
+table(cd$content)
+table(cd$verb)
+
+# mean projectivity by predicate, including the main clause controls
+means = cd %>%
+  filter(verb != "MC") %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, verb = fct_reorder(as.factor(verb),Mean))
+means
+
+# define colors for the predicates
+cols = data.frame(V=levels(means$verb))
+
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be annoyed"), "F", 
+         ifelse(cols$V %in% c("MC"),"MC","NF")))
+
+levels(cols$V)
+cols$V <- factor(cols$V, levels = cols[order(as.character(means$verb)),]$V, ordered = TRUE)
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "#D55E00",
+                      ifelse(cols$VeridicalityGroup == "NF", "#009E73",'black'))
+
+
+cols$V <- factor(cols$V, levels = cols[order(as.character(means$verb)),]$V, ordered = TRUE)
+levels(cols$V)
+
+means$VeridicalityGroup = factor(x=
+                                   ifelse(means$verb %in% c("know", "discover", "reveal", "see", "be annoyed"), "F", 
+                                          ifelse(means$verb  %in% c("MC"),"MC","NF")),levels=rev(c("F","NF","MC")))
+
+subjmeans = cd %>%
+  filter(content == "Julian dances salsa") %>%
+  group_by(verb,workerid) %>%
+  summarize(Mean = mean(response)) 
+subjmeans$verb <- factor(subjmeans$verb, levels = unique(levels(means$verb)))
+subjmeans$VeridicalityGroup = factor(x=
+                                       ifelse(subjmeans$verb %in% c("know", "discover", "reveal", "see", "be annoyed"), "F", 
+                                              ifelse(subjmeans$verb %in% c("MC"),"MC","NF")),levels=rev(c("F","NF","MC")))
+
+levels(subjmeans$verb)
+#view(subjmeans)
+
+# version of Figure 2 Language paper
+# plot of means, 95% CIs and participants' ratings 
+ggplot(subjmeans, aes(x=verb, y=Mean)) +
+  #geom_point(data=subjmeans,scale="width",linewidth = 0, alpha = .3) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax, fill=VeridicalityGroup, shape=VeridicalityGroup),width=0.1,color="black") +
+  geom_point(aes(fill=VeridicalityGroup, shape=VeridicalityGroup),stroke=.5,size=2.5,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_alpha(range = c(.3,1)) +
+  scale_shape_manual(values=rev(c(23, 24, 25, 22)),labels=rev(c("factive","nonfactive")),name="Predicate type") +
+  scale_fill_manual(values=rev(c("#D55E00","#009E73")),labels=rev(c("factive","nonfactive")),name="Predicate type") +
+  # guides(fill=FALSE, shape=F) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  theme(legend.position="bottom") +
+  theme(panel.grid.major.x = element_blank()) +
+  ylab("Certainty rating") +
+  xlab("Predicate + 'Julian dances salsa'") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
+ggsave("../graphs/mean-certainty-by-predicateType-JULIAN.pdf",height=4.5,width=7)
 
 # plot of mean naturalness ratings against mean certainty ratings
 
