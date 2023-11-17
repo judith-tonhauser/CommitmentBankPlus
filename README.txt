@@ -1,6 +1,14 @@
 README
 
-This GitHub repository contains the experiments designed i) to compare projection across different entailment-canceling operators, and ii) to compare different diagnostics for not-at-issueness, and iii) to investigate the Gradient Projection Principle (Tonhauser, Beaver, Degen 2018, Journal of Semantics) across different embeddings and with different diagnostics for not-at-issueness.
+This GitHub repository contains two sets of experiments. 
+
+The first set of experiments is the experiment reported in the paper "I don't know if projection is categorical. Did Mandelkern et al. 2020 discover that it is?". The relevant files for that experiment are the following:
+- /experiments/main/13_explicitIgnorance: This contains the experiment code. The experiment itself can be run by loading experiment.html.
+- /results/main/13_explicitIgnorance: This folder contains the raw data and the clean data (under /data), the R scripts used to analyze the data (under /rscripts), the generated graphs (under /graphs), and the models (under /models).
+- /writing/naturalness-paper: This is where the TEX code of the paper is located (as well as files to compile the paper)
+
+
+The second set of experiments were the experiments designed i) to compare projection across different entailment-canceling operators, and ii) to compare different diagnostics for not-at-issueness, and iii) to investigate the Gradient Projection Principle (Tonhauser, Beaver, Degen 2018, Journal of Semantics) across different embeddings and with different diagnostics for not-at-issueness.
 
 The 12 experiments used the stimuli from Tonhauser & Degen (under re-review) and Degen & Tonhauser (accepted, Open Mind): 20 clause-embedding predicates, 20 complement clauses, 2 blocks in random order (projection, not-at-issueness).
 

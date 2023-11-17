@@ -92,7 +92,7 @@ ggplot(means, aes(x=verb, y=Mean, fill=VeridicalityGroup)) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
 ggsave("../graphs/mean-certainty-by-predicateType.pdf",height=4.5,width=7)
 
-# Fig 2: plot of mean naturalness ratings in explicit ignorance context ----
+# Fig 3: plot of mean naturalness ratings in explicit ignorance context ----
 
 # target data: explicit ignorance context
 table(d$expression)
@@ -143,7 +143,7 @@ ggplot(nat.meansEIC, aes(x=expression, y=Mean)) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = text.color)) 
 ggsave("../graphs/explicit-ignorance-naturalness-by-predicate.pdf",height=4,width=7)
 
-# Fig 3: plot of mean naturalness ratings in by context ----
+# Fig 4: plot of mean naturalness ratings in by context ----
 # for 20 clause-embedding predicates only
 
 # calculate mean naturalness rating by predicate and context
@@ -186,7 +186,7 @@ t$expression = factor(t$expression, levels=tmp$expression[order(tmp$expression)]
 levels(nat.means$expression)
 levels(t$expression)
 
-# order the contexts: EI, low, high
+# order the contexts: EIC, low, high
 levels(nat.means$context)
 nat.means$context = factor(nat.means$context, levels = c("explicitIgnorance", "factL", "factH"))
 levels(t$context)
@@ -219,7 +219,7 @@ ggplot(nat.means, aes(x=context, y=Mean)) +
   theme(strip.text = element_text(color = "black")) 
 ggsave("../graphs/naturalness-by-context-and-predicate.pdf",height=4,width=9)
 
-# Fig 4: plot of mean certainty ratings for "Julian dances salsa" from Exp 1a of Degen & Tonhauser 2022 -----
+# Fig 5: plot of mean certainty ratings for "Julian dances salsa" from Exp 1a of Degen & Tonhauser 2022 -----
 # import data from repo
 cd <- read_csv("https://raw.githubusercontent.com/judith-tonhauser/projective-probability/master/results/5-projectivity-no-fact/data/cd.csv")
 summary(cd)
@@ -287,7 +287,9 @@ ggplot(subjmeans, aes(x=verb, y=Mean)) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
 ggsave("../graphs/mean-certainty-by-predicateType-JULIAN.pdf",height=4.5,width=7)
 
-# plot of mean naturalness ratings against mean certainty ratings
+# auxiliary plots
+
+#### plot of mean naturalness ratings against mean certainty ratings ----
 
 # get data from Degen & Tonhauser, 2022 (Language)
 # https://github.com/judith-tonhauser/projective-probability/tree/master/results/5-projectivity-no-fact
@@ -353,230 +355,13 @@ ggsave("../graphs/mean-acceptability-against-mean-certainty.pdf",height=5,width=
 corr <- cor.test(x=data$Mean, y=data$MeanCertain, method = 'spearman', exact = FALSE)
 corr
 
-# Fig X: plot of mean naturalness rating by expression and context ----
-
-# calculate mean naturalness rating by predicate and context
-table(d$expression)
-table(d$context)  #explicit ignorance / factL / factH
-
-nat.means = d %>%
-  filter(expression != "practice" & expression != "controlGood1" & expression != "controlGood2" & expression != "controlGood3" & expression != "controlGood4") %>%
-  #filter(expression != "also" & expression != "too" & expression != "again" & expression != "cleft" &
-  #         expression != "stop" & expression != "continue") %>%
-  group_by(expression,context) %>%
-  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
-  ungroup %>%
-  select(-c(CILow,CIHigh)) %>%
-  mutate(context = as.factor(context))
-nat.means
-table(nat.means$context)
-nat.means$expression <- as.factor(nat.means$expression)
-levels(nat.means$expression)
-
-t = d %>%
-  filter(expression != "practice" & expression != "controlGood1" & expression != "controlGood2" & expression != "controlGood3" & expression != "controlGood4") %>%
-  #filter(expression != "also" & expression != "too" & expression != "again" & expression != "cleft" &
-  #         expression != "stop" & expression != "continue") %>%
-  mutate(context = as.factor(context))
-levels(t$context)
-
-# order the predicate by Language paper certainty means
-# https://github.com/judith-tonhauser/projective-probability/tree/master/results/5-projectivity-no-fact
-# tmp <- read_csv("https://raw.githubusercontent.com/judith-tonhauser/projective-probability/master/results/5-projectivity-no-fact/data/cd.csv")
-# summary(tmp)
+# Spearman's rank correlation rho
 # 
-# # target data
-# tmp2 <- tmp %>%
-#   filter(verb != "MC") %>%
-#   group_by(verb) %>%
-#   summarize(MeanCertain = mean(response)) %>% 
-#   mutate(expression = fct_reorder(as.factor(verb),MeanCertain))
-# tmp2
-# 
-# # order predicates by mean projection in Language paper Exp 1
-# nat.means$expression = factor(nat.means$expression, levels=tmp2$expression[order(tmp2$expression)], ordered=TRUE)
-# t$expression = factor(t$expression, levels=tmp2$expression[order(tmp2$expression)], ordered=TRUE)
-
-# order predicates by mean naturalness rating in EIC
-tmp <- d %>%
-  filter(context == "explicitIgnorance") %>%
-  filter(expression != "practice" & expression != "controlGood1" & expression != "controlGood2" & expression != "controlGood3" & expression != "controlGood4") %>%
-  #filter(expression != "also" & expression != "too" & expression != "again" & expression != "cleft" &
-  #         expression != "stop" & expression != "continue") %>%
-  group_by(expression) %>%
-  summarize(Mean = mean(response)) %>%
-  mutate(expression = fct_reorder(as.factor(expression),Mean))
-
-nat.means$expression = factor(nat.means$expression, levels=tmp$expression[order(tmp$expression)], ordered=TRUE)
-t$expression = factor(t$expression, levels=tmp$expression[order(tmp$expression)], ordered=TRUE)
-levels(nat.means$expression)
-levels(t$expression)
-
-# order the contexts: EI, low, high
-levels(nat.means$context)
-nat.means$context = factor(nat.means$context, levels = c("factH","factL","explicitIgnorance"))
-levels(t$context)
-t$context = factor(t$context, levels = c("factH","factL","explicitIgnorance"))
-
-# color code the expressions
-factives <- c("know", "discover", "be annoyed", "reveal", "see")
-hard.triggers <- c("too", "also","cleft","again")
-soft.triggers <- c("stop", "continue")
-
-nat.means$ps = ifelse(nat.means$expression %in% soft.triggers, "softTrigger", 
-                      ifelse(nat.means$expression %in% hard.triggers, "hardTrigger",
-                             ifelse(nat.means$expression %in% factives, "factive", "other")))
-
-t$ps = ifelse(t$expression %in% soft.triggers, "softTrigger", 
-              ifelse(t$expression %in% hard.triggers, "hardTrigger",
-                     ifelse(t$expression %in% factives, "factive", "other")))
-table(t$ps)
-
-table(nat.means$ps, nat.means$expression)
-
-# text.color <- ifelse(nat.means$expression[order(nat.means$Mean)] %in% factives, '#D55E00', 
-#                      ifelse(nat.means$expression[order(nat.means$Mean)] %in% hard.triggers, "black", 
-#                             ifelse(nat.means$expression[order(nat.means$Mean)] %in% soft.triggers, "#56B4E9",
-#                                    "gray80")))
-
-text.color <- ifelse(levels(nat.means$expression) %in% factives, '#D55E00',  
-                     ifelse(levels(nat.means$expression) %in% hard.triggers, "black", 
-                            ifelse(levels(nat.means$expression) %in% soft.triggers, "#56B4E9",
-                                   "gray80")))
-fill.color
-
-text.color
-
-# violinplot
-ggplot(nat.means, aes(x=expression, y=Mean)) +
-  facet_grid(context ~ .) +
-  geom_violin(data=t, aes(x=expression, y=response, fill = ps), scale="width") +
-  scale_fill_manual(values=c('#D55E00','black','gray80','#56B4E9')) +
-  geom_point(aes(group = ps, fill = ps), shape=21,stroke=.5,size=3, color="black") +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
-  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels = c("0",".2",".4",".6",".8","1")) +
-  theme(legend.position="none") +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = text.color)) +
-  ylab("Mean naturalness rating") +
-  xlab("Expression") +
-  theme(strip.background = element_rect(fill="white")) +
-  theme(strip.text = element_text(color = "black")) 
-ggsave("../graphs/naturalness-by-context-and-predicate.pdf",height=5,width=9)
-
-
-
-# plot of mean naturalness ratings in explicit ignorance and neutral context ----
-# for 20 clause-embedding predicates only
-
-# calculate mean naturalness rating by expression and context for the target data
-table(d$expression)
-table(d$context)  #explicit ignorance / factL / factH
-
-# create context variable that only distinguishes explicit ignorance and neutral
-d = d %>%
-  mutate(context2 = recode(context, "factL" = "neutral", "factH" = "neutral"))
-table(d$context2)
-
-nat.means = d %>%
-  filter(expression != "practice" & expression != "controlGood1" & expression != "controlGood2" & expression != "controlGood3" & expression != "controlGood4") %>%
-  filter(expression != "also" & expression != "too" & expression != "again" & expression != "cleft" &
-           expression != "stop" & expression != "continue") %>%
-  group_by(expression,context2) %>%
-  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
-  select(-c(CILow,CIHigh))
-nat.means
-table(nat.means$context2)
-nat.means$expression <- as.factor(nat.means$expression)
-str(nat.means$expression)
-
-# # sort expressions by difference between ratings in the two contexts
-tmp = nat.means %>%
-  select(expression, context2, Mean) %>%
-  pivot_wider(names_from = context2, values_from = Mean) %>%
-  mutate(diff = explicitIgnorance - neutral) %>%
-  mutate(diff = ifelse(is.na(diff), 0, diff)) %>% # remove this with full data
-  ungroup() %>%
-  mutate(expression = fct_reorder(expression, diff))
-tmp
-table(tmp$expression)
-str(tmp$expression)
-levels(tmp$expression)
-
-nat.means$expression = factor(nat.means$expression, levels=tmp$expression[order(tmp$diff)], ordered=TRUE)
-levels(nat.means$expression)
-
-# plot
-ggplot(nat.means, aes(x=expression, y=Mean, group = context2, fill = context2)) +
-  geom_bar(stat="identity", color = "black", position=position_dodge(.9)) +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black", position=position_dodge(.9)) +
-  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  scale_fill_manual(values=c('gray40',"pink"), name = "Context") + 
-  #guides(fill=FALSE) +
-  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) +
-  theme(legend.position="top") +
-  ylab("Mean naturalness rating") +
-  xlab("Expression") +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
-ggsave("../graphs/naturalness-by-context2-and-predicate.pdf",height=4,width=7)
-
-# version of Fig 1 for Nicole conference talk ----
-
-# target data: explicit ignorance context
-# merge the two controls into one, but exclude them
-table(d$expression)
-t = d %>%
-  filter(context == "explicitIgnorance") %>%
-  mutate(expression = recode(expression, "controlGood1" = "controls", "controlGood2" = "controls")) %>%
-  filter(expression != "controls")
-
-# calculate mean naturalness rating by expression, including the fillers, in explicit ignorance context
-nat.meansEIC = t %>%
-  group_by(expression) %>%
-  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, expression = fct_reorder(as.factor(expression),Mean))
-nat.meansEIC
-levels(nat.meansEIC$expression)
-
-# color code the expressions
-factives <- c("know", "discover", "be annoyed", "reveal", "see")
-hard.triggers <- c("too", "also","cleft","again")
-soft.triggers <- c("stop", "continue")
-
-nat.meansEIC$ps = ifelse(nat.meansEIC$expression %in% soft.triggers, "softTrigger", 
-                         ifelse(nat.meansEIC$expression %in% hard.triggers, "hardTrigger",
-                                ifelse(nat.meansEIC$expression %in% factives, "factive", "other")))
-
-t$ps = ifelse(t$expression %in% soft.triggers, "softTrigger", 
-              ifelse(t$expression %in% hard.triggers, "hardTrigger",
-                     ifelse(t$expression %in% factives, "factive", "other")))
-
-
-table(nat.meansEIC$ps, nat.meansEIC$expression)
-
-text.color <- ifelse(nat.meansEIC$expression[order(nat.meansEIC$Mean)] %in% factives, '#D55E00',
-                     ifelse(nat.meansEIC$expression[order(nat.meansEIC$Mean)] %in% hard.triggers, "black",
-                            ifelse(nat.meansEIC$expression[order(nat.meansEIC$Mean)] %in% soft.triggers, "black",
-                                   "gray80")))
-text.color
-
-t$expression = factor(t$expression, levels = nat.meansEIC$expression[order(nat.meansEIC$Mean)], ordered = TRUE)
-
-# plot of naturalness means, with participants' individual responses
-ggplot(nat.meansEIC, aes(x=expression, y=Mean)) +
-  geom_violin(data=t[t$context == "explicitIgnorance",],aes(x=expression, y=response),
-              scale="width",color="gray80", fill = "gray80") +
-  geom_point(aes(group = ps, fill = ps), shape=21,stroke=.5,size=3, color="black") +
-  scale_fill_manual(values=c('#D55E00','black','gray80','black')) + 
-  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
-  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels = c("0",".2",".4",".6",".8","1")) +
-  guides(fill=FALSE) +
-  theme(legend.position="top") +
-  ylab("Mean naturalness rating \n in explicit ignorance context") +
-  xlab("Expression") +  
-  #theme_dark() +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = text.color)) 
-ggsave("../graphs/nicole.pdf",height=4,width=7)
+# data:  data$Mean and data$MeanCertain
+# S = 2152, p-value = 0.003681
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+#        rho 
+# -0.6180451
 
   

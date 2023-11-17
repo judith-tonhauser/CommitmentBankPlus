@@ -251,49 +251,6 @@ trialCount = d %>%
 trialCount
 # participants who had to redo practice trials have different trial numbers!
 
-# # create separate data for practice trials
-# table(d$task)
-# practice = d %>%
-#   filter(task == "practice") %>%
-#   select(c(participantID, response, trial_index))
-# practice
-# # participants who did the 4 practice trials without errors should have alternating
-# # values above 60, below 40, above 60, below 40
-# 
-# # remove practice trials from data
-# d = d %>%
-#   filter(task != "practice")
-# view(d)
-# 
-# # how many target trials per participant?
-# trialCount = d %>% 
-#   select(trial_index, participantID) %>% 
-#   unique() %>% 
-#   group_by(participantID) %>% 
-#   summarize(count=n())
-# trialCount # now everybody has 30 trials
-# 
-# # make a trial number
-# table(d$trial_index, d$participantID) 
-# table(d$participantID,d$trial_index) 
-# # participants who had to repeat practice trials have other trial numbers
-# # specifically, the more often they had to repeat the practice trials
-# # the later their target trials start
-# 
-# d$trial = d$trial_index
-# table(d$trial, d$participantID)
-# table(d$participantID,d$trial)
-# # for participants who don't have a trial 10, subtract 1
-# # for participant 3 subtract 2 for trials above 11
-# d[d$participantID == 3 & d$trial > 11,]$trial = d[d$participantID == 3 & d$trial > 11,]$trial - 2
-# # everybody: trials above 9 subtract 9
-# d[d$trial > 9,]$trial = d[d$trial > 9,]$trial - 9
-# # now everybody has 30 trials between 1 and 30
-# 
-# # remove original trial_index
-# d = d %>%
-#   select(-c(trial_index))
-
 ### exclude non-English speakers and non-American English speakers
 # exclude non-English speakers
 length(which(is.na(d$language))) #no missing responses
