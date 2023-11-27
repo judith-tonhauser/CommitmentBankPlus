@@ -215,26 +215,33 @@ tableData = tableData %>%
 # replace NA with gray cells and expressions with color coded versions
 tableData = tableData %>% mutate(across(everything(), ~replace_na(.x, "\\cellcolor{black}")))
 tableData = tableData %>%
-  mutate(expression = recode(expression,"be.annoyed" = "\\color{orange}be annoyed\\color{black}",
-                             "know" = "\\color{orange}know\\color{black}",
-                             "demonstrate" = "\\color{green}demonstrate\\color{black}",
-                             "pretend" = "\\color{green}pretend\\color{black}",
-                             "inform" = "\\color{green}inform\\color{black}",
-                             "confess" = "\\color{green}confess\\color{black}",
-                             "see" = "\\color{orange}see\\color{black}",
-                             "acknowledge" = "\\color{green}acknowledge\\color{black}",
-                             "discover" = "\\color{orange}discover\\color{black}",
-                             "admit" = "\\color{green}admit\\color{black}",
-                             "hear" = "\\color{green}hear\\color{black}",
-                             "prove" = "\\color{green}prove\\color{black}",
-                             "reveal" = "\\color{orange}reveal\\color{black}",
-                             "announce" = "\\color{green}announce\\color{black}",
-                             "be.right" = "\\color{green}be right\\color{black}",
-                             "establish" = "\\color{green}establish\\color{black}",
-                             "confirm" = "\\color{green}confirm\\color{black}",
-                             "suggest" = "\\color{green}suggest\\color{black}",
-                             "think" = "\\color{green}think\\color{black}",
-                             "say" = "\\color{green}say\\color{black}"                             
+  mutate(expression = recode(expression,
+                             "continue" = "{\\bf continue}",
+                             "too" = "{\\bf too}",
+                             "also" = "{\\bf also}",
+                             "again" = "{\\bf again}",
+                             "stop" = "{\\bf stop}",
+                             "cleft" = "{\\bf cleft}",
+                             "be.annoyed" = "\\color{orange}{\\bf be annoyed}\\color{black}",
+                             "know" = "\\color{orange}{\\bf know}\\color{black}",
+                             "demonstrate" = "\\color{green}{\\bf demonstrate}\\color{black}",
+                             "pretend" = "\\color{green}{\\bf pretend}\\color{black}",
+                             "inform" = "\\color{green}{\\bf inform}\\color{black}",
+                             "confess" = "\\color{green}{\\bf confess}\\color{black}",
+                             "see" = "\\color{orange}{\\bf see}\\color{black}",
+                             "acknowledge" = "\\color{green}{\\bf acknowledge}\\color{black}",
+                             "discover" = "\\color{orange}{\\bf discover}\\color{black}",
+                             "admit" = "\\color{green}{\\bf admit}\\color{black}",
+                             "hear" = "\\color{green}{\\bf hear}\\color{black}",
+                             "prove" = "\\color{green}{\\bf prove}\\color{black}",
+                             "reveal" = "\\color{orange}{\\bf reveal}\\color{black}",
+                             "announce" = "\\color{green}{\\bf announce}\\color{black}",
+                             "be.right" = "\\color{green}{\\bf be right}\\color{black}",
+                             "establish" = "\\color{green}{\\bf establish}\\color{black}",
+                             "confirm" = "\\color{green}{\\bf confirm}\\color{black}",
+                             "suggest" = "\\color{green}{\\bf suggest}\\color{black}",
+                             "think" = "\\color{green}{\\bf think}\\color{black}",
+                             "say" = "\\color{green}{\\bf say}\\color{black}"                             
                              ))
 
 #view(tableData)
@@ -329,9 +336,9 @@ for (p in predicates) {
 # pairwise.know[pairwise.know$contrast == "explicitIgnorance - factH",]$.upper - pairwise.know[pairwise.know$contrast == "explicitIgnorance - factH",]$.lower
 # pairwise.see[pairwise.see$contrast == "explicitIgnorance - factH",]$.upper - pairwise.see[pairwise.see$contrast == "explicitIgnorance - factH",]$.lower
 
-# identify pairwise differences in analysis 2
 
-values = data.frame(predicate = character(), contrast = character(), value = numeric())
+# identify pairwise differences in analysis 2
+values = data.frame(predicate = character(), contrast = character(), mean = numeric(), lower = numeric(), upper = numeric())
 values
 
 for (p in predicates) {
@@ -339,8 +346,10 @@ for (p in predicates) {
     print(i)
     cntrst = get(paste("pairwise.",p,sep=""))$contrast[i]
     value = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.value
+    lower = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.lower
+    upper = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.upper
     values = values %>%
-      add_row(predicate = p, contrast = cntrst, value = value)                    
+      add_row(predicate = p, contrast = cntrst, mean = value, lower = lower, upper = upper)                    
   }
 }
 values
@@ -362,7 +371,85 @@ analysis2 = print(xtable(values),
 
 write(analysis2, "../models/analysis2/fullModelOutput/analysis2.tex")
 
-# now create Table 2
+# create data for presenting results as part of Figure 4
+
+# there are three lines in each facet (that is, for each expression)
+# one line for each context (x = context)
+# geom_segment(aes(x=1,xend=2,y=-.05,yend=-.05), linetype = "solid")
+# x, xend, y, yend, linetype: depend on expression and contrast
+# create data called "contrasts"
+# with columns "expression" and "context" (for binding and faceting with nat.means)
+# and with columns "x", "xend", "y", "yend", and "linetype"
+
+predicates = unique(t$expression) 
+predicates
+predicates <- replace(predicates, 12, "be.annoyed") 
+predicates <- replace(predicates, 15, "be.right") 
+predicates
+
+contrasts = data.frame(expression = character(), contrast = character(), linetype = numeric())
+contrasts
+
+# linetypes
+# 0 blank
+# 1 solid
+# 2 dashed
+# 3 dotted
+for (p in predicates) {
+  for (i in 1:nrow(get(paste("pairwise.",p,sep="")))) {
+    print(i)
+    cntrst = get(paste("pairwise.",p,sep=""))$contrast[i]
+    lower = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.lower
+    upper = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.upper
+    value = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.value
+    l = ifelse(lower <= 0 & upper >= 0, 0,
+          ifelse(lower < 0 & upper < 0 & value <= -1.5, 1,
+            ifelse(lower < 0 & upper < 0 & -1.5 < value & value <= -0.5, 6,
+              ifelse(lower < 0 & upper < 0 & -.5 < value & value <= 0, 3,
+                ifelse(lower > 0 & upper > 0 & value >= 1.5, 1,
+                  ifelse(lower > 0 & upper > 0 & 1.5 > value & value > 0.5, 6,
+                    ifelse(lower > 0 & upper > 0 & .5 > value & value >= 0, 3, 666)))))))
+    contrasts = contrasts %>%
+      add_row(expression = p, contrast = cntrst, linetype = l)
+  }
+}
+contrasts
+
+contrasts = data.frame(contrasts)
+names(contrasts)
+
+# make column for context
+contrasts = contrasts %>%
+  mutate(context = case_when(contrast == "explicitIgnorance - factH" ~ "explicitIgnorance",
+                             contrast == "explicitIgnorance - factL" ~ "factL",
+                             contrast == "factL - factH" ~ "factH",
+                             TRUE ~ "error"))
+
+# now add the needed line values based on context
+# explicitIgnorance (EIC-factH): x=1,xend=3,y=-.15,yend=-.15
+# factL (EIC-factL): x=1,xend=2,y=-.05,yend=-.05
+# factH (factL-factH): x=2,xend=3,y=-.1,yend=-.1
+contrasts = contrasts %>%
+  mutate(x = case_when(context == "explicitIgnorance" ~ 1,
+                       context == "factL" ~ 1,
+                       context == "factH" ~ 2,
+                       TRUE ~ 666)) %>%
+  mutate(xend = case_when(context == "explicitIgnorance" ~ 3,
+                       context == "factL" ~ 2,
+                       context == "factH" ~ 3,
+                       TRUE ~ 666)) %>%
+  mutate(y = case_when(context == "explicitIgnorance" ~ -.15,
+                       context == "factL" ~ -.05,
+                       context == "factH" ~ -.1,
+                       TRUE ~ 666)) %>%
+  mutate(yend = case_when(context == "explicitIgnorance" ~ -.15,
+                       context == "factL" ~ -.05,
+                       context == "factH" ~ -.1,
+                       TRUE ~ 666))
+write_csv(contrasts, file="../data/contrasts.csv")
+
+
+# create Table 2 
 
 # what is the distribution of the values?
 ggplot(values, aes(x=value)) +
