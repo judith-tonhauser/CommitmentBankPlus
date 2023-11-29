@@ -72,7 +72,7 @@ subjmeans$VeridicalityGroup = factor(x=
 levels(subjmeans$verb)
 #view(subjmeans)
 
-# version of Figure 2 Language paper
+# version of Figure 2 Degen & Tonhauser 2022 Language paper
 # plot of means, 95% CIs and participants' ratings 
 ggplot(means, aes(x=verb, y=Mean, fill=VeridicalityGroup)) +
   geom_violin(data=subjmeans,scale="width",linewidth = 0, alpha = .3) +
@@ -144,83 +144,7 @@ ggplot(nat.meansEIC, aes(x=expression, y=Mean)) +
 ggsave("../graphs/explicit-ignorance-naturalness-by-predicate.pdf",height=4,width=7)
 
 
-# Fig 4.1: plot of mean naturalness ratings in by context ----
-# for 20 clause-embedding predicates only
-
-# calculate mean naturalness rating by predicate and context
-table(d$expression)
-table(d$context)  #explicit ignorance / factL / factH
-
-nat.means = d %>%
-  filter(expression != "practice" & expression != "controlGood1" & expression != "controlGood2" & expression != "controlGood3" & expression != "controlGood4") %>%
-  filter(expression != "also" & expression != "too" & expression != "again" & expression != "cleft" &
-           expression != "stop" & expression != "continue") %>%
-  group_by(expression,context) %>%
-  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
-  ungroup %>%
-  select(-c(CILow,CIHigh)) %>%
-  mutate(context = as.factor(context))
-nat.means
-table(nat.means$context)
-nat.means$expression <- as.factor(nat.means$expression)
-levels(nat.means$expression)
-
-t = d %>%
-  filter(expression != "practice" & expression != "controlGood1" & expression != "controlGood2" & expression != "controlGood3" & expression != "controlGood4") %>%
-  filter(expression != "also" & expression != "too" & expression != "again" & expression != "cleft" &
-           expression != "stop" & expression != "continue") %>%
-  mutate(context = as.factor(context))
-levels(t$context)
-
-# order predicates by mean naturalness rating in EIC
-tmp <- t %>%
-  filter(context == "explicitIgnorance") %>%
-  group_by(expression) %>%
-  summarize(Mean = mean(response)) %>%
-  mutate(expression = fct_reorder(as.factor(expression),Mean))
-tmp
-levels(tmp$expression)
-
-nat.means$expression = factor(nat.means$expression, levels=tmp$expression[order(tmp$expression)], ordered=TRUE)
-t$expression = factor(t$expression, levels=tmp$expression[order(tmp$expression)], ordered=TRUE)
-levels(nat.means$expression)
-levels(t$expression)
-
-# order the contexts: EIC, low, high
-levels(nat.means$context)
-nat.means$context = factor(nat.means$context, levels = c("explicitIgnorance", "factL", "factH"))
-levels(t$context)
-t$context = factor(t$context, levels = c("explicitIgnorance", "factL", "factH"))
-
-fill.color <- ifelse(levels(nat.means$expression) %in% factives, '#D55E00', "#009E73")
-fill.color
-
-# to color the facets differently
-library(ggh4x)
-
-strip <- strip_themed(background_x = elem_list_rect(fill = fill.color))
-
-# violinplot
-ggplot(nat.means, aes(x=context, y=Mean)) +
-  geom_violin(data=t, aes(x=context, y=response, fill = context), scale="width", linewidth = 0) +
-  geom_point(aes(fill = context), shape=21,stroke=.5,size=2, color="black") +
-  scale_fill_manual(values=c('gray80',"#56B4E9",'#F0E442'), 
-                    name = "Context", 
-                    labels=c('explicit ignorance', 'lower prior probability','higher prior probability')) +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
-  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels = c("0",".2",".4",".6",".8","1")) +
-  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
-  theme(axis.title.x=element_blank(), axis.text.x=element_blank()) +
-  theme(legend.position="top") +
-  ylab("Mean naturalness rating") +
-  xlab("Context") +
-  facet_wrap2(. ~ expression, nrow = 2, strip = strip) +
-  theme(strip.background = element_rect(fill="white")) +
-  theme(strip.text = element_text(color = "black")) 
-ggsave("../graphs/naturalness-by-context-and-predicate.pdf",height=4,width=9)
-
-# Fig 4.2: plot of mean naturalness ratings in by context ----
+# Fig 4: plot of mean naturalness ratings in by context ----
 # for 20 clause-embedding predicates only
 # with statistics output
 
@@ -386,7 +310,7 @@ ggplot(subjmeans, aes(x=verb, y=Mean)) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
 ggsave("../graphs/mean-certainty-by-predicateType-JULIAN.pdf",height=4.5,width=7)
 
-# auxiliary plots
+# auxiliary plots ----
 
 #### plot of mean naturalness ratings against mean certainty ratings ----
 

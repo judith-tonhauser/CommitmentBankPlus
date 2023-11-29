@@ -1,5 +1,8 @@
 # 13_explicitIgnorance
-# analysis
+# analysis.R
+# analysis 1: section 2.2.1
+# analysis 2: section 2.2.2
+# this script also creates the visual outputs of the analyses reported in the paper
 
 # set working directory to directory of script
 this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
@@ -79,6 +82,11 @@ write_csv(pairwise,file="../models/analysis1/pairwise1.csv")
 pairwise = read_csv(file="../models/analysis1/pairwise1.csv")
 pairwise
 
+# which differences are observed?
+summary(pairwise$.value)
+#Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#-2.6943 -1.0429 -0.2822 -0.2895  0.3865  2.7232 
+
 # select relevant columns for printing
 pairwise_reduced = pairwise %>%
   select(c(contrast, .value, .lower, .upper))
@@ -111,7 +119,7 @@ write(tableApp1, "../models/analysis1/fullModelOutput/analysis1.tex")
 #   facet_wrap(. ~ first, scales = "free_y", ncol = 5, drop = TRUE)
 # ggsave("../graphs/comparisons-in-EIC.pdf",height=13,width=20)
 
-#### Table 1 ----
+#### create latex input for Table 1 ----
 
 # select needed columns
 tableInput = pairwise %>%
@@ -371,7 +379,7 @@ analysis2 = print(xtable(values),
 
 write(analysis2, "../models/analysis2/fullModelOutput/analysis2.tex")
 
-# create data for presenting results as part of Figure 4
+#### create data for presenting results as part of Figure 4 ----
 
 # there are three lines in each facet (that is, for each expression)
 # one line for each context (x = context)
@@ -449,76 +457,77 @@ contrasts = contrasts %>%
 write_csv(contrasts, file="../data/contrasts.csv")
 
 
-# create Table 2 
+# the remainder of this code is to create Table 2 (which has been removed from the paper because
+# the results of the statistical comparison have been integrated to Fig 4)
 
-# what is the distribution of the values?
-ggplot(values, aes(x=value)) +
-  geom_histogram() 
-    
-    
-diff2 = data.frame(predicate = character(), contrast = character(), significant = character())
-diff2
-
-for (p in predicates) {
-  for (i in 1:nrow(get(paste("pairwise.",p,sep="")))) {
-    print(i)
-    cntrst = get(paste("pairwise.",p,sep=""))$contrast[i]
-    lower = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.lower
-    upper = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.upper
-    value = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.value
-    # significant = ifelse(get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.lower < 0 
-    #                      & get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.upper > 0, "n.d.", 
-    #                      ifelse(get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.lower < 0 
-    #                             & get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.upper < 0
-    #                             & get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.value < -1.5, "--", "+"))
-    significant = ifelse(lower <= 0 & upper >= 0, "\\cellcolor{white}",
-                         ifelse(lower < 0 & upper < 0 & value <= -1.5, "\\cellcolor{yellow1}",
-                                ifelse(lower < 0 & upper < 0 & -1.5 < value & value <= -0.5, "\\cellcolor{yellow2}",
-                                       ifelse(lower < 0 & upper < 0 & -.5 < value & value <= 0, "\\cellcolor{yellow3}",
-                                              ifelse(lower > 0 & upper > 0 & value >= 1.5, "\\cellcolor{purple1}",
-                                                     ifelse(lower > 0 & upper > 0 & 1.5 > value & value > 0.5, "\\cellcolor{purple2}",
-                                                            ifelse(lower > 0 & upper > 0 & .5 > value & value >= 0, "\\cellcolor{purple3}", "error")))))))
-    diff2 = diff2 %>%
-      add_row(predicate = p, contrast = cntrst, significant = significant)
-  }
-}
-
-
-
-diff2
-diff2 = diff2 %>%
-  spread(key = predicate, value = significant)
-
-# order the columns by mean naturalness rating in explicit ignorance context, as in Table 1
-tmp = t %>%
-  filter(context == "explicitIgnorance") %>%
-  group_by(expression) %>%
-  summarize(Mean = mean(response)) %>%
-  mutate(expression = fct_reorder(as.factor(expression),Mean))
-tmp
-levels(tmp$expression)
-col_order <- levels(tmp$expression)
-diff2 <- diff2[, col_order]
-diff2$contrast = c("higher prior - EIC", "lower prior - EIC", "higher - lower prior")
-diff2 = diff2 %>%
-  select(contrast,everything())
-diff2
-
-#### Table 2 output ----
-table2 = print(xtable(diff2),
-               only.contents = T,
-               include.rownames=FALSE,
-               include.colnames=FALSE,
-               floating=FALSE,
-               hline.after = NULL,
-               latex.environments=NULL,
-               booktabs=TRUE,
-               sanitize.text.function = function(x){x},
-               comment = F
-               #hline.after = c(2,2,22,42)
-)
-
-write(table2, "../models/analysis2/table2.tex")
+# # what is the distribution of the values?
+# ggplot(values, aes(x=value)) +
+#   geom_histogram() 
+#     
+#     
+# diff2 = data.frame(predicate = character(), contrast = character(), significant = character())
+# diff2
+# 
+# for (p in predicates) {
+#   for (i in 1:nrow(get(paste("pairwise.",p,sep="")))) {
+#     print(i)
+#     cntrst = get(paste("pairwise.",p,sep=""))$contrast[i]
+#     lower = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.lower
+#     upper = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.upper
+#     value = get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.value
+#     # significant = ifelse(get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.lower < 0 
+#     #                      & get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.upper > 0, "n.d.", 
+#     #                      ifelse(get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.lower < 0 
+#     #                             & get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.upper < 0
+#     #                             & get(paste("pairwise.",p,sep=""))[get(paste("pairwise.",p,sep=""))$contrast == cntrst,]$.value < -1.5, "--", "+"))
+#     significant = ifelse(lower <= 0 & upper >= 0, "\\cellcolor{white}",
+#                          ifelse(lower < 0 & upper < 0 & value <= -1.5, "\\cellcolor{yellow1}",
+#                                 ifelse(lower < 0 & upper < 0 & -1.5 < value & value <= -0.5, "\\cellcolor{yellow2}",
+#                                        ifelse(lower < 0 & upper < 0 & -.5 < value & value <= 0, "\\cellcolor{yellow3}",
+#                                               ifelse(lower > 0 & upper > 0 & value >= 1.5, "\\cellcolor{purple1}",
+#                                                      ifelse(lower > 0 & upper > 0 & 1.5 > value & value > 0.5, "\\cellcolor{purple2}",
+#                                                             ifelse(lower > 0 & upper > 0 & .5 > value & value >= 0, "\\cellcolor{purple3}", "error")))))))
+#     diff2 = diff2 %>%
+#       add_row(predicate = p, contrast = cntrst, significant = significant)
+#   }
+# }
+# 
+# 
+# 
+# diff2
+# diff2 = diff2 %>%
+#   spread(key = predicate, value = significant)
+# 
+# # order the columns by mean naturalness rating in explicit ignorance context, as in Table 1
+# tmp = t %>%
+#   filter(context == "explicitIgnorance") %>%
+#   group_by(expression) %>%
+#   summarize(Mean = mean(response)) %>%
+#   mutate(expression = fct_reorder(as.factor(expression),Mean))
+# tmp
+# levels(tmp$expression)
+# col_order <- levels(tmp$expression)
+# diff2 <- diff2[, col_order]
+# diff2$contrast = c("higher prior - EIC", "lower prior - EIC", "higher - lower prior")
+# diff2 = diff2 %>%
+#   select(contrast,everything())
+# diff2
+# 
+# #### Table 2 output 
+# table2 = print(xtable(diff2),
+#                only.contents = T,
+#                include.rownames=FALSE,
+#                include.colnames=FALSE,
+#                floating=FALSE,
+#                hline.after = NULL,
+#                latex.environments=NULL,
+#                booktabs=TRUE,
+#                sanitize.text.function = function(x){x},
+#                comment = F
+#                #hline.after = c(2,2,22,42)
+# )
+# 
+# write(table2, "../models/analysis2/table2.tex")
 
 # # combine all the plots
 # library(ggpubr)

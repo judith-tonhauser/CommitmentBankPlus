@@ -1,7 +1,7 @@
 # 13_explicitIgnorance
 # preprocessing
 
-# server issue: doesn't collect all the data that were paid for
+# programming issue: not all the data that were paid for are collected
 # first round: paid 400, collected only 375
 # second round: paid 25, collected only 23
 
@@ -20,8 +20,9 @@ theme_set(theme_bw())
 # read in the raw data
 d1 = read_tsv("../data/combined1.tsv")
 d2 = read_tsv("../data/combined2.tsv")
-# parsing warnings are due to the rows with demographics info and final screens
+# parsing warnings are due to the rows with demographics info and final screens (ignore)
 
+# bind the data
 d = rbind(d1,d2)
 
 # remove rows with info about instructions and final screens
@@ -34,7 +35,7 @@ d$participantID <- match(d$participant_id, unique(sort(d$participant_id)))
 # how many participants?
 length(unique(d$participantID)) #398
 
-# from Prolific
+# info from Prolific
 # £12.66/hr
 # median time: 00:06:24
 
@@ -298,8 +299,8 @@ ggplot(c.means, aes(x=expression,y=Mean)) +
   ylab("Mean response")
 
 # controlGood3 didn't work: here the mean naturalness rating is way lower
-# makes sense (in hindsight: question presupposes that he has a car, but the statement says
-# that he was looking to buy one)
+# makes sense in hindsight: question presupposes that he has a car, but the statement says
+# that he was looking to buy one
 
 # "item_id" : "controlGood1",
 # "utterance" : "Does Samantha have a new hat?",
