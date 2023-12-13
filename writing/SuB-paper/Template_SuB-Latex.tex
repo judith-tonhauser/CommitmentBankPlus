@@ -1,0 +1,112 @@
+%!TEX TS-program = pdflatex
+\documentclass[a4paper,12pt,twoside]{article}
+
+\usepackage{mathptmx}
+\usepackage{parskip}
+\usepackage[top=1.5in,left=1in,right=1in,bottom=1in]{geometry}
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{\the\baselineskip}
+\pagestyle{empty} 
+
+\makeatletter
+\renewcommand\@makefntext[1]{%
+  \parindent 1em\noindent
+  \hbox{\@makefnmark}#1}
+\renewcommand\large{\@setfontsize\large{14pt}{18}} % For standardizing with the Word template: normally \large is 14.4pt
+\makeatother
+\usepackage{titlesec}
+\titleformat{\subsection}{\normalfont\normalsize}{\thesubsection.}{1ex}{}
+\titleformat{\subsubsection}{\normalfont\normalsize}{\thesubsubsection.}{1ex}{}
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection.}{1ex}{}
+\titlespacing*{\section}{0pt}{*0}{0pt}
+\titlespacing*{\subsection}{0pt}{\the\baselineskip}{0pt}
+
+\usepackage{natbib} 
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+
+\setlength{\bibsep}{0pt} \relax
+\setcitestyle{notesep={: },yysep={, }} \relax
+
+\usepackage{linguex,url}
+\def\refdash{} % To suppress the dash in (2-a) etc. Defining both as different versions of linguex had different names for this command.
+\def\firstrefdash{}
+
+
+\usepackage{titleps}
+\usepackage{lipsum}
+\newpagestyle{mystyle}{
+\sethead[\thepage][\Author][]{}{\Title}{\thepage}
+}
+\pagestyle{mystyle}
+\author{First Author \and Second Author}
+\title{The Title}
+\makeatletter
+\newcommand\Author{First Author---Second Author}
+\let\Title\@title
+\makeatother
+%header with author and title
+
+\pagenumbering{gobble} 
+%suppresses page numbering in header
+
+
+
+\begin{document}
+%%\maketitle
+\setlength{\Extopsep}{0pt}
+\thispagestyle{empty}
+
+{\large \textbf{Title}}\footnote{We would like to thank\ldots }\\
+Firstname LASTNAME --- \textit{Affiliation}\\
+Firstname LASTNAME --- \textit{Affiliation}\\
+
+\textbf{Abstract.} This is the abstract.
+
+\textbf{Keywords:} key, words, hello.
+
+\section{Introduction}
+
+This is where the introduction starts.
+
+\subsection{Subsection} 
+
+This is what a subsection looks like. Here is an example, namely example \ref{Example1}.  I made it with \texttt{linguex.sty}.  If you want to make your examples with \texttt{expex} or \texttt{gb4e} or whatever, you can.
+
+\ex. \label{Example1}I am an example \hfill (Hello!)\\ Maybe I need two lines.
+
+\ex. Me, too.
+	\a. \label{AnotherRef}I am \ref{AnotherRef}.
+	\b. I am not.
+
+\exg. De~temps~en~temps je m'ennuie de l'anglais.\\
+occasionally I \textsc{me}.bore of the.English\\
+`Occasionally I get bored of English.'
+
+\ex.	
+\ag. Maintenant, par exemple.\\
+	now by example\\
+	`Now, for example.'
+\bg. I ara tamb\'{e}.\\
+and now also \\
+`And now, as well.'
+
+Here are some examples of references in the main text: \citet{Montague73, HeimKratzer98}.  I could also cite them parenthetically \citep{Montague73, HeimKratzer98}.  I did this with \texttt{natbib.sty}.  Please use \texttt{natbib.sty}. Here are some examples of references in the main text: \citet{Dowty78}, \citet{HeimKratzer98}.  If you want to cite \citeauthor{kz84}'s \citeyearpar{kz84} paper possessively you can. Please note that \texttt{natbib.sty} truncates ``to appear'' \citep[as in][]{Montague73a} in citations; you must use a hack if you want to cite \nocite{Montague73a} Montague (to appear). 
+
+I could also cite them parenthetically Here are some examples of references in the main text: \citet{Montague73, HeimKratzer98}. 
+\bibliographystyle{sub-chicago}
+\bibliography{SuB}
+
+\newpage
+\subsection{Towards the end}
+
+For other tasks, you can use pretty much any other package you like, so long as you don't alter the margins, spacing between paragraphs, font, font size, etc.  If you have any doubts, please contact: 
+
+
+
+
+\newpage
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\end{document}
