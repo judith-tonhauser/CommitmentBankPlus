@@ -1,6 +1,6 @@
 README
 
-This GitHub repository contains the experiments designed i) to compare projection across different entailment-canceling operators, and ii) to compare different diagnostics for not-at-issueness, and iii) to investigate the Gradient Projection Principle (Tonhauser, Beaver, Degen 2018, Journal of Semantics) across different embeddings and with different diagnostics for not-at-issueness.
+This GitHub repository contains experiments that were the experiments designed i) to compare projection across different entailment-canceling operators, and ii) to compare different diagnostics for not-at-issueness, and iii) to investigate the Gradient Projection Principle (Tonhauser, Beaver, Degen 2018, Journal of Semantics) across different embeddings and with different diagnostics for not-at-issueness.
 
 The 12 experiments used the stimuli from Tonhauser & Degen (under re-review) and Degen & Tonhauser (accepted, Open Mind): 20 clause-embedding predicates, 20 complement clauses, 2 blocks in random order (projection, not-at-issueness).
 
