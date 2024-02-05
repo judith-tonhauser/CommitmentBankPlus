@@ -13,250 +13,310 @@
 
 # 1 Libraries,  helpers, settings -------------------------------------------
 
-  # set wd to script dir
-  this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
-  setwd(this.dir)
-  
-  # load data
-  data <- read.csv("../../data_combined.csv", header = TRUE, sep = ",")
-  
-  # load helper functions
-  source('../../../../helpers.R')
-  
-  # libraries for manipulating dataframes, and plotting
-  library(dplyr)
-  library(forcats)
-  library(ggplot2)
+# R SETUP / PACKAGES / DEFINITIONS
+library(tidyverse)
+library(ggplot2)
+source('../../../../helpers.R')
+# Color blind friendly palette (http://www.cookbook-r.com/Graphs/Colors_(ggplot2)):
+cbbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#0072B2", "#F0E442", "#D55E00", "#CC79A7", "#000000")
+cbbRotate <- c("#0072B2", "#CC79A7", "#000000", "#D55E00", "#F0E442", "#E69F00", "#56B4E9", "#009E73")
+graphcolor <- "#0072B2"
+theme_set(theme_bw())
 
-  # Color blind friendly palette (http://www.cookbook-r.com/Graphs/Colors_(ggplot2)):
-    cbbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#0072B2", "#F0E442", "#D55E00", "#CC79A7", "#000000")
-    graphcolor <- "#0072B2"
-
-
-# 2 projectivity by operator ------------------------------------------------
-  # projectivity means and 95% CIs by operator 
-  proj_means_op = data %>% group_by(op) %>% 
-    summarize(Mean = mean(projective), CILow = ci.low(projective), 
-              CIHigh = ci.high(projective)) %>%
-    mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
-           op = fct_reorder(as.factor(op),Mean)) %>% ungroup()
-
-  # plot
-  proj_means_op %>% mutate(op = fct_reorder(op, Mean, .fun = mean, .desc = TRUE)) %>% 
-    ggplot(aes(x = op, y=Mean, label = round(Mean, digits = 3))) +
-    geom_point(size = .5, color = graphcolor) +
-    geom_text(hjust = 0, nudge_x = 0.08) + 
-    geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = graphcolor) +
-    scale_x_discrete(labels=c("m" = "Modal", "n" = "Negation", "q" = "Question", "c" = "Conditional"),
-                     name = "Operator") +
-    scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
-                       labels = c("0","0.2","0.4","0.6","0.8","1"),
-                       name = "Mean certainty rating") +
-    theme_bw() +
-    theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1))
-    # labs(title = "Mean projectivity by operator")
+# LOAD DATA
+this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
+setwd(this.dir)
+data <- read.csv("../../data_combined.csv", header = TRUE, sep = ",")
+data <- data %>% mutate(projection = as.numeric(projective), predicate = as.factor(verb), 
+                        operator = as.factor(op), participant = as.factor(workerid), 
+                        item = as.factor(content), .keep = "none")
+levels(data$operator) <- c("conditional", "modal", "negation", "question")
   
-  ggsave("../graphs/projective-op.pdf", height=7.5, width=4)
+str(data)
+  
 
+# 2 projection by operator ------------------------------------------------
+# projection means and 95% CIs by operator 
+operator_means <- data %>% group_by(operator) %>% 
+  summarize(Mean = mean(projection), CILow = ci.low(projection), 
+            CIHigh = ci.high(projection)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
+         operator = fct_reorder(as.factor(operator), Mean)) %>% ungroup()
+operator_means
+operator_means <- operator_means %>% mutate(projection = Mean, .keep = "unused")
 
-# 3 projectivity by predicate ---------------------------------------------
+# plot
+operator_means %>% ggplot(aes(x = fct_reorder(operator, projection, .fun = "mean"), 
+                              y = projection, label = round(projection, digits = 2))) +
+  geom_violin(data = data, scale="width", fill = graphcolor, 
+              alpha = .4, color = graphcolor) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "black") +
+  geom_point(size=0.5, color = "black") +
+  geom_text(hjust = 0, nudge_x = -0.08, nudge_y = -0.06) + 
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
+                     labels = c("0","0.2","0.4","0.6","0.8","1"),
+                     name = "Certainty rating") +
+  theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1)) +
+  xlab("Operator")
+  # + labs(title = "Projection by operator")
   
-  # means and confidence intervals for projectivity rating by predicate ----
-  pmeans = data %>% group_by(verb) %>%
-    summarize(Mean = mean(projective), CILow = ci.low(projective), 
-              CIHigh = ci.high(projective)) %>%
-    mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
-           verb = fct_reorder(as.factor(verb), Mean), projective = Mean) %>% ungroup()
-  
-  ## 3a projectivity by predicate w distribution of participants' means ----
-    # get the mean of participants' projectivity ratings by verb
-    subjmeans = data %>%
-      group_by(verb,workerid) %>%
-      summarize(Mean = mean(projective))
-    subjmeans$verb <- factor(subjmeans$verb, levels = unique(levels(pmeans$verb)))
-  
-    # plot 
-    ggplot(pmeans, aes(x=verb, y=Mean)) +
-      geom_violin(data=subjmeans,scale="width",color="gray80") +
-      geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.3,color="black") +
-      geom_point(size=0.5,color="black") +
-      scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
-                         labels = c("0","0.2","0.4","0.6","0.8","1"),
-                         name = "Certainty rating") +
-      theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1)) +
-      ylab("Mean certainty rating") +
-      xlab("Predicate")
-    ggsave(f="../graphs/projectivity-verb-participant.pdf",height=6,width=8)
-  
-  ## 3b projectivity by predicate w distribution of observations ----
-    # plot of projectivity means, 95% CIs and distribution of observations
-    ggplot(pmeans, aes(x=verb, y=projective)) +
-      data %>% mutate(verb = fct_reorder(verb, projective, .fun = mean)) %>%
-      geom_violin(data = ., scale="width", color = "gray80") +
-      geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.3,color="black") +
-      geom_point(size=0.5,color="black") +
-      scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
-                         labels = c("0","0.2","0.4","0.6","0.8","1"),
-                         name = "Certainty rating") +
-      theme_bw() +
-      theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1)) +
-      xlab("Predicate")
-    ggsave(f="../graphs/projectivity-verb-obs.pdf",height=6,width=10)
+ggsave("../figures/operator-graph-1.pdf", width=3, height=4.5)
 
 
+# 3 projection by predicate ---------------------------------------------
+# means and confidence intervals for projection rating by predicate
+predicate_means <- data %>% group_by(predicate) %>% 
+  summarize(Mean = mean(projection), CILow = ci.low(projection), 
+            CIHigh = ci.high(projection)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
+         predicate = fct_reorder(as.factor(predicate), Mean)) %>% ungroup()
+predicate_means
+predicate_means <- predicate_means %>% mutate(projection = Mean, .keep = "unused")
+
+# color coding by (semi-)factive vs non-factive
+data$VeridicalityGroup = as.factor(
+  ifelse(data$predicate %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", "NF"))
+predicate_means$VeridicalityGroup = as.factor(
+  ifelse(predicate_means$predicate %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", "NF"))
+colors <- c("darkorchid", "dodgerblue")
+pred_order <- levels(fct_reorder(predicate_means$predicate, predicate_means$projection, .fun = "mean"))
+textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), "darkorchid", "dodgerblue")
+  
+# plot 
+predicate_means %>% ggplot(aes(x = fct_reorder(predicate, projection, .fun = "mean"), y = projection)) +
+  geom_violin(data = data, scale="width", aes(fill = VeridicalityGroup), alpha = .4) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.3, color="black") +
+  geom_point(size=2, aes(fill = VeridicalityGroup, shape = VeridicalityGroup), stroke=.5) +
+  scale_x_discrete(name = "Predicate") +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
+                     labels = c("0","0.2","0.4","0.6","0.8","1"),
+                     name = "Certainty rating") +
+  scale_fill_manual(values = colors, name="Predicate type:", 
+                    labels = c("(semi-)factives", "nonfactives")) +
+  scale_shape_manual(values = c(21, 24, 25, 22, 23), name = "Predicate type:",
+                     labels = c("(semi-)factives", "nonfactives")) +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = textcolors),
+        panel.grid.major.x = element_blank(),
+        legend.position="bottom", text = element_text(size=12)
+  )
+
+ggsave(f="../figures/predicate-graph-1.pdf", width=7, height=4.5)
 
 # 4 projectivity by predicate and operator --------------------------------
-  ## 4a means compare between operators ----
-    # projectivity by verb and operator
-    pomeans = data %>% group_by(verb, op) %>%
-      summarize(Mean = mean(projective), CILow = ci.low(projective), 
-                CIHigh = ci.high(projective)) %>%
-      mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
-             verb = fct_reorder(as.factor(verb),Mean)) %>%
-      mutate(verb = fct_reorder(verb, Mean, .fun = mean)) %>%
-      mutate(op = fct_reorder(op, Mean, .fun = mean)) %>% ungroup()
+## means and confidence intervals for projection rating by predicate + operator
+predicate_operator_means <- data %>% group_by(predicate, operator) %>%
+  summarize(Mean = mean(projection), CILow = ci.low(projection), 
+            CIHigh = ci.high(projection)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
+         predicate = fct_reorder(as.factor(predicate),Mean)) %>%
+  mutate(predicate = fct_reorder(predicate, Mean, .fun = mean)) %>%
+  mutate(operator = fct_reorder(operator, Mean, .fun = mean)) %>% ungroup()
+predicate_operator_means
+predicate_operator_means <- predicate_operator_means %>% mutate(projection = Mean, .keep = "unused")
+
+# color coding
+predicate_operator_means$VeridicalityGroup = as.factor(
+  ifelse(predicate_operator_means$predicate %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", "NF"))
+pred_order <- levels(fct_reorder(
+  predicate_operator_means$predicate, 
+  predicate_operator_means$projection, .fun = "mean"))
+textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), "darkorchid", "dodgerblue")
   
-    # plot ----
-    pomeans %>% 
-      ggplot(aes(x=fct_reorder(verb, Mean), y=Mean, group = op, color = op)) +
-      geom_point(aes(shape = op), size = 4) + 
-      geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1) +
-      geom_line() +
-      xlab("Predicate") +
-      scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1), 
-                         labels = c("0","0.2","0.4","0.6","0.8","1"),
-                         name = "Mean certainty rating") +
-      scale_shape_manual(values = c("M", "N", "C", "Q")) +
-      scale_colour_manual(values=cbbPalette) +
-      theme_bw() +
-      theme(legend.position = "none") +
-      theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1))
+# line plot for comparing the different operators in one plot
+predicate_operator_means %>%
+  ggplot(aes(x = fct_reorder(predicate, projection), y = projection, group = operator, color = operator)) +
+  geom_point(aes(shape = operator), size = 4) + 
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1) +
+  geom_line() +
+  xlab("Predicate") +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1), 
+                     labels = c("0","0.2","0.4","0.6","0.8","1"),
+                     name = "Mean certainty rating") +
+  scale_shape_manual(values = c("M", "N", "C", "Q")) +
+  scale_colour_manual(values=cbbPalette) +
+  theme_bw() +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = textcolors),
+        legend.position="none", text = element_text(size=12)
+  )
     
-    ggsave("../graphs/projective-pred-op.pdf",height=4.7,width=10)
+ggsave("../figures/predicate-operator-graph-1.pdf", width=7, height=4.5)
     
-  ## 4b projectivity means with distributions for observations ----
-    # get the mean of participants' projectivity ratings by verb and operator 
-    subjomeans = data %>%
-      group_by(verb,op, workerid) %>%
-      summarize(projective = mean(projective)) %>% 
-      mutate(verb = fct_reorder(verb, projective, .fun = mean)) %>% ungroup()
-    subjomeans$verb <- factor(subjomeans$verb, levels = unique(levels(pomeans$verb)))
-    
-    # plot of projectivity means by verb and operator, 95% CIs and participants' ratings 
-    ggplot(pomeans, aes(x=fct_reorder(verb, projective), y=projective)) +
-      geom_violin(data=subjomeans,scale="width", color="gray80") +
-      geom_errorbar(aes(ymin=YMin,ymax=YMax),width = 0.5, color="black") +
-      geom_point(size=0.5,color="black") +
-      xlab("Predicate") +
-      scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
-                         labels = c("0","0.2","0.4","0.6","0.8","1"),
-                         name = "Mean certainty rating")+
-      facet_wrap(~op, labeller = labeller(op = c("m" = "Modal", 
-                                                 "n" = "Negation", 
-                                                 "q" = "Question", 
-                                                 "c" = "Conditional"))) +
-      # theme(text = element_text(size=12), axis.text.x = element_text(size = 10, angle = 90, hjust = 1, vjust = -0.1, color=cols$Colors)) +
-      theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
-    ggsave(f="../graphs/projectivity-pred-op-participant.pdf",height=6,width=8)
-    
-  ## 4c projectivity means with distributions for participant means ----
-    # plot
-    ggplot(pomeans, aes(x=fct_reorder(verb, projective), y=projective)) +
-      data %>% mutate(verb = fct_reorder(verb, projective, .fun = mean)) %>%
-        geom_violin(data = ., scale="width", color = "gray80") +
-      geom_point(size=0.5,color="black") +
-      geom_errorbar(aes(ymin=YMin,ymax=YMax),width = 0.5, color="black") +
-      facet_wrap(~op, labeller = labeller(op = c("m" = "Modal", "n" = "Negation", "q" = "Question", "c" = "Conditional"))) +
-      xlab("Predicate") +
-      scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
-                         labels = c("0","0.2","0.4","0.6","0.8","1"),
-                         name = "Mean certainty rating") +
-      theme_bw() +
-      #theme(text = element_text(size=12), axis.text.x = element_text(size = 10, angle = 90, hjust = 1, vjust = -0.1, color=cols$Colors)) +
-      theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
-      
-    ggsave(f="../graphs/projectivity-pred-op-obs.pdf",height=6,width=10)
+# projectivity means with distributions for observations
+predicate_operator_means %>%
+  ggplot(aes(x = fct_reorder(predicate, projection), y = projection)) +
+  geom_violin(data = data, scale="width", fill = graphcolor, alpha = .4) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width = 0.5, color="black") +
+  geom_point(size=0.5, color="black") +
+  xlab("Predicate") +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
+                     labels = c("0","0.2","0.4","0.6","0.8","1"),
+                     name = "Mean certainty rating") +
+  facet_wrap(~operator) +
+  # theme(text = element_text(size=12), axis.text.x = element_text(size = 10, angle = 90, hjust = 1, vjust = -0.1, color=cols$Colors)) +
+  theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
+
+ggsave("../figures/predicate-operator-graph-violin-1.pdf", width=10, height=5)
 
 
+### Projection by predicate, negation only
+# color coding
+pred_order <- levels(fct_reorder(
+  subset(predicate_operator_means, operator == "negation")$predicate, 
+  subset(predicate_operator_means, operator == "negation")$projection, .fun = "mean"))
+textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), "darkorchid", "dodgerblue")
+
+# plot
+subset(predicate_operator_means, operator == "negation") %>%
+  ggplot(aes(x = fct_reorder(predicate, projection, .fun = "mean"), y = projection)) +
+  geom_violin(data = subset(data, operator == "negation"), scale="width", aes(fill = VeridicalityGroup), alpha = .4) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.3, color="black") +
+  geom_point(size=2, aes(fill = VeridicalityGroup, shape = VeridicalityGroup), stroke=.5) +
+  scale_x_discrete(name = NULL) +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
+                     labels = c("0","0.2","0.4","0.6","0.8","1"),
+                     name = "Certainty rating") +
+  scale_fill_manual(values = colors, name="Predicate type:", 
+                    labels = c("(semi-)factives", "nonfactives")) +
+  scale_shape_manual(values = c(21, 24, 25, 22, 23), name = "Predicate type:",
+                     labels = c("(semi-)factives", "nonfactives")) +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = textcolors),
+        panel.grid.major.x = element_blank(),
+        legend.position="none", text = element_text(size=12)
+  )
+
+ggsave("../figures/ negation-predicate-graph-1.pdf", width=7, height=3.2)
+
+### Projection by predicate, question only
+pred_order <- levels(fct_reorder(
+  subset(predicate_operator_means, operator == "question")$predicate, 
+  subset(predicate_operator_means, operator == "question")$projection, .fun = "mean"))
+textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), "darkorchid", "dodgerblue")
+
+subset(predicate_operator_means, operator == "question") %>%
+  ggplot(aes(x = fct_reorder(predicate, projection, .fun = "mean"), y = projection)) +
+  geom_violin(data = subset(data, operator == "question"), scale="width", aes(fill = VeridicalityGroup), alpha = .4) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.3, color="black") +
+  geom_point(size=2, aes(fill = VeridicalityGroup, shape = VeridicalityGroup), stroke=.5) +
+  scale_x_discrete(name = NULL) +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
+                     labels = c("0","0.2","0.4","0.6","0.8","1"),
+                     name = "Certainty rating") +
+  scale_fill_manual(values = colors, name="Predicate type:", 
+                    labels = c("(semi-)factives", "nonfactives")) +
+  scale_shape_manual(values = c(21, 24, 25, 22, 23), name = "Predicate type:",
+                     labels = c("(semi-)factives", "nonfactives")) +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = textcolors),
+        panel.grid.major.x = element_blank(),
+        legend.position="none", text = element_text(size=12)
+  )
+
+ggsave("../figures/question-predicate-graph-1.pdf", width=7, height=3.2)
+
+### Projection by predicate, modal only
+pred_order <- levels(fct_reorder(
+  subset(predicate_operator_means, operator == "modal")$predicate, 
+  subset(predicate_operator_means, operator == "modal")$projection, .fun = "mean"))
+textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), "darkorchid", "dodgerblue")
+
+subset(predicate_operator_means, operator == "modal") %>%
+  ggplot(aes(x = fct_reorder(predicate, projection, .fun = "mean"), y = projection)) +
+  geom_violin(data = subset(data, operator == "modal"), scale="width", aes(fill = VeridicalityGroup), alpha = .4) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.3, color="black") +
+  geom_point(size=2, aes(fill = VeridicalityGroup, shape = VeridicalityGroup), stroke=.5) +
+  scale_x_discrete(name = NULL) +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
+                     labels = c("0","0.2","0.4","0.6","0.8","1"),
+                     name = "Certainty rating") +
+  scale_fill_manual(values = colors, name="Predicate type:", 
+                    labels = c("(semi-)factives", "nonfactives")) +
+  scale_shape_manual(values = c(21, 24, 25, 22, 23), name = "Predicate type:",
+                     labels = c("(semi-)factives", "nonfactives")) +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = textcolors),
+        panel.grid.major.x = element_blank(),
+        legend.position="none", text = element_text(size=12)
+  )
+
+ggsave("../figures/modal-predicate-graph-1.pdf", width=7, height=3.2)
+
+### Projection by predicate, conditional only
+pred_order <- levels(fct_reorder(
+  subset(predicate_operator_means, operator == "conditional")$predicate, 
+  subset(predicate_operator_means, operator == "conditional")$projection, .fun = "mean"))
+textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), "darkorchid", "dodgerblue")
+
+subset(predicate_operator_means, operator == "conditional") %>%
+  ggplot(aes(x = fct_reorder(predicate, projection, .fun = "mean"), y = projection)) +
+  geom_violin(data = subset(data, operator == "conditional"), scale="width", aes(fill = VeridicalityGroup), alpha = .4) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.3, color="black") +
+  geom_point(size=2, aes(fill = VeridicalityGroup, shape = VeridicalityGroup), stroke=.5) +
+  scale_x_discrete(name = NULL) +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
+                     labels = c("0","0.2","0.4","0.6","0.8","1"),
+                     name = "Certainty rating") +
+  scale_fill_manual(values = colors, name="Predicate type:", 
+                    labels = c("(semi-)factives", "nonfactives")) +
+  scale_shape_manual(values = c(21, 24, 25, 22, 23), name = "Predicate type:",
+                     labels = c("(semi-)factives", "nonfactives")) +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = textcolors),
+        panel.grid.major.x = element_blank(),
+        legend.position="bottom", text = element_text(size=12)
+  )
+
+ggsave("../figures/modal-predicate-graph-1.pdf", width=7, height=3.75)
 
 
 
 # 5 verb profiles ---------------------------------------------------------
-    ## 5a mean projectivity by operator, for each verb (verb profiles) ----
-      # other plots ----
-      proj_means %>% mutate(op = fct_reorder(op, Mean, 
-                                                .fun = mean)) %>% mutate(verb = fct_reorder(verb, Mean, .fun = mean)) %>% ggplot(aes(x = op, y=Mean, group = verb)) +
-        geom_point(size = 1, color = "lightblue") +
-        geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1, color = "lightblue") +
-        geom_line(color = "lightblue") +
-        coord_cartesian(ylim = c(0,1)) +
-        facet_wrap(vars(verb)) +
-        scale_x_discrete(labels=c("m" = "modal", "n" = "negation", "q" = "question", "c" = "conditional")) +
-        labs(title = "Mean projectivity by operator, for each verb")+
-        theme_bw() + theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1))
-      ggsave("../graphs/proj-by-op-for-verb.pdf",height=8,width=10)
+## 5a projection by operator, for each verb (verb profiles)
+predicate_operator_means %>%
+  ggplot(aes(x = fct_reorder(operator, projection, .fun = "mean"), y = projection, color = fct_reorder(operator, projection, .fun = "mean"), shape = fct_reorder(operator, projection, .fun = "mean"))) +
+  geom_violin(data = data, scale="width", alpha = .4) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width = 0.5, color="black", alpha = .6) +
+  geom_point(size = 4) +
+  facet_wrap(vars(fct_reorder(predicate, projection, .fun = "mean"))) +
+  xlab("Operator") +
+  scale_shape_manual(values = c("M", "N", "Q", "C")) +
+  scale_colour_manual(values=cbbPalette) +
+  scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
+                     labels = c("0","0.2","0.4","0.6","0.8","1"),
+                     name = "Certainty rating") +
+  theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1), legend.position = "none")
+
+ggsave("../figures/predicate-profiles-1.pdf", width=10, height=10)
 
 
 
+predicate_operator_means$group = factor(
+  ifelse(predicate_operator_means$predicate %in% c("think", "pretend"), "negation-high", 
+  ifelse(predicate_operator_means$predicate  %in% 
+           c("demonstrate", "prove", "confirm"), "negation-low", 
+  ifelse(predicate_operator_means$predicate  %in%
+           c("admit", "confess", "announce", "reveal"), "modal-low",
+  ifelse(predicate_operator_means$predicate  %in% 
+           c("hear", "know", "inform"), "conditional-high",
+  ifelse(predicate_operator_means$predicate  %in% 
+           c("discover", "see", "acknowledge"), "question-high",
+  ifelse(predicate_operator_means$predicate  %in% c("suggest", "be_right"), "suggest",
+  ifelse(predicate_operator_means$predicate  %in% c("establish"), "establish",
+  ifelse(predicate_operator_means$predicate  %in% c("say"), "say",
+  ifelse(predicate_operator_means$predicate  %in% c("be_annoyed"), "annoy",
+  "N/A"))))))))),
+  levels = c("negation-high","negation-low","modal-low","conditional-high",
+             "question-high", "suggest", "establish", "say", "annoy"))
 
-
-# VERB PROFILES ---- 
-
-proj_means %>%
-  ggplot(aes(x = fct_reorder(op, Mean), y = Mean, group = verb)) +
-  coord_cartesian(ylim = c(0,1)) +
-  facet_wrap(vars(fct_reorder(verb, Mean))) +
-  geom_point(size = 1, color = "lightblue") +
-  geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1, color = "lightblue") +
-  geom_line(color = "lightblue") +
-  xlab("") + ylab("") +
-  theme_bw()
-ggsave(f="../graphs/profiles.pdf",height=6,width=8)
-
-
-levels(proj_means$verb)
-vgroups <- data.frame(verb = levels(proj_means$verb), profile = 
-                        c("1",
-                              # pretend
-                          "7",
-                                  # be right
-                          "7",
-                                  # suggest
-                          "1",   
-                                    # think
-                          "say",    # say
-                          "4",   # prove
-                          "4",   # confirm
-                          "4",   # establish
-                          "demonstrate",   # demonstrate
-                          "2",  # announce
-                          "2",   # confess
-                          "2",   # admit 
-                          "2",   # reveal
-                          "3",  # acknowledge
-                          "6",  # hear
-                          "5",  # inform
-                          "6",  # see
-                          "3",  # discover
-                          "5",  # know
-                          "5"  # be annoyed
-                        ))
-
-lookup_group <- function(verb_name){
-  return(as.character(filter(vgroups, verb == verb_name)[2]))
-}
-proj_means = proj_means %>% rowwise() %>% mutate(groups = lookup_group(verb))
+levels(predicate_operator_means$group)
 
 # all groups overview ----
-proj_means %>%
-  ggplot(aes(x = op, y = Mean, group = verb, color = verb)) +
+predicate_operator_means %>%
+  mutate(predicate = fct_reorder(predicate, projection, .fun = "mean")) %>%
+  ggplot(aes(x = operator, y = projection, color = predicate, group = predicate)) +
   coord_cartesian(ylim = c(0,1)) +
-  facet_wrap(~groups) +
-  geom_point(size = 1, color = "lightblue") +
+  facet_wrap(~group) +
+  geom_point(size = 1) +
   geom_errorbar(aes(ymin = YMin, ymax = YMax), width=0.1) +
   geom_line() +
-  xlab("") + ylab("") +
-  theme_bw()
+  xlab("") + ylab("")
+
 ggsave(f="../graphs/profiles-grouped.pdf",height=6,width=8)
 
 # individual profiles ----

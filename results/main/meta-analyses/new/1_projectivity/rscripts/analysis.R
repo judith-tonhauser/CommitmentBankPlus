@@ -1,29 +1,29 @@
-
-### data analysis for projection data ----
+##### DATA ANALYSIS FOR PROJECTION RATINGS #####
 
 # set wd to script dir
 this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
 setwd(this.dir)
 
+# load packages
+library(tidyverse)
+
 # load data
-data <- read.csv("../../data_combined.csv", header = TRUE, sep = ",")
+data <- read.csv("data_combined.csv", header = TRUE, sep = ",")
 
 
 # variables and contrasts for data analysis: ----
-## our dependent variable: projective (sliding-scale ratings of speaker certainty that complement clause is true)
-data$projective <- as.numeric(data$projective)
+data <- data %>% mutate(projective = as.numeric(projective), 
+                        predicate = as.factor(verb), operator = as.factor(op), 
+                        participant = as.factor(workerid), 
+                        item = as.factor(content), .keep = "none")
 
-# our independent variables
-## inference-triggering predicate, coded as "pred"
-data$pred <- as.factor(data$verb)
-levels(data$pred)
+# contrasts
 contrasts(data$pred)
 ### dummy coding with "be annoyed" as baseline
 data$pred <- relevel(data$pred, ref = "be_annoyed")
 contrasts(data$pred)
 
 ## embedding operator, coded as "op"
-data$op <- as.factor(data$op)
 levels(data$op)
 contrasts(data$op)
 ### op dummy coding with "n" (negation) as baseline
