@@ -101,39 +101,39 @@
 
 \section{20 clauses}\label{a-clauses}
 
-The contents of the following 20 clauses, which realized the complements of the 20 clause-embedding predicates, were investigated in Exps.~1-3:
+    The contents of the following 20 clauses, which realized the complements of the 20 clause-embedding predicates, were investigated in Exps.~1-3:
 
-\begin{enumerate}[leftmargin=3ex,itemsep=-2pt]
+    \begin{enumerate}[leftmargin=3ex,itemsep=-2pt]
 
-\begin{multicols}{2}
+    \begin{multicols}{2}
 
-\item Mary is pregnant.
-\item Josie went on vacation to France.
-\item Emma studied on Saturday morning.
-\item Olivia sleeps until noon.
-\item Sophia got a tattoo.
-\item Mia drank 2 cocktails last night.
-\item Isabella ate a steak on Sunday.
-\item  Emily bought a car yesterday.
-\item  Grace visited her sister.
-\item Zoe calculated the tip.
+    \item Mary is pregnant.
+    \item Josie went on vacation to France.
+    \item Emma studied on Saturday morning.
+    \item Olivia sleeps until noon.
+    \item Sophia got a tattoo.
+    \item Mia drank 2 cocktails last night.
+    \item Isabella ate a steak on Sunday.
+    \item  Emily bought a car yesterday.
+    \item  Grace visited her sister.
+    \item Zoe calculated the tip.
 
-\columnbreak
+    \columnbreak
 
-\item  Danny ate the last cupcake.
-\item  Frank got a cat.
-\item  Jackson ran 10 miles.
-\item  Jayden rented a car.
-\item  Tony had a drink last night.
-\item  Josh learned to ride a bike yesterday.
-\item  Owen shoveled snow last winter.
-\item  Julian dances salsa.
-\item  Jon walks to work.
-\item  Charley speaks Spanish.
+    \item  Danny ate the last cupcake.
+    \item  Frank got a cat.
+    \item  Jackson ran 10 miles.
+    \item  Jayden rented a car.
+    \item  Tony had a drink last night.
+    \item  Josh learned to ride a bike yesterday.
+    \item  Owen shoveled snow last winter.
+    \item  Julian dances salsa.
+    \item  Jon walks to work.
+    \item  Charley speaks Spanish.
 
-\end{multicols}
+    \end{multicols}
 
-\end{enumerate}
+    \end{enumerate}
 
 \section{Consequents for conditional target stimuli in Exps.~1c, 2c, and 3c}\label{a-consequents}
 
@@ -270,7 +270,6 @@ The contents of the following 20 clauses, which realized the complements of the 
 
   The mean at-issueness ratings for the control stimuli in Exps.~3n, 3m, and 3c were numerically even higher than for Exp.~3q and, in fact, the highest across all 12 experiments (at .44, .50, and .53, respectively). There are two factors that could be implicated in the difference between Exp.~3q and Exps.~3n, 3m, and 3c: first, the NRRC is included in a polar question in the former but a declarative assertion in the latter; second, B utters an affirmation {\em yes} in the former but an assent {\em yes, that's true} in the latter. For instance, participants might judge B's direct denial of the content of the NRRC as less acceptable when A uttered a declarative assertion and B assented with that assertion using {\em yes, that's true} than when A uttered a polar question and B responded in the affirmative with {\em yes}. Both factors must be considered in future research on at-issueness measures.
 
-
 \section{Participant information and data exclusion criteria}\label{a-participants}
 
   This supplement provides information on the participants of the 12 experiments and the criteria by which participants' data were excluded. The first three columns of Table \ref{t:exclusion} show, for each of the 12 experiments how many participants were recruited, their age range and mean age, and their self-reported gender; no gender data was collected in Exp.~1q. The next three columns provide information on the number of participants whose data were excluded based on the following criteria:
@@ -310,5 +309,28 @@ The contents of the following 20 clauses, which realized the complements of the 
   \caption{Recruited participants, excluded data, and remaining participants in Exps.~1, 2 and 3. Gender distinctions were `f' = female, `m' = male, `o' = other, and `u' = undeclared.}\label{t:exclusion}
   \end{sidewaystable} 
  
+\section{Analysis 1 --- By operator}
+
+Bayesian mixed effects beta regression using the 
+
+\section{Analysis 2 --- By operator analysis for each predicate}
+
+
+
+
+
+
+
+The results are indicated in Figure~\ref{fig:op-pred-analysis}, which shows shows mean certainty ratings by entailment-canceling operator for the 20 predicates, here grouped by predicate. As in Figure~\ref{fig:op-pred-ratings}, (semi-)factive predicates are indicated in pink, and predicates are ordered by their overall mean certainty ratings. Non-zero differences between two operators are indicated by lines spanning the two operators below each predicate facet. 
+
+Because...
+the analysis also supports the more general claims that there is by-operator variation for the CC of each of the 20 clause-embedding predicates, and that the effect of operator differs between predicates.
+
+These observations were confirmed by a posthoc pairwise comparison of the estimated means for each control and target expression in the explicit ignorance context using the ‘emmeans’ package (Lenth 2023) in R (R Core Team 2016). The input to the pairwise comparison was a Bayesian mixed-effects beta regression model with weakly informative priors that was fit using the ‘brms’ package (B¨urkner 2017).
+
+The model predicted naturalness ratings8 from a fixed effect of expression (with treatment coding and ‘continue’ as reference level) and included random by-participant and by-item intercepts (where an item is a complement clause). The output of the pairwise comparison were 95\% highest density intervals (HDIs) of estimated
+marginal mean differences between each of the expressions. We assume that two expressions differ in their naturalness in the explicit ignorance context if their HDI does not include 0
+
+
 \end{document}
 

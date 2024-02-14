@@ -8,7 +8,7 @@ setwd(this.dir)
 
 # summary + graphing
 library(ggplot2)
-source('../../../../helpers.R')
+source('../../../helpers.R')
 cbbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#0072B2", "#F0E442", "#D55E00", 
                 "#CC79A7", "#000000")
 graphcolor <- "#0072B2"
@@ -92,7 +92,7 @@ predicate_means %>% ggplot(aes(x = fct_reorder(predicate, projection, .fun = "me
         legend.position="bottom", text = element_text(size=12)
   )
 
-ggsave(f="../figures/predicate-graph-1.pdf", width=7, height=4.5)
+ggsave(f="../graphs/predicate-graph-1.pdf", width=7, height=4.5)
 
 
 # 4 projection by predicate and operator (Figure 3) ----------------------------
@@ -126,7 +126,7 @@ predicate_operator_means %>%
         legend.position="none", text = element_text(size=12)
   )
 
-ggsave("../figures/predicate-operator-graph-1.pdf", width=7, height=4.5)
+ggsave("../graphs/predicate-operator-graph-1.pdf", width=7, height=4.5)
 
 # 5 projection by predicate with violin plots, for each operator (fig. 4) ------
 
@@ -245,3 +245,4 @@ subset(predicate_operator_means, operator == "conditional") %>%
   )
 
 ggsave("../graphs/modal-predicate-graph.pdf", width=7, height=3.75)
+

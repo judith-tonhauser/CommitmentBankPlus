@@ -142,6 +142,10 @@ levels(predicate_operator_means$predicate)
 pred_order <- levels(predicate_operator_means$predicate)
 textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), pinkk, "white")
 
+data %>% mutate(operator = fct_reorder(operator, projection, .fun = "mean"))
+levels(data$operator)
+
+
 # identify pairwise differences
 contrasts = data.frame(predicate = character(), contrast = character(), mean = numeric(), lower = numeric(), upper = numeric())
 contrasts
