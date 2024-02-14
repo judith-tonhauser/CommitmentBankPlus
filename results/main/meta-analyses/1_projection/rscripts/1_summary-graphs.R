@@ -13,7 +13,7 @@ cbbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#0072B2", "#F0E442", "#D55E00"
                 "#CC79A7", "#000000")
 graphcolor <- "#0072B2"
 pinkk <- "#CC79A7"
-pred_colors <- c(pinkk, "black")
+pred_colors <- c(pinkk, "gray")
 theme_set(theme_bw())
 
 # LOAD DATA
@@ -39,10 +39,9 @@ operator_means <- operator_means %>% mutate(projection = Mean, .keep = "unused")
 # plot
 operator_means %>% ggplot(aes(x = fct_reorder(operator, projection, .fun = "mean"), 
                               y = projection, label = round(projection, digits = 2))) +
-  geom_violin(data = data, scale="width", fill = graphcolor, 
-              alpha = .4) +
+  geom_violin(data = data, scale="width", color = "gray", fill = "gray", alpha = .4) +
   geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "black") +
-  geom_point(size=0.5, color = "black") +
+  geom_point(size=1, color = "black", shape = 21) +
   geom_text(hjust = 0, nudge_x = -0.08, nudge_y = -0.06) + 
   scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
                      labels = c("0","0.2","0.4","0.6","0.8","1"),
@@ -50,7 +49,7 @@ operator_means %>% ggplot(aes(x = fct_reorder(operator, projection, .fun = "mean
   theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1)) +
   xlab("Operator")
 
-ggsave("../graphs/certainty-operator.pdf", width=3.3, height=5)
+ggsave("../graphs/certainty-operator.pdf", width=3, height=4)
 
 
 # 3 projection by predicate (all predicates, this is not in the paper) ---------
@@ -95,7 +94,7 @@ predicate_means %>% ggplot(aes(x = fct_reorder(predicate, projection, .fun = "me
 ggsave(f="../graphs/predicate-graph-1.pdf", width=7, height=4.5)
 
 
-# 4 projection by predicate and operator (Figure 3) ----------------------------
+# 4 projection by predicate and operator, used to be figure 3, now replaced ----
 
 # means and confidence intervals for projection rating by predicate / operator
 predicate_operator_means <- data %>% group_by(predicate, operator) %>%
@@ -158,7 +157,7 @@ subset(predicate_operator_means, operator == "negation") %>%
                      labels = c("(semi-)factives", "nonfactives")) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = textcolors),
         panel.grid.major.x = element_blank(),
-        legend.position="bottom",
+        legend.position="none",
         text = element_text(size=12)
   )
 
@@ -189,7 +188,7 @@ subset(predicate_operator_means, operator == "question") %>%
         legend.position="none", text = element_text(size=12)
   )
 
-ggsave("../graphs/question-predicate-graph-1.pdf", width=7, height=3.2)
+ggsave("../graphs/question-predicate-graph.pdf", width=7, height=3.2)
 
 # MODAL
 pred_order <- levels(fct_reorder(
@@ -244,5 +243,5 @@ subset(predicate_operator_means, operator == "conditional") %>%
         legend.position="bottom", text = element_text(size=12)
   )
 
-ggsave("../graphs/modal-predicate-graph.pdf", width=7, height=3.75)
+ggsave("../graphs/conditional-predicate-graph.pdf", width=7, height=3.75)
 

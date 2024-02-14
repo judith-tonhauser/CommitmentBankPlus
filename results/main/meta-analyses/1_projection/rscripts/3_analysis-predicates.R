@@ -18,11 +18,11 @@ library(emmeans)
 # summary + graphing
 library(ggplot2)
 library(ggh4x)
-source('../../../../helpers.R')
+source('../../../helpers.R')
 cbbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#0072B2", "#F0E442", "#D55E00", 
                 "#CC79A7", "#000000")
 graphcolor <- "#0072B2"
-pinkk <- "#CC79A7"
+pinkk <- "#d694ba"
 pred_colors <- c(pinkk, "black")
 theme_set(theme_bw())
 
@@ -86,7 +86,8 @@ for (current_pred in predicates) {
 # print fixed effects for each model
 for (current_pred in predicates) {
   print(current_pred)
-  print(kable(fixef(eval(parse(text = paste("m.b.", current_pred, sep="")))), "latex", booktabs = TRUE))
+  # print(kable(fixef(eval(parse(text = paste("m.b.", current_pred, sep="")))), "latex", booktabs = TRUE))
+  print(fixef(eval(parse(text = paste("m.b.", current_pred, sep="")))))
 }
 
 # 3 GET PAIRWISE DIFFERENCES ---------------------------------------------------
@@ -244,12 +245,12 @@ strip <- strip_themed(background_x = elem_list_rect(fill = textcolors))
 # plot
 predicate_operator_means %>%
   ggplot() +
-  geom_point(aes(x = operator, y = projection), 
-             shape = 21, stroke = .5, size = .5, color = "black") +
-  geom_errorbar(aes(x = operator, y = projection, ymin = YMin, ymax = YMax), 
-                width = 0.5, color = "black", alpha = .6) +
-  geom_violin(data = data, aes(x = operator, y = projection, color = operator), 
+  geom_violin(data = data, aes(x = operator, y = projection, color = operator, fill = operator), 
               scale="width", alpha = .4) +
+  geom_point(aes(x = operator, y = projection, fill = operator), 
+             shape = 21, stroke = .5, size = 1.5, color = "black") +
+  geom_errorbar(aes(x = operator, y = projection, ymin = YMin, ymax = YMax), 
+                width = 0.2, color = "black") +
   geom_segment(data = contrasts, 
                aes(x = xstart, xend = xend, y = ystart, yend=yend, linetype = linetype)) +
   facet_wrap2(~ predicate, nrow = 4, strip = strip) +
@@ -263,6 +264,7 @@ predicate_operator_means %>%
                      name = "Certainty rating") +
   scale_linetype_identity() +
   scale_colour_manual(values = cbbPalette, name = "Operator") +
+  scale_fill_manual(values = cbbPalette, name = "Operator") +
   theme(legend.position="top") +
   theme(panel.grid.minor = element_blank()) +
   # theme(strip.background = element_rect(fill="white")) +
