@@ -4,6 +4,10 @@ This GitHub repository contains experiments that were the experiments designed i
 
 The 12 experiments used the stimuli from Tonhauser & Degen (under re-review) and Degen & Tonhauser (accepted, Open Mind): 20 clause-embedding predicates, 20 complement clauses, 2 blocks in random order (projection, not-at-issueness).
 
+FOR SUB PAPER:
+The folder \texttt{/main/results} contains a subfolder containing the data for each experiment. The subfolder \texttt{/main/results/meta-analyses/1\_projection} contains the combined data from all 12 experiments, as well as graphs and analysis scripts for analyses reported here.
+SUPPLEMENT FILE: 
+
 The 12 experiments all use the "certain that" diagnostic for projectio; they differ in which not-at-issueness diagnostic was used:
 - Experiments 1-4: asking whether (Q), "are you sure" (N, M, C)
 - Experiments 5-8: assent with positive continuation (of complement clause)

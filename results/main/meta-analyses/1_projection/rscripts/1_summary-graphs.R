@@ -40,7 +40,7 @@ operator_means <- operator_means %>% mutate(projection = Mean, .keep = "unused")
 operator_means %>% ggplot(aes(x = fct_reorder(operator, projection, .fun = "mean"), 
                               y = projection, label = round(projection, digits = 2))) +
   geom_violin(data = data, scale="width", fill = graphcolor, 
-              alpha = .4, color = graphcolor) +
+              alpha = .4) +
   geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "black") +
   geom_point(size=0.5, color = "black") +
   geom_text(hjust = 0, nudge_x = -0.08, nudge_y = -0.06) + 

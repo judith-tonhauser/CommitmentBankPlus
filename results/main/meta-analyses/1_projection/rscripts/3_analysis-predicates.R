@@ -5,6 +5,7 @@
 library(tidyverse)
 this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
 setwd(this.dir)
+library(xtable)
 
 # analysis
 library(rstan)
@@ -85,7 +86,7 @@ for (current_pred in predicates) {
 # print fixed effects for each model
 for (current_pred in predicates) {
   print(current_pred)
-  print(fixef(eval(parse(text = paste("m.b.", current_pred, sep="")))))
+  print(kable(fixef(eval(parse(text = paste("m.b.", current_pred, sep="")))), "latex", booktabs = TRUE))
 }
 
 # 3 GET PAIRWISE DIFFERENCES ---------------------------------------------------
@@ -142,7 +143,7 @@ levels(predicate_operator_means$predicate)
 pred_order <- levels(predicate_operator_means$predicate)
 textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), pinkk, "white")
 
-data %>% mutate(operator = fct_reorder(operator, projection, .fun = "mean"))
+data <- data %>% mutate(operator = fct_reorder(operator, projection, .fun = "mean"))
 levels(data$operator)
 
 
@@ -163,7 +164,23 @@ for (p in predicates) {
 }
 View(contrasts)
 
-# show in table w colors
+
+# Get table with all contrasts for supplement
+print(xtable(contrasts),
+                  #only.contents = T,
+                  include.rownames=FALSE,
+                  include.colnames=TRUE,
+                  tabular.environment="longtable",
+                  floating=FALSE,
+                  hline.after = NULL,
+                  latex.environments=NULL,
+                  booktabs=TRUE,
+                  sanitize.text.function = function(x){x},
+                  comment = F
+)
+
+
+# show in figure
 # linetypes
 # 0 blank
 # 1 solid

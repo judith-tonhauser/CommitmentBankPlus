@@ -309,28 +309,182 @@
   \caption{Recruited participants, excluded data, and remaining participants in Exps.~1, 2 and 3. Gender distinctions were `f' = female, `m' = male, `o' = other, and `u' = undeclared.}\label{t:exclusion}
   \end{sidewaystable} 
  
-\section{Analysis 1 --- By operator}
 
-Bayesian mixed effects beta regression using the 
+\section{Analysis 1 --- Estimating operator effects on projection}
 
-\section{Analysis 2 --- By operator analysis for each predicate}
+    Bayesian mixed effects beta regression for the full dataset.\footnote{The analysis script can be found at \url{https://github.com/judith-tonhauser/CommitmentBankPlus/blob/main/results/main/meta-analyses/1_projection/rscripts/2_analysis-operators.R}.}\\
 
+    \noindent\textbf{Repsonse variable:} projection ratings scaled for beta-regression to transform from closed unit interval $[0,1]$ to open unit interval $(0,1)$,
+    % using method used in \cite{degen_are_2022}, from \cite{smithson_better_2006}, for proportional data.
+    $$y' = \frac{y * (n - 1) + 0.5}{n}$$
 
+    \noindent\textbf{Fixed effect:} operator (modal, negation, question, conditional; with reference level: modal)\\
 
-
-
-
-
-The results are indicated in Figure~\ref{fig:op-pred-analysis}, which shows shows mean certainty ratings by entailment-canceling operator for the 20 predicates, here grouped by predicate. As in Figure~\ref{fig:op-pred-ratings}, (semi-)factive predicates are indicated in pink, and predicates are ordered by their overall mean certainty ratings. Non-zero differences between two operators are indicated by lines spanning the two operators below each predicate facet. 
-
-Because...
-the analysis also supports the more general claims that there is by-operator variation for the CC of each of the 20 clause-embedding predicates, and that the effect of operator differs between predicates.
-
-These observations were confirmed by a posthoc pairwise comparison of the estimated means for each control and target expression in the explicit ignorance context using the ‘emmeans’ package (Lenth 2023) in R (R Core Team 2016). The input to the pairwise comparison was a Bayesian mixed-effects beta regression model with weakly informative priors that was fit using the ‘brms’ package (B¨urkner 2017).
-
-The model predicted naturalness ratings8 from a fixed effect of expression (with treatment coding and ‘continue’ as reference level) and included random by-participant and by-item intercepts (where an item is a complement clause). The output of the pairwise comparison were 95\% highest density intervals (HDIs) of estimated
-marginal mean differences between each of the expressions. We assume that two expressions differ in their naturalness in the explicit ignorance context if their HDI does not include 0
+    \noindent\textbf{Random effects:} 
 
 
+\section{Analysis 2 --- Estimating operator effects for each predicate}
+
+    Bayesian mixed effects beta regression for the each subset of the dataset by predicate.\\
+
+    \noindent\textbf{Repsonse variable:} projection ratings scaled for beta-regression.\\
+
+    \noindent\textbf{Fixed effect:} operator (modal, negation, question, conditional; with reference level: modal)\\
+
+    \noindent\textbf{Random effects:} Item random intercepts and slopes by operator; No participant random effects, because each participant saw each predicate only once.\\
+
+    \noindent The models were fit using \texttt{brms}
+    % (\citealt{burkner_brms_2017}) in R (\citealt{r_core_team_r_2014}), 
+    using low-information priors (\texttt{brms} defaults). The estimation used $4$ chains, $4,000$ iterations per chain, $700$ warm-up, total $13,200$ iterations saved for each model.
+
+    \subsection{Model output}
+        
+    For each predicate, differences between levels of operator were established by considering the pairwise difference between estimated marginal means for each level of operator, using the ‘emmeans’ package (Lenth 2023) in R (R Core Team 2016). The below table gives posterior means, as well as upper and lower values for 95\% highest density intervals (HDIs) for the derived variables representing the pairwise differences.
+
+    \begin{longtable}{llrrr}\toprule
+     predicate & contrast & mean & lower & upper \\ \midrule
+     acknowledge & conditional - negation & -0.50 & -0.70 & -0.31 \\ 
+      acknowledge & conditional - question & 0.19 & -0.03 & 0.42 \\ 
+      acknowledge & modal - conditional & -0.21 & -0.36 & -0.05 \\ 
+      acknowledge & modal - negation & -0.71 & -0.90 & -0.50 \\ 
+      acknowledge & modal - question & -0.01 & -0.23 & 0.21 \\ 
+      acknowledge & negation - question & 0.69 & 0.44 & 0.97 \\ \midrule
+      %
+      admit & conditional - negation & 0.58 & 0.40 & 0.76 \\ 
+      admit & conditional - question & 0.30 & 0.10 & 0.49 \\ 
+      admit & modal - conditional & -0.50 & -0.67 & -0.33 \\ 
+      admit & modal - negation & 0.08 & -0.08 & 0.22 \\ 
+      admit & modal - question & -0.21 & -0.37 & -0.05 \\ 
+      admit & negation - question & -0.28 & -0.46 & -0.12 \\ \midrule
+      %
+      announce & conditional - negation & 0.42 & 0.25 & 0.60 \\ 
+      announce & conditional - question & 0.32 & 0.14 & 0.48 \\ 
+      announce & modal - conditional & -0.48 & -0.63 & -0.34 \\ 
+      announce & modal - negation & -0.06 & -0.23 & 0.11 \\ 
+      announce & modal - question & -0.17 & -0.33 & -0.01 \\ 
+      announce & negation - question & -0.11 & -0.29 & 0.07 \\ \midrule
+      %
+      be\_annoyed & conditional - negation & -0.59 & -0.77 & -0.41 \\ 
+      be\_annoyed & conditional - question & -0.90 & -1.08 & -0.70 \\ 
+      be\_annoyed & modal - conditional & -0.33 & -0.48 & -0.16 \\ 
+      be\_annoyed & modal - negation & -0.92 & -1.08 & -0.76 \\ 
+      be\_annoyed & modal - question & -1.23 & -1.40 & -1.05 \\ 
+      be\_annoyed & negation - question & -0.31 & -0.50 & -0.12 \\ \midrule
+      %
+      be\_right & conditional - negation & -0.22 & -0.39 & -0.06 \\ 
+      be\_right & conditional - question & 0.40 & 0.21 & 0.57 \\ 
+      be\_right & modal - conditional & 0.43 & 0.28 & 0.58 \\ 
+      be\_right & modal - negation & 0.21 & 0.05 & 0.37 \\ 
+      be\_right & modal - question & 0.84 & 0.66 & 1.00 \\ 
+      be\_right & negation - question & 0.62 & 0.43 & 0.81 \\ \midrule
+      %
+      confess & conditional - negation & 0.65 & 0.48 & 0.82 \\ 
+      confess & conditional - question & 0.45 & 0.29 & 0.61 \\ 
+      confess & modal - conditional & -0.62 & -0.77 & -0.48 \\ 
+      confess & modal - negation & 0.03 & -0.14 & 0.18 \\ 
+      confess & modal - question & -0.17 & -0.32 & -0.02 \\ 
+      confess & negation - question & -0.20 & -0.38 & -0.03 \\ \midrule
+      %
+      confirm & conditional - negation & 0.77 & 0.59 & 0.95 \\ 
+      confirm & conditional - question & 0.55 & 0.34 & 0.76 \\ 
+      confirm & modal - conditional & 0.12 & -0.04 & 0.28 \\ 
+      confirm & modal - negation & 0.89 & 0.73 & 1.05 \\ 
+      confirm & modal - question & 0.67 & 0.48 & 0.85 \\ 
+      confirm & negation - question & -0.22 & -0.42 & -0.02 \\ \midrule
+
+      demonstrate & conditional - negation & 0.58 & 0.42 & 0.74 \\ 
+      demonstrate & conditional - question & 0.21 & 0.06 & 0.36 \\ 
+      demonstrate & modal - conditional & -0.17 & -0.31 & -0.03 \\ 
+      demonstrate & modal - negation & 0.41 & 0.25 & 0.56 \\ 
+      demonstrate & modal - question & 0.03 & -0.11 & 0.18 \\ 
+      demonstrate & negation - question & -0.37 & -0.53 & -0.21 \\ \midrule
+
+      discover & conditional - negation & 0.46 & 0.27 & 0.65 \\ 
+      discover & conditional - question & -0.15 & -0.33 & 0.03 \\ 
+      discover & modal - conditional & -0.64 & -0.79 & -0.48 \\ 
+      discover & modal - negation & -0.18 & -0.36 & -0.01 \\ 
+      discover & modal - question & -0.79 & -0.95 & -0.61 \\ 
+      discover & negation - question & -0.61 & -0.81 & -0.42 \\ \midrule
+
+      establish & conditional - negation & 0.44 & 0.26 & 0.62 \\ 
+      establish & conditional - question & 0.28 & 0.10 & 0.47 \\ 
+      establish & modal - conditional & -0.06 & -0.24 & 0.11 \\ 
+      establish & modal - negation & 0.37 & 0.22 & 0.52 \\ 
+      establish & modal - question & 0.22 & 0.07 & 0.37 \\ 
+      establish & negation - question & -0.15 & -0.32 & 0.01 \\ \midrule
+
+      hear & conditional - negation & 0.44 & 0.27 & 0.61 \\ 
+      hear & conditional - question & -0.03 & -0.19 & 0.13 \\ 
+      hear & modal - conditional & -0.92 & -1.06 & -0.76 \\ 
+      hear & modal - negation & -0.47 & -0.63 & -0.31 \\ 
+      hear & modal - question & -0.95 & -1.10 & -0.79 \\ 
+      hear & negation - question & -0.47 & -0.65 & -0.31 \\ \midrule
+
+      inform & conditional - negation & 0.12 & -0.07 & 0.30 \\ 
+      inform & conditional - question & -0.33 & -0.53 & -0.13 \\ 
+      inform & modal - conditional & -0.63 & -0.80 & -0.45 \\ 
+      inform & modal - negation & -0.51 & -0.67 & -0.35 \\ 
+      inform & modal - question & -0.96 & -1.12 & -0.79 \\ 
+      inform & negation - question & -0.45 & -0.62 & -0.26 \\ \midrule
+
+      know & conditional - negation & 0.13 & -0.06 & 0.31 \\ 
+      know & conditional - question & -0.56 & -0.79 & -0.35 \\ 
+      know & modal - conditional & -0.70 & -0.86 & -0.55 \\ 
+      know & modal - negation & -0.57 & -0.74 & -0.40 \\ 
+      know & modal - question & -1.26 & -1.49 & -1.04 \\ 
+      know & negation - question & -0.70 & -0.93 & -0.46 \\ \midrule
+
+      pretend & conditional - negation & -1.00 & -1.22 & -0.76 \\ 
+      pretend & conditional - question & -0.09 & -0.33 & 0.12 \\ 
+      pretend & modal - conditional & 0.20 & -0.03 & 0.42 \\ 
+      pretend & modal - negation & -0.80 & -0.97 & -0.64 \\ 
+      pretend & modal - question & 0.11 & -0.06 & 0.27 \\ 
+      pretend & negation - question & 0.91 & 0.73 & 1.08 \\ \midrule
+
+      prove & conditional - negation & 0.52 & 0.35 & 0.69 \\ 
+      prove & conditional - question & 0.38 & 0.20 & 0.54 \\ 
+      prove & modal - conditional & 0.24 & 0.09 & 0.40 \\ 
+      prove & modal - negation & 0.77 & 0.61 & 0.92 \\ 
+      prove & modal - question & 0.62 & 0.46 & 0.78 \\ 
+      prove & negation - question & -0.15 & -0.33 & 0.02 \\ \midrule
+
+      reveal & conditional - negation & 0.63 & 0.46 & 0.79 \\ 
+      reveal & conditional - question & 0.29 & 0.10 & 0.49 \\ 
+      reveal & modal - conditional & -0.60 & -0.77 & -0.45 \\ 
+      reveal & modal - negation & 0.02 & -0.13 & 0.16 \\ 
+      reveal & modal - question & -0.32 & -0.49 & -0.13 \\ 
+      reveal & negation - question & -0.34 & -0.52 & -0.16 \\ \midrule
+
+      say & conditional - negation & 0.30 & 0.04 & 0.54 \\ 
+      say & conditional - question & 1.23 & 1.01 & 1.44 \\ 
+      say & modal - conditional & -0.45 & -0.64 & -0.28 \\ 
+      say & modal - negation & -0.16 & -0.36 & 0.05 \\ 
+      say & modal - question & 0.77 & 0.59 & 0.95 \\ 
+      say & negation - question & 0.93 & 0.73 & 1.14 \\ \midrule
+
+      see & conditional - negation & 0.55 & 0.33 & 0.78 \\ 
+      see & conditional - question & -0.15 & -0.35 & 0.08 \\ 
+      see & modal - conditional & -0.89 & -1.09 & -0.67 \\ 
+      see & modal - negation & -0.33 & -0.50 & -0.17 \\ 
+      see & modal - question & -1.03 & -1.20 & -0.87 \\ 
+      see & negation - question & -0.70 & -0.89 & -0.52 \\ \midrule
+
+      suggest & conditional - negation & 0.25 & 0.08 & 0.42 \\ 
+      suggest & conditional - question & 0.61 & 0.44 & 0.77 \\ 
+      suggest & modal - conditional & -0.27 & -0.42 & -0.11 \\ 
+      suggest & modal - negation & -0.02 & -0.19 & 0.14 \\ 
+      suggest & modal - question & 0.34 & 0.18 & 0.49 \\ 
+      suggest & negation - question & 0.36 & 0.19 & 0.52 \\ \midrule
+
+      think & conditional - negation & -0.50 & -0.70 & -0.30 \\ 
+      think & conditional - question & 0.19 & -0.04 & 0.41 \\ 
+      think & modal - conditional & -0.21 & -0.36 & -0.05 \\ 
+      think & modal - negation & -0.71 & -0.91 & -0.52 \\ 
+      think & modal - question & -0.01 & -0.24 & 0.22 \\ 
+      think & negation - question & 0.70 & 0.44 & 0.97 \\ 
+      \end{longtable}
+
+\bibliographystyle{sub-chicago}
+\bibliography{projection.bib}
 \end{document}
 
