@@ -1,0 +1,314 @@
+\documentclass[11pt,fleqn]{article}
+\usepackage[margin=1in,top=1in,bottom=1in]{geometry}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+%\usepackage[dvips]{graphics}
+%\usepackage[table]{xcolor}
+%\usepackage{amssymb}
+\usepackage{float}
+%\usepackage{subfig}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+\usepackage[normalem]{ulem}
+
+\usepackage{multicol}
+\usepackage{txfonts}
+\usepackage{amsfonts}
+\usepackage{natbib}
+\usepackage{gb4e}
+\usepackage[all]{xy}
+\usepackage{rotating}
+\usepackage{tipa}
+\usepackage{multirow}
+\usepackage{authblk}
+\usepackage{url}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{adjustbox}
+\usepackage{array}
+
+
+\def\bad{{\leavevmode\llap{*}}}
+\def\marginal{{\leavevmode\llap{?}}}
+\def\verymarginal{{\leavevmode\llap{??}}}
+\def\swmarginal{{\leavevmode\llap{4}}}
+\def\infelic{{\leavevmode\llap{\#}}}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+%\definecolor{gray}{rgb}{0.36, 0.54, 0.66}
+
+\definecolor{Pink}{RGB}{240,0,120}
+\newcommand{\red}[1]{\textcolor{Pink}{#1}}
+\newcommand{\jd}[1]{\textbf{\textcolor{Pink}{[jd: #1]}}}
+
+\newcommand{\dashrule}[1][black]{%
+  \color{#1}\rule[\dimexpr.5ex-.2pt]{4pt}{.4pt}\xleaders\hbox{\rule{4pt}{0pt}\rule[\dimexpr.5ex-.2pt]{4pt}{.4pt}}\hfill\kern0pt%
+}
+
+\setlength{\parindent}{.3in}
+\setlength{\parskip}{0ex}
+
+\newcommand{\yi}{\'{\symbol{16}}}
+\newcommand{\nasi}{\~{\symbol{16}}}
+\newcommand{\hina}{h\nasi na}
+\newcommand{\ina}{\nasi na}
+
+\newcommand{\foc}{$_{\mbox{\small F}}$}
+
+\hyphenation{par-ti-ci-pa-tion}
+
+\setlength{\bibhang}{0.5in}
+\setlength{\bibsep}{0mm}
+\bibpunct[:]{(}{)}{,}{a}{}{,}
+
+\newcommand{\6}{\mbox{$[\hspace*{-.6mm}[$}} 
+\newcommand{\9}{\mbox{$]\hspace*{-.6mm}]$}}
+\newcommand{\sem}[2]{\6#1\9$^{#2}$}
+\renewcommand{\ni}{\~{\i}}
+
+\newcommand{\citepos}[1]{\citeauthor{#1}'s \citeyear{#1}}
+\newcommand{\citeposs}[1]{\citeauthor{#1}'s}
+\newcommand{\citetpos}[1]{\citeauthor{#1}'s (\citeyear{#1})}
+
+\newcolumntype{R}[2]{%
+    >{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
+    l%
+    <{\egroup}%
+}
+\newcommand*\rot{\multicolumn{1}{R{90}{0em}}}% no optional argument here, please!
+
+
+\title{Is the family of sentences really a family?}
+
+\begin{document}
+
+\section*{Supplemental materials}
+
+\appendix
+
+\setcounter{page}{1}
+%\renewcommand{\thetable}{A\arabic{table}}
+
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+
+\section{20 clauses}\label{a-clauses}
+
+The contents of the following 20 clauses, which realized the complements of the 20 clause-embedding predicates, were investigated in Exps.~1-3:
+
+\begin{enumerate}[leftmargin=3ex,itemsep=-2pt]
+
+\begin{multicols}{2}
+
+\item Mary is pregnant.
+\item Josie went on vacation to France.
+\item Emma studied on Saturday morning.
+\item Olivia sleeps until noon.
+\item Sophia got a tattoo.
+\item Mia drank 2 cocktails last night.
+\item Isabella ate a steak on Sunday.
+\item  Emily bought a car yesterday.
+\item  Grace visited her sister.
+\item Zoe calculated the tip.
+
+\columnbreak
+
+\item  Danny ate the last cupcake.
+\item  Frank got a cat.
+\item  Jackson ran 10 miles.
+\item  Jayden rented a car.
+\item  Tony had a drink last night.
+\item  Josh learned to ride a bike yesterday.
+\item  Owen shoveled snow last winter.
+\item  Julian dances salsa.
+\item  Jon walks to work.
+\item  Charley speaks Spanish.
+
+\end{multicols}
+
+\end{enumerate}
+
+\section{Consequents for conditional target stimuli in Exps.~1c, 2c, and 3c}\label{a-consequents}
+
+  We created 20 consequent clauses for the three experiments in which the 20 clauses were embedded in the antecedent of a conditional (Exps.~1c, 2c, 3c). Each of the 20 clauses was paired with a unique consequent clause, as shown in the list below. To minimize the variability of the effect of the contents of these consequent clauses on the projection of the contents of the 20 complement clauses, the consequent clauses all consist of a uniquely named subject and an adjectival predication in the future tense ({\em will be}), and the adjectives all denote an emotion. We selected the 20 emotion-denoting adjectives based on the valence and arousal values reported in \citealt{warriner-etal2013}: 10 of the adjectives had a positive valence, and 10 had a negative valence; all 20 adjective had an arousal value between 4.7 and 6.5. 
+
+  \begin{enumerate}[leftmargin=3ex,itemsep=-2pt]
+
+  \item \ldots that Mary is pregnant, Esther will be mad.
+  \item \ldots that Josie went on vacation to France, Arnold will be frustrated.
+  \item \ldots that Emma studied on Saturday morning, Liam will be proud.
+  \item \ldots that Olivia sleeps until noon, Elijah will be embarrassed.
+  \item \ldots that Sophia got a tattoo, Ariel will be giddy.
+  \item \ldots that Mia drank 2 cocktails last night, Mariela will be worried.
+  \item \ldots that Isabella ate a steak on Sunday, Liz will be delighted.
+  \item  \ldots that Emily bought a car yesterday, Kate will be excited.
+  \item \ldots that  Grace visited her sister, Henry will be surprised.
+  \item \ldots that Zoe calculated the tip, Alex will be astonished.
+  \item  \ldots that Danny ate the last cupcake, Harper will be disgusted.
+  \item  \ldots that Frank got a cat, Lucas will be grouchy.
+  \item  \ldots that Jackson ran 10 miles, Kayla will be cheerful.
+  \item  \ldots that Jayden rented a car, Brittany will be furious.
+  \item  \ldots that Tony had a drink last night, Victoria will be ashamed.
+  \item  \ldots that Josh learned to ride a bike yesterday, Mason will be envious.
+  \item  \ldots that Owen shoveled snow last winter, Bianca will be jealous.
+  \item  \ldots that Julian dances salsa, Logan will be joyful.
+  \item  \ldots that Jon walks to work, Caleb will be suspicious.
+  \item  \ldots that Charley speaks Spanish, Jay will be happy.
+
+  \end{enumerate}
+
+\section{Control stimuli in Exps.~1-3}\label{a-control}
+
+  The control stimuli in Exps.~1-3 were the contents of main clauses. In Exps.~1q, 2q and 3q, the control stimuli consisted of the polar questions in (1). The non-restrictive relative clauses (NRRCs), given in parentheses in (1), were included in Exps.~2q and 3q, where at-issueness was measured with an assent diagnostic. The control stimuli here consisted of two clauses (like the target stimuli), to allow the relevant speaker to assent with one of two clauses.
+
+  \begin{exe}
+  \exi{(1)} Sentences for control stimuli in in question embedding experiments (Exps.~1q, 2q and 3q)
+  \begin{xlist}
+  \ex Do these muffins (, which are really delicious,) have blueberries in them?
+  \ex Does this pizza (, which I just made from scratch,) have mushrooms on it? 
+  \ex Was Jack (, who is my long-time neighbor,) playing outside with the kids? 
+  \ex Does Ann (, who is a local performer,) dance ballet?
+  \ex Were John's kids (, who are very well-behaved,) in the garage?
+  \ex Does Samantha (, who is really into fashion,) have a new hat?
+  \end{xlist}
+  \end{exe}
+
+  We expected participants to give low responses on the `certain that' diagnostic for the control stimuli in (1), indicating that the speaker is not certain of the main clause content, because main clause content is hypothesized to not project out of polar questions. These expectations were borne out, as shown in the third column of Table~\ref{t-controls} for Exps.~1q, 2q, and 3q. We also expected participants to give low responses on the at-issueness diagnostics for the control stimuli in (1), indicating that the main clause content is at-issue. These expectations were borne out for Exps.~1q and 2q, as shown in the fourth column of Table~\ref{t-controls}, but the ratings were higher than expected for Exp.~3q. See below for discussion.
+
+
+  In the remaining experiments, the control stimuli consisted of the positive declarative variants of (1) given in (2). The NRRCs in parentheses were realized in Exps.~2 and 3 for the reason explained above, as well as in Exp.~1c, to make the control stimuli more similar to the target stimuli (which also consisted of two clauses, namely the antecedent and the consequent).
+
+  \begin{exe}
+  \exi{(2)}  Sentences for control stimuli in negation, modal and conditional embeddings
+  \begin{xlist}
+  \ex These muffins (, which are really delicious,) have blueberries in them.
+  \ex This pizza (, which I just made from scratch,) has mushrooms on it. 
+  \ex Jack (, who is my long-time neighbor,) was playing outside with the kids. 
+  \ex Ann (, who is a local performer,) dances ballet.
+  \ex John's kids (, who are very well-behaved,) were in the garage.
+  \ex Samantha (, who is really into fashion,) has a new hat.
+  \end{xlist}
+  \end{exe}
+
+  We expected participants to give high responses on the `certain that' diagnostic for the control stimuli in (2), indicating that the speaker is certain of the main clause content, because speakers are hypothesized to be committed to the asserted main clause content. These expectations were borne out, as shown in the third column of Table~\ref{t-controls} for the `n', `m' and `c' variants of Exps.~1, 2, and 3. We expected participants to give low responses on the at-issueness diagnostics for the control stimuli in (2), indicating that the main clause content is at-issue. These expectations were borne out for the `n', `m', and `c' variants of Exps.~1, as shown in the fourth column of Table~\ref{t-controls}, but not for the `n', `m', and `c' variants of Exps.~2 and 3. See below for discussion.
+
+  \begin{table}[h!]
+    \centering
+    \begin{tabular}{r r r r l }
+    & &  \multicolumn{2}{c}{Mean ratings} &  \\ 
+    Exp. & Control stimuli & Certainty & Not-at-issueness & At-issueness measure \\ 
+    \hline
+    1q & (1) & .14 & .05  & asking whether $c$ \\
+    1n & (2) &  .95 & .04 & sure that $c$\\
+    1m & (2) & .96 & .03 & sure that $c$\\
+    1c & (2) with NRRC & .94  & .08 & sure that $c$\\
+    \hline
+    2q & (1) with NRRC & .18 & .07 & {\em yes}, $c$\\
+    2n & (2) with NRRC& .96 & .22 & {\em yes, that's true}, $c$\\
+    2m & (2) with NRRC& .96 & .25 & {\em yes, that's true}, $c$\\
+    2c & (2) with NRRC& .96 & .22 & {\em yes, that's true}, $c$\\
+    \hline
+    3q & (1) with NRRC & .17 &  .28 & {\em yes}, but $\neg c'$\\
+    3n & (2) with NRRC & .94 & .44 & {\em yes, that's true}, but $\neg c'$\\
+    3m & (2) with NRRC & .93 & .50 & {\em yes, that's true}, but $\neg c'$\\
+    3c & (2) with NRRC & .93 & .53 & {\em yes, that's true}, but $\neg c'$\\
+    \hline
+    \end{tabular}
+    \caption{Mean certainty and at-issueness ratings for control stimuli, for self-declared American English participants}\label{t-controls}
+  \end{table}
+
+  As mentioned above, the mean at-issueness ratings were higher than expected in the `n', `m', and `c' variants of Exps.~2 and all four of the Exps.~3. We discuss these exceptions in more detail here because they allow us to further understand the various measures for at-issueness investigated in this paper. The example in (3a) illustrates the version of the assent diagnostic applied in Exps.~2n, 2m, and 2c: the assent particle {\em yes} is followed by the clause whose content is diagnosed, here, the content of the main clause. The related affirmation diagnostic applied in Exp.~2q (where the mean at-issueness rating was as low as expected) is illustrated in (3b).
+
+  \begin{exe}
+  \exi{(3)} 
+  \begin{xlist}
+  \ex Sample control stimulus in Exps.~2n, 2m, and 2c
+  \begin{xlist}
+  \exi{A:} These muffins, which are really delicious, have blueberries in them.
+  \exi{B:} Yes, that's true, they have blueberries in them.
+  \end{xlist}
+  Question to participants: Does A's response to B sound good?
+  \ex Sample control stimulus in Exp.~2q
+  \begin{xlist}
+  \exi{A:} Do these muffins, which are really delicious, have blueberries in them?
+  \exi{B:} Yes, they have blueberries in them.
+  \end{xlist}
+  Question to participants: Does A's response to B sound good?
+  \end{xlist}
+  \end{exe}
+
+  As shown in Table \ref{t-controls},  the group mean on the control stimuli is numerically higher (at .22 or .25) than for Exp.~2q (.07). We hypothesize that a possible explanation for this difference is that participants take A to assert both the content of the main clause and of the NRRC in (3a) but is only asking about the main clause content in (3b). Whereas B's affirmation in (3b) specifies the one content that is affirmed, B's assent in (3a) specifies only one of the two contents that A asserted, seemingly leaving out a specification of the second content, that of the NRRC. Participants may judge B's response in (3b) to be less acceptable than in (3a) because of this missing content specification. This hypothesis is consistent with the results of \citepos{syrett-koev2015} Exp.~3, which suggests that content of a sentence-medial NRRCs can be the target of a direct denial, though the main clause content is preferred as the target of such a denial. That the group means on the control stimuli in our Exps.~2n, 2m, and 2c are still relatively low may be due to the fact that the one content that was specified is the at-issue main clause content. One would expect lower acceptability ratings in a version of this diagnostic in which the one content that was specified is the NRRC. 
+
+  The mean at-issueness ratings for the control stimuli were also higher than expected in Exps.~3. The examples in (4) illustrate the versions of the affirmation and assent diagnostics used in these experiments:
+
+  \begin{exe}
+  \exi{(4)} 
+  \begin{xlist}
+  \ex Sample control stimulus in Exp.~3q
+  \begin{xlist}
+  \exi{A:} Do these muffins, which are really delicious, have blueberries in them?
+  \exi{B:} Yes, but they aren't really delicious.
+  \end{xlist}
+  Question to participants: Does A's response to B sound good?
+  \ex Sample control stimulus in Exps.~3n, 3m, and 3c
+  \begin{xlist}
+  \exi{A:} These muffins, which are really delicious, have blueberries in them.
+  \exi{B:} Yes, that's true, they but they aren't really delicious.
+  \end{xlist}
+  Question to participants: Does A's response to B sound good?
+  \end{xlist}
+  \end{exe}
+
+  The mean at-issueness rating for the control stimuli in Exp.~3q was comparatively higher (at .28) than for Exp.~1q (.05) or Exp.~2q (.07). We hypothesize that that this difference (especially to Exp.~2q) is due the content of the NRRC being directly denied, even though it was presented as backgrounded content in A's question (as shown in (2), the content of none of the other NRRCs was a matter of personal taste).
+
+  The mean at-issueness ratings for the control stimuli in Exps.~3n, 3m, and 3c were numerically even higher than for Exp.~3q and, in fact, the highest across all 12 experiments (at .44, .50, and .53, respectively). There are two factors that could be implicated in the difference between Exp.~3q and Exps.~3n, 3m, and 3c: first, the NRRC is included in a polar question in the former but a declarative assertion in the latter; second, B utters an affirmation {\em yes} in the former but an assent {\em yes, that's true} in the latter. For instance, participants might judge B's direct denial of the content of the NRRC as less acceptable when A uttered a declarative assertion and B assented with that assertion using {\em yes, that's true} than when A uttered a polar question and B responded in the affirmative with {\em yes}. Both factors must be considered in future research on at-issueness measures.
+
+
+\section{Participant information and data exclusion criteria}\label{a-participants}
+
+  This supplement provides information on the participants of the 12 experiments and the criteria by which participants' data were excluded. The first three columns of Table \ref{t:exclusion} show, for each of the 12 experiments how many participants were recruited, their age range and mean age, and their self-reported gender; no gender data was collected in Exp.~1q. The next three columns provide information on the number of participants whose data were excluded based on the following criteria:
+
+  \begin{itemize}[itemsep=-2pt]
+
+  \item `multiple': Due to an experimental glitch, some participants participated more than once in Exp.~1q. Since no information was available on which one was their first take, those participants' data was removed. 
+
+  \item `language': Participants' data were excluded if they did not self-identify as native speakers of American English.
+
+  \item `controls': Participants' data were excluded if their mean rating on the 6 main clause control items in the projection block was more than 2 sd above the group mean (in Exps.~1q, 2q, and 3q) or more than 2 sd below the group mean (in the remaining experiments). Participants' data were also excluded if their mean rating on the 6 main clause control items in the at-issueness block was more than 2 sd above the group mean (across all experiments).
+   
+  \item `variance': Participants' data were excluded if they always selected roughly the same point on the response scale for the target stimuli. To identify such participants, we first identified participants whose mean variance on the target stimuli was more than 2 sd below the group mean variance and then manually inspecting their response patterns. The data of participants who used the full scale was not excluded.  
+  \end{itemize}
+
+  The remaining columns of Table \ref{t:exclusion} provide information on the remaining participants, that is, the participants' data that entered into the analysis. Participants took around 9-11 minutes to complete the various experiments. Participants were paid more in Exps.~1c, 2c, and 3c than the remaining experiments because the target stimuli in those experiments were longer (as they consisted of conditionals). More women than men were recruited in many of the experiments because the experiments were run at a time when Prolific went viral on TikTok, resulting in a large number of young women registering for the service (around July 24, 2021; see \url{https://blog.prolific.co/we-recently-went-viral-on-tiktok-heres-what-we-learned/}, \\ last accessed February 4, 2022).  
+
+  \begin{sidewaystable}[h!]
+  \centering
+  \begin{tabular}{l | r r r | r r r r | r r r | r }
+  &  \multicolumn{3}{c|}{Recruited participants} & \multicolumn{4}{c|}{Exclusion criteria} & \multicolumn{3}{c|}{Remaining participants} &  \\ 
+  Exp. & total & ages (mean) & gender (f/m/o/u) & multiple & language & controls & variance & total & ages (mean) & gender (f/m/o/u) & payment   \\ 
+  \hline
+  1q & 300  & 19-74 (38.2)  & --  & 5  & 7  & 35  & 0  & 242   & 21-74 (39.2) &  -- & \$1.70\\
+  1n & 300  & 18-74 (33.2)  &  150/145/5/0 & 0  & 8 & 17 & 1 & 274  & 18-74 (33.3) & 141/128/5/0 & \$1.70\\
+  1m & 300  & 18-74 (32.7) & 150/141/7/2  &  0 & 0  & 19 & 0   & 281   & 18-74 (32.7) & 144/129/7/1 & \$1.70 \\
+  1c &  300 & 18-58 (25.9)  & 249/45/6/0 & 0 & 6  & 26 & 2  & 266  &  18-58 (24.8) & 235/25/6/0  & \$2.15 \\
+  2q & 250  &  18-58 (25.5) &  201/43/6/0  & 0 & 4  & 24  & 1 & 220  & 18-58 (24.8)  & 187/28/5/0  & \$1.70 \\
+  2n & 250  &  18-69 (33.2)  &  127/114/6/1 & 1  & 4  & 29 & 0& 215  &  18-69 (33.1) & 113/95/6/1    & \$1.70\\
+  2m & 251  & 18-74 (31.7)  & 132/113/6/0  & 0  & 4  & 27 &  0 & 220  & 18-70 (31.9) & 116/98/6/0 & \$1.70\\
+  2c &  250 &  18-56 (24.5)  & 212/30/8/0  & 0  & 0  & 26 & 0  & 224  & 18-56 (24.4) & 195/24/5/0 & \$2.15\\
+  3q & 250  &  18-66 (32.4) &  140/102/7/1 &  0 & 4  & 20  & 0  &  225 & 18-66 (32.6) & 125/93//7/0  & \$1.70 \\
+  3n & 250  &  18-70 (24.6) & 114/31/5/0  & 0  & 5  &  13 & 4  & 228  & 18-70 (24.3) &  198/25/5/0 &\$1.70 \\
+  3m & 250  & 18-63 (25.5)  & 205/40/5/0 &  0 & 3  & 14 &  0 & 233  &  18-63 (24.8) & 197/31/5/0 &\$1.70 \\
+  3c & 250  & 18-59  (27.5) & 182/64/4/0  & 0  & 3  & 17 & 0 & 230  &  18-59 (26.7)  & 177/49/4/0  & \$2.15\\
+  \end{tabular}
+  \caption{Recruited participants, excluded data, and remaining participants in Exps.~1, 2 and 3. Gender distinctions were `f' = female, `m' = male, `o' = other, and `u' = undeclared.}\label{t:exclusion}
+  \end{sidewaystable} 
+ 
+\end{document}
+
