@@ -1,3 +1,6 @@
+# no models are pushed in case they are too large for the repo 
+*.rds
+
 # Latex files
 # .pdf 
 *.aux 
