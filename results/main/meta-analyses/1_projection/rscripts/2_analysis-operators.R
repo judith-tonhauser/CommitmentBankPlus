@@ -40,17 +40,17 @@ summary(data$betaresponse)
 # beta regression w response: scaled projection ratings, fixed effect: operator
 # random effects: random intercepts for item, participant, slopes for both by operator
 # also estimating these effects on beta precision parameter
-beta_formula = bf(betaresponse ~ operator + (1 | predicate),
-                  phi ~ operator + (1 | predicate), # beta distribution's precision
+beta_formula = bf(betaresponse ~ operator + (1 + operator | predicate) + (1 | item),
+                  phi ~ operator  + (1 + operator | predicate) + (1 | item), # beta distribution's precision
                   family = Beta())
 
 m.b.operators <- brm(formula = beta_formula,
     family = Beta(),
     data = data,
-    cores = 4, iter = 3000, warmup = 500,
-    control = list(adapt_delta = .95,max_treedepth=15))
+    cores = 4, chains = 4, iter = 8000, warmup = 700,
+    control = list(adapt_delta = .95, max_treedepth=15))
 
-saveRDS(m.b.operators, "../models/beta-model-mixed-operators.rds")
+saveRDS(m.b.operators, "../models/beta-model-mixed-operators2.rds")
 summary(m.b.operators)
 
 # run posterior predictive checks
@@ -61,7 +61,7 @@ p1
 # pairwise comparison of operators ----
 
 # read the model
-m.b.operators <- readRDS("../models/beta-model-mixed-operators.rds")
+m.b.operators <- readRDS("../models/beta-model-mixed-operators2.rds")
 
 # draws of posterior distributions of estimated marginal means of pairwise differences
 pairwise <- m.b.operators %>%

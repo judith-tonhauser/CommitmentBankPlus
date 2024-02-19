@@ -8,6 +8,8 @@ setwd(this.dir)
 
 # summary + graphing
 library(ggplot2)
+library(ggh4x)
+library(ggrepel)
 source('../../../helpers.R')
 cbbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#0072B2", "#F0E442", "#D55E00", 
                 "#CC79A7", "#000000")
@@ -68,6 +70,7 @@ data$VeridicalityGroup = as.factor(
   ifelse(data$predicate %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", "NF"))
 predicate_means$VeridicalityGroup = as.factor(
   ifelse(predicate_means$predicate %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", "NF"))
+
 pred_order <- levels(fct_reorder(predicate_means$predicate, predicate_means$projection, .fun = "mean"))
 textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), pinkk, "black")
 
@@ -91,7 +94,7 @@ predicate_means %>% ggplot(aes(x = fct_reorder(predicate, projection, .fun = "me
         legend.position="bottom", text = element_text(size=12)
   )
 
-ggsave(f="../graphs/predicate-graph-1.pdf", width=7, height=4.5)
+ggsave(f="../graphs/predicate-graph.pdf", width=7, height=4.5)
 
 
 # 4 projection by predicate and operator, used to be figure 3, now replaced ----
@@ -125,7 +128,7 @@ predicate_operator_means %>%
         legend.position="none", text = element_text(size=12)
   )
 
-ggsave("../graphs/predicate-operator-graph-1.pdf", width=7, height=4.5)
+ggsave("../graphs/predicate-operator-graph.pdf", width=7, height=4.5)
 
 # 5 projection by predicate with violin plots, for each operator (fig. 4) ------
 
@@ -245,3 +248,92 @@ subset(predicate_operator_means, operator == "conditional") %>%
 
 ggsave("../graphs/conditional-predicate-graph.pdf", width=7, height=3.75)
 
+
+
+# 6 predicate profiles
+
+negHigh <- c("pretend", "think")
+roof1 <- c("acknowledge", "see", "discover", "hear")
+roof2 <- c("inform", "know", "be_annoyed")
+u1 <- c("establish", "confirm", "demonstrate", "prove")
+u2 <- c("reveal", "admit", "confess", "announce")
+qLow <- c("be_right", "say", "suggest")
+
+predicate_operator_means <- predicate_operator_means %>% 
+  mutate(predGroup = as.factor(case_when(
+    predicate %in% negHigh ~ "(a) Negation high",
+    predicate %in% qLow ~ "(b) Question low",
+    predicate %in% u1 ~ "(c) Negation low",
+    predicate %in% u2 ~ "(d) Conditional high",
+    predicate %in% roof1 ~ "(e) Modal low",
+    predicate %in% roof2 ~ "(f) Question high",
+    TRUE ~ NA
+  )))
+
+predicate_operator_means <- predicate_operator_means %>%
+  mutate(
+    predicate = fct_reorder(predicate, projection, .fun = "mean"),
+    operator = fct_reorder(operator, projection, .fun = "mean"),
+    predGroup = fct_reorder(predGroup, projection, .fun = "mean"),
+  )
+
+# "#A6CEE3" "#1F78B4" "#B2DF8A" "#33A02C" "#FB9A99" "#E31A1C" "#FDBF6F"  "#CAB2D6"  "#B15928""#FFFF99"
+
+print(levels(predicate_operator_means$predicate))
+predFacets <- as.data.frame(rbind(
+  # predicate, color, label x, label y
+  # in order of overall mean ratings for predicates, to get the colors right
+  c("pretend", "#6A3D9A", 3.85, 0.1),
+  c("be_right", "#6A3D9A", 3.5, 0.1),
+  c("suggest", "#FF7F00", 1.25, 0.15),
+  c("think", "#FF7F00", 4, 0.3),
+  c("say", "#E31A1C", 4, 0.47),
+  c("prove", "#6A3D9A", 1.4, 0.17),
+  c("confirm", "#FF7F00", 3.8, 0.24),
+  c("establish", "#E31A1C", 1.3, 0.53),
+  c("demonstrate", "#33A02C", 3.35, 0.58),
+  c("announce", "#6A3D9A", 3.6, 0.47),
+  c("confess", "#FF7F00", 1.5, 0.43),
+  c("admit", "#E31A1C", 1, 0.65),
+  c("reveal", "#33A02C", 3.9, 0.8),
+  c("acknowledge", "#6A3D9A", 3.3, 0.57),
+  c("hear", "#FF7F00", 1.1, 0.45),
+  c("inform", "#6A3D9A", 1.1, 0.52),
+  c("see", "#E31A1C", 3, 0.89),
+  c("discover", "#33A02C", 1.27, 0.76),
+  c("know", "#FF7F00", 4, 0.88),
+  c("be_annoyed", "#E31A1C", 1.7, 0.95)
+))
+colnames(predFacets) <- c("predicate", "color", "labX", "labY")
+predFacets <- predFacets %>%
+  mutate(labX = as.numeric(labX), 
+         labY = as.numeric(labY),
+         predGroup = as.factor(case_when(
+           predicate %in% negHigh ~ "(a) Negation high",
+           predicate %in% qLow ~ "(b) Question low",
+           predicate %in% u1 ~ "(c) Negation low",
+           predicate %in% u2 ~ "(d) Conditional high",
+           predicate %in% roof1 ~ "(e) Modal low",
+           predicate %in% roof2 ~ "(f) Question high",
+           TRUE ~ NA
+         )))
+str(predFacets)
+
+predicate_operator_means %>%
+  ggplot(aes(x = operator, y = projection, group = predicate, color = predicate, 
+             fill = predicate, label = predicate)) +
+  scale_colour_manual(values = predFacets$color) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.2) +
+  geom_point(size=1) + 
+  geom_line() + 
+  geom_text(data = predFacets, aes(x = labX, y = labY), size = 2.8) + 
+  facet_wrap(~predGroup, ncol = 6) +
+  scale_y_continuous(limits = c(0,1), 
+                     breaks = c(0,0.2,0.4,0.6,0.8,1.0),
+                     labels = c("0","0.2","0.4","0.6","0.8","1"),
+                     name = "Mean certainty rating") +
+  theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1),
+        legend.position = "none") +
+  xlab("Operator")
+
+ggsave("../graphs/predicate-profiles.pdf", width=9, height=4)

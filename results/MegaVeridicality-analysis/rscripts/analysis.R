@@ -68,9 +68,6 @@ table(mv1$veridicality_num)
 
 table(mv1$verb)
 
-factives <- c("discover", "know", "reveal", "see", "amuse", "annoy", "find_out", "forget", "learn",
-              "love", "notice", "realize", "recognize", "regret", "remember", "reveal", "understand")
-
 # create items for mv1 
 
 table(mv1$verb) #verb
@@ -84,7 +81,6 @@ str(mv1$conditional2)
 mv1$conditional2 <- as.character(mv1$conditional)
 mv1$conditional2[mv1$conditional2 == "True"] <- "conditional"
 mv1$conditional2[mv1$conditional2 == "False"] <- "matrix"
-
 table(mv1$conditional2) #conditional, matrix
 
 mv1$item <- paste(mv1$verb,mv1$frame,mv1$voice,mv1$polarity,mv1$conditional2, sep = "-")
@@ -122,42 +118,65 @@ table(mv1_tmp$embedding)
 p_means = mv1_tmp %>%
   group_by(verb, embedding) %>%
   summarize(Mean = mean(veridicality_num), CILow = ci.low(veridicality_num), CIHigh = ci.high(veridicality_num)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, verb = fct_reorder(as.factor(verb),Mean))
-options(tibble.print_max = Inf)
-p_means
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, verb = as.factor(verb), embedding = as.factor(embedding))
+# options(tibble.print_max = Inf)
+
+p_means$verb <- fct_reorder(p_means$verb, p_means$Mean, .fun = "mean")
 levels(p_means$verb) # verbs sorted by projectivity mean 
 
-# create data subsets for the factives
-p_meansFactives <- droplevels(subset(p_means,p_means$verb %in% factives))
-p_meansFactives
-str(p_meansFactives$verb)
-levels(p_meansFactives$verb) # sorted by projectivity mean (pretend...be annoyed)
+# define subsets for selection
 
-p_means <- mutate(p_means, verb = fct_reorder(verb, Mean, .fun = mean))
-p_means <- mutate(p_means, embedding = fct_reorder(embedding, Mean, .fun = mean))
-p_meansFactives <- mutate(p_meansFactives, verb = fct_reorder(verb, Mean, .fun = mean))
-p_meansFactives <- mutate(p_meansFactives, embedding = fct_reorder(embedding, Mean, .fun = mean))
+# 7 predicates -- Karttunen's factives and emotive predicates ("announce", "inform",)
+factives <- c("annoy", "disappoint", "know", "please", "regret", "reveal", "surprise")
+# 6 predicates -- Karttunen's semi-factives and cognitive predictes
+semifactives <- c("discover", "find_out", "notice", "realize", "see", "understand")
+# 14 predicates -- non-factives from experiment (except be_right)
+nonfactives <- c("acknowledge", "admit", "announce", 
+                 "confess", "confirm", "claim", "demonstrate", 
+                 "establish", "hear", "inform", "prove", 
+                 "pretend", "say", "suggest", "think")
+
+
+
+# create data subsets for the selected predicates 
+p_meansSelection <- droplevels(subset(p_means, p_means$verb %in% factives | p_means$verb %in% semifactives | p_means$verb %in% nonfactives))
+str(p_meansSelection$verb)
+levels(p_meansSelection$verb) # sorted by projectivity mean (pretend...be annoyed)
+
+p_meansSelection <- mutate(p_meansSelection, verb = fct_reorder(verb, Mean, .fun = mean))
+p_meansSelection$embedding <- fct_reorder(p_meansSelection$embedding, p_meansSelection$Mean, .fun = "mean")
+levels(p_meansSelection$verb)
+levels(p_meansSelection$embedding)
 
 # Color blind friendly palette with black (http://www.cookbook-r.com/Graphs/Colors_(ggplot2)):
-cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+cbbPalette <- c("#000000", "#56B4E9", "#E69F00", "#009E73", "#0072B2", "#CC79A7", "#D55E00","#F0E442")
 
-ggplot(p_meansFactives,aes(x=fct_reorder(verb, Mean), y=Mean, group = embedding, fill = embedding, color = embedding)) +
-coord_cartesian(ylim=c(-1,1)) +
-geom_point(aes(shape = embedding), size = 3) + 
-scale_shape_manual(values=rev(c(23, 24, 25)),
-                     labels=rev(c("cond/polar","negation","cond/neg/polar")),
+textcolors <- case_when(
+  levels(p_meansSelection$verb) %in% factives ~ "#CC79A7",
+  levels(p_meansSelection$verb) %in% semifactives ~ "#CC79A7",
+  levels(p_meansSelection$verb) %in% nonfactives ~ "black",
+)
+str(textcolors)
+
+p_meansSelection %>%
+  ggplot(aes(x = verb, y = Mean, group = embedding, fill = embedding, color = embedding)) +
+  geom_line() +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.4, alpha = .9) +
+  coord_cartesian(ylim=c(-1,1)) +
+  geom_point(aes(shape = embedding), size = 2.5, color = "black") + 
+  scale_shape_manual(values = rev(c(23, 24, 25)),
+                     labels= c("cond/neg/polar", "negation",  "cond/polar"),
                      name="Embedding") +
-scale_fill_manual(values=rev(c("#000000", "#E69F00", "#56B4E9")),
-                  labels=rev(c("cond/polar","negation","cond/neg/polar")),
-                   name="Embedding") +
-scale_colour_manual(values=rev(c("#000000", "#E69F00", "#56B4E9"))) +
-#geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1) +
-geom_line() +
-guides(color = "none") +
-#geom_text_repel(data=p_meansFactives,aes(x=verb,y=Mean,label=verb,
-                                           #color=VeridicalityGroup),segment.color="black",nudge_x=.2,nudge_y=-.6) +
-#scale_color_manual(values=rev(c("tomato","black"))) +
-scale_y_continuous(limits = c(-1,2),breaks = c(-1,0,1,2)) +
-ylab("Mean projection rating") +
-xlab("Predicate")
-ggsave("../graphs/proj-by-both.pdf",height=4.7,width=12)
+  scale_fill_manual(values = cbbPalette,
+                    labels= c("cond/neg/polar", "negation",  "cond/polar"),
+                    name="Embedding") +
+  scale_colour_manual(values = cbbPalette) +
+  guides(color = "none") +
+  scale_y_continuous(limits = c(-1,2),breaks = c(-1,0,1,2)) +
+  ylab("Mean projection rating") +
+  xlab("Predicate") + 
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = textcolors),
+         text = element_text(size=12)
+  )
+
+ggsave("../graphs/megaveridicality.pdf",height=4.7,width=12)

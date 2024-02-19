@@ -142,7 +142,7 @@ levels(predicate_operator_means$operator)
 levels(predicate_operator_means$predicate)
 
 pred_order <- levels(predicate_operator_means$predicate)
-textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), pinkk, "white")
+textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), "#cb7eab", "white")
 
 data <- data %>% mutate(operator = fct_reorder(operator, projection, .fun = "mean"))
 levels(data$operator)
@@ -164,7 +164,6 @@ for (p in predicates) {
   }
 }
 View(contrasts)
-
 
 # Get table with all contrasts for supplement
 print(xtable(contrasts),
@@ -200,6 +199,43 @@ contrasts <- contrasts %>% mutate(
 )
 
 table(contrasts$linetype)
+
+
+contrasts <- contrasts %>%
+  mutate(predicate = as.factor(predicate), contrast = as.factor(contrast), 
+         difftype =  case_when(
+           lower <= 0 & upper >= 0 ~ 0,
+           mean <= 0 & abs(mean) >= 1 ~ -1.5,
+           mean >= 0 & abs(mean) >= 1 ~ 1.5,
+           mean <= 0 & abs(mean) > 0.5 ~ -1,
+           mean >= 0 & abs(mean) > 0.5 ~ 1,
+           mean <= 0 & abs(mean) > 0 ~ -.5,
+           mean >= 0 & abs(mean) > 0 ~ .5,
+           TRUE ~ NA
+         ))
+           
+# clustering predicates by pairwise operator differences
+contrasts_wide <- data.frame(matrix(nrow = length(levels(contrasts$predicate)),
+                             ncol = length(levels(contrasts$contrast))),
+                      row.names = levels(contrasts$predicate))
+
+colnames(contrasts_wide) <- levels(contrasts$contrast)
+
+for (i in 1:length(levels(contrasts$predicate))) {
+  current_pred = levels(contrasts$predicate)[i]
+  for(j in 1:length(levels(contrasts$contrast))) {
+    current_op = levels(contrasts$contrast)[j]
+    contrasts_wide[current_pred, current_op] <- subset(contrasts,
+                                                predicate == current_pred &
+                                                  contrast == current_op)$difftype[1]
+  }
+}
+
+# plot hierarchical clusters based on differences
+plot(hclust(dist(contrasts_wide), method = "complete"))
+
+
+
 
 contrasts <- contrasts %>% mutate(
   xstart = case_when(
