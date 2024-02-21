@@ -161,21 +161,21 @@ str(textcolors)
 p_meansSelection %>%
   ggplot(aes(x = verb, y = Mean, group = embedding, fill = embedding, color = embedding)) +
   geom_line() +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.4, alpha = .9) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.4, alpha = .8) +
   coord_cartesian(ylim=c(-1,1)) +
-  geom_point(aes(shape = embedding), size = 2.5, color = "black") + 
-  scale_shape_manual(values = rev(c(23, 24, 25)),
-                     labels= c("cond/neg/polar", "negation",  "cond/polar"),
+  geom_point(aes(shape = embedding, fill = embedding), size = 2.5) + 
+  scale_shape_manual(values = rev(c(23, 24, 25, 21)),
+                     # labels= c("cond/neg/polar", "negation",  "cond/polar"),
                      name="Embedding") +
   scale_fill_manual(values = cbbPalette,
-                    labels= c("cond/neg/polar", "negation",  "cond/polar"),
+                    # labels= c("cond/neg/polar", "negation",  "cond/polar"),
                     name="Embedding") +
   scale_colour_manual(values = cbbPalette) +
   guides(color = "none") +
   scale_y_continuous(limits = c(-1,2),breaks = c(-1,0,1,2)) +
   ylab("Mean projection rating") +
   xlab("Predicate") + 
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = textcolors),
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1),# color = textcolors),
          text = element_text(size=12)
   )
 

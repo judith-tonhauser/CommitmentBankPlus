@@ -8,14 +8,15 @@ setwd(this.dir)
 
 # summary + graphing
 library(ggplot2)
-library(ggh4x)
-library(ggrepel)
+# library(ggh4x)
+# library(ggrepel)
 source('../../../helpers.R')
-cbbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#0072B2", "#F0E442", "#D55E00", 
-                "#CC79A7", "#000000")
-graphcolor <- "#0072B2"
-pinkk <- "#CC79A7"
-pred_colors <- c(pinkk, "gray")
+# created separate color blind-friendly palettes
+palette1 <- c("#0072B2", "#009E73", "#E69F00", "#404040")
+factives_color <- "#CC79A7"
+palette2 <- c("#332288", "#404040", "#AA4499", "#56B4E9")
+# palette3 <- c("#404040", "#6A3D9A", "#33A02C", "#E69F00")
+pred_colors <- c(factives_color, "gray")
 theme_set(theme_bw())
 
 # LOAD DATA
@@ -24,6 +25,8 @@ data <- data %>% mutate(projection = as.numeric(projective), predicate = as.fact
                         operator = as.factor(op), participant = as.factor(workerid), 
                         item = as.factor(content), .keep = "none")
 levels(data$operator) <- c("conditional", "modal", "negation", "question")
+data <- data %>% mutate(predicate = fct_reorder(predicate, projection), 
+                        operator = fct_reorder(operator, projection))
 str(data)
 
 
@@ -32,26 +35,31 @@ str(data)
 # projection means and 95% CIs by operator 
 operator_means <- data %>% group_by(operator) %>% 
   summarize(Mean = mean(projection), CILow = ci.low(projection), 
-            CIHigh = ci.high(projection)) %>%
+            CIHigh = ci.high(projection)) %>% ungroup() %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, 
-         operator = fct_reorder(as.factor(operator), Mean)) %>% ungroup()
-operator_means
-operator_means <- operator_means %>% mutate(projection = Mean, .keep = "unused")
+         operator = fct_reorder(as.factor(operator), Mean)) %>% 
+  mutate(projection = Mean, .drop = "used")
+
+str(operator_means)
 
 # plot
 operator_means %>% ggplot(aes(x = fct_reorder(operator, projection, .fun = "mean"), 
                               y = projection, label = round(projection, digits = 2))) +
-  geom_violin(data = data, scale="width", color = "gray", fill = "gray", alpha = .4) +
+  geom_violin(data = data, aes(y = projection, color = operator, fill = operator), scale="width", alpha = .4)+
+              # , color = "gray", fill = "gray") +
   geom_errorbar(aes(ymin=YMin,ymax=YMax), width=0.1, color = "black") +
-  geom_point(size=1, color = "black", shape = 21) +
+  geom_point(aes(fill = operator), size=1, color = "black", shape = 21) +
   geom_text(hjust = 0, nudge_x = -0.08, nudge_y = -0.06) + 
   scale_y_continuous(limits = c(0,1), breaks = c(0,0.2,0.4,0.6,0.8,1.0),
                      labels = c("0","0.2","0.4","0.6","0.8","1"),
                      name = "Certainty rating") +
-  theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1)) +
+  scale_colour_manual(values = palette1) +
+  scale_fill_manual(values = palette1) +
+  theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1),
+        legend.position = "none") +
   xlab("Operator")
 
-ggsave("../graphs/certainty-operator.pdf", width=3, height=4)
+ggsave("../graphs/certainty-operator.pdf", width=3, height=3.5)
 
 
 # 3 projection by predicate (all predicates, this is not in the paper) ---------
@@ -72,7 +80,7 @@ predicate_means$VeridicalityGroup = as.factor(
   ifelse(predicate_means$predicate %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", "NF"))
 
 pred_order <- levels(fct_reorder(predicate_means$predicate, predicate_means$projection, .fun = "mean"))
-textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), pinkk, "black")
+textcolors <-  ifelse(pred_order  %in% c("know", "discover", "reveal", "see", "be_annoyed"), factives_color, "black")
 
 # plot 
 predicate_means %>% ggplot(aes(x = fct_reorder(predicate, projection, .fun = "mean"), y = projection)) +
@@ -122,7 +130,7 @@ predicate_operator_means %>%
                      labels = c("0","0.2","0.4","0.6","0.8","1"),
                      name = "Mean certainty rating") +
   scale_shape_manual(values = c("M", "N", "C", "Q")) +
-  scale_colour_manual(values=cbbPalette) +
+  scale_colour_manual(values = palette1) +
   theme_bw() +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color = textcolors),
         legend.position="none", text = element_text(size=12)

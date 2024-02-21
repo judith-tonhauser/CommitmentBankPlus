@@ -19,11 +19,12 @@ library(emmeans)
 library(ggplot2)
 library(ggh4x)
 source('../../../helpers.R')
-cbbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#0072B2", "#F0E442", "#D55E00", 
-                "#CC79A7", "#000000")
-graphcolor <- "#0072B2"
-pinkk <- "#d694ba"
-pred_colors <- c(pinkk, "black")
+# created separate color blind-friendly palettes
+palette1 <- c("#0072B2", "#009E73", "#E69F00", "#404040")
+factives_color <- "#CC79A7"
+palette2 <- c("#332288", "#404040", "#AA4499", "#56B4E9")
+# palette3 <- c("#404040", "#6A3D9A", "#33A02C", "#E69F00")
+pred_colors <- c(factives_color, "gray")
 theme_set(theme_bw())
 
 # LOAD DATA
@@ -299,8 +300,8 @@ predicate_operator_means %>%
                      labels = c("0",".2",".4",".6",".8","1"),
                      name = "Certainty rating") +
   scale_linetype_identity() +
-  scale_colour_manual(values = cbbPalette, name = "Operator") +
-  scale_fill_manual(values = cbbPalette, name = "Operator") +
+  scale_colour_manual(values = palette1, name = "Operator") +
+  scale_fill_manual(values = palette1, name = "Operator") +
   theme(legend.position="top") +
   theme(panel.grid.minor = element_blank()) +
   # theme(strip.background = element_rect(fill="white")) +
